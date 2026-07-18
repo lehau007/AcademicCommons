@@ -1,0 +1,126 @@
+{
+  "qid": "discrete_math_01",
+  "course_code": "IT3020E",
+  "question": "What are the definitions of an Articulation Point and a Bridge in an undirected graph?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "863a3693-fb9e-484d-b0de-660bfa760174",
+  "answer": "Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?",
+  "citations": [
+    {
+      "chunk_id": "367c4728-ce7e-4aa8-beac-8aaf0b715f16",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Connectedness",
+      "page_number": null,
+      "chunk_order": 46,
+      "excerpt": "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components than in the original graph. The removal of a cut vertex from a connected graph produces a gr"
+    },
+    {
+      "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Tree and its properties",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two"
+    },
+    {
+      "chunk_id": "4e2ca59a-b4c5-49a6-ac70-dc977abdb33d",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Graph Terminology",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "We have graph terminology related to relationship between vertices and edges:\n\n- Adjacency, connect, degree, start, end, indegree, outdegree,...\n\n```text\nUndirected edge e=(u,v)\n\n   (u) -------- e ---"
+    },
+    {
+      "chunk_id": "56164bf2-d83f-450c-8d33-619ba88f3396",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Adjacency",
+      "page_number": null,
+      "chunk_order": 29,
+      "excerpt": "Given $G$ the undirected graph with edge set $E$. Assume $e \\in E$ is pair $(u,v)$.\n\nThen we say:\n\n- $u, v$ are adjacent / neighbors / connected\n- Edge $e$ connects $u$ and $v$.\n- Vertices $u$ and $v$"
+    },
+    {
+      "chunk_id": "d9033feb-a231-4376-b67b-f2b54fe8b181",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graphs",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "[Diagram: The drawing compares a multigraph and a simple graph using the same vertex set. It emphasizes that multiple edges can exist between the same pair of vertices in an undirected multigraph, whi"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "definitions of articulation point and bridge in an undirected graph",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "367c4728-ce7e-4aa8-beac-8aaf0b715f16",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Connectedness",
+          "chunk_order": 46,
+          "cosine_sim": 0.6658,
+          "final_score": 0.9443,
+          "content": "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components than in the original graph. The removal of a cut vertex from a connected graph produces a graph that is not connected\n\n**Bridge**: An edge whose removal produces a subgraph with more connected components than in the original graph.\n\n```text\n        +---+       +---+           +---+\n        | b |-------| c |-----------| e |\n        +---+       +---+           +---+\n          |           |               |\n          |           |               |\n        +---+       +---+             |\n        | a |-------| d |-------------+\n        +---+                         |\n                                      |\n                                    +---+\n                                    | g |\n                                    +---+\n```"
+        },
+        {
+          "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 8,
+          "cosine_sim": 0.3829,
+          "final_score": 0.3023,
+          "content": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two vertices $u, v \\in V$, there exists exactly one simple path from $u$ to $v$.\n3. $G$ is connected, and removing any edge from $G$ disconnects it (each edge of $G$ is a bridge).\n4. $G$ has no cycles, and adding any edge to $G$ gives rise to a cycle. (Thus $G$ is a maximal acyclic graph).\n5. $G$ is connected and $|E| = |V| - 1$."
+        },
+        {
+          "chunk_id": "4e2ca59a-b4c5-49a6-ac70-dc977abdb33d",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Graph Terminology",
+          "chunk_order": 28,
+          "cosine_sim": 0.4487,
+          "final_score": 0.1808,
+          "content": "We have graph terminology related to relationship between vertices and edges:\n\n- Adjacency, connect, degree, start, end, indegree, outdegree,...\n\n```text\nUndirected edge e=(u,v)\n\n   (u) -------- e -------- (v)\n\nDirected edge e=(u,v)\n\n   (u) -------- e -------> (v)\n```\n\n[Diagram: The slide contrasts two fundamental edge types in graph theory: undirected edges, where the relationship is symmetric, and directed edges, where one vertex acts as the source and the other as the target. This distinction is essential for describing how vertices relate and for defining terms like start, end, indegree, and outdegree.]"
+        },
+        {
+          "chunk_id": "c39258bf-8827-4abb-8cb7-a247ce1a5dcd",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "1. Incidence Matrix",
+          "chunk_order": 6,
+          "cosine_sim": 0.2727,
+          "final_score": 0.1746,
+          "content": "G = (V, E) is an undirected graph:\n\n- V = {v₁, v₂, v₃, ..., vₙ}\n- E = {e₁, e₂, ..., eₘ}\n\nThen the incidence matrix with respect to this ordering of V and E is the n × m matrix M = [mᵢⱼ], where\n\n[Formula: m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise]\n\nCan also be used to represent:\n\n- **Multiple edges:** by using columns with identical entries, since these edges are incident with the same pair of vertices\n- **Loops:** by using a column with exactly one entry equal to 1, corresponding to the vertex that is incident with the loop"
+        },
+        {
+          "chunk_id": "56164bf2-d83f-450c-8d33-619ba88f3396",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Adjacency",
+          "chunk_order": 29,
+          "cosine_sim": 0.3826,
+          "final_score": 0.1529,
+          "content": "Given $G$ the undirected graph with edge set $E$. Assume $e \\in E$ is pair $(u,v)$.\n\nThen we say:\n\n- $u, v$ are adjacent / neighbors / connected\n- Edge $e$ connects $u$ and $v$.\n- Vertices $u$ and $v$ are endpoints (đầu mút) of $e$.\n\n```text\n   (u)\n    \\\n     \\  e\n      \\\n       (v)\n```\n\n[Diagram: The figure shows an undirected edge joining two vertices, illustrating the basic meaning of adjacency in a graph. This matters because many graph concepts and algorithms are built on identifying when two vertices are directly connected by an edge.]"
+        },
+        {
+          "chunk_id": "d9033feb-a231-4376-b67b-f2b54fe8b181",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graphs",
+          "chunk_order": 20,
+          "cosine_sim": 0.4237,
+          "final_score": 0.1479,
+          "content": "[Diagram: The drawing compares a multigraph and a simple graph using the same vertex set. It emphasizes that multiple edges can exist between the same pair of vertices in an undirected multigraph, while an undirected simple graph forbids parallel edges.]\n\n- (a, b): multiple edges (parallel edges)\n\nUndirected Multigraph\n\nUndirected (simple) graph"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 5.0
+}

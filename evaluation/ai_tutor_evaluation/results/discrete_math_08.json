@@ -1,0 +1,48 @@
+{
+  "qid": "discrete_math_08",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the answer is directly supported by the retrieved pseudocode chunk. The three nested loops (k, i, j each from 1 to n) are explicitly visible in the code, grounding both the O(n³) complexity and the explanation.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by stating the running time is O(n³) and explains why through the three nested loops structure. The response is completely on-topic and provides exactly what was asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly states the O(n³) running time, which is factually consistent with the ground truth's Θ(n³). The tutor also provides correct additional explanation about the three nested loops, which does not contradict the ground truth.",
+      "evidence": [
+        "Ground truth: 'Θ(n^3)'",
+        "Tutor: 'O(n^3)'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "The single retrieved chunk contains the Floyd-Warshall pseudocode showing the three nested loops (k, i, j), which directly enables determining the O(n³) running time. This chunk is highly relevant to answering the question about running time.",
+      "evidence": [
+        "c6dd1a45-456c-44b9-8b2e-2056c3ab9984: three nested loops over k, i, j from 1 to n"
+      ]
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "The retrieved chunk contains the three nested loops (k, i, j from 1 to n) that directly support the O(n³) running time, but does not explicitly state the Θ(n³) complexity mentioned in the ground truth.",
+      "evidence": [
+        "Θ(n^3)"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "The citation directly supports the tutor's claim about O(n³) running time by showing the three nested loops (k, i, j) each ranging from 1 to n, which is exactly the evidence the tutor uses to justify the time complexity.",
+      "evidence": [
+        "for (k = 1; k <= n; k++)",
+        "for (i = 1; i <= n; i++)",
+        "for (j = 1; j <= n; j++)"
+      ]
+    }
+  }
+}

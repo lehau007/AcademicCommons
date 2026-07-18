@@ -1,0 +1,145 @@
+{
+  "qid": "database_09",
+  "course_code": "IT3292E",
+  "question": "What is the primary goal of a query optimizer?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "524e40c7-f11c-4da1-acb9-d2fabf0e4d59",
+  "answer": "## Primary Goal of a Query Optimizer\n\nBased on the provided context, the **primary goal of a query optimizer is to select the cheapest (most efficient) query execution plan from among the possible alternatives** for executing a given query.\n\n### Key Points from the Context\n\n**Definition (from Keywords section):**\n- Query optimization is defined as the \"Selection of an efficient query execution plan.\"\n\n**Core Aim (from Section 1.4 - Optimizer):**\n- The optimizer takes an **RA (Relational Algebra) expression** as input.\n- It produces a **query execution plan** as output (which consists of the query plan plus the algorithms for executing the RA operations).\n- Its explicit aim is to \"**choose the cheapest execution plan out of the possible ones**.\"\n\n**Why This Matters (from Section 1.1):**\n- Query optimization exists \"to save resources\" through \"cost estimation or evaluation of query.\"\n- Since \"each relational algebra expression can result in many query execution plans\" and \"some query execution plans may be better than others,\" the optimizer's job is to find the best one.\n\n**How It Achieves This Goal (the three steps):**\n1. **Equivalence transformation** — generates alternative logically equivalent plans\n2. **Annotation for the algorithm of the RA expression** — assigns specific execution algorithms (e.g., using an index for a selection)\n3. **Cost estimation for different query execution plans** — estimates and compares the cost of each candidate plan\n\n**Practical Strategy (from Section 2.3):**\nBecause evaluating every possible plan is too expensive, real optimizers:\n- Apply **heuristics** (e.g., perform selections as early as possible, perform projections early, avoid Cartesian products) to select promising plans.\n- Use **pruning** to stop early during evaluation.\n- The combination of these techniques allows the optimizer to ultimately \"choose the cheapest plan among the promising plans.\"\n\n### Summary\n> The primary goal of a query optimizer is to **transform a relational algebra expression into the lowest-cost query execution plan**, thereby minimizing resource usage and execution time when retrieving data from the database.\n\n---\n\n**Used chunk IDs:**\n```json",
+  "citations": [
+    {
+      "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Rel"
+    },
+    {
+      "chunk_id": "60f1ab19-18a1-48bf-8ec3-2c36c17362d8",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.4. Optimizer",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- Input: RA expression\n- Output: Query execution plan\n- Query execution plan = query plan + the algorithms for the executions of RA operations\n- Aims to choose the cheapest execution plan out of the p"
+    },
+    {
+      "chunk_id": "89e0e540-25e8-4b89-821c-84e4a645da64",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. What is query processing",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- The entire process or activities involved in retrieving data from the database\n  - SQL query translation into low level instructions (usually relational algebra)\n  - Query optimization to save resou"
+    },
+    {
+      "chunk_id": "dd440298-8e99-49bb-b209-c835ac3a836d",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.3. Step 3: Cost estimation",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "- Each relational algebra expression can result in many query execution plans\n- Some query execution plans may be better than others\n- Finding the fastest one\n  - Just an estimation under certain assu"
+    },
+    {
+      "chunk_id": "0ae6467b-ab07-497e-8be0-4fc5a066f0e7",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.3. Step 3: Cost estimation",
+      "page_number": null,
+      "chunk_order": 36,
+      "excerpt": "- Choosing the cheapest query plan\n  - Problem:\n    - Estimating cost for all possible plans too expensive.\n  - Solutions:\n    - pruning: stop early to evaluate a plan\n    - heuristics: do not evaluat"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "What is the primary goal of a query optimizer?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "f8f39aa7-041d-4622-b3a1-d533f23e318f",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Remark",
+          "chunk_order": 38,
+          "cosine_sim": 0.5094,
+          "final_score": 0.5858,
+          "content": "- Query processing is the entire process or activities involved in retrieving data from the database\n  - Parser\n  - Optimizer\n  - Code generator\n- Query optimizer\n  - Step 1: Equivalence transformation\n  - Step 2: Annotation for the algorithm of the RA expression\n  - Step 3: Cost estimation for different query execution plans"
+        },
+        {
+          "chunk_id": "89e0e540-25e8-4b89-821c-84e4a645da64",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.1. What is query processing",
+          "chunk_order": 7,
+          "cosine_sim": 0.4774,
+          "final_score": 0.549,
+          "content": "- The entire process or activities involved in retrieving data from the database\n  - SQL query translation into low level instructions (usually relational algebra)\n  - Query optimization to save resources, cost estimation or evaluation of query\n  - Query execution for the extraction of data from the database."
+        },
+        {
+          "chunk_id": "b47df70f-ce06-4146-a657-69347163ed02",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.4. Optimizer",
+          "chunk_order": 13,
+          "cosine_sim": 0.4731,
+          "final_score": 0.5441,
+          "content": "[Diagram: The figure illustrates how a relational algebra expression can be turned into an executable plan by selecting specific algorithms, such as using an index for selection. This matters because the optimizer lowers query cost by choosing a more efficient physical execution strategy.]"
+        },
+        {
+          "chunk_id": "dd440298-8e99-49bb-b209-c835ac3a836d",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.3. Step 3: Cost estimation",
+          "chunk_order": 34,
+          "cosine_sim": 0.4387,
+          "final_score": 0.5045,
+          "content": "- Each relational algebra expression can result in many query execution plans\n- Some query execution plans may be better than others\n- Finding the fastest one\n  - Just an estimation under certain assumptions\n  - Huge number of query plans may exist"
+        },
+        {
+          "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.4315,
+          "final_score": 0.4962,
+          "content": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Relational algebra | An algebra whose operands are relations or variables that represent Relations |"
+        },
+        {
+          "chunk_id": "60f1ab19-18a1-48bf-8ec3-2c36c17362d8",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.4. Optimizer",
+          "chunk_order": 11,
+          "cosine_sim": 0.413,
+          "final_score": 0.475,
+          "content": "- Input: RA expression\n- Output: Query execution plan\n- Query execution plan = query plan + the algorithms for the executions of RA operations\n- Aims to choose the cheapest execution plan out of the possible ones\n  - Step 1: Equivalence transformation\n  - Step 2: Annotation for the algorithm of the RA expression\n  - Step 3: Cost estimation for different query execution plans"
+        },
+        {
+          "chunk_id": "0ae6467b-ab07-497e-8be0-4fc5a066f0e7",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.3. Step 3: Cost estimation",
+          "chunk_order": 36,
+          "cosine_sim": 0.3886,
+          "final_score": 0.4468,
+          "content": "- Choosing the cheapest query plan\n  - Problem:\n    - Estimating cost for all possible plans too expensive.\n  - Solutions:\n    - pruning: stop early to evaluate a plan\n    - heuristics: do not evaluate all plans\n  - Real databases use a combination of\n    - Apply heuristics to choose promising query plans.\n    - Choose cheapest plan among the promising plans using pruning.\n  - Examples of heuristics:\n    - perform selections as early as possible\n    - perform projections early avoid Cartesian products"
+        },
+        {
+          "chunk_id": "00e810cf-7d93-4016-ad9a-aeb8d9fb73b0",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.2. Phases of query processing",
+          "chunk_order": 8,
+          "cosine_sim": 0.3709,
+          "final_score": 0.4265,
+          "content": "```text\nSQL\n |\n v\n+---------+      Query plan      +-----------+   Optimized execution plan   +----------------+\n| Parser  | -------------------> | Optimizer | ---------------------------> | Code Generator |\n+---------+                        +-----------+                              +----------------+\n                                                                                      |\n                                                                                      v\n                                                                               Code for executing\n```\n\n[Diagram: The slide shows the main stages of turning an SQL statement into executable code. Each phase refines the request further, which is important because efficient query processing depends on parsing the query correctly, choosing a good plan, and then generating runnable code.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.7
+}

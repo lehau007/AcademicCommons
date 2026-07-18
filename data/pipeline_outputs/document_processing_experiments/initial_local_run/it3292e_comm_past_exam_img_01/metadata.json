@@ -1,0 +1,15 @@
+{
+  "sample_id": "it3292e_comm_past_exam_img_01",
+  "course_code": "IT3292E",
+  "tier": "community",
+  "input_path": "data/sample/community/IT3292E/past_exam/Database - giữa kì cô Trinh.jpg",
+  "expected_type": "image",
+  "expected_route": "vision_only",
+  "actual_route": "vision_only",
+  "route_evidence": {
+    "reason": "image_input"
+  },
+  "file_sha256": "13cb641dc64267f142ccaa8fea9061306d727205f0c06d53cec70387d9d2114d",
+  "model": "local_placeholder",
+  "duration_ms": 9
+}

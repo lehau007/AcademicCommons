@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "topic": "Machine Learning Foundations",
+  "concepts": [
+    "Machine Learning",
+    "Supervised Learning",
+    "Decision Tree Learning",
+    "Information Gain",
+    "Entropy",
+    "Neural Network",
+    "Feed-Forward Neural Network",
+    "Recurrent Neural Network",
+    "Training Loop",
+    "Epoch",
+    "Error Threshold",
+    "Backpropagation"
+  ],
+  "language": "en",
+  "ocr_quality": "high",
+  "section_summaries": [
+    {
+      "heading": "Defining a Learning Problem",
+      "summary": "Following Mitchell (1997), a machine learning problem is defined by a task T, a performance measure P, and experience E, with learning being improvement on T with respect to P based on E.",
+      "page_range": [1, 6]
+    },
+    {
+      "heading": "Decision Tree Learning",
+      "summary": "Presents decision trees and the role of information gain (expected reduction in entropy from partitioning on an attribute) in selecting the attribute to split on at each node.",
+      "page_range": [7, 16]
+    },
+    {
+      "heading": "Neural Networks",
+      "summary": "Distinguishes feed-forward networks, where no node output feeds back into the same or earlier layers, from recurrent networks which contain closed loops. Describes the training loop in epochs and the termination condition when total error falls below a threshold.",
+      "page_range": [17, 32]
+    }
+  ],
+  "overall_summary": "This document introduces supervised machine learning. It opens with Mitchell's definition of a learning problem as improvement on a task T, measured by performance P, through experience E. Decision tree learning is presented as a classic symbolic learning method, with information gain — the expected reduction in entropy caused by partitioning instances by an attribute — used to select the splitting attribute that best classifies training data. Neural networks are then introduced. Feed-forward networks are structured so that no node output is used as input to a node in the same layer or in a preceding layer, while recurrent networks contain closed loops that route outputs back as inputs. The training loop is described epoch-by-epoch: after an epoch the system compares the total error E to a tolerable threshold; if it is below, training terminates and the final weights are returned, otherwise the error is reset and another epoch begins. This material sets the foundation for the reinforcement learning chapter."
+}

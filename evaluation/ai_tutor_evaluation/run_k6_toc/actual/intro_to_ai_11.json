@@ -1,0 +1,134 @@
+{
+  "qid": "intro_to_ai_11",
+  "course_code": "IT3160E",
+  "question": "What is Information Gain and how is it used in Decision Tree Learning?",
+  "session_id": "85aab214-2a04-4bc2-91c3-dc91ad185e5a",
+  "answer": "**Information Gain** là một thước đo dùng trong **Decision Tree Learning** để đánh giá một thuộc tính “tốt” đến mức nào khi dùng để tách dữ liệu ở một nút của cây.\n\n## 1) Định nghĩa\nInformation Gain của thuộc tính \\(A\\) trên tập mẫu \\(S\\) là:\n\n\\[\nGain(S,A)=Entropy(S)-\\sum_{v\\in Values(A)} \\frac{|S_v|}{|S|} Entropy(S_v)\n\\]\n\nTrong đó:\n\n- \\(Entropy(S)\\): độ hỗn loạn/không chắc chắn của cả tập \\(S\\)\n- \\(S_v\\): tập con của \\(S\\) ứng với giá trị \\(v\\) của thuộc tính \\(A\\)\n- Tổng ở vế phải là **entropy kỳ vọng sau khi chia tập theo thuộc tính \\(A\\)**\n\n## 2) Ý nghĩa\nInformation Gain đo:\n\n- **mức giảm entropy kỳ vọng**\n- hay nói cách khác là **lượng thông tin thu được** khi biết giá trị của thuộc tính \\(A\\)\n\nDiễn giải trong tài liệu: nó là **số bit được tiết kiệm** khi mã hoá nhãn lớp của một phần tử ngẫu nhiên trong \\(S\\), nếu ta biết giá trị của thuộc tính \\(A\\).\n\n## 3) Dùng trong Decision Tree Learning như thế nào?\nTrong quá trình xây dựng cây quyết định:\n\n1. Ở mỗi nút, ta xét các thuộc tính ứng viên để làm test attribute.\n2. Tính Information Gain cho từng thuộc tính.\n3. **Chọn thuộc tính có Information Gain lớn nhất** làm phép chia tại nút đó.\n\nVì thuộc tính có gain lớn nhất sẽ:\n\n- làm giảm độ không chắc chắn nhiều nhất\n- tạo ra các nút con “thuần” hơn\n- giúp phân lớp tốt hơn\n\n## 4) Ví dụ ngắn\nNếu một thuộc tính như `Wind` chia tập dữ liệu thành các nhóm con có entropy thấp hơn đáng kể so với tập ban đầu, thì gain của nó sẽ cao và nó có khả năng được chọn làm nút chia.\n\nTrong ví dụ tài liệu, `Gain(S, Wind) = 0.048`, tức là thuộc tính này chỉ giảm entropy một chút.\n\nTóm lại: **Decision Tree Learning dùng Information Gain để chọn thuộc tính tách dữ liệu tốt nhất tại mỗi nút.**",
+  "citations": [
+    {
+      "chunk_id": "eeeec84e-fdfa-47f6-8df8-478016d2cb8d",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree learning – Example (1)",
+      "page_number": null,
+      "chunk_order": 24,
+      "excerpt": "[Diagram: The tree shows how information gain is used to choose the best root split in decision tree learning. Selecting the attribute with the highest gain reduces uncertainty the most, which makes t"
+    },
+    {
+      "chunk_id": "f38cf2ef-7679-40b3-9473-1f379e3b247f",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Information gain",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "- Information gain of an attribute relative to a set of instances is\n  - the expected reduction in entropy\n  - caused by partitioning the instances according to the attribute\n- Information gain of att"
+    },
+    {
+      "chunk_id": "285a53b7-1edf-4756-b0e6-148ae90935ad",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree learning – Example (2)",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "[Diagram: The tree shows how a decision-tree learner evaluates possible split attributes at a node and picks the one with the highest information gain. This matters because the chosen split most effec"
+    },
+    {
+      "chunk_id": "9e649ef6-da2f-42a5-8c42-801fe4e8e6a0",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Selection of the test attribute",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- A very important task in DT learning: at each node, how to choose the test attribute?\n- To select the attribute that is most useful for classifying the training instances associated with the node\n- "
+    },
+    {
+      "chunk_id": "5f427356-a15a-4f8c-a8e1-496537e3d004",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Information gain – Example",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "- What is the information gain of attribute `Wind` relative to the training set $S$ – $Gain(S, Wind)$?\n- Attribute `Wind` have two possible values: `Weak` and `Strong`\n- $S = \\{9$ positive and $5$ neg"
+    },
+    {
+      "chunk_id": "d364e05e-4e7c-482d-aa1a-2dc8c7963bd1",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree – Introduction",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "- Decision tree (DT) learning\n  - To approximate a discrete-valued target function\n  - The target function is represented by a decision tree\n- A DT can be represented (interpreted) as a set of IF-THEN"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Information Gain and how it is used in Decision Tree Learning",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "eeeec84e-fdfa-47f6-8df8-478016d2cb8d",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree learning – Example (1)",
+          "chunk_order": 24,
+          "cosine_sim": 0.6489,
+          "final_score": 0.7463,
+          "content": "[Diagram: The tree shows how information gain is used to choose the best root split in decision tree learning. Selecting the attribute with the highest gain reduces uncertainty the most, which makes the first partition of the data more informative for building the classifier.]"
+        },
+        {
+          "chunk_id": "f38cf2ef-7679-40b3-9473-1f379e3b247f",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Information gain",
+          "chunk_order": 20,
+          "cosine_sim": 0.5793,
+          "final_score": 0.6662,
+          "content": "- Information gain of an attribute relative to a set of instances is\n  - the expected reduction in entropy\n  - caused by partitioning the instances according to the attribute\n- Information gain of attribute $A$ relative to set $S$\n\n$$\nGain(S,A)=Entropy(S)-\\sum_{v\\in Values(A)} \\frac{|S_v|}{|S|} Entropy(S_v)\n$$\n\nwhere $Values(A)$ is the set of possible values of attribute $A$, and\n\n$$\nS_v=\\{x \\mid x\\in S, x_A=v\\}\n$$\n\n- In the above formula, the second term is the expected value of the entropy after $S$ is partitioned by the values of attribute $A$\n- Interpretation of $Gain(S,A)$: The number of bits saved (reduced) for encoding class of a randomly drawn member of $S$, by knowing the value of attribute $A$"
+        },
+        {
+          "chunk_id": "285a53b7-1edf-4756-b0e6-148ae90935ad",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree learning – Example (2)",
+          "chunk_order": 26,
+          "cosine_sim": 0.5657,
+          "final_score": 0.6505,
+          "content": "[Diagram: The tree shows how a decision-tree learner evaluates possible split attributes at a node and picks the one with the highest information gain. This matters because the chosen split most effectively separates the classes and improves the purity of the resulting child nodes.]"
+        },
+        {
+          "chunk_id": "9e649ef6-da2f-42a5-8c42-801fe4e8e6a0",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Selection of the test attribute",
+          "chunk_order": 14,
+          "cosine_sim": 0.5292,
+          "final_score": 0.6086,
+          "content": "- A very important task in DT learning: at each node, how to choose the test attribute?\n- To select the attribute that is most useful for classifying the training instances associated with the node\n- How to measure an attribute’s capability of separating the training instances according to their target classification\n  - Use a statistical measure – *Information Gain*\n- Example: A two-class $(C_1, C_2)$ classification problem\n  - Which attribute, $A_1$ or $A_2$, should be chosen to be the test attribute?"
+        },
+        {
+          "chunk_id": "5f427356-a15a-4f8c-a8e1-496537e3d004",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Information gain – Example",
+          "chunk_order": 22,
+          "cosine_sim": 0.5005,
+          "final_score": 0.5755,
+          "content": "- What is the information gain of attribute `Wind` relative to the training set $S$ – $Gain(S, Wind)$?\n- Attribute `Wind` have two possible values: `Weak` and `Strong`\n- $S = \\{9$ positive and $5$ negative instances$\\}$\n- $S_{weak} = \\{6$ pos. and $2$ neg. instances having `Wind=Weak`$\\}$\n- $S_{strong} = \\{$ $3$ pos. and $3$ neg. instances having `Wind=Strong`$\\}$\n\n$$\nGain(S, Wind) = Entropy(S) - \\sum_{v \\in \\{Weak, Strong\\}} \\frac{|S_v|}{|S|} Entropy(S_v)\n$$\n\n$$\n= Entropy(S) - (8/14).Entropy(S_{Weak}) - (6/14).Entropy(S_{Strong})\n$$\n\n$$\n= 0.94 - (8/14).(0.81) - (6/14).(1) = 0.048\n$$"
+        },
+        {
+          "chunk_id": "d364e05e-4e7c-482d-aa1a-2dc8c7963bd1",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree – Introduction",
+          "chunk_order": 1,
+          "cosine_sim": 0.4535,
+          "final_score": 0.5215,
+          "content": "- Decision tree (DT) learning\n  - To approximate a discrete-valued target function\n  - The target function is represented by a decision tree\n- A DT can be represented (interpreted) as a set of IF-THEN rules\n  - (i.e., easy to read and understand)\n- Capable of learning disjunctive expressions\n- DT learning is robust to noisy data\n- One of the most widely used methods for inductive inference\n- Successfully applied to a range of real-world applications"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 11.8
+}

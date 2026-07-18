@@ -1,0 +1,173 @@
+{
+  "qid": "intro_to_ai_11",
+  "course_code": "IT3160E",
+  "question": "What is Information Gain and how is it used in Decision Tree Learning?",
+  "session_id": "3abb3393-de31-4830-a0df-89142ce23fa8",
+  "answer": "**Information Gain** là một thước đo dùng trong **Decision Tree Learning** để đánh giá một thuộc tính có “tốt” đến mức nào khi dùng làm **test attribute** tại một nút của cây.\n\n### 1) Information Gain là gì?\nInformation Gain của thuộc tính \\(A\\) đối với tập dữ liệu \\(S\\) là:\n\n- **mức giảm entropy kỳ vọng** sau khi chia tập \\(S\\) theo các giá trị của thuộc tính \\(A\\)\n- hay hiểu đơn giản: thuộc tính đó giúp **giảm độ hỗn loạn/không chắc chắn** về nhãn lớp được bao nhiêu\n\nCông thức:\n\n\\[\nGain(S,A)=Entropy(S)-\\sum_{v\\in Values(A)} \\frac{|S_v|}{|S|} Entropy(S_v)\n\\]\n\nTrong đó:\n- \\(Entropy(S)\\): độ hỗn loạn ban đầu của tập \\(S\\)\n- \\(S_v\\): tập con các mẫu có giá trị thuộc tính \\(A=v\\)\n- tổng ở vế phải là **entropy trung bình sau khi chia** theo thuộc tính \\(A\\)\n\n### 2) Nó được dùng như thế nào trong Decision Tree Learning?\nTại **mỗi nút** của cây quyết định:\n\n1. Tính Information Gain cho từng thuộc tính còn lại\n2. Chọn thuộc tính có **Information Gain lớn nhất**\n3. Dùng thuộc tính đó để **chia dữ liệu** ở nút hiện tại\n\nLý do: thuộc tính có gain cao nhất sẽ tạo ra các nút con **thuần hơn** (purer), tức là các mẫu trong mỗi nhánh có xu hướng thuộc cùng một lớp hơn.\n\n### 3) Ý nghĩa trực quan\nInformation Gain cho biết việc biết giá trị của thuộc tính đó giúp ta:\n- giảm bao nhiêu entropy\n- tiết kiệm bao nhiêu “bit” khi mã hóa lớp của một mẫu ngẫu nhiên\n\n### 4) Ví dụ từ tài liệu\nTrong ví dụ của cây quyết định:\n- \\(Gain(S, Outlook)=0.246\\)\n- \\(Gain(S, Temperature)=0.029\\)\n- \\(Gain(S, Humidity)=0.151\\)\n- \\(Gain(S, Wind)=0.048\\)\n\nVì **Outlook** có Information Gain cao nhất, nên nó được chọn làm thuộc tính kiểm tra ở **nút gốc**.\n\nTóm lại: **Information Gain được dùng để chọn thuộc tính tốt nhất để tách dữ liệu ở mỗi nút của Decision Tree, bằng cách chọn thuộc tính làm giảm entropy nhiều nhất.**",
+  "citations": [
+    {
+      "chunk_id": "eeeec84e-fdfa-47f6-8df8-478016d2cb8d",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree learning – Example (1)",
+      "page_number": null,
+      "chunk_order": 24,
+      "excerpt": "[Diagram: The tree shows how information gain is used to choose the best root split in decision tree learning. Selecting the attribute with the highest gain reduces uncertainty the most, which makes t"
+    },
+    {
+      "chunk_id": "285a53b7-1edf-4756-b0e6-148ae90935ad",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree learning – Example (2)",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "[Diagram: The tree shows how a decision-tree learner evaluates possible split attributes at a node and picks the one with the highest information gain. This matters because the chosen split most effec"
+    },
+    {
+      "chunk_id": "f38cf2ef-7679-40b3-9473-1f379e3b247f",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Information gain",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "- Information gain of an attribute relative to a set of instances is\n  - the expected reduction in entropy\n  - caused by partitioning the instances according to the attribute\n- Information gain of att"
+    },
+    {
+      "chunk_id": "9e649ef6-da2f-42a5-8c42-801fe4e8e6a0",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Selection of the test attribute",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- A very important task in DT learning: at each node, how to choose the test attribute?\n- To select the attribute that is most useful for classifying the training instances associated with the node\n- "
+    },
+    {
+      "chunk_id": "5f427356-a15a-4f8c-a8e1-496537e3d004",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Information gain – Example",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "- What is the information gain of attribute `Wind` relative to the training set $S$ – $Gain(S, Wind)$?\n- Attribute `Wind` have two possible values: `Weak` and `Strong`\n- $S = \\{9$ positive and $5$ neg"
+    },
+    {
+      "chunk_id": "4f50666d-b5bf-46dd-996f-727f8d91fcc2",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree learning – Example (1)",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- At the root node, which attribute of $\\{Outlook, Temperature, Humidity, Wind\\}$ should be the test attribute?\n  - $Gain(S, Outlook) = \\ldots = 0.246$\n  - $Gain(S, Temperature) = \\ldots = 0.029$\n  - "
+    },
+    {
+      "chunk_id": "48bbacdf-265e-4f79-897a-5f5b772cbf26",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Selection of the test attribute",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "[Diagram: This compares two possible test attributes for a decision tree node by showing how each attribute splits the same class distribution into different child groups. The split that produces pure"
+    },
+    {
+      "chunk_id": "5f32c4f0-4e53-4750-acac-5ad80c76d324",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree learning – Example (2)",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "- At Node1, which attribute of {Temperature, Humidity, Wind} should be the test attribute?\n- Note! Attribute Outlook is excluded, since it has been used by Node1’s parent (i.e., the root node)\n- $Gain"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Information Gain and how it is used in Decision Tree Learning",
+      "namespaces": [
+        "knowledge",
+        "exercise"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "eeeec84e-fdfa-47f6-8df8-478016d2cb8d",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree learning – Example (1)",
+          "chunk_order": 24,
+          "cosine_sim": 0.5699,
+          "final_score": 0.6554,
+          "content": "[Diagram: The tree shows how information gain is used to choose the best root split in decision tree learning. Selecting the attribute with the highest gain reduces uncertainty the most, which makes the first partition of the data more informative for building the classifier.]"
+        },
+        {
+          "chunk_id": "285a53b7-1edf-4756-b0e6-148ae90935ad",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree learning – Example (2)",
+          "chunk_order": 26,
+          "cosine_sim": 0.508,
+          "final_score": 0.5842,
+          "content": "[Diagram: The tree shows how a decision-tree learner evaluates possible split attributes at a node and picks the one with the highest information gain. This matters because the chosen split most effectively separates the classes and improves the purity of the resulting child nodes.]"
+        },
+        {
+          "chunk_id": "f38cf2ef-7679-40b3-9473-1f379e3b247f",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Information gain",
+          "chunk_order": 20,
+          "cosine_sim": 0.5079,
+          "final_score": 0.5841,
+          "content": "- Information gain of an attribute relative to a set of instances is\n  - the expected reduction in entropy\n  - caused by partitioning the instances according to the attribute\n- Information gain of attribute $A$ relative to set $S$\n\n$$\nGain(S,A)=Entropy(S)-\\sum_{v\\in Values(A)} \\frac{|S_v|}{|S|} Entropy(S_v)\n$$\n\nwhere $Values(A)$ is the set of possible values of attribute $A$, and\n\n$$\nS_v=\\{x \\mid x\\in S, x_A=v\\}\n$$\n\n- In the above formula, the second term is the expected value of the entropy after $S$ is partitioned by the values of attribute $A$\n- Interpretation of $Gain(S,A)$: The number of bits saved (reduced) for encoding class of a randomly drawn member of $S$, by knowing the value of attribute $A$"
+        },
+        {
+          "chunk_id": "9e649ef6-da2f-42a5-8c42-801fe4e8e6a0",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Selection of the test attribute",
+          "chunk_order": 14,
+          "cosine_sim": 0.4722,
+          "final_score": 0.5431,
+          "content": "- A very important task in DT learning: at each node, how to choose the test attribute?\n- To select the attribute that is most useful for classifying the training instances associated with the node\n- How to measure an attribute’s capability of separating the training instances according to their target classification\n  - Use a statistical measure – *Information Gain*\n- Example: A two-class $(C_1, C_2)$ classification problem\n  - Which attribute, $A_1$ or $A_2$, should be chosen to be the test attribute?"
+        },
+        {
+          "chunk_id": "5f427356-a15a-4f8c-a8e1-496537e3d004",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Information gain – Example",
+          "chunk_order": 22,
+          "cosine_sim": 0.4501,
+          "final_score": 0.5176,
+          "content": "- What is the information gain of attribute `Wind` relative to the training set $S$ – $Gain(S, Wind)$?\n- Attribute `Wind` have two possible values: `Weak` and `Strong`\n- $S = \\{9$ positive and $5$ negative instances$\\}$\n- $S_{weak} = \\{6$ pos. and $2$ neg. instances having `Wind=Weak`$\\}$\n- $S_{strong} = \\{$ $3$ pos. and $3$ neg. instances having `Wind=Strong`$\\}$\n\n$$\nGain(S, Wind) = Entropy(S) - \\sum_{v \\in \\{Weak, Strong\\}} \\frac{|S_v|}{|S|} Entropy(S_v)\n$$\n\n$$\n= Entropy(S) - (8/14).Entropy(S_{Weak}) - (6/14).Entropy(S_{Strong})\n$$\n\n$$\n= 0.94 - (8/14).(0.81) - (6/14).(1) = 0.048\n$$"
+        },
+        {
+          "chunk_id": "4f50666d-b5bf-46dd-996f-727f8d91fcc2",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree learning – Example (1)",
+          "chunk_order": 23,
+          "cosine_sim": 0.3869,
+          "final_score": 0.4449,
+          "content": "- At the root node, which attribute of $\\{Outlook, Temperature, Humidity, Wind\\}$ should be the test attribute?\n  - $Gain(S, Outlook) = \\ldots = 0.246$\n  - $Gain(S, Temperature) = \\ldots = 0.029$\n  - $Gain(S, Humidity) = \\ldots = 0.151$\n  - $Gain(S, Wind) = \\ldots = 0.048$\n  - The highest IG value\n- → So, Outlook is chosen as the test attribute for the root node!\n\n```text\n                +----------------+\n                |  Outlook=?     |   S={9+, 5-}\n                +----------------+\n                 /       |       \\\n            Sunny   Overcast     Rain\n              /          |          \\\n       +----------+      |      +----------+\n       |  Node1   |      |      |  Node2   |\n       +----------+      |      +----------+\n        S_Sunny={2+, 3-}  |      S_Rain={3+, 2-}\n                          Yes\n                    S_Overcast={4+, 0-}\n```"
+        },
+        {
+          "chunk_id": "48bbacdf-265e-4f79-897a-5f5b772cbf26",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Selection of the test attribute",
+          "chunk_order": 16,
+          "cosine_sim": 0.3843,
+          "final_score": 0.442,
+          "content": "[Diagram: This compares two possible test attributes for a decision tree node by showing how each attribute splits the same class distribution into different child groups. The split that produces purer child nodes is typically preferred because it yields a more informative partition for classification.]"
+        },
+        {
+          "chunk_id": "5f32c4f0-4e53-4750-acac-5ad80c76d324",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree learning – Example (2)",
+          "chunk_order": 25,
+          "cosine_sim": 0.3637,
+          "final_score": 0.4183,
+          "content": "- At Node1, which attribute of {Temperature, Humidity, Wind} should be the test attribute?\n- Note! Attribute Outlook is excluded, since it has been used by Node1’s parent (i.e., the root node)\n- $Gain(S_{Sunny}, Temperature)=...=0.57$\n- $Gain(S_{Sunny}, Humidity)=...=0.97$\n- $Gain(S_{Sunny}, Wind)=...=0.019$\n- So, Humidity is chosen as the test attribute for Node1!\n\n```text\n                    +----------------+\n                    | Outlook=?      |\n                    +----------------+\n                     /      |      \\\n                Sunny       |      Rain\n                   /        |         \\\n          +----------------+ |      +--------+\n          | Humidity=?     | |      | Node2  |\n          +----------------+ |      +--------+\n           /        \\         |\n      High/          \\Normal  | Overcast\n         /            \\       |\n +--------+         +--------+ |\n | Node3  |         | Node4  | |\n +--------+         +--------+ |\n```\n\n| Node / branch | Set |\n|---|---|\n| $S$ | $\\{9+, 5-\\}$ |\n| $S_{Sunny}$ | $\\{2+, 3-\\}$ |\n| $S_{Overcast}$ | $\\{4+, 0-\\}$ |\n| $S_{Rain}$ | $\\{3+, 2-\\}$ |\n| $S_{High}$ | $\\{0+, 3-\\}$ |\n| $S_{Normal}$ | $\\{2+, 0-\\}$ |"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 12.1
+}

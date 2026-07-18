@@ -1,0 +1,232 @@
+# hard_ai_long_14
+
+## Question
+Giải thích đầy đủ về hiện tượng khiến hill climbing thất bại: (a) sơ đồ hàm mục tiêu minh họa những dạng địa hình nào; (b) vì sao thuật toán tham lam lại dừng ở đó; (c) shoulder khác local maximum phẳng ('flat local maximum') như thế nào.
+
+## Ground truth
+(a) Sơ đồ hàm mục tiêu theo không gian trạng thái chỉ ra global maximum, shoulder, local maximum và flat local maximum (cao nguyên). (b) Hill climbing là tìm kiếm tham lam chỉ di chuyển sang trạng thái lân cận có giá trị cao hơn; khi tới local maximum hoặc vùng phẳng, không có lân cận nào tốt hơn nên nó dừng dù còn lời giải tốt hơn ở nơi khác. (c) Shoulder là một 'vai' phẳng nhưng vẫn có lối đi lên tiếp phía sau (có thể vượt qua để tiếp tục leo), còn flat local maximum là cao nguyên phẳng không có lối đi lên nào — thuật toán mắc kẹt hẳn ở đó.
+
+## Retrieved context (what the tutor saw)
+- [Diagram: The graph illustrates how hill climbing can fail on different landscape features: a global maximum, a shoulder, a local maximum, and a flat local maximum. It matters because these shapes explain why greedy search may stop improving even when a better solution exists elsewhere in the state space.]
+- ```text
+                          objective function
+                                  ^
+                                  |
+                                  |
+                                  |                    global maximum
+                                  |                   /\
+                                  |                  /  \
+                                  |         shoulder_/    \__
+                                  |               __/         \____
+                                  |              /                \
+                                  |             /                  \     local maximum
+                                  |            /                    _\__   /\
+                                  |           /                    /   \_/  \__  "flat" local maximum
+                                  |___________/____________________/____________\____________________> state space
+                                          current state
+```
+- ```text
+                           objective function
+                                  ^
+                                  |
+                                  |                         global maximum
+                                  |                           /\
+                                  |                          /  \
+                                  |                 shoulder /    \
+                                  |                        _/      \_
+                                  |                       /          \
+                                  |                      /            \
+                                  |                     /              \
+                                  |                    /                \
+                                  |                   /                  \
+                                  |                  /                    \__
+                                  |                 /                        \  local maximum
+                                  |                /                          \____
+                                  |               /                                 \__ "flat" local maximum
+                                  |
+                                  +--------------------------------------------------------> state space
+                                                          |
+                                                          |
+                                                       current
+                                                        state
+```
+- [Diagram: The graph illustrates an optimization landscape with multiple peaks and plateaus, showing that a local search method can become guided by nearby improvements rather than finding the overall best solution. This matters because it explains why algorithms may stop at local maxima or flat regions instead of reaching the global maximum.]
+- function HILL-CLIMBING(problem) return a state that is a local maximum
+
+- input: problem, a problem
+- local variables: current, a node.
+- local variables: neighbor, a node.
+
+```text
+current ← MAKE-NODE(INITIAL-STATE[problem])
+loop do
+    neighbor ← a highest valued successor of current
+    if VALUE [neighbor] < VALUE[current] then return STATE[current]
+    current ← neighbor
+```
+
+[Diagram: This is the hill-climbing search procedure, which repeatedly moves from the current state to a better neighboring state until no improvement is possible. It matters because it captures a simple local search strategy that can quickly find a local optimum, even though it may not be the global best.]
+- - Escape local maxima by allowing “bad” moves.
+  - Idea: but gradually decrease their size and frequency.
+- Origin; metallurgical annealing
+- Implement:
+  - Randomly select a move instead of selecting best move
+  - Accept a bad move with probability less than 1 (p<1)
+  - p decreases by time
+- If T decreases slowly enough, best state is reached.
+- Applied for VLSI layout, airline scheduling, etc.
+- - Simple, general idea:
+  - Start wherever
+  - Always choose the best neighbor
+  - If no neighbors have better scores than current, quit
+- Hill climbing does not look ahead of the immediate neighbors of the current state.
+- Hill-climbing chooses randomly among the set of best successors, if there is more than one.
+- Some problem spaces are great for hill climbing and others are terrible.
+- - Problems:
+  - **Local Maxima**: depending on initial state, can get stuck in local maxima
+  - **Plateaus**: the space has a broad flat region that gives the search algorithm no direction (random walk)
+  - **Ridges**: flat like a plateau, but with dropoffs to the sides; steps to the North, East, South and West may go down, but a combination of two steps (e.g. N, W) may go up
+- Introduce randomness
+
+## Tutor answer
+# Hill Climbing và các dạng "địa hình" khiến thuật toán thất bại
+
+Hill climbing là một thuật toán tìm kiếm cục bộ rất đơn giản: ở mỗi bước, nó chọn **láng giềng có giá trị hàm mục tiêu cao nhất** và di chuyển tới đó. Nếu không có láng giềng nào tốt hơn trạng thái hiện tại, thuật toán **dừng lại**. Chính vì quy tắc "tham lam" này mà hill climbing dễ sa lầy trên nhiều dạng địa hình khác nhau của hàm mục tiêu.
+
+## (a) Sơ đồ hàm mục tiêu minh họa những dạng địa hình nào?
+
+Theo tài liệu môn học, sơ đồ hàm mục tiêu (với trục đứng là giá trị hàm mục tiêu, trục ngang là không gian trạng thái) minh họa **bốn dạng địa hình đặc trưng**:
+
+| Dạng địa hình | Đặc điểm trên đồ thị |
+|---|---|
+| **Global maximum** (cực đại toàn cục) | Đỉnh cao nhất của toàn bộ không gian — đây là điểm mà thuật toán *muốn* đạt tới nhưng không đảm bảo sẽ tìm được. |
+| **Shoulder** (vai) | Vùng có độ dốc tăng dần — vẫn là hướng đi lên nhưng tốc độ cải thiện chậm lại, dễ gây nhầm lẫn với đỉnh. |
+| **Local maximum** (cực đại cục bộ) | Một đỉnh thấp hơn global maximum, mà từ đó mọi láng giềng đều có giá trị thấp hơn. |
+| **"Flat" local maximum** (cực đại cục bộ phẳng) | Một vùng phẳng nằm ở đỉnh — không có láng giềng nào tốt hơn, nhưng cũng không có láng giềng nào tệ hơn. |
+
+Ngoài ra, tài liệu còn nhắc tới hai dạng địa hình khác trong mục **Drawbacks of hill climbing**:
+- **Plateau** (cao nguyên): vùng phẳng rộng, hàm mục tiêu không đổi — thuật toán "không có hướng đi" và phải đi bộ ngẫu nhiên (random walk).
+- **Ridge** (sống núi): trông giống plateau nhưng hai bên là vực thẳm; đi theo từng bước đơn lẻ (Bắc, Nam, Đông, Tây) đều đi xuống, nhưng kết hợp hai bước (ví dụ Bắc rồi Tây) lại đi lên.
+
+## (b) Vì sao thuật toán tham lam lại dừng ở đó?
+
+Nguyên nhân nằm ở chính logic của thuật toán. Theo pseudocode trong slide:
+
+```
+current ← MAKE-NODE(INITIAL-STATE)
+loop do
+    neighbor ← a highest valued successor of current
+    if VALUE[neighbor] < VALUE[current] then return STATE[current]
+    current ← neighbor
+```
+
+Điều kiện dừng là `VALUE[neighbor] < VALUE[current]` — tức là **ngay khi không tìm được láng giềng nào tốt hơn, thuật toán kết thúc**. Cụ thể:
+
+- **Tại local maximum:** mọi láng giềng xung quanh đều có giá trị thấp hơn đỉnh, nên biểu thức `VALUE[neighbor] < VALUE[current]` luôn đúng → thuật toán trả về trạng thái hiện tại dù còn một global maximum cao hơn ở phía bên kia "thung lũng". Hill climbing **không nhìn xa hơn các láng giềng trực tiếp**, nên không biết rằng phải đi *xuống* trước rồi mới lên được.
+- **Tại plateau (kể cả flat local maximum):** tất cả láng giềng có giá trị **bằng** `VALUE[current]`, không hơn không kém. Thuật toán không có tín hiệu cải thiện, dẫn tới **đi lang thang ngẫu nhiên** hoặc dừng hẳn, vì không có gradient (độ dốc) chỉ hướng.
+- **Tại ridge:** mỗi bước đi đơn lẻ đều đi xuống, nên hill climbing cũng bị "đánh lừa" và quay đầu, dù một chuỗi bước chéo lại có thể đi lên.
+
+Như vậy, bản chất tham lam + chỉ nhìn cục bộ chính là lý do thuật toán dừng ở những điểm *trông giống* tối ưu trong vùng lân cận, dù chưa phải tối ưu toàn cục. Một cách khắc phục được nhắc tới trong tài liệu là **simulated annealing**: cho phép thỉnh thoảng chấp nhận "bước đi tệ hơn" với xác suất p < 1, và p giảm dần theo thời gian — đủ chậm thì có thể thoát khỏi local maximum để tìm tới global maximum.
+
+## (c) Shoulder khác "flat local maximum" như thế nào?
+
+Dù cả shoulder và flat local maximum đều là vùng có giá trị hàm mục tiêu thay đổi **chậm hoặc không đổi**, bản chất của chúng rất khác nhau khi nhìn trên sơ đồ:
+
+| | **Shoulder** (vai) | **Flat local maximum** (cực đại cục bộ phẳng) |
+|---|---|---|
+| **Vị trí trên đồ thị** | Nằm trên **sườn dốc đi lên** — vẫn là một phần của đường lên tới đỉnh. | Nằm ở **đỉnh** của một ngọn đồi cục bộ, hai bên đều đi xuống. |
+| **Xu hướng hàm mục tiêu** | Vẫn **tăng** (dù chậm) khi đi tới; thuật toán vẫn còn *động lực* leo lên. | **Không đổi** trên toàn vùng phẳng, và mọi hướng đi ra ngoài đều **giảm**. |
+| **Hành vi của hill climbing** | Vẫn có gradient dương, nên có thể tiếp tục đi lên, dù chậm — shoulder *không* làm thuật toán dừng. | Không có láng giềng nào tốt hơn, nên thuật toán **coi đây là điểm kết thúc** dù có thể vẫn chưa tới global maximum. |
+| **Bản chất** | Là một đoạn "dốc thoải" trên đường lên tới đỉnh thật. | Là một đỉnh giả — điểm tối ưu trong lân cận nhưng không phải tối ưu toàn cục. |
+
+Nói ngắn gọn: **shoulder** thuộc về *đường đi tới đỉnh* (vẫn đi lên được, chỉ là dốc thoải), còn **flat local maximum** thuộc về *đỉnh của một ngọn đồi sai* (đã hết đường đi lên trong vùng lân cận). Chính vì thế chỉ có flat local maximum — cùng với plateau rộng — mới khiến hill climbing dừng lại ở một nghiệm không tối ưu; shoulder thì không.
+
+---
+
+**Tóm lại:** Hill climbing thất bại không phải vì thuật toán "chạy sai", mà vì tiêu chuẩn dừng cục bộ của nó trùng với quá nhiều dạng địa hình trong hàm mục tiêu: local maximum, flat local maximum, plateau và ridge. Hiểu được sự khác biệt giữa các dạng này — đặc biệt là giữa shoulder (vẫn đang leo) và flat local maximum (đã "tưởng" tới đỉnh) — là tiền đề để đánh giá khi nào hill climbing phù hợp và khi nào cần các biến thể như simulated annealing hay các thuật toán tìm kiếm toàn cục hơn.
+
+## Citations
+```json
+[
+  {
+    "chunk_id": "c247d5c4-7694-4e84-bdde-f39bbe5038d6",
+    "document_title": "lecture5-Advanced search methods.pdf",
+    "document_tier": "official",
+    "document_subtype": "lecture_slides",
+    "section_title": "Drawbacks of hill climbing",
+    "page_number": null,
+    "chunk_order": 25,
+    "excerpt": "[Diagram: The graph illustrates how hill climbing can fail on different landscape features: a global maximum, a shoulder, a local maximum, and a flat local maximum. It matters because these shapes exp"
+  },
+  {
+    "chunk_id": "9344b1f3-047a-499b-9375-4933f352ffb4",
+    "document_title": "lecture5-Advanced search methods.pdf",
+    "document_tier": "official",
+    "document_subtype": "lecture_slides",
+    "section_title": "Local search and optimization",
+    "page_number": null,
+    "chunk_order": 15,
+    "excerpt": "```text\n                          objective function\n                                  ^\n                                  |\n                                  |\n                                  |    "
+  },
+  {
+    "chunk_id": "03693514-c469-4006-8f44-a42dfdbf5df4",
+    "document_title": "lecture5-Advanced search methods.pdf",
+    "document_tier": "official",
+    "document_subtype": "lecture_slides",
+    "section_title": "Drawbacks of hill climbing",
+    "page_number": null,
+    "chunk_order": 24,
+    "excerpt": "```text\n                           objective function\n                                  ^\n                                  |\n                                  |                         global maximum"
+  },
+  {
+    "chunk_id": "e10e33e0-0ae4-41ff-b484-9cc16de19c8b",
+    "document_title": "lecture5-Advanced search methods.pdf",
+    "document_tier": "official",
+    "document_subtype": "lecture_slides",
+    "section_title": "Local search and optimization",
+    "page_number": null,
+    "chunk_order": 16,
+    "excerpt": "[Diagram: The graph illustrates an optimization landscape with multiple peaks and plateaus, showing that a local search method can become guided by nearby improvements rather than finding the overall "
+  },
+  {
+    "chunk_id": "6962ac95-4308-480a-8879-39484c84722f",
+    "document_title": "lecture5-Advanced search methods.pdf",
+    "document_tier": "official",
+    "document_subtype": "lecture_slides",
+    "section_title": "Hill-climbing search",
+    "page_number": null,
+    "chunk_order": 20,
+    "excerpt": "function HILL-CLIMBING(problem) return a state that is a local maximum\n\n- input: problem, a problem\n- local variables: current, a node.\n- local variables: neighbor, a node.\n\n```text\ncurrent ← MAKE-NOD"
+  },
+  {
+    "chunk_id": "c94c8c3d-66e7-4fa2-b086-1f62b10765e1",
+    "document_title": "lecture5-Advanced search methods.pdf",
+    "document_tier": "official",
+    "document_subtype": "lecture_slides",
+    "section_title": "Simulated annealing",
+    "page_number": null,
+    "chunk_order": 29,
+    "excerpt": "- Escape local maxima by allowing “bad” moves.\n  - Idea: but gradually decrease their size and frequency.\n- Origin; metallurgical annealing\n- Implement:\n  - Randomly select a move instead of selecting"
+  },
+  {
+    "chunk_id": "6685831c-b8a7-46cb-8207-a1bf03d2e360",
+    "document_title": "lecture5-Advanced search methods.pdf",
+    "document_tier": "official",
+    "document_subtype": "lecture_slides",
+    "section_title": "Hill-climbing search",
+    "page_number": null,
+    "chunk_order": 19,
+    "excerpt": "- Simple, general idea:\n  - Start wherever\n  - Always choose the best neighbor\n  - If no neighbors have better scores than current, quit\n- Hill climbing does not look ahead of the immediate neighbors "
+  },
+  {
+    "chunk_id": "dab795c0-eba1-4517-92c3-dfa850f7665c",
+    "document_title": "lecture5-Advanced search methods.pdf",
+    "document_tier": "official",
+    "document_subtype": "lecture_slides",
+    "section_title": "Drawbacks of hill climbing",
+    "page_number": null,
+    "chunk_order": 23,
+    "excerpt": "- Problems:\n  - **Local Maxima**: depending on initial state, can get stuck in local maxima\n  - **Plateaus**: the space has a broad flat region that gives the search algorithm no direction (random wal"
+  }
+]
+```

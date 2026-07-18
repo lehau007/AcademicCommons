@@ -1,0 +1,1017 @@
+{
+  "course": "discrete_math",
+  "strategy": "mmr_tier_boost",
+  "top_k": 4,
+  "fetch_k": 8,
+  "mmr_lambda": 0.7,
+  "tier_boost_multiplier": 1.15,
+  "question_count": 20,
+  "aggregate": {
+    "answer_similarity": 0.5931,
+    "context_precision": 0.875,
+    "context_recall": 0.995,
+    "citation_accuracy": 1.0
+  },
+  "per_question": [
+    {
+      "id": 1,
+      "question": "What are the definitions of an Articulation Point and a Bridge in an undirected graph?",
+      "ground_truth": "An Articulation Point (or Cut vertex) is a vertex whose removal produces a subgraph with more connected components than the original graph. Similarly, a Bridge is an edge whose removal produces a subgraph with more connected components than the original graph.",
+      "retrieved": [
+        {
+          "chunk_id": "01_graph_basics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Articulation Points and Bridges",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.7617,
+          "final_score": 0.8759
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-005",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Edge Addition in Acyclic Graphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.4339,
+          "final_score": 0.499
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Spanning Subgraphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.3565,
+          "final_score": 0.41
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "DFS Edge Classification",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.3407,
+          "final_score": 0.3918
+        }
+      ],
+      "generated_answer_preview": "[01_graph_basics-chunk-001] In an undirected graph, certain vertices and edges play a critical structural role. An Articulation Point (or Cut vertex) is a vertex whose removal produces a subgraph with more connected components than the original graph. Similarly, a Bridge is an edge whose removal pro",
+      "scores": {
+        "answer_similarity": 0.681,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 2,
+      "question": "According to Cayley's theorem, how many spanning trees does a complete graph have?",
+      "ground_truth": "According to Cayley's theorem, a complete graph K_n has n^(n-2) spanning trees.",
+      "retrieved": [
+        {
+          "chunk_id": "04_spanning_trees-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Cayley's Theorem",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.7181,
+          "final_score": 0.8258
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-005",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Edge Addition in Acyclic Graphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.4941,
+          "final_score": 0.5682
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Spanning Subgraphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.4542,
+          "final_score": 0.5223
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Safe Edges in MST",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.4387,
+          "final_score": 0.5045
+        }
+      ],
+      "generated_answer_preview": "[04_spanning_trees-chunk-001] According to Cayley's theorem, a complete graph K_n has n^(n - 2) spanning trees. This compact formula has elegant proofs based on Prufer sequences and on the Matrix-Tree theorem applied to the Laplacian of K_n.\n\n[01_graph_basics-chunk-005] If an undirected graph has no",
+      "scores": {
+        "answer_similarity": 0.7049,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 3,
+      "question": "What is the difference between a strongly connected and a weakly connected directed graph?",
+      "ground_truth": "A directed graph is strongly connected if there is a path from u to v and from v to u whenever u and v are vertices in the graph. It is weakly connected if its corresponding undirected graph is connected.",
+      "retrieved": [
+        {
+          "chunk_id": "01_graph_basics-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Strong vs Weak Connectivity in Digraphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.8771,
+          "final_score": 1.0086
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "DFS Edge Classification",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.3358,
+          "final_score": 0.3862
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Articulation Points and Bridges",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.3248,
+          "final_score": 0.3735
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-005",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Edge Addition in Acyclic Graphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.3241,
+          "final_score": 0.3727
+        }
+      ],
+      "generated_answer_preview": "[01_graph_basics-chunk-002] For directed graphs we distinguish two forms of connectivity. A directed graph is strongly connected if there is a path from u to v and from v to u whenever u and v are vertices in the graph. It is weakly connected if its corresponding undirected graph (obtained by ignori",
+      "scores": {
+        "answer_similarity": 0.6357,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 4,
+      "question": "What is the overall computational time complexity of the Breadth-First Search (BFS) algorithm?",
+      "ground_truth": "The total computation time of the BFS algorithm is O(|V| + |E|), which is linear relative to the size of the adjacency list that represents the graph.",
+      "retrieved": [
+        {
+          "chunk_id": "03_graph_algorithms-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "BFS Time Complexity",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.8467,
+          "final_score": 0.9737
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Floyd-Warshall Running Time",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.4426,
+          "final_score": 0.509
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Kruskal's Algorithm",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.378,
+          "final_score": 0.4348
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "DFS Edge Classification",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.3659,
+          "final_score": 0.4208
+        }
+      ],
+      "generated_answer_preview": "[03_graph_algorithms-chunk-001] Breadth-First Search visits vertices level by level from a chosen source. The total computation time of the BFS algorithm is O(|V| + |E|), which is linear relative to the size of the adjacency list that represents the graph. Every vertex is enqueued and dequeued at mo",
+      "scores": {
+        "answer_similarity": 0.5967,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 5,
+      "question": "How is an incidence matrix constructed for an undirected graph?",
+      "ground_truth": "For an undirected graph with n vertices and m edges, the incidence matrix is an n×m matrix denoted as M=[m_ij]. In this matrix, m_ij = 1 when edge e_j is incident with vertex v_i, and 0 otherwise.",
+      "retrieved": [
+        {
+          "chunk_id": "02_graph_representations-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Incidence Matrix",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.8304,
+          "final_score": 0.9549
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Adjacency List",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.501,
+          "final_score": 0.5761
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Articulation Points and Bridges",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.3803,
+          "final_score": 0.4374
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Prim's Algorithm and near[v]",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.3739,
+          "final_score": 0.43
+        }
+      ],
+      "generated_answer_preview": "[02_graph_representations-chunk-002] For an undirected graph with n vertices and m edges, the incidence matrix is an n by m matrix denoted as M = [m_ij]. In this matrix, m_ij = 1 when edge e_j is incident with vertex v_i, and 0 otherwise. The incidence matrix is especially convenient when reasoning ",
+      "scores": {
+        "answer_similarity": 0.6025,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 6,
+      "question": "In the general algorithm for finding a Minimum Spanning Tree (MST), what defines a 'safe' edge?",
+      "ground_truth": "An edge is considered a safe edge if adding it to the current set of edges T does not destroy the invariant property, meaning T remains a subset of some minimum spanning tree and still forms a tree without creating any cycles.",
+      "retrieved": [
+        {
+          "chunk_id": "04_spanning_trees-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Safe Edges in MST",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.8578,
+          "final_score": 0.9865
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Kruskal's Algorithm",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.6557,
+          "final_score": 0.7541
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Prim's Algorithm and near[v]",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.4816,
+          "final_score": 0.5538
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Weight Matrix for Weighted Graphs",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.4672,
+          "final_score": 0.5373
+        }
+      ],
+      "generated_answer_preview": "[04_spanning_trees-chunk-002] The general algorithm for finding a Minimum Spanning Tree (MST) maintains an edge set T that is always a subset of some MST and grows it by adding safe edges. An edge is considered a safe edge if adding it to the current set of edges T does not destroy the invariant pro",
+      "scores": {
+        "answer_similarity": 0.5864,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 7,
+      "question": "How does Kruskal's algorithm determine which edge to add during each iteration?",
+      "ground_truth": "Kruskal's algorithm first sorts all edges in ascending order based on their weight. At each iteration, the safe edge added to the forest is the edge with the smallest weight among the edges connecting its connected components, provided it does not contain a cycle.",
+      "retrieved": [
+        {
+          "chunk_id": "04_spanning_trees-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Kruskal's Algorithm",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.6472,
+          "final_score": 0.7443
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Safe Edges in MST",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.5841,
+          "final_score": 0.6717
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "BFS Time Complexity",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.4687,
+          "final_score": 0.539
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Prim's Algorithm and near[v]",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.4289,
+          "final_score": 0.4932
+        }
+      ],
+      "generated_answer_preview": "[04_spanning_trees-chunk-003] Kruskal's algorithm builds an MST by considering edges in non-decreasing weight order. It first sorts all edges in ascending order based on their weight. At each iteration, the safe edge added to the forest is the edge with the smallest weight among the edges connecting",
+      "scores": {
+        "answer_similarity": 0.7827,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 8,
+      "question": "What is the running time of the Floyd-Warshall algorithm?",
+      "ground_truth": "The recursive Floyd-Warshall algorithm has a running time of Θ(n^3).",
+      "retrieved": [
+        {
+          "chunk_id": "03_graph_algorithms-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Floyd-Warshall Running Time",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.7251,
+          "final_score": 0.8338
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "BFS Time Complexity",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.4571,
+          "final_score": 0.5257
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Kruskal's Algorithm",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.3748,
+          "final_score": 0.431
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Prim's Algorithm and near[v]",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.3548,
+          "final_score": 0.408
+        }
+      ],
+      "generated_answer_preview": "[03_graph_algorithms-chunk-003] The Floyd-Warshall algorithm computes all-pairs shortest paths using dynamic programming. The recursive Floyd-Warshall algorithm has a running time of Theta(n^3) where n is the number of vertices. Its cubic running time makes it suitable for dense graphs of moderate s",
+      "scores": {
+        "answer_similarity": 0.641,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 9,
+      "question": "What are the four types of edges classified during a Depth-First Search (DFS) traversal?",
+      "ground_truth": "DFS classifies edges into four categories: Tree edges (visiting a new vertex), Back edges (going from descendants to ancestors), Forward edges (going from an ancestor to a descendant), and Cross edges (connecting two non-related vertices).",
+      "retrieved": [
+        {
+          "chunk_id": "03_graph_algorithms-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "DFS Edge Classification",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.877,
+          "final_score": 1.0086
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "BFS Time Complexity",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.5137,
+          "final_score": 0.5907
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Kruskal's Algorithm",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.4042,
+          "final_score": 0.4648
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Articulation Points and Bridges",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.3776,
+          "final_score": 0.4343
+        }
+      ],
+      "generated_answer_preview": "[03_graph_algorithms-chunk-002] Depth-First Search produces a forest and, during traversal, classifies every edge into one of four types. DFS classifies edges into four categories: Tree edges (visiting a new vertex), Back edges (going from descendants to ancestors), Forward edges (going from an ance",
+      "scores": {
+        "answer_similarity": 0.5841,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 10,
+      "question": "How are non-existent edges represented in a Weight Matrix for a weighted graph?",
+      "ground_truth": "In a weight matrix, a special value θ is used to identify that (i,j) is not an edge. Depending on the application, θ could be assigned a value of 0, +∞, or -∞.",
+      "retrieved": [
+        {
+          "chunk_id": "02_graph_representations-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Weight Matrix for Weighted Graphs",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.7416,
+          "final_score": 0.8528
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Incidence Matrix",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.3975,
+          "final_score": 0.4571
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Spanning Subgraphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.378,
+          "final_score": 0.4347
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Adjacency List",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.3482,
+          "final_score": 0.4005
+        }
+      ],
+      "generated_answer_preview": "[02_graph_representations-chunk-003] For weighted graphs we often store edge weights in a weight matrix. Non-existent edges are represented in a Weight Matrix using a special value theta to identify that (i, j) is not an edge. Depending on the application, theta could be assigned a value of 0, +infi",
+      "scores": {
+        "answer_similarity": 0.6564,
+        "context_precision": 0.75,
+        "context_recall": 0.9,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 11,
+      "question": "What is the generalized product rule in combinatorial counting?",
+      "ground_truth": "The generalized product rule states that if a procedure consists of sequential tasks T1, T2, …, Tk that can be done in m1, m2, …, mk ways respectively, then there are m1 × m2 × ⋯ × mk ways to carry out the procedure.",
+      "retrieved": [
+        {
+          "chunk_id": "05_combinatorics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Generalized Product Rule",
+          "source_path": "05_combinatorics.md",
+          "raw_similarity": 0.6599,
+          "final_score": 0.7589
+        },
+        {
+          "chunk_id": "05_combinatorics-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Pigeonhole Principle",
+          "source_path": "05_combinatorics.md",
+          "raw_similarity": 0.3079,
+          "final_score": 0.3541
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Cayley's Theorem",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.2014,
+          "final_score": 0.2316
+        },
+        {
+          "chunk_id": "06_optimization-chunk-001",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Branch and Bound",
+          "source_path": "06_optimization.md",
+          "raw_similarity": 0.216,
+          "final_score": 0.216
+        }
+      ],
+      "generated_answer_preview": "[05_combinatorics-chunk-001] The generalized product rule states that if a procedure consists of sequential tasks T1, T2, ..., Tk that can be done in m1, m2, ..., mk ways respectively, then there are m1 * m2 * ... * mk ways to carry out the procedure. This rule is the foundation of most counting arg",
+      "scores": {
+        "answer_similarity": 0.4118,
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 12,
+      "question": "How is the Dirichlet (or Pigeonhole) principle formally stated?",
+      "ground_truth": "The Dirichlet principle states that if more than n objects are put into n boxes, then at least one box has at least 2 objects.",
+      "retrieved": [
+        {
+          "chunk_id": "05_combinatorics-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Pigeonhole Principle",
+          "source_path": "05_combinatorics.md",
+          "raw_similarity": 0.785,
+          "final_score": 0.9027
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Articulation Points and Bridges",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.1845,
+          "final_score": 0.2122
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Adjacency List",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.1755,
+          "final_score": 0.2019
+        },
+        {
+          "chunk_id": "05_combinatorics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Generalized Product Rule",
+          "source_path": "05_combinatorics.md",
+          "raw_similarity": 0.1733,
+          "final_score": 0.1993
+        }
+      ],
+      "generated_answer_preview": "[05_combinatorics-chunk-002] The Dirichlet principle, also known as the Pigeonhole principle, is formally stated as follows: if more than n objects are put into n boxes, then at least one box has at least 2 objects. Despite its simplicity, the Pigeonhole principle proves surprisingly strong results ",
+      "scores": {
+        "answer_similarity": 0.4318,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 13,
+      "question": "What does the Big Oh (O) notation intuitively represent for a given function g(n)?",
+      "ground_truth": "Intuitively, the Big Oh notation O(g(n)) represents the set of all functions whose rate of growth is the same as or lower than that of g(n).",
+      "retrieved": [
+        {
+          "chunk_id": "05_combinatorics-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Big Oh Notation",
+          "source_path": "05_combinatorics.md",
+          "raw_similarity": 0.87,
+          "final_score": 1.0005
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Adjacency List",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.2814,
+          "final_score": 0.3236
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "BFS Time Complexity",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.2675,
+          "final_score": 0.3076
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Incidence Matrix",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.194,
+          "final_score": 0.2231
+        }
+      ],
+      "generated_answer_preview": "[05_combinatorics-chunk-003] The Big Oh (O) notation classifies functions by their asymptotic growth rate. Intuitively, the Big Oh notation O(g(n)) represents the set of all functions whose rate of growth is the same as or lower than that of g(n). Big Oh provides an upper bound; the related notation",
+      "scores": {
+        "answer_similarity": 0.5271,
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 14,
+      "question": "What are the two core procedures involved in the Branch and Bound algorithm?",
+      "ground_truth": "The Branch and Bound algorithm consists of a Branching procedure, which partitions the set of solutions into subsets of gradually decreasing size, and a Bounding procedure, which calculates the bound for the objective function's value on each subset.",
+      "retrieved": [
+        {
+          "chunk_id": "06_optimization-chunk-001",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Branch and Bound",
+          "source_path": "06_optimization.md",
+          "raw_similarity": 0.7874,
+          "final_score": 0.7874
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Kruskal's Algorithm",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.3939,
+          "final_score": 0.453
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "DFS Edge Classification",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.3595,
+          "final_score": 0.4134
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "BFS Time Complexity",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.3337,
+          "final_score": 0.3838
+        }
+      ],
+      "generated_answer_preview": "[06_optimization-chunk-001] The Branch and Bound algorithm consists of two core procedures. The first is a Branching procedure, which partitions the set of solutions into subsets of gradually decreasing size. The second is a Bounding procedure, which calculates the bound for the objective function's",
+      "scores": {
+        "answer_similarity": 0.589,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 15,
+      "question": "How is a solution represented in the 0/1 Knapsack Problem?",
+      "ground_truth": "A subset of items (the solution) is represented by a binary vector of length n: x = (x1, x2, …, xn), where xj = 1 when item j is selected and xj = 0 when item j is not selected.",
+      "retrieved": [
+        {
+          "chunk_id": "06_optimization-chunk-002",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "0/1 Knapsack Problem",
+          "source_path": "06_optimization.md",
+          "raw_similarity": 0.7379,
+          "final_score": 0.7379
+        },
+        {
+          "chunk_id": "06_optimization-chunk-001",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Branch and Bound",
+          "source_path": "06_optimization.md",
+          "raw_similarity": 0.3501,
+          "final_score": 0.3501
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Weight Matrix for Weighted Graphs",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.3019,
+          "final_score": 0.3472
+        },
+        {
+          "chunk_id": "05_combinatorics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Generalized Product Rule",
+          "source_path": "05_combinatorics.md",
+          "raw_similarity": 0.2214,
+          "final_score": 0.2546
+        }
+      ],
+      "generated_answer_preview": "[06_optimization-chunk-002] In the 0/1 Knapsack Problem a subset of items must be chosen to maximize total value subject to a weight constraint. A subset of items (the solution) is represented by a binary vector of length n: x = (x1, x2, ..., xn), where xj = 1 when item j is selected and xj = 0 when",
+      "scores": {
+        "answer_similarity": 0.4362,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 16,
+      "question": "What defines a spanning subgraph in graph theory?",
+      "ground_truth": "A subgraph H of a graph G is called a spanning subgraph if the vertex set of H is the same as the vertex set of G (V(H) = V(G)).",
+      "retrieved": [
+        {
+          "chunk_id": "01_graph_basics-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Spanning Subgraphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.8344,
+          "final_score": 0.9596
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Adjacency List",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.4784,
+          "final_score": 0.5501
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Articulation Points and Bridges",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.4511,
+          "final_score": 0.5188
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Safe Edges in MST",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.448,
+          "final_score": 0.5152
+        }
+      ],
+      "generated_answer_preview": "[01_graph_basics-chunk-003] A subgraph H of a graph G is called a spanning subgraph if the vertex set of H is the same as the vertex set of G, that is V(H) = V(G). Spanning subgraphs preserve every vertex of the original graph and differ only in which edges are kept. Spanning trees are an important ",
+      "scores": {
+        "answer_similarity": 0.6384,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 17,
+      "question": "According to the properties of trees, what happens when an edge is added to an undirected graph that currently has no cycles?",
+      "ground_truth": "If an undirected graph has no cycles, adding any edge to it will give rise to a cycle, meaning the graph is a maximal acyclic graph.",
+      "retrieved": [
+        {
+          "chunk_id": "01_graph_basics-chunk-005",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Edge Addition in Acyclic Graphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.7058,
+          "final_score": 0.8116
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Safe Edges in MST",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.5004,
+          "final_score": 0.5754
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Kruskal's Algorithm",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.4789,
+          "final_score": 0.5508
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Articulation Points and Bridges",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.4421,
+          "final_score": 0.5084
+        }
+      ],
+      "generated_answer_preview": "[01_graph_basics-chunk-005] If an undirected graph has no cycles, adding any edge to it will give rise to a cycle, meaning the graph is a maximal acyclic graph. Equivalently, a tree on n vertices is a maximal acyclic graph and a minimal connected graph at the same time.\n\n[04_spanning_trees-chunk-002",
+      "scores": {
+        "answer_similarity": 0.5036,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 18,
+      "question": "In an Adjacency List representation of a graph, how is the list structured?",
+      "ground_truth": "An adjacency list is an array consisting of |V| lists, where each vertex has one list, and for each vertex u ∈ V, its list contains the nodes that are adjacent to u.",
+      "retrieved": [
+        {
+          "chunk_id": "02_graph_representations-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Adjacency List",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.7656,
+          "final_score": 0.8804
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Articulation Points and Bridges",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.4476,
+          "final_score": 0.5148
+        },
+        {
+          "chunk_id": "03_graph_algorithms-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "DFS Edge Classification",
+          "source_path": "03_graph_algorithms.md",
+          "raw_similarity": 0.4163,
+          "final_score": 0.4787
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Graph Isomorphism",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.406,
+          "final_score": 0.4669
+        }
+      ],
+      "generated_answer_preview": "[02_graph_representations-chunk-001] An Adjacency List representation of a graph is an array consisting of |V| lists, where each vertex has one list, and for each vertex u in V, its list contains the nodes that are adjacent to u. Adjacency lists use O(|V| + |E|) space, which is efficient for sparse ",
+      "scores": {
+        "answer_similarity": 0.5425,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 19,
+      "question": "When are two simple graphs considered isomorphic?",
+      "ground_truth": "Two simple graphs G1 and G2 are isomorphic if there is a one-to-one and onto function f from the vertices of G1 to the vertices of G2 such that vertices a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2.",
+      "retrieved": [
+        {
+          "chunk_id": "01_graph_basics-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Graph Isomorphism",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.8492,
+          "final_score": 0.9766
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Strong vs Weak Connectivity in Digraphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.4158,
+          "final_score": 0.4781
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Adjacency List",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.3881,
+          "final_score": 0.4463
+        },
+        {
+          "chunk_id": "01_graph_basics-chunk-005",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Edge Addition in Acyclic Graphs",
+          "source_path": "01_graph_basics.md",
+          "raw_similarity": 0.3729,
+          "final_score": 0.4288
+        }
+      ],
+      "generated_answer_preview": "[01_graph_basics-chunk-004] Two simple graphs G1 and G2 are isomorphic if there is a one-to-one and onto function f from the vertices of G1 to the vertices of G2 such that vertices a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2. Isomorphism captures the idea that two grap",
+      "scores": {
+        "answer_similarity": 0.6451,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 20,
+      "question": "In Prim's Algorithm for finding a Minimum Spanning Tree, what does the label near[v] indicate?",
+      "ground_truth": "For a vertex v that is not yet in the spanning tree T, the label near[v] records the vertex of T that is currently nearest to vertex v.",
+      "retrieved": [
+        {
+          "chunk_id": "04_spanning_trees-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Prim's Algorithm and near[v]",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.8407,
+          "final_score": 0.9668
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Safe Edges in MST",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.599,
+          "final_score": 0.6889
+        },
+        {
+          "chunk_id": "04_spanning_trees-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Kruskal's Algorithm",
+          "source_path": "04_spanning_trees.md",
+          "raw_similarity": 0.4309,
+          "final_score": 0.4956
+        },
+        {
+          "chunk_id": "02_graph_representations-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Incidence Matrix",
+          "source_path": "02_graph_representations.md",
+          "raw_similarity": 0.3919,
+          "final_score": 0.4506
+        }
+      ],
+      "generated_answer_preview": "[04_spanning_trees-chunk-004] Prim's algorithm grows a single tree T from a starting vertex by repeatedly adding the lightest edge connecting T to a vertex outside T. For a vertex v that is not yet in the spanning tree T, the label near[v] records the vertex of T that is currently nearest to vertex ",
+      "scores": {
+        "answer_similarity": 0.6647,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    }
+  ]
+}

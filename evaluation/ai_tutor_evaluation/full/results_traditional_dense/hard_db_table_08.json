@@ -1,0 +1,31 @@
+{
+  "qid": "hard_db_table_08",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "defining~/constructing~/manipulating~ mapping grounded (DBMS chunks)"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "correct GT mapping (this run traditional got it right, unlike hard-set)"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "student-table chunk tangential"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  }
+}

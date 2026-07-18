@@ -1,0 +1,288 @@
+{
+  "qid": "hard_dm_table_13",
+  "course_code": "IT3020E",
+  "question": "Liệt kê theo thứ tự từ điển tất cả các tập con 3 phần tử của {1,2,3,4,5}; có tất cả bao nhiêu tập con như vậy?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "c23c335a-fbae-40b4-bae9-65e1ab93ce62",
+  "answer": "# Liệt kê tập con 3 phần tử của {1, 2, 3, 4, 5} theo thứ tự từ điển\n\n## 1. Danh sách các tập con\n\nÁp dụng thuật toán liệt kê tổ hợp chập 3 của 5 theo thứ tự từ điển, ta được **10 tập con** sau:\n\n| STT | Tập con |\n|-----|---------|\n| 1   | {1, 2, 3} |\n| 2   | {1, 2, 4} |\n| 3   | {1, 2, 5} |\n| 4   | {1, 3, 4} |\n| 5   | {1, 3, 5} |\n| 6   | {1, 4, 5} |\n| 7   | {2, 3, 4} |\n| 8   | {2, 3, 5} |\n| 9   | {2, 4, 5} |\n| 10  | {3, 4, 5} |\n\n## 2. Số lượng tập con\n\nTổng số tập con 3 phần tử của tập {1, 2, 3, 4, 5} là:\n\n$$C_5^3 = \\binom{5}{3} = \\frac{5!}{3!\\,(5-3)!} = \\frac{5!}{3!\\cdot 2!} = \\frac{5 \\cdot 4}{2} = 10$$\n\nVậy **có tất cả 10 tập con 3 phần tử** thỏa mãn yêu cầu.\n\n## 3. Ý tưởng sinh theo thứ tự từ điển\n\n- Cấu hình đầu tiên: (1, 2, 3) — chọn 3 phần tử nhỏ nhất.\n- Cấu hình cuối cùng: (3, 4, 5) — chọn 3 phần tử lớn nhất.\n- Để sinh cấu hình kế tiếp từ một cấu hình $(a_1, a_2, a_3)$:\n  - Tìm vị trí $i$ lớn nhất sao cho $a_i$ chưa đạt giá trị cực đại của nó (tức là $a_i < n - k + i$, với $n = 5$, $k = 3$, nên giới hạn là $5 - 3 + i = 2 + i$).\n  - Tăng $a_i$ lên 1, rồi đặt $a_{i+1} = a_i + 1$, $a_{i+2} = a_i + 2$, …\n\n**Cây quyết định** minh họa quá trình sinh (Decision tree S(5,3)) trong tài liệu môn học khẳng định kết quả trên: mỗi nhánh tương ứng với một tập con, và ta đi qua đủ 10 lá của cây.",
+  "citations": [
+    {
+      "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PART 1",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+    },
+    {
+      "chunk_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "summary",
+      "section_title": "Course Summary",
+      "page_number": 1,
+      "chunk_order": 0,
+      "excerpt": "Thông tin lấy từ Tóm tắt khóa học (Course Summary)."
+    },
+    {
+      "chunk_id": "a6cdf695-f604-4480-b1e7-8a20d3e77594",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree S(5,3)",
+      "page_number": null,
+      "chunk_order": 76,
+      "excerpt": "- Try(1);\n\n```text\n                                  ()\n                          /-------|-------\\\n                         1        2        3\n                        /          |         \\\n        "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "liệt kê tập con k phần tử theo thứ tự từ điển, tổ hợp chập k của n",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "1e08b37c-ec49-45ae-9d25-064325e6ebe5",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4482,
+          "final_score": 0.7731,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4486,
+          "final_score": 0.5159,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "50d11fba-c0c1-4a1c-8305-d2cf75485847",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4482,
+          "final_score": 0.5154,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "5345a0b6-484d-4ad1-a500-87062a3c0b0e",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4482,
+          "final_score": 0.5154,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c4ff42b1-09bb-41fc-a2a7-b77b7e8ce8a9",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4482,
+          "final_score": 0.5154,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "a9e1ef20-4640-4464-89e3-25ec3ecdca7f",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4482,
+          "final_score": 0.5154,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.3198,
+          "final_score": 0.3678,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "821d0a90-7e19-4133-a41e-540601076d3a",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.3198,
+          "final_score": 0.3678,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        }
+      ]
+    },
+    {
+      "mode": "dense_rerank",
+      "query": "liệt kê tổ hợp chập k của n theo thứ tự từ điển, thuật toán sinh tập con k phần tử, ví dụ C(5,3)",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "1e08b37c-ec49-45ae-9d25-064325e6ebe5",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4261,
+          "final_score": 0.7351,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4263,
+          "final_score": 0.4902,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "a9e1ef20-4640-4464-89e3-25ec3ecdca7f",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4261,
+          "final_score": 0.4901,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c4ff42b1-09bb-41fc-a2a7-b77b7e8ce8a9",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4261,
+          "final_score": 0.4901,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "69c897f3-cf84-4477-808b-1496d9753d9b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4261,
+          "final_score": 0.4901,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "50d11fba-c0c1-4a1c-8305-d2cf75485847",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.426,
+          "final_score": 0.4899,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.3724,
+          "final_score": 0.4283,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "821d0a90-7e19-4133-a41e-540601076d3a",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.3724,
+          "final_score": 0.4283,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        }
+      ]
+    },
+    {
+      "mode": "dense_rerank",
+      "query": "thuật toán liệt kê tổ hợp chập k của n theo thứ tự từ điển, ví dụ {1,2,3,4,5} tập con 3 phần tử",
+      "namespaces": [
+        "knowledge",
+        "exercise"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "1e08b37c-ec49-45ae-9d25-064325e6ebe5",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4524,
+          "final_score": 0.7804,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4528,
+          "final_score": 0.5207,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "50d11fba-c0c1-4a1c-8305-d2cf75485847",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4526,
+          "final_score": 0.5204,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "5345a0b6-484d-4ad1-a500-87062a3c0b0e",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4526,
+          "final_score": 0.5204,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "69c897f3-cf84-4477-808b-1496d9753d9b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4524,
+          "final_score": 0.5203,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "a6cdf695-f604-4480-b1e7-8a20d3e77594",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Decision tree S(5,3)",
+          "chunk_order": 76,
+          "cosine_sim": 0.3801,
+          "final_score": 0.4371,
+          "content": "- Try(1);\n\n```text\n                                  ()\n                          /-------|-------\\\n                         1        2        3\n                        /          |         \\\n                      (1)         (2)       (3)\n                    /  |  \\        / \\         \\\n                   2   3   4      3   4         4\n                  /    /     \\    /     \\         \\\n              (1,2) (1,3)   (1,4) (2,3)  (2,4)   (3,4)\n               /|\\     |\\      |    / \\     |       |\n              3 4 5    4 5     5   4   5    5       5\n            /  |  \\   /  \\     |  / \\   \\    |       |\n      (1,2,3)(1,2,4)(1,2,5)(1,3,4)(1,3,5)(1,4,5)(2,3,4)(2,3,5)(2,4,5)(3,4,5)\n```\n\n[Diagram: This is a combinatorial decision tree that enumerates all 3-element subsets chosen from {1,2,3,4,5} in lexicographic order. It matters because it visualizes how each partial choice expands into valid combinations without repetition.]"
+        },
+        {
+          "chunk_id": "821d0a90-7e19-4133-a41e-540601076d3a",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.3794,
+          "final_score": 0.4363,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.3794,
+          "final_score": 0.4363,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 33.0
+}

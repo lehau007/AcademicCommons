@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-06-01T15:17:25.629499+00:00",
+  "run_id": "test_data_run_03",
+  "total_images_classified": 31,
+  "decorative_images_skipped": 3,
+  "decorative_minimal_tagged": 0,
+  "meaningful_visuals_extracted": 28,
+  "decorative_ratio": 0.097,
+  "raw_chars_total": 77878,
+  "normalized_chars_total": 72383,
+  "placeholder_count_total": 0,
+  "validator_failure_total": 0,
+  "structured_json_parse_pass_rate": 1.0,
+  "per_sample": [
+    {
+      "sample_id": "graph_presentation",
+      "total_images": 0,
+      "decorative_skipped": 0,
+      "decorative_minimal_tagged": 0,
+      "meaningful_extracted": 0,
+      "raw_chars": 4720,
+      "normalized_chars": 4228,
+      "placeholder_count": 0,
+      "validator_failures": 0
+    },
+    {
+      "sample_id": "database_scanned",
+      "total_images": 0,
+      "decorative_skipped": 0,
+      "decorative_minimal_tagged": 0,
+      "meaningful_extracted": 0,
+      "raw_chars": 8522,
+      "normalized_chars": 2522,
+      "placeholder_count": 0,
+      "validator_failures": 0
+    },
+    {
+      "sample_id": "infosec_pptx",
+      "total_images": 30,
+      "decorative_skipped": 3,
+      "decorative_minimal_tagged": 0,
+      "meaningful_extracted": 27,
+      "raw_chars": 63375,
+      "normalized_chars": 64340,
+      "placeholder_count": 0,
+      "validator_failures": 0
+    },
+    {
+      "sample_id": "test_image",
+      "total_images": 1,
+      "decorative_skipped": 0,
+      "decorative_minimal_tagged": 0,
+      "meaningful_extracted": 1,
+      "raw_chars": 1261,
+      "normalized_chars": 1293,
+      "placeholder_count": 0,
+      "validator_failures": 0
+    }
+  ],
+  "llm_api": {
+    "total_calls": 185,
+    "successful_calls": 185,
+    "failed_calls": 0,
+    "total_prompt_tokens": 87546,
+    "total_completion_tokens": 30726,
+    "total_tokens": 118272,
+    "total_cost_usd": 0.0315675,
+    "avg_latency_ms": 5188.3
+  }
+}

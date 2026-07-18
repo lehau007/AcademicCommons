@@ -1,0 +1,7 @@
+[
+  {
+    "kind": "vision_ocr",
+    "instruction": "Extract row labels, column labels, and cell values. Return structured JSON with schema: {schema_version, content_type, row_labels, column_labels, values, notes}. Preserve exact numeric values. Also perform OCR on any text.",
+    "image_path": "image.png"
+  }
+]

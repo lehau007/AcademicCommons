@@ -1,0 +1,122 @@
+{
+  "qid": "discrete_math_03",
+  "course_code": "IT3020E",
+  "question": "What is the difference between a strongly connected and a weakly connected directed graph?",
+  "session_id": "e3087548-a9ce-45d2-9029-102cbc2f436b",
+  "answer": "A **strongly connected** directed graph is one where, for **every pair of vertices** \\(u\\) and \\(v\\), there is:\n\n- a directed path from \\(u\\) to \\(v\\), and\n- a directed path from \\(v\\) to \\(u\\).\n\nA **weakly connected** directed graph is one whose **underlying undirected graph** is connected.  \nIn other words, if you **ignore the direction of all arrows**, the graph becomes connected.\n\n### Key difference\n- **Strongly connected**: connectivity must follow the **arrow directions**.\n- **Weakly connected**: connectivity only matters after **removing arrow directions**.\n\n### Relationship\n- Every strongly connected directed graph is also weakly connected.\n- But a weakly connected directed graph does **not** have to be strongly connected.\n\n### Example idea\nA graph may look connected if you ignore arrow directions, but some vertices may not be reachable from others when directions are respected. That graph is **weakly connected but not strongly connected**.",
+  "citations": [
+    {
+      "chunk_id": "3a632b03-2941-4e9d-a751-09cb5d2645a4",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Directed Graph",
+      "page_number": null,
+      "chunk_order": 51,
+      "excerpt": "[Diagram: The slide contrasts two ways of interpreting connectivity in directed graphs. Strong connectivity requires mutual reachability along arrow directions, while weak connectivity only asks wheth"
+    },
+    {
+      "chunk_id": "1a482e23-c35d-4e59-b530-b0d2a32e993d",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Directed Graph",
+      "page_number": null,
+      "chunk_order": 50,
+      "excerpt": "- A directed graph is **strongly connected** if there is a path from $u$ to $v$ and from $v$ to $u$ whenever $u$ and $v$ are vertices in the graph\n- A directed graph is **weakly connected** if its cor"
+    },
+    {
+      "chunk_id": "ef17b5b1-c530-4e6b-b285-0ce39e76367d",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Directed Graph",
+      "page_number": null,
+      "chunk_order": 52,
+      "excerpt": "- **Strongly connected Components**: subgraphs of a Graph G that are strongly connected\n- Example: G1 is the strongly connected component in G\n\n```text\nG:\n  (A) → (B)\n   ↑     ↙\n   │   ↙\n  (C) → (D)\n\n"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "difference between strongly connected and weakly connected directed graph",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "3a632b03-2941-4e9d-a751-09cb5d2645a4",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Directed Graph",
+          "chunk_order": 51,
+          "cosine_sim": 0.5478,
+          "final_score": 0.63,
+          "content": "[Diagram: The slide contrasts two ways of interpreting connectivity in directed graphs. Strong connectivity requires mutual reachability along arrow directions, while weak connectivity only asks whether the graph remains connected after ignoring arrow directions, which is why the latter is a broader notion.]"
+        },
+        {
+          "chunk_id": "1a482e23-c35d-4e59-b530-b0d2a32e993d",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Directed Graph",
+          "chunk_order": 50,
+          "cosine_sim": 0.5459,
+          "final_score": 0.6277,
+          "content": "- A directed graph is **strongly connected** if there is a path from $u$ to $v$ and from $v$ to $u$ whenever $u$ and $v$ are vertices in the graph\n- A directed graph is **weakly connected** if its corresponding undirected graph is connected.\n\nA strongly connected Graph can be weakly connected but the vice-versa is not true (why?)\n\n```text\nStrongly connected graph\n\n+---+     +---+     +---+\n| a | --> | d | --> | e | --> | f |\n+---+      ^  \\       ^        ^\n   ^       /    \\      |        |\n   |      /      \\     |        |\n+---+    /        \\    |        |\n| b | --+          \\   |        |\n+---+   \\           \\  |        |\n   |     \\           v  |        |\n   v      \\        +---+ |        |\n+---+      +-----> | c |-+--------+\n| d |                +---+\n\nWeakly connected graph\n\n+---+     +---+     +---+\n| a | --- | b | --- | c | --- | f |\n+---+   \\  +---+  \\  +---+   \\  +---+\n   \\     \\    |     \\   |      /\n    \\     \\   v      v   v     /\n     \\    +---+     +---+ +---+\n      --> | d | --- | e |-|   |\n          +---+     +---+ +---+\n```"
+        },
+        {
+          "chunk_id": "9ffc8d2a-0661-4d4a-aa7e-87ed1d023251",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Algorithm to check strongly connectedness of directed graph",
+          "chunk_order": 69,
+          "cosine_sim": 0.4987,
+          "final_score": 0.5735,
+          "content": "[Diagram: The slide contrasts a directed graph with its transpose, which reverses every edge. This is the key transformation used in strong connectivity algorithms because reachability in both directions determines whether all vertices belong to one strongly connected component.]"
+        },
+        {
+          "chunk_id": "ef17b5b1-c530-4e6b-b285-0ce39e76367d",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Directed Graph",
+          "chunk_order": 52,
+          "cosine_sim": 0.4726,
+          "final_score": 0.5435,
+          "content": "- **Strongly connected Components**: subgraphs of a Graph G that are strongly connected\n- Example: G1 is the strongly connected component in G\n\n```text\nG:\n  (A) → (B)\n   ↑     ↙\n   │   ↙\n  (C) → (D)\n\nG1:\n  (A) → (B)\n   ↑     ↙\n   │   ↙\n  (C)\n```\n\n[Diagram: The left graph shows a directed graph containing a vertex that is not part of the strongly connected region, while the right graph isolates a subset where every vertex can reach every other vertex. This matters because strongly connected components reveal the cyclic, mutually reachable structure inside directed graphs.]"
+        },
+        {
+          "chunk_id": "7589e55b-9e03-42db-9192-e5300352f02c",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Algorithm to check strongly connectedness of directed graph",
+          "chunk_order": 70,
+          "cosine_sim": 0.4638,
+          "final_score": 0.5334,
+          "content": "- Pick an arbitrary vertex $v \\in V$.\n- Perform DFS($v$) on $G$. If there exists vertex $u$ not visited yet, then $G$ is not strongly connected and the algorithm finishes. Otherwise, the algorithm continues the following step:\n  - Perform DFS($v$) on $G^T = (V, E^T)$, where $E^T$ is obtained from $E$ by reversing the direction of edges. If exist vertex $u$ not visited, then $G$ is not strongly connected, otherwise $G$ is strongly connected.\n\n**Question: If graph $G$ is represented by adjacency matrix $A$**  \n➔ How to obtain graph $G^T$ from matrix $A$ ?"
+        },
+        {
+          "chunk_id": "0c9dbb8c-b2fe-4698-a287-542ec6d56fb1",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Check strongly connectedness of directed graph",
+          "chunk_order": 66,
+          "cosine_sim": 0.4541,
+          "final_score": 0.5223,
+          "content": "**Problem:** Given directed graph $G=(V,E)$. Check if the graph $G$ is strongly connected or not?\n\n**Proposition:** A directed graph $G=(V,E)$ is strongly connected if and only if there always exists a path from a vertex $v$ to all other vertices and always exists a path from all vertices of $V\\setminus\\{v\\}$ to $v$."
+        },
+        {
+          "chunk_id": "9d3197f2-90b6-4884-938e-fa50f0da8ae4",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Algorithm to check strongly connectedness of directed graph",
+          "chunk_order": 67,
+          "cosine_sim": 0.4471,
+          "final_score": 0.5142,
+          "content": "- Pick an arbitrary vertex $v \\in V$.\n- Perform DFS($v$) on $G$. If there exists vertex $u$ not visited yet, then $G$ is not strongly connected and the algorithm finishes. Otherwise, the algorithm continues the following step:\n  - Perform DFS($v$) on $G^T = (V, E^T)$, where $E^T$ is obtained from $E$ by reversing the direction of edges. If exist vertex $u$ not visited, then $G$ is not strongly connected, otherwise $G$ is strongly connected.\n- Computation time: $O(|V|+|E|)$"
+        },
+        {
+          "chunk_id": "4da4c6aa-26be-429f-8883-6616bc4003f0",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Example: Graph orientation",
+          "chunk_order": 75,
+          "cosine_sim": 0.3982,
+          "final_score": 0.4579,
+          "content": "[Diagram: The slide illustrates how a depth-first search can be used to orient an undirected graph into a directed graph by directing tree edges from ancestor to descendant and back edges from descendant to ancestor. This orientation is then used in a second DFS step to test whether the resulting digraph is strongly connected.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.6
+}

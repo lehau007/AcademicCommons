@@ -1,0 +1,31 @@
+{
+  "qid": "hard_ai_graph_01",
+  "course_code": "IT3160E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "HYBRID: 'Problems: Local Maxima/Plateaus/Ridges' chunk retrieved -> ridge now grounded (vs dense ungrounded)"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "lists plateau/ridge; GT's exact 4 (global/shoulder/local/flat) partially named"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "diagram desc lists all 4 GT terms"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  }
+}

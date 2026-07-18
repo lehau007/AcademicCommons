@@ -1,0 +1,54 @@
+{
+  "qid": "intro_to_ai_02",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The descriptions of progression and regression planners, their directionality, and the quoted material all match the source content.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by clearly explaining that progression planners use forward search from initial state to goal, while regression planners use backward search from goal to initial state, matching the core distinction asked about.",
+      "evidence": [
+        "Progression planners use forward state-space search: they start from the initial state and apply applicable actions",
+        "Regression planners use backward state-space search: they start from the goal and work backward"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: progression planners use forward state-space search considering effects of all possible actions, and regression planners use backward search determining what must have been true in the previous state. No contradictions exist, and the additional context provided enhances understanding without altering the core facts.",
+      "evidence": [
+        "Ground truth: 'Progression planners use forward state-space search by considering the effect of all possible actions'",
+        "Tutor: 'Progression planners use forward state-space search... apply applicable actions'",
+        "Ground truth: 'Regression planners use backward state-space search, determining what must have been true in the previous state'",
+        "Tutor: 'Regression planners use backward state-space search... determine what must have been true in the previous state'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six chunks are relevant to explaining progression vs. regression planners. Only chunk 7b29c8aa (about state space completeness) is unrelated to the question.",
+      "evidence": [
+        "chunk 7b29c8aa: 'If the state space is finite and we avoid repeated states, the search is complete'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. The first chunk explicitly contains both the forward/backward search distinction and the specific characterizations of progression and regression planners.",
+      "evidence": [
+        "Progression planners - forward state-space search - consider the effect of all possible actions in a given state",
+        "Regression planners - backward state-space search - Determine what must have been true in the previous state in order to achieve the current state"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made. The cited chunks directly contain the definitions and explanations of progression and regression planners that the tutor references.",
+      "evidence": [
+        "Tutor states progression planners 'consider the effect of all possible actions in a given state' — chunk 6f25b02f contains exactly: 'consider the effect of all possible actions in a given state'",
+        "Tutor states regression planners 'determine what must have been true in the previous state' — chunk 6f25b02f contains: 'Determine what must have been true in the previous state in order to achieve the current state'",
+        "Tutor's description of backward search forming subgoals aligns with chunk 040cefcf: 'regressing a goal through an action to form a subgoal that must hold before the action can be applied'"
+      ]
+    }
+  }
+}

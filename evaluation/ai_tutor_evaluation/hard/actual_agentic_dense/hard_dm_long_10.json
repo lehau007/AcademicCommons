@@ -1,0 +1,266 @@
+{
+  "qid": "hard_dm_long_10",
+  "course_code": "IT3020E",
+  "question": "Trình bày đầy đủ cách liệt kê tất cả tập con m phần tử của X = {1,...,n} theo thứ tự từ điển: (a) mỗi tập con được biểu diễn bằng bộ nào và thỏa điều kiện gì; (b) định nghĩa quan hệ 'đứng trước' theo thứ tự từ điển; (c) cho ví dụ với m=3, X={1,2,3,4,5}.",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "ae0ad464-334e-4cab-9320-59ba7ffef366",
+  "answer": "# Liệt kê tất cả tập con m phần tử của X = {1, 2, …, n} theo thứ tự từ điển\n\n## (a) Biểu diễn tập con và điều kiện\n\nMỗi tập con **m phần tử** của $X = \\{1, 2, \\ldots, n\\}$ được biểu diễn bằng một bộ (tuple) gồm m phần tử:\n\n$$a = (a_1, a_2, \\ldots, a_m)$$\n\nthỏa mãn điều kiện **thứ tự nghiêm ngặt**:\n\n$$1 \\le a_1 < a_2 < \\cdots < a_m \\le n$$\n\nNhờ điều kiện này, mỗi tập con tương ứng **duy nhất** với một bộ m phần tử (không trùng lặp và có thứ tự tăng dần). Tập hợp tất cả các bộ như vậy ký hiệu là:\n\n$$S(m, n) = \\{(a_1, \\ldots, a_m) \\in N^m : 1 \\le a_1 < \\cdots < a_m \\le n\\}$$\n\nBài toán liệt kê tập con vì thế quy về bài toán liệt kê tất cả các phần tử của tập $S(m, n)$.\n\n---\n\n## (b) Quan hệ \"đứng trước\" theo thứ tự từ điển\n\nCho hai bộ $a = (a_1, a_2, \\ldots, a_m)$ và $b = (b_1, b_2, \\ldots, b_m)$ trong $S(m, n)$.\n\nTa nói **a đứng trước b** (ký hiệu $a \\prec b$) trong thứ tự từ điển nếu tồn tại chỉ số $k$ ($1 \\le k \\le m$) sao cho:\n\n- $a_1 = b_1,\\; a_2 = b_2,\\; \\ldots,\\; a_{k-1} = b_{k-1}$, và\n- $a_k < b_k$.\n\n**Quy tắc sinh tập con kế tiếp** (từ một bộ $a = (a_1, \\ldots, a_m)$ đã có, tìm bộ đứng ngay sau nó):\n\n1. **Quét từ phải sang trái** dãy $a_1, a_2, \\ldots, a_m$, tìm chỉ số $i$ **đầu tiên** (tính từ phải) sao cho:\n\n$$a_i \\ne n - m + i$$\n\n(Nghĩa là $a_i$ chưa đạt giá trị cực đại cho phép ở vị trí đó.)\n\n2. **Tăng** $a_i$ lên 1: thay $a_i$ bằng $a_i + 1$.\n\n3. Với mỗi $j = i+1, i+2, \\ldots, m$, đặt lại:\n\n$$a_j = a_i + (j - i)$$\n\n(các phần tử sau $a_i$ được đặt về giá trị nhỏ nhất có thể để vẫn giữ tính tăng dần).\n\n4. Nếu quét hết mà mọi $a_i = n - m + i$ thì đã đến tập con cuối cùng.\n\n---\n\n## (c) Ví dụ: m = 3, X = {1, 2, 3, 4, 5}\n\nTổng số tập con 3 phần tử là $\\binom{5}{3} = 10$. Liệt kê theo thứ tự từ điển:\n\n| STT | Bộ biểu diễn | Tập con |\n|:---:|:---:|:---:|\n| 1  | (1, 2, 3) | {1, 2, 3} |\n| 2  | (1, 2, 4) | {1, 2, 4} |\n| 3  | (1, 2, 5) | {1, 2, 5} |\n| 4  | (1, 3, 4) | {1, 3, 4} |\n| 5  | (1, 3, 5) | {1, 3, 5} |\n| 6  | (1, 4, 5) | {1, 4, 5} |\n| 7  | (2, 3, 4) | {2, 3, 4} |\n| 8  | (2, 3, 5) | {2, 3, 5} |\n| 9  | (2, 4, 5) | {2, 4, 5} |\n| 10 | (3, 4, 5) | {3, 4, 5} |\n\n**Minh họa quy tắc sinh bộ kế tiếp:** Từ tập con $(1, 2, 5)$:\n\n- Giá trị cực đại ở các vị trí: $n - m + i = (3, 4, 5)$ tương ứng với $i = 1, 2, 3$.\n- So sánh $(1, 2, 5)$ với $(3, 4, 5)$: vị trí đầu tiên (từ phải) khác là $i = 2$, vì $a_2 = 2 \\ne 4$.\n- Tăng: $a_2 = 2 + 1 = 3$.\n- Đặt lại: $a_3 = a_2 + (3 - 2) = 4$.\n- Kết quả: $(1, 3, 4)$ — chính là tập con đứng ngay sau $(1, 2, 5)$.",
+  "citations": [
+    {
+      "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PART 1",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+    },
+    {
+      "chunk_id": "4e6282ea-086a-4d18-adff-ac1b90f7812c",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate $m$-element subsets of set with $n$ elements",
+      "page_number": null,
+      "chunk_order": 44,
+      "excerpt": "Problem: Let $X = \\{1, 2, \\ldots, n\\}$. Enumerate all $m$-element subsets of $X$.\n\nSolution:\n\n- Lexicographic order:\n\nEach $m$-element subset of $X$ could be represented by tuples of $m$ elements\n\n$$\n"
+    },
+    {
+      "chunk_id": "361d5564-98d2-4dde-87c6-4b5ddc2566d1",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate permutations of n elements",
+      "page_number": null,
+      "chunk_order": 53,
+      "excerpt": "- Example: All permutation of 3 elements of $X = \\{1, 2, 3\\}$ could by enumerated in dictionary order as following:\n\n```text\n1  2  3\n1  3  2\n2  1  3\n2  3  1\n3  1  2\n3  2  1\n```\n\n[Diagram: The list sho"
+    },
+    {
+      "chunk_id": "e4bbd1b6-5d7a-49e1-ae04-0120133f63c1",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate permutations of $n$ elements",
+      "page_number": null,
+      "chunk_order": 51,
+      "excerpt": "**Problem:** Give $X = \\{1, 2, ..., n\\}$, enumerate all permutations of $n$ elements of $X$.\n\nSolution:\n\n- Dictionary order:\n  - Each permutation of $n$ elements of $X$ could be represented by an orde"
+    },
+    {
+      "chunk_id": "fa107769-aecf-4904-bc42-7fc1c796a6d7",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate binary strings of length $n$",
+      "page_number": null,
+      "chunk_order": 38,
+      "excerpt": "**Problem:** Enumerate all binary strings of length $n$:\n\n$ b_1\\ b_2\\ \\ldots\\ b_n $, where $b_i \\in \\{0, 1\\}$.\n\n**Solution:**\n\n- Dictionary order:\n\nConsider each binary string $b = b_1\\ b_2\\ \\ldots\\ b"
+    },
+    {
+      "chunk_id": "18ca8444-29c9-4ea9-9e46-cd6dcb6a8c45",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate *m*-element subsets of set with *n* elements",
+      "page_number": null,
+      "chunk_order": 48,
+      "excerpt": "**Example:** $n = 6, m = 4$\n\nAssume the current subset $(1, 2, 5, 6)$, we need to build its next subset in the dictionary order:\n\n- Scan from the right to the left of sequence $a_1, a_2, ..., a_m$ : f"
+    },
+    {
+      "chunk_id": "2e91d694-4dcf-4bf8-8846-e1d665bc5843",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate $m$-element subsets of set with $n$ elements",
+      "page_number": null,
+      "chunk_order": 46,
+      "excerpt": "Example: Enumerate all 3-element subset of $X = \\{1, 2, 3, 4, 5\\}$ in dictionary order\n\n| 1 | 2 | 3 |\n|---|---|---|\n| 1 | 2 | 4 |\n| 1 | 2 | 5 |\n| 1 | 3 | 4 |\n| 1 | 3 | 5 |\n| 1 | 4 | 5 |\n| 2 | 3 | 4 |\n"
+    },
+    {
+      "chunk_id": "424ef5f6-53d3-4ee7-8537-7d2993907387",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate binary strings of length $n$",
+      "page_number": null,
+      "chunk_order": 39,
+      "excerpt": "**Example:** When $n=3$, all binary strings of length 3 are enumerated in the dictionary order in the table as following:\n\n| b   | p(b) |\n|-----|------|\n| 000 | 0    |\n| 001 | 1    |\n| 010 | 2    |\n| "
+    },
+    {
+      "chunk_id": "668ce4b9-cf66-4110-8e6a-8397e1eca0be",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example 2. Generate $m$-element subsets of the set of $n$ elements",
+      "page_number": null,
+      "chunk_order": 72,
+      "excerpt": "**Problem:** Enumerate all $m$-element subsets of the set $n$ elements $N = \\{1,2,\\ldots,n\\}$.\n\n**Example:** Enumerate all 3-element subsets of the set 5 elements $N = \\{1,2,3,4,5\\}$\n\n**Solution:** $("
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "liệt kê tập con m phần tử theo thứ tự từ điển, biểu diễn bộ, quan hệ đứng trước",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3942,
+          "final_score": 0.4533,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "50d11fba-c0c1-4a1c-8305-d2cf75485847",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3941,
+          "final_score": 0.4532,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "5345a0b6-484d-4ad1-a500-87062a3c0b0e",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3941,
+          "final_score": 0.4532,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "111423cd-dbcb-4e67-b39e-28f582bbcdb2",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS(s)",
+          "chunk_order": 36,
+          "cosine_sim": 0.3105,
+          "final_score": 0.3571,
+          "content": "```text\n            source\n            vertex\n               -->\n        +-------------------+         +-------------------+         +-------------------+\n        |        a          |-------->|        e          |<--------|        g          |\n        |      1   |        |         |      8   |  11    |         |        |          |\n        +-------------------+         +-------------------+         +-------------------+\n          | \\                         |         | \\                     |         |\n          |  \\                        |         |  \\                    |         |\n          v   \\                       v         v   \\                   v         v\n        +-------------------+      +-------------------+         +-------------------+      +-------------------+\n        |        b          |----->|        c          |<--------|        d          |<-----|        h          |\n        |      2   |   7    |      |      3   |   4    |         |      5   |   6    |     |        |          |\n        +-------------------+      +-------------------+         +-------------------+      +-------------------+\n                 \\                     ^           \\                      ^\n                  \\                    |            \\                     |\n                   v                   /             v                    |\n              +-------------------+   /        +-------------------+      |\n              |        d          |<- / ------>|        f          |------+\n              |      5   |   6    |            |      9   |  10    |\n              +-------------------+            +-------------------+\n```"
+        },
+        {
+          "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.3003,
+          "final_score": 0.3453,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "821d0a90-7e19-4133-a41e-540601076d3a",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.3003,
+          "final_score": 0.3453,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "0abbf68e-01f1-4f39-8ff6-fe18d26a601a",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "16 spanning trees of $K_4$",
+          "chunk_order": 15,
+          "cosine_sim": 0.2997,
+          "final_score": 0.3446,
+          "content": "```text\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n  | \\\n  |  \\\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n  |       |\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n  |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n  \\       |\n   \\      |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n  \\     /\n   \\   /\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n        / |\n       /  |\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n      /   |\n     /    |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n      |   |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  | \\   /\n  |  \\ /\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  |     /|\n  |    / |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  |   /   \\\n  |  /     \\\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  |       |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  \\     /|\n   \\   / |\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n   \\   / \n    \\ /\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  \\       |\n   \\      |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  |       |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n```"
+        },
+        {
+          "chunk_id": "109ea6d4-8eba-4382-bda8-8ecd8e10aca6",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm: an example",
+          "chunk_order": 35,
+          "cosine_sim": 0.2973,
+          "final_score": 0.3418,
+          "content": "```text\n+-----+        7        +-----+        5        +-----+\n|  a  |-----------------|  d  |-----------------|  g  |\n+--+--+                 +--+--+                 +-----+\n   | 2                    | 4\n   |                      /\n   | 2                   / 1\n+--+--+      3        +--+--+        1\n|  b  |---------------|  e  |---------------+\n+--+--+               +--+--+               |\n   | \\                 /   \\                |\n   |  \\               / 4   \\ 7             |\n   |   \\ 1           /       \\              |\n   |    \\           /         \\             |\n+--+--+  +-----+  +-----+      \\            |\n|  c  |--|  f  |--|     |       \\           |\n+--+--+  +-----+  +-----+        \\          |\n   ^        | 4     | 5           \\         |\n   |        |       |              \\        |\n   +--------+-------+---------------+-------+\n```"
+        }
+      ]
+    },
+    {
+      "mode": "dense_rerank",
+      "query": "enumeration problem liệt kê tập con theo thứ tự từ điển lexicographic order bộ n phần tử",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "4e6282ea-086a-4d18-adff-ac1b90f7812c",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate $m$-element subsets of set with $n$ elements",
+          "chunk_order": 44,
+          "cosine_sim": 0.4542,
+          "final_score": 0.5223,
+          "content": "Problem: Let $X = \\{1, 2, \\ldots, n\\}$. Enumerate all $m$-element subsets of $X$.\n\nSolution:\n\n- Lexicographic order:\n\nEach $m$-element subset of $X$ could be represented by tuples of $m$ elements\n\n$$\na = (a_1, a_2, \\ldots, a_m)\n$$\n\nsatisfying\n\n$$\n1 \\le a_1 < a_2 < \\cdots < a_m \\le n.\n$$"
+        },
+        {
+          "chunk_id": "361d5564-98d2-4dde-87c6-4b5ddc2566d1",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate permutations of n elements",
+          "chunk_order": 53,
+          "cosine_sim": 0.4001,
+          "final_score": 0.4601,
+          "content": "- Example: All permutation of 3 elements of $X = \\{1, 2, 3\\}$ could by enumerated in dictionary order as following:\n\n```text\n1  2  3\n1  3  2\n2  1  3\n2  3  1\n3  1  2\n3  2  1\n```\n\n[Diagram: The list shows all possible orderings of a 3-element set arranged in lexicographic (dictionary) order. This illustrates how permutations can be systematically enumerated rather than generated randomly.]"
+        },
+        {
+          "chunk_id": "e4bbd1b6-5d7a-49e1-ae04-0120133f63c1",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate permutations of $n$ elements",
+          "chunk_order": 51,
+          "cosine_sim": 0.3983,
+          "final_score": 0.4581,
+          "content": "**Problem:** Give $X = \\{1, 2, ..., n\\}$, enumerate all permutations of $n$ elements of $X$.\n\nSolution:\n\n- Dictionary order:\n  - Each permutation of $n$ elements of $X$ could be represented by an ordered set of $n$ elements:\n\n$a = (a_1, a_2, \\ldots, a_n)$\n\nsatisfy\n\n$a_i \\in X,\\ i = 1, 2, ..., n,\\ a_p \\neq a_q,\\ p \\neq q.$"
+        },
+        {
+          "chunk_id": "fa107769-aecf-4904-bc42-7fc1c796a6d7",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate binary strings of length $n$",
+          "chunk_order": 38,
+          "cosine_sim": 0.3952,
+          "final_score": 0.4544,
+          "content": "**Problem:** Enumerate all binary strings of length $n$:\n\n$ b_1\\ b_2\\ \\ldots\\ b_n $, where $b_i \\in \\{0, 1\\}$.\n\n**Solution:**\n\n- Dictionary order:\n\nConsider each binary string $b = b_1\\ b_2\\ \\ldots\\ b_n$ as the binary representation of an integer number $p(b)$.\n\nWe say binary string $b = b_1\\ b_2\\ \\ldots\\ b_n$ is *previous* binary string $b' = b'_1\\ b'_2\\ \\ldots\\ b'_n$ in dictionary order and denote as $b \\prec b'$ if $p(b) < p(b')$."
+        },
+        {
+          "chunk_id": "18ca8444-29c9-4ea9-9e46-cd6dcb6a8c45",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate *m*-element subsets of set with *n* elements",
+          "chunk_order": 48,
+          "cosine_sim": 0.3921,
+          "final_score": 0.4509,
+          "content": "**Example:** $n = 6, m = 4$\n\nAssume the current subset $(1, 2, 5, 6)$, we need to build its next subset in the dictionary order:\n\n- Scan from the right to the left of sequence $a_1, a_2, ..., a_m$ : find the first element $a_i \\ne n-m+i$\n- Replace $a_i$ by $a_i + 1$\n- Replace $a_j$ by $a_i + j - i$, where $j = i+1, i+2, ..., m$\n\n- We have $i=2$:\n\n| Sequence | Value $n-m+i$ |\n|---|---|\n| $(1, 2, 5, 6)$ | $(3, 4, 5, 6)$ |\n\nreplace $a_2 = a_2+1 = 3$\n\n$a_3 = a_i + j - i = a_2 + 3 - 2 = 4$\n\n$a_4 = a_i + j - i = a_2 + 4 - 2 = 5$\n\nWe then obtain its next subset $(1, 3, 4, 5)$.\n\n[Diagram: The slide shows the step-by-step rule for generating the next combination in lexicographic order. It matters because this provides a systematic way to enumerate all $m$-element subsets without repetition.]"
+        },
+        {
+          "chunk_id": "2e91d694-4dcf-4bf8-8846-e1d665bc5843",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate $m$-element subsets of set with $n$ elements",
+          "chunk_order": 46,
+          "cosine_sim": 0.391,
+          "final_score": 0.4497,
+          "content": "Example: Enumerate all 3-element subset of $X = \\{1, 2, 3, 4, 5\\}$ in dictionary order\n\n| 1 | 2 | 3 |\n|---|---|---|\n| 1 | 2 | 4 |\n| 1 | 2 | 5 |\n| 1 | 3 | 4 |\n| 1 | 3 | 5 |\n| 1 | 4 | 5 |\n| 2 | 3 | 4 |\n| 2 | 3 | 5 |\n| 2 | 4 | 5 |\n| 3 | 4 | 5 |\n\n[Diagram: This is a lexicographic listing of all 3-element subsets chosen from a 5-element set. It shows the ordered progression of combinations as the smallest possible element changes first, which is important for systematically generating combinations without repetition.]"
+        },
+        {
+          "chunk_id": "424ef5f6-53d3-4ee7-8537-7d2993907387",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate binary strings of length $n$",
+          "chunk_order": 39,
+          "cosine_sim": 0.387,
+          "final_score": 0.4451,
+          "content": "**Example:** When $n=3$, all binary strings of length 3 are enumerated in the dictionary order in the table as following:\n\n| b   | p(b) |\n|-----|------|\n| 000 | 0    |\n| 001 | 1    |\n| 010 | 2    |\n| 011 | 3    |\n| 100 | 4    |\n| 101 | 5    |\n| 110 | 6    |\n| 111 | 7    |"
+        },
+        {
+          "chunk_id": "668ce4b9-cf66-4110-8e6a-8397e1eca0be",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Example 2. Generate $m$-element subsets of the set of $n$ elements",
+          "chunk_order": 72,
+          "cosine_sim": 0.3715,
+          "final_score": 0.4272,
+          "content": "**Problem:** Enumerate all $m$-element subsets of the set $n$ elements $N = \\{1,2,\\ldots,n\\}$.\n\n**Example:** Enumerate all 3-element subsets of the set 5 elements $N = \\{1,2,3,4,5\\}$\n\n**Solution:** $(1,2,3), (1,2,4), (1,2,5), (1,3,4), (1,3,5), (1,4,5), (2,3,4), (2,3,5), (2,4,5), (3,4,5)$\n\n➔ Equivalent problem: Enumerate all elements of set:\n\n$$S(m,n)=\\{(a_1,\\ldots,a_m)\\in N^m:\\ 1\\le a_1<\\ldots<a_m\\le n\\}$$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 29.6
+}

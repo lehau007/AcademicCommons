@@ -1,0 +1,31 @@
+{
+  "qid": "hard_ai_graph_01",
+  "course_code": "IT3160E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "terrain chunk c247d5c4 grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "HYBRID RESCUES: names all 4 GT terrains (vs traditional_dense corr 3); BM25 fetched terrain content"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "minimax alpha-beta noise present"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "terrain diagram retrieved (unlike dense)"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.env
+.env.*
+.git
+.venv
+node_modules
+data/*
+!data/seed/
+!data/seed/**

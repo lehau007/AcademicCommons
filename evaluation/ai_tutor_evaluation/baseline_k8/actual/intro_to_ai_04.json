@@ -1,0 +1,152 @@
+{
+  "qid": "intro_to_ai_04",
+  "course_code": "IT3160E",
+  "question": "How does a model-based reflex agent differ from a simple reflex agent?",
+  "session_id": "24097a94-535b-4a14-9fc6-3cc83e7be9b5",
+  "answer": "A **simple reflex agent** chooses actions based only on the **current percept** and ignores percept history. It uses condition–action rules like “if dirty, then suck.”\n\nA **model-based reflex agent** is more sophisticated: it maintains an **internal state** that depends on the **percept history**, so it can represent some **unobserved aspects of the current world state**. This helps it act better in partially observable environments.\n\n### Main difference\n- **Simple reflex agent:** reacts only to what it currently senses.\n- **Model-based reflex agent:** uses current percept **plus memory/internal state** about the world.\n\nSo, the model-based reflex agent can make better decisions when the current percept alone is not enough.",
+  "citations": [
+    {
+      "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Agent types",
+      "page_number": null,
+      "chunk_order": 15,
+      "excerpt": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+    },
+    {
+      "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Simple reflex agent",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+    },
+    {
+      "chunk_id": "75437ac4-f4c2-40fc-b423-73af5390e468",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Vacuum-cleaner world",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "**Function Reflex-Vacuum-Agent([position, state]) returns action**\nIf state = Dirty then return Suck\nElse if position = A then return Right\nElse if position = B then return Left\nEnd Function\n\n- Does t"
+    },
+    {
+      "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Model-based reflex agents",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+    },
+    {
+      "chunk_id": "524b2f4b-08ad-426c-893b-278b35469f7b",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Knowledge-based agents",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "**Function** KB-AGENT(percept) **returns** an action\n\n- static: KB, a knowledge base\n\nt, a counter, initially 0, indicating time\n\n- TELL(KB, MAKE-PERCEPT-SENTENCE(percept,t)\n    - action ← ASK(KB, MAK"
+    },
+    {
+      "chunk_id": "fcbd419e-67d2-41a5-ad08-017147bd1fcd",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Multi-agent planning",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- Environment: **cooperative** or **competitive**\n- Issue: the environment is not **static** → **synchronization**\n- Require a model of the other agent's plans\n- **Cooperation**: joint goals and plans"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "model-based reflex agent simple reflex agent difference intelligent agents",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agent types",
+          "chunk_order": 15,
+          "cosine_sim": 0.5099,
+          "final_score": 0.5864,
+          "content": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+        },
+        {
+          "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Simple reflex agent",
+          "chunk_order": 16,
+          "cosine_sim": 0.4201,
+          "final_score": 0.4831,
+          "content": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+        },
+        {
+          "chunk_id": "75437ac4-f4c2-40fc-b423-73af5390e468",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Vacuum-cleaner world",
+          "chunk_order": 6,
+          "cosine_sim": 0.4084,
+          "final_score": 0.4697,
+          "content": "**Function Reflex-Vacuum-Agent([position, state]) returns action**\nIf state = Dirty then return Suck\nElse if position = A then return Right\nElse if position = B then return Left\nEnd Function\n\n- Does the agent act reasonably?"
+        },
+        {
+          "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Model-based reflex agents",
+          "chunk_order": 17,
+          "cosine_sim": 0.3872,
+          "final_score": 0.4452,
+          "content": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+        },
+        {
+          "chunk_id": "524b2f4b-08ad-426c-893b-278b35469f7b",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Knowledge-based agents",
+          "chunk_order": 22,
+          "cosine_sim": 0.3557,
+          "final_score": 0.409,
+          "content": "**Function** KB-AGENT(percept) **returns** an action\n\n- static: KB, a knowledge base\n\nt, a counter, initially 0, indicating time\n\n- TELL(KB, MAKE-PERCEPT-SENTENCE(percept,t)\n    - action ← ASK(KB, MAKE-ACTION- QUERY(^))\n    - TELL(KB, MAKE-ACTION-SENTENCE(action,t) )\n    - t ← t+1\n    - return action"
+        },
+        {
+          "chunk_id": "510f0071-bb3f-4556-a2bd-e64ce8eedd02",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem-solving agents",
+          "chunk_order": 3,
+          "cosine_sim": 0.3527,
+          "final_score": 0.4057,
+          "content": "```text\nfunction SIMPLE-PROBLEM-SOLVING-AGENT(percept) returns an action\n    static: seq, an action sequence, initially empty\n            state, some description of the current world state\n            goal, a goal, initially null\n            problem, a problem formulation\n\n    state ← UPDATE-STATE(state, percept)\n    if seq is empty then do\n        goal ← FORMULATE-GOAL(state)\n        problem ← FORMULATE-PROBLEM(state, goal)\n        seq ← SEARCH(problem)\n    action ← FIRST(seq)\n    seq ← REST(seq)\n    return action\n```\n\n[Diagram: This pseudocode shows a simple agent loop that maintains internal state, formulates a goal and problem when it has no planned actions, and then uses search to produce an action sequence. It matters because it illustrates how an agent can act deliberately rather than reacting only to the current percept.]"
+        },
+        {
+          "chunk_id": "fcbd419e-67d2-41a5-ad08-017147bd1fcd",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Multi-agent planning",
+          "chunk_order": 23,
+          "cosine_sim": 0.3473,
+          "final_score": 0.3994,
+          "content": "- Environment: **cooperative** or **competitive**\n- Issue: the environment is not **static** → **synchronization**\n- Require a model of the other agent's plans\n- **Cooperation**: joint goals and plans, e.g., team planning in doubles tennis.\n  - Joint goal: returning the ball that has been hit to them and ensuring that at least one of them is covering the net\n  - Joint plan: multibody planning\n  - Coordination mechanisms: decompose and distribute tasks\n- **Competition**: e.g., chess-playing\n  - An agent in a competitive environment must\n    - recognize that there are other agents\n    - compute some of the other agent's possible plans\n    - compute how the other agent's plans interact with its own plans\n    - decide on the best action in view of these interactions."
+        },
+        {
+          "chunk_id": "3576bbb5-4962-4f5e-be53-8c02579e43b0",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Knowledge-based Agents",
+          "chunk_order": 2,
+          "cosine_sim": 0.3339,
+          "final_score": 0.3839,
+          "content": "- Know about the world\n  - They maintain a collection of facts (sentences) about the world, their Knowledge Base, expressed in some formal language.\n- Reason about the world\n  - They are able to derive new facts from those in the KB using some inference mechanism.\n- Act upon the world\n  - They map percepts to actions by querying and updating the KB."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.5
+}

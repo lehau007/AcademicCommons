@@ -1,0 +1,52 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "The core definition of isomorphism (bijection preserving adjacency) is fully supported by the retrieved chunks. The necessary conditions listed (same number of vertices, edges, degree distribution) are also grounded in chunk 8107ab14. However, the phrase 'quan trọng nhất' (most important) adds an evaluative claim not explicitly stated in the chunks.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses when two simple graphs are isomorphic, defining the bijection and the adjacency-preservation condition. The additional necessary conditions (same number of vertices, edges, degree distribution) are relevant elaborations, not off-topic material.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly defines graph isomorphism as a bijection (song ánh = one-to-one and onto) that preserves adjacency, fully matching the ground truth. The additional necessary conditions (same number of vertices, edges, degree distribution) are correct supplementary information.",
+      "evidence": [
+        "Ground truth: 'one-to-one and onto function f' ≡ Tutor: 'song ánh f'",
+        "Ground truth: 'a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2' ≡ Tutor: '(u,v) ∈ E(G) ⟺ (f(u), f(v)) ∈ E(H)'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Roughly half the chunks are relevant. The first two chunks directly address isomorphism with examples and properties. The remaining four chunks define simple/multigraphs and directed graphs but do not help answer what makes two graphs isomorphic.",
+      "evidence": [
+        "chunk 3d626aaf: 'Example: Simple graph G_1 = (V_1, E_1)' — just defines a simple graph, not isomorphism",
+        "chunk d9033feb: 'compares a multigraph and a simple graph' — irrelevant to isomorphism",
+        "chunk 5b6e92b8: 'Directed simple (multi) graph' — about directed graphs, not isomorphism",
+        "chunk ea17385f: 'Undirected simple (multi) graph' — basic definition, not isomorphism"
+      ]
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "The retrieved chunks contain examples of isomorphism and mention 'one-to-one correspondence' and necessary conditions (same vertices, edges, degrees), but none explicitly state the formal definition that adjacency must be preserved if and only if the images are adjacent.",
+      "evidence": [
+        "vertices a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "The tutor's definition of graph isomorphism is correct and the citations support the core concept. Chunks 4c4fe286 and 8107ab14 directly illustrate isomorphism with examples and necessary conditions. However, chunks 3d626aaf, d9033feb, 5b6e92b8, and ea17385f only define simple graphs or multigraphs without addressing isomorphism, making them loosely related rather than directly supportive.",
+      "evidence": [
+        "Tutor: 'song ánh f: V(G) → V(H) sao cho (u,v) ∈ E(G) ⟺ (f(u), f(v)) ∈ E(H)'",
+        "Chunk 8107ab14: 'f(u_1)=v_1, f(u_2)=v_4... one-to-one correspondence'",
+        "Chunk 4c4fe286: shows graphs G and H with relabeling preserving adjacency",
+        "Chunk 3d626aaf: 'Simple graph G_1 = (V_1, E_1)' — defines simple graphs, not isomorphism"
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "qid": "intro_to_ai_04",
+  "course_code": "IT3160E",
+  "question": "How does a model-based reflex agent differ from a simple reflex agent?",
+  "session_id": "e52183c4-4b9b-4964-a055-b4d636e3c2e0",
+  "answer": "A **simple reflex agent** chọn hành động chỉ dựa trên **percept hiện tại** (nhận thức hiện tại), và **bỏ qua toàn bộ lịch sử percept**.\n\nMột **model-based reflex agent** khác ở chỗ nó **duy trì một mô hình nội bộ về thế giới**. Nhờ mô hình này, nó có thể:\n- ghi nhớ trạng thái trước đó,\n- suy ra trạng thái hiện tại của môi trường,\n- và chọn hành động phù hợp hơn khi chỉ nhìn vào percept hiện tại là chưa đủ.\n\n### Tóm lại\n- **Simple reflex agent**: phản ứng trực tiếp theo *cái đang thấy ngay bây giờ*.\n- **Model-based reflex agent**: phản ứng dựa trên *cái đang thấy bây giờ + trạng thái/mô hình bên trong về thế giới*.\n\nĐiều này giúp model-based reflex agent xử lý tốt hơn các môi trường mà thông tin quan sát hiện tại chưa đầy đủ.",
+  "citations": [
+    {
+      "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Agent types",
+      "page_number": null,
+      "chunk_order": 15,
+      "excerpt": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+    },
+    {
+      "chunk_id": "17b10140-d5bc-42c2-b508-6673c005a7c6",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Environment types",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- **Static** (vs. dynamic): The environment is unchanged while an agent is deliberating.\n- **Discrete** (vs. continuous): A limited number of distinct, clearly defined percepts and actions.\n- **Single"
+    },
+    {
+      "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Simple reflex agent",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "difference between model-based reflex agent and simple reflex agent",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agent types",
+          "chunk_order": 15,
+          "cosine_sim": 0.6907,
+          "final_score": 0.7942,
+          "content": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+        },
+        {
+          "chunk_id": "17b10140-d5bc-42c2-b508-6673c005a7c6",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Environment types",
+          "chunk_order": 14,
+          "cosine_sim": 0.4444,
+          "final_score": 0.511,
+          "content": "- **Static** (vs. dynamic): The environment is unchanged while an agent is deliberating.\n- **Discrete** (vs. continuous): A limited number of distinct, clearly defined percepts and actions.\n- **Single agent** (vs. multiagent): An agent operating by itself in an environment."
+        },
+        {
+          "chunk_id": "487f414b-66e1-4240-9d55-ff717bb5a3f6",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Points of view",
+          "chunk_order": 4,
+          "cosine_sim": 0.4403,
+          "final_score": 0.5063,
+          "content": "- From the point of view of agents\n  - RL is a process of trial-and-error learning\n  - How much reward will I get if I do this action?\n- From the point of view of trainers\n  - RL is training by rewards and punishments\n  - Train computers like we train animals"
+        },
+        {
+          "chunk_id": "510f0071-bb3f-4556-a2bd-e64ce8eedd02",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem-solving agents",
+          "chunk_order": 3,
+          "cosine_sim": 0.4056,
+          "final_score": 0.4664,
+          "content": "```text\nfunction SIMPLE-PROBLEM-SOLVING-AGENT(percept) returns an action\n    static: seq, an action sequence, initially empty\n            state, some description of the current world state\n            goal, a goal, initially null\n            problem, a problem formulation\n\n    state ← UPDATE-STATE(state, percept)\n    if seq is empty then do\n        goal ← FORMULATE-GOAL(state)\n        problem ← FORMULATE-PROBLEM(state, goal)\n        seq ← SEARCH(problem)\n    action ← FIRST(seq)\n    seq ← REST(seq)\n    return action\n```\n\n[Diagram: This pseudocode shows a simple agent loop that maintains internal state, formulates a goal and problem when it has no planned actions, and then uses search to produce an action sequence. It matters because it illustrates how an agent can act deliberately rather than reacting only to the current percept.]"
+        },
+        {
+          "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Simple reflex agent",
+          "chunk_order": 16,
+          "cosine_sim": 0.3571,
+          "final_score": 0.4107,
+          "content": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+        },
+        {
+          "chunk_id": "c5476576-a52e-48ec-8d8c-057bfec9551f",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Optimal Policies",
+          "chunk_order": 11,
+          "cosine_sim": 0.3507,
+          "final_score": 0.4033,
+          "content": "- An RL agent adapts its policy in order to increase return\n- A policy $p_1$ is at least as good as a policy $p_2$ if its expected return is at least as great in each possible initial state\n- An optimal policy $p$ is at least as good as any other policy"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.1
+}

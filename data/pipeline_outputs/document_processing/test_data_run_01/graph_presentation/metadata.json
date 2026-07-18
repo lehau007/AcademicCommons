@@ -1,0 +1,23 @@
+{
+  "sample_id": "graph_presentation",
+  "course_code": "TEST01",
+  "tier": "official",
+  "input_path": "src/experiments/document_processing/test_data/2_2-GraphPresentation.pdf",
+  "expected_type": "slide_pdf",
+  "expected_route": "vision_only",
+  "actual_route": "vision_only",
+  "route_evidence": {
+    "reason": "pdf_probe",
+    "inferred_type": "slide_pdf",
+    "text_chars": 3815,
+    "page_count": 17,
+    "image_count": 25,
+    "avg_chars_per_page": 224.41,
+    "images_per_page": 1.471,
+    "landscape_pages": 17,
+    "is_landscape": true
+  },
+  "file_sha256": "f764aedd81085665483f8e93f855fec92d3bb4ccc574efc1ed71c59db3d2b9a3",
+  "model": "local_placeholder",
+  "duration_ms": 18655
+}

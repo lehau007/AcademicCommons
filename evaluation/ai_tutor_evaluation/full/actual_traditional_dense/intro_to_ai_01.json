@@ -1,0 +1,115 @@
+{
+  "qid": "intro_to_ai_01",
+  "course_code": "IT3160E",
+  "question": "What are the four factors (PEAS) that should be considered when designing an automated agent?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "a0865178-fabe-484d-a20b-bb755222b50b",
+  "answer": "The four factors (PEAS) that should be considered when designing an automated agent are:\n\n1. **P** – **Performance measure**: the criterion used to evaluate how successful the agent is (e.g., for an automated taxi driver: safe, fast, legal, comfortable trip, maximize profits).\n2. **E** – **Environment**: the surroundings the agent operates in (e.g., roads, other traffic, pedestrians, weather).\n3. **A** – **Actuators**: the means by which the agent acts upon the environment (e.g., steering wheel, accelerator, brake, signal, horn).\n4. **S** – **Sensors**: the means by which the agent perceives its environment (e.g., cameras, sonar, speedometer, GPS, odometer, engine sensors, keyboard).\n\nThese four components together describe the task and operating context of an agent, which is essential when designing an automated system.\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "847fc99d-65cd-4f7c-8cbd-e6937b3a31d2",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PEAS",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- 4 factors should be considered when design an automated agent:\n  - **P**erformance measure\n  - **E**nvironment\n  - **A**ctuators\n  - **S**ensors"
+    },
+    {
+      "chunk_id": "666c4fc1-bf91-4659-a6a6-9383e6b66b5e",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PEAS - automated taxi driver",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- **Performance measure**: Safe, fast, legal, comfortable trip, maximize profits, …\n- **Environment**: Roads, other traffic, pedestrians, weather, …\n- **Actuators**: Steering wheel, accelerator, brake"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "What are the four factors (PEAS) that should be considered when designing an automated agent?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Rational agents",
+          "chunk_order": 14,
+          "cosine_sim": 0.3791,
+          "final_score": 0.6539,
+          "content": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|       |--------------|\n|  Percepts    |\n|  <---------- \n|  Actions     |\n|  ----------> \n|               |\n|               |\n|  Sensors|       | Actuators|\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "847fc99d-65cd-4f7c-8cbd-e6937b3a31d2",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "PEAS",
+          "chunk_order": 9,
+          "cosine_sim": 0.5584,
+          "final_score": 0.6421,
+          "content": "- 4 factors should be considered when design an automated agent:\n  - **P**erformance measure\n  - **E**nvironment\n  - **A**ctuators\n  - **S**ensors"
+        },
+        {
+          "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agent types",
+          "chunk_order": 15,
+          "cosine_sim": 0.395,
+          "final_score": 0.4543,
+          "content": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+        },
+        {
+          "chunk_id": "63a01df0-e3e5-4875-a02f-43bd12ac56a1",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agents and environments",
+          "chunk_order": 2,
+          "cosine_sim": 0.3621,
+          "final_score": 0.4164,
+          "content": "- An **agent** is anything that can be viewed as **perceiving** its **environment** through **sensors** and **acting** upon that environment through **actuators**\n- Example 1: human agent\n  - Sensors: eyes, ears, ...\n  - Actuators: hands, legs, mouth, ...\n- Example 2: robotic agent (e.g., Aishimo)\n  - Sensors: camera, infrared range finders\n  - Actuators: various motors"
+        },
+        {
+          "chunk_id": "30300eec-d65c-472b-927a-37480bf0e42b",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 10,
+          "cosine_sim": 0.3884,
+          "final_score": 0.3884,
+          "content": "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is the core design problem in rational agent systems.]\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "00d7b922-e2e8-4311-922a-651df539f47a",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Rational agent",
+          "chunk_order": 8,
+          "cosine_sim": 0.3334,
+          "final_score": 0.3834,
+          "content": "- For each possible percept sequence, a rational agent should select an **action** that is expected to maximize its **performance measure**, given the evidence provided by the **percept sequence** and whatever **built-in knowledge** the agent has.\n- An agent is **autonomous** if its behavior is determined by its own experience (with ability to learn and adapt)"
+        },
+        {
+          "chunk_id": "666c4fc1-bf91-4659-a6a6-9383e6b66b5e",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "PEAS - automated taxi driver",
+          "chunk_order": 10,
+          "cosine_sim": 0.3265,
+          "final_score": 0.3755,
+          "content": "- **Performance measure**: Safe, fast, legal, comfortable trip, maximize profits, …\n- **Environment**: Roads, other traffic, pedestrians, weather, …\n- **Actuators**: Steering wheel, accelerator, brake, signal, horn, …\n- **Sensors**: Cameras, sonar, speedometer, GPS, odometer, engine sensors, keyboard, …"
+        },
+        {
+          "chunk_id": "fe0ad3d1-23ab-40b5-8319-26f66230f44b",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Environment types",
+          "chunk_order": 13,
+          "cosine_sim": 0.3132,
+          "final_score": 0.3602,
+          "content": "- **Fully observable** (vs. partially observable): An agent's sensors give it access to the complete state of the environment at each point in time.\n- **Deterministic** (vs. stochastic): The next state of the environment is completely determined by the current state and the action executed by the agent.\n- **Episodic** (vs. sequential): The agent's experience is divided into atomic \"episodes\" (each episode consists of the agent perceiving and then performing a single action."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.3
+}

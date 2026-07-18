@@ -1,0 +1,39 @@
+{
+  "qid": "database_02",
+  "course_code": "IT3292E",
+  "question": "What is the difference between the Intersection and Difference operators in relational algebra?",
+  "session_id": "652cf61d-21e7-4d16-8fc9-f97d9eac4166",
+  "answer": "In relational algebra:\n\n- **Intersection** (`R ∩ S`) returns the tuples that are **present in both** relations.\n- **Difference** (`R − S`) returns the tuples that are **present in the first relation but not in the second**.\n\n## Key difference\n- **Intersection** = common tuples\n- **Difference** = tuples unique to the first relation\n\n## Example\nIf:\n\n- `R = {1, 2, 3}`\n- `S = {2, 3, 4}`\n\nThen:\n\n- `R ∩ S = {2, 3}`\n- `R − S = {1}`\n\n## Important note\nBoth operators are **binary** operators in relational algebra, and they require the two relations to be **union-compatible** (same attributes / same domain structure).",
+  "citations": [
+    {
+      "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Introduction to relational algebra",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several r"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "difference between Intersection and Difference operators in relational algebra",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "1. Introduction to relational algebra",
+          "chunk_order": 9,
+          "cosine_sim": 0.6,
+          "final_score": 0.4224,
+          "content": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several relational algebraic operators:\n  - Operator: represent computations\n    - Input: one or two relation\n    - Output: a relation\n  - Unary operator (one input) vs. binary operator (two inputs)"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.5
+}

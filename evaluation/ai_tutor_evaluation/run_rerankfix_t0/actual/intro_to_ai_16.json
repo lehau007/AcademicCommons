@@ -1,0 +1,84 @@
+{
+  "qid": "intro_to_ai_16",
+  "course_code": "IT3160E",
+  "question": "What characterizes a 'fully observable' environment in AI?",
+  "session_id": "e57215d1-1aa3-4383-90ed-e012a546e67f",
+  "answer": "A **fully observable** environment trong AI là môi trường mà **cảm biến của tác tử (agent) có thể truy cập được toàn bộ trạng thái của môi trường tại mỗi thời điểm**.\n\nNói cách khác:\n- Agent nhìn thấy đầy đủ thông tin cần thiết để biết trạng thái hiện tại.\n- Không có phần trạng thái quan trọng nào bị che khuất khỏi agent.\n\nĐiều này đối lập với **partially observable** environment, nơi agent chỉ quan sát được một phần trạng thái.",
+  "citations": [
+    {
+      "chunk_id": "fe0ad3d1-23ab-40b5-8319-26f66230f44b",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Environment types",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "- **Fully observable** (vs. partially observable): An agent's sensors give it access to the complete state of the environment at each point in time.\n- **Deterministic** (vs. stochastic): The next stat"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "fully observable environment in AI definition and characteristics",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "fe0ad3d1-23ab-40b5-8319-26f66230f44b",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Environment types",
+          "chunk_order": 13,
+          "cosine_sim": 0.555,
+          "final_score": 0.7467,
+          "content": "- **Fully observable** (vs. partially observable): An agent's sensors give it access to the complete state of the environment at each point in time.\n- **Deterministic** (vs. stochastic): The next state of the environment is completely determined by the current state and the action executed by the agent.\n- **Episodic** (vs. sequential): The agent's experience is divided into atomic \"episodes\" (each episode consists of the agent perceiving and then performing a single action."
+        },
+        {
+          "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem types",
+          "chunk_order": 10,
+          "cosine_sim": 0.4355,
+          "final_score": 0.5289,
+          "content": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent may have no idea where it is; solution is a sequence\n- Nondeterministic and/or partially observable → contingency problem\n  - percepts provide new information about current state\n  - often interleave → search, execution\n- Unknown state space → exploration problem"
+        },
+        {
+          "chunk_id": "fafc96e5-2014-491e-9527-d2e53e3e6260",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "What is AI",
+          "chunk_order": 6,
+          "cosine_sim": 0.4804,
+          "final_score": 0.2945,
+          "content": "The field of Artificial Intelligence (AI) is a broad area of research and development aimed at creating machines that can perform tasks that typically require human intelligence."
+        },
+        {
+          "chunk_id": "aa5a0d20-fbea-4f5b-a870-c296d8e92761",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Act like humans",
+          "chunk_order": 6,
+          "cosine_sim": 0.4964,
+          "final_score": 0.2258,
+          "content": "[Diagram: The Imitation Game frames intelligence as observable behavior in a conversational setting rather than internal machinery. It matters because it shifts the question from whether a machine \"thinks\" to whether it can act indistinguishably from a human.]\n\n- Predicted that by 2000, a machine might have a 30% chance of fooling a lay person for 5 minutes\n- Anticipated all major arguments against AI in following 50 years\n- Suggested major components of AI: knowledge, reasoning, language understanding, learning"
+        },
+        {
+          "chunk_id": "3a354a9d-e332-4eb0-9a4b-94dc9ac8b4a1",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "AI Planning background",
+          "chunk_order": 7,
+          "cosine_sim": 0.3564,
+          "final_score": 0.1985,
+          "content": "- Focus on classical planning; assume none of the above\n- Deterministic, static, fully observable\n  - “Basic”\n  - Most of the recent progress\n  - Ideas often also useful for more complex problems"
+        },
+        {
+          "chunk_id": "262e0588-7bf5-42e5-8432-959965b69229",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Additional complexities",
+          "chunk_order": 6,
+          "cosine_sim": 0.4513,
+          "final_score": 0.1803,
+          "content": "- Because the world is …\n  - Dynamic\n  - Stochastic\n  - Partially observable\n- And because actions\n  - take time\n  - have continuous effects\n\n```text\n+-------------------------------+\n|     Additional complexities   |\n+-------------------------------+\n| Because the world is ...      |\n|   - Dynamic                   |\n|   - Stochastic                |\n|   - Partially observable      |\n|                               |\n| And because actions           |\n|   - take time                 |\n|   - have continuous effects   |\n+-------------------------------+\n\n      [robot image]\n```\n\n[Diagram: The slide contrasts environmental uncertainty with action-side complexity. It emphasizes that realistic decision-making must account for changing, noisy, and only partially visible worlds, while actions also unfold over time and produce continuous outcomes.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.9
+}

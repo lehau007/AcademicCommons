@@ -1,0 +1,15 @@
+{
+  "file_id": "it3020e_graph_presentation",
+  "document_id": "24a90910-7168-4792-8da5-db44a2776440",
+  "file_format": "pdf",
+  "document_status": "NEEDS_REVIEW",
+  "storage_md_path": "documents/6f388c21-7020-4847-b881-24f3f268829a/24a90910-7168-4792-8da5-db44a2776440/markdown/output.md",
+  "markdown_chars": 9565,
+  "chunk_count": 0,
+  "ocr_job": {
+    "status": "COMPLETED",
+    "failure_reason": null,
+    "started_at": "2026-07-05T03:01:51.644223+00:00",
+    "completed_at": "2026-07-05T03:02:44.098197+00:00"
+  }
+}

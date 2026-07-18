@@ -1,0 +1,44 @@
+{
+  "qid": "discrete_math_02",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "The tutor's answer makes no factual claims about Cayley's theorem or spanning trees—it is simply a polite refusal in Vietnamese stating they don't know the answer and asking the student to rephrase. Since there are no claims to verify, there are no unsupported claims.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 1,
+      "justification": "The tutor's answer does not address the question at all. Instead of providing information about Cayley's theorem and the number of spanning trees in a complete graph, it apologizes in Vietnamese and asks the student to rephrase the question.",
+      "evidence": [
+        "Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?"
+      ]
+    },
+    "answer_correctness": {
+      "score": 1,
+      "justification": "The tutor's answer is an apology in Vietnamese stating they don't know the answer and asking the student to rephrase. This completely fails to provide the key fact from the ground truth: that K_n has n^(n-2) spanning trees according to Cayley's theorem.",
+      "evidence": [
+        "Ground truth: 'a complete graph K_n has n^(n-2) spanning trees'",
+        "Tutor answer: 'Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?' (Sorry, I don't know the answer — please ask again)"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to the question about Cayley's theorem and spanning trees of complete graphs. The first chunk states the theorem explicitly, chunks 2-3 provide examples and context, and chunks 4-6 discuss spanning trees and their properties.",
+      "evidence": []
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The first retrieved chunk explicitly states Cayley's theorem: 'A complete graph K_n has n^(n-2) spanning trees,' which is exactly the ground-truth answer. All key facts needed to answer the question are present in the retrieved context.",
+      "evidence": [
+        "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees."
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "N/A — no citations needed. The tutor's answer is a polite refusal in Vietnamese ('Sorry, I'm not sure of the answer — please ask me again') that makes no factual claims requiring citation support.",
+      "evidence": []
+    }
+  }
+}

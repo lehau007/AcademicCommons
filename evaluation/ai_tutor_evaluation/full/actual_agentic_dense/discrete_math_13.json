@@ -1,0 +1,175 @@
+{
+  "qid": "discrete_math_13",
+  "course_code": "IT3020E",
+  "question": "What does the Big Oh (O) notation intuitively represent for a given function g(n)?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "fcb73e5a-80f7-40e8-8bfb-9207cd1d6463",
+  "answer": "# Big Oh (O) Notation — Intuitive Meaning\n\nAccording to the course material, for a given function **g(n)**, the set **O(g(n))** is formally defined as:\n\n$$\nO(g(n)) = \\left\\{ f(n) : \\exists \\text{ positive constants } c \\text{ and } n_0 \\text{ such that } 0 \\le f(n) \\le c\\,g(n) \\text{ for all } n \\ge n_0 \\right\\}\n$$\n\n## Intuitive Interpretation\n\nBig Oh notation intuitively represents the **set of all functions whose rate of growth is the same as or lower than that of g(n)**. In other words:\n\n- **g(n) is an asymptotic upper bound of f(n)**, to within a constant factor.\n- Writing $f(n) = O(g(n))$ means that there exists **some constant c** such that $f(n)$ is always $\\le c \\cdot g(n)$ for **large enough n** (i.e., for all $n \\ge n_0$).\n- $O(g(n))$ is the set of functions that **go to infinity no faster than** $g(n)$.\n\n## Key Ideas to Remember\n\n1. **Asymptotic behavior only matters** — we only care about what happens for *large* $n$ (beyond some threshold $n_0$). Short-term fluctuations of $f(n)$ are irrelevant; only the long-term growth rate counts.\n2. **Constant factors are ignored** — the multiplicative constant $c$ is allowed, since we only care about the *order* of growth, not exact values.\n3. **The constants are not unique** — many valid choices of $c$ and $n_0$ can satisfy the definition. You only need to find *some* pair that works.\n\n## Visual Intuition\n\nThe course illustrates this with a diagram: a function $f(n)$ may fluctuate up and down, but after a threshold $n_0$, it stays **below some scaled copy $c \\cdot g(n)$** of $g(n)$. That is the picture of an asymptotic upper bound.\n\n## Quick Example\n\n> $3n^3 + 20n^2 + 5 = O(n^3)$\n>\n> Because we can choose $c = 4$ and $n_0 = 21$, after which $3n^3 + 20n^2 + 5 \\le 4n^3$. The lower-order terms ($20n^2 + 5$) become negligible compared to the dominant $n^3$ term, so the function grows no faster than $n^3$.\n\n---\n\n### Contrast with Θ Notation\n\nIt's worth distinguishing:\n- **O(g(n))** → $f(n)$ grows **no faster than** $g(n)$ (upper bound only).\n- **Θ(g(n))** → $f(n)$ grows **at the same rate as** $g(n)$, \"sandwiched\" between $c_1 g(n)$ and $c_2 g(n)$.\n\nSo Big Oh tells us an upper bound on growth; Theta tells us the exact order of growth.",
+  "citations": [
+    {
+      "chunk_id": "a780751c-35ab-41a8-9903-a579bc2deff7",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "O - big Oh notation",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "For a given function $g(n)$, we denote by $O(g(n))$ the set of functions\n\n$$\nO(g(n)) =\n\\left\\{\nf(n): \\text{there exist positive constants } c \\text{ and } n_0 \\text{ s.t.}\n\\; 0 \\le f(n) \\le c g(n) \\te"
+    },
+    {
+      "chunk_id": "796eacd9-2c07-416d-9553-2b6d3d63e281",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "O - big Oh notation",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "```text\n                              y\n                              ^\n                              |\n                              |                           c g(n)\n                              |"
+    },
+    {
+      "chunk_id": "1ad46106-0157-4d9e-9ad9-b9f68856e330",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Θ - Theta notation",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "```text\n   y\n   ^\n   |\n   |                                c2g(n)\n   |                              /\n   |                            /\n   |                          /         f(n)\n   |               "
+    },
+    {
+      "chunk_id": "c02eed07-f5ab-4481-bcde-bf6c88090fb8",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Big-Oh Examples",
+      "page_number": null,
+      "chunk_order": 29,
+      "excerpt": "$O(g(n)) = \\{f(n) : \\exists$ positive constants $c$ and $n_0$, such that $\\forall n \\ge n_0$, we have $0 \\le f(n) \\le cg(n)\\}$\n\n- Example 2: Show that $3n^3 + 20n^2 + 5$ is $O(n^3)$\n  - Need constants"
+    },
+    {
+      "chunk_id": "f98aa7be-d1bd-4481-859e-e7b4b7e80461",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Θ - Theta notation",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "- For a given function $g(n)$, we denote by $\\Theta(g(n))$ the set of functions\n\n$$\n\\Theta(g(n)) =\n\\left\\{\n\\begin{array}{l}\nf(n): \\text{there exist positive constants } c_1, c_2, \\text{ and } n_0 \\tex"
+    },
+    {
+      "chunk_id": "7d648104-68bc-4149-a67b-fa079b4fe7be",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Big-Oh Examples",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "$$O(g(n)) = \\{ f(n) : \\exists \\text{ positive constants } c \\text{ and } n_0, \\text{ such that } \\forall n \\ge n_0, \\text{ we have } 0 \\le f(n) \\le cg(n) \\}$$\n\n- Example 1: Show that $2n + 10 = O(n)$\n"
+    },
+    {
+      "chunk_id": "48af0fce-c44f-4340-89c9-4a14e1085516",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Asymptotic notation",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "$\\Theta, \\Omega, O, o, \\infty$\n\n- What these symbols do are:\n  - give us a notation for talking about how fast a function goes to infinity, which is just what we want to know when we study the running"
+    },
+    {
+      "chunk_id": "207ae239-8d1b-46ed-9b8a-f0b64ca8e652",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Note",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- The values of positive constants $n_0$ and $c$ **are not unique** when proof the asymptotic formulas\n- Example: show that $100n + 5 = O(n^2)$\n  - $100n + 5 \\le 100n + n = 101n \\le 101n^2 \\quad \\fora"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "Big Oh O notation asymptotic notation definition meaning for function g(n)",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "a780751c-35ab-41a8-9903-a579bc2deff7",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "O - big Oh notation",
+          "chunk_order": 25,
+          "cosine_sim": 0.4874,
+          "final_score": 0.5605,
+          "content": "For a given function $g(n)$, we denote by $O(g(n))$ the set of functions\n\n$$\nO(g(n)) =\n\\left\\{\nf(n): \\text{there exist positive constants } c \\text{ and } n_0 \\text{ s.t.}\n\\; 0 \\le f(n) \\le c g(n) \\text{ for all } n \\ge n_0\n\\right\\}\n$$\n\n**Intuitively:** Set of all functions whose *rate of growth* is the same as or lower than that of $g(n)$.\n\n- We say: $g(n)$ is asymptotic upper bound of the function $f(n)$, to within a constant factor, and write $f(n)=O(g(n))$.\n- $f(n)=O(g(n))$ means that there exists some constant $c$ such that $f(n)$ is always $\\le cg(n)$ for large enough $n$.\n- $O(g(n))$ is the set of functions that go to infinity no faster than $g(n)$."
+        },
+        {
+          "chunk_id": "796eacd9-2c07-416d-9553-2b6d3d63e281",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "O - big Oh notation",
+          "chunk_order": 26,
+          "cosine_sim": 0.4548,
+          "final_score": 0.523,
+          "content": "```text\n                              y\n                              ^\n                              |\n                              |                           c g(n)\n                              |                        .-'\n                              |                     .-'\n                              |                  .-'\n                              |               .-'\n                              |            .-'\n                              |         .-'        f(n)\n                              |      .-'      _/\\/\\_/\\/\\_\n                              |   .-'      _/\\/\\_/\\/\\_/\\/\\_\n                              |.-'    _/\\/\\_/\\/\\_/\\/\\_/\\/\\_\n                              +---------------------------------> n\n                               :\n                               : n_0\n                               :\n```\n\n[Diagram: The figure shows that a function like $f(n)$ may fluctuate but still remain below a constant multiple of $g(n)$ after some threshold $n_0$. This captures the idea of an asymptotic upper bound: only the long-term growth rate matters, not short-term variations.]"
+        },
+        {
+          "chunk_id": "1ad46106-0157-4d9e-9ad9-b9f68856e330",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Θ - Theta notation",
+          "chunk_order": 20,
+          "cosine_sim": 0.448,
+          "final_score": 0.5152,
+          "content": "```text\n   y\n   ^\n   |\n   |                                c2g(n)\n   |                              /\n   |                            /\n   |                          /         f(n)\n   |                        /      _.-'`\\\n   |                      /   _.-'`     `-._\n   |                    / _.-'              `-._\n   |                  /.-'                     `-._\n   |                /'                           `-.\n   |             g(n)                               `-.\n   |           /                                      `-.\n   |        c1g(n)                                     `-.\n   |\n   +----------------------|---------------------------------> n\n                          n0\n```\n\n[Diagram: The figure shows a function trapped between two scaled bounds after some threshold $n_0$. This visualizes the idea of identical asymptotic growth: once $n$ is large enough, the target function stays within constant factors of $g(n)$.]"
+        },
+        {
+          "chunk_id": "c02eed07-f5ab-4481-bcde-bf6c88090fb8",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Big-Oh Examples",
+          "chunk_order": 29,
+          "cosine_sim": 0.4408,
+          "final_score": 0.5069,
+          "content": "$O(g(n)) = \\{f(n) : \\exists$ positive constants $c$ and $n_0$, such that $\\forall n \\ge n_0$, we have $0 \\le f(n) \\le cg(n)\\}$\n\n- Example 2: Show that $3n^3 + 20n^2 + 5$ is $O(n^3)$\n  - Need constants $c$ and $n_0$ such that $3n^3 + 20n^2 + 5 \\le cn^3$ for $n \\ge n_0$\n  - this is true for $c = 4$ and $n_0 = 21$\n\n-"
+        },
+        {
+          "chunk_id": "f98aa7be-d1bd-4481-859e-e7b4b7e80461",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Θ - Theta notation",
+          "chunk_order": 19,
+          "cosine_sim": 0.4316,
+          "final_score": 0.4963,
+          "content": "- For a given function $g(n)$, we denote by $\\Theta(g(n))$ the set of functions\n\n$$\n\\Theta(g(n)) =\n\\left\\{\n\\begin{array}{l}\nf(n): \\text{there exist positive constants } c_1, c_2, \\text{ and } n_0 \\text{ s.t.} \\\\\n0 \\le c_1 g(n) \\le f(n) \\le c_2 g(n) \\text{ for all } n \\ge n_0\n\\end{array}\n\\right.\n$$\n\n*Intuitively:* Set of all functions that have the same rate of growth as $g(n)$.\n\n- A function $f(n)$ belongs to the set $\\Theta(g(n))$ if there exist positive constants $c_1$ and $c_2$ such that it can be “sand- wiched” between $c_1g(n)$ and $c_2g(n)$ for sufficiently large $n$\n- $f(n) = \\Theta(g(n))$ means that there exists some constant $c_1$ and $c_2$ s.t.\n\n$$\nc_1 g(n) \\le f(n) \\le c_2 g(n) \\text{ for large enough } n.\n$$\n\n- When we say that one function is theta of another, we mean that neither function goes to infinity faster than the other."
+        },
+        {
+          "chunk_id": "7d648104-68bc-4149-a67b-fa079b4fe7be",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Big-Oh Examples",
+          "chunk_order": 27,
+          "cosine_sim": 0.4211,
+          "final_score": 0.4842,
+          "content": "$$O(g(n)) = \\{ f(n) : \\exists \\text{ positive constants } c \\text{ and } n_0, \\text{ such that } \\forall n \\ge n_0, \\text{ we have } 0 \\le f(n) \\le cg(n) \\}$$\n\n- Example 1: Show that $2n + 10 = O(n)$\n- $\\Rightarrow f(n) = 2n + 10, \\ g(n) = n$\n  - Need constants $c$ and $n_0$ such that $2n + 10 \\le cn$ for $n \\ge n_0$\n  - $(c - 2)n \\ge 10$\n  - $n \\ge 10/(c - 2)$\n  - Pick $c = 3$ and $n_0 = 10$"
+        },
+        {
+          "chunk_id": "48af0fce-c44f-4340-89c9-4a14e1085516",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Asymptotic notation",
+          "chunk_order": 18,
+          "cosine_sim": 0.4087,
+          "final_score": 0.4699,
+          "content": "$\\Theta, \\Omega, O, o, \\infty$\n\n- What these symbols do are:\n  - give us a notation for talking about how fast a function goes to infinity, which is just what we want to know when we study the running times of algorithms.\n  - defined for functions over the natural numbers\n  - used to compare the order of growth of 2 functions\n  - Example: $f(n) = \\Theta(n^2)$: Describes how $f(n)$ grows in comparison to $n^2$.\n- Instead of working out a complicated formula for the exact running time, we can just say that the running time is for example $\\Theta(n^2)$ [read as theta of $n^2$]: that is, the running time is proportional to $n^2$ plus lower order terms. For most purposes, that’s just what we want to know."
+        },
+        {
+          "chunk_id": "207ae239-8d1b-46ed-9b8a-f0b64ca8e652",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Note",
+          "chunk_order": 28,
+          "cosine_sim": 0.3911,
+          "final_score": 0.4498,
+          "content": "- The values of positive constants $n_0$ and $c$ **are not unique** when proof the asymptotic formulas\n- Example: show that $100n + 5 = O(n^2)$\n  - $100n + 5 \\le 100n + n = 101n \\le 101n^2 \\quad \\forall n \\ge 5$\n  - $n_0 = 5$ and $c = 101$ are constants need to determine\n  - $100n + 5 \\le 100n + 5n = 105n \\le 105n^2 \\quad \\forall n \\ge 1$\n  - $n_0 = 1$ and $c = 105$ are also constants need to determine\n- Only need to find **some** positive constants $c$ and $n_0$ satisfying the equality in the definition of asymptotic notation"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 24.8
+}

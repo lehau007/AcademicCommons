@@ -1,0 +1,48 @@
+{
+  "qid": "database_03",
+  "course_code": "IT3292E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the first retrieved chunk. All dates, version names, features, and descriptions match the source material precisely.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how the SQL standard evolved between 1986 and 1999, covering SQL1 (1986), its ISO adoption (1987), SQL2 (1992), and SQL3 (1999) with their respective features.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The answer covers all key facts from the ground truth: SQL1 defined in 1986 and adopted by ISO in 1987, SQL2 adopted in 1992 as the formal standard for relational databases, and SQL3 in 1999 extending the standard with object-oriented features, user-defined data types, triggers, and user-defined functions. No contradictions present.",
+      "evidence": [
+        "Ground truth: 'SQL1, was defined in 1986 and adopted by ISO in 1987' — Answer: '1986: SQL1...1987 — it was adopted by ISO'",
+        "Ground truth: '1992, SQL2 was adopted as the formal standard language' — Answer: '1992: SQL2...adopted as the formal standard language'",
+        "Ground truth: '1999, SQL3 extended...Object-Oriented features, user-defined data types, triggers, and user-defined functions' — Answer: '1999: SQL3...user-defined data types, triggers, user-defined functions, other object-oriented features'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "The first chunk is highly relevant and directly answers the question about SQL evolution from 1986-1999. The second chunk discusses DBMS implementation variations, which is tangential to the historical evolution question but not directly relevant.",
+      "evidence": [
+        "b4a83699-70a2-4b79-b573-f782022240e8: 'Each DBMS has its own implementation. So the syntax for each statement can vary...'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the first retrieved chunk: SQL1 defined in 1986, ISO adoption in 1987, SQL2 in 1992 as formal standard for relational databases, and SQL3 in 1999 with Object-Oriented features, user-defined data types, triggers, and user-defined functions.",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "The first citation (fe2e9a29) strongly supports all the major claims about SQL1, SQL2, and SQL3. The second citation (b4a83699) about DBMS implementation differences is unrelated to the evolution timeline being discussed.",
+      "evidence": [
+        "Answer claims '1986: SQL1 — the first official SQL standard' and chunk states 'SQL1: The first standard for SQL defined in 1986'",
+        "Answer claims '1992: SQL2...formal standard language' and chunk states '1992: SQL2...adopted as the formal standard language'",
+        "Answer claims '1999: SQL3...user-defined data types, triggers, user-defined functions' and chunk states '1999: SQL3 - extension with...user-defined data types, triggers, user-defined functions'",
+        "Second citation discusses 'Each DBMS has its own implementation' which does not support any statement in the answer about SQL standard evolution"
+      ]
+    }
+  }
+}

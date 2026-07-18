@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "topic": "Reinforcement Learning",
+  "concepts": [
+    "Reinforcement Learning",
+    "Markov Decision Process",
+    "Policy",
+    "Reward",
+    "Discounted Return",
+    "Discount Rate",
+    "Value Function",
+    "Q-Learning",
+    "Exploration vs Exploitation",
+    "Intelligent Agent"
+  ],
+  "language": "en",
+  "ocr_quality": "high",
+  "section_summaries": [
+    {
+      "heading": "RL Problem Setup",
+      "summary": "Frames reinforcement learning as an intelligent agent interacting with an environment, receiving rewards and updating its policy. Introduces Markov Decision Processes.",
+      "page_range": [1, 8]
+    },
+    {
+      "heading": "Returns and Discounting",
+      "summary": "Defines the discounted return model. The discount rate (between 0 and 1) bounds the infinite sum of rewards and favors earlier rewards, encouraging the agent to find shorter paths to its goal.",
+      "page_range": [9, 16]
+    },
+    {
+      "heading": "Value Functions and Q-Learning",
+      "summary": "Introduces state-value and action-value functions, and presents Q-learning as a model-free temporal-difference method, along with the exploration vs exploitation trade-off.",
+      "page_range": [17, 28]
+    }
+  ],
+  "overall_summary": "This document presents Reinforcement Learning as a third major learning paradigm complementing the supervised methods covered earlier. An intelligent agent interacts with an environment modeled as a Markov Decision Process, choosing actions according to a policy and receiving scalar rewards. The discounted return model is introduced: a discount rate between 0 and 1 bounds the infinite sum of future rewards and gives the agent a preference for earlier rewards, which in practice encourages it to find shorter paths to its goal. The document then defines state-value and action-value functions, and presents Q-learning as a canonical model-free, temporal-difference method that learns Q-values from experience. The exploration versus exploitation trade-off is discussed as a defining challenge of RL, tying the chapter back to the agent and search material from the start of the course."
+}

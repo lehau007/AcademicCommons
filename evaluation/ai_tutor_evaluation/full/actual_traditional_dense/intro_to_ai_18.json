@@ -1,0 +1,115 @@
+{
+  "qid": "intro_to_ai_18",
+  "course_code": "IT3160E",
+  "question": "How does Local Beam Search differ from Random-Restart Search?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "8544b1b1-6a2b-406d-a2b4-7b41792835f2",
+  "answer": "# Local Beam Search vs. Random-Restart Search\n\nThe key difference between **Local Beam Search** and **Random-Restart Search** lies in how the parallel search threads interact with one another:\n\n## Random-Restart Search\n- Runs **k independent** search threads (e.g., random-restart hill-climbing).\n- Each thread explores the search space **independently** — the threads do **not** communicate or share information with one another.\n- The strategy to escape local maxima is simply: \"If at first you don't succeed, try, try again…\" — that is, discard a failed run and start over from a fresh random state.\n\n## Local Beam Search\n- Also runs **k parallel** search threads, but with a critical distinction: **information is shared among the threads**.\n- At each step, the algorithm determines the successors of *all* k states, then selects the **k best successors** from this combined pool to continue.\n- As a result, if one thread discovers a good successor state, the other threads can \"migrate\" toward it — a kind of signaling: *\"come here, the grass is greener!\"*\n\n## Trade-off\n- Because Local Beam Search concentrates its k threads on the most promising regions, it can converge faster — making it **the best choice in MANY practical settings**.\n- However, this shared-focus behavior can lead to a **lack of diversity**, since the k states may quickly converge to the same few regions of the search space.\n- To mitigate this, a **stochastic variant** of Local Beam Search chooses k successors with probability proportional to each successor's quality, preserving more diversity.\n\nIn short: **Random-Restart** relies on independent retries from scratch, while **Local Beam** leverages cooperation among threads to collectively focus effort on the best areas found so far.",
+  "citations": [
+    {
+      "chunk_id": "267f5e6d-587d-4294-ac6e-197aeac294ed",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local beam search",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Major difference with random-restart search\n  - Information is shared among k search threads: If one state generated good successor, but others did not → “come here, the grass is greener!”\n- Can suf"
+    },
+    {
+      "chunk_id": "d74d562d-2801-4058-b1e4-d2a07e60f322",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Hill-climbing variations",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Stochastic hill-climbing\n  - Random selection among the uphill moves.\n  - The selection probability can vary with the steepness of the uphill move.\n- First-choice hill-climbing\n  - Stochastic hill c"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "How does Local Beam Search differ from Random-Restart Search?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "267f5e6d-587d-4294-ac6e-197aeac294ed",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 5,
+          "cosine_sim": 0.5088,
+          "final_score": 0.5851,
+          "content": "- Major difference with random-restart search\n  - Information is shared among k search threads: If one state generated good successor, but others did not → “come here, the grass is greener!”\n- Can suffer from lack of diversity.\n  - Stochastic variant: choose k successors at proportionally to state success.\n- The best choice in MANY practical settings"
+        },
+        {
+          "chunk_id": "f140b8d1-d2de-436c-bd9b-109bed1b0259",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 4,
+          "cosine_sim": 0.4701,
+          "final_score": 0.5406,
+          "content": "[Diagram: Greedy search commits to a single best path at each step, which can quickly lose alternative possibilities. Beam search keeps multiple promising states in parallel, improving the chance of reaching a goal by preserving breadth while still limiting search cost.]"
+        },
+        {
+          "chunk_id": "927c0e46-0fda-4820-bbab-7c984442d7ff",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 3,
+          "cosine_sim": 0.4064,
+          "final_score": 0.4673,
+          "content": "- Like greedy search, but keep K states at all times:\n  - Initially: $k$ random states\n  - Next: determine all successors of $k$ states\n  - If any of successors is goal → finished\n  - Else select $k$ best from successors and repeat.\n\n```text\nGreedy Search\n\n+-----+      +-----+      +-----+      +-----+\n|  o  | ---> |  o  | ---> |  o  | ---> |  o  |\n+-----+      +-----+      +-----+      +-----+\n   \\            \\            \\\n    \\            \\            \\\n     v            v            v\n    (o)          (o)          (o)\n     \\            \\            \\\n      \\            \\            \\\n       v            v            v\n      (o)          (o)          (o)\n\nBeam Search\n\n+-----+      +-----+      +-----+      (o)\n|  o  | ---> |  o  | ---> |  o  | ....>\n+-----+       /   \\         /   \\\n   \\         v     v       v     v\n    v      +-----+ (o)   (o)   +-----+\n   (o)     |  o  |   \\     \\    |  o  |\n    \\      +-----+    \\     v   +-----+\n     v        \\        v    (o)    \\\n    (o)       (o)     +-----+       v\n                       |  o  |      +-----+\n                       +-----+      |  o  |\n                                     +-----+\n```"
+        },
+        {
+          "chunk_id": "d74d562d-2801-4058-b1e4-d2a07e60f322",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Hill-climbing variations",
+          "chunk_order": 26,
+          "cosine_sim": 0.4031,
+          "final_score": 0.4636,
+          "content": "- Stochastic hill-climbing\n  - Random selection among the uphill moves.\n  - The selection probability can vary with the steepness of the uphill move.\n- First-choice hill-climbing\n  - Stochastic hill climbing by generating successors randomly until a better one is found.\n- Random-restart hill-climbing\n  - Tries to avoid getting stuck in local maxima.\n  - If at first you don’t succeed, try, try again…"
+        },
+        {
+          "chunk_id": "c94c8c3d-66e7-4fa2-b086-1f62b10765e1",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Simulated annealing",
+          "chunk_order": 29,
+          "cosine_sim": 0.3677,
+          "final_score": 0.4229,
+          "content": "- Escape local maxima by allowing “bad” moves.\n  - Idea: but gradually decrease their size and frequency.\n- Origin; metallurgical annealing\n- Implement:\n  - Randomly select a move instead of selecting best move\n  - Accept a bad move with probability less than 1 (p<1)\n  - p decreases by time\n- If T decreases slowly enough, best state is reached.\n- Applied for VLSI layout, airline scheduling, etc."
+        },
+        {
+          "chunk_id": "83e54421-60e1-4c3d-ab15-dd085ef21ff8",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraints Satisfaction Problems (CSPs)",
+          "chunk_order": 1,
+          "cosine_sim": 0.344,
+          "final_score": 0.3956,
+          "content": "- CSPs example\n- Backtracking search\n- Problem structure\n- Local search for CSPs"
+        },
+        {
+          "chunk_id": "8a983bb5-9216-4788-b0aa-a52c46a9264a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Regression algorithm",
+          "chunk_order": 22,
+          "cosine_sim": 0.3134,
+          "final_score": 0.3604,
+          "content": "- How to determine predecessors?\n  - What are the states from which applying a given action leads to the goal?\n  - Goal state = $At(C1, B) \\wedge At(C2, B) \\wedge ... \\wedge At(C20, B)$\n  - Relevant action for first conjunct: $Unload(C1,p,B)$\n  - Works only if pre-conditions are satisfied.\n  - Previous state = $In(C1, p) \\wedge At(p, B) \\wedge At(C2, B) \\wedge ... \\wedge At(C20, B)$\n  - Subgoal $At(C1,B)$ should not be present in this state.\n- Actions must not undo desired literals (consistent)\n- Main advantage: only relevant actions are considered.\n  - Often much lower branching factor than forward search."
+        },
+        {
+          "chunk_id": "19c29c64-854c-40f3-a61e-fcae43dd54cf",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Recursive best-first search",
+          "chunk_order": 7,
+          "cosine_sim": 0.3072,
+          "final_score": 0.3532,
+          "content": "- A variation of Depth-first search\n- Keep track of $f$-value of the best alternative path\n- Unwind if $f$-value of all children exceed its best alternative\n- When unwind, store $f$-value of best child as its $f$-value\n- When needed, the parent regenerate its children again."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.9
+}

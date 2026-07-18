@@ -1,0 +1,31 @@
+{
+  "qid": "hard_dm_graph_11",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "DFS(s) pseudocode + d/f timestamps grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "matches GT steps"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  }
+}

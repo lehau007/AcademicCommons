@@ -1,0 +1,31 @@
+{
+  "qid": "hard_db_long_15",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Wikipedia/Techtarget defs + examples + define/construct/manipulate all in ctx (table-enriched)"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "Wikipedia/Techtarget defs + examples + define/construct/manipulate all in ctx (table-enriched)"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "Wikipedia/Techtarget defs + examples + define/construct/manipulate all in ctx (table-enriched)"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "Wikipedia/Techtarget defs + examples + define/construct/manipulate all in ctx (table-enriched)"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "Wikipedia/Techtarget defs + examples + define/construct/manipulate all in ctx (table-enriched)"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Wikipedia/Techtarget defs + examples + define/construct/manipulate all in ctx (table-enriched)"
+    }
+  }
+}

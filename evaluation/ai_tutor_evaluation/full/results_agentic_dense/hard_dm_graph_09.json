@@ -1,0 +1,31 @@
+{
+  "qid": "hard_dm_graph_09",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "lex-order def + decision tree in ctx"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "first {1,2,3}/last {3,4,5} correct"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "explicit list derived, lex principle in ctx"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  }
+}

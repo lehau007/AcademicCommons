@@ -1,0 +1,62 @@
+{
+  "qid": "discrete_math_06",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 2,
+      "justification": "The tutor's answer describes Prim's algorithm-specific definition of a safe edge (minimum weight edge connecting T to a vertex outside T), but the question asks about the general MST algorithm definition. The retrieved chunks only cover Prim's algorithm, not the general definition involving invariant preservation and subset properties.",
+      "evidence": [
+        "một cạnh được gọi là \"safe edge\" nếu đó là cạnh có trọng số nhỏ nhất trong số các cạnh nối một đỉnh đang thuộc cây hiện tại T với một đỉnh chưa thuộc T"
+      ]
+    },
+    "answer_relevancy": {
+      "score": 3,
+      "justification": "The answer addresses the concept of a 'safe edge' but shifts the question from the general MST algorithm definition to Prim's specific implementation. The ground truth asks about the invariant property (not destroying the MST subset property), while the tutor focuses on 'smallest weight edge connecting T to outside vertices,' which is Prim-specific.",
+      "evidence": [
+        "một cạnh được gọi là \"safe edge\" nếu đó là cạnh có trọng số nhỏ nhất",
+        "chọn cạnh nhẹ nhất để mở rộng cây hiện tại"
+      ]
+    },
+    "answer_correctness": {
+      "score": 2,
+      "justification": "The tutor's answer describes Prim's algorithm specifically (choosing the minimum-weight edge connecting T to a vertex outside T), but the ground truth defines a safe edge more generally: an edge that preserves the invariant that T remains a subset of some MST without creating cycles. The tutor omits the key invariant property and cycle-avoidance criterion.",
+      "evidence": [
+        "Ground truth: 'adding it to the current set of edges T does not destroy the invariant property, meaning T remains a subset of some minimum spanning tree and still forms a tree without creating any cycles'",
+        "Tutor: 'cạnh có trọng số nhỏ nhất trong số các cạnh nối một đỉnh đang thuộc cây hiện tại T với một đỉnh chưa thuộc T' (only describes Prim's selection rule, not the general safe-edge invariant)"
+      ]
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "The question asks about the general MST algorithm's definition of a 'safe edge,' but all 8 retrieved chunks describe only Prim's algorithm specifically. While Prim is one MST algorithm, the chunks do not provide the general definition (an edge that preserves the MST invariant without creating cycles).",
+      "evidence": [
+        "c8ffa216: 'PRIM algorithm:'",
+        "dcb796ad: 'PRIM algorithm:'",
+        "5f06dbd7: 'PRIM algorithm:'",
+        "590abc5b: 'PRIM algorithm:'",
+        "73844cf8: 'Prim()'",
+        "86bda5b7: 'PRIM algorithm: an example'",
+        "5b4caa21: 'PRIM algorithm: an example'",
+        "03a5887c: 'PRIM algorithm: an example'"
+      ]
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "The retrieved chunks describe Prim's algorithm's specific implementation of safe edges (minimum weight connecting T to outside vertices) but do not contain the general definition from the ground truth: that a safe edge preserves the invariant that T remains a subset of some MST without creating cycles.",
+      "evidence": [
+        "adding it to the current set of edges T does not destroy the invariant property",
+        "T remains a subset of some minimum spanning tree",
+        "still forms a tree without creating any cycles"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "The citations support the tutor's description of Prim's algorithm specifically, but the question asks about the general MST algorithm definition of 'safe edge.' The cited chunks only describe Prim's implementation (minimum weight edge connecting T to outside vertices), not the general invariant-preserving property that defines safety across all MST algorithms.",
+      "evidence": [
+        "Tutor claims: 'cạnh có trọng số nhỏ nhất... nối một đỉnh đang thuộc cây hiện tại T với một đỉnh chưa thuộc T'",
+        "Chunk c8ffa216: 'The \"safe\" edge included in T at each iteration is the edge with smallest weight among edges connecting a vertex of T to other vertex not in T'",
+        "Ground truth requires: 'does not destroy the invariant property, meaning T remains a subset of some minimum spanning tree'"
+      ]
+    }
+  }
+}

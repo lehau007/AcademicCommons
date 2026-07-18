@@ -1,0 +1,31 @@
+{
+  "qid": "database_02",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "honest refusal faithful; core defs absent in ctx"
+    },
+    "answer_relevancy": {
+      "score": 3,
+      "justification": "on-topic but does not deliver operator definitions"
+    },
+    "answer_correctness": {
+      "score": 2,
+      "justification": "TRADITIONAL refuses core GT (hybrid retrieval same equivalence-rule ctx, defs still absent)"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "equivalence-rule/set-op chunks, no core defs"
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "operator definitions not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "-"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "sample_id": "it3292e_official_textbook_pdf_01",
+  "course_code": "IT3292E",
+  "tier": "official",
+  "input_path": "data/sample/official/IT3292E/textbook/ullman_the_complete_book.pdf",
+  "expected_type": "mixed_pdf",
+  "expected_route": "hybrid",
+  "actual_route": "direct_text",
+  "route_evidence": {
+    "reason": "pymupdf_unavailable",
+    "inferred_type": "text_pdf",
+    "text_chars": null,
+    "page_count": null,
+    "image_count": null
+  },
+  "file_sha256": "d869f1217eb8d682f270f2b9b8306b96eae7fe414b27f3543903404646fa9ba8",
+  "model": "local_placeholder",
+  "duration_ms": 61
+}

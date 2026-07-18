@@ -1,0 +1,173 @@
+{
+  "qid": "discrete_math_08",
+  "course_code": "IT3020E",
+  "question": "What is the running time of the Floyd-Warshall algorithm?",
+  "session_id": "05f65d68-ef7b-414f-836c-b086a6f74a9f",
+  "answer": "The **Floyd–Warshall algorithm** runs in **\\(O(n^3)\\)** time, where \\(n\\) is the number of vertices.\n\nWhy: the algorithm has **three nested loops** over \\(k\\), \\(i\\), and \\(j\\), each ranging from \\(1\\) to \\(n\\). So the total work is proportional to \\(n \\cdot n \\cdot n = n^3\\).",
+  "citations": [
+    {
+      "chunk_id": "c6dd1a45-456c-44b9-8b2e-2056c3ab9984",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Floyd-Warshall",
+      "page_number": null,
+      "chunk_order": 39,
+      "excerpt": "void Floyd-Warshall(n, W)\n{\n    D^(0) ← W\n    for (k = 1; k <= n; k++)           // Path going through only intermediate\n                                        // vertices selected from {1,2,...,k}\n "
+    },
+    {
+      "chunk_id": "2a240b51-977d-44d9-9ddd-f56294316a25",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Content",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "- **1. Shortest path problem**\n- 2. Shortest path properties, Reduce upper bound\n- 3. Bellman-Ford algorithm\n- 4. Dijkstra algorithm\n- 5. Shortest path in acyclic graph\n- 6. Floyd-Warshall algorithm"
+    },
+    {
+      "chunk_id": "16542ccd-863f-4e81-a880-da824a58fabc",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Single-Source Shortest Paths in DAGs",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "DAG-SHORTEST PATHS(G, s)\n    TOPOLOGICALLY-SORT the vertices of G\n    INIT(G, s)\n    for each vertex u taken in topologically sorted order do\n        for each v ∈ Adj[u] do\n            RELAX(u, v)\n\n- "
+    },
+    {
+      "chunk_id": "1775cb46-54f3-42e6-ab30-bfe2a3141be8",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Recursive formula computed $d^{(h)}$",
+      "page_number": null,
+      "chunk_order": 38,
+      "excerpt": "- $d_{ij}^{(0)} = w_{ij}$\n\n[i] ---> [j]\n\n- $d_{ij}^{(h)} = \\min(d_{ij}^{(h-1)}, d_{ih}^{(h-1)} + d_{hj}^{(h-1)})$ if $h \\geq 1$\n\nd_{ih}^{(h-1)}\n\n|\n\nv\n[i] ~~~~~~~~~~~~~~~~~~~~>[h]~~~~~~~~~~~~~~~~~~~~>["
+    },
+    {
+      "chunk_id": "f9625b23-6f12-4a51-ada6-82b4b2ace155",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Single-Source Shortest Paths in DAGs",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "Critical_Path ( )\n{\n    d[v[1]] = 0;\n    for j in range (2, n+1) d[v[j]] =∞;\n    for v[j] ∈ Adj[v[1]]\n            d[v[j]] := w(v[1], v[j]) ;\n\nfor  j in range (2, n+1)\n        for  v ∈ Adj[v[j]]\n      "
+    },
+    {
+      "chunk_id": "aa726032-9f58-40d9-8e53-ccae5af7f665",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Shortest path problems",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "1. **Bellman-Ford algorithm**\n   - Edge weight: $>$, $<$, $= 0$\n   - Running time: $O(|V||E|)$\n   - Shortest path in the graph having cycle\n   - Non-negative length cycle\n\n2. **Dijkstra algorithm**\n  "
+    },
+    {
+      "chunk_id": "21bcf83e-d55f-44f6-a032-9a1821d5f8e5",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Single-Source Shortest Paths in DAGs",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "Shortest paths are always *well-defined* in *DAGS*\n\n- no cycles => no negative-weight cycles even if there are negative-weight edges\n\n*In a DAG:*\n\n- Every path is a subsequence of the topologically so"
+    },
+    {
+      "chunk_id": "03cca887-4eec-4ca8-99e1-e6f71064f403",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "All pairs shortest-paths",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "**Problem** Given directed graph $G = (V, E)$, with weight on each edge $e$ is $w(e)$,\nfor each pair of vertices $u, v$ of $V$, find the shortest path from $u$ to $v$.\n\n- Input: *weight matrix*\n- Outp"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Floyd-Warshall algorithm running time time complexity shortest path",
+      "namespaces": [
+        "knowledge",
+        "exercise"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c6dd1a45-456c-44b9-8b2e-2056c3ab9984",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Floyd-Warshall",
+          "chunk_order": 39,
+          "cosine_sim": 0.5625,
+          "final_score": 0.6469,
+          "content": "void Floyd-Warshall(n, W)\n{\n    D^(0) ← W\n    for (k = 1; k <= n; k++)           // Path going through only intermediate\n                                        // vertices selected from {1,2,...,k}\n        for (i = 1; i <= n; i++)        // All pairs (i,j)\n            for (j = 1; j <= n; j++)\n                d_ij^(k) ← min(d_ij^(k-1), d_ik^(k-1) + d_k\n\n## Floyd-Warshall Algorithm Example\n\n- Graph with 4 nodes and weighted edges\n- Distance matrix $D^{(4)}$ and predecessor matrix $P^{(4)}$ shown"
+        },
+        {
+          "chunk_id": "2a240b51-977d-44d9-9ddd-f56294316a25",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Content",
+          "chunk_order": 4,
+          "cosine_sim": 0.4662,
+          "final_score": 0.5361,
+          "content": "- **1. Shortest path problem**\n- 2. Shortest path properties, Reduce upper bound\n- 3. Bellman-Ford algorithm\n- 4. Dijkstra algorithm\n- 5. Shortest path in acyclic graph\n- 6. Floyd-Warshall algorithm"
+        },
+        {
+          "chunk_id": "16542ccd-863f-4e81-a880-da824a58fabc",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Single-Source Shortest Paths in DAGs",
+          "chunk_order": 26,
+          "cosine_sim": 0.4187,
+          "final_score": 0.4816,
+          "content": "DAG-SHORTEST PATHS(G, s)\n    TOPOLOGICALLY-SORT the vertices of G\n    INIT(G, s)\n    for each vertex u taken in topologically sorted order do\n        for each v ∈ Adj[u] do\n            RELAX(u, v)\n\n- Topological sorting: $O(|E|)$\n- Initialized-Single-Source: $O(|E|)$\n- Nested for-loop: each edge is \"traversed\" exactly once. Hence, it takes $O(|E|)$ time.\n\nHence, total running time: $O(|E|)$"
+        },
+        {
+          "chunk_id": "1775cb46-54f3-42e6-ab30-bfe2a3141be8",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Recursive formula computed $d^{(h)}$",
+          "chunk_order": 38,
+          "cosine_sim": 0.4067,
+          "final_score": 0.4677,
+          "content": "- $d_{ij}^{(0)} = w_{ij}$\n\n[i] ---> [j]\n\n- $d_{ij}^{(h)} = \\min(d_{ij}^{(h-1)}, d_{ih}^{(h-1)} + d_{hj}^{(h-1)})$ if $h \\geq 1$\n\nd_{ih}^{(h-1)}\n\n|\n\nv\n[i] ~~~~~~~~~~~~~~~~~~~~>[h]~~~~~~~~~~~~~~~~~~~~>[j]\n\n|                      ^   |                      ^\n |                      |   |                      |\n |                      |   |                      |\n |                      |   d_{hj}^{(h-1)}        |\n |                      |__________________________|\n |\n |_________________________________________________|\n\nd_{ij}^{(h-1)}\n\n[Diagram: The bottom figure shows two paths from node i to node j. The upper path goes through intermediate node h, composed of two segments: i→h with cost $d_{ih}^{(h-1)}$ and h→j with cost $d_{hj}^{(h-1)}$. The recursive formula takes the minimum of these two options.]"
+        },
+        {
+          "chunk_id": "f9625b23-6f12-4a51-ada6-82b4b2ace155",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Single-Source Shortest Paths in DAGs",
+          "chunk_order": 28,
+          "cosine_sim": 0.4034,
+          "final_score": 0.4639,
+          "content": "Critical_Path ( )\n{\n    d[v[1]] = 0;\n    for j in range (2, n+1) d[v[j]] =∞;\n    for v[j] ∈ Adj[v[1]]\n            d[v[j]] := w(v[1], v[j]) ;\n\nfor  j in range (2, n+1)\n        for  v ∈ Adj[v[j]]\n            Relax(v[j],v)\n}\n\n- **Initialization:** Init(G, v[1])\n\nd[v[j]]\n\n|\n\nv\n    v[1] ------> v[j] ------> v\n           \\      w(v[j], v) /\n            \\              /\n             \\            /\n              \\          /\n               --------> \n                  d[v] = \\min(d[v], d[v[j]] + w(v[j], v))$\n\n- Running time: $O(|E|)$, since each edge is traversed exactly once\n\n[Diagram: The diagram shows a DAG with three nodes. v[1] is the source node with distance 0. v[j] is an intermediate node with current shortest distance d[v[j]] from v[1]. v is a successor of v[j] with an edge of weight w(v[j], v). The relaxation operation compares the current best distance to v (d[v]) versus the path through v[j] (d[v[j]] + w(v[j], v)), taking the minimum.]"
+        },
+        {
+          "chunk_id": "aa726032-9f58-40d9-8e53-ccae5af7f665",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Shortest path problems",
+          "chunk_order": 20,
+          "cosine_sim": 0.4008,
+          "final_score": 0.461,
+          "content": "1. **Bellman-Ford algorithm**\n   - Edge weight: $>$, $<$, $= 0$\n   - Running time: $O(|V||E|)$\n   - Shortest path in the graph having cycle\n   - Non-negative length cycle\n\n2. **Dijkstra algorithm**\n   - Edge weight $\\geq 0$\n   - Running time: $O(|V|^2)$\n\n3. **Shortest path in the directed graph with no cycles**\n   - (Directed acyclic graph (DAG))\n   - Edge weight: $>$, $<$, $= 0$\n   - Running time: $O(|E|)$"
+        },
+        {
+          "chunk_id": "21bcf83e-d55f-44f6-a032-9a1821d5f8e5",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Single-Source Shortest Paths in DAGs",
+          "chunk_order": 25,
+          "cosine_sim": 0.3831,
+          "final_score": 0.4406,
+          "content": "Shortest paths are always *well-defined* in *DAGS*\n\n- no cycles => no negative-weight cycles even if there are negative-weight edges\n\n*In a DAG:*\n\n- Every path is a subsequence of the topologically sorted vertex order\n- If we do topological sort and process vertices in that order\n- We will process each path in forward order\n  - Never relax edges out of a vertex until have processed all edges into the vertex\n\nThus, just 1 iteration is sufficient"
+        },
+        {
+          "chunk_id": "03cca887-4eec-4ca8-99e1-e6f71064f403",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "All pairs shortest-paths",
+          "chunk_order": 33,
+          "cosine_sim": 0.3617,
+          "final_score": 0.416,
+          "content": "**Problem** Given directed graph $G = (V, E)$, with weight on each edge $e$ is $w(e)$,\nfor each pair of vertices $u, v$ of $V$, find the shortest path from $u$ to $v$.\n\n- Input: *weight matrix*\n- Output *matrix*: element at row $u$ column $v$ is the length of the shortest path from $u$ to $v$.\n- Allow negative-weight edge\n- **Assumption: None negative-length cycle**"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.8
+}

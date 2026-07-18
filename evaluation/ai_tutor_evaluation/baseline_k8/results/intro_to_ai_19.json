@@ -1,0 +1,47 @@
+{
+  "qid": "intro_to_ai_19",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The answer accurately describes alpha-beta pruning's purpose to reduce nodes evaluated, preserve optimal decisions, cut off branches, save computation, and not change results.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by clearly stating the primary purpose of Alpha-Beta pruning: to reduce the number of nodes evaluated while preserving the optimal minimax decision. All content is on-topic and relevant to the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "The tutor's answer correctly identifies the primary purpose (reducing nodes evaluated while preserving optimal decision) and mentions cutting off branches. However, it omits the quantitative benefit explicitly stated in the ground truth: that with perfect ordering, alpha-beta pruning can double the search depth or allow looking twice as far in the same time.",
+      "evidence": [
+        "Ground truth: 'With perfect move ordering, this technique can double the depth of the search, allowing the agent to look twice as far in the same amount of time.'",
+        "Tutor answer mentions 'saves computation time' but does not specify the doubling of depth benefit"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All eight retrieved chunks are directly relevant to alpha-beta pruning in minimax search trees. They cover the algorithm's pseudocode, examples, properties, bounds (α and β), and efficiency benefits—all pertinent to understanding its primary purpose.",
+      "evidence": []
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "The retrieved chunks cover most ground-truth facts: they explain that pruning removes branches that don't affect the final decision and addresses computational efficiency. However, the specific quantitative claim that 'with perfect move ordering, this technique can double the depth of the search, allowing the agent to look twice as far in the same amount of time' is only partially present.",
+      "evidence": [
+        "doubles depth of search",
+        "Alpha-beta pruning can look twice as far as minimax in the same amount of time"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the tutor's statements. The chunks explicitly describe alpha-beta pruning as reducing nodes evaluated, cutting branches that cannot affect the final decision, and preserving the optimal minimax result.",
+      "evidence": [
+        "Tutor: 'reduce the number of nodes that need to be evaluated' — Chunk 32690667: 'dramatically reducing the number of game states that must be evaluated'",
+        "Tutor: 'cuts off branches that cannot possibly affect the final choice' — Chunk 32690667: 'avoid exploring branches that cannot affect the final decision'",
+        "Tutor: 'does not change the final result' — Chunk 6800588c: 'Pruning does not affect final result'"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_06",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Prim safe-edge grounded; honest generic-def gap"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "GT generic invariant; ctx has Prim-specific only"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "generic invariant not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  }
+}

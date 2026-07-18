@@ -1,0 +1,48 @@
+{
+  "file_id": "it3292e_exam_giuaki_oanh_pdf",
+  "scores": {
+    "classification_routing": {
+      "score": 4,
+      "justification": "processing_meta.json exposes no explicit route/inferred_type, so route is not directly recoverable; but ocr_job COMPLETED, ocr_quality=low, language=vi, and coherent Vietnamese text pulled from a no-text-layer scan all confirm the vision/OCR path ran (consistent with expected vision_only). Minor deduction only because the route is inferred rather than explicitly logged.",
+      "evidence": ["\"ocr_job\": { \"status\": \"COMPLETED\"", "\"ocr_quality\": \"low\"", "\"language\": \"vi\""]
+    },
+    "text_coverage": {
+      "score": 5,
+      "justification": "All substantive text is present: both exam variants (Đề 2 and Đề 1), both relational-schema tables, question 1 (create-table prompt) and all six SQL sub-questions a–f for each variant. Untranscribed handwritten red grading marks are noted in the reference as not fully transcribed, so no penalty.",
+      "evidence": []
+    },
+    "extraction_fidelity": {
+      "score": 4,
+      "justification": "Vietnamese diacritics are largely intact and correct (CƠ SỞ DỮ LIỆU, điều kiện tiên quyết, Đưa ra danh sách), but the Đ diacritic is dropped in the DieuKien key and a Vietnamese decimal comma is anglicized.",
+      "evidence": ["output \"DieuKien(**MaHP, MaHPDK**, loai)\" vs source \"MaHPĐK\"", "output \"nhỏ hơn 0.5\" vs source \"nhỏ hơn 0,5\""]
+    },
+    "structure_preservation": {
+      "score": 4,
+      "justification": "Headings, numbered questions, lettered sub-lists, and both tables are preserved with correct reading order — notably the two-column source layout (questions c–f in the right column) is correctly merged into a single a–f sequence per variant. Deduction because the Đề 1 table gained a spurious empty middle column (3 columns vs the source's 2).",
+      "evidence": ["Đề 1 table header \"| Quan hệ | Thuộc tính | Thông tin |\" vs source two-column table"]
+    },
+    "faithfulness_no_hallucination": {
+      "score": 4,
+      "justification": "No exam questions or content were invented; every question matches the source. The only fabrication is an attribute 'ThongTin' inserted into the Đề 1 HocPhan schema plus an empty 'Thuộc tính' column not present in the source.",
+      "evidence": ["output \"HocPhan(**MaHP**, TenHP, ThongTin, soTC, heSoCKy)\" vs source \"HocPhan(MaHP, TenHP, soTC, heSoCKy)\""]
+    },
+    "formula_table_code": {
+      "score": 4,
+      "justification": "No formulas or code; the load-bearing structures are the two relational-schema tables. The Đề 2 table is faithful and legible, but the Đề 1 table has an invented empty 'Thuộc tính' column and an added 'ThongTin' attribute, degrading table fidelity.",
+      "evidence": ["Đề 1 table row \"| HocPhan(**MaHP**, TenHP, ThongTin, soTC, heSoCKy) |  | ... |\" — phantom empty column plus invented ThongTin"]
+    }
+  },
+  "classification": {
+    "expected_type": "scanned_pdf",
+    "expected_route": "vision_only",
+    "actual_type": "scanned_pdf (inferred; ocr_job COMPLETED, ocr_quality=low, language=vi)",
+    "actual_route": "vision_only (inferred from ocr_job COMPLETED + ocr_quality signal; not explicitly present in processing_meta.json)",
+    "pass": true
+  },
+  "hallucinations": [
+    "ThongTin — invented attribute in the Đề 1 HocPhan schema: output \"HocPhan(**MaHP**, TenHP, ThongTin, soTC, heSoCKy)\"; source schema has no ThongTin attribute.",
+    "Extra empty \"Thuộc tính\" column in the Đề 1 relation table (header \"| Quan hệ | Thuộc tính | Thông tin |\"); the source table has only two columns."
+  ],
+  "normalization_note": "The normalized markdown reads coherently and preserves both exam variants end to end with a horizontal-rule separator; no large spans dropped or corrupted. Minor OCR drift only (Đ→D in MaHPĐK, comma→dot in 0,5, straight vs curly quotes) plus the fabricated Đề 1 table column/attribute. Note: summary.json assigns page_range values 1–6 for a 2-page document (section-indexed rather than page-indexed), a metadata quirk, not a defect in output.md.",
+  "overall_comment": "Strong true-OCR extraction of a genuine no-text-layer Vietnamese scan: near-complete coverage of both Đề 2 and Đề 1, correct vi language detection, clean diacritics, and correct handling of the two-column reading order. The route was not explicitly logged but every supporting signal (ocr_job COMPLETED, ocr_quality=low, coherent VN text) is consistent with vision_only, so routing passes. Main defects are minor: a dropped Đ diacritic (MaHPĐK→MaHPDK), a comma→dot decimal change (0,5→0.5), and one fabricated table column/attribute (ThongTin) in the Đề 1 schema."
+}

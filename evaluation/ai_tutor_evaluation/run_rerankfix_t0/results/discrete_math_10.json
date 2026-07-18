@@ -1,0 +1,57 @@
+{
+  "qid": "discrete_math_10",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "All claims in the answer are directly supported by the retrieved chunks. The special value θ, its possible values (0, +∞, -∞), and the context-dependent usage are all grounded in chunk 52f037bf. The specific examples for undirected graphs (0) and directed graphs (∞) are supported by chunks ecbe0028 and 2161fa9f respectively.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses how non-existent edges are represented in a weight matrix, explaining that a special value θ is used which can be 0, +∞, or -∞ depending on context. The additional examples about undirected vs. directed graphs provide relevant context without detracting from the core answer.",
+      "evidence": [
+        "các **cạnh không tồn tại** thường được biểu diễn bằng một **giá trị đặc biệt** `θ`",
+        "giá trị này **phụ thuộc vào ngữ cảnh**, có thể là: `0`, `+∞`, `-∞`"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly identifies all key facts from the ground truth: non-existent edges are represented by a special value θ, which can be 0, +∞, or -∞ depending on the application. The answer provides additional context with examples, which is legitimate supplementary information.",
+      "evidence": [
+        "Ground truth: 'a special value θ is used to identify that (i,j) is not an edge'",
+        "Tutor: 'các cạnh không tồn tại thường được biểu diễn bằng một giá trị đặc biệt θ'",
+        "Ground truth: 'θ could be assigned a value of 0, +∞, or -∞'",
+        "Tutor: 'giá trị này phụ thuộc vào ngữ cảnh, có thể là: 0, +∞, -∞'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All five retrieved chunks are directly relevant to the question about representing non-existent edges in weight matrices. The first chunk explicitly defines θ and its possible values, while the remaining chunks provide concrete examples of weight matrices showing how non-existent edges are represented in practice.",
+      "evidence": [
+        "Chunk 52f037bf: 'θ: special value to identify (i, j) is not an edge; depends on the case, the value of θ could be: 0, +∞, −∞'",
+        "Chunk ecbe0028: 'Zero entries indicate no edge between vertices'",
+        "Chunk 2a235341: '∞ for non-existent edges'",
+        "Chunk 2161fa9f: '$w_{ij} = ... \\infty \\text{ otherwise}$'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 52f037bf explicitly states that θ is a special value to identify non-edges and can be 0, +∞, or −∞ depending on the case.",
+      "evidence": [
+        "θ: special value to identify (i, j) is not an edge; depends on the case, the value of θ could be: 0, +∞, −∞."
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the tutor's statements. The first chunk defines θ as the special value for non-existent edges with possible values 0, +∞, -∞. The example chunks show concrete instances where 0 is used for undirected graphs and ∞ for directed graphs in shortest path problems.",
+      "evidence": [
+        "Tutor: 'các **cạnh không tồn tại** thường được biểu diễn bằng một **giá trị đặc biệt** `θ`' → Chunk 52f037bf: 'θ: special value to identify (i, j) is not an edge'",
+        "Tutor: 'giá trị này **phụ thuộc vào ngữ cảnh**, có thể là: `0`, `+∞`, `-∞`' → Chunk 52f037bf: 'depends on the case, the value of θ could be: 0, +∞, −∞'",
+        "Tutor: 'đồ thị vô hướng...cạnh không tồn tại thường được ghi là **0**' → Chunk ecbe0028: 'Zero entries indicate no edge between vertices'",
+        "Tutor: 'đồ thị có hướng...cạnh không tồn tại thường được ghi là **∞**' → Chunk 2161fa9f: 'w_{ij} = ... \\infty & \\text{otherwise}'"
+      ]
+    }
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "qid": "database_07",
+  "course_code": "IT3292E",
+  "question": "What is an update anomaly in the context of database normalization?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "381d6850-f875-445c-b456-9e2cc1cdeeab",
+  "answer": "# Update Anomaly in Database Normalization\n\n## Definition\n\nAn **update anomaly** (also called a *modification anomaly*) occurs when a change to a piece of data in a poorly structured (unnormalized or partially normalized) table must be made in **multiple rows** to keep the database consistent. If even one of those rows is missed during the update, the database ends up in an **inconsistent state**, where the same fact is represented by different values in different places.\n\n## Example Using the Course's Student–Subject Table\n\nConsider the unnormalized/poorly-normalized table from the course material (PK: `student_id, subject_id`):\n\n| student_id | full_name      | dob         | subject_id | name           | result |\n|-----------:|----------------|-------------|------------|----------------|--------|\n| 1234       | David Beckham  | 12/21/1997  | IT3090     | Databases      | A      |\n| 1234       | David Beckham  | 12/21/1997  | IT4868     | Web mining     | C      |\n| 1238       | Theresa May    | 08/06/1998  | IT4843     | Data integration | B    |\n| 1238       | Theresa May    | 08/06/1998  | IT4868     | Web mining     | B      |\n| 1497       | Tony Blair     | 03/01/1999  | IT3090     | Databases      | A      |\n\nNotice that **David Beckham's personal data** (`full_name`, `dob`) is **duplicated** across multiple rows — once for each subject he takes.\n\n➡️ **Update anomaly scenario:** Suppose David Beckham gets married and changes his legal name to \"David Brown\". To keep the data correct, his `full_name` must be updated in **every row** where `student_id = 1234` appears. If the DBA updates only one row and forgets another, the database will record two different names for the same student — an inconsistency.\n\n## Why It Happens\n\nUpdate anomalies are caused by **data redundancy**: when non-key attributes (like a student's name or date of birth) are stored alongside attributes that vary with part of the primary key (like a subject or a result), the same fact ends up repeated in many rows.\n\n## How Normalization Fixes It\n\nAccording to the course material, **normalization is the process of removing anomalies and redundancies from a database**, and each normal form is designed to eliminate one or more of these anomalies:\n\n- **1NF** – eliminates repeating groups in cells.\n- **2NF** – eliminates partial dependencies on a composite key.\n- **3NF** – eliminates transitive dependencies.\n\nBy splitting the above table into separate relations (e.g., `Student(student_id, full_name, dob)` and `Enrollment(student_id, subject_id, result)`), David's name is stored in **only one place**, so a single `UPDATE Student SET full_name = 'David Brown' WHERE student_id = 1234` keeps the database consistent — and the update anomaly is removed.\n\n---",
+  "citations": [
+    {
+      "chunk_id": "a647a8d6-d7bd-4caf-93ee-8a4df4898d08",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Motivation",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Normalization is the process of removing **anomalies** and **redundancies** from DB"
+    },
+    {
+      "chunk_id": "25484654-db80-4024-9195-1b37c28f33a7",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Introduction",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- Each form was designed to eliminate one or more of the anomalies: First NF; Second NF; Third NF\n- Unnormalized Form (UNF)\n  - A table that contains one or more repeating groups. I.e., its cell may c"
+    },
+    {
+      "chunk_id": "20a03c19-d212-4f2d-82ab-66ddd141b27e",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "1. **Introduction**\n   - Normalization is the process of removing anomalies and redundancies from DB\n   - Full & Partial Dependency\n   - Transitive dependency\n\n2. **Normal Forms**\n   - 1NF, 2NF, 3NF\n\n"
+    },
+    {
+      "chunk_id": "711334a2-6106-4eab-9d4a-ffe16999580e",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Motivation: Insertion Anomalies",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- PK: (student_id, subject_id)\n- We can not insert a new subject if we do not have a student assigned to it yet\n- We can not insert a null value into PK attributes\n\n| student_id | full_name | dob | su"
+    },
+    {
+      "chunk_id": "f51e06c3-3804-475b-8058-e0feb9edb126",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Lesson 5: Database design",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "Part 2: Normalization"
+    },
+    {
+      "chunk_id": "beb9f2aa-b9f7-4cac-9943-f62d6033e79e",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Motivation of normalization\n- Full & Partial Dependency\n- Transitive dependency\n- 1NF, 2 NF, 3 NF\n- Properties of relational decompositions\n- An algorithm decomposes a universal relation into 3NF"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "update anomaly database normalization definition example",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "a647a8d6-d7bd-4caf-93ee-8a4df4898d08",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "1.1. Motivation",
+          "chunk_order": 10,
+          "cosine_sim": 0.438,
+          "final_score": 0.7555,
+          "content": "- Normalization is the process of removing **anomalies** and **redundancies** from DB"
+        },
+        {
+          "chunk_id": "25484654-db80-4024-9195-1b37c28f33a7",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "2.1. Introduction",
+          "chunk_order": 14,
+          "cosine_sim": 0.4315,
+          "final_score": 0.7444,
+          "content": "- Each form was designed to eliminate one or more of the anomalies: First NF; Second NF; Third NF\n- Unnormalized Form (UNF)\n  - A table that contains one or more repeating groups. I.e., its cell may contain multiple values\n\n| student_id | full_name | dob | subject_id | name | result |\n|:----------:|:-----------:|:---:|:----------:|:---------------------:|:------:|\n| 1234 | David Beckham | 12/21/1997 | IT3090, IT4868 | Databases, Web mining | A, C |\n| 1238 | Theresa May | 08/06/1998 | IT4843, IT4868 | Data integration, Web mining | B, B |\n| 1497 | Tony Blair | 03/01/1999 | IT3090 | Databases | A |\n| 1542 | Margaret Thatcher | 05/08/1997 | IT2000 | Introduction to ICT | C |"
+        },
+        {
+          "chunk_id": "20a03c19-d212-4f2d-82ab-66ddd141b27e",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "Summary",
+          "chunk_order": 27,
+          "cosine_sim": 0.4075,
+          "final_score": 0.7029,
+          "content": "1. **Introduction**\n   - Normalization is the process of removing anomalies and redundancies from DB\n   - Full & Partial Dependency\n   - Transitive dependency\n\n2. **Normal Forms**\n   - 1NF, 2NF, 3NF\n\n3. **Normalization**\n   - Properties of relational decompositions\n   - An algorithm decomposes a universal relation into 3NF\n   - Some examples"
+        },
+        {
+          "chunk_id": "711334a2-6106-4eab-9d4a-ffe16999580e",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "1.1. Motivation: Insertion Anomalies",
+          "chunk_order": 7,
+          "cosine_sim": 0.3958,
+          "final_score": 0.6828,
+          "content": "- PK: (student_id, subject_id)\n- We can not insert a new subject if we do not have a student assigned to it yet\n- We can not insert a null value into PK attributes\n\n| student_id | full_name | dob | subject_id | name | result |\n|:---|:---|:---|:---|:---|:---|\n| 1234 | David Beckham | 12/21/1997 | IT3090 | Databases | A |\n| 1238 | Theresa May | 08/06/1998 | IT4843 | Data integration | B |\n| 1234 | David Beckham | 12/21/1997 | IT4868 | Web mining | C |\n| 1497 | Tony Blair | 03/01/1999 | IT3090 | Databases | A |\n| 1238 | Theresa May | 08/06/1998 | IT4868 | Web mining | B |\n| 1542 | Margaret Thatcher | 05/08/1997 | IT2000 | Introduction to ICT | C |"
+        },
+        {
+          "chunk_id": "f51e06c3-3804-475b-8058-e0feb9edb126",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "Lesson 5: Database design",
+          "chunk_order": 2,
+          "cosine_sim": 0.3924,
+          "final_score": 0.6769,
+          "content": "Part 2: Normalization"
+        },
+        {
+          "chunk_id": "c0796a51-c0a3-4036-bf13-78598ba5944e",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "2. Definition a Relation Schema",
+          "chunk_order": 10,
+          "cosine_sim": 0.3357,
+          "final_score": 0.3861,
+          "content": "- Example: Education database\n\nstudent($\\mathbf{student\\_id}$, first_name, last_name, dob, gender, address, note, clazz_id)  \nsubject($\\mathbf{subject\\_id}$, name, credit, percentage_final_exam)  \nlecturer($\\mathbf{lecturer\\_id}$, first_name, last_name, dob, gender, address, email)  \nteaching($\\mathbf{subject\\_id}$, $\\mathbf{lecturer\\_id}$)  \ngrade($\\mathbf{code}$, fromScore, toScore)  \nclazz($\\mathbf{clazz\\_id}$, name, lecturer_id, monitor_id)  \nenrollment($\\mathbf{student\\_id}$, $\\mathbf{subject\\_id}$, $\\mathbf{semester}$, midterm_score, final_score)\n\n- Detailed description for relation/table enrollment\n\n| Attribute name | Type | NOT NULL | Description |\n|---|---|---|---|\n| student_id | CHAR(8) | Yes | Student identification code. FOREIGN KEY references to Student(student_id) |\n| subject_id | CHAR(6) | Yes | Subject code. FOREIGN KEY references to Subject(subject_id) |\n| semester | CHAR(5) | Yes | Annual semester: '20171', '20172', '20173', ... |\n| midterm_score | Float | No | Score of mid-term exam. DOM = [0,10] and (midtermScore mod 0.5) must be 0 |\n| final_score | Float | No | Score of final exam. DOM = [0,10] (finalScore mod 0.5) must be 0 |"
+        },
+        {
+          "chunk_id": "d071f197-fce1-4e4e-8d20-c09b6b2dda78",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "1.2. Definition",
+          "chunk_order": 10,
+          "cosine_sim": 0.335,
+          "final_score": 0.3852,
+          "content": "[Diagram: The tables illustrate functional dependencies in relational data, showing how certain attributes determine others. This matters because identifying dependencies is a key step in understanding database structure and normalization.]"
+        },
+        {
+          "chunk_id": "29829bbf-1c59-466d-858c-b052d3ca2b42",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Quiz 5.",
+          "chunk_order": 42,
+          "cosine_sim": 0.2775,
+          "final_score": 0.3191,
+          "content": "| Quiz Number | 2 | Quiz Type | OX | Example Select |\n|---|---:|---|---|---|\n| Question | How many foreign keys and primary keys can we define for a table? |  |  |  |\n| Example | A. Primary key: zero or one; foreign key: zero or one<br>B. Primary key: zero or one; foreign key: zero, one or more<br>C. Primary key: zero, one or more; foreign key: zero, one or more<br>D. Primary key: zero, one or more; foreign key: zero or one |  |  |  |\n| Answer | B |  |  |  |\n| Feedback | A table has only one primary key, but it can have 0, 1 or many foreign key(s). A table can have also 0, 1 or many check constraint(s). |  |  |  |\n\n[Diagram: This slide presents a quiz item about database table constraints, especially the allowed number of primary keys and foreign keys. It matters because it tests understanding of relational schema rules: a table has a single primary key definition, while foreign keys can appear multiple times to represent relationships.]"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "update anomaly deletion anomaly modification anomaly examples normalization",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "a647a8d6-d7bd-4caf-93ee-8a4df4898d08",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "1.1. Motivation",
+          "chunk_order": 10,
+          "cosine_sim": 0.4736,
+          "final_score": 0.817,
+          "content": "- Normalization is the process of removing **anomalies** and **redundancies** from DB"
+        },
+        {
+          "chunk_id": "20a03c19-d212-4f2d-82ab-66ddd141b27e",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "Summary",
+          "chunk_order": 27,
+          "cosine_sim": 0.4541,
+          "final_score": 0.7833,
+          "content": "1. **Introduction**\n   - Normalization is the process of removing anomalies and redundancies from DB\n   - Full & Partial Dependency\n   - Transitive dependency\n\n2. **Normal Forms**\n   - 1NF, 2NF, 3NF\n\n3. **Normalization**\n   - Properties of relational decompositions\n   - An algorithm decomposes a universal relation into 3NF\n   - Some examples"
+        },
+        {
+          "chunk_id": "f51e06c3-3804-475b-8058-e0feb9edb126",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "Lesson 5: Database design",
+          "chunk_order": 2,
+          "cosine_sim": 0.4087,
+          "final_score": 0.705,
+          "content": "Part 2: Normalization"
+        },
+        {
+          "chunk_id": "beb9f2aa-b9f7-4cac-9943-f62d6033e79e",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "Remark",
+          "chunk_order": 26,
+          "cosine_sim": 0.3956,
+          "final_score": 0.6824,
+          "content": "- Motivation of normalization\n- Full & Partial Dependency\n- Transitive dependency\n- 1NF, 2 NF, 3 NF\n- Properties of relational decompositions\n- An algorithm decomposes a universal relation into 3NF"
+        },
+        {
+          "chunk_id": "25484654-db80-4024-9195-1b37c28f33a7",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "2.1. Introduction",
+          "chunk_order": 14,
+          "cosine_sim": 0.3806,
+          "final_score": 0.6566,
+          "content": "- Each form was designed to eliminate one or more of the anomalies: First NF; Second NF; Third NF\n- Unnormalized Form (UNF)\n  - A table that contains one or more repeating groups. I.e., its cell may contain multiple values\n\n| student_id | full_name | dob | subject_id | name | result |\n|:----------:|:-----------:|:---:|:----------:|:---------------------:|:------:|\n| 1234 | David Beckham | 12/21/1997 | IT3090, IT4868 | Databases, Web mining | A, C |\n| 1238 | Theresa May | 08/06/1998 | IT4843, IT4868 | Data integration, Web mining | B, B |\n| 1497 | Tony Blair | 03/01/1999 | IT3090 | Databases | A |\n| 1542 | Margaret Thatcher | 05/08/1997 | IT2000 | Introduction to ICT | C |"
+        },
+        {
+          "chunk_id": "9c585dae-2227-4ae4-90c1-34591d3aaccc",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "3. Data Manipulation",
+          "chunk_order": 29,
+          "cosine_sim": 0.316,
+          "final_score": 0.3634,
+          "content": "[Diagram: The slide shows two related database tables, `student` and `clazz`, to illustrate how data manipulation operations affect linked records in a relational design. The arrows and highlighted rows emphasize that changes such as updating an address, adding or deleting students, and retrieving student lists must respect the relationship between students and their classes.]"
+        },
+        {
+          "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.214,
+          "final_score": 0.2461,
+          "content": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n| CREATE TABLE | SQL statement to define a table into a database |\n| ALTER TABLE | SQL statement to modify table structure if needed (add /delete/modify column(s), add/remove constraint(s)) |\n| INSERT/UPDATE/DELETE | SQL statements to add new record to a table; to change the data of one or more records in a table; to remove single record or multiple records from a table |\n| SELECT | SQL statement to retrieve data from a database |"
+        },
+        {
+          "chunk_id": "f59b1aaa-c7c6-4a4a-a5b5-8ddcba9c50db",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Leaning objective",
+          "chunk_order": 4,
+          "cosine_sim": 0.2042,
+          "final_score": 0.2348,
+          "content": "- Have notions about the SQL language\n- Use SQL to define a relation schema in a database\n- Use SQL to populate a table with rows, update / delete data and to retrieve data from a table"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 25.9
+}

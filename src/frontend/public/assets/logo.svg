@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#990000" />
+      <stop offset="100%" stop-color="#7f0000" />
+    </linearGradient>
+  </defs>
+  <!-- Book outline -->
+  <path d="M4 6 C 4 6, 10 4, 16 8 C 22 4, 28 6, 28 6 L 28 24 C 28 24, 22 22, 16 26 C 10 22, 4 24, 4 24 Z" 
+        fill="none" 
+        stroke="url(#bookGrad)" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+  <!-- Spine -->
+  <path d="M16 8 L 16 26" 
+        stroke="url(#bookGrad)" 
+        stroke-width="2.5" 
+        stroke-linecap="round" />
+  <!-- Left page details (lines) -->
+  <path d="M7 10 C 10 8.5, 13 10, 13 10 M7 14 C 10 12.5, 13 14, 13 14 M7 18 C 10 16.5, 13 18, 13 18" 
+        stroke="url(#bookGrad)" 
+        stroke-width="1.5" 
+        stroke-linecap="round" 
+        opacity="0.6" />
+  <!-- Right page details (lines) -->
+  <path d="M25 10 C 22 8.5, 19 10, 19 10 M25 14 C 22 12.5, 19 14, 19 14 M25 18 C 22 16.5, 19 18, 19 18" 
+        stroke="url(#bookGrad)" 
+        stroke-width="1.5" 
+        stroke-linecap="round" 
+        opacity="0.6" />
+</svg>

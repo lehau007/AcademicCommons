@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evaluation_report.schema.json",
+  "title": "Evaluation Report",
+  "description": "Composite evaluation report combining all 3 agent outputs for a community contribution. This is what the reviewer sees in the Evaluation Report tab.",
+  "type": "object",
+  "required": ["schema_version", "document_id", "course_code", "pipeline_version", "created_at", "agent1_output", "agent2_output", "agent3_output"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "document_id": {
+      "type": "string",
+      "description": "The document being evaluated"
+    },
+    "course_code": {
+      "type": "string"
+    },
+    "pipeline_version": {
+      "type": "string",
+      "description": "Version of the evaluation pipeline that produced this report"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "agent1_output": {
+      "$ref": "agent1_output.schema.json",
+      "description": "Course Context Aggregator output"
+    },
+    "agent2_output": {
+      "$ref": "agent2_output.schema.json",
+      "description": "Internet Search Agent output"
+    },
+    "agent3_output": {
+      "$ref": "agent3_output.schema.json",
+      "description": "Quality Evaluation Agent output"
+    }
+  },
+  "additionalProperties": false
+}

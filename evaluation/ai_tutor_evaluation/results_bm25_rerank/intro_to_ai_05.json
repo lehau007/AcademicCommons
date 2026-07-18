@@ -1,0 +1,58 @@
+{
+  "qid": "intro_to_ai_05",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunks. The definition of CSP (variables Xi with domains Di, goal as constraint satisfaction) matches chunks 67acdf6b and cb0570c6. The map-coloring example is a standard illustration consistent with the constraint graph material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses what defines a CSP by explaining the three core components: variables with domains, and constraints that must be satisfied. The example provided reinforces the definition rather than diverting from it.",
+      "evidence": [
+        "Trạng thái được tạo bởi một tập biến cố định \\(X_i\\), mỗi biến có giá trị thuộc miền \\(D_i\\)",
+        "Mục tiêu là thỏa mãn một tập các ràng buộc trên giá trị của các biến",
+        "CSP = các biến + miền giá trị + các ràng buộc cần thỏa mãn"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: CSP is a type of problem where state is composed of variables Xi with values from domain Di, and the goal is defined by constraints that must be satisfied. The answer is factually consistent with no contradictions.",
+      "evidence": [
+        "Ground truth: 'state is composed of variables Xi that take values from a specific domain Di'",
+        "Tutor: 'Trạng thái được tạo bởi một tập biến cố định Xi, mỗi biến có giá trị thuộc miền Di'",
+        "Ground truth: 'goal test for a CSP is defined by a set of constraints'",
+        "Tutor: 'Mục tiêu là thỏa mãn một tập các ràng buộc trên giá trị của các biến'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "The first two chunks directly define CSPs with variables, domains, and constraints. Chunks 3-4 on constraint graphs are marginally relevant (graph representation relates to CSP structure). Chunks 5-6 on iterative algorithms and cryptarithmetic examples are less directly relevant to the definition itself, though they illustrate CSP applications.",
+      "evidence": [
+        "chunk 5: 'Hill-climbing, Simulated Annealing can be used for CSPs'",
+        "chunk 6: 'Example: Cryptarimetetic' with specific variable assignments"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunks explicitly state that CSP states are composed of variables Xi with values from domain Di, and that the goal test is defined by constraints on variable values.",
+      "evidence": [
+        "State is composed of variables $X_i$ with value in domain $D_i$",
+        "Goal test is a set of constraints over variables",
+        "states defined by values of a fixed set of variables",
+        "goal test defined by constraints on variable values"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The first two chunks explicitly define CSPs with variables Xi in domains Di and constraints as the goal test, matching the tutor's definition perfectly. The remaining citations provide relevant supporting context about CSP structure and examples.",
+      "evidence": [
+        "Tutor states: 'Trạng thái được tạo bởi một tập biến cố định Xi, mỗi biến có giá trị thuộc miền Di' — Chunk 67acdf6b: 'State is composed of variables $X_i$ with value in domain $D_i$'",
+        "Tutor states: 'Mục tiêu là thỏa mãn một tập các ràng buộc' — Chunk 67acdf6b: 'Goal test is a set of constraints over variables'",
+        "Tutor states: 'CSP = các biến + miền giá trị + các ràng buộc' — Chunk cb0570c6: 'states defined by values of a fixed set of variables' and 'goal test defined by constraints on variable values'"
+      ]
+    }
+  }
+}

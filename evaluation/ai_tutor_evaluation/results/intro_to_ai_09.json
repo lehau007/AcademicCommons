@@ -1,0 +1,57 @@
+{
+  "qid": "intro_to_ai_09",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunks. The construction of terms from variables, constants, and function symbols, and predicates from relation symbols and terms, along with all examples, are grounded in chunk cbd69d92-9c6c-4b13-9f0b-52fd71da4b57 and dca8ed08-87dc-4cdf-bda1-d9b9a3e27a9a.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how terms and predicates are constructed in FOL, explaining that terms are built from constants, variables, and function symbols, and predicates are built by applying relation symbols to terms, with appropriate examples.",
+      "evidence": [
+        "Terms được xây dựng như thế nào? Các term được tạo từ: hằng số (constants), biến (variables), hàm (function symbols)",
+        "Predicates được xây dựng như thế nào? Một predicate được tạo bằng cách lấy: một relation symbol (ký hiệu quan hệ) p có số đối số là n, và n term"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: terms are built from variables, constants, and function symbols (with example FatherOf(X)), and predicates are built by applying relations to terms (with example Tall(FatherOf(Bill))). No contradictions exist.",
+      "evidence": [
+        "Ground truth: 'Terms are built using variables, constants, and function symbols (e.g., FatherOf(X))'",
+        "Tutor: 'Các term được tạo từ: hằng số (constants), biến (variables), hàm (function symbols). Ví dụ: ... FatherOf(X)'",
+        "Ground truth: 'Predicates are then built by applying relations to these terms (e.g., Tall(FatherOf(Bill)))'",
+        "Tutor: 'Một predicate được tạo bằng cách lấy: một relation symbol ... và n term ... Ví dụ: Tall(FatherOf(Bill))'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Three of five chunks are directly relevant to FOL syntax construction. Two chunks (b7119f3c about regression algorithms and 1b633408 about blocks world) are unrelated to the question about FOL term and predicate construction.",
+      "evidence": [
+        "chunk b7119f3c: 'General process for predecessor construction... Give a goal description G'",
+        "chunk 1b633408: 'On(C,A) On(A,Table)... blocks-world planning example'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk cbd69d92 explicitly states that terms are built using variables, constants, and function symbols (with example FatherOf(X)), and that predicates are built by applying relations to terms (with example Tall(FatherOf(Bill))).",
+      "evidence": [
+        "Variables, constants and function symbols are used to build terms",
+        "X, Bill, FatherOf(X)",
+        "Relations and terms are used to build predicates",
+        "Tall(FatherOf(Bill))"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports its corresponding statement. Chunk cbd69d92 explicitly states how terms and predicates are constructed with the exact examples used. Chunk dca8ed08 provides the formal definition of predicates that matches the tutor's explanation.",
+      "evidence": [
+        "Statement: 'Terms được tạo từ hằng số, biến, hàm' → Chunk cbd69d92: 'Variables, constants and function symbols are used to build terms'",
+        "Statement: 'predicate được tạo bằng cách lấy relation symbol p có số đối số là n, và n term' → Chunk dca8ed08: 'If $t_1,\\ldots,t_n$ are terms and p is a relation symbol with arity $n$ then $p(t_1,\\ldots,t_n)$ is a predicate'",
+        "Examples: 'Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry)' → Chunk cbd69d92: 'Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry), Loves(Y,MotherOf(Y))'"
+      ]
+    }
+  }
+}

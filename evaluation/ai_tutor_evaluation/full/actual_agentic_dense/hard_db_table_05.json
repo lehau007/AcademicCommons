@@ -1,0 +1,175 @@
+{
+  "qid": "hard_db_table_05",
+  "course_code": "IT3292E",
+  "question": "Bảng student trong slide gồm những cột (thuộc tính) nào, và cột nào đóng vai trò liên kết sinh viên với lớp?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "990bab99-c2e9-44f7-aa76-6b58e9e468b1",
+  "answer": "## Bảng `student`\n\nDựa trên slide bài giảng, bảng **`student`** có **8 cột (thuộc tính)** sau:\n\n| # | Tên cột | Ý nghĩa |\n|---|---|---|\n| 1 | `student_id` | Mã sinh viên (khóa chính) |\n| 2 | `first_name` | Tên |\n| 3 | `last_name` | Họ và tên đệm |\n| 4 | `dob` | Ngày sinh (date of birth) |\n| 5 | `gender` | Giới tính |\n| 6 | `address` | Địa chỉ |\n| 7 | `note` | Ghi chú |\n| 8 | `clazz_id` | Mã lớp (khóa ngoại) |\n\n## Cột liên kết sinh viên với lớp\n\nCột đóng vai trò liên kết sinh viên với lớp là **`clazz_id`**. Đây là **khóa ngoại (foreign key)** tham chiếu đến cột `clazz_id` của bảng `clazz`.\n\n**Ví dụ minh họa từ slide:**\n\n| student_id | first_name | last_name | dob | gender | clazz_id |\n|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | F | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | F | 20172201 |\n\n→ Sinh viên `20160001` thuộc lớp `20162101` (CNTT1.01-K61), sinh viên `20170001` thuộc lớp `20172201` (CNTT2.01-K62).\n\nMối quan hệ giữa hai bảng được thể hiện bằng phép **JOIN**: `student.clazz_id = clazz.clazz_id`.",
+  "citations": [
+    {
+      "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3. Data Manipulation",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa,"
+    },
+    {
+      "chunk_id": "4dbba64d-22f2-4d67-a776-28562d2aa163",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "student",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160003 | Thu Hồng | Trần | ... | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | ... | 20162101 |\n| ... | ... | ... | ..."
+    },
+    {
+      "chunk_id": "bf71f64e-fa33-4bf2-9e66-b67c0b1d3616",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.2. Basic concepts",
+      "page_number": null,
+      "chunk_order": 47,
+      "excerpt": "- An example\n  - student(student_id, first_name, last_name, dob, gender, address, note, clazz_id)"
+    },
+    {
+      "chunk_id": "c966cb75-ac1a-4497-9754-f83f923e20fe",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "student",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi |  |  |\n| 20160002 | Anh | Hoàng |  | 20162101 |\n| 20160003 | Thu Hồng | Trần |  | 20162101 |\n"
+    },
+    {
+      "chunk_id": "a9b6e256-e2ef-4425-bbe2-4742c27af351",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "student",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| student_id | first_name | last_name | dob | ... | clazz_id |\n|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | ... |  |\n| 20160002 | Anh | Hoàng | 5/20/1987 | ... | 20162101 |\n| 201"
+    },
+    {
+      "chunk_id": "e448f48a-20e7-4465-8f89-fb0d66d15790",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.4. Join",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "```text\nStudent  <-->  clazz\n```"
+    },
+    {
+      "chunk_id": "a8f7d31b-a7af-4a25-8f79-525c60bb0dfa",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.4. An example",
+      "page_number": null,
+      "chunk_order": 59,
+      "excerpt": "student($student\\_id$, first\\_name, last\\_name, dob, gender, address, note, clazz\\_id)\n\nsubject($subject\\_id$, name, credit, percentage\\_final\\_exam)\n\nenrollment($student\\_id$, $subject\\_id$, $semeste"
+    },
+    {
+      "chunk_id": "cd9860b1-d072-4523-a0ba-df78a47a7280",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Diagram",
+      "page_number": null,
+      "chunk_order": 48,
+      "excerpt": "```text\n                         Relation name\n                              |\n                              v\n                           student\n\n                                     Attributes\n     "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "bảng student các cột thuộc tính khóa ngoại liên kết lớp sinh viên",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "3. Data Manipulation",
+          "chunk_order": 28,
+          "cosine_sim": 0.3464,
+          "final_score": 0.3983,
+          "content": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa, HN |  | 20162101 |\n| 20160002 | Anh | Hoàng | 5/20/1987 | M | 513 B5 KTX BKHN |  | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | F | 15 Trần Đại Nghĩa, HBT, Hà nội |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | 5/20/1987 | F | 513 TT Phương Mai, Đ. Đa, HN |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | F | 214 B6 KTX BKHN |  | 20172201 |\n| 20170002 | Nhật Cường | Nguyễn | 10/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170003 | Nhật Cường | Nguyễn | 1/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170004 | Minh Đức | Bùi | 1/25/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n\n**clazz**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n- Modifying address?\n- Adding new student / new class?\n- Deleting student data?\n- Retrieving list of all students?"
+        },
+        {
+          "chunk_id": "4dbba64d-22f2-4d67-a776-28562d2aa163",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "student",
+          "chunk_order": 26,
+          "cosine_sim": 0.3287,
+          "final_score": 0.378,
+          "content": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160003 | Thu Hồng | Trần | ... | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | ... | 20162101 |\n| ... | ... | ... | ... | ... |"
+        },
+        {
+          "chunk_id": "bf71f64e-fa33-4bf2-9e66-b67c0b1d3616",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.2. Basic concepts",
+          "chunk_order": 47,
+          "cosine_sim": 0.3151,
+          "final_score": 0.3623,
+          "content": "- An example\n  - student(student_id, first_name, last_name, dob, gender, address, note, clazz_id)"
+        },
+        {
+          "chunk_id": "c966cb75-ac1a-4497-9754-f83f923e20fe",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "student",
+          "chunk_order": 21,
+          "cosine_sim": 0.3146,
+          "final_score": 0.3617,
+          "content": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi |  |  |\n| 20160002 | Anh | Hoàng |  | 20162101 |\n| 20160003 | Thu Hồng | Trần |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn |  | 20172201 |\n\n[Table: Sample rows of the student relation showing student_id, first_name, last_name and the clazz_id that links each student to a class.]"
+        },
+        {
+          "chunk_id": "a9b6e256-e2ef-4425-bbe2-4742c27af351",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "student",
+          "chunk_order": 5,
+          "cosine_sim": 0.3103,
+          "final_score": 0.3568,
+          "content": "| student_id | first_name | last_name | dob | ... | clazz_id |\n|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | ... |  |\n| 20160002 | Anh | Hoàng | 5/20/1987 | ... | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | ... | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | 5/20/1987 | ... | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | ... | 20172201 |\n\n[Table: Sample rows of the student relation. Columns: student_id, first_name, last_name, dob (date of birth), gender, clazz_id (foreign key linking each student to a class).]"
+        },
+        {
+          "chunk_id": "e448f48a-20e7-4465-8f89-fb0d66d15790",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "3.4. Join",
+          "chunk_order": 20,
+          "cosine_sim": 0.3016,
+          "final_score": 0.3469,
+          "content": "```text\nStudent  <-->  clazz\n```"
+        },
+        {
+          "chunk_id": "a8f7d31b-a7af-4a25-8f79-525c60bb0dfa",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.4. An example",
+          "chunk_order": 59,
+          "cosine_sim": 0.3004,
+          "final_score": 0.3455,
+          "content": "student($student\\_id$, first\\_name, last\\_name, dob, gender, address, note, clazz\\_id)\n\nsubject($subject\\_id$, name, credit, percentage\\_final\\_exam)\n\nenrollment($student\\_id$, $subject\\_id$, $semester$, midterm\\_score, final\\_score)"
+        },
+        {
+          "chunk_id": "cd9860b1-d072-4523-a0ba-df78a47a7280",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "Diagram",
+          "chunk_order": 48,
+          "cosine_sim": 0.2963,
+          "final_score": 0.3407,
+          "content": "```text\n                         Relation name\n                              |\n                              v\n                           student\n\n                                     Attributes\n                         /    /    /    /    /    /    \\\n                        v    v    v    v    v    v    v\n+-----------------------------------------------------------------------------------+\n| student_id | first_name | last_name | dob       | gender | address    | note | clazz_id |\n+-----------------------------------------------------------------------------------+\n| 1234       | David      | Beckham   | 12/21/1997| Male    | London, UK |      | 1        |\n| 1238       | Theresa    | May       | 08/06/1998| Female  | London, UK |      | 1        |\n| 1452       | David      | Cameron   | 07/06/1997| Male    | Bangor, UK |      | 1        |\n| 1497       | Tony       | Blair     | 03/01/1999| Male    | Bath, UK   |      | 2        |\n| 1516       | John       | Major     | 03/01/1998| Male    | Bradford   |      | 2        |\n| 1542       | Margaret   | Thatcher  | 05/08/1997| Female  | Cambridge  |      | 2        |\n+-----------------------------------------------------------------------------------+\n\nTuples\n\nCardinality = 6\n\nDegree = 8\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 21.7
+}

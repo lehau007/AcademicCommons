@@ -1,0 +1,56 @@
+{
+  "qid": "intro_to_ai_12",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "The tutor's answer makes no factual claims about Mitchell (1997) or machine learning. It is simply a polite statement in Vietnamese declining to answer the question.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 1,
+      "justification": "The tutor's answer does not address the question at all. Instead of explaining Mitchell's three core elements (Task T, Performance P, Experience E), it apologizes in Vietnamese and asks the student to rephrase the question.",
+      "evidence": [
+        "Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?"
+      ]
+    },
+    "answer_correctness": {
+      "score": 1,
+      "justification": "The tutor's answer completely fails to address the question, providing only an apology in Vietnamese stating they don't know the answer. It contradicts the ground truth by providing no information about the three core elements (task T, performance measure P, and experience E).",
+      "evidence": [
+        "Ground truth states: 'improving over a task T, with respect to a performance measure P, based on experience E'",
+        "Tutor answer: 'Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?' (provides no information)"
+      ]
+    },
+    "context_precision": {
+      "score": 1,
+      "justification": "All retrieved chunks are irrelevant to the question about Mitchell (1997)'s definition of machine learning (task T, performance P, experience E). The chunks discuss search problems, expert systems, reinforcement learning features, and ANNs—none address Mitchell's core ML definition.",
+      "evidence": [
+        "a9f924dc: 'Deterministic, fully observable → single-state problem'",
+        "e416993d: 'Expert system = Human Expertise + Inference/Reasoning'",
+        "ae50e9e8: 'Learning from numerical rewards'",
+        "bb78f7dc: 'Input is high-dimensional discrete or real-valued'",
+        "3d8f7320: 'A problem is defined by four items: initial state'",
+        "c1c65690: 'RL is ML method that optimize the reward'"
+      ]
+    },
+    "context_recall": {
+      "score": 1,
+      "justification": "The retrieved chunks contain no information about Mitchell (1997)'s definition of machine learning involving task T, performance measure P, and experience E. All chunks discuss unrelated topics like search problems, expert systems, and reinforcement learning features.",
+      "evidence": [
+        "improving over a task T",
+        "with respect to a performance measure P",
+        "based on experience E",
+        "Mitchell (1997)"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "The tutor's answer is a refusal in Vietnamese ('Sorry, I don't know the answer — please ask me again') and makes no factual claims requiring citation support. The citations attached are irrelevant to the non-answer provided.",
+      "evidence": [
+        "Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?"
+      ]
+    }
+  }
+}

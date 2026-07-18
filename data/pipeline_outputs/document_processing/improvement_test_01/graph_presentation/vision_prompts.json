@@ -1,0 +1,202 @@
+[
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 1,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 1,
+    "reason": "The image is a university branding and anniversary logo with no instructional content."
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 2,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 3,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 4,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 5,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 6,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 7,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 8,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 9,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 10,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 11,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 12,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 13,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 14,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 15,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 16,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 16,
+    "image_index": 1,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 16,
+    "image_index": 2,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "page": 17,
+    "image_index": 0,
+    "position_hint": "inline",
+    "repeat_count": 16,
+    "reason": "repeated_across_pages"
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 1,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 2,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 3,
+    "category": "table_or_matrix",
+    "position_hint": "inline",
+    "instruction": "Extract row labels, column labels, and cell values. Return structured JSON with schema: {schema_version, content_type, row_labels, column_labels, values, notes}. Preserve exact numeric values."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 4,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 5,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 6,
+    "category": "table_or_matrix",
+    "position_hint": "inline",
+    "instruction": "Extract row labels, column labels, and cell values. Return structured JSON with schema: {schema_version, content_type, row_labels, column_labels, values, notes}. Preserve exact numeric values."
+  }
+]

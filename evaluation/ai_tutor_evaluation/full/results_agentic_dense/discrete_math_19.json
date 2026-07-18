@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "bijection example + necessary conds in ctx; some matrix/spanning noise"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "bijection example + necessary conds in ctx; some matrix/spanning noise"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "bijection example + necessary conds in ctx; some matrix/spanning noise"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "bijection example + necessary conds in ctx; some matrix/spanning noise"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "bijection example + necessary conds in ctx; some matrix/spanning noise"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "bijection example + necessary conds in ctx; some matrix/spanning noise"
+    }
+  }
+}

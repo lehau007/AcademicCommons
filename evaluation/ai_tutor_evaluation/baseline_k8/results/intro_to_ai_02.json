@@ -1,0 +1,56 @@
+{
+  "qid": "intro_to_ai_02",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The core concepts—progression as forward search considering effects of actions, regression as backward search determining previous conditions—are all grounded in chunk 6f25b02f.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by explaining that progression planners use forward state-space search from the initial state while regression planners use backward state-space search from the goal state, which is exactly what was asked.",
+      "evidence": [
+        "Progression planners...Start from the initial state...Apply actions forward",
+        "Regression planners...Start from the goal state...Work backward to determine what must have been true before"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: progression planners use forward state-space search considering effects of all possible actions, and regression planners use backward state-space search determining what must have been true in the previous state to achieve the goal. No contradictions exist, and the additional explanatory detail enhances understanding without altering the core facts.",
+      "evidence": [
+        "Ground truth: 'Progression planners use forward state-space search by considering the effect of all possible actions'",
+        "Tutor: 'They consider the effect of all possible actions in the current state'",
+        "Ground truth: 'Regression planners use backward state-space search, determining what must have been true in the previous state'",
+        "Tutor: 'Work backward to determine what must have been true before an action could achieve that goal'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Most chunks are relevant to the question about progression vs. regression planners. Chunks 1-2 and 5-8 directly address forward/backward search methods. However, chunks 3 (outline) and 4 (graphplan algorithm) are tangential—they mention planning topics but don't help distinguish progression from regression planners.",
+      "evidence": [
+        "chunk e5856f15: 'Planning problem - State-space search - Partial-order planning'",
+        "chunk 2052fe08: 'The GRAPHPLAN algorithm. GRAPHPLAN alternates between...'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. The first chunk explicitly states that progression planners use forward state-space search and consider the effect of all possible actions, and that regression planners use backward state-space search to determine what must have been true in the previous state.",
+      "evidence": [
+        "Progression planners - forward state-space search - consider the effect of all possible actions in a given state",
+        "Regression planners - backward state-space search - Determine what must have been true in the previous state in order to achieve the current state"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made. The primary chunk (6f25b02f) directly defines both progression and regression planners with their key characteristics, and the supporting chunks (1d0d4fce, 040cefcf, a90c4e92) all correctly illustrate backward/regression planning concepts.",
+      "evidence": [
+        "Tutor states progression planners 'consider the effect of all possible actions' — Chunk 6f25b02f: 'consider the effect of all possible actions in a given state'",
+        "Tutor states regression planners 'Work backward to determine what must have been true before' — Chunk 6f25b02f: 'Determine what must have been true in the previous state'",
+        "Tutor states 'forward state-space search' for progression — Chunk 6f25b02f: 'Progression planners - forward state-space search'",
+        "Tutor states 'backward state-space search' for regression — Chunk 6f25b02f: 'Regression planners - backward state-space search'"
+      ]
+    }
+  }
+}

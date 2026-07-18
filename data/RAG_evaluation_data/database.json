@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "What are the key properties of a Candidate Key in a relational database?",
+    "answer": "A Candidate Key is a superkey (K) with three main properties: no proper subset of it is a superkey within the relation, the values of K uniquely identify each tuple in the relation (uniqueness), and no proper subset of K has this uniqueness property (irreducibility)."
+  },
+  {
+    "id": 2,
+    "question": "What is the difference between the Intersection and Difference operators in relational algebra?",
+    "answer": "The Intersection operator outputs a relation by keeping only the common tuples from two union-compatible input relations. In contrast, the Difference operator results in a relation containing tuples that occurred in the first relation but not in the second."
+  },
+  {
+    "id": 3,
+    "question": "How did the SQL standard evolve between 1986 and 1999?",
+    "answer": "The first standard, SQL1, was defined in 1986 and adopted by ISO in 1987. In 1992, SQL2 was adopted as the formal standard language for defining and manipulating relational databases. Later, in 1999, SQL3 extended the standard with Object-Oriented features, user-defined data types, triggers, and user-defined functions."
+  },
+  {
+    "id": 4,
+    "question": "How do the HAVING and WHERE clauses differ in SQL?",
+    "answer": "Conditions in a HAVING clause apply to groups as a whole, whereas conditions in a WHERE clause apply to individual tuples."
+  },
+  {
+    "id": 5,
+    "question": "How is a many-to-many (n-m) relationship mapped from an ERD to a relational schema?",
+    "answer": "To map an n-m relationship, you create a new relation that includes all the prime-attributes (primary keys) of both participating entity sets. These prime attributes are used as foreign keys in the new relation."
+  },
+  {
+    "id": 6,
+    "question": "What is the mapping process for a multivalued attribute in an ERD?",
+    "answer": "For each multivalued attribute A, you create a new relation R that includes an attribute corresponding to A, plus the primary key attribute K of the corresponding entity set, which serves as a foreign key in R. The primary key of the new relation R is the combination of A and K."
+  },
+  {
+    "id": 7,
+    "question": "What is an update anomaly in the context of database normalization?",
+    "answer": "An update anomaly is an instance where the same information must be updated in several different places, which is not efficient. For example, if the name of a subject needs to be changed, it has to be updated in every row where that subject appears."
+  },
+  {
+    "id": 8,
+    "question": "What does the closure of a functional dependency set (F+) represent?",
+    "answer": "The closure of a functional dependency set, denoted as F+, represents all the dependencies that can be inferred from the set F, including the dependencies in F itself."
+  },
+  {
+    "id": 9,
+    "question": "What is the primary goal of a query optimizer?",
+    "answer": "The primary goal of a query optimizer is to choose the cheapest execution plan out of all the possible query execution plans."
+  },
+  {
+    "id": 10,
+    "question": "What are two algorithms mentioned for executing Join operations in query processing?",
+    "answer": "Two algorithms used for executing Join operations are the Sort-merge JOIN, which requires data to be physically sorted by join attributes, and the Partition-hash JOIN, which hashes two relations on join attributes and joins the buckets accordingly."
+  }
+]

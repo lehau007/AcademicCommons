@@ -1,0 +1,55 @@
+{
+  "qid": "database_04",
+  "course_code": "IT3292E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunks. The core distinction (WHERE filters rows/tuples, HAVING filters groups), the timing of application (before vs. after GROUP BY), the use with aggregate functions, and the conditional transferability between clauses are all grounded in chunk ef945d50.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by clearly explaining that WHERE filters individual rows/tuples while HAVING filters groups, which is exactly what was asked. All content is on-topic and relevant to the distinction between these two clauses.",
+      "evidence": [
+        "WHERE lọc từng dòng (tuple/row)",
+        "HAVING lọc các nhóm (groups)",
+        "WHERE lọc dòng, HAVING lọc nhóm"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The answer correctly states that WHERE applies to individual tuples/rows and HAVING applies to groups, which matches the ground truth. It provides additional correct detail about timing and aggregate functions that enhances understanding without contradicting the core fact.",
+      "evidence": [
+        "Ground truth: 'Conditions in a HAVING clause apply to groups as a whole, whereas conditions in a WHERE clause apply to individual tuples.'",
+        "Answer: 'WHERE lọc từng dòng (tuple/row)' and 'HAVING lọc các nhóm (groups)'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "The first two chunks are highly relevant, directly addressing the WHERE vs. HAVING distinction. Chunks 3, 5, and 6 are topic overviews that mention HAVING but provide minimal detail. Chunks 4 and 7 are tangentially related (syntax structure and general remarks). Overall, roughly 2 of 8 chunks are highly relevant, 3 are marginally relevant, and 3 are mostly noise.",
+      "evidence": [
+        "cfdd6eba: 'Renaming output attributes' - unrelated to WHERE/HAVING difference",
+        "a873461e: 'Remark' about complex queries and privileges - not about WHERE vs HAVING",
+        "fc3086cc, a98c89b1, 43fee3be: topic lists mentioning HAVING but no explanatory content"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The retrieved chunks contain all key facts from the ground truth. The first chunk explicitly states both that 'Conditions in HAVING clause apply to groups as a whole' and 'Conditions in WHERE clause apply to individual tuples,' which are the exact facts needed.",
+      "evidence": [
+        "Conditions in HAVING clause apply to groups as a whos e.",
+        "Conditions in WHERE clause apply to individual tuples."
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "All citations accurately support the statements they accompany. The chunks directly address WHERE vs. HAVING differences, conditions on grouping attributes vs. aggregated attributes, and the possibility of moving conditions between clauses.",
+      "evidence": [
+        "Chunk ef945d50 states 'Conditions in HAVING clause apply to groups as a whole. Conditions in WHERE clause apply to individual tuples' — directly supports the core distinction made in the answer.",
+        "Chunk ef945d50 also states 'If condition in HAVING clause refers to grouping attribute, then this condition can be placed in WHERE clause. If condition in HAVING clause refers to aggregated attributes, it can not be moved to WHERE clause' — supports the section about whether conditions can be moved.",
+        "Chunk e138740d shows HAVING with COUNT() and aggregation requirements — supports the example and explanation of HAVING filtering groups after aggregation."
+      ]
+    }
+  }
+}

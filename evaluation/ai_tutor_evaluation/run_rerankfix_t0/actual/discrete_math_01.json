@@ -1,0 +1,114 @@
+{
+  "qid": "discrete_math_01",
+  "course_code": "IT3020E",
+  "question": "What are the definitions of an Articulation Point and a Bridge in an undirected graph?",
+  "session_id": "5518305f-bf37-4a06-b9c5-86792dd5fe21",
+  "answer": "Trong **đồ thị vô hướng**:\n\n- **Articulation Point (đỉnh khớp / cut vertex)**: là một đỉnh mà khi **xóa đỉnh đó** (và các cạnh kề với nó), số thành phần liên thông của đồ thị **tăng lên** so với ban đầu.  \n  - Nói cách khác, nếu đồ thị ban đầu liên thông thì sau khi xóa đỉnh khớp, đồ thị sẽ **không còn liên thông**.\n\n- **Bridge (cạnh cầu)**: là một cạnh mà khi **xóa cạnh đó**, số thành phần liên thông của đồ thị **tăng lên** so với ban đầu.  \n  - Tương tự, nếu đồ thị ban đầu liên thông thì sau khi xóa cạnh cầu, đồ thị sẽ **bị tách rời**.\n\nNếu bạn muốn, mình có thể giải thích thêm bằng ví dụ hình vẽ hoặc cách nhận biết đỉnh khớp/cạnh cầu trong bài tập.",
+  "citations": [
+    {
+      "chunk_id": "367c4728-ce7e-4aa8-beac-8aaf0b715f16",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Connectedness",
+      "page_number": null,
+      "chunk_order": 46,
+      "excerpt": "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components than in the original graph. The removal of a cut vertex from a connected graph produces a gr"
+    },
+    {
+      "chunk_id": "31c5ea6b-62b9-4d6f-bf64-c4613f981dd2",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Connectedness",
+      "page_number": null,
+      "chunk_order": 47,
+      "excerpt": "[Diagram: The graph shows how certain vertices and edges are critical for maintaining connectivity. Removing the marked cut vertex separates the graph into more parts, while removing the marked bridge"
+    },
+    {
+      "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graphs",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs"
+    },
+    {
+      "chunk_id": "aed60543-b7c9-4c89-a0bc-72006005fc30",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graph",
+      "page_number": null,
+      "chunk_order": 44,
+      "excerpt": "An undirected graph is connected if there exists is a simple path between every pair of vertices\n\nExample: G (V, E) is connected since for V = $\\{v_1, v_2, v_3, v_4, v_5\\}$, there exists a path betwee"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "definitions of articulation point and bridge in an undirected graph",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "367c4728-ce7e-4aa8-beac-8aaf0b715f16",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Connectedness",
+          "chunk_order": 46,
+          "cosine_sim": 0.6657,
+          "final_score": 0.9443,
+          "content": "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components than in the original graph. The removal of a cut vertex from a connected graph produces a graph that is not connected\n\n**Bridge**: An edge whose removal produces a subgraph with more connected components than in the original graph.\n\n```text\n        +---+       +---+           +---+\n        | b |-------| c |-----------| e |\n        +---+       +---+           +---+\n          |           |               |\n          |           |               |\n        +---+       +---+             |\n        | a |-------| d |-------------+\n        +---+                         |\n                                      |\n                                    +---+\n                                    | g |\n                                    +---+\n```"
+        },
+        {
+          "chunk_id": "31c5ea6b-62b9-4d6f-bf64-c4613f981dd2",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Connectedness",
+          "chunk_order": 47,
+          "cosine_sim": 0.4725,
+          "final_score": 0.3285,
+          "content": "[Diagram: The graph shows how certain vertices and edges are critical for maintaining connectivity. Removing the marked cut vertex separates the graph into more parts, while removing the marked bridge disconnects the leaf-like node from the rest of the graph.]"
+        },
+        {
+          "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 8,
+          "cosine_sim": 0.3827,
+          "final_score": 0.3023,
+          "content": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two vertices $u, v \\in V$, there exists exactly one simple path from $u$ to $v$.\n3. $G$ is connected, and removing any edge from $G$ disconnects it (each edge of $G$ is a bridge).\n4. $G$ has no cycles, and adding any edge to $G$ gives rise to a cycle. (Thus $G$ is a maximal acyclic graph).\n5. $G$ is connected and $|E| = |V| - 1$."
+        },
+        {
+          "chunk_id": "cd7e7d21-fba2-4d9d-8712-a247ab9ed15e",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph representation",
+          "chunk_order": 21,
+          "cosine_sim": 0.4034,
+          "final_score": 0.2727,
+          "content": "**Undirected Graph:**\n\n```\n    [1]---[2]\n     |    /|\n     |   / |\n     |  /  |\n    [5]---[4]---[3]\n         /\n        /\n```\n\n**Adjacency List (Undirected):**\n\n| Vertex | Neighbors |\n|--------|-----------|\n| 1 | 2 → 5 |\n| 2 | 1 → 5 → 3 → 4 |\n| 3 | 2 → 4 |\n| 4 | 2 → 5 → 3 |\n| 5 | 4 → 1 → 2 |\n\n**Adjacency Matrix (Undirected):**\n\n|   | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| 1 | 0 | 1 | 0 | 0 | 1 |\n| 2 | 1 | 0 | 1 | 1 | 1 |\n| 3 | 0 | 1 | 0 | 1 | 0 |\n| 4 | 0 | 1 | 1 | 0 | 1 |\n| 5 | 1 | 1 | 0 | 1 | 0 |\n\n**Directed Graph:**\n\n```\n    [1]--->[2]<---[3]\n     |      |      |\n     v      v      v\n    [4]<---[5]    [6]-->(self-loop)\n           ^\n           |\n          (from 3)\n```\n\n**Adjacency List (Directed):**\n\n| Vertex | Out-neighbors |\n|--------|---------------|\n| 1 | 2 → 4 |\n| 2 | 5 |\n| 3 | 6 → 5 |\n| 4 | 2 |\n| 5 | 4 |\n| 6 | 6 |\n\n**Adjacency Matrix (Directed):**\n\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| 1 | 0 | 1 | 0 | 1 | 0 | 0 |\n| 2 | 0 | 0 | 0 | 0 | 1 | 0 |\n| 3 | 0 | 0 | 0 | 0 | 1 | 1 |\n| 4 | 0 | 1 | 0 | 0 | 0 | 0 |\n| 5 | 0 | 0 | 0 | 1 | 0 | 0 |\n| 6 | 0 | 0 | 0 | 0 | 0 | 1 |"
+        },
+        {
+          "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graphs",
+          "chunk_order": 19,
+          "cosine_sim": 0.4364,
+          "final_score": 0.2111,
+          "content": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs $(u,v)$, where $u, v \\in V$, $u \\ne v$\n\n```text\n            (a, b)\n        +------------+\n        |            |\n   a ---+------------+--- b\n         \\          /\n          \\        /\n           \\      /\n            \\    /\n             \\  /\n              c\n\n            (b, c)\n```"
+        },
+        {
+          "chunk_id": "aed60543-b7c9-4c89-a0bc-72006005fc30",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graph",
+          "chunk_order": 44,
+          "cosine_sim": 0.405,
+          "final_score": 0.1941,
+          "content": "An undirected graph is connected if there exists is a simple path between every pair of vertices\n\nExample: G (V, E) is connected since for V = $\\{v_1, v_2, v_3, v_4, v_5\\}$, there exists a path between $\\{v_i, v_j\\}$, $1 \\leq i, j \\leq 5$\n\n```text\n+-----+       +-----+       +-----+\n|  v1 |------>|  v3 |------>|  v4 |\n+-----+       +-----+       +-----+\n                |\n                |\n             +-----+       +-----+\n             |  v2 |       |  v5 |\n             +-----+       +-----+\n                          \\___/\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.5
+}

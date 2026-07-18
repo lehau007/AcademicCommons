@@ -1,0 +1,56 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "The core definition of graph isomorphism (bijection preserving adjacency) is fully supported by the retrieved chunks. However, the formal notation and the claim about 'degree sequence' are not explicitly present in the chunks, though they are mathematically correct consequences.",
+      "evidence": [
+        "the same degree sequence"
+      ]
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses when two simple graphs are considered isomorphic, providing both an intuitive explanation and the formal mathematical definition with bijection and adjacency preservation.",
+      "evidence": [
+        "Two simple graphs are considered **isomorphic** if there is a **one-to-one correspondence** between their vertex sets that **preserves adjacency**",
+        "A graph isomorphism is a bijection f: V(G) → V(H) such that for any vertices u,v ∈ V(G), uv ∈ E(G) ⟺ f(u)f(v) ∈ E(H)"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: it defines isomorphism as a one-to-one and onto function (bijection) between vertex sets that preserves adjacency (vertices adjacent in G1 iff their images are adjacent in G2). The formal definition matches the ground truth exactly, and the additional explanatory content does not contradict anything.",
+      "evidence": [
+        "Ground truth: 'one-to-one and onto function f' vs Tutor: 'bijection f: V(G) → V(H)'",
+        "Ground truth: 'a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2' vs Tutor: 'uv ∈ E(G) ⟺ f(u)f(v) ∈ E(H)'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "The first two chunks directly address graph isomorphism with examples and definitions. The last two chunks discuss simple graphs and multigraphs generally but do not address isomorphism, making them irrelevant to the question.",
+      "evidence": [
+        "chunk 3d626aaf: 'Example: Simple graph G_1 = (V_1, E_1)' — defines a simple graph but not isomorphism",
+        "chunk d9033feb: 'compares a multigraph and a simple graph' — discusses graph types, not isomorphism"
+      ]
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "The retrieved chunks contain information about one-to-one correspondence and adjacency preservation through an example, but lack an explicit formal definition stating that vertices a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2.",
+      "evidence": [
+        "if and only if condition for adjacency preservation",
+        "formal definition of graph isomorphism with bijection and adjacency condition"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "The tutor's answer makes several claims about graph isomorphism, but only some are directly supported by the cited chunks. The formal definition and key properties are stated without citations, while the cited chunks primarily show examples and properties rather than the definition itself.",
+      "evidence": [
+        "Tutor claims: 'one-to-one correspondence... that preserves adjacency' — Chunk 8107ab14 shows 'one-to-one correspondence between V(G) and V(H)' but doesn't explicitly state the adjacency-preserving condition",
+        "Tutor claims: 'same number of vertices, edges, degree sequence' — Chunk 8107ab14 supports: 'The same number of vertices... The same number of edges... The same number of degree'",
+        "Tutor's formal definition with bijection f and adjacency condition — No cited chunk contains this formal definition",
+        "Chunks 4c4fe286 and 3d626aaf are about examples of simple graphs but don't directly support the definition statements they're attached to"
+      ]
+    }
+  }
+}

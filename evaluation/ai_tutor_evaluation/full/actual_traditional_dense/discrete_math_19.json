@@ -1,0 +1,115 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "question": "When are two simple graphs considered isomorphic?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "cc0eebab-102a-4661-9737-e8cefecc4043",
+  "answer": "# When Are Two Simple Graphs Considered Isomorphic?\n\nBased on the provided context, two simple graphs $G$ and $H$ are considered **isomorphic** when there exists a one-to-one correspondence (bijection) between their vertex sets that preserves adjacency.\n\n## Conditions for Isomorphism\n\nFor two graphs $G$ and $H$ to be isomorphic, the following must hold:\n\n1. **Same number of vertices:** $|V(G)| = |V(H)|$\n2. **Same number of edges:** $|E(G)| = |E(H)|$\n3. **Same degree sequence:** The degree of each vertex must match with some vertex in the other graph\n\n## Formal Definition\n\nA function $f: V(G) \\to V(H)$ is an isomorphism if it is a **one-to-one correspondence** such that for any two vertices $u_i, u_j \\in V(G)$:\n$$(u_i, u_j) \\in E(G) \\iff (f(u_i), f(u_j)) \\in E(H)$$\n\nIn other words, **a relabeling of vertices can preserve adjacency** between the two graphs, even if their edges are drawn differently.\n\n## Example from Context\n\nThe example shows two graphs $G$ and $H$:\n\n```\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\nThe function $f$ defined as:\n- $f(u_1) = v_1$\n- $f(u_2) = v_4$\n- $f(u_3) = v_3$\n- $f(u_4) = v_2$\n\nis a **one-to-one correspondence** between $V(G)$ and $V(H)$ that preserves all edges, proving $G$ and $H$ are isomorphic. Even though the edges are arranged differently in the drawings, both graphs have the **same structure**.\n\n> **Note:** While the three conditions above are *necessary* for isomorphism, they are **not sufficient**. You must actually construct a bijection $f$ that preserves all adjacencies to prove two graphs are isomorphic.\n\n---\n\n**Used chunk IDs:**\n```json",
+  "citations": [
+    {
+      "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Solution.",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number "
+    },
+    {
+      "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "When are two simple graphs considered isomorphic?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Solution.",
+          "chunk_order": 35,
+          "cosine_sim": 0.4495,
+          "final_score": 0.517,
+          "content": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number of vertices\n  - (2) The same number of edges\n  - (3) The same number of degree"
+        },
+        {
+          "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+          "chunk_order": 34,
+          "cosine_sim": 0.4139,
+          "final_score": 0.476,
+          "content": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\n[Diagram: The two drawings illustrate two graphs that have the same structure even though their edges are arranged differently. The point is to show that a relabeling of vertices can preserve adjacency, which is exactly what graph isomorphism means.]"
+        },
+        {
+          "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Simple Graph",
+          "chunk_order": 21,
+          "cosine_sim": 0.3969,
+          "final_score": 0.4564,
+          "content": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /|    /     /\n      e |   /     /\n       \\ |  /    /\n         d —— ——\n\n        f\n        |\n        g\n\n        h\n```\n\n[Diagram: The figure shows an undirected graph split into two connected components plus one isolated vertex. It illustrates how a simple graph is defined by its vertex set and edge set, and that not all vertices need to be part of the same connected structure.]"
+        },
+        {
+          "chunk_id": "6e2861d6-de37-48ab-86cd-20d9e079f012",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Cycle",
+          "chunk_order": 40,
+          "cosine_sim": 0.3798,
+          "final_score": 0.4368,
+          "content": "- A closed elementary path is called a *cycle*.\n  - A path is called *elementary* if all the edges are distinct.\n  - A path is *closed* if $v_0 = v_n$.\n- A cycle is called simple if all the vertices are distinct (except $v_0 = v_n$).\n\n**Simple cycle:** $(1, 2, 3, 1)$\n\n**Simple cycle:** $(1, 2, 3, 4, 1)$\n\n```text\nFirst graph (cycle 1 → 2 → 3 → 1, with extra vertex 4):\n[1] --a--> [2] --b--> [3]\n  ^                   |\n  |                   |\n  +-------e-----------+\n   \\                 /\n    \\d             c/\n     \\             /\n      [4]---------\n```"
+        },
+        {
+          "chunk_id": "e413b8b9-6c02-4463-b879-53cab750c30e",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Euler’s Formula (Cont.)",
+          "chunk_order": 68,
+          "cosine_sim": 0.3545,
+          "final_score": 0.4076,
+          "content": "- Corollary 1: If $G$ is a connected planar simple graph with $e$ edges and $v$ vertices where $v \\geq 3$, then $e \\leq 3v - 6$."
+        },
+        {
+          "chunk_id": "7bab2c98-dbdb-4919-96b4-cf960a8c7051",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.35,
+          "final_score": 0.4025,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "89005382-f85c-4c56-a264-f414a6544ac9",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.35,
+          "final_score": 0.4025,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graphs",
+          "chunk_order": 19,
+          "cosine_sim": 0.3459,
+          "final_score": 0.3978,
+          "content": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs $(u,v)$, where $u, v \\in V$, $u \\ne v$\n\n```text\n            (a, b)\n        +------------+\n        |            |\n   a ---+------------+--- b\n         \\          /\n          \\        /\n           \\      /\n            \\    /\n             \\  /\n              c\n\n            (b, c)\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.2
+}

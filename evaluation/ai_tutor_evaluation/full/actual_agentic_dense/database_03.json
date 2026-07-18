@@ -1,0 +1,135 @@
+{
+  "qid": "database_03",
+  "course_code": "IT3292E",
+  "question": "How did the SQL standard evolve between 1986 and 1999?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "1c183e63-5ce0-4cd8-b664-105b08833ee4",
+  "answer": "# Evolution of the SQL Standard (1986 – 1999)\n\nBased on the course materials, the SQL standard evolved through several major milestones between 1986 and 1999:\n\n## 1. **1986 – SQL1 (The First Standard)**\n- The very first standard for SQL, known as **SQL1**, was defined in **1986**.\n- It was then adopted as an **international standard by ISO** in **1987**.\n\n## 2. **1992 – SQL2 (SQL-92)**\n- A revised version of the standard was released in **1992**, commonly referred to as **SQL2** or **SQL-92**.\n- This version became the **formal standard language for defining and manipulating relational databases**, solidifying SQL's role as the dominant relational database language.\n\n## 3. **1999 – SQL3**\n- The next major revision, **SQL3**, was published in **1999**.\n- Unlike SQL2, which was primarily a refinement, SQL3 was a significant **extension** that added many new features, including:\n  - **User-defined data types**\n  - **Triggers**\n  - **User-defined functions**\n  - Other **Object-Oriented features**\n\n## Summary Timeline\n\n| Year | Standard | Key Characteristics |\n|------|----------|---------------------|\n| 1986 | **SQL1** | First official SQL standard |\n| 1987 | **SQL1 (ISO)** | Adopted as international standard by ISO |\n| 1992 | **SQL2 / SQL-92** | Revised version; formal standard for relational DB definition & manipulation |\n| 1999 | **SQL3** | Major extension with user-defined types, triggers, user-defined functions, and OO features |\n\n## After 1999 (Context)\nThe course materials also note that **new versions of the standard were published in 2003, 2006, 2008, 2011, and 2016**, adding features such as **XML-based features, columns with auto-generated values, and JSON support** — but these fall outside the 1986–1999 window of your question.\n\n---",
+  "citations": [
+    {
+      "chunk_id": "fe2e9a29-780e-4691-8961-ee2b5387c10d",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Brief history of SQL",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- 1975: SEQUEL: System-R\n- 1976: SEQUEL 2\n- 1978/79: SQL (Structured Query Language) (used in System-R)\n- SQL1: The first standard for SQL defined in 1986; adopted as an international by Standards Org"
+    },
+    {
+      "chunk_id": "b1bede16-c84d-4f4b-ae53-42795d341922",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Creating a Simple Table: Data Types (SQL 92)",
+      "page_number": null,
+      "chunk_order": 15,
+      "excerpt": "| Data type | Description |\n|---|---|\n| boolean | logical boolean (true/false) |\n| character(n) | fixed-length character string |\n| varchar(n) | variable-length character string |\n| smallint | signed "
+    },
+    {
+      "chunk_id": "3333a309-8a0c-4925-aba5-d3f4186d3f35",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 43,
+      "excerpt": "- Introduction to SQL\n  - A brief history of SQL\n  - SQL languages\n- Definition a relation schema\n  - Creating a simple table\n  - Defining constraints\n  - Modifying relation schema: modifying data str"
+    },
+    {
+      "chunk_id": "f05880bc-a007-4fb5-825e-78e031fd5473",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Introduction to SQL",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "```text\n+-------------------+        +-------------------------+        +------------------+\n|   DB Administrator |        |  Standard Languages     |        |   DBMS Server    |\n|                   |"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "SQL standard evolution history 1986 1999 SQL-86 SQL-89 SQL-92 SQL:1999",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "fe2e9a29-780e-4691-8961-ee2b5387c10d",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1.1. Brief history of SQL",
+          "chunk_order": 8,
+          "cosine_sim": 0.4854,
+          "final_score": 0.5582,
+          "content": "- 1975: SEQUEL: System-R\n- 1976: SEQUEL 2\n- 1978/79: SQL (Structured Query Language) (used in System-R)\n- SQL1: The first standard for SQL defined in 1986; adopted as an international by Standards Organisation (ISO) in 1987.\n- 1992: SQL2 - revised version of the processor (also called SQL 92); adopted as the formal standard language for defining and manipulating relational database.\n- 1999: SQL3 - extension with additional features such as user-defined data types, triggers, user-defined functions and other Object Oriented features.\n- New versions of the standard were published in 2003, 2006, 2008, 2011, 2016: more additional features: XML-based features, columns with auto-generated values, JSON,…"
+        },
+        {
+          "chunk_id": "5237a814-6d16-4741-a054-bc1af9d204e8",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "Learning Map",
+          "chunk_order": 3,
+          "cosine_sim": 0.2969,
+          "final_score": 0.5121,
+          "content": "| Sequence | Title |\n|----------|-------|\n| 1 | Introduction to Databases |\n| 2 | Relational Databases |\n| 3 | Relational Algebra |\n| 4 | Structured Query Language – Part 1 |\n| 5 | Structured Query Language – Part 2 |\n| 6 | Constraints and Triggers |\n| 7 | Entity Relationship Model |\n| 8 | Functional Dependency |\n| 9 | Normalization |\n| 10 | Storage – Indexing |\n| 11 | Query Processing |\n| 12 | Transaction Management – Part 1 |\n| 13 | Transaction Management – Part 2 |"
+        },
+        {
+          "chunk_id": "b1bede16-c84d-4f4b-ae53-42795d341922",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "2.1. Creating a Simple Table: Data Types (SQL 92)",
+          "chunk_order": 15,
+          "cosine_sim": 0.3302,
+          "final_score": 0.3797,
+          "content": "| Data type | Description |\n|---|---|\n| boolean | logical boolean (true/false) |\n| character(n) | fixed-length character string |\n| varchar(n) | variable-length character string |\n| smallint | signed two-byte integer |\n| int, integer | signed 4-byte integer |\n| float(p) | floating-point number with precision p |\n| real, double precision | double-precision floating-point number |\n| decimal(p,s), numeric(p,s) | user-specified precision, exact; recommended for storing monetary amounts<br>p: number of digits in the whole number, s: number of digits after the decimal point. |\n| date | calendar date without time of day |\n| time | time of day |\n| timestamp with time zone | date/time |"
+        },
+        {
+          "chunk_id": "cf2a0484-69c5-4614-9a78-ad29b524af0b",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "3.2. Database approach",
+          "chunk_order": 37,
+          "cosine_sim": 0.3214,
+          "final_score": 0.3696,
+          "content": "- Controlled redundancy: consistency of data & integrity constraints\n- Integration of data: self-contained & represents semantics of application\n- Data and operation sharing: multiple interfaces\n- Flexibility: data independence, data accessibility, reduced program maintenance\n- Services & Controls\n  - Security & privacy controls\n  - backup & recovery\n  - enforcement of standards\n- Ease of application development"
+        },
+        {
+          "chunk_id": "3333a309-8a0c-4925-aba5-d3f4186d3f35",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Summary",
+          "chunk_order": 43,
+          "cosine_sim": 0.3118,
+          "final_score": 0.3586,
+          "content": "- Introduction to SQL\n  - A brief history of SQL\n  - SQL languages\n- Definition a relation schema\n  - Creating a simple table\n  - Defining constraints\n  - Modifying relation schema: modifying data structure, modifying constraints\n- Data manipulation\n  - Populating a table with rows\n  - Removing row(s) from a table\n  - Updating existing rows\n  - Querying a table"
+        },
+        {
+          "chunk_id": "f05880bc-a007-4fb5-825e-78e031fd5473",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1. Introduction to SQL",
+          "chunk_order": 6,
+          "cosine_sim": 0.2991,
+          "final_score": 0.344,
+          "content": "```text\n+-------------------+        +-------------------------+        +------------------+\n|   DB Administrator |        |  Standard Languages     |        |   DBMS Server    |\n|                   |        |  (Ex.: SQL)             |        |                  |\n+-------------------+        |                         |        | PostgreSQL       |\n                             | Table/view definition,  |        | MySQL            |\n+-------------------+        | constraint declaration, |        | Microsoft SQL    |\n|     End-users     | <----> | ...                     |        | Server           |\n+-------------------+        |                         |        | Oracle           |\n+-------------------+        +-------------------------+        +------------------+\n|   Client-applications |\n| (in C#, Java, php, ..) |\n+-------------------+\n\n                 +-------------------+\n                 | Which language?   |\n                 +-------------------+\n```"
+        },
+        {
+          "chunk_id": "2e573d5e-adaf-4399-b3b4-e3f745e9eb46",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "Lesson 1:",
+          "chunk_order": 2,
+          "cosine_sim": 0.2933,
+          "final_score": 0.3373,
+          "content": "Introduction to databases"
+        },
+        {
+          "chunk_id": "a75223c6-0828-4397-bba5-8d145c183f27",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "Learning Map",
+          "chunk_order": 3,
+          "cosine_sim": 0.2858,
+          "final_score": 0.3287,
+          "content": "| Sequence | Title |\n|---|---|\n| 1 | Introduction to Databases |\n| 2 | Relational Databases |\n| 3 | Relational Algebra |\n| 4 | Structured Query Language – Part 1 |\n| 5 | Structured Query Language – Part 2 |\n| 6 | Constraints and Triggers |\n| 7 | Entity Relationship Model |\n| 8 | Functional Dependency |\n| 9 | Normalization |\n| 10 | Storage – Indexing |\n| 11 | Query Processing |\n| 12 | Transaction Management – Part 1 |\n| 13 | Transaction Management – Part 2 |"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 20.7
+}

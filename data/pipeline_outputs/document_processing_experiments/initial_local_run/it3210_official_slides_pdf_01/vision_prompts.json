@@ -1,0 +1,6 @@
+[
+  {
+    "kind": "error",
+    "message": "PyMuPDF unavailable: No module named 'fitz'"
+  }
+]

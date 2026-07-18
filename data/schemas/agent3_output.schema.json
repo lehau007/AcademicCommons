@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent3_output.schema.json",
+  "title": "Agent 3: Quality Evaluation Agent Output Contract (v1)",
+  "description": "Output of Agent 3 in the 3-agent evaluation pipeline. Scores the document, verifies contribution type label, and produces a recommendation. See project_description.md Section 6.2.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "scores",
+    "label_verification",
+    "recommendation",
+    "recommendation_reasons",
+    "duplicate_flag",
+    "cold_start_flag",
+    "evaluation_justification"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "scores": {
+      "type": "object",
+      "required": ["relevance", "completeness", "quality"],
+      "properties": {
+        "relevance": {
+          "type": "number", "minimum": 0, "maximum": 10,
+          "description": "How relevant the document is to the course"
+        },
+        "completeness": {
+          "type": "number", "minimum": 0, "maximum": 10,
+          "description": "How complete the coverage of the topic is"
+        },
+        "quality": {
+          "type": "number", "minimum": 0, "maximum": 10,
+          "description": "Overall writing, formatting, and accuracy quality"
+        }
+      }
+    },
+    "label_verification": {
+      "type": "object",
+      "required": ["initial_contribution_type", "suggested_contribution_type", "label_confidence", "label_mismatch"],
+      "properties": {
+        "initial_contribution_type": {
+          "type": "string",
+          "enum": ["past_exam", "summary_note", "review_note", "solved_exercise"],
+          "description": "The uploader's original label"
+        },
+        "suggested_contribution_type": {
+          "type": "string",
+          "enum": ["past_exam", "summary_note", "review_note", "solved_exercise"],
+          "description": "Agent's best label based on content analysis"
+        },
+        "label_confidence": {
+          "type": "number", "minimum": 0, "maximum": 1,
+          "description": "Confidence score for the suggestion"
+        },
+        "label_mismatch": {
+          "type": "boolean",
+          "description": "True if suggested differs from initial"
+        }
+      }
+    },
+    "recommendation": {
+      "type": "string",
+      "enum": ["APPROVE", "NEEDS_REVIEW", "REJECT"],
+      "description": "Priority-ordered rules: (1) REJECT if duplicate, (2) REJECT if relevance < 4.0 and not cold_start, (3) NEEDS_REVIEW if cold_start, (4) NEEDS_REVIEW if relevance in [4.0, 7.0), (5) APPROVE if relevance >= 7.0 and no flags. Label mismatch is informational only."
+    },
+    "recommendation_reasons": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Each reason explaining the recommendation"
+    },
+    "duplicate_flag": {
+      "type": "boolean",
+      "description": "Forwarded from Agent 1 duplicate.is_duplicate"
+    },
+    "cold_start_flag": {
+      "type": "boolean",
+      "description": "Forwarded from Agent 1 cold_start.is_cold_start"
+    },
+    "evaluation_justification": {
+      "type": "object",
+      "required": ["relevance_rationale", "completeness_rationale", "quality_rationale", "overall_rationale"],
+      "properties": {
+        "relevance_rationale": {
+          "type": "string",
+          "description": "Detailed explanation for the relevance score"
+        },
+        "completeness_rationale": {
+          "type": "string",
+          "description": "Detailed explanation for the completeness score"
+        },
+        "quality_rationale": {
+          "type": "string",
+          "description": "Detailed explanation for the quality score"
+        },
+        "overall_rationale": {
+          "type": "string",
+          "description": "Overall evaluation reasoning summary"
+        }
+      },
+      "description": "Analytical explanations justifying the scores and final recommendation"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,57 @@
+{
+  "qid": "discrete_math_20",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The definition of near[v] as the vertex in T closest to v, the relationship with edge weights, and the mention of d[v] are all grounded in chunk 73844cf8.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses what near[v] indicates in Prim's algorithm: it identifies the vertex in the current tree T that is closest to v, which is exactly what the question asks.",
+      "evidence": [
+        "the **vertex in the current tree \\(T\\)** that is **closest to \\(v\\)**",
+        "the vertex \\(u \\in T\\) such that the edge \\((v, u)\\) has the **smallest weight**"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly identifies that near[v] indicates the vertex in the current tree T that is closest to v, which fully aligns with the ground truth. The additional detail about smallest weight and the mention of d[v] provides helpful context without contradicting the core fact.",
+      "evidence": [
+        "Ground truth: 'near[v] records the vertex of T that is currently nearest to vertex v'",
+        "Tutor: 'the vertex in the current tree T that is closest to v'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to understanding Prim's algorithm and the near[v] label. The first chunk explicitly shows near[v] in the pseudocode, while the remaining chunks provide essential context about how Prim's algorithm works, which is necessary to understand what near[v] indicates.",
+      "evidence": [
+        "chunk 73844cf8: shows 'near[v] = r' and 'near[v'] = v' in Prim pseudocode",
+        "chunks 03a5887c, 86bda5b7, 6d761f5c: provide worked examples of Prim's algorithm",
+        "chunk c8ffa216: explains the safe edge selection process",
+        "chunk 6447abc1: shows high-level Prim algorithm structure"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The retrieved chunks contain all key facts needed to produce the ground-truth answer. Chunk 73844cf8 explicitly shows near[v] being set and used in the algorithm, and the accompanying text explains that d[v] tracks 'the edge with minimum weight connecting vertex v (not yet in the spanning tree T) to other vertex of T', which directly supports understanding near[v] as the vertex of T nearest to v.",
+      "evidence": [
+        "near[v] = r",
+        "E(T) = E(T) ∪ { (v, near[v]) }",
+        "near[v'] = v",
+        "d[v]: the edge with minimum weight connecting vertex v (not yet in the spanning tree T) to other vertex of T"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the tutor's explanation. The first chunk shows the pseudocode with near[v] initialization and updates, confirming it stores the closest tree vertex. The remaining chunks provide algorithmic context about choosing minimum-weight edges connecting to the tree, which aligns with the tutor's description of near[v] as the best-known connection.",
+      "evidence": [
+        "Tutor: 'the vertex in the current tree T that is closest to v' — Chunk 73844cf8: 'near[v] = r' in initialization, 'near[v'] = v' in update, 'E(T) = E(T) ∪ { (v, near[v]) }' showing near[v] is the tree vertex",
+        "Tutor: 'the edge (v, u) has the smallest weight among all edges connecting v to the tree' — Chunk 73844cf8: 'if (d[v'] > c[v,v']) { d[v'] = c[v,v']; near[v'] = v; }' showing near tracks minimum-weight connection",
+        "Tutor: 'used together with d[v]' — Chunk 73844cf8: 'd[v]: the edge with minimum weight connecting vertex v (not yet in the spanning tree T) to other vertex of T'"
+      ]
+    }
+  }
+}

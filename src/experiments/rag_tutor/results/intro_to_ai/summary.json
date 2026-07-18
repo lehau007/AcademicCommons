@@ -1,0 +1,25 @@
+{
+  "course": "intro_to_ai",
+  "chunk_count": 20,
+  "question_count": 20,
+  "strategies": {
+    "naive_top_k": {
+      "answer_similarity": 0.677,
+      "context_precision": 0.8875,
+      "context_recall": 0.989,
+      "citation_accuracy": 1.0
+    },
+    "mmr": {
+      "answer_similarity": 0.6603,
+      "context_precision": 0.8375,
+      "context_recall": 0.989,
+      "citation_accuracy": 1.0
+    },
+    "mmr_tier_boost": {
+      "answer_similarity": 0.6789,
+      "context_precision": 0.8875,
+      "context_recall": 0.989,
+      "citation_accuracy": 1.0
+    }
+  }
+}

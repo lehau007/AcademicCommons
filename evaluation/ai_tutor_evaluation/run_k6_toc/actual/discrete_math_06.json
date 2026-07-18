@@ -1,0 +1,10 @@
+{
+  "qid": "discrete_math_06",
+  "course_code": "IT3020E",
+  "question": "In the general algorithm for finding a Minimum Spanning Tree (MST), what defines a 'safe' edge?",
+  "session_id": "dd425d2f-9ee0-4e34-9a3c-609c3eeba02d",
+  "answer": "Trong thuật toán tổng quát tìm **cây khung nhỏ nhất (MST)**, một **cạnh an toàn (safe edge)** là:\n\n- **một cạnh có thể được thêm vào tập cạnh đã chọn hiện tại mà không làm mất khả năng hoàn thành thành một MST**,  \n- hay nói cách khác, **nó thuộc về một MST nào đó và “an toàn” để chọn tiếp theo**.\n\nTheo định lý cắt (cut property), nếu ta xét một **cắt** của đồ thị sao cho tập cạnh hiện tại không chứa cạnh nào băng qua cắt đó, thì **cạnh nhẹ nhất (minimum-weight edge) băng qua cắt đó** sẽ là một cạnh an toàn.\n\nNói ngắn gọn:\n> **Safe edge = cạnh có thể thêm vào mà vẫn bảo toàn khả năng xây dựng MST; thường là cạnh nhẹ nhất băng qua một cắt phù hợp.**",
+  "citations": [],
+  "retrieval_calls": [],
+  "elapsed_s": 5.3
+}

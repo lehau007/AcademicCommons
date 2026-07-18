@@ -1,0 +1,134 @@
+{
+  "qid": "database_05",
+  "course_code": "IT3292E",
+  "question": "How is a many-to-many (n-m) relationship mapped from an ERD to a relational schema?",
+  "session_id": "c3675378-364d-4b7d-980b-8e94b2f3a43c",
+  "answer": "For a **many-to-many (n-m) relationship** in an ERD, the mapping to a relational schema is:\n\n- **Create a new relation (table)** for the relationship itself.\n- This new relation contains the **primary key attributes of both entity sets** as attributes.\n- The combination of these attributes is typically used as the **composite primary key**.\n\n### Example\nIf you have:\n\n- `student(student_id, name, dob, address)`\n- `subject(subject_id, name, credit)`\n\nand a many-to-many relationship `learn` between `student` and `subject`, then map it as:\n\n```sql\nlearn(subject_id, student_id)\n```\n\nHere:\n- `subject_id` is a foreign key to `subject`\n- `student_id` is a foreign key to `student`\n- together they form the key of the new table\n\n### In short\nA many-to-many relationship is converted into an **associative table** containing the keys of both participating entities.",
+  "citations": [
+    {
+      "chunk_id": "7f790225-c759-45bd-8f5e-20bf7a0fb665",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "- ERD: an approach to DB designing\n- Entity sets, attributes, key, relationships\n- How to create an ERD\n- Mapping from ERD to relational schema"
+    },
+    {
+      "chunk_id": "5dd8419d-5d38-4e00-ac5d-406d74c3ba51",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "- Introduction\n  - ERD in DB designing, and its components\n- How to create an ERD\n  - discover entity sets, attributes and relationships among entity sets\n- Mapping from ERD to relational schema\n  - t"
+    },
+    {
+      "chunk_id": "06e46a59-7fe0-40b5-abe5-ba1d7bd0c832",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Mapping process",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Mapping of 1 - n relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `join(class_id, student_id)`\n  - Use foreign key\n    - `student(student_id, name, do"
+    },
+    {
+      "chunk_id": "5fe44724-5857-46f3-9829-449552810995",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Mapping process",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "- Mapping of n - m relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `learn(subject_id, student_id)`\n\n[Diagram: ER diagram showing a many-to-many (n:m) r"
+    },
+    {
+      "chunk_id": "c47a1b9a-ef5c-4694-9308-32b9f3708358",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Mapping process",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "## 3.1. Mapping process\n\n- Mapping of multivalued attributes\n  - For each multivalued attribute A, create a new relation R including an attribute corresponding to A, plus the primary key attribute K ("
+    },
+    {
+      "chunk_id": "51ad005f-cbb3-4519-9822-20f05a2298e6",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Introduction",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- Two approaches to DB designing\n  - Top - down: Entity Relationship model (ER)\n  - Bottom – up: Functional Dependencies and Normalization\n- ER model is used in DB design\n\n[Diagram: A flowchart showin"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "mapping many-to-many relationship from ERD to relational schema",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "7f790225-c759-45bd-8f5e-20bf7a0fb665",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "Remark",
+          "chunk_order": 30,
+          "cosine_sim": 0.6518,
+          "final_score": 1.1243,
+          "content": "- ERD: an approach to DB designing\n- Entity sets, attributes, key, relationships\n- How to create an ERD\n- Mapping from ERD to relational schema"
+        },
+        {
+          "chunk_id": "5dd8419d-5d38-4e00-ac5d-406d74c3ba51",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "Summary",
+          "chunk_order": 33,
+          "cosine_sim": 0.5814,
+          "final_score": 1.0029,
+          "content": "- Introduction\n  - ERD in DB designing, and its components\n- How to create an ERD\n  - discover entity sets, attributes and relationships among entity sets\n- Mapping from ERD to relational schema\n  - transform from ERD into a set of tables"
+        },
+        {
+          "chunk_id": "06e46a59-7fe0-40b5-abe5-ba1d7bd0c832",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 26,
+          "cosine_sim": 0.5743,
+          "final_score": 0.9907,
+          "content": "- Mapping of 1 - n relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `join(class_id, student_id)`\n  - Use foreign key\n    - `student(student_id, name, dob, address, class_id)`\n\n[Diagram: ER diagram showing a 1-to-n relationship between \"class\" and \"student\" entities connected by a \"join\" relationship. The \"class\" entity has attributes: class_id (primary key), name, and faculty. The \"student\" entity has attributes: student_id (primary key), name, dob, and address. The relationship cardinality is marked as \"1\" on the class side and \"n\" on the student side.]"
+        },
+        {
+          "chunk_id": "5fe44724-5857-46f3-9829-449552810995",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 27,
+          "cosine_sim": 0.5651,
+          "final_score": 0.9748,
+          "content": "- Mapping of n - m relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `learn(subject_id, student_id)`\n\n[Diagram: ER diagram showing a many-to-many (n:m) relationship between \"subject\" and \"student\" entities connected by a \"learn\" relationship diamond. The \"subject\" entity has attributes subject_id (primary key), name, and credit. The \"student\" entity has attributes student_id (primary key), name, dob, and address. The relationship is labeled with \"n\" on the subject side and \"m\" on the student side, indicating a many-to-many cardinality.]"
+        },
+        {
+          "chunk_id": "c47a1b9a-ef5c-4694-9308-32b9f3708358",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 28,
+          "cosine_sim": 0.5525,
+          "final_score": 0.9531,
+          "content": "## 3.1. Mapping process\n\n- Mapping of multivalued attributes\n  - For each multivalued attribute A, create a new relation R including an attribute corresponding to A, plus the primary key attribute K (as a foreign key in R) of the corresponding entity set\n  - The primary key of R is the combination of A and K.\n    - subject_lecturer(subject_id, lecturer)\n\n[Diagram: ER diagram showing a \"subject\" entity (rectangle) with attributes subject_id, name (single ellipses), credit (single ellipse), and lecturer (double ellipse indicating multivalued attribute). The double ellipse around \"lecturer\" indicates it is a multivalued attribute, which requires creating a separate relation table subject_lecturer(subject_id, lecturer) with composite primary key.]"
+        },
+        {
+          "chunk_id": "51ad005f-cbb3-4519-9822-20f05a2298e6",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "1.1. Introduction",
+          "chunk_order": 7,
+          "cosine_sim": 0.5397,
+          "final_score": 0.9311,
+          "content": "- Two approaches to DB designing\n  - Top - down: Entity Relationship model (ER)\n  - Bottom – up: Functional Dependencies and Normalization\n- ER model is used in DB design\n\n[Diagram: A flowchart showing the database design process starting from Ideas, proceeding to ER design, then to Relational Schema, and finally to Relational DBMS]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 15.9
+}

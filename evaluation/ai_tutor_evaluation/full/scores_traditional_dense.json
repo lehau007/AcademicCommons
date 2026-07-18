@@ -1,0 +1,1692 @@
+{
+  "database_01": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "CK properties grounded; minor NULL aside"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "database_02": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "honest refusal faithful; defs genuinely absent from retrieved ctx"
+    },
+    "answer_relevancy": {
+      "score": 3,
+      "justification": "on-topic but does not deliver the operator definitions"
+    },
+    "answer_correctness": {
+      "score": 2,
+      "justification": "TRADITIONAL refuses core GT (common-tuples/first-not-second) that agentic delivered"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "equivalence-rule/set-op chunks, no core defs"
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "operator definitions not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "-"
+    }
+  },
+  "database_03": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "full SQL1/2/3 timeline in ctx"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "database_04": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "quiz feedback verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "database_05": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "n-m mapping rule + learn() in ctx"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "database_06": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "multivalued mapping rule verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "database_07": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "update anomaly def + Databases example verbatim in ctx"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "database_08": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "F+ definition verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "database_09": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "optimizer=cheapest plan + 3 steps grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "database_10": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "sort-merge vs hash-join named; partition-hash in ctx"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "both algorithms correct"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "sort-merge detail partly from trimmed"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  },
+  "discrete_math_01": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "articulation/bridge defs verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_02": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Cayley n^(n-2) verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_03": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "strong/weak defs verbatim + SCC"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_04": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "BFS O(|V|+|E|) breakdown verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_05": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "incidence matrix def verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_06": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Prim safe-edge grounded; honest generic gap"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "GT generic invariant; ctx Prim-specific only"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "generic invariant not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_07": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Prim rule + d/near arrays grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_08": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Theta(n^3) derived from triple loop; honest note"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Critical_Path chunk tangential"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "FW running time not stated; loop structure retrieved"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  },
+  "discrete_math_09": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "classification standard; retrieved ctx mostly DFS diagrams"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "4 edge types correct"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "diagram-heavy chunks"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "explicit classification partly from trimmed"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  },
+  "discrete_math_10": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "theta def + examples grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_11": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "generalized product rule verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_12": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "refusal faithful; pigeonhole statement absent"
+    },
+    "answer_relevancy": {
+      "score": 3,
+      "justification": "on-topic but no statement delivered"
+    },
+    "answer_correctness": {
+      "score": 2,
+      "justification": "corpus gap: statement not retrieved (all configs fail)"
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "incl-excl/Theta/induction noise"
+    },
+    "context_recall": {
+      "score": 1,
+      "justification": "needed statement not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "-"
+    }
+  },
+  "discrete_math_13": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Big-Oh intuitive def verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_14": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "branching+bounding verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_15": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "0/1 knapsack binary vector grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_16": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "honest; states inference but hedges"
+    },
+    "answer_relevancy": {
+      "score": 4,
+      "justification": "addresses but refuses to commit"
+    },
+    "answer_correctness": {
+      "score": 3,
+      "justification": "TRADITIONAL hedges: mentions V-preserving inference but won't assert GT (agentic committed corr 5)"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "spanning-tree/components, no standalone def"
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "standalone def not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  },
+  "discrete_math_17": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "tree property 4 verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_18": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "adjacency-list def verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "discrete_math_19": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "bijection example + necessary conds grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "adjacent-iff correct"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "formal iff standard, example retrieved"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  },
+  "discrete_math_20": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Prim pseudocode + near[v] grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  },
+  "hard_ai_graph_01": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "3 types grounded in Problems chunk"
+    },
+    "answer_relevancy": {
+      "score": 4,
+      "justification": "general-problems framing, not the diagram terrains asked"
+    },
+    "answer_correctness": {
+      "score": 3,
+      "justification": "TRADITIONAL MIS-RETRIEVE: raw query pulled minimax/8-puzzle; misses diagram's global/shoulder/flat-local-max (GT), gives only local-max/plateau/ridge"
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "minimax/8-puzzle noise dominate"
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "terrain diagram not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  },
+  "hard_ai_graph_02": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "S2 all-goals-no-mutex + CSP/backward chunk retrieved"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "minimax/partial-order noise"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_ai_long_14": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "objective-function diagram (global/shoulder) + variants retrieved"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "names all 4 + correct (c)"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_ai_multi_03": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "P*->A + agent/env defs verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_ai_multi_04": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "A* props + full search comparison table + depth-limited=DFS+limit retrieved"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "both parts correct"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_db_long_15": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "defs + define/construct/manipulate mapping + examples all in ctx"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_db_multi_07": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "DBMS fns + student table grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "8-col superset of GT correct"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_db_table_05": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "student schema + [Table:] clazz_id link"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_db_table_06": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Wikipedia/Techtarget + 6 examples in ctx"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "subject-table noise"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_db_table_08": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "defining~/constructing~/manipulating~ mapping grounded (DBMS chunks)"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "correct GT mapping (this run traditional got it right, unlike hard-set)"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "student-table chunk tangential"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  },
+  "hard_dm_graph_09": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "list derivable from S(5,3) decision tree"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "first {1,2,3}/last {3,4,5} + principle correct"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "branch-and-bound/matrix noise"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "decision tree retrieved; explicit list derived"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  },
+  "hard_dm_graph_11": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "DFS(u) box + main/DFS pseudocode grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_dm_long_10": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "tuple condition + lex def + example retrieved"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "3-part exact"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_dm_multi_12": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "main+DFS pseudocode grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "hard_dm_table_13": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "list from decision tree + arithmetic"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "C(5,3)=10 + list correct"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "isomorphism-drawing noise; enumerated table not retrieved"
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "only decision tree retrieved (dense also had the list)"
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_01": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "PEAS + taxi example verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_02": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "progression/regression verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_03": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "A* increasing-f + f=g+h grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "lowest-f rule correct"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_04": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "simple vs model-based reflex defs verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "env-property chunks tangential"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_05": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "CSP state/goal verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_06": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "min-conflicts h(n) verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_07": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "forward-chaining example + pseudocode grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_08": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "search-vs-game table verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_09": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "terms/predicates rules + grammar verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_10": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "E<E_threshold terminate/reset + epoch check verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "backprop-detail chunks tangential"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_11": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "IG def + Gain formula + ID3 grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_12": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "honest; Mitchell informal def grounded"
+    },
+    "answer_relevancy": {
+      "score": 4,
+      "justification": "addresses but hedges on T/P/E"
+    },
+    "answer_correctness": {
+      "score": 3,
+      "justification": "TRADITIONAL hedges: Mitchell def retrieved but refuses to enumerate T/P/E (agentic committed corr 5)"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "ML-def chunk relevant amid DL/RL noise"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "Mitchell definition retrieved here (unlike agentic which got agent/RL noise); T/P/E labels absent"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_13": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "gamma bounds sum + favors earlier/shorter verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_14": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "feed-forward vs recurrent def verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_15": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "rational=right thing/blinking/goal-dependent verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_16": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "fully-observable complete-state-access verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_17": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "four items (init/successor/goal-test/path-cost) verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_18": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "beam info-sharing grass-greener verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_19": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "pruning purpose + alpha/beta grounded"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "covers prune-irrelevant purpose; omits GT's double-depth/perfect-ordering detail"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "double-depth detail not in ctx"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  },
+  "intro_to_ai_20": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "logic triplet <L,S,R> verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "-"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  }
+}

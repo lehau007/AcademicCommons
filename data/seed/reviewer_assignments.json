@@ -1,0 +1,23 @@
+[
+  {
+    "user_id": "reviewer-001",
+    "course_code": "IT3210",
+    "assigned_by": "admin-001",
+    "assigned_at": "2026-01-15T08:00:00+07:00",
+    "is_active": true
+  },
+  {
+    "user_id": "reviewer-001",
+    "course_code": "IT3292E",
+    "assigned_by": "admin-001",
+    "assigned_at": "2026-01-15T08:00:00+07:00",
+    "is_active": true
+  },
+  {
+    "user_id": "reviewer-002",
+    "course_code": "IT3160E",
+    "assigned_by": "admin-001",
+    "assigned_at": "2026-02-01T09:00:00+07:00",
+    "is_active": true
+  }
+]

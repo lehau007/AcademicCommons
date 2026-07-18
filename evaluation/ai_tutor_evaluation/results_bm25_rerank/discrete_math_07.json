@@ -1,0 +1,57 @@
+{
+  "qid": "discrete_math_07",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunks. The answer correctly describes Prim's greedy principle, the selection of minimum-weight edges connecting tree vertices to non-tree vertices, and accurately explains the implementation details (d[v], near[v]).",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how Prim's algorithm determines which edge to add during each iteration: by selecting the minimum-weight edge connecting a vertex in the current tree to a vertex not yet in the tree. The explanation is on-topic throughout, covering the greedy principle, the selection criteria, and the implementation details with d[v] and near[v].",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: starting from an arbitrary vertex, adding minimum-weight edges connecting a vertex in the tree to one outside, avoiding cycles, and continuing until all vertices are included. The explanation is factually consistent and adds correct implementation details.",
+      "evidence": [
+        "Ground truth: 'adds the minimum-weight edge that connects a vertex already in the tree to a vertex not yet in the tree'",
+        "Tutor: 'Chọn **cạnh có trọng số nhỏ nhất** trong số đó' (chooses the edge with smallest weight)",
+        "Ground truth: 'provided it does not form a cycle'",
+        "Tutor: 'mở rộng cây hiện tại mà không tạo chu trình' (expand the tree without creating a cycle)"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to explaining how Prim's algorithm selects edges. They cover the core greedy principle, pseudocode implementations, the role of d[v] and near[v] labels, and visual examples of the edge-selection process.",
+      "evidence": [
+        "c8ffa216: 'edge with smallest weight among edges connecting a vertex of T to other vertex not in T'",
+        "73844cf8: 'Find v ∈ V \\ V(T) satisfying: d[v] = min'",
+        "6447abc1: 'find the edge with minimum weight (u, v)'",
+        "f8b4bfd3: 'd[v] := min { c[v,w] : w ∈ V(T) }'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks: starting from an arbitrary vertex, adding minimum-weight edges connecting tree vertices to non-tree vertices, avoiding cycles, and continuing until all vertices are included.",
+      "evidence": [
+        "Select an arbitrary vertex r ∈ V",
+        "The \"safe\" edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$",
+        "while (T has < n vertices)",
+        "find the edge with minimum weight (u, v) is the minimum weight where u ∈ V(T) and v ∈ V(G) − V(T)"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the corresponding statement. The tutor's explanation of the greedy principle, safe edge selection, and implementation details (d[v], near[v]) are all directly backed by the cited chunks.",
+      "evidence": [
+        "Statement: 'chọn cạnh có trọng số nhỏ nhất' → Chunk c8ffa216: 'edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$'",
+        "Statement: 'd[v]: trọng số nhỏ nhất để nối đỉnh v với cây T' → Chunk 73844cf8: 'd[v]: the edge with minimum weight connecting vertex $v$ *(not yet in the spanning tree $T$)* to other vertex of $T$'",
+        "Statement: 'near[v]: đỉnh trong T gần v nhất' → Chunk f8b4bfd3: 'near[v] := z record the vertex of T that is nearest to vertex $v$'",
+        "Statement: 'chọn đỉnh v có d[v] nhỏ nhất, rồi thêm cạnh (v, near[v])' → Chunk 73844cf8: 'Find v ∈ V \\ V(T) satisfying: d[v] = min... E(T) = E(T) ∪ { (v, near[v]) }'"
+      ]
+    }
+  }
+}

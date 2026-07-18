@@ -1,0 +1,40 @@
+[
+  {
+    "user_id": "admin-001",
+    "email": "admin@soict.hust.edu.vn",
+    "full_name": "System Admin",
+    "role": "admin"
+  },
+  {
+    "user_id": "reviewer-001",
+    "email": "reviewer.linhnt@soict.hust.edu.vn",
+    "full_name": "Nguyễn Thị Linh",
+    "role": "reviewer",
+    "note": "TA for IT3210, IT3292E"
+  },
+  {
+    "user_id": "reviewer-002",
+    "email": "reviewer.ducpv@soict.hust.edu.vn",
+    "full_name": "Phạm Văn Đức",
+    "role": "reviewer",
+    "note": "TA for IT3160E"
+  },
+  {
+    "user_id": "student-001",
+    "email": "student.anhnv@sis.hust.edu.vn",
+    "full_name": "Nguyễn Văn Anh",
+    "role": "student"
+  },
+  {
+    "user_id": "student-002",
+    "email": "student.huylt@sis.hust.edu.vn",
+    "full_name": "Lê Trung Huy",
+    "role": "student"
+  },
+  {
+    "user_id": "student-003",
+    "email": "student.maiptt@sis.hust.edu.vn",
+    "full_name": "Phạm Thị Thu Mai",
+    "role": "student"
+  }
+]

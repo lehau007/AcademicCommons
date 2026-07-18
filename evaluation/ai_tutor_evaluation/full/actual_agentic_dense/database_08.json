@@ -1,0 +1,175 @@
+{
+  "qid": "database_08",
+  "course_code": "IT3292E",
+  "question": "What does the closure of a functional dependency set (F+) represent?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "34a67cf9-a6e9-4cf4-90c5-9f8e46e3c5bd",
+  "answer": "# Closure of a Functional Dependency Set (F⁺)\n\n## Definition\n\nGiven a set of functional dependencies **F** on a relation schema **R**, the **closure of F**, denoted **F⁺**, is:\n\n> **The set of *all* functional dependencies that include F itself, together with *all* dependencies that can be inferred (derived) from F using inference rules (such as Armstrong's axioms).**\n\nIn other words, F⁺ contains every FD that is *logically implied* by F — not only the ones explicitly listed.\n\n## Notation\n\nWe use the symbol **⊨** (semantic entailment) to write:\n$$F \\models X \\rightarrow Y$$\n\nto mean that the FD `X → Y` can be **inferred from** the FD set F, i.e., `X → Y ∈ F⁺`.\n\n## Intuition / Example\n\nSuppose `F = {A → B, B → C}` on `R(A, B, C, ...)`. From these two FDs, we can apply **transitivity** to infer:\n- `A → C`\n- `AC → BC`, `AB → C`, etc.\n\nSo:\n$$F^+ = \\{A \\rightarrow B,\\; B \\rightarrow C,\\; A \\rightarrow C,\\; AC \\rightarrow BC,\\; \\ldots\\}$$\n\ni.e., the original FDs **plus** every FD derivable from them.\n\n## Why It Matters\n\nF⁺ is a fundamental tool used in several database theory tasks:\n\n1. **Testing FD membership** — To check whether a dependency `X → Y` is implied by F, you verify whether `Y ⊆ X⁺_F` (closure of attribute set). F⁺ itself can be huge, so attribute-closure is usually computed instead.\n2. **Checking equivalence of FD sets** — Two FD sets F and G are equivalent if and only if `F⁺ = G⁺`.\n3. **Finding candidate keys** — A set X is a superkey of R iff `X⁺_F = R`.\n4. **Computing minimal covers** — Used when simplifying FD sets into a canonical form.\n\n## Summary\n\n| Concept | Meaning |\n|---|---|\n| **F** | The given (explicit) set of FDs |\n| **F⁺** | The closure of F: F itself **∪** all FDs that can be inferred from F |\n| **F ⊨ X → Y** | The FD `X → Y` is in F⁺ (inferred from F) |\n\nIn short, **F⁺ represents the complete set of all functional dependencies that are logically implied by F**, capturing every consequence derivable through inference rules.\n\n---",
+  "citations": [
+    {
+      "chunk_id": "7021f38d-a3c0-47c0-845d-09b13b2899b0",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Closure of a set of attributes",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- Problem\n  - We have F, and X → Y, we have to check if F ⊨ X → Y or not\n- Should we calculate F+? ⇒ Closure of a set of attributes\n- Definition\n  - For each such set of attributes X, we determine the"
+    },
+    {
+      "chunk_id": "a6780170-9cb5-4356-85ba-ada1354beaab",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Closure of a FD set",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "- Suppose that F = {A → B, B → C} on R(A, B, C,...). We can infer many FDs such as:\n  - A → C, AC → BC,...\n- Definition\n  - Formally, the set of all dependencies that include F as well as all dependen"
+    },
+    {
+      "chunk_id": "f3db5625-8c24-4a8a-8eb6-ab08aafed483",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Closure of a set of attributes",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "- An example\n  - Given R = {A, B, C, D, E, F} and F = {AB → C, BC → AD, D → E, CF → B}.\n  - Calculate $(AB)^+_F$\n  - $X^0 = AB$\n  - $X^1 = ABC$ (from AB → C)\n  - $X^2 = ABCD$ (from BC → AD)\n  - $X^3 ="
+    },
+    {
+      "chunk_id": "1c4ad637-8fba-462d-aaa4-0d4c654ce666",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Closure of a set of attributes",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "- To find the closure of an attribute set $X^+$ under F\n  - **Input:** A set F of FDs on a relation schema R, and a set of attributes X, which is a subset of R.\n  - $X^0 := X$;\n  - **repeat**\n    - fo"
+    },
+    {
+      "chunk_id": "9d6bd2b5-522f-4ca6-9fb9-573d33a4778e",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Learning objective",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- Upon completion of this lesson, students will be able to:\n  1. Recall the concept of functional dependency, Armstrong's axioms and secondary rules\n  2. Identify closure of a FD set, closure of a set"
+    },
+    {
+      "chunk_id": "3767da4f-9f11-4b2f-9022-57489f5057eb",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 32,
+      "excerpt": "- Functional dependencies\n- Armstrong axioms and their secondary rules\n- Closure of a set of FDs\n- Closure of a set of attributes under a set of FDs\n- An algorithm to find a minimal key\n- Equivalence "
+    },
+    {
+      "chunk_id": "6d3318ae-4fec-4115-82db-cfd30c9180f2",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "1. **Functional Dependency**\n   - A FD $X \\rightarrow Y$: the values of the X component of a tuple uniquely (or functionally) determine the values of the Y component\n\n2. **Armstrong 's Axioms and seco"
+    },
+    {
+      "chunk_id": "72587c2b-ed7a-447f-af86-dc891fca015e",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "5.2. An example",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "- Prove that F = {A → C, AC → D, E → AD, E → H} and G = {A → CD, E → AH} are equivalent\n  - For each FD of F, prove that it is in G+\n    - A → C: $(A)^+_G = ACD \\supseteq C$, so A → C ∈ G+\n    - AC → "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "closure of functional dependency set F+ definition",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "7021f38d-a3c0-47c0-845d-09b13b2899b0",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "3.2. Closure of a set of attributes",
+          "chunk_order": 17,
+          "cosine_sim": 0.5957,
+          "final_score": 0.685,
+          "content": "- Problem\n  - We have F, and X → Y, we have to check if F ⊨ X → Y or not\n- Should we calculate F+? ⇒ Closure of a set of attributes\n- Definition\n  - For each such set of attributes X, we determine the set X+ of attributes that are functionally determined by X based on F; X+ is called the closure of X under F."
+        },
+        {
+          "chunk_id": "a6780170-9cb5-4356-85ba-ada1354beaab",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "3.1. Closure of a FD set",
+          "chunk_order": 16,
+          "cosine_sim": 0.5921,
+          "final_score": 0.6809,
+          "content": "- Suppose that F = {A → B, B → C} on R(A, B, C,...). We can infer many FDs such as:\n  - A → C, AC → BC,...\n- Definition\n  - Formally, the set of all dependencies that include F as well as all dependencies\n  - that can be inferred from F is called the closure of F, denoted by $F^+$.\n- F ⊨ X → Y to denote that the FD X → Y is inferred from the set of FDs F."
+        },
+        {
+          "chunk_id": "f3db5625-8c24-4a8a-8eb6-ab08aafed483",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "3.2. Closure of a set of attributes",
+          "chunk_order": 19,
+          "cosine_sim": 0.5563,
+          "final_score": 0.6397,
+          "content": "- An example\n  - Given R = {A, B, C, D, E, F} and F = {AB → C, BC → AD, D → E, CF → B}.\n  - Calculate $(AB)^+_F$\n  - $X^0 = AB$\n  - $X^1 = ABC$ (from AB → C)\n  - $X^2 = ABCD$ (from BC → AD)\n  - $X^3 = ABCDE$ (from D → E)\n  - $X^4 = ABCDE$\n  - $(AB)^+_F = ABCDE$\n\n[Diagram: The slide shows the step-by-step closure computation for the attribute set AB under a set of functional dependencies. It illustrates how repeatedly applying dependencies expands the reachable attributes until no new ones can be added, yielding the final closure.]"
+        },
+        {
+          "chunk_id": "1c4ad637-8fba-462d-aaa4-0d4c654ce666",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "3.2. Closure of a set of attributes",
+          "chunk_order": 18,
+          "cosine_sim": 0.5554,
+          "final_score": 0.6387,
+          "content": "- To find the closure of an attribute set $X^+$ under F\n  - **Input:** A set F of FDs on a relation schema R, and a set of attributes X, which is a subset of R.\n  - $X^0 := X$;\n  - **repeat**\n    - for each functional dependency $Y \\to Z$ in F do\n      - if $X^{i-1} \\supseteq Y$ then $X^i := X^{i-1} \\cup Z$;\n      - else $X^i := X^{i-1}$\n  - **until** $(X^i \\text{ unchanged})$;\n  - $X^+ := X^i$"
+        },
+        {
+          "chunk_id": "9d6bd2b5-522f-4ca6-9fb9-573d33a4778e",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "Learning objective",
+          "chunk_order": 3,
+          "cosine_sim": 0.5095,
+          "final_score": 0.5859,
+          "content": "- Upon completion of this lesson, students will be able to:\n  1. Recall the concept of functional dependency, Armstrong's axioms and secondary rules\n  2. Identify closure of a FD set, closure of a set of attributes\n  3. Find a minimal key of a relation under a set of FDs\n  4. Identify the equivalence of sets of FDs and find the minimal cover of a set of FDs"
+        },
+        {
+          "chunk_id": "3767da4f-9f11-4b2f-9022-57489f5057eb",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "Remark",
+          "chunk_order": 32,
+          "cosine_sim": 0.4879,
+          "final_score": 0.5611,
+          "content": "- Functional dependencies\n- Armstrong axioms and their secondary rules\n- Closure of a set of FDs\n- Closure of a set of attributes under a set of FDs\n- An algorithm to find a minimal key\n- Equivalence of sets of FDs\n- Finding a minimal set of a set of FDs"
+        },
+        {
+          "chunk_id": "6d3318ae-4fec-4115-82db-cfd30c9180f2",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "Summary",
+          "chunk_order": 33,
+          "cosine_sim": 0.4691,
+          "final_score": 0.5395,
+          "content": "1. **Functional Dependency**\n   - A FD $X \\rightarrow Y$: the values of the X component of a tuple uniquely (or functionally) determine the values of the Y component\n\n2. **Armstrong 's Axioms and secondary rules**\n   - Reflexivity, Augmentation, Transitivity\n   - Union, Pseudo-transitivity, Decomposition\n\n3. **Closure of a FD set, closure of a set of attributes**\n   - All dependencies that can be inferred from F, include F, is called the closure of F, denoted by $F^+$\n   - A set of attributes are functionally determined by X based on F\n\n4. **A minimal key**\n   - A minimal set of attributes can determine R\n\n5. **Equivalence of sets of functional dependencies**\n   - F is equivalent to G if every dependency in G can be inferred from F, and every dependency in F can be inferred from G\n\n6. **A minimal cover of a set of FDs**\n   - A set of dependencies in a standard or canonical form and with no redundancies"
+        },
+        {
+          "chunk_id": "72587c2b-ed7a-447f-af86-dc891fca015e",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "5.2. An example",
+          "chunk_order": 27,
+          "cosine_sim": 0.3499,
+          "final_score": 0.4024,
+          "content": "- Prove that F = {A → C, AC → D, E → AD, E → H} and G = {A → CD, E → AH} are equivalent\n  - For each FD of F, prove that it is in G+\n    - A → C: $(A)^+_G = ACD \\supseteq C$, so A → C ∈ G+\n    - AC → D: $(AC)^+_G = ACD \\supseteq D$, so AC → D ∈ G+\n    - E → AD: $(E)^+_G = EAHCD \\supseteq AD$, so E → AD ∈ G+\n    - E → H: $(E)^+_G = EAHCD \\supseteq H$, so E → H ∈ G+\n    - ⇒ F+ ⊆ G+\n  - For each FD of G, prove that it is in F+ (the same)\n    - ⇒ G+ ⊆ F+\n  - ⇒ F+ = G+"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 23.2
+}

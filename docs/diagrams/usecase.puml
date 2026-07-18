@@ -1,0 +1,124 @@
+@startuml usecase
+' Use Case Diagram - Academic Commons System
+' Render: java -jar plantuml.jar docs/diagrams/usecase.puml -o ../../thesis_book/figures
+' Requires Graphviz (dot). For a no-Graphviz fallback add: !pragma layout smetana
+
+left to right direction
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam ArrowColor #5B6470
+skinparam ActorBorderColor #2B3440
+skinparam ActorFontStyle bold
+skinparam usecase {
+  BackgroundColor #F4F6F8
+  BorderColor #6B7480
+  FontColor #1F2730
+}
+skinparam rectangle {
+  BorderColor #2B3440
+  FontStyle bold
+}
+skinparam package {
+  BackgroundColor #FBFCFD
+  BorderColor #AAB2BC
+}
+
+actor "Authenticated\nUser" as AuthUser
+actor "Student" as Student
+actor "Subject\nReviewer" as Reviewer
+actor "Administrator" as Admin
+actor "Time" as Clock
+
+' Role hierarchy: every role is an authenticated user; Reviewer and
+' Student specialise it, and Administrator inherits all Reviewer rights.
+Student  --|> AuthUser
+Reviewer --|> AuthUser
+Admin    --|> Reviewer
+
+rectangle "Academic Commons System" {
+
+  package "Contribution" {
+    usecase "Browse and Search Courses" as UC_browse
+    usecase "Upload Community Material" as UC_upcomm
+    usecase "Track My Documents" as UC_track
+    usecase "Vote on Document" as UC_vote
+    usecase "View Leaderboard\nand Score" as UC_board
+  }
+
+  package "Learning Tools" {
+    usecase "Ask Virtual Tutor\n(RAG + citations)" as UC_tutor
+    usecase "View Concept Mindmap" as UC_mindview
+    usecase "Generate Mock Test" as UC_mock
+    usecase "Read Document /\nCourse Summary" as UC_read
+  }
+
+  package "Review and Governance" {
+    usecase "View Review Queue" as UC_queue
+    usecase "Approve Document" as UC_approve
+    usecase "Reject /\nOverride Document" as UC_reject
+    usecase "Upload Official Material" as UC_upoff
+    usecase "Manage Documents\n(view / delete)" as UC_manage
+    usecase "View Review Analytics" as UC_analytics
+    usecase "Generate Mindmap" as UC_mindgen
+  }
+
+  package "Administration" {
+    usecase "Manage Users" as UC_users
+    usecase "Manage Courses and Seed" as UC_courses
+    usecase "Assign Reviewers" as UC_assign
+    usecase "Configure Review SLA" as UC_sla
+    usecase "Handle Dead-Letter Queue" as UC_dlq
+    usecase "View Audit Log" as UC_audit
+  }
+
+  package "Automated Processing" {
+    usecase "Automated Document Processing\n(OCR / AI evaluation / indexing)" as UC_process
+    usecase "SLA Escalation" as UC_escal
+  }
+}
+
+' --- Authenticated User associations (shared by all roles) ---
+' Being authenticated is a pre-condition implied by the actor, so there is
+' no separate "log in" use case.
+AuthUser -- UC_browse
+AuthUser -- UC_read
+AuthUser -- UC_tutor
+AuthUser -- UC_mindview
+AuthUser -- UC_mock
+AuthUser -- UC_board
+
+' --- Student-specific associations (contribution) ---
+Student -- UC_upcomm
+Student -- UC_track
+Student -- UC_vote
+
+' --- Reviewer associations ---
+Reviewer -- UC_queue
+Reviewer -- UC_approve
+Reviewer -- UC_reject
+Reviewer -- UC_upoff
+Reviewer -- UC_manage
+Reviewer -- UC_analytics
+Reviewer -- UC_mindgen
+
+' --- Administrator associations ---
+Admin -- UC_users
+Admin -- UC_courses
+Admin -- UC_assign
+Admin -- UC_sla
+Admin -- UC_dlq
+Admin -- UC_audit
+
+' --- SLA escalation: triggered by time, surfaces the document to the Admin ---
+Clock -- UC_escal
+UC_escal --> Admin : moves to\nadmin review queue
+
+' --- include relationships ---
+' Each upload triggers the automated processing pipeline; its internal
+' stages (and the tier-specific branching) are detailed in the activity diagram.
+UC_upcomm ..> UC_process : <<include>>
+UC_upoff  ..> UC_process : <<include>>
+
+@enduml

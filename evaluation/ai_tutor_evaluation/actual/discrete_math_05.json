@@ -1,0 +1,58 @@
+{
+  "qid": "discrete_math_05",
+  "course_code": "IT3020E",
+  "question": "How is an incidence matrix constructed for an undirected graph?",
+  "session_id": "c58aa2b3-7b62-46fe-9c4e-e5c432cacab7",
+  "answer": "For an **undirected graph** \\(G=(V,E)\\), the **incidence matrix** is constructed as follows:\n\n- Let \\(V=\\{v_1,v_2,\\dots,v_n\\}\\) be the set of vertices.\n- Let \\(E=\\{e_1,e_2,\\dots,e_m\\}\\) be the set of edges.\n- Build an \\(n \\times m\\) matrix \\(M=[m_{ij}]\\), where:\n\n\\[\nm_{ij} =\n\\begin{cases}\n1, & \\text{if edge } e_j \\text{ is incident with vertex } v_i \\\\\n0, & \\text{otherwise}\n\\end{cases}\n\\]\n\n### Notes\n- Each **column** represents one edge.\n- Each **row** represents one vertex.\n- For a normal edge between two different vertices, its column typically has **two 1s**.\n- **Multiple edges** can be represented by identical columns.\n- **Loops** are represented by a column with exactly one entry equal to \\(1\\), at the vertex where the loop is attached.",
+  "citations": [
+    {
+      "chunk_id": "c39258bf-8827-4abb-8cb7-a247ce1a5dcd",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Incidence Matrix",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "G = (V, E) is an undirected graph:\n\n- V = {v₁, v₂, v₃, ..., vₙ}\n- E = {e₁, e₂, ..., eₘ}\n\nThen the incidence matrix with respect to this ordering of V and E is the n × m matrix M = [mᵢⱼ], where\n\n[Formu"
+    },
+    {
+      "chunk_id": "4c1a9c2f-fec3-49cd-aaac-c26ccdd6a36f",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Incidence Matrix",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "Matrix **M**_{|V| × |E|} = [mᵢⱼ], where\n\n[Formula: m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise]\n\nCan also be used to represent:\n\n- **Multiple edges:** by using columns with identical"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "incidence matrix for an undirected graph construction definition",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c39258bf-8827-4abb-8cb7-a247ce1a5dcd",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "1. Incidence Matrix",
+          "chunk_order": 6,
+          "cosine_sim": 0.6659,
+          "final_score": 1.4159,
+          "content": "G = (V, E) is an undirected graph:\n\n- V = {v₁, v₂, v₃, ..., vₙ}\n- E = {e₁, e₂, ..., eₘ}\n\nThen the incidence matrix with respect to this ordering of V and E is the n × m matrix M = [mᵢⱼ], where\n\n[Formula: m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise]\n\nCan also be used to represent:\n\n- **Multiple edges:** by using columns with identical entries, since these edges are incident with the same pair of vertices\n- **Loops:** by using a column with exactly one entry equal to 1, corresponding to the vertex that is incident with the loop"
+        },
+        {
+          "chunk_id": "4c1a9c2f-fec3-49cd-aaac-c26ccdd6a36f",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "1. Incidence Matrix",
+          "chunk_order": 7,
+          "cosine_sim": 0.4315,
+          "final_score": 0.8169,
+          "content": "Matrix **M**_{|V| × |E|} = [mᵢⱼ], where\n\n[Formula: m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise]\n\nCan also be used to represent:\n\n- **Multiple edges:** by using columns with identical entries, since these edges are incident with the same pair of vertices\n- **Loops:** by using a column with exactly one entry equal to 1, corresponding to the vertex that is incident with the loop"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.2
+}

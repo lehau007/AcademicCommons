@@ -1,0 +1,115 @@
+{
+  "qid": "intro_to_ai_10",
+  "course_code": "IT3160E",
+  "question": "What is the termination condition for the training loop of a neural network?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "2364bb8a-f3fd-40d1-8a50-c77d3a54399a",
+  "answer": "Based on the provided context, the termination condition for the training loop of a neural network (in the Back-Propagation algorithm) is defined in **Step 6 (Total error check)**:\n\n**Termination Condition:** The training process terminates when the **current total error `E` is acceptable**, specifically when:\n\n$$E < E_{threshold}$$\n\nWhen this condition is met, the algorithm outputs the final weights and stops.\n\n**What happens if the condition is NOT met?**\nIf the total error is still greater than or equal to the threshold ($E \\geq E_{threshold}$), the algorithm does **not** terminate. Instead, it:\n1. Resets the error: $E = 0$\n2. Initiates a **new training epoch** by returning to Step 1\n\nThis is part of the outer loop structure, where:\n- **Step 5 (One epoch check)** verifies whether the entire training set has been processed. If yes, it proceeds to Step 6 (the termination check); if not, it returns to Step 1 for the next training instance.\n- **Step 6** then evaluates the overall error to decide whether to stop or continue training.\n\nIn summary, the training loop continues cycling through epochs until the total error over the training set falls below an acceptable threshold.\n\n---\n\n**Chunks used:**\n```json",
+  "citations": [
+    {
+      "chunk_id": "b9b2b22e-ed24-4f91-aee0-dccb99e7a18e",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Step 6 (Total error check)",
+      "page_number": null,
+      "chunk_order": 53,
+      "excerpt": "If the current total error is acceptable $(E < E_{threshold})$ then the training process terminates and output the final weights;\n\nOtherwise, reset E=0, and initiate the new training epoch by going to"
+    },
+    {
+      "chunk_id": "8807a5fa-96ab-45c0-bf0e-8a5d2b5a1c60",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Step 5 (One epoch check)",
+      "page_number": null,
+      "chunk_order": 52,
+      "excerpt": "Check whether the entire training set has been exploited (i.e., one epoch)\n\nIf the entire training set has been exploited, then go to step 6; otherwise, go to step 1"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "What is the termination condition for the training loop of a neural network?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "b9b2b22e-ed24-4f91-aee0-dccb99e7a18e",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Step 6 (Total error check)",
+          "chunk_order": 53,
+          "cosine_sim": 0.4762,
+          "final_score": 0.5476,
+          "content": "If the current total error is acceptable $(E < E_{threshold})$ then the training process terminates and output the final weights;\n\nOtherwise, reset E=0, and initiate the new training epoch by going to step 1"
+        },
+        {
+          "chunk_id": "c203c17e-d401-439a-b1cb-c7bee0a4c0b5",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP algorithm – Forward phase (1)",
+          "chunk_order": 38,
+          "cosine_sim": 0.3923,
+          "final_score": 0.4511,
+          "content": "- For each training instance $x$\n  - The input vector $x$ is propagated from the input layer to the output layer\n  - The network produces an actual output $Out$ (i.e., a vector of $Out_i$, $i=1..n$)\n- Given an input vector $x$, a neuron $z_q$ in the hidden layer receives a net input of\n- ...and produces a (local) output of\n\n$Net_q = \\sum_{j=1}^{m} w_{qj} x_j$\n\nwhere $f(.)$ is the activation (transfer) function of neuron $z_q$\n\n$Out_q = f(Net_q) = f\\left(\\sum_{j=1}^{m} w_{qj} x_j\\right)$"
+        },
+        {
+          "chunk_id": "8807a5fa-96ab-45c0-bf0e-8a5d2b5a1c60",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Step 5 (One epoch check)",
+          "chunk_order": 52,
+          "cosine_sim": 0.3888,
+          "final_score": 0.4471,
+          "content": "Check whether the entire training set has been exploited (i.e., one epoch)\n\nIf the entire training set has been exploited, then go to step 6; otherwise, go to step 1"
+        },
+        {
+          "chunk_id": "97f2b641-a3db-4372-8f37-3fbcd505a384",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Step 1 (Training loop)",
+          "chunk_order": 48,
+          "cosine_sim": 0.3707,
+          "final_score": 0.4264,
+          "content": "- Apply the input vector of the $k^{th}$ training instance to the input layer $(q=1)$\n- ${}^q Out_i = {}^1 Out_i = x_i^{(k)}, \\forall l$"
+        },
+        {
+          "chunk_id": "748d5a7f-a0e1-4dd7-b9bb-d1648fd98ce4",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP algorithm – Backward phase (1)",
+          "chunk_order": 40,
+          "cosine_sim": 0.3683,
+          "final_score": 0.4235,
+          "content": "- For each training instance $x$\n  - The error signals resulting from the difference between the desired output $d$ and the actual output $Out$ are computed\n  - The error signals are *back-propagated* from the output layer to the previous layers to update the weights\n- Before discussing the error signals and their back propagation, we first define an error (cost) function\n\n$$\nE(w)=\\frac{1}{2}\\sum_{i=1}^{n}(d_i-Out_i)^2=\\frac{1}{2}\\sum_{i=1}^{n}\\left[d_i-f(Net_i)\\right]^2\n$$\n\n$$\n=\\frac{1}{2}\\sum_{i=1}^{n}\\left[d_i-f\\left(\\sum_{q=1}^{l} w_{iq}Out_q\\right)\\right]^2\n$$"
+        },
+        {
+          "chunk_id": "d9770c9f-6f20-440d-b649-757fb42d6ccc",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP algorithm – Forward phase (2)",
+          "chunk_order": 39,
+          "cosine_sim": 0.3616,
+          "final_score": 0.4158,
+          "content": "- The net input for a neuron $y_i$ in the output layer is\n\n$$\n  Net_i = \\sum_{q=1}^{l} w_{iq} Out_q = \\sum_{q=1}^{l} w_{iq} f\\left(\\sum_{j=1}^{m} w_{qj} x_j\\right)\n  $$\n\n- Neuron $y_i$ produces the output value (i.e., an output of the network)\n\n$$\n  Out_i = f(Net_i) = f\\left(\\sum_{q=1}^{l} w_{iq} Out_q\\right) = f\\left(\\sum_{q=1}^{l} w_{iq} f\\left(\\sum_{j=1}^{m} w_{qj} x_j\\right)\\right)\n  $$\n\n- The vector of output values $Out_i$ $(i=1..n)$ is the actual network output, given the input vector $x$"
+        },
+        {
+          "chunk_id": "e1dc1472-dd6c-490c-81cf-e6d6538def2e",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Back-propagation algorithm (1)",
+          "chunk_order": 33,
+          "cosine_sim": 0.3423,
+          "final_score": 0.3936,
+          "content": "- Back-propagation algorithm searches for the weights vector that **minimizes the total error made** over the training set\n- Back-propagation consists of the two phases\n  - **Signal forward** phase. The input signals (i.e., the input vector) are propagated (forwards) from the input layer to the output layer (through the hidden layers)\n  - **Error backward** phase\n    - Since the desired output value for the current input vector is known, the error is computed\n    - Starting at the output layer, the error is propagated backwards through the network, layer by layer, to the input layer\n    - The error back-propagation is performed by recursively computing the local gradient of each neuron"
+        },
+        {
+          "chunk_id": "4d943037-e2fc-4a76-8773-e568681c7165",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Issues in Machine Learning (2)",
+          "chunk_order": 12,
+          "cosine_sim": 0.3756,
+          "final_score": 0.216,
+          "content": "- Learning process\n  - What is the best strategy for selecting a next training example? How do selection strategies alter the complexity of the learning problem?\n  - How can prior knowledge (held by the system) help?\n\n- Learning capability\n  - What target function should the system learn?\n    - Representation of the target function: expressiveness vs. complexity\n  - What are the theoretical limits of learnability?\n  - How can the system generalize from the training examples?\n    - To avoid the overfitting problem\n  - How can the system automatically alter its representation?\n    - To improve its ability to represent and learn the target function"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.8
+}

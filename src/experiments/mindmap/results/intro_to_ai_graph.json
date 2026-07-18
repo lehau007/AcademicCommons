@@ -1,0 +1,1043 @@
+{
+  "schema_version": "concept_graph_v1",
+  "course_root_id": "course_introduction_to_artificial_intelligence",
+  "nodes": [
+    {
+      "id": "course_introduction_to_artificial_intelligence",
+      "label": "Introduction to Artificial Intelligence",
+      "level": 0,
+      "source_documents": [
+        "doc1",
+        "doc2",
+        "doc3",
+        "doc4",
+        "doc5",
+        "doc6"
+      ]
+    },
+    {
+      "id": "topic_intelligent_agents_and_search",
+      "label": "Intelligent Agents and Search",
+      "level": 1,
+      "source_documents": [
+        "doc1"
+      ]
+    },
+    {
+      "id": "topic_constraint_satisfaction_problems",
+      "label": "Constraint Satisfaction Problems",
+      "level": 1,
+      "source_documents": [
+        "doc2"
+      ]
+    },
+    {
+      "id": "topic_logic_and_inference",
+      "label": "Logic and Inference",
+      "level": 1,
+      "source_documents": [
+        "doc3"
+      ]
+    },
+    {
+      "id": "topic_planning_and_games",
+      "label": "Planning and Games",
+      "level": 1,
+      "source_documents": [
+        "doc4"
+      ]
+    },
+    {
+      "id": "topic_machine_learning_foundations",
+      "label": "Machine Learning Foundations",
+      "level": 1,
+      "source_documents": [
+        "doc5"
+      ]
+    },
+    {
+      "id": "topic_reinforcement_learning",
+      "label": "Reinforcement Learning",
+      "level": 1,
+      "source_documents": [
+        "doc6"
+      ]
+    },
+    {
+      "id": "topic_intelligent_agent",
+      "label": "Intelligent Agent",
+      "level": 1,
+      "source_documents": [
+        "doc1",
+        "doc6"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_peas",
+      "label": "PEAS",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_rational_agent",
+      "label": "Rational Agent",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_simple_reflex_agent",
+      "label": "Simple Reflex Agent",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": [
+        "Model-Based Reflex Agent",
+        "Simple Reflex Agent"
+      ]
+    },
+    {
+      "id": "concept_goal_based_agent",
+      "label": "Goal-Based Agent",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_utility_based_agent",
+      "label": "Utility-Based Agent",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "topic_search_problem",
+      "label": "Search Problem",
+      "level": 1,
+      "source_documents": [
+        "doc1",
+        "doc4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_uninformed_search",
+      "label": "Uninformed Search",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_breadth_first_search",
+      "label": "Breadth-First Search",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_depth_first_search",
+      "label": "Depth-First Search",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_informed_search",
+      "label": "Informed Search",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_a_search",
+      "label": "A* Search",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "topic_heuristic_function",
+      "label": "Heuristic Function",
+      "level": 1,
+      "source_documents": [
+        "doc1",
+        "doc2",
+        "doc4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_local_beam_search",
+      "label": "Local Beam Search",
+      "level": 2,
+      "source_documents": [
+        "doc1"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_constraint",
+      "label": "Constraint",
+      "level": 2,
+      "source_documents": [
+        "doc2"
+      ],
+      "aliases": [
+        "Constraint",
+        "Constraint Satisfaction Problem"
+      ]
+    },
+    {
+      "id": "concept_csp",
+      "label": "CSP",
+      "level": 2,
+      "source_documents": [
+        "doc2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_variable",
+      "label": "Variable",
+      "level": 2,
+      "source_documents": [
+        "doc2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_domain",
+      "label": "Domain",
+      "level": 2,
+      "source_documents": [
+        "doc2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_backtracking_search",
+      "label": "Backtracking Search",
+      "level": 2,
+      "source_documents": [
+        "doc2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_forward_checking",
+      "label": "Forward Checking",
+      "level": 2,
+      "source_documents": [
+        "doc2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_arc_consistency",
+      "label": "Arc Consistency",
+      "level": 2,
+      "source_documents": [
+        "doc2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_min_conflicts_heuristic",
+      "label": "Min-Conflicts Heuristic",
+      "level": 2,
+      "source_documents": [
+        "doc2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_iterative_algorithm",
+      "label": "Iterative Algorithm",
+      "level": 2,
+      "source_documents": [
+        "doc2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_local_search",
+      "label": "Local Search",
+      "level": 2,
+      "source_documents": [
+        "doc2"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_logic",
+      "label": "Logic",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_propositional_logic",
+      "label": "Propositional Logic",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_first_order_logic",
+      "label": "First Order Logic",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_fol",
+      "label": "FOL",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_term",
+      "label": "Term",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_predicate",
+      "label": "Predicate",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_inference_system",
+      "label": "Inference System",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_forward_chaining",
+      "label": "Forward Chaining",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": [
+        "Backward Chaining",
+        "Forward Chaining"
+      ]
+    },
+    {
+      "id": "concept_resolution",
+      "label": "Resolution",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_knowledge_base",
+      "label": "Knowledge Base",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_syntax",
+      "label": "Syntax",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_semantic",
+      "label": "Semantic",
+      "level": 2,
+      "source_documents": [
+        "doc3"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_planning",
+      "label": "Planning",
+      "level": 2,
+      "source_documents": [
+        "doc4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_progression_planner",
+      "label": "Progression Planner",
+      "level": 2,
+      "source_documents": [
+        "doc4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_regression_planner",
+      "label": "Regression Planner",
+      "level": 2,
+      "source_documents": [
+        "doc4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_state_space_search",
+      "label": "State-Space Search",
+      "level": 2,
+      "source_documents": [
+        "doc4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_game",
+      "label": "Game",
+      "level": 2,
+      "source_documents": [
+        "doc4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_minimax",
+      "label": "Minimax",
+      "level": 2,
+      "source_documents": [
+        "doc4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_alpha_beta_pruning",
+      "label": "Alpha-Beta Pruning",
+      "level": 2,
+      "source_documents": [
+        "doc4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_adversarial_search",
+      "label": "Adversarial Search",
+      "level": 2,
+      "source_documents": [
+        "doc4"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_machine_learning",
+      "label": "Machine Learning",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_supervised_learning",
+      "label": "Supervised Learning",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_decision_tree_learning",
+      "label": "Decision Tree Learning",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_information_gain",
+      "label": "Information Gain",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_entropy",
+      "label": "Entropy",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_neural_network",
+      "label": "Neural Network",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_feed_forward_neural_network",
+      "label": "Feed-Forward Neural Network",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_recurrent_neural_network",
+      "label": "Recurrent Neural Network",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_training_loop",
+      "label": "Training Loop",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_epoch",
+      "label": "Epoch",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_error_threshold",
+      "label": "Error Threshold",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_backpropagation",
+      "label": "Backpropagation",
+      "level": 2,
+      "source_documents": [
+        "doc5"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_markov_decision_process",
+      "label": "Markov Decision Process",
+      "level": 2,
+      "source_documents": [
+        "doc6"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_policy",
+      "label": "Policy",
+      "level": 2,
+      "source_documents": [
+        "doc6"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_reward",
+      "label": "Reward",
+      "level": 2,
+      "source_documents": [
+        "doc6"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_discounted_return",
+      "label": "Discounted Return",
+      "level": 2,
+      "source_documents": [
+        "doc6"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_discount_rate",
+      "label": "Discount Rate",
+      "level": 2,
+      "source_documents": [
+        "doc6"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_value_function",
+      "label": "Value Function",
+      "level": 2,
+      "source_documents": [
+        "doc6"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_q_learning",
+      "label": "Q-Learning",
+      "level": 2,
+      "source_documents": [
+        "doc6"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "concept_exploration_vs_exploitation",
+      "label": "Exploration vs Exploitation",
+      "level": 2,
+      "source_documents": [
+        "doc6"
+      ],
+      "aliases": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "course_introduction_to_artificial_intelligence",
+      "target": "topic_intelligent_agents_and_search",
+      "relation": "contains"
+    },
+    {
+      "source": "course_introduction_to_artificial_intelligence",
+      "target": "topic_constraint_satisfaction_problems",
+      "relation": "contains"
+    },
+    {
+      "source": "course_introduction_to_artificial_intelligence",
+      "target": "topic_logic_and_inference",
+      "relation": "contains"
+    },
+    {
+      "source": "course_introduction_to_artificial_intelligence",
+      "target": "topic_planning_and_games",
+      "relation": "contains"
+    },
+    {
+      "source": "course_introduction_to_artificial_intelligence",
+      "target": "topic_machine_learning_foundations",
+      "relation": "contains"
+    },
+    {
+      "source": "course_introduction_to_artificial_intelligence",
+      "target": "topic_reinforcement_learning",
+      "relation": "contains"
+    },
+    {
+      "source": "course_introduction_to_artificial_intelligence",
+      "target": "topic_intelligent_agent",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "topic_intelligent_agent",
+      "relation": "related"
+    },
+    {
+      "source": "topic_reinforcement_learning",
+      "target": "topic_intelligent_agent",
+      "relation": "related"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_peas",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_rational_agent",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_simple_reflex_agent",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_goal_based_agent",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_utility_based_agent",
+      "relation": "contains"
+    },
+    {
+      "source": "course_introduction_to_artificial_intelligence",
+      "target": "topic_search_problem",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "topic_search_problem",
+      "relation": "related"
+    },
+    {
+      "source": "topic_planning_and_games",
+      "target": "topic_search_problem",
+      "relation": "related"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_uninformed_search",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_breadth_first_search",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_depth_first_search",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_informed_search",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_a_search",
+      "relation": "contains"
+    },
+    {
+      "source": "course_introduction_to_artificial_intelligence",
+      "target": "topic_heuristic_function",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "topic_heuristic_function",
+      "relation": "related"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "topic_heuristic_function",
+      "relation": "related"
+    },
+    {
+      "source": "topic_planning_and_games",
+      "target": "topic_heuristic_function",
+      "relation": "related"
+    },
+    {
+      "source": "topic_intelligent_agents_and_search",
+      "target": "concept_local_beam_search",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "concept_constraint",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "concept_csp",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "concept_variable",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "concept_domain",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "concept_backtracking_search",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "concept_forward_checking",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "concept_arc_consistency",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "concept_min_conflicts_heuristic",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "concept_iterative_algorithm",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_constraint_satisfaction_problems",
+      "target": "concept_local_search",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_logic",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_propositional_logic",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_first_order_logic",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_fol",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_term",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_predicate",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_inference_system",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_forward_chaining",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_resolution",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_knowledge_base",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_syntax",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_logic_and_inference",
+      "target": "concept_semantic",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_planning_and_games",
+      "target": "concept_planning",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_planning_and_games",
+      "target": "concept_progression_planner",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_planning_and_games",
+      "target": "concept_regression_planner",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_planning_and_games",
+      "target": "concept_state_space_search",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_planning_and_games",
+      "target": "concept_game",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_planning_and_games",
+      "target": "concept_minimax",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_planning_and_games",
+      "target": "concept_alpha_beta_pruning",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_planning_and_games",
+      "target": "concept_adversarial_search",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_machine_learning",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_supervised_learning",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_decision_tree_learning",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_information_gain",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_entropy",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_neural_network",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_feed_forward_neural_network",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_recurrent_neural_network",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_training_loop",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_epoch",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_error_threshold",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_machine_learning_foundations",
+      "target": "concept_backpropagation",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_reinforcement_learning",
+      "target": "concept_markov_decision_process",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_reinforcement_learning",
+      "target": "concept_policy",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_reinforcement_learning",
+      "target": "concept_reward",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_reinforcement_learning",
+      "target": "concept_discounted_return",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_reinforcement_learning",
+      "target": "concept_discount_rate",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_reinforcement_learning",
+      "target": "concept_value_function",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_reinforcement_learning",
+      "target": "concept_q_learning",
+      "relation": "contains"
+    },
+    {
+      "source": "topic_reinforcement_learning",
+      "target": "concept_exploration_vs_exploitation",
+      "relation": "contains"
+    }
+  ]
+}

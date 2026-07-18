@@ -1,0 +1,165 @@
+{
+  "qid": "intro_to_ai_16",
+  "course_code": "IT3160E",
+  "question": "What characterizes a 'fully observable' environment in AI?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "203b19ab-0348-4b66-bf09-9c1907d420b9",
+  "answer": "## Fully Observable Environment in AI\n\nAccording to the course material, a **fully observable** environment is characterized by the following:\n\n> *\"An agent's sensors give it access to the **complete state of the environment** at each point in time.\"*\n\nIn other words, in a fully observable environment, the agent perceives **everything** that is relevant to making its decision — there is no hidden or missing information about the current state of the world.\n\n### Key Implications\n\n- **No need for internal state tracking** — because the agent can always see the full current state, it does not need to maintain an internal memory of past percepts to fill in gaps. This is why simple **reflex agents** can work well in fully observable settings.\n- **Contrast with partially observable** — when the environment is only partially observable, the agent must use a **model-based reflex agent** that maintains an internal state depending on the percept history to reflect unobserved aspects of the world.\n- **Single-state problem** — when the environment is *both* fully observable and deterministic, the agent knows exactly which state it will be in after each action, and the problem reduces to finding a sequence of actions (a \"single-state problem\").\n- **Classical planning assumption** — classical planning algorithms typically assume a fully observable, deterministic, finite, static, and discrete environment.\n\n### Real-World Note\nMost realistic environments (e.g., robot navigation in the real world) are only **partially observable** because of sensor limitations, noise, and occlusions, which is why model-based agents and more complex reasoning are often needed in practice.",
+  "citations": [
+    {
+      "chunk_id": "fe0ad3d1-23ab-40b5-8319-26f66230f44b",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Environment types",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "- **Fully observable** (vs. partially observable): An agent's sensors give it access to the complete state of the environment at each point in time.\n- **Deterministic** (vs. stochastic): The next stat"
+    },
+    {
+      "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Model-based reflex agents",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+    },
+    {
+      "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Problem types",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent "
+    },
+    {
+      "chunk_id": "8f14778e-b3a9-4a4d-80ca-1e03aaee2c40",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning problem",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Planning is the task of determining a sequence of actions that will achieve a goal.\n- Domain independent heuristics and strategies must be based on a domain independent representation\n  - General pl"
+    },
+    {
+      "chunk_id": "17b10140-d5bc-42c2-b508-6673c005a7c6",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Environment types",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- **Static** (vs. dynamic): The environment is unchanged while an agent is deliberating.\n- **Discrete** (vs. continuous): A limited number of distinct, clearly defined percepts and actions.\n- **Single"
+    },
+    {
+      "chunk_id": "262e0588-7bf5-42e5-8432-959965b69229",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Additional complexities",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "- Because the world is …\n  - Dynamic\n  - Stochastic\n  - Partially observable\n- And because actions\n  - take time\n  - have continuous effects\n\n```text\n+-------------------------------+\n|     Additional"
+    },
+    {
+      "chunk_id": "3a354a9d-e332-4eb0-9a4b-94dc9ac8b4a1",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "AI Planning background",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- Focus on classical planning; assume none of the above\n- Deterministic, static, fully observable\n  - “Basic”\n  - Most of the recent progress\n  - Ideas often also useful for more complex problems"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "fully observable environment characteristics definition AI agent",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "fe0ad3d1-23ab-40b5-8319-26f66230f44b",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Environment types",
+          "chunk_order": 13,
+          "cosine_sim": 0.4534,
+          "final_score": 0.5214,
+          "content": "- **Fully observable** (vs. partially observable): An agent's sensors give it access to the complete state of the environment at each point in time.\n- **Deterministic** (vs. stochastic): The next state of the environment is completely determined by the current state and the action executed by the agent.\n- **Episodic** (vs. sequential): The agent's experience is divided into atomic \"episodes\" (each episode consists of the agent perceiving and then performing a single action."
+        },
+        {
+          "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Model-based reflex agents",
+          "chunk_order": 17,
+          "cosine_sim": 0.4011,
+          "final_score": 0.4613,
+          "content": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+        },
+        {
+          "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem types",
+          "chunk_order": 10,
+          "cosine_sim": 0.399,
+          "final_score": 0.4589,
+          "content": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent may have no idea where it is; solution is a sequence\n- Nondeterministic and/or partially observable → contingency problem\n  - percepts provide new information about current state\n  - often interleave → search, execution\n- Unknown state space → exploration problem"
+        },
+        {
+          "chunk_id": "8f14778e-b3a9-4a4d-80ca-1e03aaee2c40",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning problem",
+          "chunk_order": 5,
+          "cosine_sim": 0.3819,
+          "final_score": 0.4392,
+          "content": "- Planning is the task of determining a sequence of actions that will achieve a goal.\n- Domain independent heuristics and strategies must be based on a domain independent representation\n  - General planning algorithms require a way to represent states, actions and goals\n  - STRIPS, ADL, PDDL are languages based on propositional or first-order logic\n- Classical planning environment: fully observable, deterministic, finite, static and discrete."
+        },
+        {
+          "chunk_id": "17b10140-d5bc-42c2-b508-6673c005a7c6",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Environment types",
+          "chunk_order": 14,
+          "cosine_sim": 0.3647,
+          "final_score": 0.4194,
+          "content": "- **Static** (vs. dynamic): The environment is unchanged while an agent is deliberating.\n- **Discrete** (vs. continuous): A limited number of distinct, clearly defined percepts and actions.\n- **Single agent** (vs. multiagent): An agent operating by itself in an environment."
+        },
+        {
+          "chunk_id": "262e0588-7bf5-42e5-8432-959965b69229",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Additional complexities",
+          "chunk_order": 6,
+          "cosine_sim": 0.3326,
+          "final_score": 0.3825,
+          "content": "- Because the world is …\n  - Dynamic\n  - Stochastic\n  - Partially observable\n- And because actions\n  - take time\n  - have continuous effects\n\n```text\n+-------------------------------+\n|     Additional complexities   |\n+-------------------------------+\n| Because the world is ...      |\n|   - Dynamic                   |\n|   - Stochastic                |\n|   - Partially observable      |\n|                               |\n| And because actions           |\n|   - take time                 |\n|   - have continuous effects   |\n+-------------------------------+\n\n      [robot image]\n```\n\n[Diagram: The slide contrasts environmental uncertainty with action-side complexity. It emphasizes that realistic decision-making must account for changing, noisy, and only partially visible worlds, while actions also unfold over time and produce continuous outcomes.]"
+        },
+        {
+          "chunk_id": "e8d0cf8d-ad47-4bea-812a-b31c7a38de13",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 9,
+          "cosine_sim": 0.3587,
+          "final_score": 0.3587,
+          "content": "- An **agent** is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$$\\mathcal{P}^* \\rightarrow \\mathcal{A}$$\n\n```text\n+--------------------------- Agent ---------------------------+      +-------------+\n|                                                             |      |             |\n|  Sensors  <-- Percepts                                      |      | Environment |\n|     |                                                       |      |             |\n|     v                                                       |      |             |\n|    [?]                                                      |      |             |\n|     |                                                       |      |             |\n|     v                                                       |      |             |\n|  Actuators ---- Actions ----------------------------------> |      |             |\n+-------------------------------------------------------------+      +-------------+\n```"
+        },
+        {
+          "chunk_id": "3a354a9d-e332-4eb0-9a4b-94dc9ac8b4a1",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "AI Planning background",
+          "chunk_order": 7,
+          "cosine_sim": 0.2757,
+          "final_score": 0.3171,
+          "content": "- Focus on classical planning; assume none of the above\n- Deterministic, static, fully observable\n  - “Basic”\n  - Most of the recent progress\n  - Ideas often also useful for more complex problems"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 13.3
+}

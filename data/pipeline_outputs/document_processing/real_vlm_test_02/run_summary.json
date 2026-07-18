@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-05-14T02:13:22.362283+00:00",
+  "run_id": "real_vlm_test_02",
+  "status": "success",
+  "manifest_path": "src/experiments/document_processing/smaller_test_manifest.json",
+  "total_valid_entries": 1,
+  "total_invalid_entries": 0,
+  "success_count": 1,
+  "failed_count": 0,
+  "route_match_count": 0,
+  "duration_ms": 280752
+}

@@ -1,0 +1,57 @@
+{
+  "qid": "intro_to_ai_18",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "Nearly all claims are supported by the retrieved chunks. The description of Local Beam Search maintaining k states and sharing information is well-grounded. However, the specific characterization of Random-Restart as running 'một tìm kiếm cục bộ từ một trạng thái khởi đầu ngẫu nhiên' (a local search from one random initial state) per restart is a reasonable inference but not explicitly stated in the chunks.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by explaining the key difference between Local Beam Search and Random-Restart Search: information sharing among search threads versus independent operation. The explanation is on-topic throughout, covering how each algorithm manages states and their fundamental operational differences.",
+      "evidence": [
+        "các \"luồng\" tìm kiếm **chia sẻ thông tin** với nhau",
+        "Mỗi lần thử là **độc lập** với nhau",
+        "nếu một trạng thái sinh ra hậu duệ tốt, các trạng thái khác cũng có thể \"hưởng lợi\" từ thông tin đó",
+        "Random-Restart không chia sẻ thông tin"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The answer correctly identifies the major difference: Local Beam Search shares information among k search threads (if one state generates good successors, others benefit), while Random-Restart threads operate independently. This matches the ground truth perfectly.",
+      "evidence": [
+        "Ground truth: 'information is shared among the k search threads'",
+        "Answer: 'các \"luồng\" tìm kiếm **chia sẻ thông tin** với nhau'",
+        "Ground truth: 'random-restart threads operate completely independently'",
+        "Answer: 'Mỗi lần thử là **độc lập** với nhau'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six chunks are relevant to comparing Local Beam Search with Random-Restart Search. Only chunk e10e33e0 (about general optimization landscapes) is tangential and doesn't directly address either algorithm.",
+      "evidence": [
+        "e10e33e0-0ae4-41ff-b484-9cc16de19c8b: 'optimization landscape with multiple peaks and plateaus'"
+      ]
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "The retrieved chunks contain the key fact about information sharing in Local Beam Search and the independence of random-restart threads. However, the specific characterization that 'other threads are drawn to' good successors is only implied, not explicitly stated.",
+      "evidence": [
+        "Information is shared among k search threads: If one state generated good successor, but others did not → 'come here, the grass is greener!'",
+        "Random-restart hill-climbing - Tries to avoid getting stuck in local maxima. If at first you don't succeed, try, try again…"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports its corresponding statement. The first chunk directly confirms the key difference about information sharing, and the other chunks appropriately support the descriptions of how each algorithm operates.",
+      "evidence": [
+        "Statement: 'các \"luồng\" tìm kiếm chia sẻ thông tin với nhau' → Chunk 267f5e6d: 'Information is shared among k search threads'",
+        "Statement: 'nếu một trạng thái sinh ra hậu duệ tốt, các trạng thái khác cũng có thể \"hưởng lợi\"' → Chunk 267f5e6d: 'If one state generated good successor, but others did not → \"come here, the grass is greener!\"'",
+        "Statement: 'giữ k trạng thái cùng lúc... chọn ra k trạng thái tốt nhất' → Chunk 927c0e46: 'keep K states at all times... select k best from successors'",
+        "Statement: 'có thể bị thiếu đa dạng' → Chunk 267f5e6d: 'Can suffer from lack of diversity'"
+      ]
+    }
+  }
+}

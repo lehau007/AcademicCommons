@@ -1,0 +1,19 @@
+{
+  "sample_id": "it3160e_official_slides_pdf_01",
+  "course_code": "IT3160E",
+  "tier": "official",
+  "input_path": "data/sample/official/IT3160E/lecture_slides/lecture1_introduction.pdf",
+  "expected_type": "text_pdf",
+  "expected_route": "direct_text",
+  "actual_route": "direct_text",
+  "route_evidence": {
+    "reason": "pymupdf_unavailable",
+    "inferred_type": "text_pdf",
+    "text_chars": null,
+    "page_count": null,
+    "image_count": null
+  },
+  "file_sha256": "c2608015132dcad182a30e4070aba4aeb950643f63b2d327d9ebc5ac9140f4bd",
+  "model": "local_placeholder",
+  "duration_ms": 201
+}

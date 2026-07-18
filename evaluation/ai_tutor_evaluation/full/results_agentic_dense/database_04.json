@@ -1,0 +1,31 @@
+{
+  "qid": "database_04",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "quiz feedback ctx states GT verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "quiz feedback ctx states GT verbatim"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "quiz feedback ctx states GT verbatim"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "quiz feedback ctx states GT verbatim"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "quiz feedback ctx states GT verbatim"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "quiz feedback ctx states GT verbatim"
+    }
+  }
+}

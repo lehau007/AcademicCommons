@@ -1,0 +1,145 @@
+{
+  "qid": "intro_to_ai_20",
+  "course_code": "IT3160E",
+  "question": "What three formal components make up a logic?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "4e9fdfa3-1dd5-4564-b0cc-530541e640e2",
+  "answer": "According to the course materials, a **logic** is formally defined as a triplet **⟨L, S, R⟩**, consisting of three components:\n\n1. **L — The Language (Syntax)**\n   A class of sentences described by a precise syntax, usually defined by a formal grammar. It specifies the well-formed expressions (sentences) of the logic, such as propositional variables, logical constants (TRUE, FALSE), and logical connectives (¬, ∧, ∨, ⇒, ⇔) in propositional logic.\n\n2. **S — The Semantics**\n   Describes the meaning of the elements in L. It assigns interpretations/truth values to the sentences of the language, allowing us to determine when a sentence is true or false in a given interpretation.\n\n3. **R — The Inference System**\n   Consists of a set of derivation (inference) rules over L. These rules define how new sentences can be derived from existing ones (e.g., forward chaining, resolution, Modus Ponens).\n\n**Examples of logics** that follow this structure include: Propositional Logic, First-Order Logic, Higher-Order Logic, Temporal Logic, Fuzzy Logic, Modal Logic, and Linear Logic.\n\nThis triplet structure is also reflected in how First-Order Logic (FOL) is typically presented in the course, with three corresponding sections: **Syntax**, **Semantic**, and **Inference** (including Resolution).",
+  "citations": [
+    {
+      "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "What is Logic ?",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of e"
+    },
+    {
+      "chunk_id": "fac75206-7568-4e93-8e11-365e2367c8ad",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Example\n\n$$\nP \\Rightarrow Q\n$$\n\n$$\nL \\land M \\Rightarrow P\n$$\n\n$$\nB \\land L \\Rightarrow M\n$$\n\n$$\nA \\land P \\Rightarrow L\n$$\n\n$$\nA \\land B \\Rightarrow L\n$$\n\n$$\nA\n$$\n\n$$\nB\n$$\n\n```text\nA ──► L ──► P ──"
+    },
+    {
+      "chunk_id": "63d82439-140e-4843-bd1c-d0ed096cdfba",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "f ← temp",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "```text\n+-----------+\n| f ← temp  |\n+-----------+\n      |\n      v\n   < f ∈ Fact >\n    |T      |F\n    v       v\n< temp = 0? >   +----------------------+\n   |T      |F   | Find r_j: left_j → f |\n   v   "
+    },
+    {
+      "chunk_id": "9a3ca08b-2245-4783-862a-e3b8fd67bb91",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Language of Propositional Logic",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Symbols\n  - Propositional variables: A,B,...,P,Q,...\n  - Logical constants: TRUE, FALSE\n  - Logical connectives:\n\n```text\n¬, ∧, ∨, ⇒, ⇔\n```\n\n- Sentences\n  - Each propositional variable is a sentence"
+    },
+    {
+      "chunk_id": "9f071793-d9f0-405a-b1af-75dad979d5a9",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Input:",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "- Sentences/clauses in Horn format (Fact)\n- A rule set R $p_1 \\wedge p_2 \\wedge \\ldots \\wedge p_n \\Rightarrow q$\n- Goal"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "three formal components of a logic syntax semantics inference rules",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "What is Logic ?",
+          "chunk_order": 3,
+          "cosine_sim": 0.4862,
+          "final_score": 0.5592,
+          "content": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of elements in L\n  - R, the logic’s inference system, consisting of derivation rules over L\n- Examples of logics:\n  - Propositional, First Order, Higher Order, Temporal, Fuzzy, Modal, Linear, . . ."
+        },
+        {
+          "chunk_id": "fac75206-7568-4e93-8e11-365e2367c8ad",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 12,
+          "cosine_sim": 0.4297,
+          "final_score": 0.4941,
+          "content": "- Example\n\n$$\nP \\Rightarrow Q\n$$\n\n$$\nL \\land M \\Rightarrow P\n$$\n\n$$\nB \\land L \\Rightarrow M\n$$\n\n$$\nA \\land P \\Rightarrow L\n$$\n\n$$\nA \\land B \\Rightarrow L\n$$\n\n$$\nA\n$$\n\n$$\nB\n$$\n\n```text\nA ──► L ──► P ──► Q\n│     ▲     ▲\n│     │     │\n└──► M ◄────┘\n      ▲\n      │\n      B ─────────►\n```\n\n[Diagram: The figure shows a forward-chaining inference network where facts and rules propagate implications to derive new conclusions. It matters because it illustrates how a system can start from known facts (A, B) and repeatedly apply rules to infer higher-level facts until reaching a goal such as Q.]"
+        },
+        {
+          "chunk_id": "6cc71333-6e7a-4da7-a400-de6ab3b19efc",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL",
+          "chunk_order": 11,
+          "cosine_sim": 0.417,
+          "final_score": 0.4796,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "445fad8f-9d0f-41dd-a04e-07112429a5e2",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "First Order Logic",
+          "chunk_order": 2,
+          "cosine_sim": 0.417,
+          "final_score": 0.4796,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "65040f6f-d00f-4429-9c1d-63bcd642be7c",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL",
+          "chunk_order": 4,
+          "cosine_sim": 0.4169,
+          "final_score": 0.4794,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "63d82439-140e-4843-bd1c-d0ed096cdfba",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "f ← temp",
+          "chunk_order": 35,
+          "cosine_sim": 0.3868,
+          "final_score": 0.4449,
+          "content": "```text\n+-----------+\n| f ← temp  |\n+-----------+\n      |\n      v\n   < f ∈ Fact >\n    |T      |F\n    v       v\n< temp = 0? >   +----------------------+\n   |T      |F   | Find r_j: left_j → f |\n   v       |    +----------------------+\n  +----+   |              |\n  | OK |   |              v\n  +----+   |          < Found >\n            |           |T   |F\n            |           v    v\n            |   +----------------------------------------------+\n            |   | Trace = Trace ∪ {(f,j)}                      |\n            |   | temp = temp ∪ left_j\\Fact                    |\n            |   +----------------------------------------------+\n            |                      |\n            |                      v\n            |                (with f, try r_j)\n            |                      |\n            |                      v\n            |   +----------------------------------------------+\n            |   | temp = temp\\left_k                          |\n            |   | temp = temp ∪ left_k\\fact                  |\n            |   | trace = trace ∪ {(g,l)}                     |\n            |   +----------------------------------------------+\n            |                      |\n            |                      v\n            |             +----------------------+\n            |             | Find rule (g,l), l>k |\n            |             +----------------------+\n            |                      v\n            |                   < Found >\n            |                    |T    |F\n            |                    v     v\n            |                 +------------------+\n            |                 | f = g            |\n            |                 +------------------+\n            |                       |\n            v                       v\n     (return to temp = 0?)     < f ∈ Goal? >\n                                      |T\n                                      v\n                                 +---------+\n                                 | not OK  |\n                                 +---------+\n                                      ^\n                                      |\n                                      |F\n                                      |\n                                 +------------+\n                                 | (g,k) ← trace:\n                                 | Find (g,k) ∈ trace\n                                 | r_k: left_k → g; f ∈ left_k\n                                 +------------+\n```"
+        },
+        {
+          "chunk_id": "9a3ca08b-2245-4783-862a-e3b8fd67bb91",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Language of Propositional Logic",
+          "chunk_order": 5,
+          "cosine_sim": 0.3681,
+          "final_score": 0.4233,
+          "content": "- Symbols\n  - Propositional variables: A,B,...,P,Q,...\n  - Logical constants: TRUE, FALSE\n  - Logical connectives:\n\n```text\n¬, ∧, ∨, ⇒, ⇔\n```\n\n- Sentences\n  - Each propositional variable is a sentence\n  - Each logical constant is a sentence\n  - If $α$ and $β$ are sentences then the following are sentences\n\n$$(α),\\neg α, α \\wedge β, α \\vee β, α \\Rightarrow β, α \\Leftrightarrow β$$"
+        },
+        {
+          "chunk_id": "9f071793-d9f0-405a-b1af-75dad979d5a9",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Input:",
+          "chunk_order": 20,
+          "cosine_sim": 0.3648,
+          "final_score": 0.4195,
+          "content": "- Sentences/clauses in Horn format (Fact)\n- A rule set R $p_1 \\wedge p_2 \\wedge \\ldots \\wedge p_n \\Rightarrow q$\n- Goal"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 22.3
+}

@@ -1,0 +1,45 @@
+{
+  "file_id": "it3292e_exam_giuaki_trinh_jpg",
+  "scores": {
+    "classification_routing": {
+      "score": 5,
+      "justification": "No explicit route/inferred_type is stored in processing_meta.json, but every supporting signal is consistent with the expected vision_only image route: a JPG that was OCR'd (ocr_job COMPLETED), ocr_quality 'medium', and a page-faithful transcription as output. The pipeline also correctly detected language 'en' (the printed exam is genuinely English; the manifest's 'vi' label is inaccurate).",
+      "evidence": ["\"file_format\": \"jpg\"", "\"ocr_quality\": \"medium\"", "\"status\": \"COMPLETED\""]
+    },
+    "text_coverage": {
+      "score": 5,
+      "justification": "All substantive text is captured: header block (course, class, date, duration, student fields), the full three-paragraph Question 1 prose, Questions 2 and 3 with their functional-dependency sets, all six Blood Bank relations, the PK/FK convention note, and all six queries. Only the trivial corner page-number '1' is omitted.",
+      "evidence": []
+    },
+    "extraction_fidelity": {
+      "score": 4,
+      "justification": "Character extraction is near-perfect for this English document: FD arrows, relation attributes, dates and numbers are all correct, and Vietnamese diacritics are N/A. The only defects are two schema relation names that lost their internal underscore, altering the exact identifiers.",
+      "evidence": ["actual \"Recipient Transaction (r_trans_ID, hospital_ID, blood_type_ID, date)\" vs source \"Recipient_Transaction\"", "actual \"Recipient Transaction_Details (r_trans_ID, d_tran_ID)\" vs source \"Recipient_Transaction_Details\""]
+    },
+    "structure_preservation": {
+      "score": 5,
+      "justification": "Reading order is intact top-to-bottom; questions are rendered as headings (## Question 1..4), the a./b. subparts and the 1-6 query list are preserved as ordered lists, and the schema is a bulleted list matching the source. Rendering the bordered header box as bold lines rather than a grid is a formatting choice both outputs are free to make.",
+      "evidence": []
+    },
+    "faithfulness_no_hallucination": {
+      "score": 5,
+      "justification": "The output contains only content actually present on the exam page. No invented sentences, questions, answers, or schema attributes were introduced.",
+      "evidence": []
+    },
+    "formula_table_code": {
+      "score": 4,
+      "justification": "Functional-dependency 'formulas' are captured correctly with Unicode arrows (e.g. F = {AB→D; BC→C; AC→B; AC→CD}) and the schema pseudo-table is legible. The one loss is the typographic bold-primary-key / italic-foreign-key emphasis, flattened to plain text so PK/FK can only be inferred from the textual convention note.",
+      "evidence": ["source bold PK \"blood_type_ID\" and italic FK \"blood_type_id\" both rendered plain as \"Blood_Type (blood_type_ID, name, description)\" / \"Donor (donor_ID, blood_type_id, name, date_of_birth, contact_number, city)\""]
+    }
+  },
+  "classification": {
+    "expected_type": "image",
+    "expected_route": "vision_only",
+    "actual_type": "image",
+    "actual_route": "vision_only (inferred: jpg + completed ocr_job; no explicit route field in logs)",
+    "pass": true
+  },
+  "hallucinations": [],
+  "normalization_note": "The normalized markdown reads coherently and completely; no large spans are dropped or corrupted. The full exam (header, 4 questions, Blood Bank schema, 6 queries) is present and in correct reading order, and markdown_chars=2642 is consistent with the page content. Note: the manifest language 'vi' does not match this file, which is entirely English.",
+  "overall_comment": "High-quality vision OCR of a single scanned English database midterm. All four questions, both FD sets (arrows preserved), all six schema relations, and all six queries are captured accurately and in order, with zero hallucinations. The only defects are minor: two relation names lost their underscore ('Recipient_Transaction' -> 'Recipient Transaction') and the bold-PK / italic-FK emphasis in the schema was flattened to plain text (the textual convention note is retained)."
+}

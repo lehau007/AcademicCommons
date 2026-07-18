@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "question": "What are the four factors (PEAS) that should be considered when designing an automated agent?",
+    "answer": "When designing an automated agent, the four factors to consider are the Performance measure, Environment, Actuators, and Sensors. For example, an automated taxi driver's performance measure might be a safe and fast trip, its environment includes roads and traffic, its actuators are the steering wheel and brakes, and its sensors include cameras and GPS."
+  },
+  {
+    "id": 2,
+    "question": "What is the difference between progression planners and regression planners in state-space search?",
+    "answer": "Progression planners use forward state-space search by considering the effect of all possible actions from a given state. Regression planners use backward state-space search, determining what must have been true in the previous state in order to achieve the current state or goal."
+  },
+  {
+    "id": 3,
+    "question": "How does A* search determine which node to expand next?",
+    "answer": "A* search expands the unexpanded node with the lowest evaluation value. It uses the evaluation function f(n) = g(n) + h(n), where g(n) represents the cost so far to reach node n, and h(n) represents the estimated cost from node n to the goal."
+  },
+  {
+    "id": 4,
+    "question": "How does a model-based reflex agent differ from a simple reflex agent?",
+    "answer": "A simple reflex agent selects actions based solely on the current percept, completely ignoring the rest of its percept history. In contrast, a model-based reflex agent maintains internal states that depend on the percept history, which helps reflect unobserved aspects of the current state."
+  },
+  {
+    "id": 5,
+    "question": "What defines a Constraint Satisfaction Problem (CSP)?",
+    "answer": "A CSP is a type of search problem where the state is composed of variables Xi that take values from a specific domain Di. The goal test for a CSP is defined by a set of constraints that these variables must satisfy."
+  },
+  {
+    "id": 6,
+    "question": "What is the min-conflicts heuristic used in Iterative Algorithms for CSPs?",
+    "answer": "The min-conflicts heuristic is a value selection strategy where the algorithm chooses the value that violates the fewest constraints. It functions like hill-climbing where the evaluation function h(n) equals the total number of violated constraints."
+  },
+  {
+    "id": 7,
+    "question": "How does forward chaining work in propositional logic inference?",
+    "answer": "In forward chaining, when a new fact is added, the system finds all rules that have that fact as a premise. If the other premises of those rules are already known to hold, the consequent is added to the set of known facts, which can then trigger further inferences."
+  },
+  {
+    "id": 8,
+    "question": "What distinguishes a standard search problem from a game?",
+    "answer": "A standard search problem has no adversary, aims to find an optimal solution or goal using heuristics, and evaluates the estimated cost from the start to the goal. A game involves an adversary, requires a strategy that specifies a move for every possible opponent reply, and evaluates the goodness of a game position rather than the cost to a goal."
+  },
+  {
+    "id": 9,
+    "question": "In First Order Logic (FOL), how are terms and predicates constructed?",
+    "answer": "Terms are built using variables, constants, and function symbols (e.g., FatherOf(X)). Predicates are then built by applying relations to these terms (e.g., Tall(FatherOf(Bill)))."
+  },
+  {
+    "id": 10,
+    "question": "What is the termination condition for the training loop of a neural network?",
+    "answer": "After the entire training set has been exploited (completing one epoch), the system checks the total error. If the current total error E is less than the tolerable error (E_threshold), training terminates and outputs the final weights; otherwise, the error is reset to 0 and a new epoch begins."
+  },
+  {
+    "id": 11,
+    "question": "What is Information Gain and how is it used in Decision Tree Learning?",
+    "answer": "Information gain is a statistical measure that calculates the expected reduction in entropy caused by partitioning instances according to a specific attribute. In Decision Tree learning, it is used to determine which attribute is most useful for classifying training instances at each node, with the algorithm selecting the attribute that yields the highest information gain."
+  },
+  {
+    "id": 12,
+    "question": "According to Mitchell (1997), what are the three core elements that define a machine learning problem?",
+    "answer": "A machine learning problem is defined as improving with experience at some task. Specifically, it requires improving over a task T, with respect to a performance measure P, based on experience E."
+  },
+  {
+    "id": 13,
+    "question": "In Reinforcement Learning, what is the purpose of the discount rate in the discounted return model?",
+    "answer": "The discount rate (a value between 0 and 1) is used to bound the infinite sum of rewards over time. It also favors earlier rewards over later ones, giving the agent a preference for finding shorter paths to its goal."
+  },
+  {
+    "id": 14,
+    "question": "What defines a feed-forward neural network compared to a recurrent neural network?",
+    "answer": "A feed-forward network is structured so that no node output is used as an input to a node in the same layer or in a preceding layer. In contrast, a recurrent network features closed loops, allowing node outputs to be directed back as inputs to nodes in the same or preceding layers."
+  },
+  {
+    "id": 15,
+    "question": "How does the 'Acting rationally' approach define rational behavior for an AI agent?",
+    "answer": "Rational behavior is defined as doing the right thing, which means selecting an action that is expected to maximize goal achievement given the available information, evidences, and constraints. Rationality is entirely dependent on the agent's goals and does not necessarily require thinking, as seen in reflexes like blinking."
+  },
+  {
+    "id": 16,
+    "question": "What characterizes a 'fully observable' environment in AI?",
+    "answer": "A fully observable environment is one where an agent's sensors give it complete access to the entire state of the environment at each point in time. This is in contrast to a partially observable environment where some states are hidden."
+  },
+  {
+    "id": 17,
+    "question": "What are the four items required to formally define a Search Problem?",
+    "answer": "A search problem is defined by four items: the initial state (where the search begins), the actions or successor function (a set of action-state pairs), the goal test (which can be explicit or implicit), and the path cost (an additive measure such as the sum of distances or actions)."
+  },
+  {
+    "id": 18,
+    "question": "How does Local Beam Search differ from Random-Restart Search?",
+    "answer": "The major difference is that in Local Beam Search, information is shared among the k search threads. If one state generates a good successor, the other threads are drawn to it, whereas random-restart threads operate completely independently of one another."
+  },
+  {
+    "id": 19,
+    "question": "What is the primary purpose of Alpha-Beta pruning in minimax game search trees?",
+    "answer": "Alpha-beta pruning removes branches of the search tree that do not influence the final decision, addressing the exponential number of game states in minimax search. With perfect move ordering, this technique can double the depth of the search, allowing the agent to look twice as far in the same amount of time."
+  },
+  {
+    "id": 20,
+    "question": "What three formal components make up a logic?",
+    "answer": "A logic is defined as a triplet consisting of a language, a semantic, and an inference system. The language is a class of sentences described by a precise syntax, the semantic describes the meaning of elements in the language, and the inference system consists of derivation rules used over the language."
+  }
+]

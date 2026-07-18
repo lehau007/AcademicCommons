@@ -1,0 +1,176 @@
+{
+  "passed": 18,
+  "failed": 0,
+  "total": 18,
+  "assertions": [
+    {
+      "label": "doc-006 routed to admin queue (no_reviewer)",
+      "passed": true,
+      "expected": "ADMIN_QUEUE + no_reviewer",
+      "actual": {
+        "in_admin": true,
+        "flags": [
+          "no_reviewer"
+        ]
+      }
+    },
+    {
+      "label": "doc-007 routed to admin queue (no_reviewer)",
+      "passed": true,
+      "expected": "ADMIN_QUEUE + no_reviewer",
+      "actual": {
+        "in_admin": true,
+        "flags": [
+          "no_reviewer"
+        ]
+      }
+    },
+    {
+      "label": "doc-008 routed to admin queue (no_reviewer)",
+      "passed": true,
+      "expected": "ADMIN_QUEUE + no_reviewer",
+      "actual": {
+        "in_admin": true,
+        "flags": [
+          "no_reviewer"
+        ]
+      }
+    },
+    {
+      "label": "doc-001 fan-out to both IT3210 reviewers",
+      "passed": true,
+      "expected": true,
+      "actual": {
+        "reviewer-001": true,
+        "reviewer-003": true
+      }
+    },
+    {
+      "label": "doc-002 fan-out to both IT3210 reviewers",
+      "passed": true,
+      "expected": true,
+      "actual": {
+        "reviewer-001": true,
+        "reviewer-003": true
+      }
+    },
+    {
+      "label": "doc-003 fan-out to both IT3210 reviewers",
+      "passed": true,
+      "expected": true,
+      "actual": {
+        "reviewer-001": true,
+        "reviewer-003": true
+      }
+    },
+    {
+      "label": "doc-009 fan-out to both IT3210 reviewers",
+      "passed": true,
+      "expected": true,
+      "actual": {
+        "reviewer-001": true,
+        "reviewer-003": true
+      }
+    },
+    {
+      "label": "doc-004 fan-out to single IT3160E reviewer",
+      "passed": true,
+      "expected": true,
+      "actual": {
+        "reviewer-002": true
+      }
+    },
+    {
+      "label": "doc-005 fan-out to single IT3160E reviewer",
+      "passed": true,
+      "expected": true,
+      "actual": {
+        "reviewer-002": true
+      }
+    },
+    {
+      "label": "doc-001 approved + removed from reviewer-003 queue",
+      "passed": true,
+      "expected": "APPROVED, removed from other queues",
+      "actual": {
+        "state": "APPROVED",
+        "in_r3": false
+      }
+    },
+    {
+      "label": "doc-002 first-acts-wins (reviewer-003 rejected)",
+      "passed": true,
+      "expected": "REJECTED by reviewer-003, late action rejected",
+      "actual": {
+        "state": "REJECTED",
+        "decided_by": "reviewer-003",
+        "late_applied": false
+      }
+    },
+    {
+      "label": "no SLA breach by t+12h",
+      "passed": true,
+      "expected": [],
+      "actual": []
+    },
+    {
+      "label": "no SLA breach by t+30h",
+      "passed": true,
+      "expected": [],
+      "actual": []
+    },
+    {
+      "label": "doc-003 breaches at t+50h (others still within SLA)",
+      "passed": true,
+      "expected": [
+        "doc-003"
+      ],
+      "actual": [
+        "doc-003"
+      ]
+    },
+    {
+      "label": "doc-003 in admin queue with sla_breached flag",
+      "passed": true,
+      "expected": "ADMIN_QUEUE + sla_breached",
+      "actual": {
+        "in_admin": true,
+        "flags": [
+          "sla_breached"
+        ]
+      }
+    },
+    {
+      "label": "doc-009 reassigned to reviewer-001 only (removed from reviewer-003)",
+      "passed": true,
+      "expected": "in reviewer-001 queue, removed from reviewer-003",
+      "actual": {
+        "in_r1": true,
+        "in_r3": false
+      }
+    },
+    {
+      "label": "admin directly approved no_reviewer doc-006",
+      "passed": true,
+      "expected": "APPROVED by admin-001",
+      "actual": {
+        "state": "APPROVED",
+        "decided_by": "admin-001"
+      }
+    },
+    {
+      "label": "IT3160E + leftover IT3210 docs breach at t+80h",
+      "passed": true,
+      "expected": [
+        "doc-004",
+        "doc-005",
+        "doc-009"
+      ],
+      "actual": [
+        "doc-004",
+        "doc-005",
+        "doc-009"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "route_match": true,
+  "non_empty_output": true,
+  "warnings": [
+    "vision_output_placeholder_detected"
+  ],
+  "validators": {
+    "parseable": null,
+    "matrix_shape": null,
+    "binary_values": null,
+    "table_consistency": null
+  }
+}

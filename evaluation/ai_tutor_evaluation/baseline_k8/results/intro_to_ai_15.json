@@ -1,0 +1,59 @@
+{
+  "qid": "intro_to_ai_15",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The core definition, dependencies on goals, constraints, and the distinction between rationality and success are all grounded in chunk e6612a5f.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how the 'Acting rationally' approach defines rational behavior, covering all key aspects: maximizing goal achievement, dependence on available information, goal-dependence, and the distinction between rationality and success.",
+      "evidence": [
+        "Làm \"đúng việc\": tức là thực hiện hành động được kỳ vọng sẽ tối đa hóa việc đạt được mục tiêu của nó, dựa trên thông tin sẵn có",
+        "Hành vi hợp lý phụ thuộc vào mục tiêu của agent",
+        "agent chọn hành động tốt nhất có thể theo: mục tiêu, bằng chứng / tri thức hiện có, và các ràng buộc"
+      ]
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "The answer covers all key facts: doing the right thing, maximizing goal achievement, using available information/evidence/constraints, and goal-dependency. However, it omits the specific example that rationality 'does not necessarily require thinking, as seen in reflexes like blinking.'",
+      "evidence": [
+        "Ground truth: 'does not necessarily require thinking, as seen in reflexes like blinking'",
+        "Answer: mentions rationality doesn't require thinking but omits the reflex/blinking example"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "Nearly all chunks are relevant to defining rational behavior in the 'Acting rationally' approach. Chunks directly address rational agents, rational behavior, goal maximization, and performance measures—all central to the question.",
+      "evidence": [
+        "chunk c19b9c22 'Thinking rationally' discusses a different approach (logicist tradition)",
+        "chunk 42770932 'Goal-based agents' and ceef874f 'Utility-based agents' are tangentially related but describe agent types rather than the definition of rational behavior itself"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. The definition of rational behavior as 'doing the right thing' and maximizing goal achievement given available information appears in chunk e6612a5f. The dependence on goals and the reflex example (blinking) are also explicitly stated in the same chunk.",
+      "evidence": [
+        "Rational behavior: doing the \"right thing\"",
+        "that which is expected to maximize goal achievement, given the available information",
+        "Entirely dependent on goals!",
+        "Doesn't necessarily involve thinking, e.g., blinking"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made in the answer. The core definition, key concepts (goal maximization, available information, constraints), and nuances (rationality vs. success, approximation in practice) all trace directly to the cited chunks.",
+      "evidence": [
+        "Statement: 'Làm đúng việc... tối đa hóa việc đạt được mục tiêu... dựa trên thông tin sẵn có' → Chunk e6612a5f: 'Rational behavior: doing the right thing... expected to maximize goal achievement, given the available information'",
+        "Statement: 'Hành vi hợp lý phụ thuộc vào mục tiêu' → Chunk e6612a5f: 'Entirely dependent on goals!'",
+        "Statement: 'mục tiêu, bằng chứng / tri thức hiện có, và các ràng buộc' → Chunk 00d7b922: 'maximize its performance measure, given the evidence provided by the percept sequence and whatever built-in knowledge'",
+        "Statement: 'Hợp lý không nhất thiết là thành công' → Chunk e6612a5f: 'Rational ≠ successful'",
+        "Statement: 'Bất hợp lý... là hành động kém tối ưu' → Chunk e6612a5f: 'irrationality is sub-optimal action'",
+        "Statement: 'xấp xỉ tính hợp lý vì môi trường phức tạp' → Chunk e6612a5f: 'Usually, we're just approximating rationality'"
+      ]
+    }
+  }
+}

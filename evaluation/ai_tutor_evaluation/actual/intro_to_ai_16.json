@@ -1,0 +1,48 @@
+{
+  "qid": "intro_to_ai_16",
+  "course_code": "IT3160E",
+  "question": "What characterizes a 'fully observable' environment in AI?",
+  "session_id": "a0ab71a0-7eca-4710-8f84-7dc1af8f41a5",
+  "answer": "A **fully observable** environment là môi trường mà **cảm biến của tác nhân có thể truy cập toàn bộ trạng thái của môi trường tại mỗi thời điểm**.\n\nNói ngắn gọn:  \n- tác nhân **nhìn thấy đầy đủ tình trạng hiện tại** của môi trường;\n- không có thông tin ẩn cần phải suy đoán thêm.\n\nTheo tài liệu của môn học, đây là đối lập với **partially observable** environment, nơi tác nhân chỉ quan sát được một phần trạng thái.",
+  "citations": [
+    {
+      "chunk_id": "fe0ad3d1-23ab-40b5-8319-26f66230f44b",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Environment types",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "- **Fully observable** (vs. partially observable): An agent's sensors give it access to the complete state of the environment at each point in time.\n- **Deterministic** (vs. stochastic): The next stat"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "fully observable environment in AI definition",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "fe0ad3d1-23ab-40b5-8319-26f66230f44b",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Environment types",
+          "chunk_order": 13,
+          "cosine_sim": 0.5365,
+          "final_score": 0.8678,
+          "content": "- **Fully observable** (vs. partially observable): An agent's sensors give it access to the complete state of the environment at each point in time.\n- **Deterministic** (vs. stochastic): The next state of the environment is completely determined by the current state and the action executed by the agent.\n- **Episodic** (vs. sequential): The agent's experience is divided into atomic \"episodes\" (each episode consists of the agent perceiving and then performing a single action."
+        },
+        {
+          "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem types",
+          "chunk_order": 10,
+          "cosine_sim": 0.4233,
+          "final_score": 0.6886,
+          "content": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent may have no idea where it is; solution is a sequence\n- Nondeterministic and/or partially observable → contingency problem\n  - percepts provide new information about current state\n  - often interleave → search, execution\n- Unknown state space → exploration problem"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 6.6
+}

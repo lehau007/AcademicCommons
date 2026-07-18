@@ -1,0 +1,175 @@
+{
+  "qid": "intro_to_ai_15",
+  "course_code": "IT3160E",
+  "question": "How does the 'Acting rationally' approach define rational behavior for an AI agent?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "777e62d7-8729-42b3-b9d4-966abec49e09",
+  "answer": "# The \"Acting Rationally\" Approach to Rational Behavior\n\nAccording to the course materials, the **\"Acting rationally\"** approach defines rational behavior as **doing the \"right thing\"** — specifically, the action that is **expected to maximize goal achievement, given the available information**.\n\n## Key Characteristics\n\nHere are the core points that define rational behavior in this approach:\n\n1. **Goal-oriented, not thinking-oriented**\n   - Rational behavior does **not necessarily involve thinking**. For example, blinking is rational even though it involves no deliberation.\n   - When thinking occurs, it is in **service of rational action** — the purpose of thought is to produce better actions.\n\n2. **Entirely dependent on goals**\n   - What counts as \"rational\" is defined by the agent's goals, not by the internal reasoning process.\n\n3. **Rational ≠ successful**\n   - An action can be rational (the best choice given the information at the time) yet still fail due to uncertainty or luck.\n   - Conversely, a successful outcome does not mean the action was rational — it may have been lucky.\n\n4. **Irrational ≠ insane**\n   - Irrationality is defined as **sub-optimal action**, not as mental illness or disorder.\n\n5. **Approximation in practice**\n   - In the real world, there is usually **lots of uncertainty and lots of complexity**, so we are normally only **approximating** perfect rationality.\n   - Because **computational limitations** make perfect rationality unachievable, the course prefers the term **\"computational rationality\"** — the best program achievable given machine resources.\n\n## The Rational Agent\n\nThe course defines a **rational agent** as follows:\n\n> For each possible percept sequence, a rational agent should select an action that is expected to **maximize its performance measure**, given the evidence provided by the percept sequence and whatever built-in knowledge the agent has.\n\nA rational agent is therefore:\n- A system that makes the **best possible decisions** given its **goals, evidence, and constraints**.\n- **Autonomous** if its behavior is determined by its own experience (with the ability to learn and adapt).\n- Evaluated by a **performance measure** that embodies the criterion for success (e.g., for a vacuum cleaner: amount of dirt cleaned, time taken, electricity consumed, noise generated).\n\n## Why This Approach?\n\nThe textbook adopts the \"acting rationally\" view as its focus for AI, in contrast with the other three categories (thinking like humans, acting like humans, thinking rationally). This is because rational action provides a more general, scientifically grounded, and practically useful framework than trying to mimic human behavior or follow strict logical reasoning — especially under uncertainty.\n\n---",
+  "citations": [
+    {
+      "chunk_id": "e6612a5f-2b27-4c47-9613-d020767337ed",
+      "document_title": "lecture1_introduction.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Acting rationally",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "- Rational behavior: doing the “right thing”\n  - The right thing: that which is expected to maximize goal achievement, given the available information\n  - Doesn't necessarily involve thinking, e.g., b"
+    },
+    {
+      "chunk_id": "0bdb442e-5aad-419b-a029-34c848b81054",
+      "document_title": "lecture1_introduction.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Views of AI fall into four categories:",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Think like humans\n- Thinking rationally\n- Act like humans\n- Acting rationally"
+    },
+    {
+      "chunk_id": "30300eec-d65c-472b-927a-37480bf0e42b",
+      "document_title": "it3160e_ai_introduction.pdf",
+      "document_tier": "community",
+      "document_subtype": "summary_note",
+      "section_title": "Rational agents",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is t"
+    },
+    {
+      "chunk_id": "00d7b922-e2e8-4311-922a-651df539f47a",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Rational agent",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- For each possible percept sequence, a rational agent should select an **action** that is expected to maximize its **performance measure**, given the evidence provided by the **percept sequence** and"
+    },
+    {
+      "chunk_id": "314811b6-2262-4463-95c9-02d12576defd",
+      "document_title": "it3160e_ai_introduction.pdf",
+      "document_tier": "community",
+      "document_subtype": "summary_note",
+      "section_title": "What is AI?",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "Views of AI fall into four categories:\n\n|  |  |\n|---|---|\n| Think like humans | Thinking rationally |\n| Act like humans | Acting rationally |\n\nThe textbook advocates \"acting rationally\""
+    },
+    {
+      "chunk_id": "50b428c5-5d38-4d93-8001-22f20e0eb174",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Rational agent",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- A **rational agent** is one that does the right thing - the one that will cause the agent to be most successful\n- **Performance measure** embodies the criterion for success of an agent's behavior.\n "
+    },
+    {
+      "chunk_id": "5304fde2-5cbd-4ac5-87b5-3d4bf4cc0a83",
+      "document_title": "it3160e_ai_introduction.pdf",
+      "document_tier": "community",
+      "document_subtype": "summary_note",
+      "section_title": "Acting rationally",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- Rational behavior: doing the “right thing”\n  - The right thing: that which is expected to maximize goal achievement, given the available information\n  - Doesn't necessarily involve thinking, e.g., b"
+    },
+    {
+      "chunk_id": "2a620552-7cd2-441a-aa14-af728daf87c1",
+      "document_title": "it3160e_ai_introduction.pdf",
+      "document_tier": "community",
+      "document_subtype": "summary_note",
+      "section_title": "Thinking rationally",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- The “Laws of Thought” approach\n  - What does it mean to “think rationally”?\n  - Normative / prescriptive rather than descriptive\n- Logicist tradition:\n  - Logic: notation and rules of derivation for"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "acting rationally approach rational agent definition AI",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "e6612a5f-2b27-4c47-9613-d020767337ed",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Acting rationally",
+          "chunk_order": 13,
+          "cosine_sim": 0.3974,
+          "final_score": 0.6855,
+          "content": "- Rational behavior: doing the “right thing”\n  - The right thing: that which is expected to maximize goal achievement, given the available information\n  - Doesn't necessarily involve thinking, e.g., blinking\n  - Thinking can be in the service of rational action\n  - Entirely dependent on goals!\n  - Irrational ≠ insane, irrationality is sub-optimal action\n  - Rational ≠ successful\n- Our focus here: rational agents\n  - Systems which make the best possible decisions given goals, evidences, and constraints\n  - In the real world, usually lots of uncertainty... and lots of complexity\n  - Usually, we're just approximating rationality\n  - “Computational rationality” a better title for this course"
+        },
+        {
+          "chunk_id": "0bdb442e-5aad-419b-a029-34c848b81054",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Views of AI fall into four categories:",
+          "chunk_order": 10,
+          "cosine_sim": 0.3772,
+          "final_score": 0.6508,
+          "content": "- Think like humans\n- Thinking rationally\n- Act like humans\n- Acting rationally"
+        },
+        {
+          "chunk_id": "30300eec-d65c-472b-927a-37480bf0e42b",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 10,
+          "cosine_sim": 0.4947,
+          "final_score": 0.4947,
+          "content": "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is the core design problem in rational agent systems.]\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "00d7b922-e2e8-4311-922a-651df539f47a",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Rational agent",
+          "chunk_order": 8,
+          "cosine_sim": 0.4124,
+          "final_score": 0.4743,
+          "content": "- For each possible percept sequence, a rational agent should select an **action** that is expected to maximize its **performance measure**, given the evidence provided by the **percept sequence** and whatever **built-in knowledge** the agent has.\n- An agent is **autonomous** if its behavior is determined by its own experience (with ability to learn and adapt)"
+        },
+        {
+          "chunk_id": "314811b6-2262-4463-95c9-02d12576defd",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "What is AI?",
+          "chunk_order": 3,
+          "cosine_sim": 0.466,
+          "final_score": 0.466,
+          "content": "Views of AI fall into four categories:\n\n|  |  |\n|---|---|\n| Think like humans | Thinking rationally |\n| Act like humans | Acting rationally |\n\nThe textbook advocates \"acting rationally\""
+        },
+        {
+          "chunk_id": "50b428c5-5d38-4d93-8001-22f20e0eb174",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Rational agent",
+          "chunk_order": 7,
+          "cosine_sim": 0.3861,
+          "final_score": 0.444,
+          "content": "- A **rational agent** is one that does the right thing - the one that will cause the agent to be most successful\n- **Performance measure** embodies the criterion for success of an agent's behavior.\n  - E.g., performance measure of a vacuum-cleaner agent:\n    - amount of dirt cleaned up\n    - amount of time taken\n    - amount of electricity consumed\n    - amount of noise generated\n    - ..."
+        },
+        {
+          "chunk_id": "5304fde2-5cbd-4ac5-87b5-3d4bf4cc0a83",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Acting rationally",
+          "chunk_order": 8,
+          "cosine_sim": 0.4003,
+          "final_score": 0.4003,
+          "content": "- Rational behavior: doing the “right thing”\n  - The right thing: that which is expected to maximize goal achievement, given the available information\n  - Doesn't necessarily involve thinking, e.g., blinking\n  - Thinking can be in the service of rational action\n  - Entirely dependent on goals!\n  - Irrational ≠ insane, irrationality is sub-optimal action\n  - Rational ≠ successful\n- Our focus here: rational agents\n  - Systems which make the best possible decisions given goals, evidences, and constraints\n  - In the real world, usually lots of uncertainty… and lots of complexity\n  - Usually, we’re just approximating rationality\n- “Computational rationality” a better title for this course"
+        },
+        {
+          "chunk_id": "2a620552-7cd2-441a-aa14-af728daf87c1",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Thinking rationally",
+          "chunk_order": 7,
+          "cosine_sim": 0.333,
+          "final_score": 0.333,
+          "content": "- The “Laws of Thought” approach\n  - What does it mean to “think rationally”?\n  - Normative / prescriptive rather than descriptive\n- Logicist tradition:\n  - Logic: notation and rules of derivation for thoughts\n  - Aristotle: what are correct arguments/thought processes?\n  - E.g.: Socrat is a human, human cannot live forever → Socrat human cannot live forever\n  - Direct line through mathematics, philosophy, to modern AI\n- Problems:\n  - Not all intelligent behavior is mediated by logical deliberation\n  - What is the purpose of thinking? What thoughts should I have?\n  - Logical systems tend to do the wrong thing in the presence of uncertainty"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 29.0
+}

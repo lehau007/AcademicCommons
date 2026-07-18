@@ -1,0 +1,175 @@
+{
+  "qid": "hard_dm_graph_11",
+  "course_code": "IT3020E",
+  "question": "Trong thủ tục DFS(s) trình bày dưới dạng mã giả, các bước cập nhật mảng nào để đánh dấu đã thăm và ghi thời điểm khám phá d[s], và khi nào một đỉnh v được gọi đệ quy?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "9577cbdc-1f72-4e00-a830-26a57e44a45d",
+  "answer": "# Phân tích thủ tục DFS(s) trong mã giả\n\n## 1. Các mảng được cập nhật để đánh dấu đã thăm & ghi thời điểm khám phá\n\nTrong thủ tục `DFS(s)`, khi đỉnh `s` được khám phá lần đầu tiên, **ba mảng** được cập nhật theo thứ tự sau:\n\n| Bước | Câu lệnh | Mảng / biến | Ý nghĩa |\n|------|----------|-------------|----------|\n| 1 | `visited[s] = true;` | `visited[]` | Đánh dấu `s` đã được thăm |\n| 2 | `time = time + 1` | `time` (biến toàn cục) | Tăng đồng hồ thành 1 đơn vị |\n| 3 | `d[s] = time` | `d[]` | Ghi **thời điểm khám phá** `s` |\n\nNgoài ra, trong chương trình chính còn khởi tạo thêm hai mảng hỗ trợ:\n- `pred[s] = NULL` — mảng lưu đỉnh cha trong cây DFS (cây khung/tìm kiếm).\n- `visited[s] = false` — khởi tạo trạng thái chưa thăm.\n\nVà sau khi duyệt xong `s` (quay lui về), hai dòng cuối `DFS(s)` cập nhật thêm:\n- `time = time + 1`\n- `f[s] = time` — ghi **thời điểm kết thúc** khám phá `s` (mảng `f[]`).\n\n> **Lưu ý:** Biến `time` là **biến toàn cục**, nên mọi lời gọi đệ quy `DFS(v)` đều chia sẻ chung một đồng hồ — đây chính là cơ chế tạo ra hai mốc thời gian `(d[s], f[s])` đặc trưng cho DFS.\n\n## 2. Khi nào đỉnh `v` được gọi đệ quy?\n\nLệnh gọi đệ quy `DFS(v)` nằm trong vòng lặp duyệt danh sách kề của `s`. Cụ thể, với **mỗi `v` thuộc `Adj[s]`**, ta kiểm tra điều kiện:\n\n```text\nif (visited[v] == false) {     // v chưa được thăm\n    pred[v] ← s;                // ghi nhận s là cha của v\n    DFS(v);                     // gọi đệ quy\n}\n```\n\nVậy **điều kiện để gọi đệ quy `DFS(v)`** là:\n- `v ∈ Adj[s]` (v là đỉnh kề của `s`), **và**\n- `visited[v] == false` (v chưa từng được khám phá trước đó).\n\nKhi đó ta đặt `pred[v] = s` để ghi nhận cạnh `(s, v)` là cạnh của cây DFS, rồi tiến hành khám phá đệ quy `v`. Nếu `v` đã thăm thì bỏ qua — đây chính là cơ chế **tránh quay lại các đỉnh đã xử lý**, đảm bảo DFS chỉ đi tới mỗi đỉnh đúng một lần.\n\n## Tóm tắt cấu trúc `DFS(s)`\n\n```text\nDFS(s)\n1.  visited[s] = true;      // đánh dấu đã thăm\n2.  time = time + 1\n3.  d[s] = time             // thời điểm khám phá\n4.  for each v ∈ Adj[s]\n5.      if (visited[v] == false) {   // điều kiện gọi đệ quy\n6.          pred[v] ← s;\n7.          DFS(v);\n8.      }\n9.  time = time + 1\n10. f[s] = time             // thời điểm kết thúc\n```\n\nTóm lại:\n- **Mảng dùng để đánh dấu đã thăm:** `visited[]`.\n- **Mảng dùng để ghi thời điểm khám phá:** `d[]` (cùng với `f[]` cho thời điểm kết thúc, cả hai đều dựa trên biến `time` toàn cục).\n- **Đỉnh `v` được gọi đệ quy** khi `v` là đỉnh kề của `s` trong `Adj[s]` **và** `visited[v] == false`.",
+  "citations": [
+    {
+      "chunk_id": "451a7c12-581e-40b3-8cb0-f4623780339f",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "DFS: Edges classification",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "[Diagram: The two code blocks show the outer DFS driver and the recursive DFS routine. Together they illustrate how a depth-first traversal initializes graph state, explores unvisited vertices, and as"
+    },
+    {
+      "chunk_id": "bee4e864-8b94-4d8e-83ab-8fbe1d2f415a",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: DFS",
+      "page_number": null,
+      "chunk_order": 42,
+      "excerpt": "**(Main program *)**\n\n1. for each $s \\in V$\n2. pred[s] = NULL;\n3. visited[s] = false;\n4. time = 0\n5. for each $s \\in V$\n6. if (visited[s] == false) DFS(s);\n\n**DFS(s)**\n\n1. visited[s]= true; //Visit s\n"
+    },
+    {
+      "chunk_id": "40778183-c409-4418-9aa6-aaf732605ecf",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Source vertex",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "[Diagram: The graph illustrates a directed depth-first search starting from a chosen source vertex and exploring neighbors recursively. The stated lexical-order rule makes the traversal deterministic,"
+    },
+    {
+      "chunk_id": "f4f28457-cb98-472d-bb0b-d9e5784ff004",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "DFS(s)",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "1. `visited[s]= true; //Visit s`\n2. `time = time +1`\n3. `d[s] = time`\n4. `for each v ∈ Adj[s]`\n5. `if (visited[v] == false) {`\n6. `pred[v] ← s;`\n7. `DFS(v);`\n8. `}`\n9. `time = time +1`\n10. `f[s] = tim"
+    },
+    {
+      "chunk_id": "b00b5e66-cd45-489c-ae19-c6f284841753",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "DFS: Edges classification",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "```text\n+------------------------+                         +------------------------+\n| (*Main program *)      |                         | DFS(s)                 |\n| 1. for each s ∈ V      |          "
+    },
+    {
+      "chunk_id": "2a052111-4fa0-45fc-b8f1-4898d0a6b333",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: DFS",
+      "page_number": null,
+      "chunk_order": 44,
+      "excerpt": "- source vertex\n\n```text\n+-------------------+        +----------------------+\n| (*Main program *)  |        | DFS(s)               |\n+-------------------+        +----------------------+\n| 1. for eac"
+    },
+    {
+      "chunk_id": "4610a170-3820-4dff-acce-7c041f9518d6",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: DFS",
+      "page_number": null,
+      "chunk_order": 38,
+      "excerpt": "**source vertex**\n\n```text\n+-----------------------------+\n| (*Main program *)           |\n| 1. for each s ∈ V           |\n| 2.     pred[s] = NULL;      |\n| 3.     visited[s] = false;  |\n| 4. time = 0"
+    },
+    {
+      "chunk_id": "65f383ea-4e88-4d6b-b964-ad0592aa5c2c",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "DFS($s$)",
+      "page_number": null,
+      "chunk_order": 48,
+      "excerpt": "1. visited[$s$] = true; //Visit s\n2. $time = time + 1$\n3. $d[s] = time\n4. for each $v \\in Adj[s]$\n5. if $(visited[v] == false)$ {\n6. &nbsp;&nbsp;&nbsp;&nbsp;pred[$v$] $\\leftarrow$ $s$,\n7. &nbsp;&nbsp;"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "DFS depth-first search pseudocode mã giả visited discovered d[v] discovery time đánh dấu đã thăm thời điểm khám phá recursive đệ quy",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "451a7c12-581e-40b3-8cb0-f4623780339f",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS: Edges classification",
+          "chunk_order": 23,
+          "cosine_sim": 0.5463,
+          "final_score": 0.6282,
+          "content": "[Diagram: The two code blocks show the outer DFS driver and the recursive DFS routine. Together they illustrate how a depth-first traversal initializes graph state, explores unvisited vertices, and assigns discovery/finishing timestamps used for edge classification.]\n\n- Also records timestamps for each vertex\n  - d[v] when the vertex v is first discovered\n  - f[v] when the vertex v is finished"
+        },
+        {
+          "chunk_id": "bee4e864-8b94-4d8e-83ab-8fbe1d2f415a",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Example: DFS",
+          "chunk_order": 42,
+          "cosine_sim": 0.4687,
+          "final_score": 0.539,
+          "content": "**(Main program *)**\n\n1. for each $s \\in V$\n2. pred[s] = NULL;\n3. visited[s] = false;\n4. time = 0\n5. for each $s \\in V$\n6. if (visited[s] == false) DFS(s);\n\n**DFS(s)**\n\n1. visited[s]= true; //Visit s\n2. time = time + 1\n3. d[s] = time\n4. for each $v \\in Adj[s]$\n5. if (visited[v] == false) {\n6. pred[v] $\\leftarrow$ s;\n7. DFS(v);\n8. }\n9. time = time + 1\n10. f[s] = time\n\n```text\nsource vertex\n      -->\n        a        e                 g\n      (1|12) -> (8|11) <- - - - - (13| )\n      /   \\        |  \\             |\n     /     \\       |   \\            |\n   (2|7)   (5|6)  (9|10)          (14| )\n     \\     /       |   /            |\n      \\   /        |  /             |\n      (3|4) <- - - ( )            [h]\n        ^\n\nLegend: red nodes show discovery/finish times; gray nodes are not fully visited in the shown snapshot.\n```"
+        },
+        {
+          "chunk_id": "40778183-c409-4418-9aa6-aaf732605ecf",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Source vertex",
+          "chunk_order": 25,
+          "cosine_sim": 0.4534,
+          "final_score": 0.5214,
+          "content": "[Diagram: The graph illustrates a directed depth-first search starting from a chosen source vertex and exploring neighbors recursively. The stated lexical-order rule makes the traversal deterministic, which matters because DFS discovery/finish order and the resulting tree depend on neighbor visitation order.]\n\n(*Main program *)\n\n1. for each $s \\in V$\n2. &nbsp;&nbsp;&nbsp;&nbsp;pred[$s$] = NULL;\n3. &nbsp;&nbsp;&nbsp;&nbsp;visited[$s$] = false;\n4. time = 0\n5. for each $s \\in V$\n6. &nbsp;&nbsp;&nbsp;&nbsp;if (visited[$s$] == false) DFS($s$);\n\nDFS($s$)\n\n1. visited[$s$] = true; //Visit s\n2. time = time + 1\n3. d[$s$] = time\n4. for each $v \\in Adj[$s$]$\n5. &nbsp;&nbsp;&nbsp;&nbsp;if (visited[$v$] == false) {\n6. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pred[$v$] $\\leftarrow$ $s$;\n7. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DFS($v$);\n8. &nbsp;&nbsp;&nbsp;&nbsp;}\n9. time = time + 1\n10. f[$s$] = time\n\nFor the operation of the algorithm to be deterministic, assume that we traverse the vertices in the adjacency list of a vertex in lexical order."
+        },
+        {
+          "chunk_id": "f4f28457-cb98-472d-bb0b-d9e5784ff004",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS(s)",
+          "chunk_order": 30,
+          "cosine_sim": 0.4233,
+          "final_score": 0.4868,
+          "content": "1. `visited[s]= true; //Visit s`\n2. `time = time +1`\n3. `d[s] = time`\n4. `for each v ∈ Adj[s]`\n5. `if (visited[v] == false) {`\n6. `pred[v] ← s;`\n7. `DFS(v);`\n8. `}`\n9. `time = time +1`\n10. `f[s] = time`\n\n```text\nsource vertex\n      -->\n   +-----+       +-----+       +-----+\n   |  a  |-----> |  e  |<----- |  g  |\n   |1  |  |      |8  |  |      |   |  |\n   +--|--+       +--|--+       +--|--+\n      | \\           | \\           | \\\n      |  \\          |  \\          |  \\\n      v   v         v   v         v   v\n   +-----+       +-----+       +-----+\n   |  b  |------>|  d  |<------|  f  |\n   |2 | 7|       |5 | 6|       |9 |  |\n   +--|--+       +--|--+       +--|--+\n      | ^           | ^           |\n      | |           | |           |\n      v |           v |           v\n   +-----+       +-----+       +-----+\n   |  c  |<------|     |       |  h  |\n   |3 | 4|       |     |       |   |  |\n   +-----+       +-----+       +-----+\n```"
+        },
+        {
+          "chunk_id": "b00b5e66-cd45-489c-ae19-c6f284841753",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS: Edges classification",
+          "chunk_order": 22,
+          "cosine_sim": 0.4205,
+          "final_score": 0.4836,
+          "content": "```text\n+------------------------+                         +------------------------+\n| (*Main program *)      |                         | DFS(s)                 |\n| 1. for each s ∈ V      |                         | 1. visited[s] = true;  |\n| 2. pred[s] = NULL;     |                         |    //Visit s           |\n| 3. visited[s] = false; |                         | 2. time = time + 1     |\n| 4. time = 0            |                         | 3. d[s] = time         |\n| 5. for each s ∈ V      |                         | 4. for each v ∈ Adj[s] |\n| 6. if (visited[s]==false) DFS(s);                | 5. if (visited[v]==false) { |\n+------------------------+                         | 6.     pred[v] ← s;    |\n                                                    | 7.     DFS(v);         |\n                                                    | 8. }                   |\n                                                    | 9. time = time + 1     |\n                                                    | 10. f[s] = time        |\n                                                    +------------------------+\n```"
+        },
+        {
+          "chunk_id": "2a052111-4fa0-45fc-b8f1-4898d0a6b333",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Example: DFS",
+          "chunk_order": 44,
+          "cosine_sim": 0.4168,
+          "final_score": 0.4793,
+          "content": "- source vertex\n\n```text\n+-------------------+        +----------------------+\n| (*Main program *)  |        | DFS(s)               |\n+-------------------+        +----------------------+\n| 1. for each s ∈ V  |        | 1. visited[s]= true; //Visit s\n| 2.     pred[s] = NULL;      | 2. time = time + 1\n| 3.     visited[s] = false;   | 3. d[s] = time\n| 4. time = 0        |        | 4. for each v ∈ Adj[s]\n| 5. for each s ∈ V  |        | 5.     if (visited[v] == false) {\n| 6.     if (visited[s] == false) DFS(s); | 6.         pred[v] ← s;\n+-------------------+        | 7.         DFS(v);\n                             | 8.     }\n                             | 9. time = time + 1\n                             | 10. f[s] = time\n                             +----------------------+\n```"
+        },
+        {
+          "chunk_id": "4610a170-3820-4dff-acce-7c041f9518d6",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Example: DFS",
+          "chunk_order": 38,
+          "cosine_sim": 0.4082,
+          "final_score": 0.4694,
+          "content": "**source vertex**\n\n```text\n+-----------------------------+\n| (*Main program *)           |\n| 1. for each s ∈ V           |\n| 2.     pred[s] = NULL;      |\n| 3.     visited[s] = false;  |\n| 4. time = 0                 |\n| 5. for each s ∈ V           |\n| 6.     if (visited[s] == false) DFS(s); |\n+-----------------------------+\n\n+-----------------------------+\n| DFS(s)                      |\n| 1. visited[s]= true; //Visit s |\n| 2. time = time +1           |\n| 3. d[s] = time              |\n| 4. for each v ∈ Adj[s]      |\n| 5.     if (visited[v] == false) { |\n| 6.         pred[v] ← s;     |\n| 7.         DFS(v);          |\n| 8.     }                    |\n| 9. time = time +1           |\n| 10. f[s] = time             |\n+-----------------------------+\n```\n\n```text\n+-----+---------+----------------+\n| V   | d[v]    | f[v]           |\n+-----+---------+----------------+\n| a   | 1       | 12             |\n| b   | 2       | 7              |\n| c   | 3       | 4              |\n| d   | 5       | 6              |\n| e   | 8       | 11             |\n| f   | 9       | 10             |\n| g   |         |                |\n| h   |         |                |\n+-----+---------+----------------+\n```"
+        },
+        {
+          "chunk_id": "65f383ea-4e88-4d6b-b964-ad0592aa5c2c",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS($s$)",
+          "chunk_order": 48,
+          "cosine_sim": 0.4026,
+          "final_score": 0.463,
+          "content": "1. visited[$s$] = true; //Visit s\n2. $time = time + 1$\n3. $d[s] = time\n4. for each $v \\in Adj[s]$\n5. if $(visited[v] == false)$ {\n6. &nbsp;&nbsp;&nbsp;&nbsp;pred[$v$] $\\leftarrow$ $s$,\n7. &nbsp;&nbsp;&nbsp;&nbsp;DFS($v$);\n8. }\n9. $time = time + 1$\n10. $f[s] = time$\n\n```text\nsource vertex\n      -->\n   a(1|12) ---> e(8|11) ---> g(13|16)\n    |  \\          |  \\         |  \\\n    |   \\         |   \\        |   \\\n    v    v        v    v       v    v\n  b(2|7) -> d(5|6)  c(3|4)   h(14|15)\n    \\      ^  ^      ^\n     \\     |  |      |\n      v    |  |      |\n      d(5|6)  |      |\n              |      |\n           c(3|4) <- d(5|6)\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 31.7
+}

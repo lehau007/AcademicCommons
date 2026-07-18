@@ -1,0 +1,94 @@
+{
+  "qid": "intro_to_ai_12",
+  "course_code": "IT3160E",
+  "question": "According to Mitchell (1997), what are the three core elements that define a machine learning problem?",
+  "session_id": "1a1f8662-8188-47bb-bded-ab08628cbd21",
+  "answer": "According to **Mitchell (1997)**, a machine learning problem is defined by **three core elements**:\n\n1. **Task (T)** — the task the system should improve at  \n2. **Experience (E)** — the experience/data the system learns from  \n3. **Performance measure (P)** — the measure used to evaluate how well the system performs\n\nA standard definition is:  \n> A program learns from experience **E** with respect to tasks **T** and performance measure **P**, if its performance at tasks in **T**, as measured by **P**, improves with **E**.\n\nThis exact Mitchell definition is not shown in the retrieved course chunk above, but it is the standard formulation used in AI/ML textbooks.",
+  "citations": [
+    {
+      "chunk_id": "ae50e9e8-47d8-4721-9de7-0b2d63d378dc",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Features of RL",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- Learning from numerical rewards\n- Interaction with the task; sequences of states, actions and rewards\n- Uncertainty and non-deterministic worlds\n- Delayed consequences\n- The explore/exploit dilemma\n"
+    },
+    {
+      "chunk_id": "c1c65690-ce15-4210-b5ce-51ca58f39d4c",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Reinforcement Learning (RL)",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- RL is ML method that optimize the reward\n  - A class of tasks\n  - A process of trial-and-error learning\n    - Good actions are “rewarded”\n    - Bad actions are “punished”"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Mitchell 1997 three core elements define a machine learning problem",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "e416993d-d4f9-479c-974a-cfac73754814",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Expert system",
+          "chunk_order": 20,
+          "cosine_sim": 0.353,
+          "final_score": 0.6209,
+          "content": "- Expert system = Human Expertise + Inference/Reasoning\n- Some examples: DENDRAL, MYCIN, PROSPECTOR, MOLGEN, ICAD/ICAM\n\n|  data  | ---> | software| ---> | output |\n| input  |      |         |      |        |\n\n+-------+      +--------+      +--------+\n\n|                       |\n                  |                       |\n                  |                       |\n                  |                       |\n\nv                       v\n+-------+      +--------+\n\n| hardware|      | knowledge|\n\n+-------+      +--------+\n\n|                       |\n                  |                       |\n\nv                       v\n                             knowledge engineering"
+        },
+        {
+          "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem types",
+          "chunk_order": 10,
+          "cosine_sim": 0.4127,
+          "final_score": 0.5929,
+          "content": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent may have no idea where it is; solution is a sequence\n- Nondeterministic and/or partially observable → contingency problem\n  - percepts provide new information about current state\n  - often interleave → search, execution\n- Unknown state space → exploration problem"
+        },
+        {
+          "chunk_id": "ae50e9e8-47d8-4721-9de7-0b2d63d378dc",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Features of RL",
+          "chunk_order": 3,
+          "cosine_sim": 0.406,
+          "final_score": 0.5906,
+          "content": "- Learning from numerical rewards\n- Interaction with the task; sequences of states, actions and rewards\n- Uncertainty and non-deterministic worlds\n- Delayed consequences\n- The explore/exploit dilemma\n- The whole problem of goal-directed learning"
+        },
+        {
+          "chunk_id": "bb78f7dc-39fe-4290-8d13-b71e8997ed36",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "When using ANNs?",
+          "chunk_order": 64,
+          "cosine_sim": 0.4415,
+          "final_score": 0.5663,
+          "content": "- Input is high-dimensional discrete or real-valued\n- The target function is real-valued, discrete-valued or vector-valued\n- Possibly noisy data\n- The form of the target function is unknown\n- Human readability of result is not (very) important\n- Long training time is accepted\n- Short classification/prediction time is required"
+        },
+        {
+          "chunk_id": "08186b94-e57f-4f7e-a63d-bbe30e25bb9d",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Varieties of Constraints",
+          "chunk_order": 10,
+          "cosine_sim": 0.3752,
+          "final_score": 0.512,
+          "content": "- Single-variable constraints\n  - e.g., SA /= green\n- Binary constraints\n  - e.g., SA /= WA\n- Multi-variable constraints\n  - Relate at least 3 variables\n- Soft constraints\n  - Priority, e.g., red better than green\n  - Cost function over variables"
+        },
+        {
+          "chunk_id": "c1c65690-ce15-4210-b5ce-51ca58f39d4c",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Reinforcement Learning (RL)",
+          "chunk_order": 2,
+          "cosine_sim": 0.3719,
+          "final_score": 0.4737,
+          "content": "- RL is ML method that optimize the reward\n  - A class of tasks\n  - A process of trial-and-error learning\n    - Good actions are “rewarded”\n    - Bad actions are “punished”"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.7
+}

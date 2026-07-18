@@ -1,0 +1,125 @@
+{
+  "qid": "discrete_math_16",
+  "course_code": "IT3020E",
+  "question": "What defines a spanning subgraph in graph theory?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "f8a0236b-fff2-4a51-a5b3-8ecde50653e6",
+  "answer": "Based on the provided context documents, the specific term **\"spanning subgraph\"** is not explicitly defined. The context focuses on related but more specific concepts:\n\n**What the context does define:**\n\n1. **Subgraph** (mentioned in the context of connected components, chunk 53a7a3aa): A graph $G_1$ is a subgraph of $G$ if it is contained within $G$. The context states that $G_1$ is a connected subgraph of $G$ if it is a connected graph contained in $G$.\n\n2. **Spanning tree** (chunks a6cf7664, e792e8fc, 79f69592): A spanning tree $T = (V, F)$ of an undirected connected graph $G = (V, E)$ is defined where $F \\subseteq E$. From the context, a spanning tree:\n   - Keeps all vertices of the original connected graph\n   - Removes enough edges to eliminate cycles\n   - Preserves connectivity with a minimal edge set\n\n**Important note:** The provided context does not contain a formal definition of \"spanning subgraph\" as a standalone concept. While one might infer that a spanning subgraph is a subgraph containing all vertices of the original graph (which would include spanning trees as a special case), this is not explicitly stated in the documents you provided.\n\nIf you need a precise definition of \"spanning subgraph,\" you may want to consult additional course materials, as this specific term is not covered in the context I was given.",
+  "citations": [
+    {
+      "chunk_id": "a6cf7664-fd4f-4de2-a210-93015e369a68",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "[Diagram: The figure illustrates that a spanning tree keeps all vertices of a connected graph while removing enough edges to eliminate cycles. This matters because spanning trees preserve connectivity"
+    },
+    {
+      "chunk_id": "e792e8fc-5d3b-4d2a-96f7-c78c5469b08b",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "Let $G=(V,E)$ be an undirected connected graph with vertex set $V$.\n\nTree $T=(V,F)$ where $F\\subseteq E$ is called spanning tree of $G$\n\nUndirected Connected graph without cycle\n\n```text\nG:\n    a --- "
+    },
+    {
+      "chunk_id": "53a7a3aa-70e2-4428-bf63-ef7b9a7e5018",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Connectedness",
+      "page_number": null,
+      "chunk_order": 48,
+      "excerpt": "- If a graph is not connected then it splits up into a number of connected subgraphs, called its *connected components*.\n- The connected components of $G$ can be defined as its *maximal connected subg"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "What defines a spanning subgraph in graph theory?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "a6cf7664-fd4f-4de2-a210-93015e369a68",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 11,
+          "cosine_sim": 0.4162,
+          "final_score": 0.4786,
+          "content": "[Diagram: The figure illustrates that a spanning tree keeps all vertices of a connected graph while removing enough edges to eliminate cycles. This matters because spanning trees preserve connectivity with a minimal edge set, which is foundational for efficient network design and many graph algorithms.]\n\nGraph G and its 2 spanning trees $T_1$ and $T_2$"
+        },
+        {
+          "chunk_id": "d8f53766-c091-408f-b7fb-c8be5b734722",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Weighted Graphs and Minimum Spanning Trees",
+          "chunk_order": 18,
+          "cosine_sim": 0.4151,
+          "final_score": 0.4774,
+          "content": "Let $G=(V, E)$ be an undirected connected graph with vertex set $V$:\n\n- For each edge $(u,v)$ in $E$, we have a weight $w(u,v)$ specifying the cost (length of edge) to connect $u$ and $v$.\n\nFor any subgraph $H$ of $G$, we define the weight of $H$, denoted by $w(H)$, to be the sum of its edge weights:\n\n$w(H)=\\sum_{e\\in E(H)} c(e)$\n\nA minimum spanning tree for $G$ is a spanning tree $T$ which has the smallest weight\n\n```text\n            7\n        a -------- d\n       / \\        / \\\n      2   2      4   5\n     /     \\    /     \\\n    f---5--- b /       g\n     \\       / \\\n      4     1   3\n       \\   /     \\\n        c -------- e\n           4       1\n\nRed selected tree edges:\nf-a (2), a-b (2), b-c (1), b-e (3), e-d (1), d-g (5)\n\nTotal weight = 14\n```\n\n[Diagram: This graph illustrates the idea of a minimum spanning tree: among all ways to connect every vertex without cycles, we want the one with the least total edge cost. The highlighted edges show how a carefully chosen subset can still span the whole graph while minimizing total weight.]"
+        },
+        {
+          "chunk_id": "53a7a3aa-70e2-4428-bf63-ef7b9a7e5018",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Connectedness",
+          "chunk_order": 48,
+          "cosine_sim": 0.3866,
+          "final_score": 0.4446,
+          "content": "- If a graph is not connected then it splits up into a number of connected subgraphs, called its *connected components*.\n- The connected components of $G$ can be defined as its *maximal connected subgraphs*. This means that $G_1$ is a connected component of $G$ if:\n  - $G_1$ is a connected subgraph of $G$\n  - $G_1$ is not itself a proper subgraph of any other *connected* subgraph of $G$. This second condition is what we mean by the term maximal; it says that if $H$ is a connected subgraph such that $G_1 \\subseteq H$, then $G_1 = H$.\n\nExample: Graph $G$ has 3 connected components: $G_1, G_2, G_3$\n\n```text\nG3:        i\n          / \\\n         /   \\\n        j-----k\n\nG2:        f\n\nG1:      a-----b-----c\n         |     / \\    |\n         |    /   \\   |\n         d---/-----\\---e\n              \\     |\n               \\    |\n                \\   g\n```"
+        },
+        {
+          "chunk_id": "e792e8fc-5d3b-4d2a-96f7-c78c5469b08b",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 10,
+          "cosine_sim": 0.3783,
+          "final_score": 0.435,
+          "content": "Let $G=(V,E)$ be an undirected connected graph with vertex set $V$.\n\nTree $T=(V,F)$ where $F\\subseteq E$ is called spanning tree of $G$\n\nUndirected Connected graph without cycle\n\n```text\nG:\n    a --- b --- c\n     \\   / \\     \\\n      \\ /   \\     \\\n       e --- d ----/\n        \\__________/\n```\n\n```text\nSpanning tree T1:\n    a --- b --- c\n          |       \\\n          |        \\\n          e -------- d\n```\n\n```text\nSpanning tree T2:\n        b\n        |\na -------e------- d\n                 /\n                c\n```"
+        },
+        {
+          "chunk_id": "79f69592-d6cb-4ebd-98c5-ab0fb9621493",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 12,
+          "cosine_sim": 0.3754,
+          "final_score": 0.4317,
+          "content": "**Theorem.** Every undirected connected graph contains a spanning tree.\n\n**Proof.** Let $G$ be an undirected connected graph.\n\n- If $G$ contains no cycle then $G$ is its own spanning tree.\n- If $G$ contains a cycle: Removing any edge from the cycle gives a graph which is still connected. If the new graph contains a cycle then again remove one edge of the cycle. Continue this process until the resulting graph $T$ contains no cycles. We have not removed any vertices so $T$ has the same vertex set as $G$, and at each step of the above process we obtain a connected graph. Therefore $T$ is connected and it is a spanning tree for $G$.\n\n[Diagram: The proof describes an iterative pruning process: repeatedly delete one edge from any cycle while preserving connectivity. This guarantees that the graph eventually becomes acyclic without losing any vertices, yielding a spanning tree.]"
+        },
+        {
+          "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 13,
+          "cosine_sim": 0.374,
+          "final_score": 0.4301,
+          "content": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Complete graph $K_3$ | Spanning trees of $K_3$ |\n|---|---|\n| ```text\n\nb\n  / \\\n a---c\n\n``` | ```text\n a---b---c\n\n b---c---a\n\n c---a---b\n``` |\n\n[Diagram: The figure illustrates the idea of a spanning tree as a minimal connected subgraph that includes all vertices without cycles. For the complete graph $K_3$, it shows that there are exactly 3 different spanning trees, motivating Cayley’s formula for complete graphs.]"
+        },
+        {
+          "chunk_id": "84c6bb46-e520-457e-bcd2-5610bdf5ab2f",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "16 spanning trees of $K_4$",
+          "chunk_order": 16,
+          "cosine_sim": 0.3723,
+          "final_score": 0.4281,
+          "content": "[Diagram: The slide enumerates all spanning trees of the complete graph on four labeled vertices. This illustrates how a connected graph can be reduced to tree structures while still including every vertex exactly once, a key idea in graph theory and combinatorics.]"
+        },
+        {
+          "chunk_id": "20a00770-82ea-4837-a7bf-688eb66a8db2",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Weighted Graphs and Minimum Spanning Trees",
+          "chunk_order": 19,
+          "cosine_sim": 0.3684,
+          "final_score": 0.4237,
+          "content": "Every undirected connected weighted graph $G$ has a minimum spanning tree. Since $G$ has only a finite number of spanning trees, one of them must have minimum weight.\n\nNote: a given undirected connected weighted may have more than one minimum spanning tree.\n\n**Example:** An undirected connected weighted graph with two minimal spanning trees, both of weight 14"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.6
+}

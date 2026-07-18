@@ -1,0 +1,134 @@
+{
+  "qid": "database_02",
+  "course_code": "IT3292E",
+  "question": "What is the difference between the Intersection and Difference operators in relational algebra?",
+  "session_id": "44eb3127-c47d-4dfd-8fb6-1440cf7c3d04",
+  "answer": "Trong **đại số quan hệ**, cả **Intersection (giao)** và **Difference (hiệu)** đều là **toán tử tập hợp** trên các quan hệ, và chỉ áp dụng khi hai quan hệ **tương thích về lược đồ** (cùng số thuộc tính, cùng miền/kiểu dữ liệu tương ứng).\n\n## 1) Intersection ( \\(R \\cap S\\) )\n- Trả về các bộ (tuples) **xuất hiện trong cả hai quan hệ**.\n- Nói cách khác: lấy phần **chung** của hai tập.\n\n## 2) Difference ( \\(R - S\\) )\n- Trả về các bộ **có trong \\(R\\) nhưng không có trong \\(S\\)**.\n- Nói cách khác: loại bỏ khỏi \\(R\\) những bộ cũng xuất hiện trong \\(S\\).\n\n## Ví dụ\nGiả sử:\n\n- \\(R = \\{1, 2, 3\\}\\)\n- \\(S = \\{2, 3, 4\\}\\)\n\nThì:\n- \\(R \\cap S = \\{2, 3\\}\\)\n- \\(R - S = \\{1\\}\\)\n- \\(S - R = \\{4\\}\\)\n\n## Tóm tắt ngắn\n- **Intersection**: phần **giống nhau** giữa hai quan hệ.\n- **Difference**: phần **chỉ có ở quan hệ thứ nhất**.",
+  "citations": [
+    {
+      "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Introduction to relational algebra",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several r"
+    },
+    {
+      "chunk_id": "a98c89b1-edf6-469d-a0ff-42bce19213ab",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "SQL Retrieval statement (Part 2)",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Union, Intersection and Difference of Queries\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING claus"
+    },
+    {
+      "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Rel"
+    },
+    {
+      "chunk_id": "3cc5ea28-d621-4270-96a5-ea87b4aa21c1",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Step 1: Equivalence transformation",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "- Equivalence tranformation rules\n- (11) The selection operation distributes over union, intersection, and set-difference\n  - $σ_θ(E_1 ∪ E_2) = σ_θ(E_1) ∪ σ_θ(E_2)$\n  - $σ_θ(E_1 ∩ E_2) = σ_θ(E_1) ∩ σ_"
+    },
+    {
+      "chunk_id": "fe8d6b5f-8c26-476e-a33c-1f031f398e42",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 31,
+      "excerpt": "[Diagram: The figure illustrates a query execution plan for relational algebra operations, showing scans, selection, projection, and joins. It highlights how execution strategy affects whether interme"
+    },
+    {
+      "chunk_id": "01398013-cb08-44de-98c7-f4e562a3d54c",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Cartesian Product",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- The concatenation of every tuple of one relation with every tuple of the other relation.\n\n```text\n+-----+      ×      +-----+      -->      +-----+-----+\n|  a  |             |  x  |               | "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "difference between Intersection and Difference operators in relational algebra",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "1. Introduction to relational algebra",
+          "chunk_order": 9,
+          "cosine_sim": 0.6,
+          "final_score": 0.4225,
+          "content": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several relational algebraic operators:\n  - Operator: represent computations\n    - Input: one or two relation\n    - Output: a relation\n  - Unary operator (one input) vs. binary operator (two inputs)"
+        },
+        {
+          "chunk_id": "a98c89b1-edf6-469d-a0ff-42bce19213ab",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "SQL Retrieval statement (Part 2)",
+          "chunk_order": 7,
+          "cosine_sim": 0.5187,
+          "final_score": 0.2519,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Union, Intersection and Difference of Queries\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        },
+        {
+          "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.449,
+          "final_score": 0.2492,
+          "content": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Relational algebra | An algebra whose operands are relations or variables that represent Relations |"
+        },
+        {
+          "chunk_id": "3cc5ea28-d621-4270-96a5-ea87b4aa21c1",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.1. Step 1: Equivalence transformation",
+          "chunk_order": 20,
+          "cosine_sim": 0.4784,
+          "final_score": 0.2072,
+          "content": "- Equivalence tranformation rules\n- (11) The selection operation distributes over union, intersection, and set-difference\n  - $σ_θ(E_1 ∪ E_2) = σ_θ(E_1) ∪ σ_θ(E_2)$\n  - $σ_θ(E_1 ∩ E_2) = σ_θ(E_1) ∩ σ_θ(E_2)$\n  - $σ_θ(E_1 − E_2) = σ_θ(E_1) − σ_θ(E_2)$\n- (12) The project operation distributes over the union\n  - $Π_L(E_1 ∪ E_2) = Π_L(E_1) ∪ Π_L(E_2)$"
+        },
+        {
+          "chunk_id": "fe8d6b5f-8c26-476e-a33c-1f031f398e42",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 31,
+          "cosine_sim": 0.4865,
+          "final_score": 0.1817,
+          "content": "[Diagram: The figure illustrates a query execution plan for relational algebra operations, showing scans, selection, projection, and joins. It highlights how execution strategy affects whether intermediate results are materialized or pipelined through the plan.]"
+        },
+        {
+          "chunk_id": "01398013-cb08-44de-98c7-f4e562a3d54c",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "2.4. Cartesian Product",
+          "chunk_order": 14,
+          "cosine_sim": 0.3938,
+          "final_score": 0.1768,
+          "content": "- The concatenation of every tuple of one relation with every tuple of the other relation.\n\n```text\n+-----+      ×      +-----+      -->      +-----+-----+\n|  a  |             |  x  |               |  a  |  x  |\n|  b  |             |  y  |               |  a  |  y  |\n|  c  |                                -> |  b  |  x  |\n|  d  |                                  | |  b  |  y  |\n+-----+                                  | |  c  |  x  |\n                                         | |  c  |  y  |\n                                         | |  d  |  x  |\n                                         | |  d  |  y  |\n                                         + +-----+-----+\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 12.4
+}

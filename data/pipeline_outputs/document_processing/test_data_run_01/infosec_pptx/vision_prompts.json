@@ -1,0 +1,212 @@
+[
+  {
+    "kind": "vision_prompt",
+    "slide": 35,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 45,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 54,
+    "category": "table_or_matrix",
+    "position_hint": "inline",
+    "instruction": "Extract row labels, column labels, and cell values. Return structured JSON with schema: {schema_version, content_type, row_labels, column_labels, values, notes}. Preserve exact numeric values."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 55,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 56,
+    "category": "table_or_matrix",
+    "position_hint": "inline",
+    "instruction": "Extract row labels, column labels, and cell values. Return structured JSON with schema: {schema_version, content_type, row_labels, column_labels, values, notes}. Preserve exact numeric values."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 57,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 69,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 70,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 73,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 74,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 75,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_skipped_decorative",
+    "slide": 77,
+    "position_hint": "inline",
+    "repeat_count": 1,
+    "reason": "Inline image likely used for formatting or branding."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 78,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 80,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 91,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 91,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 91,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 96,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 96,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 96,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "category": "formula",
+    "position_hint": "inline",
+    "instruction": "Extract surrounding explanatory text separately from formula text. Return formulas in LaTeX."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 100,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 100,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 100,
+    "category": "graph_diagram",
+    "position_hint": "inline",
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 104,
+    "category": "general_visual",
+    "position_hint": "inline",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  }
+]

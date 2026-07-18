@@ -1,0 +1,367 @@
+{
+  "qid": "database_02",
+  "course_code": "IT3292E",
+  "question": "What is the difference between the Intersection and Difference operators in relational algebra?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "1f315caf-4f12-4ab4-b65d-840e4254c393",
+  "answer": "# Difference Between Intersection (∩) and Difference (−) Operators\n\nIn relational algebra, both **Intersection** and **Difference** are **binary set operators** that operate on two *union-compatible* relations (relations with the same set of attributes). However, they differ significantly in their purpose and the tuples they return.\n\n## 1. Intersection (∩)\n\n- **Definition**: Keeps only the **common tuples** that appear in **both** input relations.\n- **Notation**: `R ∩ S` or `R INTERSECT S`\n- **Result**: A relation containing tuples that exist in *R* **AND** in *S*.\n\n**Example (from course material):**\n- R1 contains tuples: `(20162102, ...)`, `(20172201, ...)`, `(20172202, ...)`\n- R2 contains tuples: `(20162101, ...)`, `(20162102, ...)`, `(20172201, ...)`\n- **R1 ∩ R2** result: `(20162102, ...)`, `(20172201, ...)` — only tuples appearing in both.\n\n## 2. Difference (−)\n\n- **Definition**: Contains tuples that occur in the **first** relation but **not** in the **second**.\n- **Notation**: `R − S` or `R \\ S` or `R MINUS S`\n- **Result**: A relation containing tuples that exist in *R* **BUT NOT** in *S*.\n\n**Example (from course material):**\n- clazz (R1) has 4 tuples: `(20162101, ...)`, `(20162102, ...)`, `(20172201, ...)`, `(20172202, ...)`\n- clazz 2 (R2) has 2 tuples: `(20172202, ...)`, `(20162102, ...)`\n- **R1 − R2** result: `(20162101, ...)`, `(20172201, ...)` — tuples in R1 but absent in R2.\n\n## Key Differences\n\n| Aspect | Intersection (∩) | Difference (−) |\n|--------|------------------|----------------|\n| **Logic** | Logical AND (tuples in both) | Exclusion (tuples in first, not in second) |\n| **Symmetry** | **Commutative**: `R ∩ S = S ∩ R` | **NOT commutative**: `R − S ≠ S − R` |\n| **Associativity** | **Associative**: `(R ∩ S) ∩ T = R ∩ (S ∩ T)` | NOT associative |\n| **Empty result** | When relations share no tuples | When first is a subset of second |\n| **Practical use** | Finding common data between sets | Removing/excluding a set from another |\n\n## Important Properties (from equivalence transformation rules)\n\n- **Selection distributes over both**:\n  - `σθ(E1 ∩ E2) = σθ(E1) ∩ σθ(E2)`\n  - `σθ(E1 − E2) = σθ(E1) − σθ(E2)`\n- **Both require union-compatible relations** (same schema) as input.\n\n## Summary\n\nThink of **Intersection** as the *overlap* between two sets, while **Difference** is *what's left* of the first set after removing elements of the second. This order-dependence is what makes Difference non-commutative — the answer changes depending on which relation comes first.",
+  "citations": [
+    {
+      "chunk_id": "3cc5ea28-d621-4270-96a5-ea87b4aa21c1",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Step 1: Equivalence transformation",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "- Equivalence tranformation rules\n- (11) The selection operation distributes over union, intersection, and set-difference\n  - $σ_θ(E_1 ∪ E_2) = σ_θ(E_1) ∪ σ_θ(E_2)$\n  - $σ_θ(E_1 ∩ E_2) = σ_θ(E_1) ∩ σ_"
+    },
+    {
+      "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Introduction to relational algebra",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several r"
+    },
+    {
+      "chunk_id": "e4ed7e43-7870-4daa-a330-b2762ed15dfc",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Step 1: Equivalence transformation",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "- Equivalence tranformation rules\n- (8) Projection distributes over join as follows\n  - $\\Pi_{L_1 \\cup L_2}(E_1 \\bowtie_{\\theta} E_2) = \\Pi_{L_1}(E_1) \\bowtie_{\\theta} \\Pi_{L_2}(E_2)$\n  - If $\\theta$ "
+    },
+    {
+      "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Rel"
+    },
+    {
+      "chunk_id": "2d4d5e91-a2fd-40c1-a5fd-7a753df6aff5",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords and descriptions",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "| Keyword | Description |\n|---|---|\n| Relational data model | Is data representation format as a table of values, each row in the table represents a collection of related data values |\n| Set | Is coll"
+    },
+    {
+      "chunk_id": "24ec14e9-4208-44fc-be8f-d524d86d781e",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Intersection",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Keeping only common tuples from 2 input union-compatible relations.\n\n```text\n+------+      ∩      +------+\n| R1   |             | R2   |\n+------+             +------+\n          \\         /\n         "
+    },
+    {
+      "chunk_id": "1caa5ef5-c84b-4b27-9c18-c1510a1d958a",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Union",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- Combining the tuples from two *union-compatible relation* inputs (having the same set of attributes).\n\n```text\n+-----+     ∪     +-----+        +---------+\n| R1  |           | R2  |  -->   | R1 ∪ R2"
+    },
+    {
+      "chunk_id": "cd0c3603-d565-453c-b486-14e524e90609",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "```text\n            Buckets from r                         Buckets from s\n\n     +-------------------+                 +-------------------+\n     |   Relation r      | --hash-->       |      r1        "
+    },
+    {
+      "chunk_id": "3cdb6e2e-8b6a-4162-9bd7-d8f1746e2901",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.3. Difference",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "- Containing tuples occurred in the first relation but not in the second.\n\n```text\nR1 \\ R2  →  result\n```\n\n| clazz (R1) | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 "
+    },
+    {
+      "chunk_id": "c238e943-9926-4e6a-a764-5520cad83629",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Selection",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "- Choose from R each tuple where the condition holds.\n\n$\\sigma_{<condition>}(R)$\n\n```text\nR\n+-----+\n| R1  |\n| R2  |\n| R3  |\n| R4  |\n+-----+\n   -->\n+-----+\n| R2  |\n| R3  |\n+-----+\n```\n\n$\\sigma_{lecture"
+    },
+    {
+      "chunk_id": "60e2d3b0-073a-4e95-8da3-87129e9fcf9e",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Sort-merge JOIN\n  - Requires data physically sorted by join attributes: Merge and join sorted files, reading sequentially a block at a time\n  - Maintain two file pointers\n    - While tuple at R < tu"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "Intersection and Difference operators in relational algebra, definitions, notation, properties",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c120ef78-d8c6-4b37-b68b-edc19f658fe8",
+          "document_id": "ffa2105f-b635-4990-9a02-dbf38c9c965e",
+          "section_title": "Additional Rules Derived",
+          "chunk_order": 8,
+          "cosine_sim": 0.4146,
+          "final_score": 0.6219,
+          "content": "| Rule | Statement |\n|------|-----------|\n| Union | if X→Y and X→Z, then X→YZ |\n| Decomposition | if X→YZ, then X→Y and X→Z |\n| Pseudo-transitivity | if X→Y and WY→Z, then WX→Z |\n\n---"
+        },
+        {
+          "chunk_id": "3cc5ea28-d621-4270-96a5-ea87b4aa21c1",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.1. Step 1: Equivalence transformation",
+          "chunk_order": 20,
+          "cosine_sim": 0.4682,
+          "final_score": 0.5384,
+          "content": "- Equivalence tranformation rules\n- (11) The selection operation distributes over union, intersection, and set-difference\n  - $σ_θ(E_1 ∪ E_2) = σ_θ(E_1) ∪ σ_θ(E_2)$\n  - $σ_θ(E_1 ∩ E_2) = σ_θ(E_1) ∩ σ_θ(E_2)$\n  - $σ_θ(E_1 − E_2) = σ_θ(E_1) − σ_θ(E_2)$\n- (12) The project operation distributes over the union\n  - $Π_L(E_1 ∪ E_2) = Π_L(E_1) ∪ Π_L(E_2)$"
+        },
+        {
+          "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "1. Introduction to relational algebra",
+          "chunk_order": 9,
+          "cosine_sim": 0.4404,
+          "final_score": 0.5065,
+          "content": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several relational algebraic operators:\n  - Operator: represent computations\n    - Input: one or two relation\n    - Output: a relation\n  - Unary operator (one input) vs. binary operator (two inputs)"
+        },
+        {
+          "chunk_id": "e4ed7e43-7870-4daa-a330-b2762ed15dfc",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.1. Step 1: Equivalence transformation",
+          "chunk_order": 19,
+          "cosine_sim": 0.4401,
+          "final_score": 0.5061,
+          "content": "- Equivalence tranformation rules\n- (8) Projection distributes over join as follows\n  - $\\Pi_{L_1 \\cup L_2}(E_1 \\bowtie_{\\theta} E_2) = \\Pi_{L_1}(E_1) \\bowtie_{\\theta} \\Pi_{L_2}(E_2)$\n  - If $\\theta$ involves attributes in $L_1 \\cup L_2$ only and $L_i$ contains attributes of $E_i$\n- (9) The set operations union and intersection are commutative\n  - $E_1 \\cup E_2 = E_2 \\cup E_1$\n  - $E_1 \\cap E_2 = E_2 \\cap E_1$\n- (10) The union and intersection are associative\n  - $(E_1 \\cup E_2) \\cup E_3 = E_1 \\cup (E_2 \\cup E_3)$"
+        },
+        {
+          "chunk_id": "a98c89b1-edf6-469d-a0ff-42bce19213ab",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "SQL Retrieval statement (Part 2)",
+          "chunk_order": 7,
+          "cosine_sim": 0.4202,
+          "final_score": 0.4833,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Union, Intersection and Difference of Queries\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        },
+        {
+          "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.4158,
+          "final_score": 0.4782,
+          "content": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Relational algebra | An algebra whose operands are relations or variables that represent Relations |"
+        },
+        {
+          "chunk_id": "3a2e0044-9335-41c7-951c-feb7cb16a8d0",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "2.1. Armstrong's axioms",
+          "chunk_order": 12,
+          "cosine_sim": 0.4014,
+          "final_score": 0.4616,
+          "content": "- Given\n  - $R = \\{A_1, A_2, \\dots, A_n\\}$, X, Y, Z, W are subsets of R.\n  - XY denoted for $X \\cup Y$\n- Reflexivity\n  - If $Y \\subseteq X$ then $X \\to Y$\n- Augmentation\n  - If $X \\to Y$ then $XZ \\to YZ$\n- Transitivity\n  - If $X \\to Y$, $Y \\to Z$ then $X \\to Z$"
+        },
+        {
+          "chunk_id": "2d4d5e91-a2fd-40c1-a5fd-7a753df6aff5",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "Keywords and descriptions",
+          "chunk_order": 3,
+          "cosine_sim": 0.3953,
+          "final_score": 0.4546,
+          "content": "| Keyword | Description |\n|---|---|\n| Relational data model | Is data representation format as a table of values, each row in the table represents a collection of related data values |\n| Set | Is collection of Object |\n| Operator | Is a special token that represent computations such as union, minus, selection, join, etc |\n| Expression | Is a expression built up from operators and operands |"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "intersection operator definition notation r minus s r intersect s set operations relational algebra union compatibility",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "3cc5ea28-d621-4270-96a5-ea87b4aa21c1",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.1. Step 1: Equivalence transformation",
+          "chunk_order": 20,
+          "cosine_sim": 0.4469,
+          "final_score": 0.5139,
+          "content": "- Equivalence tranformation rules\n- (11) The selection operation distributes over union, intersection, and set-difference\n  - $σ_θ(E_1 ∪ E_2) = σ_θ(E_1) ∪ σ_θ(E_2)$\n  - $σ_θ(E_1 ∩ E_2) = σ_θ(E_1) ∩ σ_θ(E_2)$\n  - $σ_θ(E_1 − E_2) = σ_θ(E_1) − σ_θ(E_2)$\n- (12) The project operation distributes over the union\n  - $Π_L(E_1 ∪ E_2) = Π_L(E_1) ∪ Π_L(E_2)$"
+        },
+        {
+          "chunk_id": "e4ed7e43-7870-4daa-a330-b2762ed15dfc",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.1. Step 1: Equivalence transformation",
+          "chunk_order": 19,
+          "cosine_sim": 0.4434,
+          "final_score": 0.5099,
+          "content": "- Equivalence tranformation rules\n- (8) Projection distributes over join as follows\n  - $\\Pi_{L_1 \\cup L_2}(E_1 \\bowtie_{\\theta} E_2) = \\Pi_{L_1}(E_1) \\bowtie_{\\theta} \\Pi_{L_2}(E_2)$\n  - If $\\theta$ involves attributes in $L_1 \\cup L_2$ only and $L_i$ contains attributes of $E_i$\n- (9) The set operations union and intersection are commutative\n  - $E_1 \\cup E_2 = E_2 \\cup E_1$\n  - $E_1 \\cap E_2 = E_2 \\cap E_1$\n- (10) The union and intersection are associative\n  - $(E_1 \\cup E_2) \\cup E_3 = E_1 \\cup (E_2 \\cup E_3)$"
+        },
+        {
+          "chunk_id": "24ec14e9-4208-44fc-be8f-d524d86d781e",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "2.2. Intersection",
+          "chunk_order": 12,
+          "cosine_sim": 0.4194,
+          "final_score": 0.4823,
+          "content": "- Keeping only common tuples from 2 input union-compatible relations.\n\n```text\n+------+      ∩      +------+\n| R1   |             | R2   |\n+------+             +------+\n          \\         /\n           \\       /\n            \\     /\n             \\   /\n              \\ /\n             +-------+\n             | result |\n             +-------+\n```\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |"
+        },
+        {
+          "chunk_id": "1caa5ef5-c84b-4b27-9c18-c1510a1d958a",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "2.1. Union",
+          "chunk_order": 11,
+          "cosine_sim": 0.4129,
+          "final_score": 0.4749,
+          "content": "- Combining the tuples from two *union-compatible relation* inputs (having the same set of attributes).\n\n```text\n+-----+     ∪     +-----+        +---------+\n| R1  |           | R2  |  -->   | R1 ∪ R2 |\n+-----+           +-----+        +---------+\n```\n\n**clazz**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n\n**clazz 2**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n\n**result**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |"
+        },
+        {
+          "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "1. Introduction to relational algebra",
+          "chunk_order": 9,
+          "cosine_sim": 0.4061,
+          "final_score": 0.467,
+          "content": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several relational algebraic operators:\n  - Operator: represent computations\n    - Input: one or two relation\n    - Output: a relation\n  - Unary operator (one input) vs. binary operator (two inputs)"
+        },
+        {
+          "chunk_id": "2d4d5e91-a2fd-40c1-a5fd-7a753df6aff5",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "Keywords and descriptions",
+          "chunk_order": 3,
+          "cosine_sim": 0.3771,
+          "final_score": 0.4336,
+          "content": "| Keyword | Description |\n|---|---|\n| Relational data model | Is data representation format as a table of values, each row in the table represents a collection of related data values |\n| Set | Is collection of Object |\n| Operator | Is a special token that represent computations such as union, minus, selection, join, etc |\n| Expression | Is a expression built up from operators and operands |"
+        },
+        {
+          "chunk_id": "cd0c3603-d565-453c-b486-14e524e90609",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 28,
+          "cosine_sim": 0.3659,
+          "final_score": 0.4208,
+          "content": "```text\n            Buckets from r                         Buckets from s\n\n     +-------------------+                 +-------------------+\n     |   Relation r      | --hash-->       |      r1           |----+\n     |                   |                 |      r2           |    |\n     |                   |                 |      ...          |    |--> +------------------+\n     |                   |                 |      rn           |    |    |   r1 ⋈ s1       |\n     +-------------------+                 +-------------------+    |    |   r2 ⋈ s2       |\n                                                                     |    |   ...            |\n                                                                     |    |   rn ⋈ sn       |\n                                                                     |    +------------------+\n                                                                     |\n                                                                     +--> corresponding buckets joined with\n                                                                          matching buckets from s\n\n                                          +-------------------+\n                                          |      s1           |\n                                          |      s2           |\n                                          |      ...          |\n                                          |      sn           |\n                                          +-------------------+\n\n     Hash r (same for s)                         Join corresponding r and s buckets\n```"
+        },
+        {
+          "chunk_id": "011637a3-9499-4694-a0b7-b0bfb0234d59",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "1.1. Joins operators: Join types",
+          "chunk_order": 22,
+          "cosine_sim": 0.3659,
+          "final_score": 0.4208,
+          "content": "- Product:\n  - R CROSS JOIN S\n- Theta join:\n  - R [INNER] JOIN S ON &lt;condition&gt;\n- Natural join: (Be careful!)\n  - R NATURAL JOIN S\n- Outer join:\n  - R [LEFT|RIGHT|FULL] [OUTER] JOIN S ON &lt;condition&gt;\n  - R NATURAL [LEFT|RIGHT|FULL] [OUTER] JOIN S"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "set difference minus operator definition notation R minus S tuples in R not in S union compatible",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "24ec14e9-4208-44fc-be8f-d524d86d781e",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "2.2. Intersection",
+          "chunk_order": 12,
+          "cosine_sim": 0.4129,
+          "final_score": 0.4748,
+          "content": "- Keeping only common tuples from 2 input union-compatible relations.\n\n```text\n+------+      ∩      +------+\n| R1   |             | R2   |\n+------+             +------+\n          \\         /\n           \\       /\n            \\     /\n             \\   /\n              \\ /\n             +-------+\n             | result |\n             +-------+\n```\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |"
+        },
+        {
+          "chunk_id": "1caa5ef5-c84b-4b27-9c18-c1510a1d958a",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "2.1. Union",
+          "chunk_order": 11,
+          "cosine_sim": 0.4091,
+          "final_score": 0.4704,
+          "content": "- Combining the tuples from two *union-compatible relation* inputs (having the same set of attributes).\n\n```text\n+-----+     ∪     +-----+        +---------+\n| R1  |           | R2  |  -->   | R1 ∪ R2 |\n+-----+           +-----+        +---------+\n```\n\n**clazz**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n\n**clazz 2**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n\n**result**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |"
+        },
+        {
+          "chunk_id": "3cdb6e2e-8b6a-4162-9bd7-d8f1746e2901",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "2.3. Difference",
+          "chunk_order": 13,
+          "cosine_sim": 0.3907,
+          "final_score": 0.4493,
+          "content": "- Containing tuples occurred in the first relation but not in the second.\n\n```text\nR1 \\ R2  →  result\n```\n\n| clazz (R1) | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n| clazz 2 (R2) | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20172202 | CNTT2.02-K62 |  |  |\n| 20162102 | CNTT1.02-K61 |  |  |\n\n| result | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |"
+        },
+        {
+          "chunk_id": "c238e943-9926-4e6a-a764-5520cad83629",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "3.1. Selection",
+          "chunk_order": 16,
+          "cosine_sim": 0.3747,
+          "final_score": 0.4309,
+          "content": "- Choose from R each tuple where the condition holds.\n\n$\\sigma_{<condition>}(R)$\n\n```text\nR\n+-----+\n| R1  |\n| R2  |\n| R3  |\n| R4  |\n+-----+\n   -->\n+-----+\n| R2  |\n| R3  |\n+-----+\n```\n\n$\\sigma_{lecturer\\_id \\neq null}(clazz)$\n\n```text\nclazz\n+-----------+----------------+-------------+-------------+\n| clazz_id  | name           | lecturer_id | monitor_id  |\n+-----------+----------------+-------------+-------------+\n| 20162101  | CNTT1.01-K61   | 02001       | 20160003    |\n| 20162102  | CNTT1.02-K61   |             |             |\n| 20172201  | CNTT2.01-K62   | 02002       | 20170001    |\n| 20172202  | CNTT2.02-K62   |             |             |\n+-----------+----------------+-------------+-------------+\n                |\n                v\n+-----------+----------------+-------------+-------------+\n| clazz_id  | name           | lecturer_id | monitor_id  |\n+-----------+----------------+-------------+-------------+\n| 20162101  | CNTT1.01-K61   | 02001       | 20160003    |\n| 20172201  | CNTT2.01-K62   | 02002       | 20170001    |\n+-----------+----------------+-------------+-------------+\n```"
+        },
+        {
+          "chunk_id": "cd0c3603-d565-453c-b486-14e524e90609",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 28,
+          "cosine_sim": 0.3675,
+          "final_score": 0.4226,
+          "content": "```text\n            Buckets from r                         Buckets from s\n\n     +-------------------+                 +-------------------+\n     |   Relation r      | --hash-->       |      r1           |----+\n     |                   |                 |      r2           |    |\n     |                   |                 |      ...          |    |--> +------------------+\n     |                   |                 |      rn           |    |    |   r1 ⋈ s1       |\n     +-------------------+                 +-------------------+    |    |   r2 ⋈ s2       |\n                                                                     |    |   ...            |\n                                                                     |    |   rn ⋈ sn       |\n                                                                     |    +------------------+\n                                                                     |\n                                                                     +--> corresponding buckets joined with\n                                                                          matching buckets from s\n\n                                          +-------------------+\n                                          |      s1           |\n                                          |      s2           |\n                                          |      ...          |\n                                          |      sn           |\n                                          +-------------------+\n\n     Hash r (same for s)                         Join corresponding r and s buckets\n```"
+        },
+        {
+          "chunk_id": "60e2d3b0-073a-4e95-8da3-87129e9fcf9e",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 26,
+          "cosine_sim": 0.3633,
+          "final_score": 0.4178,
+          "content": "- Sort-merge JOIN\n  - Requires data physically sorted by join attributes: Merge and join sorted files, reading sequentially a block at a time\n  - Maintain two file pointers\n    - While tuple at R < tuple at S, advance R (and vice versa)\n    - While tuples match, output all possible pairings\n  - Very efficient for presorted data. Otherwise, may require a sort (adds cost + delay)"
+        },
+        {
+          "chunk_id": "011637a3-9499-4694-a0b7-b0bfb0234d59",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "1.1. Joins operators: Join types",
+          "chunk_order": 22,
+          "cosine_sim": 0.3568,
+          "final_score": 0.4103,
+          "content": "- Product:\n  - R CROSS JOIN S\n- Theta join:\n  - R [INNER] JOIN S ON &lt;condition&gt;\n- Natural join: (Be careful!)\n  - R NATURAL JOIN S\n- Outer join:\n  - R [LEFT|RIGHT|FULL] [OUTER] JOIN S ON &lt;condition&gt;\n  - R NATURAL [LEFT|RIGHT|FULL] [OUTER] JOIN S"
+        },
+        {
+          "chunk_id": "2d4d5e91-a2fd-40c1-a5fd-7a753df6aff5",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "Keywords and descriptions",
+          "chunk_order": 3,
+          "cosine_sim": 0.314,
+          "final_score": 0.3611,
+          "content": "| Keyword | Description |\n|---|---|\n| Relational data model | Is data representation format as a table of values, each row in the table represents a collection of related data values |\n| Set | Is collection of Object |\n| Operator | Is a special token that represent computations such as union, minus, selection, join, etc |\n| Expression | Is a expression built up from operators and operands |"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 59.1
+}

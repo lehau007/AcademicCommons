@@ -1,0 +1,54 @@
+{
+  "qid": "discrete_math_01",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunk. The definitions of articulation point and bridge match the source material exactly, and the simplified explanations are logical restatements of those definitions.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses both parts of the question, providing clear definitions of Articulation Point and Bridge in undirected graphs. The core definitions match the question's requirements, and the additional explanatory text enhances understanding without deviating from the topic.",
+      "evidence": [
+        "Một **đỉnh** được gọi là **articulation point** nếu khi **loại bỏ đỉnh đó** (cùng với các cạnh kề nó), thì **số thành phần liên thông của đồ thị tăng lên**",
+        "Một **cạnh** được gọi là **bridge** nếu khi **loại bỏ cạnh đó**, thì **số thành phần liên thông của đồ thị tăng lên**"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly defines both Articulation Point and Bridge as elements whose removal increases the number of connected components, matching all key facts from the ground truth with no contradictions.",
+      "evidence": [
+        "Ground truth: 'a vertex whose removal produces a subgraph with more connected components'",
+        "Tutor: 'khi loại bỏ đỉnh đó... thì số thành phần liên thông của đồ thị tăng lên'",
+        "Ground truth: 'an edge whose removal produces a subgraph with more connected components'",
+        "Tutor: 'khi loại bỏ cạnh đó, thì số thành phần liên thông của đồ thị tăng lên'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "The single retrieved chunk directly defines both Articulation Point and Bridge in the context of undirected graphs, providing exactly the information needed to answer the question.",
+      "evidence": [
+        "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components",
+        "**Bridge**: An edge whose removal produces a subgraph with more connected components"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunk: the definition of Articulation Point as a vertex whose removal increases connected components, and the definition of Bridge as an edge whose removal increases connected components.",
+      "evidence": [
+        "removal of a vertex produces a subgraph with more connected components",
+        "An edge whose removal produces a subgraph with more connected components"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "The tutor's definitions of both Articulation Point and Bridge accurately match the cited chunk. The chunk explicitly states that an articulation point is a vertex whose removal produces more connected components, and a bridge is an edge whose removal produces more connected components.",
+      "evidence": [
+        "Tutor: 'loại bỏ đỉnh đó... số thành phần liên thông của đồ thị tăng lên' vs Chunk: 'removal of a vertex produces a subgraph with more connected components'",
+        "Tutor: 'loại bỏ cạnh đó... số thành phần liên thông của đồ thị tăng lên' vs Chunk: 'An edge whose removal produces a subgraph with more connected components'"
+      ]
+    }
+  }
+}

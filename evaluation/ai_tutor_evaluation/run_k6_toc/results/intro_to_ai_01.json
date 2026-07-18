@@ -1,0 +1,65 @@
+{
+  "qid": "intro_to_ai_01",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the first retrieved chunk, which explicitly lists the four PEAS factors as Performance measure, Environment, Actuators, and Sensors.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by listing all four PEAS factors (Performance measure, Environment, Actuators, Sensors) that should be considered when designing an automated agent.",
+      "evidence": [
+        "**P**erformance measure",
+        "**E**nvironment",
+        "**A**ctuators",
+        "**S**ensors"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly identifies all four PEAS factors (Performance measure, Environment, Actuators, Sensors) that are the core requirement of the ground truth. The ground truth's taxi example is illustrative detail, not a required fact.",
+      "evidence": [
+        "Performance measure",
+        "Environment",
+        "Actuators",
+        "Sensors"
+      ]
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "Only 1 out of 6 chunks is directly relevant to the PEAS question. The remaining 5 chunks discuss agent types, environment properties, multi-agent planning, policy/reward, and knowledge bases—none of which help answer what the four PEAS factors are.",
+      "evidence": [
+        "5f809156: 'Four basic agent types'",
+        "17b10140: 'Static (vs. dynamic): The environment is unchanged'",
+        "fcbd419e: 'Environment: cooperative or competitive'",
+        "54833ea9: 'Policy defines the agent's behaviour'",
+        "2a04385e: 'Knowledge base is a set of sentences'"
+      ]
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "The retrieved chunks contain all four PEAS factors explicitly listed. However, the ground truth also includes an example (automated taxi driver with specific details about performance, environment, actuators, and sensors), which does not appear in any retrieved chunk.",
+      "evidence": [
+        "an automated taxi driver's performance measure might be a safe and fast trip",
+        "its environment includes roads and traffic",
+        "its actuators are the steering wheel and brakes",
+        "its sensors include cameras and GPS"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "The first citation (chunk 847fc99d) perfectly supports the answer's PEAS definition. However, the remaining four citations are unrelated to PEAS factors—they discuss agent types, environment types, multi-agent planning, and knowledge bases, none of which support the statements made in the answer.",
+      "evidence": [
+        "Answer states: 'Performance measure, Environment, Actuators, Sensors'",
+        "Chunk 847fc99d supports this: '4 factors should be considered when design an automated agent: Performance measure, Environment, Actuators, Sensors'",
+        "Chunk 5f809156 discusses 'Four basic agent types' (unrelated to PEAS)",
+        "Chunk 17b10140 discusses 'Environment types: Static vs. dynamic' (unrelated to PEAS factors)",
+        "Chunk fcbd419e discusses 'Multi-agent planning' (unrelated to PEAS)",
+        "Chunk 2a04385e discusses 'Knowledge bases' (unrelated to PEAS)"
+      ]
+    }
+  }
+}

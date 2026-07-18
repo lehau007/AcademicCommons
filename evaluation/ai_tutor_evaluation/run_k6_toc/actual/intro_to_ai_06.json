@@ -1,0 +1,124 @@
+{
+  "qid": "intro_to_ai_06",
+  "course_code": "IT3160E",
+  "question": "What is the min-conflicts heuristic used in Iterative Algorithms for CSPs?",
+  "session_id": "a7cf9396-0286-46ef-a276-d4d15aad4304",
+  "answer": "Trong **Iterative Algorithms for CSPs**, **min-conflicts heuristic** là cách chọn **giá trị cho một biến** sao cho nó **vi phạm ít ràng buộc nhất**.\n\nNói ngắn gọn:\n- Ta xét một biến cần gán lại.\n- Với mỗi giá trị có thể của biến đó, đếm số ràng buộc bị vi phạm.\n- Chọn giá trị làm **số ràng buộc vi phạm là nhỏ nhất**.\n\nTheo tài liệu của môn học, đây có thể xem như:\n- một dạng **hill climbing**,\n- với hàm đánh giá \\( h(n) \\) là **tổng số ràng buộc bị vi phạm**.\n\nÝ chính:\n- Trạng thái trong local search là **một gán đầy đủ** cho tất cả biến.\n- Thuật toán cho phép trạng thái đang còn vi phạm ràng buộc.\n- Ta thường chọn biến ngẫu nhiên, rồi dùng **min-conflicts** để gán lại giá trị tốt nhất cho biến đó.\n\nTài liệu tham khảo: phần **Iterative Algorithms for CSPs**.",
+  "citations": [
+    {
+      "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one vari"
+    },
+    {
+      "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative Algorithms for CSPs",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables"
+    },
+    {
+      "chunk_id": "83e54421-60e1-4c3d-ab15-dd085ef21ff8",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraints Satisfaction Problems (CSPs)",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "- CSPs example\n- Backtracking search\n- Problem structure\n- Local search for CSPs"
+    },
+    {
+      "chunk_id": "a0252995-6183-4122-bf53-69942d2216b1",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Backtracking Search",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "- Variable assignments are commutative, e.g.,\n  - {WA=red, NT =green}\n  - {NT =green, WA=red}\n- Single-variable assignment\n  - Only consider one variable at each node\n  - $d^n$ leaves\n- Backtracking s"
+    },
+    {
+      "chunk_id": "0a1b8b3f-36ff-4f93-afa4-ad62eda60463",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Backtracking Search Algorithm",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "[Diagram: This pseudocode describes a depth-first search strategy that builds a solution incrementally while checking constraints at each step. If a partial assignment leads to a dead end, the algorit"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "min-conflicts heuristic used in iterative algorithms for CSPs",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Summary",
+          "chunk_order": 28,
+          "cosine_sim": 0.5855,
+          "final_score": 0.6733,
+          "content": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one variable assigned per node\n- Variable ordering and value selection heuristics help significantly\n- Forward checking prevents assignments that guarantee later failure\n- Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistencies\n- The CSPs representation allows analysis of problem structure\n- Tree-structured CSPs can be solved in linear time\n- Iterative min-conflicts is usually effective in practice"
+        },
+        {
+          "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Iterative Algorithms for CSPs",
+          "chunk_order": 26,
+          "cosine_sim": 0.5243,
+          "final_score": 0.6029,
+          "content": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables\n- Variable selection\n  - Random\n- Value selection by min-conflicts heuristic\n  - Choose value that violates the fewest constraints\n    - i.e., hill climbing with $h(n) =$ total number of violated constraints"
+        },
+        {
+          "chunk_id": "83e54421-60e1-4c3d-ab15-dd085ef21ff8",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraints Satisfaction Problems (CSPs)",
+          "chunk_order": 1,
+          "cosine_sim": 0.493,
+          "final_score": 0.567,
+          "content": "- CSPs example\n- Backtracking search\n- Problem structure\n- Local search for CSPs"
+        },
+        {
+          "chunk_id": "a0252995-6183-4122-bf53-69942d2216b1",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Backtracking Search",
+          "chunk_order": 16,
+          "cosine_sim": 0.4812,
+          "final_score": 0.5534,
+          "content": "- Variable assignments are commutative, e.g.,\n  - {WA=red, NT =green}\n  - {NT =green, WA=red}\n- Single-variable assignment\n  - Only consider one variable at each node\n  - $d^n$ leaves\n- Backtracking search\n  - Depth-first search+ Single-variable assignment\n- Backtracking search is the basic uninformed algorithm for CSPs\n  - Can solve n-Queen with n = 25"
+        },
+        {
+          "chunk_id": "40156ecc-be69-4483-8d57-b66f19383e89",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Example: *n*-queens",
+          "chunk_order": 18,
+          "cosine_sim": 0.4671,
+          "final_score": 0.5372,
+          "content": "[Diagram: The sequence shows a backtracking-style refinement of candidate queen placements on a chessboard. It illustrates how the puzzle is solved by progressively removing conflicts until a valid configuration remains, which is the key idea behind efficient search for constraint-satisfaction problems.]"
+        },
+        {
+          "chunk_id": "0a1b8b3f-36ff-4f93-afa4-ad62eda60463",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Backtracking Search Algorithm",
+          "chunk_order": 18,
+          "cosine_sim": 0.4561,
+          "final_score": 0.5246,
+          "content": "[Diagram: This pseudocode describes a depth-first search strategy that builds a solution incrementally while checking constraints at each step. If a partial assignment leads to a dead end, the algorithm undoes the last choice and tries the next option, which is what makes backtracking effective for constraint satisfaction problems.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 11.9
+}

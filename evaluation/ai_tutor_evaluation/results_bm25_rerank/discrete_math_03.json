@@ -1,0 +1,56 @@
+{
+  "qid": "discrete_math_03",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The definitions of strongly and weakly connected graphs, the relationship between them, and the conceptual explanations all align with chunk 1a482e23.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by clearly defining both strongly connected and weakly connected directed graphs, explaining the key difference between them, and providing additional context about their relationship and intuition.",
+      "evidence": [
+        "A **directed graph strongly connected** when, for **every pair of vertices** \\(u, v\\), there is: a path from \\(u\\) to \\(v\\), and a path from \\(v\\) to \\(u\\).",
+        "A **directed graph weakly connected** when, after you **ignore the direction of all edges** and turn it into an undirected graph, the graph is connected."
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly defines both strongly connected (path from u to v and v to u for all vertex pairs) and weakly connected (corresponding undirected graph is connected), matching all key facts from the ground truth with no contradictions.",
+      "evidence": [
+        "Ground truth: 'strongly connected if there is a path from u to v and from v to u whenever u and v are vertices'",
+        "Tutor: 'for every pair of vertices u, v, there is: a path from u to v, and a path from v to u'",
+        "Ground truth: 'weakly connected if its corresponding undirected graph is connected'",
+        "Tutor: 'weakly connected when, after you ignore the direction of all edges and turn it into an undirected graph, the graph is connected'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "The first two chunks directly define strongly and weakly connected graphs, making them highly relevant. The remaining four chunks focus on algorithms for checking strong connectivity and strongly connected components—related concepts but not directly answering the definitional question.",
+      "evidence": [
+        "chunk 0c9dbb8c: 'Check if the graph G is strongly connected or not?'",
+        "chunk 9d3197f2: 'Perform DFS(v) on G... algorithm to check'",
+        "chunk 9ffc8d2a: 'diagram contrasts... transpose'",
+        "chunk 7589e55b: 'Perform DFS(v)... How to obtain graph GT'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The first retrieved chunk contains both key facts from the ground truth: the definition of strongly connected (path from u to v and v to u for all vertices) and weakly connected (corresponding undirected graph is connected).",
+      "evidence": [
+        "A directed graph is **strongly connected** if there is a path from $u$ to $v$ and from $v$ to $u$ whenever $u$ and $v$ are vertices in the graph",
+        "A directed graph is **weakly connected** if its corresponding undirected graph is connected"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements they are attached to. The first chunk provides the exact definitions of strongly and weakly connected graphs that form the basis of the answer, and the second chunk supports the discussion of strongly connected components.",
+      "evidence": [
+        "Answer states: 'strongly connected when, for every pair of vertices u, v, there is: a path from u to v, and a path from v to u' — Chunk 1a482e23 states: 'A directed graph is strongly connected if there is a path from $u$ to $v$ and from $v$ to $u$ whenever $u$ and $v$ are vertices in the graph'",
+        "Answer states: 'weakly connected when, after you ignore the direction of all edges and turn it into an undirected graph, the graph is connected' — Chunk 1a482e23 states: 'A directed graph is weakly connected if its corresponding undirected graph is connected'"
+      ]
+    }
+  }
+}

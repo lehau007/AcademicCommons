@@ -1,0 +1,134 @@
+{
+  "qid": "discrete_math_02",
+  "course_code": "IT3020E",
+  "question": "According to Cayley's theorem, how many spanning trees does a complete graph have?",
+  "session_id": "f879d3f4-d3cf-4fe6-85c2-15f22039959a",
+  "answer": "According to **Cayley’s theorem**, a complete graph \\(K_n\\) has\n\n\\[\nn^{\\,n-2}\n\\]\n\nspanning trees.\n\nSo the answer is: **\\(n^{n-2}\\)**.",
+  "citations": [
+    {
+      "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Co"
+    },
+    {
+      "chunk_id": "6dc9f9e3-297f-4018-8059-bb33731a711d",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Weighted Graphs and Minimum Spanning Trees",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "[Diagram: The two highlighted spanning trees show that the same weighted graph can have multiple optimal solutions with equal total weight. This matters because minimum spanning tree algorithms may re"
+    },
+    {
+      "chunk_id": "84c6bb46-e520-457e-bcd2-5610bdf5ab2f",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "16 spanning trees of $K_4$",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "[Diagram: The slide enumerates all spanning trees of the complete graph on four labeled vertices. This illustrates how a connected graph can be reduced to tree structures while still including every v"
+    },
+    {
+      "chunk_id": "9135ec46-46db-41bd-ac3e-25ee65214c2c",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Applications of Minimum Spanning Trees: an example",
+      "page_number": null,
+      "chunk_order": 24,
+      "excerpt": "Suppose we want to build a railway system that connects $n$ cities so that passengers can travel between any two cities and the total cost of construction must be minimal.\n\nIt is clear that it corresp"
+    },
+    {
+      "chunk_id": "a6cf7664-fd4f-4de2-a210-93015e369a68",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "[Diagram: The figure illustrates that a spanning tree keeps all vertices of a connected graph while removing enough edges to eliminate cycles. This matters because spanning trees preserve connectivity"
+    },
+    {
+      "chunk_id": "0806e91b-3c90-49b6-acb6-69988e52d9b7",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Build a railway system",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "```text\n+------------------------------+                 +------------------------------+\n| Left railway network         |                 | Right railway network        |\n| (spanning tree example 1) "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Cayley's theorem spanning trees complete graph number of spanning trees",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 13,
+          "cosine_sim": 0.7439,
+          "final_score": 1.0559,
+          "content": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Complete graph $K_3$ | Spanning trees of $K_3$ |\n|---|---|\n| ```text\n\nb\n  / \\\n a---c\n\n``` | ```text\n a---b---c\n\n b---c---a\n\n c---a---b\n``` |\n\n[Diagram: The figure illustrates the idea of a spanning tree as a minimal connected subgraph that includes all vertices without cycles. For the complete graph $K_3$, it shows that there are exactly 3 different spanning trees, motivating Cayley’s formula for complete graphs.]"
+        },
+        {
+          "chunk_id": "6dc9f9e3-297f-4018-8059-bb33731a711d",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Weighted Graphs and Minimum Spanning Trees",
+          "chunk_order": 21,
+          "cosine_sim": 0.6158,
+          "final_score": 0.7108,
+          "content": "[Diagram: The two highlighted spanning trees show that the same weighted graph can have multiple optimal solutions with equal total weight. This matters because minimum spanning tree algorithms may return any one of several correct trees, not necessarily a unique structure.]\n\nAs the number of spanning trees of $G$ is very large (see Cayley's theorem), we could not solve this problem by brute force."
+        },
+        {
+          "chunk_id": "84c6bb46-e520-457e-bcd2-5610bdf5ab2f",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "16 spanning trees of $K_4$",
+          "chunk_order": 16,
+          "cosine_sim": 0.5837,
+          "final_score": 0.6925,
+          "content": "[Diagram: The slide enumerates all spanning trees of the complete graph on four labeled vertices. This illustrates how a connected graph can be reduced to tree structures while still including every vertex exactly once, a key idea in graph theory and combinatorics.]"
+        },
+        {
+          "chunk_id": "9135ec46-46db-41bd-ac3e-25ee65214c2c",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Applications of Minimum Spanning Trees: an example",
+          "chunk_order": 24,
+          "cosine_sim": 0.4542,
+          "final_score": 0.4455,
+          "content": "Suppose we want to build a railway system that connects $n$ cities so that passengers can travel between any two cities and the total cost of construction must be minimal.\n\nIt is clear that it corresponds to a graph where vertices are the cities and the edges are the railroads connecting the cities, the length on each edge is the cost of building a railway connecting the two cities.\n\nTherefore, it leads to the problem of finding the smallest spanning tree on a complete graph $K_n$"
+        },
+        {
+          "chunk_id": "a6cf7664-fd4f-4de2-a210-93015e369a68",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 11,
+          "cosine_sim": 0.587,
+          "final_score": 0.4452,
+          "content": "[Diagram: The figure illustrates that a spanning tree keeps all vertices of a connected graph while removing enough edges to eliminate cycles. This matters because spanning trees preserve connectivity with a minimal edge set, which is foundational for efficient network design and many graph algorithms.]\n\nGraph G and its 2 spanning trees $T_1$ and $T_2$"
+        },
+        {
+          "chunk_id": "0806e91b-3c90-49b6-acb6-69988e52d9b7",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Build a railway system",
+          "chunk_order": 25,
+          "cosine_sim": 0.5265,
+          "final_score": 0.346,
+          "content": "```text\n+------------------------------+                 +------------------------------+\n| Left railway network         |                 | Right railway network        |\n| (spanning tree example 1)    |                 | (spanning tree example 2)    |\n+------------------------------+                 +------------------------------+\n          |                                                     |\n          v                                                     v\n  Length of spanning tree: 17284                       Length of spanning tree: 15932\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 6.3
+}

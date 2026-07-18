@@ -1,0 +1,55 @@
+{
+  "qid": "intro_to_ai_05",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The definition of CSP (variables, domains, constraints, goal) matches chunk cb0570c6 and 67acdf6b, and the map coloring example is supported by chunk de00e937.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses what defines a CSP by explaining the three core components: variables, domains, and constraints. The map coloring example reinforces the definition rather than diverting from it.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: states composed of variables Xi, domains Di for each variable, and goal test defined by constraints. The answer is factually consistent with no contradictions.",
+      "evidence": [
+        "Ground truth: 'state is composed of variables Xi that take values from a specific domain Di'",
+        "Tutor: 'Trạng thái được biểu diễn bởi một tập biến cố định Xi' and 'Mỗi biến có một miền giá trị tương ứng Di'",
+        "Ground truth: 'goal test...defined by a set of constraints'",
+        "Tutor: 'Mục tiêu là tìm một gán giá trị...thỏa tất cả các ràng buộc'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six chunks are directly relevant to defining CSPs. Only chunk 2aed7a58 (about iterative algorithms like hill-climbing) discusses solving methods rather than the definition itself.",
+      "evidence": [
+        "2aed7a58: 'Hill-climbing, Simulated Annealing can be used for CSPs'",
+        "2aed7a58: 'Operators reassign variables'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk cb0570c6 and chunk 67acdf6b together contain all essential elements: states defined by variables Xi with domains Di, and goal test defined by constraints.",
+      "evidence": [
+        "states defined by values of a fixed set of variables",
+        "goal test defined by constraints on variable values",
+        "State is composed of variables $X_i$ with value in domain $D_i$",
+        "Goal test is a set of constraints over variables"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The definition of CSP (variables, domains, constraints) is explicitly confirmed in chunks cb0570c6 and 67acdf6b, and the map coloring example is supported by chunk de00e937.",
+      "evidence": [
+        "Tutor states 'Trạng thái được biểu diễn bởi một tập biến cố định Xi' — chunk cb0570c6: 'states defined by values of a fixed set of variables'",
+        "Tutor states 'Mỗi biến có một miền giá trị tương ứng Di' — chunk 67acdf6b: 'State is composed of variables $X_i$ with value in domain $D_i$'",
+        "Tutor states 'Mục tiêu là tìm một gán giá trị... thỏa tất cả các ràng buộc' — chunk cb0570c6: 'goal test defined by constraints on variable values'",
+        "Tutor mentions 'map coloring' example — chunk de00e937: 'constraint satisfaction problem where each region must be assigned one of several colors. Adjacent regions cannot share the same color'"
+      ]
+    }
+  }
+}

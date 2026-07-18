@@ -1,0 +1,175 @@
+{
+  "qid": "intro_to_ai_13",
+  "course_code": "IT3160E",
+  "question": "In Reinforcement Learning, what is the purpose of the discount rate in the discounted return model?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "492a3cb3-dbe4-4a7d-8877-b9bd33952f3c",
+  "answer": "## Purpose of the Discount Rate (γ) in the Discounted Return Model\n\nIn Reinforcement Learning, the **discount rate** (denoted γ, where `0 ≤ γ ≤ 1`) is a key parameter in the geometrically discounted return model:\n\n$$R_t = r_{t+1} + \\gamma r_{t+2} + \\gamma^2 r_{t+3} + \\cdots + \\gamma^{T-1} r_T$$\n\nAccording to the course material, the discount rate γ is used for two main purposes:\n\n### 1. **To bound the infinite sum**\nWhen the task does not have a natural terminal state (i.e., the agent continues interacting with the environment indefinitely), the sum of future rewards could grow without bound. By multiplying each future reward by a factor γ < 1 raised to an increasing power, the infinite series of rewards is guaranteed to **converge to a finite value**, making the return mathematically well-defined.\n\n### 2. **To favor earlier rewards (preference for shorter paths)**\nBecause each reward is multiplied by γ raised to a power that grows with time, rewards received sooner are weighted **more heavily** than rewards received later. This means the agent gives **preference to shorter paths** — it values immediate or near-term rewards more than distant ones.\n\n### Additional intuition\nThe discount rate γ also appears in the Bellman-style update for Q-learning in the course material:\n$$Q(s,a) = R(s,a) + \\gamma \\max_{a'} Q(T(s,a), a')$$\nThis shows that γ controls how much the agent cares about the value of future states when estimating the value of a current state-action pair.\n\n**In summary:** the discount rate serves two roles — it makes the return mathematically tractable by bounding the infinite sum, and it encodes a preference for sooner rewards over later ones, which in turn encourages the agent to favor shorter (more efficient) paths to the goal.",
+  "citations": [
+    {
+      "chunk_id": "c1c65690-ce15-4210-b5ce-51ca58f39d4c",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Reinforcement Learning (RL)",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- RL is ML method that optimize the reward\n  - A class of tasks\n  - A process of trial-and-error learning\n    - Good actions are “rewarded”\n    - Bad actions are “punished”"
+    },
+    {
+      "chunk_id": "487f414b-66e1-4240-9d55-ff717bb5a3f6",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Points of view",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "- From the point of view of agents\n  - RL is a process of trial-and-error learning\n  - How much reward will I get if I do this action?\n- From the point of view of trainers\n  - RL is training by reward"
+    },
+    {
+      "chunk_id": "a3265665-3b65-4107-9b4c-f1622f889692",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Reward and Return",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- The reward function indicates how good things are right now\n- But the agent wants to maximize reward in the long-term i.e. over many time steps\n- We refer to long-term (multi-step) reward as return\n"
+    },
+    {
+      "chunk_id": "a729e88c-ba0d-4af3-9068-1804fc9ef2cb",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Q-learning",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- Learns action-values $Q(s,a)$ rather than state-values $V(s)$\n- Action-values learning\n\n$$\nQ(s,a) = R(s,a) + \\gamma \\max_{a'} Q(T(s,a), a')\n$$\n\n- Q-learning improves action-values iteratively until "
+    },
+    {
+      "chunk_id": "4749a60f-0207-4a2f-8b16-da4bd232c199",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Discounted Return",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- The geometrically discounted model of return\n\n$$\nR_t = r_{t+1} + \\gamma r_{t+2} + \\cdots + \\gamma^T r_T\n$$\n\n$$\n0 \\le \\gamma \\le 1\n$$\n\n- $\\gamma$ is called discount rate, used to\n  - Bound the infini"
+    },
+    {
+      "chunk_id": "c5476576-a52e-48ec-8d8c-057bfec9551f",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Optimal Policies",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- An RL agent adapts its policy in order to increase return\n- A policy $p_1$ is at least as good as a policy $p_2$ if its expected return is at least as great in each possible initial state\n- An optim"
+    },
+    {
+      "chunk_id": "ae50e9e8-47d8-4721-9de7-0b2d63d378dc",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Features of RL",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- Learning from numerical rewards\n- Interaction with the task; sequences of states, actions and rewards\n- Uncertainty and non-deterministic worlds\n- Delayed consequences\n- The explore/exploit dilemma\n"
+    },
+    {
+      "chunk_id": "15a52b76-2ffb-4689-a3a5-d54d0c538e01",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "[Diagram: The slide shows two grid-world value layouts comparing state/action outcomes under a discounted setting with $\\gamma = 0,9$. It illustrates how a rightward move from the start state leads to"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "discount rate discounted return reinforcement learning purpose",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c1c65690-ce15-4210-b5ce-51ca58f39d4c",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Reinforcement Learning (RL)",
+          "chunk_order": 2,
+          "cosine_sim": 0.3998,
+          "final_score": 0.4597,
+          "content": "- RL is ML method that optimize the reward\n  - A class of tasks\n  - A process of trial-and-error learning\n    - Good actions are “rewarded”\n    - Bad actions are “punished”"
+        },
+        {
+          "chunk_id": "487f414b-66e1-4240-9d55-ff717bb5a3f6",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Points of view",
+          "chunk_order": 4,
+          "cosine_sim": 0.3962,
+          "final_score": 0.4556,
+          "content": "- From the point of view of agents\n  - RL is a process of trial-and-error learning\n  - How much reward will I get if I do this action?\n- From the point of view of trainers\n  - RL is training by rewards and punishments\n  - Train computers like we train animals"
+        },
+        {
+          "chunk_id": "a3265665-3b65-4107-9b4c-f1622f889692",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Reward and Return",
+          "chunk_order": 9,
+          "cosine_sim": 0.3945,
+          "final_score": 0.4537,
+          "content": "- The reward function indicates how good things are right now\n- But the agent wants to maximize reward in the long-term i.e. over many time steps\n- We refer to long-term (multi-step) reward as return\n\n$$R_t = r_{t+1} + r_{t+2} + \\ldots + r_T$$\n\nwhere\n\n- T is the last time step of the world"
+        },
+        {
+          "chunk_id": "a729e88c-ba0d-4af3-9068-1804fc9ef2cb",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Q-learning",
+          "chunk_order": 14,
+          "cosine_sim": 0.3894,
+          "final_score": 0.4478,
+          "content": "- Learns action-values $Q(s,a)$ rather than state-values $V(s)$\n- Action-values learning\n\n$$\nQ(s,a) = R(s,a) + \\gamma \\max_{a'} Q(T(s,a), a')\n$$\n\n- Q-learning improves action-values iteratively until it converges"
+        },
+        {
+          "chunk_id": "4749a60f-0207-4a2f-8b16-da4bd232c199",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Discounted Return",
+          "chunk_order": 10,
+          "cosine_sim": 0.3844,
+          "final_score": 0.4421,
+          "content": "- The geometrically discounted model of return\n\n$$\nR_t = r_{t+1} + \\gamma r_{t+2} + \\cdots + \\gamma^T r_T\n$$\n\n$$\n0 \\le \\gamma \\le 1\n$$\n\n- $\\gamma$ is called discount rate, used to\n  - Bound the infinite sum\n  - Favor earlier rewards, in other words to give preference to shorter paths"
+        },
+        {
+          "chunk_id": "c5476576-a52e-48ec-8d8c-057bfec9551f",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Optimal Policies",
+          "chunk_order": 11,
+          "cosine_sim": 0.3746,
+          "final_score": 0.4308,
+          "content": "- An RL agent adapts its policy in order to increase return\n- A policy $p_1$ is at least as good as a policy $p_2$ if its expected return is at least as great in each possible initial state\n- An optimal policy $p$ is at least as good as any other policy"
+        },
+        {
+          "chunk_id": "ae50e9e8-47d8-4721-9de7-0b2d63d378dc",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Features of RL",
+          "chunk_order": 3,
+          "cosine_sim": 0.3724,
+          "final_score": 0.4282,
+          "content": "- Learning from numerical rewards\n- Interaction with the task; sequences of states, actions and rewards\n- Uncertainty and non-deterministic worlds\n- Delayed consequences\n- The explore/exploit dilemma\n- The whole problem of goal-directed learning"
+        },
+        {
+          "chunk_id": "15a52b76-2ffb-4689-a3a5-d54d0c538e01",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Example",
+          "chunk_order": 18,
+          "cosine_sim": 0.3696,
+          "final_score": 0.425,
+          "content": "[Diagram: The slide shows two grid-world value layouts comparing state/action outcomes under a discounted setting with $\\gamma = 0,9$. It illustrates how a rightward move from the start state leads toward the goal while most other transitions have zero reward, emphasizing the structure of the example and the role of discounting in evaluating future returns.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 19.7
+}

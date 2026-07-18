@@ -1,0 +1,61 @@
+{
+  "qid": "intro_to_ai_15",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. All key points—rational behavior as doing the right thing, maximizing goal achievement, goal-dependence, not requiring thinking, best possible action based on goals/evidence/constraints, rational not equaling successful, and approximating rationality—are explicitly present in the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how the 'Acting rationally' approach defines rational behavior, covering all key aspects: maximizing goal achievement, dependence on available information, goal-dependency, and that it doesn't require thinking.",
+      "evidence": [
+        "choosing actions that are expected to maximize goal achievement, given the information available",
+        "Rational behavior is goal-dependent",
+        "does not necessarily mean thinking before acting"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: rational behavior as 'doing the right thing,' maximizing goal achievement given available information, goal-dependency, and that thinking is not required (blinking example). No contradictions are present.",
+      "evidence": [
+        "choosing actions that are expected to maximize goal achievement, given the information available",
+        "Rational behavior is goal-dependent",
+        "does not necessarily mean thinking before acting; even simple actions like blinking can be rational"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to defining rational behavior in the 'Acting rationally' approach. Each chunk either explicitly defines rational behavior, contrasts it with other AI approaches, or elaborates on rational agents and performance measures.",
+      "evidence": [
+        "chunk e6612a5f: 'Rational behavior: doing the \"right thing\"... expected to maximize goal achievement'",
+        "chunk 0bdb442e: lists 'Acting rationally' among AI approaches",
+        "chunk 5304fde2: duplicate of first chunk, still relevant",
+        "chunk 00d7b922: 'rational agent should select an action that is expected to maximize its performance measure'",
+        "chunk 50b428c5: 'rational agent is one that does the right thing'",
+        "chunk 314811b6: categorizes 'Acting rationally' as one of four AI views"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. The definition of rational behavior as 'doing the right thing' and maximizing goal achievement given available information appears verbatim, the goal-dependency is explicitly stated, and the example of reflexes like blinking not requiring thinking is directly included.",
+      "evidence": [
+        "Rational behavior: doing the \"right thing\" - The right thing: that which is expected to maximize goal achievement, given the available information",
+        "Doesn't necessarily involve thinking, e.g., blinking",
+        "Entirely dependent on goals!"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports its corresponding statement. The chunks cited contain the exact definitions and concepts mentioned in the answer, including the core definition of rational behavior, goal-dependence, the distinction between thinking and acting, and the relationship between rationality and success.",
+      "evidence": [
+        "Answer: 'doing the \"right thing\"—that is, choosing actions that are expected to maximize goal achievement' → Chunk e6612a5f: 'Rational behavior: doing the \"right thing\" - The right thing: that which is expected to maximize goal achievement, given the available information'",
+        "Answer: 'does not necessarily mean thinking before acting; even simple actions like blinking can be rational' → Chunk e6612a5f: 'Doesn't necessarily involve thinking, e.g., blinking'",
+        "Answer: 'A rational agent chooses the best possible action based on its goals, evidence, and constraints' → Chunk 00d7b922: 'a rational agent should select an action that is expected to maximize its performance measure, given the evidence provided'",
+        "Answer: 'Rational does not mean successful every time' → Chunk e6612a5f: 'Rational ≠ successful'"
+      ]
+    }
+  }
+}

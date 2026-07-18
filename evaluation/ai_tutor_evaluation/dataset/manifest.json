@@ -1,0 +1,22 @@
+{
+  "created": "2026-07-07",
+  "source": "data/RAG_evaluation_data/",
+  "courses": [
+    {
+      "file": "intro_to_ai.json",
+      "course_code": "IT3160E",
+      "n_questions": 20
+    },
+    {
+      "file": "discrete_math.json",
+      "course_code": "IT3020E",
+      "n_questions": 20
+    },
+    {
+      "file": "database.json",
+      "course_code": "IT3292E",
+      "n_questions": 10
+    }
+  ],
+  "total_questions": 50
+}

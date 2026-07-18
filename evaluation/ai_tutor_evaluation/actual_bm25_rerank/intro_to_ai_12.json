@@ -1,0 +1,96 @@
+{
+  "qid": "intro_to_ai_12",
+  "course_code": "IT3160E",
+  "question": "According to Mitchell (1997), what are the three core elements that define a machine learning problem?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "58e4aed8-ea45-4aff-b80d-2592012371d0",
+  "answer": "According to **Mitchell (1997)**, a machine learning problem is defined by **three core elements**:\n\n1. **A set of tasks (T)**  \n   - The tasks the system is expected to perform.\n\n2. **A performance measure (P)**  \n   - A criterion used to evaluate how well the system performs on the task.\n\n3. **Experience (E)**  \n   - Data or past experience from which the system can learn.\n\nIn short, a program is said to learn from **experience E** with respect to **tasks T** and **performance measure P** if its performance at tasks in T, as measured by P, improves with experience E.",
+  "citations": [
+    {
+      "chunk_id": "e8e13d75-dbc3-448c-90bb-4a217b293d54",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Introduction of Machine learning",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Definitions of Machine learning...\n  - A process by which a system improves its performance [Simon, 1983]\n  - Any computer program that improves its performance at some task through experience [Mitc"
+    },
+    {
+      "chunk_id": "02d82e69-9f03-44a2-8481-718f6816e570",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Key elements of a ML problem (2)",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Choosing a representation of the target function\n  - A polynomial function\n  - A set of rules\n  - A decision tree\n  - A neural network\n  - ...\n\n- Choosing a learning algorithm that learns (approxima"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "Mitchell 1997 three core elements define a machine learning problem",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem types",
+          "chunk_order": 10,
+          "cosine_sim": 0.4127,
+          "final_score": 0.5929,
+          "content": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent may have no idea where it is; solution is a sequence\n- Nondeterministic and/or partially observable → contingency problem\n  - percepts provide new information about current state\n  - often interleave → search, execution\n- Unknown state space → exploration problem"
+        },
+        {
+          "chunk_id": "3d8f7320-9702-4965-868b-c8b835361eba",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Search Problem Definition",
+          "chunk_order": 11,
+          "cosine_sim": 0.3495,
+          "final_score": 0.5351,
+          "content": "- A problem is defined by four items:\n  1. initial state: e.g., Arad\n  2. actions or successor function $S(x)$ = set of action-state pairs\n     - e.g., $S(Arad)$ = {<Arad → Zerind, Zerind>, ... }\n  3. goal test, can be\n     - explicit, e.g., $x$ = Bucharest\n     - implicit, e.g., $Checkmate(x)$\n  4. path cost (additive)\n     - e.g., sum of distances, number of actions executed, etc.\n     - $c(x,a,y)$ is the step cost, assumed to be $\\ge 0$\n- A solution is a sequence of actions leading from the initial state to a goal state"
+        },
+        {
+          "chunk_id": "e8e13d75-dbc3-448c-90bb-4a217b293d54",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Introduction of Machine learning",
+          "chunk_order": 2,
+          "cosine_sim": 0.5849,
+          "final_score": 0.4078,
+          "content": "- Definitions of Machine learning...\n  - A process by which a system improves its performance [Simon, 1983]\n  - Any computer program that improves its performance at some task through experience [Mitchell, 1997]\n  - Programming computers to optimize a performance criterion using example data or past experience [Alpaydin, 2004]\n\n- Representation of the learning problem [Mitchell, 1997]"
+        },
+        {
+          "chunk_id": "d364e05e-4e7c-482d-aa1a-2dc8c7963bd1",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree – Introduction",
+          "chunk_order": 1,
+          "cosine_sim": 0.3184,
+          "final_score": 0.4016,
+          "content": "- Decision tree (DT) learning\n  - To approximate a discrete-valued target function\n  - The target function is represented by a decision tree\n- A DT can be represented (interpreted) as a set of IF-THEN rules\n  - (i.e., easy to read and understand)\n- Capable of learning disjunctive expressions\n- DT learning is robust to noisy data\n- One of the most widely used methods for inductive inference\n- Successfully applied to a range of real-world applications"
+        },
+        {
+          "chunk_id": "02d82e69-9f03-44a2-8481-718f6816e570",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Key elements of a ML problem (2)",
+          "chunk_order": 10,
+          "cosine_sim": 0.4074,
+          "final_score": 0.3067,
+          "content": "- Choosing a representation of the target function\n  - A polynomial function\n  - A set of rules\n  - A decision tree\n  - A neural network\n  - ...\n\n- Choosing a learning algorithm that learns (approximately) the target function\n  - Regression-based\n  - Rule induction\n  - ID3 or C4.5\n  - Back-propagation\n  - ..."
+        },
+        {
+          "chunk_id": "ffcd9cdb-e2b3-4b1f-87bf-2cf9ac7f9d7e",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Value Functions",
+          "chunk_order": 13,
+          "cosine_sim": 0.2847,
+          "final_score": 0.2986,
+          "content": "- A value function maps each state to an estimate of return under a policy\n- An action-value function maps from state-action pairs to estimates of return\n- Learning a value function is referred to as the “prediction” problem or ‘policy evaluation’ in the Dynamic Programming literature"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.5
+}

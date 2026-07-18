@@ -1,0 +1,64 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	summarize_document(summarize_document)
+	validate_document_summary(validate_document_summary)
+	run_agent_1(run_agent_1)
+	validate_agent_1(validate_agent_1)
+	run_agent_2(run_agent_2)
+	validate_agent_2(validate_agent_2)
+	run_agent_3(run_agent_3)
+	validate_agent_3(validate_agent_3)
+	capture_recommendation(capture_recommendation)
+	recommendation_approve(recommendation_approve)
+	recommendation_needs_review(recommendation_needs_review)
+	recommendation_reject(recommendation_reject)
+	persist_evaluation_report(persist_evaluation_report)
+	route_review_queue(route_review_queue)
+	queue_reviewer(queue_reviewer)
+	queue_admin(queue_admin)
+	check_sla(check_sla)
+	manual_review(manual_review)
+	approve_after_review(approve_after_review)
+	reject_after_review(reject_after_review)
+	failed(failed)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> summarize_document;
+	capture_recommendation -.-> recommendation_approve;
+	capture_recommendation -.-> recommendation_needs_review;
+	capture_recommendation -.-> recommendation_reject;
+	check_sla -.-> manual_review;
+	check_sla -.-> queue_admin;
+	manual_review -.-> approve_after_review;
+	manual_review -.-> reject_after_review;
+	persist_evaluation_report --> route_review_queue;
+	queue_admin --> manual_review;
+	queue_reviewer --> check_sla;
+	recommendation_approve --> persist_evaluation_report;
+	recommendation_needs_review --> persist_evaluation_report;
+	recommendation_reject --> persist_evaluation_report;
+	route_review_queue -.-> queue_admin;
+	route_review_queue -.-> queue_reviewer;
+	run_agent_1 --> validate_agent_1;
+	run_agent_2 --> validate_agent_2;
+	run_agent_3 --> validate_agent_3;
+	summarize_document --> validate_document_summary;
+	validate_agent_1 -.-> failed;
+	validate_agent_1 -. &nbsp;ready&nbsp; .-> run_agent_3;
+	validate_agent_2 -.-> failed;
+	validate_agent_2 -. &nbsp;ready&nbsp; .-> run_agent_3;
+	validate_agent_3 -.-> capture_recommendation;
+	validate_agent_3 -.-> failed;
+	validate_document_summary -.-> failed;
+	validate_document_summary -. &nbsp;run_agents&nbsp; .-> run_agent_1;
+	validate_document_summary --> run_agent_2;
+	approve_after_review --> __end__;
+	failed --> __end__;
+	reject_after_review --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

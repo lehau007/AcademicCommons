@@ -1,0 +1,8 @@
+{
+  "cleaned_blocks": [
+    {
+      "kind": "text",
+      "content": "{\n  \"schema_version\": \"1.0\",\n  \"content_type\": \"battery_report_table\",\n  \"row_labels\": [\n    \"NAME\",\n    \"MANUFACTURER\",\n    \"SERIAL NUMBER\",\n    \"CHEMISTRY\",\n    \"DESIGN CAPACITY\",\n    \"FULL CHARGE CAPACITY\"\n  ],\n  \"column_labels\": [\n    \"BATTERY 1\"\n  ],\n  \"values\": [\n    [\n      \"BIF0_9\"\n    ],\n    [\n      \"MSI\"\n    ],\n    [\n      \"-\"\n    ],\n    [\n      \"LION\"\n    ],\n    [\n      \"52,440 mWh\"\n    ],\n    [\n      \"33,584 mWh\"\n    ]\n  ],\n  \"notes\": \"The data is extracted from the 'Installed batteries' section of the Windows Battery report.\"\n}"
+    }
+  ]
+}

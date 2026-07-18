@@ -1,0 +1,175 @@
+{
+  "qid": "hard_db_table_05",
+  "course_code": "IT3292E",
+  "question": "Bảng student trong slide gồm những cột (thuộc tính) nào, và cột nào đóng vai trò liên kết sinh viên với lớp?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "65cb50d9-33e7-437c-a118-27d06e775680",
+  "answer": "## Bảng `student` trong slide\n\n### 1. Các cột (thuộc tính) của bảng `student`\n\nDựa trên lược đồ quan hệ trong slide, bảng `student` gồm **8 thuộc tính** sau:\n\n| # | Thuộc tính | Kiểu (theo `CREATE TABLE`) | Ghi chú |\n|---|---|---|---|\n| 1 | `student_id` | `CHAR(8) NOT NULL` | **Khóa chính** (gạch chân trong lược đồ) |\n| 2 | `first_name` | `VARCHAR(20) NOT NULL` | Tên |\n| 3 | `last_name` | `VARCHAR(20) NOT NULL` | Họ |\n| 4 | `dob` | `DATE NOT NULL` | Ngày sinh |\n| 5 | `gender` | `CHAR(1)` | Giới tính |\n| 6 | `address` | `VARCHAR(30)` | Địa chỉ |\n| 7 | `note` | `TEXT` | Ghi chú |\n| 8 | `clazz_id` (một số slide ghi là `class_id`) | `CHAR(8)` | **Khóa ngoại** liên kết tới lớp |\n\nLược đồ quan hệ viết gọn:\n\n```\nstudent(student_id, first_name, last_name, dob, gender, address, note, clazz_id)\n```\n\n### 2. Cột đóng vai trò liên kết sinh viên với lớp\n\nĐó là cột **`clazz_id`** (viết tắt của *class id*, trong phần mapping ER có nơi ghi là `class_id`).\n\n- Đây là **khóa ngoại (foreign key)** tham chiếu tới `clazz(clazz_id)` của bảng lớp.\n- Cách ánh xạ này thể hiện mối quan hệ **1–n** giữa `class` và `student` (một lớp có nhiều sinh viên), được thực hiện bằng cách thêm `clazz_id` vào bảng `student` thay vì tạo bảng quan hệ riêng.\n- Ví dụ dữ liệu minh họa:\n\n| student_id | first_name | last_name | dob | clazz_id |\n|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | 20162101 |\n| 20160002 | Anh | Hoàng | 5/20/1987 | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | 20172201 |\n\n→ Sinh viên có `student_id = 20160001` thuộc lớp `clazz_id = 20162101` (lớp CNTT1.01-K61).",
+  "citations": [
+    {
+      "chunk_id": "06e46a59-7fe0-40b5-abe5-ba1d7bd0c832",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Mapping process",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Mapping of 1 - n relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `join(class_id, student_id)`\n  - Use foreign key\n    - `student(student_id, name, do"
+    },
+    {
+      "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3. Data Manipulation",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa,"
+    },
+    {
+      "chunk_id": "c966cb75-ac1a-4497-9754-f83f923e20fe",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "student",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi |  |  |\n| 20160002 | Anh | Hoàng |  | 20162101 |\n| 20160003 | Thu Hồng | Trần |  | 20162101 |\n"
+    },
+    {
+      "chunk_id": "b2517c0a-b117-49ef-aee2-b7784e7955b0",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Creating a Simple Table",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Syntax:\n\n```text\nCREATE TABLE <table_name>(\n    <col1> <type1>(<size1>) [NOT NULL] [DEFAULT <value>],\n    <col2> <type2>(<size2>) [NOT NULL],\n    ...,\n    [[CONSTRAINT <constraint_name>] <constraint"
+    },
+    {
+      "chunk_id": "a9b6e256-e2ef-4425-bbe2-4742c27af351",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "student",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| student_id | first_name | last_name | dob | ... | clazz_id |\n|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | ... |  |\n| 20160002 | Anh | Hoàng | 5/20/1987 | ... | 20162101 |\n| 201"
+    },
+    {
+      "chunk_id": "c1836e82-9c98-4853-9a0b-5770905de8e9",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Example of a database schema",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "student($\\underline{student\\_id}$, first_name, last_name, dob, gender, address, note, class_id)\n\nclazz($\\underline{clazz\\_id}$, name, lecturer_id, monitor_id)\n\nsubject($\\underline{subject\\_id}$, name,"
+    },
+    {
+      "chunk_id": "c0796a51-c0a3-4036-bf13-78598ba5944e",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. Definition a Relation Schema",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Example: Education database\n\nstudent($\\mathbf{student\\_id}$, first_name, last_name, dob, gender, address, note, clazz_id)  \nsubject($\\mathbf{subject\\_id}$, name, credit, percentage_final_exam)  \nlec"
+    },
+    {
+      "chunk_id": "da6d70fd-75a1-4a06-affb-76e406757a62",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.3. Updatable views: Example",
+      "page_number": null,
+      "chunk_order": 47,
+      "excerpt": "- Base table: `student`($student\\_id$, `first_name`, `last_name`, `dob`, `gender`, `address`, `note`, `clazz_id`)\n- Updatable view\n\n```sql\nCREATE VIEW female_student AS\nSELECT student_id, first_name, "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "bảng student các cột thuộc tính khóa ngoài liên kết lớp class schema",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "06e46a59-7fe0-40b5-abe5-ba1d7bd0c832",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 26,
+          "cosine_sim": 0.3699,
+          "final_score": 0.638,
+          "content": "- Mapping of 1 - n relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `join(class_id, student_id)`\n  - Use foreign key\n    - `student(student_id, name, dob, address, class_id)`\n\n[Diagram: ER diagram showing a 1-to-n relationship between \"class\" and \"student\" entities connected by a \"join\" relationship. The \"class\" entity has attributes: class_id (primary key), name, and faculty. The \"student\" entity has attributes: student_id (primary key), name, dob, and address. The relationship cardinality is marked as \"1\" on the class side and \"n\" on the student side.]"
+        },
+        {
+          "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "3. Data Manipulation",
+          "chunk_order": 28,
+          "cosine_sim": 0.4024,
+          "final_score": 0.4627,
+          "content": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa, HN |  | 20162101 |\n| 20160002 | Anh | Hoàng | 5/20/1987 | M | 513 B5 KTX BKHN |  | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | F | 15 Trần Đại Nghĩa, HBT, Hà nội |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | 5/20/1987 | F | 513 TT Phương Mai, Đ. Đa, HN |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | F | 214 B6 KTX BKHN |  | 20172201 |\n| 20170002 | Nhật Cường | Nguyễn | 10/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170003 | Nhật Cường | Nguyễn | 1/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170004 | Minh Đức | Bùi | 1/25/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n\n**clazz**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n- Modifying address?\n- Adding new student / new class?\n- Deleting student data?\n- Retrieving list of all students?"
+        },
+        {
+          "chunk_id": "c966cb75-ac1a-4497-9754-f83f923e20fe",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "student",
+          "chunk_order": 21,
+          "cosine_sim": 0.3954,
+          "final_score": 0.4548,
+          "content": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi |  |  |\n| 20160002 | Anh | Hoàng |  | 20162101 |\n| 20160003 | Thu Hồng | Trần |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn |  | 20172201 |\n\n[Table: Sample rows of the student relation showing student_id, first_name, last_name and the clazz_id that links each student to a class.]"
+        },
+        {
+          "chunk_id": "b2517c0a-b117-49ef-aee2-b7784e7955b0",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "2.1. Creating a Simple Table",
+          "chunk_order": 12,
+          "cosine_sim": 0.3883,
+          "final_score": 0.4465,
+          "content": "- Syntax:\n\n```text\nCREATE TABLE <table_name>(\n    <col1> <type1>(<size1>) [NOT NULL] [DEFAULT <value>],\n    <col2> <type2>(<size2>) [NOT NULL],\n    ...,\n    [[CONSTRAINT <constraint_name>] <constraint_type> clause], ...);\n```\n\n- Example:\n\n```text\nCREATE TABLE student(\n    student_id CHAR(8) NOT NULL,\n    first_name VARCHAR(20) NOT NULL,\n    last_name VARCHAR(20) NOT NULL,\n    dob DATE NOT NULL,\n    gender CHAR(1), address VARCHAR(30),\n    note TEXT, class_id CHAR(8) );\n```"
+        },
+        {
+          "chunk_id": "a9b6e256-e2ef-4425-bbe2-4742c27af351",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "student",
+          "chunk_order": 5,
+          "cosine_sim": 0.379,
+          "final_score": 0.4358,
+          "content": "| student_id | first_name | last_name | dob | ... | clazz_id |\n|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | ... |  |\n| 20160002 | Anh | Hoàng | 5/20/1987 | ... | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | ... | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | 5/20/1987 | ... | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | ... | 20172201 |\n\n[Table: Sample rows of the student relation. Columns: student_id, first_name, last_name, dob (date of birth), gender, clazz_id (foreign key linking each student to a class).]"
+        },
+        {
+          "chunk_id": "c1836e82-9c98-4853-9a0b-5770905de8e9",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "1. Example of a database schema",
+          "chunk_order": 8,
+          "cosine_sim": 0.3629,
+          "final_score": 0.4173,
+          "content": "student($\\underline{student\\_id}$, first_name, last_name, dob, gender, address, note, class_id)\n\nclazz($\\underline{clazz\\_id}$, name, lecturer_id, monitor_id)\n\nsubject($\\underline{subject\\_id}$, name, credit, percentage_final_exam)\n\nenrollment($\\underline{student\\_id, subject\\_id, semester}$, midterm_score, final_score)\n\nlecturer($\\underline{lecturer\\_id}$, first_name, last_name, dob, gender, address, email)\n\nteaching($\\underline{subject\\_id, lecturer\\_id}$)\n\ngrade($\\underline{code}$, from_score, to_score)\n\n```text\n+------------------------------+        +------------------+\n| Client-applications          |        |      DBMS        |\n| (in C#, Java, php, ...)      |<------>|                  |\n+------------------------------+        +------------------+\n                 |\n                 v\n    List of all female students ?\n    First name, last name and address of class monitors ?\n    List of students (id and fullname) have enrolled subject 'Học máy' in semester 20172?\n    List of students (id and fullname) having CPA >= 3.2?\n```"
+        },
+        {
+          "chunk_id": "c0796a51-c0a3-4036-bf13-78598ba5944e",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "2. Definition a Relation Schema",
+          "chunk_order": 10,
+          "cosine_sim": 0.3576,
+          "final_score": 0.4112,
+          "content": "- Example: Education database\n\nstudent($\\mathbf{student\\_id}$, first_name, last_name, dob, gender, address, note, clazz_id)  \nsubject($\\mathbf{subject\\_id}$, name, credit, percentage_final_exam)  \nlecturer($\\mathbf{lecturer\\_id}$, first_name, last_name, dob, gender, address, email)  \nteaching($\\mathbf{subject\\_id}$, $\\mathbf{lecturer\\_id}$)  \ngrade($\\mathbf{code}$, fromScore, toScore)  \nclazz($\\mathbf{clazz\\_id}$, name, lecturer_id, monitor_id)  \nenrollment($\\mathbf{student\\_id}$, $\\mathbf{subject\\_id}$, $\\mathbf{semester}$, midterm_score, final_score)\n\n- Detailed description for relation/table enrollment\n\n| Attribute name | Type | NOT NULL | Description |\n|---|---|---|---|\n| student_id | CHAR(8) | Yes | Student identification code. FOREIGN KEY references to Student(student_id) |\n| subject_id | CHAR(6) | Yes | Subject code. FOREIGN KEY references to Subject(subject_id) |\n| semester | CHAR(5) | Yes | Annual semester: '20171', '20172', '20173', ... |\n| midterm_score | Float | No | Score of mid-term exam. DOM = [0,10] and (midtermScore mod 0.5) must be 0 |\n| final_score | Float | No | Score of final exam. DOM = [0,10] (finalScore mod 0.5) must be 0 |"
+        },
+        {
+          "chunk_id": "da6d70fd-75a1-4a06-affb-76e406757a62",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "2.3. Updatable views: Example",
+          "chunk_order": 47,
+          "cosine_sim": 0.3068,
+          "final_score": 0.3528,
+          "content": "- Base table: `student`($student\\_id$, `first_name`, `last_name`, `dob`, `gender`, `address`, `note`, `clazz_id`)\n- Updatable view\n\n```sql\nCREATE VIEW female_student AS\nSELECT student_id, first_name, last_name FROM student\nWHERE gender = 'F';\n```\n\n- Insert into views:\n\n```sql\nINSERT INTO female_student VALUES('20160301', 'Hoai An', 'Tran');\n```\n\nmeans\n\n```sql\nINSERT INTO student(student_id, first_name, last_name)\nVALUES ('20160301', 'Hoai An', 'Tran');\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 37.5
+}

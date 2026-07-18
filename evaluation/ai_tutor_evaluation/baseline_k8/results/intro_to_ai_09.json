@@ -1,0 +1,61 @@
+{
+  "qid": "intro_to_ai_09",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The construction rules for terms and predicates, the formal definitions, examples, and semantic interpretations all match the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how terms and predicates are constructed in FOL, explaining that terms are built from variables, constants, and function symbols, while predicates are built by applying relation symbols to terms, with concrete examples for both.",
+      "evidence": [
+        "Terms are constructed from: variables, constants, function symbols applied to terms",
+        "Predicates are constructed from: relation symbols, terms as arguments"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: terms are built from variables, constants, and function symbols (with example FatherOf(X)), and predicates are built by applying relations to terms (with example Tall(FatherOf(Bill))). The additional formal definitions and extra examples enhance understanding without contradicting the ground truth.",
+      "evidence": [
+        "Ground truth: 'Terms are built using variables, constants, and function symbols (e.g., FatherOf(X))'",
+        "Tutor: 'Terms are constructed from: variables, constants, function symbols applied to terms. Examples: X, Bill, FatherOf(X)'",
+        "Ground truth: 'Predicates are then built by applying relations to these terms (e.g., Tall(FatherOf(Bill)))'",
+        "Tutor: 'Predicates are constructed from: relation symbols, terms as arguments. Examples: Tall(FatherOf(Bill))'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All eight retrieved chunks are directly relevant to explaining how terms and predicates are constructed in FOL. Each chunk contributes specific information about syntax, symbols, formal definitions, or examples needed to answer the question.",
+      "evidence": [
+        "cbd69d92: 'Variables, constants and function symbols are used to build terms'",
+        "eddc97e8: 'Terms - Variables are terms, Constants are terms'",
+        "dca8ed08: 'Predicates - If t_1,...,t_n are terms and p is a relation symbol'",
+        "71ca0a1b: 'Symbols - Variables: x, y, z... Function symbols... Relation symbols'",
+        "7ad52521: 'Term ::= FunctionSymb(Term,...) | ConstantSymb | Variable'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. The construction of terms from variables, constants, and function symbols is explicitly covered, as are the examples FatherOf(X) and Tall(FatherOf(Bill)).",
+      "evidence": [
+        "Variables, constants and function symbols are used to build terms",
+        "X, Bill, FatherOf(X)",
+        "Relations and terms are used to build predicates",
+        "Tall(FatherOf(Bill))"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The tutor's explanation of terms construction is backed by chunk eddc97e8 and cbd69d92, while predicate construction is supported by chunks dca8ed08 and cbd69d92, with examples matching the source material exactly.",
+      "evidence": [
+        "Tutor: 'Terms are constructed from: variables, constants, function symbols applied to terms' → Chunk eddc97e8: 'Variables are terms, Constants are terms, If t_1,...,t_n are terms and f is a function symbol... then f(t_1,...,t_n) is a term'",
+        "Tutor: 'Examples: X, Bill, FatherOf(X)' → Chunk cbd69d92: 'X, Bill, FatherOf(X), ...'",
+        "Tutor: 'if t_1,...,t_n are terms and p is an n-ary relation symbol, then p(t_1,...,t_n) is a predicate' → Chunk dca8ed08: 'If t_1,...,t_n are terms and p is a relation symbol with arity n then p(t_1,...,t_n) is a predicate'",
+        "Tutor: 'Examples: Tall(FatherOf(Bill)), Odd(X), Married(Tom, Marry)' → Chunk cbd69d92: 'Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry)'"
+      ]
+    }
+  }
+}

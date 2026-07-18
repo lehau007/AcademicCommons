@@ -1,0 +1,172 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "question": "When are two simple graphs considered isomorphic?",
+  "session_id": "cb0e94b6-9af2-4e83-8d65-48b269dd4080",
+  "answer": "{\"used_doc_ids\":[\"057616a7-05cc-4688-8a79-da9edd276028\"]}",
+  "citations": [
+    {
+      "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Solution.",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number "
+    },
+    {
+      "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  "
+    },
+    {
+      "chunk_id": "3a669181-ca1d-40be-a005-f26f5bbfd19c",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Content",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "- 1. Graph in practice\n- 2. Graph types\n- 3. Degree of vertex\n- 4. Subgraph\n- 5. Isomorphism of Graphs\n- 6. Path and cycle\n- 7. Connectedness\n- 8. Special graphs\n- 9. Graph Coloring problem"
+    },
+    {
+      "chunk_id": "abc6ce21-96ac-403a-be49-a385bdb69abe",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Content",
+      "page_number": null,
+      "chunk_order": 32,
+      "excerpt": "- 1. Graph in practice\n- 2. Graph types\n- 3. Degree of vertex\n- 4. Subgraph\n- 5. Isomorphism of Graphs\n- 6. Path and cycle\n- 7. Connectedness\n- 8. Special graphs\n- 9. Graph Coloring problem"
+    },
+    {
+      "chunk_id": "f9a6154a-8018-4cab-aed8-26b893b1f53c",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Content",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "- 1. Graph in practice\n- 2. Graph types\n- 3. Degree of vertex\n- 4. Subgraph\n- 5. Isomorphism of Graphs\n- 6. Path and cycle\n- 7. Connectedness\n- 8. Special graphs\n- 9. Graph Coloring problem"
+    },
+    {
+      "chunk_id": "c4c2cded-c2e7-4e1f-8e75-430908fed11d",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Content",
+      "page_number": null,
+      "chunk_order": 53,
+      "excerpt": "1. Graph in practice\n2. Graph types\n3. Degree of vertex\n4. Subgraph\n5. Isomorphism of Graphs\n6. Path and cycle\n7. Connectedness\n8. Special graphs\n9. Graph Coloring problem"
+    },
+    {
+      "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Simple Graph",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /"
+    },
+    {
+      "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graphs",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "When are two simple graphs considered isomorphic? definition of graph isomorphism simple graphs",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Solution.",
+          "chunk_order": 35,
+          "cosine_sim": 0.4648,
+          "final_score": 0.5345,
+          "content": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number of vertices\n  - (2) The same number of edges\n  - (3) The same number of degree"
+        },
+        {
+          "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+          "chunk_order": 34,
+          "cosine_sim": 0.4268,
+          "final_score": 0.4908,
+          "content": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\n[Diagram: The two drawings illustrate two graphs that have the same structure even though their edges are arranged differently. The point is to show that a relabeling of vertices can preserve adjacency, which is exactly what graph isomorphism means.]"
+        },
+        {
+          "chunk_id": "3a669181-ca1d-40be-a005-f26f5bbfd19c",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Content",
+          "chunk_order": 18,
+          "cosine_sim": 0.426,
+          "final_score": 0.4899,
+          "content": "- 1. Graph in practice\n- 2. Graph types\n- 3. Degree of vertex\n- 4. Subgraph\n- 5. Isomorphism of Graphs\n- 6. Path and cycle\n- 7. Connectedness\n- 8. Special graphs\n- 9. Graph Coloring problem"
+        },
+        {
+          "chunk_id": "abc6ce21-96ac-403a-be49-a385bdb69abe",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Content",
+          "chunk_order": 32,
+          "cosine_sim": 0.426,
+          "final_score": 0.4899,
+          "content": "- 1. Graph in practice\n- 2. Graph types\n- 3. Degree of vertex\n- 4. Subgraph\n- 5. Isomorphism of Graphs\n- 6. Path and cycle\n- 7. Connectedness\n- 8. Special graphs\n- 9. Graph Coloring problem"
+        },
+        {
+          "chunk_id": "f9a6154a-8018-4cab-aed8-26b893b1f53c",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Content",
+          "chunk_order": 4,
+          "cosine_sim": 0.426,
+          "final_score": 0.4899,
+          "content": "- 1. Graph in practice\n- 2. Graph types\n- 3. Degree of vertex\n- 4. Subgraph\n- 5. Isomorphism of Graphs\n- 6. Path and cycle\n- 7. Connectedness\n- 8. Special graphs\n- 9. Graph Coloring problem"
+        },
+        {
+          "chunk_id": "c4c2cded-c2e7-4e1f-8e75-430908fed11d",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Content",
+          "chunk_order": 53,
+          "cosine_sim": 0.4221,
+          "final_score": 0.4854,
+          "content": "1. Graph in practice\n2. Graph types\n3. Degree of vertex\n4. Subgraph\n5. Isomorphism of Graphs\n6. Path and cycle\n7. Connectedness\n8. Special graphs\n9. Graph Coloring problem"
+        },
+        {
+          "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Simple Graph",
+          "chunk_order": 21,
+          "cosine_sim": 0.4122,
+          "final_score": 0.474,
+          "content": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /|    /     /\n      e |   /     /\n       \\ |  /    /\n         d —— ——\n\n        f\n        |\n        g\n\n        h\n```\n\n[Diagram: The figure shows an undirected graph split into two connected components plus one isolated vertex. It illustrates how a simple graph is defined by its vertex set and edge set, and that not all vertices need to be part of the same connected structure.]"
+        },
+        {
+          "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graphs",
+          "chunk_order": 19,
+          "cosine_sim": 0.3755,
+          "final_score": 0.4318,
+          "content": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs $(u,v)$, where $u, v \\in V$, $u \\ne v$\n\n```text\n            (a, b)\n        +------------+\n        |            |\n   a ---+------------+--- b\n         \\          /\n          \\        /\n           \\      /\n            \\    /\n             \\  /\n              c\n\n            (b, c)\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.2
+}

@@ -1,0 +1,1 @@
+ASCII export unavailable: install optional dependency `grandalf` inside the project venv to enable draw_ascii().

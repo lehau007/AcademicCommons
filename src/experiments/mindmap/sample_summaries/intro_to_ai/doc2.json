@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "topic": "Constraint Satisfaction Problems",
+  "concepts": [
+    "Constraint Satisfaction Problem",
+    "CSP",
+    "Variable",
+    "Domain",
+    "Constraint",
+    "Backtracking Search",
+    "Forward Checking",
+    "Arc Consistency",
+    "Min-Conflicts Heuristic",
+    "Iterative Algorithm",
+    "Local Search",
+    "Heuristic Function"
+  ],
+  "language": "en",
+  "ocr_quality": "high",
+  "section_summaries": [
+    {
+      "heading": "CSP Formulation",
+      "summary": "A Constraint Satisfaction Problem is a search problem whose state is a set of variables Xi taking values from domains Di, with a goal test defined by a set of constraints.",
+      "page_range": [1, 6]
+    },
+    {
+      "heading": "Backtracking and Constraint Propagation",
+      "summary": "Discusses backtracking search with forward checking and arc consistency to prune the search space.",
+      "page_range": [7, 14]
+    },
+    {
+      "heading": "Iterative Repair",
+      "summary": "Presents the min-conflicts heuristic and other local search / iterative algorithms that try to minimize the number of violated constraints, behaving like hill climbing with h(n) equal to constraint violation count.",
+      "page_range": [15, 22]
+    }
+  ],
+  "overall_summary": "This document focuses on Constraint Satisfaction Problems (CSPs) as a specialized class of search problems. It defines a CSP through variables, domains and constraints, then walks through complete solution techniques such as backtracking search, forward checking and arc consistency that propagate constraints to prune the search tree. The second half of the document treats CSPs as local search problems: starting from a complete but possibly inconsistent assignment, iterative repair methods like the min-conflicts heuristic select variable values that violate the fewest constraints. This is framed as hill climbing where the heuristic function h(n) equals the total number of violated constraints. The connection back to general search and heuristic functions is emphasized throughout, linking CSPs to earlier material on informed search."
+}

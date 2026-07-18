@@ -1,0 +1,165 @@
+{
+  "qid": "intro_to_ai_06",
+  "course_code": "IT3160E",
+  "question": "What is the min-conflicts heuristic used in Iterative Algorithms for CSPs?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "6f8f77e3-5dee-4fd2-8a80-e44b8977bd8d",
+  "answer": "## Min-Conflicts Heuristic in Iterative Algorithms for CSPs\n\nThe **min-conflicts heuristic** is the value-selection strategy used in iterative (local-search) algorithms for Constraint Satisfaction Problems (CSPs), such as **hill-climbing** and **simulated annealing**.\n\n### How Iterative Algorithms Work on CSPs\nUnlike backtracking search (which builds a solution one variable at a time), iterative algorithms for CSPs use a **complete-state** formulation:\n\n- **State**: all variables are assigned values at every node.\n- **States with violated constraints are allowed** (infeasible states are part of the search space).\n- **Operators**: reassign the value of a variable.\n- **Variable selection**: typically **random** — pick any conflicted variable.\n- **Value selection**: guided by the **min-conflicts heuristic**.\n\n### The Min-Conflicts Heuristic\nWhen reassigning a chosen variable, the heuristic selects the value that **violates the fewest constraints** (i.e., the value that minimizes the total number of constraint violations across the problem).\n\nThis is exactly **hill climbing with the heuristic function**:\n\n$$h(n) = \\text{total number of violated constraints in the state}$$\n\nThe algorithm greedily moves to the neighboring state with the smallest $h(n)$. If $h(n) = 0$, the state is a valid solution and the search stops.\n\n### Key Properties\n- It is a **greedy local search** that only looks at the current state's neighbors.\n- It can get stuck in **local minima** (states where no single-variable change reduces conflicts even though the state is not a solution). In practice, **random restarts** are used to escape these.\n- According to the course materials, **iterative min-conflicts is usually very effective in practice** (notably for problems like the *n*-queens, where the 4-Queens example shows $h$ dropping from 5 → 2 → 0 as queens are moved to reduce attacks).\n\n### Summary Table\n| Aspect | Choice |\n|---|---|\n| State | All variables assigned |\n| Variable to change | Random (often a conflicted one) |\n| New value | One violating the **fewest** constraints |\n| Heuristic $h(n)$ | Number of violated constraints |\n| Goal | $h(n) = 0$ |",
+  "citations": [
+    {
+      "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one vari"
+    },
+    {
+      "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative Algorithms for CSPs",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables"
+    },
+    {
+      "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraint Graph",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n "
+    },
+    {
+      "chunk_id": "83e54421-60e1-4c3d-ab15-dd085ef21ff8",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraints Satisfaction Problems (CSPs)",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "- CSPs example\n- Backtracking search\n- Problem structure\n- Local search for CSPs"
+    },
+    {
+      "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "CSP",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with valu"
+    },
+    {
+      "chunk_id": "0a1b8b3f-36ff-4f93-afa4-ad62eda60463",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Backtracking Search Algorithm",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "[Diagram: This pseudocode describes a depth-first search strategy that builds a solution incrementally while checking constraints at each step. If a partial assignment leads to a dead end, the algorit"
+    },
+    {
+      "chunk_id": "d7c48c9c-75c8-431d-8999-45016d99d47e",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: 4-Queens",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "- State: 4 queens in four columns ($4*4 = 256$ states)\n- Operators: move queen in column\n- Goal test: no attacks\n- Evaluation: $h(n) =$ number of attacks\n\n```text\n+-------------------+      +---------"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "min-conflicts heuristic iterative algorithm CSP constraint satisfaction problem",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Summary",
+          "chunk_order": 28,
+          "cosine_sim": 0.5026,
+          "final_score": 0.578,
+          "content": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one variable assigned per node\n- Variable ordering and value selection heuristics help significantly\n- Forward checking prevents assignments that guarantee later failure\n- Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistencies\n- The CSPs representation allows analysis of problem structure\n- Tree-structured CSPs can be solved in linear time\n- Iterative min-conflicts is usually effective in practice"
+        },
+        {
+          "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Iterative Algorithms for CSPs",
+          "chunk_order": 26,
+          "cosine_sim": 0.4721,
+          "final_score": 0.5429,
+          "content": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables\n- Variable selection\n  - Random\n- Value selection by min-conflicts heuristic\n  - Choose value that violates the fewest constraints\n    - i.e., hill climbing with $h(n) =$ total number of violated constraints"
+        },
+        {
+          "chunk_id": "40156ecc-be69-4483-8d57-b66f19383e89",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Example: *n*-queens",
+          "chunk_order": 18,
+          "cosine_sim": 0.4409,
+          "final_score": 0.507,
+          "content": "[Diagram: The sequence shows a backtracking-style refinement of candidate queen placements on a chessboard. It illustrates how the puzzle is solved by progressively removing conflicts until a valid configuration remains, which is the key idea behind efficient search for constraint-satisfaction problems.]"
+        },
+        {
+          "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 7,
+          "cosine_sim": 0.4079,
+          "final_score": 0.4691,
+          "content": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n        \\        /   \\      /\n         \\      /     \\    /\n          \\    /       \\  /\n           \\  /         \\/\n            SA -------- NSW\n             \\           /\n              \\         /\n               \\       /\n                \\     /\n                  V\n```"
+        },
+        {
+          "chunk_id": "83e54421-60e1-4c3d-ab15-dd085ef21ff8",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraints Satisfaction Problems (CSPs)",
+          "chunk_order": 1,
+          "cosine_sim": 0.4074,
+          "final_score": 0.4685,
+          "content": "- CSPs example\n- Backtracking search\n- Problem structure\n- Local search for CSPs"
+        },
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.4013,
+          "final_score": 0.4615,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "0a1b8b3f-36ff-4f93-afa4-ad62eda60463",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Backtracking Search Algorithm",
+          "chunk_order": 18,
+          "cosine_sim": 0.3868,
+          "final_score": 0.4448,
+          "content": "[Diagram: This pseudocode describes a depth-first search strategy that builds a solution incrementally while checking constraints at each step. If a partial assignment leads to a dead end, the algorithm undoes the last choice and tries the next option, which is what makes backtracking effective for constraint satisfaction problems.]"
+        },
+        {
+          "chunk_id": "d7c48c9c-75c8-431d-8999-45016d99d47e",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Example: 4-Queens",
+          "chunk_order": 27,
+          "cosine_sim": 0.3635,
+          "final_score": 0.418,
+          "content": "- State: 4 queens in four columns ($4*4 = 256$ states)\n- Operators: move queen in column\n- Goal test: no attacks\n- Evaluation: $h(n) =$ number of attacks\n\n```text\n+-------------------+      +-------------------+      +-------------------+\n|      h = 5       | ---> |      h = 2       | ---> |      h = 0       |\n|  4 queens in     |      |  fewer attacks   |      |   no attacks     |\n|  four columns    |      |  after moving    |      |  solved board    |\n+-------------------+      +-------------------+      +-------------------+\n```\n\n[Diagram: The sequence shows a search process for the 4-Queens problem where each move changes a queen’s position to reduce conflicts. The heuristic value $h(n)$ measures how far a state is from a solution, guiding the search toward a conflict-free arrangement.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 22.1
+}

@@ -1,0 +1,37 @@
+{
+  "qid": "hard_db_table_06",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "All claims traceable to the retrieved chunks; no invented content.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "Directly and completely answers the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "Definitions given; example DBMS list not clearly enumerated.",
+      "evidence": []
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Nearly all retrieved chunks are relevant to the question.",
+      "evidence": []
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "Every key ground-truth fact appears in some retrieved chunk.",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "Citations point to chunks that support the statements.",
+      "evidence": []
+    }
+  }
+}

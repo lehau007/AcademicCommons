@@ -1,0 +1,94 @@
+{
+  "qid": "discrete_math_12",
+  "course_code": "IT3020E",
+  "question": "How is the Dirichlet (or Pigeonhole) principle formally stated?",
+  "session_id": "6581bfbc-17a6-4cc5-a19f-f41d375eec21",
+  "answer": "The **Dirichlet principle** (also called the **Pigeonhole Principle**) is formally stated as:\n\n> If \\(n+1\\) objects are placed into \\(n\\) boxes, then at least one box contains at least two objects.\n\nMore generally:\n\n> If \\(N\\) objects are distributed among \\(k\\) boxes, then some box contains at least  \n> \\[\n> \\left\\lceil \\frac{N}{k} \\right\\rceil\n> \\]\n> objects.\n\nA common equivalent form is:\n\n> If a set has more elements than the number of categories it is placed into, then at least one category must contain at least two elements.\n\nThis principle is often used to prove **existence** results in discrete mathematics.",
+  "citations": [
+    {
+      "chunk_id": "7a79504d-9cd9-4c65-b446-ad5c8c71c9ee",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Inclusion-exclusion principle",
+      "page_number": null,
+      "chunk_order": 31,
+      "excerpt": "The inclusion–exclusion principle is an equation relating the sizes of two sets and their union. It states that if A and B are two (finite) sets, then\n\n$|A \\cup B| = |A| + |B| - |A \\cap B|$\n\nThe meani"
+    },
+    {
+      "chunk_id": "ef9eef10-aca2-4c36-8066-6f0e1e088ed4",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Derangement",
+      "page_number": null,
+      "chunk_order": 40,
+      "excerpt": "- Denote $D_n$ the number of derangements of $\\{1,2,\\dots,n\\}$ $\\Rightarrow D_n = ??$\n- Let $S$ = set of all permutations of $\\{1,2,\\dots,n\\}$ $\\Rightarrow |S| = n!$\n- Let $A_i$ = subset of permutatio"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "formal statement of the Dirichlet principle or Pigeonhole principle in discrete mathematics",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "0888e66c-501d-4f2a-b55a-7129c1789975",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Example 3. Enumerate permutations",
+          "chunk_order": 79,
+          "cosine_sim": 0.3741,
+          "final_score": 0.4302,
+          "content": "Permutation set of natural numbers $1, 2, \\ldots, n$ is the set:\n\n$\\Pi_n = \\{(x_1,\\ldots, x_n) \\in \\mathbb{N}^n: x_i \\ne x_j,\\ i \\ne j\\}.$\n\n**Problem:** Enumerate all elements of $\\Pi_n$"
+        },
+        {
+          "chunk_id": "7a79504d-9cd9-4c65-b446-ad5c8c71c9ee",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 31,
+          "cosine_sim": 0.3737,
+          "final_score": 0.4297,
+          "content": "The inclusion–exclusion principle is an equation relating the sizes of two sets and their union. It states that if A and B are two (finite) sets, then\n\n$|A \\cup B| = |A| + |B| - |A \\cap B|$\n\nThe meaning of the statement is that the number of elements in the union of the two sets is the sum of the elements in each set, respectively, minus the number of elements that are in both."
+        },
+        {
+          "chunk_id": "ef9eef10-aca2-4c36-8066-6f0e1e088ed4",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.2. Derangement",
+          "chunk_order": 40,
+          "cosine_sim": 0.359,
+          "final_score": 0.4129,
+          "content": "- Denote $D_n$ the number of derangements of $\\{1,2,\\dots,n\\}$ $\\Rightarrow D_n = ??$\n- Let $S$ = set of all permutations of $\\{1,2,\\dots,n\\}$ $\\Rightarrow |S| = n!$\n- Let $A_i$ = subset of permutations of $\\{1,2,\\dots,n\\}$ such that the $i$th element = $i$ in the permutation.\n- $|A_1 \\cup A_2 \\cup \\cdots \\cup A_n|$ counts the number of permutations in which at least one object $i$ of the $n$ objects appears in the $i$th position (its original position).\n- $D_n$: number of permutations such that none of the $n$ objects appears in their original positions. Therefore:\n\n$$\nD_n = n! - |A_1 \\cup A_2 \\cup \\cdots \\cup A_n|\n$$\n\n- Remember the inclusion-exclusion principle:\n\n$$\n|A_1 \\cup A_2 \\cup \\cdots \\cup A_n|\n=\n\\sum_{i=1}^{n} |A_i|\n-\n\\sum_{i<j} |A_i \\cap A_j|\n+\n\\sum_{i<j<k} |A_i \\cap A_j \\cap A_k|\n-\n\\sum_{i<j<k<\\ell} |A_i \\cap A_j \\cap A_k \\cap A_\\ell|\n+\\cdots+(-1)^{n+1}|A_1 \\cap A_2 \\cap \\cdots \\cap A_n|\n$$"
+        },
+        {
+          "chunk_id": "c02eed07-f5ab-4481-bcde-bf6c88090fb8",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Big-Oh Examples",
+          "chunk_order": 29,
+          "cosine_sim": 0.3588,
+          "final_score": 0.4126,
+          "content": "$O(g(n)) = \\{f(n) : \\exists$ positive constants $c$ and $n_0$, such that $\\forall n \\ge n_0$, we have $0 \\le f(n) \\le cg(n)\\}$\n\n- Example 2: Show that $3n^3 + 20n^2 + 5$ is $O(n^3)$\n  - Need constants $c$ and $n_0$ such that $3n^3 + 20n^2 + 5 \\le cn^3$ for $n \\ge n_0$\n  - this is true for $c = 4$ and $n_0 = 21$\n\n-"
+        },
+        {
+          "chunk_id": "ab6b1a92-e72e-4ff7-ac3f-fe1e197bde1c",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Comment",
+          "chunk_order": 37,
+          "cosine_sim": 0.3524,
+          "final_score": 0.4053,
+          "content": "- The requirement about describe the set D is to be able to"
+        },
+        {
+          "chunk_id": "4688a970-6cb9-4d30-b7ba-abd972fa8aa1",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "What is graph?",
+          "chunk_order": 5,
+          "cosine_sim": 0.3502,
+          "final_score": 0.4027,
+          "content": "- In Maths:\n\nDrawing or diagram represent data by using coordinate system\n\n- In discrete mathematics:\n\nThis is discrete structure with highly intuitive, very useful for expressing relationships.\n\n```text\n+-------------------+        +---------------------------+\n|   Not this one    |        |   Graph in discrete math  |\n|                   |        |   (relationships)         |\n|   /\\/\\  /\\  /\\/\\  |        |   o---o---o               |\n|  /    \\/  \\/    \\ |        |   |\\  |\\ /|               |\n| /                \\|        |   o---o---o---o           |\n+-------------------+        +---------------------------+\n```\n\n[Diagram: The slide contrasts a plotted line chart with the mathematical idea of a graph. It emphasizes that in discrete mathematics, a graph is a structure for representing relationships between entities, which makes it useful for modeling connections rather than continuous data trends.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.7
+}

@@ -1,0 +1,50 @@
+{
+  "topic": "Chart type and title",
+  "concepts": [
+    "Chart type and title",
+    "Axis labels and units",
+    "Data series",
+    "Main trend / comparison",
+    "kpi",
+    "chart",
+    "peak",
+    "trend"
+  ],
+  "language": "en",
+  "ocr_quality": "low",
+  "section_summaries": [
+    {
+      "heading": "Chart type and title",
+      "summary": "- **Type:** line chart - **Title:** `Demo KPI Trend`",
+      "page_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "heading": "Axis labels and units",
+      "summary": "- There are **no visible y-axis labels or units**. - The x-axis shows quarter labels at the bottom left: `Q1 Q2 Q3 Q4` - No axis title is visible.",
+      "page_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "heading": "Data series",
+      "summary": "- There is **one series** (no legend shown), represented by a **blue line**. - The chart appears to track a KPI over **four quarters**.",
+      "page_range": [
+        3,
+        3
+      ]
+    },
+    {
+      "heading": "Main trend / comparison",
+      "summary": "- The KPI fluctuates over time: it starts low, climbs to an early peak, dips in the middle, then reaches a higher peak near Q4 before easing down slightly. - Overall, the line ends **higher than it started**, indicating upward progress despite a mid-period dip.",
+      "page_range": [
+        4,
+        4
+      ]
+    }
+  ],
+  "overall_summary": "Chart type and title: - **Type:** line chart - **Title:** `Demo KPI Trend` Axis labels and units: - There are **no visible y-axis labels or units**. - The x-axis shows quarter labels at the bottom left: `Q1 Q2 Q3 Q4` - No axis title is visible. Data series: - There is **one series** (no legend shown), represented by a **blue line**. - The chart appears to track a KPI over **four quarters**. Main trend / comparison: - The KPI fluctuates over time: it starts low, climbs to an early peak, dips in the middle, then reaches a higher peak near Q4 before easing down slightly. - Overall, the line ends **higher than it started**, indicating upward progress despite a mid-period dip."
+}

@@ -1,0 +1,145 @@
+{
+  "qid": "discrete_math_17",
+  "course_code": "IT3020E",
+  "question": "According to the properties of trees, what happens when an edge is added to an undirected graph that currently has no cycles?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "4bfcc659-2e82-44da-aea5-de6c2c03705e",
+  "answer": "## What Happens When You Add an Edge to a Cycle-Free Graph?\n\nAccording to the **Tree Properties** section in the course material, this situation is captured by **condition 4** of the tree characterization theorem:\n\n> **Condition 4:** $G$ has no cycles, and adding **any** edge to $G$ gives rise to a cycle. (Thus $G$ is a *maximal acyclic graph*.)\n\n### Answer\n\nWhen you add an edge to an undirected acyclic graph $G = (V, E)$:\n\n- **A cycle is created.** The newly added edge, together with the unique simple path already connecting its two endpoints in $G$, forms exactly one simple cycle.\n\n### Why does this happen?\n\nThe reasoning comes from the equivalent conditions listed in the theorem:\n\n1. If $G$ is a **tree** (connected + no cycles), then between any two vertices $u, v$ there is **exactly one** simple path (condition 2).\n2. When you add a new edge $(u, v)$, the endpoints $u$ and $v$ were already linked by that unique path.\n3. The new edge closes this path into a **simple cycle**.\n\n### Important note on maximality\n\nA tree is called a **maximal acyclic graph** because:\n- You **cannot** add any new edge without creating a cycle.\n- This is in contrast to a *minimum* connected graph, which would be a *spanning tree* (with $|E| = |V| - 1$, condition 5).\n\nSo adding an edge to a tree always introduces **exactly one cycle**.",
+  "citations": [
+    {
+      "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Tree and its properties",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two"
+    },
+    {
+      "chunk_id": "40b05922-b3e1-4518-b77e-4e3b75f56f63",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Tree and its properties",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "A **tree** is an undirected connected graph with no cycles.\n\n**Example 1.** Which of the graphs are trees?\n\n```text\nG1:                 G2:                 G3:                 G4:\n\na                  "
+    },
+    {
+      "chunk_id": "52898f57-649e-4263-b338-507387c0df3b",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Tree and its properties",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "[Diagram: The four graphs illustrate the definition of a tree by comparing connectedness and absence of cycles. A graph is a tree only if it is connected and has no cycles, so the examples help distin"
+    },
+    {
+      "chunk_id": "a6cf7664-fd4f-4de2-a210-93015e369a68",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "[Diagram: The figure illustrates that a spanning tree keeps all vertices of a connected graph while removing enough edges to eliminate cycles. This matters because spanning trees preserve connectivity"
+    },
+    {
+      "chunk_id": "e792e8fc-5d3b-4d2a-96f7-c78c5469b08b",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "Let $G=(V,E)$ be an undirected connected graph with vertex set $V$.\n\nTree $T=(V,F)$ where $F\\subseteq E$ is called spanning tree of $G$\n\nUndirected Connected graph without cycle\n\n```text\nG:\n    a --- "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "properties of trees adding edge to acyclic graph creates cycle",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 8,
+          "cosine_sim": 0.4887,
+          "final_score": 0.562,
+          "content": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two vertices $u, v \\in V$, there exists exactly one simple path from $u$ to $v$.\n3. $G$ is connected, and removing any edge from $G$ disconnects it (each edge of $G$ is a bridge).\n4. $G$ has no cycles, and adding any edge to $G$ gives rise to a cycle. (Thus $G$ is a maximal acyclic graph).\n5. $G$ is connected and $|E| = |V| - 1$."
+        },
+        {
+          "chunk_id": "e238ef0e-a734-408f-b80c-190e7b7222ae",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS and cycle detection: Method 2",
+          "chunk_order": 60,
+          "cosine_sim": 0.4358,
+          "final_score": 0.5012,
+          "content": "- How to modify so we can detect the back edge → the cycle\n\nWhen we traverse edge $e=(u,v)$ from vertex $u$, based on the value of `visited[v]`, we could know the type of edge $e$:\n\n- `visited[v] = 0`: so e is tree edge\n- `visited[v] = 1`: so e is back edge"
+        },
+        {
+          "chunk_id": "40b05922-b3e1-4518-b77e-4e3b75f56f63",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 5,
+          "cosine_sim": 0.4139,
+          "final_score": 0.476,
+          "content": "A **tree** is an undirected connected graph with no cycles.\n\n**Example 1.** Which of the graphs are trees?\n\n```text\nG1:                 G2:                 G3:                 G4:\n\na                   a                   a                   a\n|                   | \\                 |---b               \\ \nc---b               c  \\               c \\  \\               f\n|\\  |               /    \\             /   \\  \\               c---e\nd e f               e---f d           e-----d  f           \n```"
+        },
+        {
+          "chunk_id": "52898f57-649e-4263-b338-507387c0df3b",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 6,
+          "cosine_sim": 0.4069,
+          "final_score": 0.468,
+          "content": "[Diagram: The four graphs illustrate the definition of a tree by comparing connectedness and absence of cycles. A graph is a tree only if it is connected and has no cycles, so the examples help distinguish valid trees from graphs that either contain a cycle or are disconnected.]\n\n**Solution:** $G_1, G_2$\n\n**Note.** G3: contains cycle $\\{a,b,e,d,a\\}$  \nG4: not connected"
+        },
+        {
+          "chunk_id": "a6cf7664-fd4f-4de2-a210-93015e369a68",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 11,
+          "cosine_sim": 0.4038,
+          "final_score": 0.4644,
+          "content": "[Diagram: The figure illustrates that a spanning tree keeps all vertices of a connected graph while removing enough edges to eliminate cycles. This matters because spanning trees preserve connectivity with a minimal edge set, which is foundational for efficient network design and many graph algorithms.]\n\nGraph G and its 2 spanning trees $T_1$ and $T_2$"
+        },
+        {
+          "chunk_id": "e792e8fc-5d3b-4d2a-96f7-c78c5469b08b",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 10,
+          "cosine_sim": 0.4013,
+          "final_score": 0.4615,
+          "content": "Let $G=(V,E)$ be an undirected connected graph with vertex set $V$.\n\nTree $T=(V,F)$ where $F\\subseteq E$ is called spanning tree of $G$\n\nUndirected Connected graph without cycle\n\n```text\nG:\n    a --- b --- c\n     \\   / \\     \\\n      \\ /   \\     \\\n       e --- d ----/\n        \\__________/\n```\n\n```text\nSpanning tree T1:\n    a --- b --- c\n          |       \\\n          |        \\\n          e -------- d\n```\n\n```text\nSpanning tree T2:\n        b\n        |\na -------e------- d\n                 /\n                c\n```"
+        },
+        {
+          "chunk_id": "7899f5d6-18f0-4aa7-b7b5-69e0115490f8",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "3. Cycle detection: using DFS",
+          "chunk_order": 53,
+          "cosine_sim": 0.3816,
+          "final_score": 0.4389,
+          "content": "```text\n        z ----- u ----- v\n         \\               \\\n          \\               \\\n           \\               x\n            \\             /\n             \\           /\n              --------- y\n```\n\n[Diagram: The figure illustrates a DFS tree plus a non-tree edge from a descendant back to an ancestor, which is exactly the pattern that reveals a cycle. This matters because cycle detection can be reduced to checking whether DFS ever encounters such a back edge.]"
+        },
+        {
+          "chunk_id": "6e2861d6-de37-48ab-86cd-20d9e079f012",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Cycle",
+          "chunk_order": 40,
+          "cosine_sim": 0.3778,
+          "final_score": 0.4344,
+          "content": "- A closed elementary path is called a *cycle*.\n  - A path is called *elementary* if all the edges are distinct.\n  - A path is *closed* if $v_0 = v_n$.\n- A cycle is called simple if all the vertices are distinct (except $v_0 = v_n$).\n\n**Simple cycle:** $(1, 2, 3, 1)$\n\n**Simple cycle:** $(1, 2, 3, 4, 1)$\n\n```text\nFirst graph (cycle 1 → 2 → 3 → 1, with extra vertex 4):\n[1] --a--> [2] --b--> [3]\n  ^                   |\n  |                   |\n  +-------e-----------+\n   \\                 /\n    \\d             c/\n     \\             /\n      [4]---------\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 24.0
+}

@@ -1,0 +1,115 @@
+{
+  "qid": "database_04",
+  "course_code": "IT3292E",
+  "question": "How do the HAVING and WHERE clauses differ in SQL?",
+  "session_id": "02c5990a-e1be-41c2-ba1d-9c712a067b1a",
+  "answer": "`WHERE` và `HAVING` khác nhau ở **thời điểm lọc** và **đối tượng áp dụng**:\n\n- **WHERE**: lọc từng dòng dữ liệu **trước** khi `GROUP BY` và trước khi tính toán hàm tổng hợp.\n- **HAVING**: lọc các **nhóm dữ liệu** **sau** khi đã `GROUP BY` và sau khi đã tính toán tổng hợp.\n\n### Ví dụ\n```sql\nSELECT department, COUNT(*)\nFROM employee\nWHERE salary > 5000\nGROUP BY department\nHAVING COUNT(*) >= 10;\n```\n\n- `WHERE salary > 5000` lọc các nhân viên có lương > 5000.\n- Sau đó `GROUP BY department` gom nhóm theo phòng ban.\n- `HAVING COUNT(*) >= 10` chỉ giữ những phòng ban có ít nhất 10 nhân viên.\n\n### Quy tắc quan trọng\n- `WHERE` **không dùng trực tiếp** với các hàm tổng hợp như `COUNT()`, `SUM()`, `AVG()` để lọc kết quả nhóm.\n- `HAVING` **dùng được** với các biểu thức tổng hợp.\n- Nếu điều kiện trong `HAVING` chỉ liên quan đến thuộc tính nhóm, đôi khi có thể chuyển xuống `WHERE`.\n\nTóm lại:\n\n- **WHERE** = lọc **dòng**\n- **HAVING** = lọc **nhóm**",
+  "citations": [
+    {
+      "chunk_id": "ef945d50-12ec-4335-b79f-c1be84416491",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Quiz Number | 3 | Quiz Type | OX | Example Select",
+      "page_number": null,
+      "chunk_order": 59,
+      "excerpt": "|  |  |\n|---|---|\n| Question | Can we put the condition in HAVING clause into the WHERE clause ? |\n| Example | A. Sometimes yes<br>B. No, never<br>C. Yes, we can |\n| Answer | A |\n| Feedback | Conditio"
+    },
+    {
+      "chunk_id": "e138740d-4dff-41ed-85e6-d96843ba7c02",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.5. Grouping results: HAVING",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "- Requirements on HAVING conditions:\n  - Anything goes in a subquery\n  - Outside subqueries, they may refer to attributes only if they are:\n    - either a grouping attribute\n    - or aggregated\n\n```sq"
+    },
+    {
+      "chunk_id": "a98c89b1-edf6-469d-a0ff-42bce19213ab",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "SQL Retrieval statement (Part 2)",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Union, Intersection and Difference of Queries\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING claus"
+    },
+    {
+      "chunk_id": "fc3086cc-0b24-4315-b70e-0cb6a456e8ca",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Data Manipulation: Advanced SELECT",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate eliminatio"
+    },
+    {
+      "chunk_id": "d03b4fb8-a235-4260-8d6a-454e3206647b",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.5. Grouping results: HAVING",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "- Which subject in which semester has it the most enrollments?\n\n```sql\nSELECT subject_id, semester, count(student_id)\nFROM enrollment\nGROUP BY subject_id, semester\nHAVING count(student_id) >= ALL\n    "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Difference between HAVING and WHERE clauses in SQL",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ef945d50-12ec-4335-b79f-c1be84416491",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "Quiz Number | 3 | Quiz Type | OX | Example Select",
+          "chunk_order": 59,
+          "cosine_sim": 0.5941,
+          "final_score": 0.9293,
+          "content": "|  |  |\n|---|---|\n| Question | Can we put the condition in HAVING clause into the WHERE clause ? |\n| Example | A. Sometimes yes<br>B. No, never<br>C. Yes, we can |\n| Answer | A |\n| Feedback | Conditions in HAVING clause and in WHERE clause are not the same meaning. Conditions in HAVING clause apply to groups as a whos e.<br>Conditions in WHERE clause apply to individual tuples.<br>- If condition in HAVING clause refers to grouping attribute, then this condition can be placed in WHERE clause.<br>- If condition in HAVING clause refers to aggregated attributes, it can not be moved to WHERE clause. |"
+        },
+        {
+          "chunk_id": "e138740d-4dff-41ed-85e6-d96843ba7c02",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "1.5. Grouping results: HAVING",
+          "chunk_order": 34,
+          "cosine_sim": 0.5477,
+          "final_score": 0.8203,
+          "content": "- Requirements on HAVING conditions:\n  - Anything goes in a subquery\n  - Outside subqueries, they may refer to attributes only if they are:\n    - either a grouping attribute\n    - or aggregated\n\n```sql\nSELECT subject_id, semester, count(student_id)\nFROM enrollment\nGROUP BY subject_id, semester\nHAVING count(student_id) >= ALL\n      (SELECT count(student_id)\nFROM enrollment\n       GROUP BY subject_id, semester)\n```\n\n[Diagram: The SQL example shows how HAVING filters grouped results after aggregation, using a subquery to compare each group’s count against the maximum group count. This matters because HAVING can express conditions on aggregated values that cannot be handled by WHERE.]"
+        },
+        {
+          "chunk_id": "a98c89b1-edf6-469d-a0ff-42bce19213ab",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "SQL Retrieval statement (Part 2)",
+          "chunk_order": 7,
+          "cosine_sim": 0.5052,
+          "final_score": 0.4482,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Union, Intersection and Difference of Queries\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        },
+        {
+          "chunk_id": "fc3086cc-0b24-4315-b70e-0cb6a456e8ca",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "Data Manipulation: Advanced SELECT",
+          "chunk_order": 14,
+          "cosine_sim": 0.5101,
+          "final_score": 0.407,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        },
+        {
+          "chunk_id": "d03b4fb8-a235-4260-8d6a-454e3206647b",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "1.5. Grouping results: HAVING",
+          "chunk_order": 35,
+          "cosine_sim": 0.3823,
+          "final_score": 0.393,
+          "content": "- Which subject in which semester has it the most enrollments?\n\n```sql\nSELECT subject_id, semester, count(student_id)\nFROM enrollment\nGROUP BY subject_id, semester\nHAVING count(student_id) >= ALL\n      (SELECT count(student_id)\n       FROM enrollment\n       GROUP BY subject_id, semester);\n```\n\n| subject_id | semester | count |\n|---|---:|---:|\n| IT4857 | 20172 | 1 |\n| IT3090 | 20172 | 1 |\n| IT4866 | 20172 | 1 |\n| IT3080 | 20172 | 2 |\n| IT1110 | 20171 | 4 |\n\n| subject_id | semester | count |\n|---|---:|---:|\n| IT1110 | 20171 | 4 |\n\n[Diagram: The slide illustrates how `HAVING` can be used with grouping to filter aggregate results and find the group(s) with the maximum enrollment count. The left result shows all grouped counts, while the right result shows only the subject-semester combination(s) that match the highest value.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.8
+}

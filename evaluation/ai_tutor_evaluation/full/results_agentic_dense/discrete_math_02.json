@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_02",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Cayley n^(n-2) verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "Cayley n^(n-2) verbatim"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "Cayley n^(n-2) verbatim"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Cayley n^(n-2) verbatim"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "Cayley n^(n-2) verbatim"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Cayley n^(n-2) verbatim"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "qid": "discrete_math_18",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The structure description, array size, vertex-list relationship, and directed/undirected distinctions all match the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses how an adjacency list is structured: an array of |V| lists where each vertex has one list containing its adjacent vertices. The explanation is completely on-topic and covers the core structure, with additional clarification about directed vs. undirected graphs and a concrete example.",
+      "evidence": [
+        "Ta có một mảng `Adjacency` gồm `|V|` danh sách",
+        "Mỗi đỉnh `u ∈ V` có đúng **1 danh sách**",
+        "`Adjacency[u]` chứa các nút/đỉnh **liên kết với** `u`"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: it states the adjacency list is an array of |V| lists, each vertex has one list, and each vertex u's list contains nodes adjacent to u. The additional details about directed vs undirected graphs and examples are correct supplementary information.",
+      "evidence": [
+        "Ground truth: 'An adjacency list is an array consisting of |V| lists'",
+        "Tutor: 'Ta có một mảng Adjacency gồm |V| danh sách'",
+        "Ground truth: 'each vertex has one list'",
+        "Tutor: 'Mỗi đỉnh u ∈ V có đúng 1 danh sách'",
+        "Ground truth: 'its list contains the nodes that are adjacent to u'",
+        "Tutor: 'Adjacency[u] chứa các nút/đỉnh liên kết với u'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six chunks are directly relevant to adjacency list structure. Only the last chunk about topological sorting is unrelated to the question.",
+      "evidence": [
+        "chunk_id=1e4aad16-2406-4cbf-91dc-50799216d7bc: 'Topological sorting algorithm' - discusses topological sorting, not adjacency list structure"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 4a1180a7 explicitly states the adjacency list is an array of |V| lists, each vertex has one list, and for each vertex u ∈ V, Adjacency[u] consists of nodes adjacent to u.",
+      "evidence": [
+        "Is an array **Adjacency** consisting of |V| lists",
+        "Each vertex has 1 list",
+        "Each vertex u ∈ V: Adjacency[u] consists of nodes that are adjacent to u"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports its corresponding statement. The cited chunks directly describe the adjacency list structure as an array of |V| lists where each vertex has one list containing its adjacent vertices, matching the tutor's explanation perfectly.",
+      "evidence": [
+        "Statement: 'Ta có một mảng Adjacency gồm |V| danh sách' → Chunk 4a1180a7: 'Is an array Adjacency consisting of |V| lists'",
+        "Statement: 'Mỗi đỉnh u ∈ V có đúng 1 danh sách' → Chunk 4a1180a7: 'Each vertex has 1 list'",
+        "Statement: 'Adjacency[u] chứa các nút/đỉnh liên kết với u' → Chunk 4a1180a7: 'Adjacency[u] consists of nodes that are adjacent to u'",
+        "Example 'Adjacency[1] = 2 → 5' → Chunk cd7e7d21 shows identical example in table"
+      ]
+    }
+  }
+}

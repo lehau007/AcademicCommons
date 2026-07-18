@@ -1,0 +1,49 @@
+{
+  "qid": "discrete_math_10",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "The tutor's answer makes no factual claims about weight matrices or graph representation. It is a polite refusal in Vietnamese stating they don't know the answer and asking the user to rephrase. Since there are no claims to verify, there are no unsupported claims.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 1,
+      "justification": "The tutor's answer does not address the question at all. It is a Vietnamese phrase meaning 'Sorry, I'm not sure of the answer — can you ask me again?' which completely evades the question about how non-existent edges are represented in a weight matrix.",
+      "evidence": [
+        "Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?"
+      ]
+    },
+    "answer_correctness": {
+      "score": 1,
+      "justification": "The tutor's answer is in Vietnamese and states 'Sorry, I don't know the answer — please ask me again,' providing no information about how non-existent edges are represented. This completely fails to address the question and contradicts the ground truth by omission of all key facts.",
+      "evidence": [
+        "Ground truth states: 'a special value θ is used to identify that (i,j) is not an edge. Depending on the application, θ could be assigned a value of 0, +∞, or -∞'",
+        "Tutor answer: 'Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?' (provides no factual content)"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "Nearly all chunks are directly relevant to how non-existent edges are represented in weight matrices. Chunk 52f037bf explicitly defines θ as the special value for non-edges, chunk 2161fa9f shows ∞ used for non-existent edges, and chunks ecbe0028 and dc181868 demonstrate 0 used for non-edges in examples.",
+      "evidence": [
+        "chunk 52f037bf: 'θ: special value to identify (i, j) is not an edge'",
+        "chunk 2161fa9f: '∞ \\text{otherwise}'",
+        "chunk ecbe0028: 'Zero entries indicate no edge between vertices'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 52f037bf explicitly states that θ is a special value to identify non-edges and that θ could be 0, +∞, or -∞. Chunk 2161fa9f demonstrates this with ∞ for non-existent edges.",
+      "evidence": [
+        "θ: special value to identify (i, j) is not an edge; depends on the case, the value of θ could be: 0, +∞, −∞",
+        "∞ for non-existent edges"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "N/A — no citations needed. The tutor's answer is a refusal in Vietnamese ('Sorry, I don't know the answer — please ask me again') and makes no factual claims requiring citation support.",
+      "evidence": []
+    }
+  }
+}

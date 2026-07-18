@@ -1,0 +1,61 @@
+{
+  "qid": "intro_to_ai_08",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The distinctions drawn (adversary vs. no adversary, solution vs. strategy, optimal vs. approximate, cost estimation vs. position goodness, and examples) all appear verbatim or paraphrased from chunk a0987283-c423-4f4c-8151-3144edea7054.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by clearly distinguishing standard search problems from games across all key dimensions: presence of adversary, type of solution sought, optimality vs. approximation, and evaluation function focus. All content is on-topic.",
+      "evidence": [
+        "No adversary is involved",
+        "There is an adversary: another agent that makes moves against you",
+        "The goal is to find a path/solution from the start state to a goal state",
+        "The goal is not just a single path, but a strategy"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: no adversary vs. adversary, finding optimal solution vs. strategy for every opponent reply, and evaluation of cost to goal vs. goodness of position. No contradictions are present, and the additional detail enhances understanding without detracting from accuracy.",
+      "evidence": [
+        "\"No adversary is involved\" vs. \"There is an adversary\"",
+        "\"The goal is to find a path/solution\" vs. \"a move for every possible opponent response\"",
+        "\"estimate of cost from the start to the goal\" vs. \"estimate the goodness of a game position\""
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six retrieved chunks are relevant to distinguishing search problems from games. Only chunk 0b538699 (about planning vs. search with the milk/bananas example) is off-topic and does not help answer the question.",
+      "evidence": [
+        "chunk 0b538699: 'Consider the task *get milk, bananas, and a cordless drill*' — discusses planning vs. search, not games",
+        "chunk d24868af: '8-puzzle' — describes a specific search problem but does not contrast with games"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk a0987283 explicitly covers all distinguishing features: no adversary vs. adversary, optimal solution vs. strategy, heuristics for finding goals vs. specifying moves for opponent replies, and evaluation of cost from start to goal vs. goodness of game position.",
+      "evidence": [
+        "Search – no adversary",
+        "Solution is (heuristic) method for finding goal",
+        "Evaluation function: estimate of cost from start to goal through given node",
+        "Games – adversary",
+        "Solution is strategy (strategy specifies move for every possible opponent reply)",
+        "Evaluation function: evaluate \"goodness\" of game position"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The first chunk explicitly contrasts search (no adversary, optimal solution, cost estimation) with games (adversary, strategy, goodness evaluation). The second and third chunks support the multi-agent and competitive nature of games.",
+      "evidence": [
+        "Chunk a0987283: 'Search – no adversary... Solution is (heuristic) method for finding goal... Evaluation function: estimate of cost from start to goal' supports claims about standard search",
+        "Chunk a0987283: 'Games – adversary... Solution is strategy (strategy specifies move for every possible opponent reply)... Evaluation function: evaluate \"goodness\" of game position' supports claims about games",
+        "Chunk d1fea5ae: 'Games are a form of multi-agent environment... Competitive multi-agent environments give rise to adversarial search' supports adversary concept",
+        "Chunk fea36428: 'Two players: MAX and MIN... Games as search' provides game examples and structure"
+      ]
+    }
+  }
+}

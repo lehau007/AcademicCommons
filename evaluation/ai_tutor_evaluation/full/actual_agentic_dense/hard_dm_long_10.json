@@ -1,0 +1,266 @@
+{
+  "qid": "hard_dm_long_10",
+  "course_code": "IT3020E",
+  "question": "Trình bày đầy đủ cách liệt kê tất cả tập con m phần tử của X = {1,...,n} theo thứ tự từ điển: (a) mỗi tập con được biểu diễn bằng bộ nào và thỏa điều kiện gì; (b) định nghĩa quan hệ 'đứng trước' theo thứ tự từ điển; (c) cho ví dụ với m=3, X={1,2,3,4,5}.",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "3953e75f-b4ea-48a4-aed8-98e15c2e1c87",
+  "answer": "# Liệt kê tất cả tập con m phần tử của X = {1, 2, …, n} theo thứ tự từ điển\n\n## (a) Biểu diễn tập con dưới dạng bộ và điều kiện\n\nMỗi tập con gồm m phần tử của $X = \\{1, 2, \\ldots, n\\}$ có thể được biểu diễn **duy nhất** dưới dạng một bộ (tuple) gồm m phần tử:\n\n$$a = (a_1, a_2, \\ldots, a_m)$$\n\nthỏa mãn điều kiện **strictly increasing** (tăng nghiêm ngặt):\n\n$$1 \\le a_1 < a_2 < a_3 < \\cdots < a_m \\le n$$\n\nNhờ điều kiện này, mỗi tập con m phần tử ứng với đúng một bộ, và ngược lại. Bài toán liệt kê tập con tương đương với liệt kê tất cả các phần tử của tập:\n\n$$S(m, n) = \\{(a_1, a_2, \\ldots, a_m) \\in \\mathbb{N}^m : 1 \\le a_1 < a_2 < \\cdots < a_m \\le n\\}$$\n\nCó đúng $\\binom{n}{m}$ bộ như vậy.\n\n## (b) Định nghĩa quan hệ \"đứng trước\" theo thứ tự từ điển\n\nCho hai bộ $a = (a_1, a_2, \\ldots, a_m)$ và $a' = (a'_1, a'_2, \\ldots, a'_m)$. Ta nói bộ $a$ **đứng trước** bộ $a'$ theo thứ tự từ điển, ký hiệu $a \\prec a'$, nếu tồn tại chỉ số $k$ ($1 \\le k \\le m$) sao cho:\n\n$$a_1 = a'_1,\\ a_2 = a'_2,\\ \\ldots,\\ a_{k-1} = a'_{k-1}, \\quad \\text{và} \\quad a_k < a'_k$$\n\nNói cách khác: so sánh từ vị trí đầu tiên, bộ nào có thành phần **đầu tiên nhỏ hơn** thì đứng trước. Nếu các thành phần từ $a_1$ đến $a_{k-1}$ bằng nhau thì quyết định bởi $a_k$ và $a'_k$.\n\n**Tập con đầu tiên (nhỏ nhất):** $(1, 2, \\ldots, m)$  \n**Tập con cuối cùng (lớn nhất):** $(n-m+1, n-m+2, \\ldots, n)$\n\n**Quy tắc sinh tập con kế tiếp** (Successive Generation): Cho bộ hiện tại $a = (a_1, \\ldots, a_m)$ chưa phải bộ cuối:\n\n1. Quét từ phải sang trái, tìm chỉ số $i$ **đầu tiên** thỏa mãn $a_i \\ne n - m + i$.\n2. Tăng $a_i$ lên 1 đơn vị: $a_i \\leftarrow a_i + 1$.\n3. Với mỗi $j = i+1, i+2, \\ldots, m$, đặt $a_j = a_i + j - i$.\n\n## (c) Ví dụ với m = 3 và X = {1, 2, 3, 4, 5}\n\nTập $X = \\{1,2,3,4,5\\}$ có $\\binom{5}{3} = 10$ tập con 3 phần tử. Liệt kê theo thứ tự từ điển:\n\n| STT | Bộ biểu diễn | Tập con |\n|:---:|:---:|:---:|\n| 1 | $(1, 2, 3)$ | $\\{1,2,3\\}$ |\n| 2 | $(1, 2, 4)$ | $\\{1,2,4\\}$ |\n| 3 | $(1, 2, 5)$ | $\\{1,2,5\\}$ |\n| 4 | $(1, 3, 4)$ | $\\{1,3,4\\}$ |\n| 5 | $(1, 3, 5)$ | $\\{1,3,5\\}$ |\n| 6 | $(1, 4, 5)$ | $\\{1,4,5\\}$ |\n| 7 | $(2, 3, 4)$ | $\\{2,3,4\\}$ |\n| 8 | $(2, 3, 5)$ | $\\{2,3,5\\}$ |\n| 9 | $(2, 4, 5)$ | $\\{2,4,5\\}$ |\n| 10 | $(3, 4, 5)$ | $\\{3,4,5\\}$ |\n\n**Minh họa cách sinh:** Giả sử bộ hiện tại là $(1, 3, 5)$ (STT 5). Ta quét từ phải sang trái với giá trị tối đa $n - m + i = 5 - 3 + i = i + 2$:\n\n- $a_3 = 5$ đúng bằng $i+2 = 5$ → bỏ qua.\n- $a_2 = 3$ khác $i+2 = 4$ → đây là $i$ cần tìm.  \n  + Tăng: $a_2 \\leftarrow 3 + 1 = 4$.  \n  + Tính $a_3 = a_2 + 3 - 2 = 4 + 1 = 5$.  \n  + Bộ mới: $(1, 4, 5)$ — chính là STT 6. ✓\n\n```python\ndef next_combination(a, n, m):\n    i = m\n    while a[i-1] == n - m + i:   # chỉ số 0-based\n        i -= 1\n    a[i-1] += 1\n    for j in range(i, m):\n        a[j] = a[i-1] + (j - i + 1)\n    return a\n```",
+  "citations": [
+    {
+      "chunk_id": "1e08b37c-ec49-45ae-9d25-064325e6ebe5",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "COMBINATORIAL THEORY",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "(Lý thuyết tổ hợp)"
+    },
+    {
+      "chunk_id": "01f46a29-d146-48c3-812d-56cf6ad1b6d6",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate $m$-element subsets of set with $n$ elements",
+      "page_number": null,
+      "chunk_order": 45,
+      "excerpt": "We say subset $a = (a_1, a_2,\\ldots, a_m)$ is previous subset $a' = (a'_1, a'_2, \\ldots , a'_m)$ in dictionary order and denote as $a \\prec a'$, if one could find the index $k$ $(1 \\leq k \\leq m)$ suc"
+    },
+    {
+      "chunk_id": "4e6282ea-086a-4d18-adff-ac1b90f7812c",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate $m$-element subsets of set with $n$ elements",
+      "page_number": null,
+      "chunk_order": 44,
+      "excerpt": "Problem: Let $X = \\{1, 2, \\ldots, n\\}$. Enumerate all $m$-element subsets of $X$.\n\nSolution:\n\n- Lexicographic order:\n\nEach $m$-element subset of $X$ could be represented by tuples of $m$ elements\n\n$$\n"
+    },
+    {
+      "chunk_id": "18ca8444-29c9-4ea9-9e46-cd6dcb6a8c45",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate *m*-element subsets of set with *n* elements",
+      "page_number": null,
+      "chunk_order": 48,
+      "excerpt": "**Example:** $n = 6, m = 4$\n\nAssume the current subset $(1, 2, 5, 6)$, we need to build its next subset in the dictionary order:\n\n- Scan from the right to the left of sequence $a_1, a_2, ..., a_m$ : f"
+    },
+    {
+      "chunk_id": "3202eee7-aaf9-442a-8609-e73658317598",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate *m*-element subsets of set with *n* elements",
+      "page_number": null,
+      "chunk_order": 47,
+      "excerpt": "Successive_Generation algorithm:\n\n- The first subset is $(1, 2, \\dots, m)$\n- The last subset is $(n-m+1, n-m+2, \\dots, n)$.\n- Assume $a=(a_1, a_2, \\dots, a_m)$ is the current subset but not the final "
+    },
+    {
+      "chunk_id": "b083b19d-ed33-4a5c-bdb0-a9eb83950b06",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Generate basic combinatorial configurations",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "- Generate binary strings of length $n$\n- Generate m-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+    },
+    {
+      "chunk_id": "aeec98c5-666a-4ee7-81aa-38e3422002b3",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example 2. Generate $m$-element subsets of the set of $n$ elements",
+      "page_number": null,
+      "chunk_order": 73,
+      "excerpt": "We consider how to solve two issue keys to implement backtracking:\n\n- Build candidate set $S_k$:\n  - With the condition: $1 \\le a_1 < a_2 < \\dots < a_m \\le n$ we have $S_1 = \\{1, 2, \\dots, n-(m-1)\\}$."
+    },
+    {
+      "chunk_id": "1a501cbe-58d4-4c26-a892-dff8fa60f553",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Successive_Generation algorithm",
+      "page_number": null,
+      "chunk_order": 49,
+      "excerpt": "```text\nvoid Next_Combination()\n\n/*Generate the next subset in dictionary order of the subset (a_1, a_2,...., a_m) ≠ (n-m+1,...,n)*\n\n{\n    i = m\n\n    while (a[i] == n-m+i):\n        i = i-1\n\n    a[i] ="
+    },
+    {
+      "chunk_id": "668ce4b9-cf66-4110-8e6a-8397e1eca0be",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example 2. Generate $m$-element subsets of the set of $n$ elements",
+      "page_number": null,
+      "chunk_order": 72,
+      "excerpt": "**Problem:** Enumerate all $m$-element subsets of the set $n$ elements $N = \\{1,2,\\ldots,n\\}$.\n\n**Example:** Enumerate all 3-element subsets of the set 5 elements $N = \\{1,2,3,4,5\\}$\n\n**Solution:** $("
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "liệt kê tập con m phần tử thứ tự từ điển bộ có thứ tự decreasing increasing",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "1e08b37c-ec49-45ae-9d25-064325e6ebe5",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3598,
+          "final_score": 0.6207,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "5345a0b6-484d-4ad1-a500-87062a3c0b0e",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3601,
+          "final_score": 0.4141,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "50d11fba-c0c1-4a1c-8305-d2cf75485847",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3601,
+          "final_score": 0.4141,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3601,
+          "final_score": 0.4141,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "a9e1ef20-4640-4464-89e3-25ec3ecdca7f",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3598,
+          "final_score": 0.4138,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c4ff42b1-09bb-41fc-a2a7-b77b7e8ce8a9",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3598,
+          "final_score": 0.4138,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "69c897f3-cf84-4477-808b-1496d9753d9b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3598,
+          "final_score": 0.4138,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "01f46a29-d146-48c3-812d-56cf6ad1b6d6",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate $m$-element subsets of set with $n$ elements",
+          "chunk_order": 45,
+          "cosine_sim": 0.3374,
+          "final_score": 0.388,
+          "content": "We say subset $a = (a_1, a_2,\\ldots, a_m)$ is previous subset $a' = (a'_1, a'_2, \\ldots , a'_m)$ in dictionary order and denote as $a \\prec a'$, if one could find the index $k$ $(1 \\leq k \\leq m)$ such that:\n\n$$\na_1 = a'_1,\\ a_2 = a'_2,\\ \\ldots,\\ a_{k-1} = a'_{k-1},\n$$\n\n$$\na_k < a'_k.\n$$"
+        }
+      ]
+    },
+    {
+      "mode": "dense_rerank",
+      "query": "generate m-element subsets tuple representation a1 a2 am condition increasing notation combinatorial generation",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "4e6282ea-086a-4d18-adff-ac1b90f7812c",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate $m$-element subsets of set with $n$ elements",
+          "chunk_order": 44,
+          "cosine_sim": 0.4445,
+          "final_score": 0.5112,
+          "content": "Problem: Let $X = \\{1, 2, \\ldots, n\\}$. Enumerate all $m$-element subsets of $X$.\n\nSolution:\n\n- Lexicographic order:\n\nEach $m$-element subset of $X$ could be represented by tuples of $m$ elements\n\n$$\na = (a_1, a_2, \\ldots, a_m)\n$$\n\nsatisfying\n\n$$\n1 \\le a_1 < a_2 < \\cdots < a_m \\le n.\n$$"
+        },
+        {
+          "chunk_id": "18ca8444-29c9-4ea9-9e46-cd6dcb6a8c45",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate *m*-element subsets of set with *n* elements",
+          "chunk_order": 48,
+          "cosine_sim": 0.4331,
+          "final_score": 0.498,
+          "content": "**Example:** $n = 6, m = 4$\n\nAssume the current subset $(1, 2, 5, 6)$, we need to build its next subset in the dictionary order:\n\n- Scan from the right to the left of sequence $a_1, a_2, ..., a_m$ : find the first element $a_i \\ne n-m+i$\n- Replace $a_i$ by $a_i + 1$\n- Replace $a_j$ by $a_i + j - i$, where $j = i+1, i+2, ..., m$\n\n- We have $i=2$:\n\n| Sequence | Value $n-m+i$ |\n|---|---|\n| $(1, 2, 5, 6)$ | $(3, 4, 5, 6)$ |\n\nreplace $a_2 = a_2+1 = 3$\n\n$a_3 = a_i + j - i = a_2 + 3 - 2 = 4$\n\n$a_4 = a_i + j - i = a_2 + 4 - 2 = 5$\n\nWe then obtain its next subset $(1, 3, 4, 5)$.\n\n[Diagram: The slide shows the step-by-step rule for generating the next combination in lexicographic order. It matters because this provides a systematic way to enumerate all $m$-element subsets without repetition.]"
+        },
+        {
+          "chunk_id": "3202eee7-aaf9-442a-8609-e73658317598",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate *m*-element subsets of set with *n* elements",
+          "chunk_order": 47,
+          "cosine_sim": 0.4275,
+          "final_score": 0.4916,
+          "content": "Successive_Generation algorithm:\n\n- The first subset is $(1, 2, \\dots, m)$\n- The last subset is $(n-m+1, n-m+2, \\dots, n)$.\n- Assume $a=(a_1, a_2, \\dots, a_m)$ is the current subset but not the final yet, then its next subset in the dictionary order could be built by using the following rules:\n  - Scan from the right to the left of sequence $a_1, a_2, \\dots, a_m$: find the first element $a_i \\ne n-m+i$\n  - Replace $a_i$ by $a_i + 1$\n  - Replace $a_j$ by $a_i + j - i$, where $j = i+1, i+2, \\dots, m$"
+        },
+        {
+          "chunk_id": "b083b19d-ed33-4a5c-bdb0-a9eb83950b06",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "3.2. Generate basic combinatorial configurations",
+          "chunk_order": 34,
+          "cosine_sim": 0.4256,
+          "final_score": 0.4894,
+          "content": "- Generate binary strings of length $n$\n- Generate m-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+        },
+        {
+          "chunk_id": "aeec98c5-666a-4ee7-81aa-38e3422002b3",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Example 2. Generate $m$-element subsets of the set of $n$ elements",
+          "chunk_order": 73,
+          "cosine_sim": 0.4046,
+          "final_score": 0.4653,
+          "content": "We consider how to solve two issue keys to implement backtracking:\n\n- Build candidate set $S_k$:\n  - With the condition: $1 \\le a_1 < a_2 < \\dots < a_m \\le n$ we have $S_1 = \\{1, 2, \\dots, n-(m-1)\\}$.\n  - Assume the current subset is $(a_1, \\dots, a_{k-1})$, with the condition $a_{k-1} < a_k < \\dots < a_m \\le n$, we have $S_k = \\{a_{k-1}+1, a_{k-1}+2, \\dots, n-(m-k)\\}$.\n- Implement the loop to enumerate all elements of $S_k$: we can use the loop `for`\n\n```text\n  for (j=a[k-1]+1; j<=n-m+k; j++) ..\n  ```"
+        },
+        {
+          "chunk_id": "1a501cbe-58d4-4c26-a892-dff8fa60f553",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Successive_Generation algorithm",
+          "chunk_order": 49,
+          "cosine_sim": 0.3889,
+          "final_score": 0.4472,
+          "content": "```text\nvoid Next_Combination()\n\n/*Generate the next subset in dictionary order of the subset (a_1, a_2,...., a_m) ≠ (n-m+1,...,n)*\n\n{\n    i = m\n\n    while (a[i] == n-m+i):\n        i = i-1\n\n    a[i] = a[i] + 1\n\n    for j in range (i+1, m+1):\n        a[j] = a[i] + j - i\n}\n```\n\n[Diagram: This is an algorithm for generating the next combination in lexicographic (dictionary) order. It works by finding the rightmost position that can still be increased, then resetting all following positions to the smallest valid increasing values so the result remains a valid subset.]"
+        },
+        {
+          "chunk_id": "668ce4b9-cf66-4110-8e6a-8397e1eca0be",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Example 2. Generate $m$-element subsets of the set of $n$ elements",
+          "chunk_order": 72,
+          "cosine_sim": 0.3864,
+          "final_score": 0.4443,
+          "content": "**Problem:** Enumerate all $m$-element subsets of the set $n$ elements $N = \\{1,2,\\ldots,n\\}$.\n\n**Example:** Enumerate all 3-element subsets of the set 5 elements $N = \\{1,2,3,4,5\\}$\n\n**Solution:** $(1,2,3), (1,2,4), (1,2,5), (1,3,4), (1,3,5), (1,4,5), (2,3,4), (2,3,5), (2,4,5), (3,4,5)$\n\n➔ Equivalent problem: Enumerate all elements of set:\n\n$$S(m,n)=\\{(a_1,\\ldots,a_m)\\in N^m:\\ 1\\le a_1<\\ldots<a_m\\le n\\}$$"
+        },
+        {
+          "chunk_id": "0fc7ec54-d255-4c18-a82e-e7e85b06a3f6",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "1.2. The product rule",
+          "chunk_order": 12,
+          "cosine_sim": 0.3807,
+          "final_score": 0.4378,
+          "content": "In many counting problems, it is only after building the first element, we just know how to build the second element; after building the first two elements we only know how to build the third element,... In that case, we use the general product rules:\n\nSuppose we construct a $k$-tuple $(a_1, a_2, ..., a_k)$ by building each element in turn and\n\n- $a_1$ can be chosen by $m_1$ way;\n- After $a_1$ is selected, $a_2$ can be chosen by $m_2$ way;\n- ...\n- After $a_1, a_2, ..., a_{k-1}$ are chosen, $a_k$ can be chosen by $m_k$ ways;\n\nThen the number of $k$-tuples generated is $m_1 m_2 ... m_k$\n\nExample 1: 6 persons are competing for 4 prizes. How many different outcomes are possible?\n\n```text\n+-----------+-----------+-----------+-----------+\n| 1st prize | 2nd prize | 3rd prize | 4th prize |\n+-----------+-----------+-----------+-----------+\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 29.9
+}

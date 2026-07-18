@@ -1,0 +1,53 @@
+{
+  "qid": "discrete_math_17",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The statement about adding an edge creating exactly one cycle and the definition of a maximal acyclic graph both come from chunk 6e826e2c (condition 4 of the theorem).",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses what happens when an edge is added to an undirected graph with no cycles: it creates exactly one cycle and makes the graph a maximal acyclic graph. This is precisely on-topic.",
+      "evidence": [
+        "nếu thêm một cạnh vào một đồ thị vô hướng không có chu trình thì đồ thị sẽ xuất hiện đúng một chu trình",
+        "thêm bất kỳ cạnh nào vào thì sẽ tạo ra một chu trình"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly states that adding an edge to a cycle-free undirected graph creates exactly one cycle and identifies it as a maximal acyclic graph, fully covering the ground truth's key facts with no contradictions.",
+      "evidence": [
+        "Ground truth: 'adding any edge to it will give rise to a cycle'",
+        "Tutor: 'thêm một cạnh vào một đồ thị vô hướng không có chu trình thì đồ thị sẽ xuất hiện đúng một chu trình'",
+        "Ground truth: 'the graph is a maximal acyclic graph'",
+        "Tutor: 'một đồ thị vô chu trình là maximal acyclic graph'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "Both retrieved chunks are highly relevant to the question. The first chunk directly states the property that adding any edge to a cycle-free graph creates a cycle (condition 4), and the second chunk provides context about spanning trees and acyclic graphs.",
+      "evidence": [
+        "chunk 6e826e2c: 'G has no cycles, and adding any edge to G gives rise to a cycle'",
+        "chunk 79f69592: 'If G contains no cycle then G is its own spanning tree'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The retrieved chunks contain all key facts from the ground truth. Chunk 6e826e2c explicitly states that adding any edge to a graph with no cycles gives rise to a cycle and that such a graph is a maximal acyclic graph.",
+      "evidence": [
+        "G has no cycles, and adding any edge to G gives rise to a cycle. (Thus G is a maximal acyclic graph)."
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Both citations directly support the tutor's statements. The first chunk explicitly states that adding any edge to a cycle-free graph creates a cycle (condition 4), and the second chunk reinforces the concept of acyclic graphs, supporting the maximal acyclic graph terminology.",
+      "evidence": [
+        "Tutor claims: 'thêm một cạnh vào một đồ thị vô hướng không có chu trình thì đồ thị sẽ xuất hiện đúng một chu trình' → Chunk 6e826e2c: 'G has no cycles, and adding any edge to G gives rise to a cycle'",
+        "Tutor claims: 'maximal acyclic graph' → Chunk 6e826e2c: 'Thus G is a maximal acyclic graph'"
+      ]
+    }
+  }
+}

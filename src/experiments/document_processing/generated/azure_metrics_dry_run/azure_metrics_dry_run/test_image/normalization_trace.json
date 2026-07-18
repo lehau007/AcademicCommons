@@ -1,0 +1,19 @@
+{
+  "char_budget": 24000,
+  "batches": [
+    {
+      "batch_index": 0,
+      "block_count": 1,
+      "input_chars": 58,
+      "page_or_slide_range": null,
+      "mode": "passthrough_vision_disabled",
+      "output_chars": 58
+    }
+  ],
+  "cleaned_blocks": [
+    {
+      "kind": "vision_placeholder",
+      "content": "[VISION_PLACEHOLDER] OCR output pending from vision model."
+    }
+  ]
+}

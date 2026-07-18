@@ -1,0 +1,54 @@
+{
+  "qid": "discrete_math_18",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "All core claims about adjacency list structure are supported by the retrieved chunks. The only minor issue is the claim about directed graphs containing 'out-neighbors' is implied by examples but not explicitly stated in the chunks.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how an adjacency list is structured: an array of |V| lists where each vertex has one list containing its adjacent vertices. The additional note about directed graphs is relevant context, not off-topic material.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The answer covers all key facts from the ground truth: it states the adjacency list is an array of |V| lists, each vertex has one list, and each list contains adjacent nodes. The additional detail about directed graphs (out-neighbors) is correct and does not contradict the ground truth.",
+      "evidence": [
+        "Ground truth: 'array consisting of |V| lists' → Answer: 'mảng `Adjacency` gồm |V| danh sách'",
+        "Ground truth: 'each vertex has one list' → Answer: 'Mỗi đỉnh `u` có đúng 1 danh sách riêng'",
+        "Ground truth: 'contains the nodes that are adjacent to u' → Answer: 'chứa các đỉnh kề với `u`'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six chunks are relevant to explaining adjacency list structure. Only the last two chunks (listing graph representation types without explanation) provide minimal value for understanding how adjacency lists are structured.",
+      "evidence": [
+        "1b439c92: 'Incidence matrix - Adjacency matrix - Weight matrix - **Adjacency list**'",
+        "58612d91: 'Incidence matrix - **Adjacency matrix** - Weight matrix - Adjacency list'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 4a1180a7 explicitly states the adjacency list is an array of |V| lists, each vertex has 1 list, and each list contains nodes adjacent to that vertex.",
+      "evidence": [
+        "Is an array **Adjacency** consisting of |V| lists",
+        "Each vertex has 1 list",
+        "Each vertex u ∈ V: Adjacency[u] consists of nodes that are adjacent to u"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The core structural claims about |V| lists, one list per vertex, and containing adjacent vertices are all explicitly confirmed in the cited chunks.",
+      "evidence": [
+        "Statement: 'mảng Adjacency gồm |V| danh sách' → Chunk 4a1180a7: 'Is an array Adjacency consisting of |V| lists'",
+        "Statement: 'Mỗi đỉnh u có đúng 1 danh sách riêng' → Chunk 4a1180a7: 'Each vertex has 1 list'",
+        "Statement: 'Adjacency[u] chứa các đỉnh kề với u' → Chunk 4a1180a7: 'Adjacency[u] consists of nodes that are adjacent to u'",
+        "Statement: 'đồ thị có hướng...đỉnh kề đi ra' → Chunk cd7e7d21: 'Adjacency List (Directed): Out-neighbors'",
+        "Example format → Chunks fe4e8b85, 59c3ae5a: show 'u → v → w' notation"
+      ]
+    }
+  }
+}

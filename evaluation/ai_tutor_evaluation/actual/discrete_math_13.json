@@ -1,0 +1,10 @@
+{
+  "qid": "discrete_math_13",
+  "course_code": "IT3020E",
+  "question": "What does the Big Oh (O) notation intuitively represent for a given function g(n)?",
+  "session_id": "ae4ed006-608e-4f8d-8bc1-1bd4bbd64c6c",
+  "answer": "Big Oh notation \\(O(g(n))\\) intuitively represents an **upper bound on the growth rate** of a function.\n\nIn simple terms:\n\n- If \\(f(n) \\in O(g(n))\\), then for sufficiently large \\(n\\), \\(f(n)\\) does not grow faster than a constant multiple of \\(g(n)\\).\n- It is used to describe the **asymptotic worst-case growth** of an algorithm or function, ignoring constant factors and lower-order terms.\n\n### Intuition\nYou can think of \\(g(n)\\) as a “benchmark” function.  \nSaying \\(f(n) = O(g(n))\\) means that beyond some point, \\(f(n)\\) stays at or below \\(c \\cdot g(n)\\) for some constant \\(c > 0\\).\n\n### Example\nIf\n\\[\nf(n) = 3n^2 + 5n + 2,\n\\]\nthen\n\\[\nf(n) = O(n^2)\n\\]\nbecause \\(n^2\\) dominates the growth for large \\(n\\).\n\n### In short\nBig Oh tells us that **the function’s growth is no worse than \\(g(n)\\), up to a constant factor, for large input sizes**.",
+  "citations": [],
+  "retrieval_calls": [],
+  "elapsed_s": 6.5
+}

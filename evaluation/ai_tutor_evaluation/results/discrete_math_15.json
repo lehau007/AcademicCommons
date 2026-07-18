@@ -1,0 +1,58 @@
+{
+  "qid": "discrete_math_15",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The binary vector representation, the meaning of xi values, the capacity constraint formula, and the optimization goal are all grounded in the provided materials.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how a solution is represented in the 0/1 Knapsack Problem: as a binary vector where each element indicates whether an item is selected. The additional information about the capacity constraint and optimization goal provides helpful context without detracting from the core answer.",
+      "evidence": [
+        "a solution is represented as a **binary vector**: x = (x_1, x_2, …, x_n), x_i ∈ {0,1}",
+        "x_i = 1: item i is selected",
+        "x_i = 0: item i is not selected"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: binary vector of length n, x = (x₁, x₂, …, xₙ), xⱼ = 1 when selected, xⱼ = 0 when not selected. The additional information about the capacity constraint and optimization goal is correct supplementary detail.",
+      "evidence": [
+        "Ground truth: 'binary vector of length n: x = (x1, x2, …, xn)'",
+        "Tutor: 'binary vector: x = (x_1, x_2, \\ldots, x_n)'",
+        "Ground truth: 'xj = 1 when item j is selected and xj = 0 when item j is not selected'",
+        "Tutor: 'x_i = 1: item i is selected; x_i = 0: item i is not selected'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to understanding how solutions are represented in the 0/1 Knapsack Problem. Each chunk discusses binary vectors, the constraint structure, or the problem formulation that defines the solution representation.",
+      "evidence": [
+        "chunk 74bdc739: 'binary vectors of length $n$... $A^n = \\{(a_1, \\ldots, a_n): a_i \\in \\{0,1\\}\\}$'",
+        "chunk 0d70fa52: '$x = (x_1, x_2, \\ldots, x_n) \\in A^n$'",
+        "chunk 72218925: 'Let $x_i = 1$ when item $i$ is selected and $x_i = 0$ when item $i$ is not selected'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. The binary vector representation x = (x₁, x₂, …, xₙ) and the meaning of xⱼ = 1 (selected) and xⱼ = 0 (not selected) are explicitly stated.",
+      "evidence": [
+        "x = (x_1, x_2, \\ldots, x_n)",
+        "Let $x_i = 1$ when item $i$ is selected and $x_i = 0$ when item $i$ is not selected",
+        "binary vectors of length $n$"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The binary vector representation, the meaning of x_i values, and the capacity constraint are all explicitly confirmed in the cited chunks.",
+      "evidence": [
+        "Chunk 74bdc739: 'Among binary vectors of length $n$' and '$A^n = \\{(a_1, \\ldots, a_n): a_i \\in \\{0,1\\}\\}$' supports the binary vector representation",
+        "Chunk 0d70fa52: '$x = (x_1, x_2, \\ldots, x_n) \\in A^n : \\sum_{j=1}^{n} w_j x_j \\le b$' supports both the vector notation and capacity constraint",
+        "Chunk 72218925: 'Let $x_i = 1$ when item $i$ is selected and $x_i = 0$ when item $i$ is not selected' directly supports the binary interpretation"
+      ]
+    }
+  }
+}

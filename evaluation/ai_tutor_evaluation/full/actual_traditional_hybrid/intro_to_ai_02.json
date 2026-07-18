@@ -1,0 +1,125 @@
+{
+  "qid": "intro_to_ai_02",
+  "course_code": "IT3160E",
+  "question": "What is the difference between progression planners and regression planners in state-space search?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "22689181-719b-4b45-959a-ca3d9b57e656",
+  "answer": "# Difference Between Progression and Regression Planners\n\nBased on the provided context, the key differences between progression and regression planners in state-space search are:\n\n## Progression Planners\n- Use **forward state-space search**\n- Consider the effect of all possible actions in a given state\n- Move from the initial state toward the goal by applying applicable actions\n- (As illustrated in the forward-search state-space representation for the blocks-world problem in chunk 369751a0, states are expanded by considering which actions can be applied at each step.)\n\n## Regression Planners\n- Use **backward state-space search**\n- Determine what must have been true in the previous state in order to achieve the current state\n- Work backward from the goal, regressing a goal through an action to form a subgoal that must hold before the action can be applied\n- (As shown in the figures in chunks 040cefcf and a90c4e92, regression-based reasoning identifies which earlier state is needed to achieve the goal, reducing unnecessary forward exploration.)\n- The process continues until a subgoal is produced that is satisfied by the current world state\n\n## Summary of Key Distinction\nThe fundamental difference is the **direction of search**:\n- **Progression** moves forward from the initial state, applying actions to generate successor states\n- **Regression** moves backward from the goal, determining the preconditions that must have held before an action could achieve the goal\n\nBoth approaches are valid for planning, but regression can reduce unnecessary exploration by focusing only on states relevant to achieving the goal.",
+  "citations": [
+    {
+      "chunk_id": "6f25b02f-6274-487f-b7f8-597e6d8857c5",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning with state-space search",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- Both forward and backward search possible\n- Progression planners\n  - forward state-space search\n  - consider the effect of all possible actions in a given state\n- Regression planners\n  - backward st"
+    },
+    {
+      "chunk_id": "040cefcf-227f-48ae-a88d-b0082c3e7ee8",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Backward search methods",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "[Diagram: The figure illustrates backward search by regressing a goal through an action to form a subgoal that must hold before the action can be applied. This matters because planning can work from t"
+    },
+    {
+      "chunk_id": "a90c4e92-5939-412a-88b3-4862ec370d04",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "b) regression",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "[Diagram: The figure contrasts forward state expansion with regression-based reasoning in a simple travel domain. It shows how applying an action changes which facts hold, and how reasoning backward f"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "What is the difference between progression planners and regression planners in state-space search?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "6f25b02f-6274-487f-b7f8-597e6d8857c5",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning with state-space search",
+          "chunk_order": 14,
+          "cosine_sim": 0.6183,
+          "final_score": 0.711,
+          "content": "- Both forward and backward search possible\n- Progression planners\n  - forward state-space search\n  - consider the effect of all possible actions in a given state\n- Regression planners\n  - backward state-space search\n  - Determine what must have been true in the previous state in order to achieve the current state"
+        },
+        {
+          "chunk_id": "1d0d4fce-83bb-41bc-a85e-1e511c79750a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Regressing an ungrounded op",
+          "chunk_order": 27,
+          "cosine_sim": 0.4568,
+          "final_score": 0.5253,
+          "content": "[Diagram: This illustrates regression in planning: starting from a goal, a possible action is worked backward to determine the conditions that must have held before it. The constraints show how ungrounded parameters are restricted so the action can be applied consistently, which is essential for backward search in automated planning.]"
+        },
+        {
+          "chunk_id": "19ce7cd1-6107-43e5-85c2-b0ca65810675",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Progression algorithm",
+          "chunk_order": 18,
+          "cosine_sim": 0.4404,
+          "final_score": 0.5064,
+          "content": "- Formulation as state-space search problem:\n  - Initial state and goal test: obvious\n  - Successor function: generate from applicable actions\n  - Step cost = each action costs 1\n- Any complete graph search algorithm is a complete planning algorithm.\n  - E.g. A*\n- Inherently inefficient:\n  - (1) irrelevant actions lead to very broad search tree\n  - (2) good heuristic required for efficient search"
+        },
+        {
+          "chunk_id": "369751a0-845f-48cd-8fd5-d0f9f1c3080a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Forward Search Methods:",
+          "chunk_order": 21,
+          "cosine_sim": 0.4228,
+          "final_score": 0.4863,
+          "content": "[Diagram: This slide illustrates a forward-search state-space representation for a blocks-world planning problem, where states are evaluated and expanded using action costs and heuristic guidance. It matters because A* can efficiently search for a valid plan by combining progress toward the goal with the cost already accumulated.]"
+        },
+        {
+          "chunk_id": "040cefcf-227f-48ae-a88d-b0082c3e7ee8",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Backward search methods",
+          "chunk_order": 25,
+          "cosine_sim": 0.414,
+          "final_score": 0.4761,
+          "content": "[Diagram: The figure illustrates backward search by regressing a goal through an action to form a subgoal that must hold before the action can be applied. This matters because planning can work from the desired outcome back to a state that is reachable in the current world, reducing unnecessary forward exploration.]\n\n- Continue until a subgoal is produced that is satisfied by current world state"
+        },
+        {
+          "chunk_id": "267f5e6d-587d-4294-ac6e-197aeac294ed",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 5,
+          "cosine_sim": 0.3964,
+          "final_score": 0.4559,
+          "content": "- Major difference with random-restart search\n  - Information is shared among k search threads: If one state generated good successor, but others did not → “come here, the grass is greener!”\n- Can suffer from lack of diversity.\n  - Stochastic variant: choose k successors at proportionally to state success.\n- The best choice in MANY practical settings"
+        },
+        {
+          "chunk_id": "a90c4e92-5939-412a-88b3-4862ec370d04",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "b) regression",
+          "chunk_order": 17,
+          "cosine_sim": 0.3936,
+          "final_score": 0.4527,
+          "content": "[Diagram: The figure contrasts forward state expansion with regression-based reasoning in a simple travel domain. It shows how applying an action changes which facts hold, and how reasoning backward from a goal can identify which earlier state is needed to achieve it.]"
+        },
+        {
+          "chunk_id": "2052fe08-76bc-4555-8dbe-a9692ac4577a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "The graphplan algorithm",
+          "chunk_order": 55,
+          "cosine_sim": 0.3926,
+          "final_score": 0.4515,
+          "content": "**Figure 11.13** The GRAPHPLAN algorithm. GRAPHPLAN alternates between a solution extraction step and a graph expansion step. EXTRACT-SOLUTION looks for whether a plan can be found, starting at the end and searching backwards. EXPAND-GRAPH adds the actions for the current level and the state literals for the next level."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.1
+}

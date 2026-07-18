@@ -1,0 +1,145 @@
+{
+  "qid": "intro_to_ai_05",
+  "course_code": "IT3160E",
+  "question": "What defines a Constraint Satisfaction Problem (CSP)?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "b12dbbaa-6892-402a-8c10-9955db65a1cd",
+  "answer": "## What Defines a Constraint Satisfaction Problem (CSP)?\n\nBased on the provided context, a **Constraint Satisfaction Problem (CSP)** is defined by three core components:\n\n### 1. **State Representation**\nUnlike standard search problems where the state is a \"black-box\" (any data structure), a CSP has a **structured state** composed of:\n- A set of **variables** $X_i$\n- Each variable $X_i$ takes a value from a **domain** $D_i$\n\n### 2. **Goal Test**\nThe goal is defined not by an explicit goal state, but by a **set of constraints over the variables**. The goal test checks whether all constraints are satisfied.\n\n### 3. **Domains (Varieties of CSPs)**\nCSPs can be categorized based on the nature of their variables:\n- **Discrete variables**\n  - *Finite domain* (e.g., SAT solving)\n  - *Infinite domain* (e.g., work scheduling with start/end times, where constraints are expressed in a constraint language like $StartJob_1 + 5 \\leq StartJob_3$). Linear constraints are decidable; non-linear constraints are undecidable.\n- **Continuous variables** (e.g., start/end time of observing the universe using the Hubble telescope), where linear constraints are solvable using Linear Programming.\n\n### Additional Structure\n- **Binary CSPs**: A special case where each constraint relates **at most two variables**. These can be visualized as a **constraint graph**, where:\n  - **Nodes** = variables\n  - **Edges** = constraints\n  - (e.g., the Australia map coloring example, where regions are variables and shared borders are constraints)\n\nIn summary, a CSP is defined by **variables with associated domains** and a **set of constraints** that must all be simultaneously satisfied — distinguishing it from standard search problems by replacing a black-box state with explicit structural information.\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "CSP",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with valu"
+    },
+    {
+      "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one vari"
+    },
+    {
+      "chunk_id": "94828c18-b26d-400c-bb09-3b1f61c975bc",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Varieties of CSPs",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Discrete variables\n  - Finite domain, e.g, SAT Solving\n  - Infinite domain, e.g., work scheduling\n    - Variables is start/end of working day\n    - Constraint language, e.g., $StartJob_1 + 5 \\leq St"
+    },
+    {
+      "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraint Graph",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n "
+    },
+    {
+      "chunk_id": "de00e937-cfc7-46b0-8b7d-cbf26a210122",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: Map Coloring",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "[Diagram: The map illustrates a constraint satisfaction problem where each region must be assigned one of several colors. Adjacent regions cannot share the same color, which is why the shared borders "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "What defines a Constraint Satisfaction Problem (CSP)?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Summary",
+          "chunk_order": 28,
+          "cosine_sim": 0.5209,
+          "final_score": 0.5991,
+          "content": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one variable assigned per node\n- Variable ordering and value selection heuristics help significantly\n- Forward checking prevents assignments that guarantee later failure\n- Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistencies\n- The CSPs representation allows analysis of problem structure\n- Tree-structured CSPs can be solved in linear time\n- Iterative min-conflicts is usually effective in practice"
+        },
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.4647,
+          "final_score": 0.5345,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "94828c18-b26d-400c-bb09-3b1f61c975bc",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Varieties of CSPs",
+          "chunk_order": 9,
+          "cosine_sim": 0.4425,
+          "final_score": 0.5089,
+          "content": "- Discrete variables\n  - Finite domain, e.g, SAT Solving\n  - Infinite domain, e.g., work scheduling\n    - Variables is start/end of working day\n    - Constraint language, e.g., $StartJob_1 + 5 \\leq StartJob_3$\n    - Linear constraints are decidable, non-linear constraints are undecidable\n- Continuous variables\n  - e.g., start/end time of observing the universe using Hubble telescope\n  - Linear constraints are solvable using Linear Programming"
+        },
+        {
+          "chunk_id": "4b70b8aa-674d-4b10-b3e7-41eb2604e8dd",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 8,
+          "cosine_sim": 0.4385,
+          "final_score": 0.5043,
+          "content": "[Diagram: The graph shows how a binary CSP can be represented as a network of variables connected by constraints. This matters because it turns constraint satisfaction into a graph structure, making relationships between variables easier to analyze and solve.]"
+        },
+        {
+          "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Iterative Algorithms for CSPs",
+          "chunk_order": 26,
+          "cosine_sim": 0.4272,
+          "final_score": 0.4912,
+          "content": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables\n- Variable selection\n  - Random\n- Value selection by min-conflicts heuristic\n  - Choose value that violates the fewest constraints\n    - i.e., hill climbing with $h(n) =$ total number of violated constraints"
+        },
+        {
+          "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 7,
+          "cosine_sim": 0.3965,
+          "final_score": 0.456,
+          "content": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n        \\        /   \\      /\n         \\      /     \\    /\n          \\    /       \\  /\n           \\  /         \\/\n            SA -------- NSW\n             \\           /\n              \\         /\n               \\       /\n                \\     /\n                  V\n```"
+        },
+        {
+          "chunk_id": "83e54421-60e1-4c3d-ab15-dd085ef21ff8",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraints Satisfaction Problems (CSPs)",
+          "chunk_order": 1,
+          "cosine_sim": 0.3876,
+          "final_score": 0.4458,
+          "content": "- CSPs example\n- Backtracking search\n- Problem structure\n- Local search for CSPs"
+        },
+        {
+          "chunk_id": "de00e937-cfc7-46b0-8b7d-cbf26a210122",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Example: Map Coloring",
+          "chunk_order": 4,
+          "cosine_sim": 0.3857,
+          "final_score": 0.4436,
+          "content": "[Diagram: The map illustrates a constraint satisfaction problem where each region must be assigned one of several colors. Adjacent regions cannot share the same color, which is why the shared borders define the key constraints and make the coloring nontrivial.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.7
+}

@@ -1,0 +1,105 @@
+{
+  "qid": "intro_to_ai_20",
+  "course_code": "IT3160E",
+  "question": "What three formal components make up a logic?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "9e9b6fc8-3b01-4218-b1e8-23916ef103c0",
+  "answer": "According to the context, a logic is formally defined as a triplet **⟨L, S, R⟩**, consisting of three components:\n\n1. **L — The Language**: A class of sentences described by a precise syntax, usually defined by a formal grammar. This is the syntactic component of the logic.\n\n2. **S — The Semantics**: Describes the meaning of the elements in L. This gives the logical system its interpretation.\n\n3. **R — The Inference System**: Consists of derivation rules over L. This provides the rules for reasoning and deriving conclusions from sentences in the language.\n\nThese three components together — language, semantics, and inference system — form the formal structure of any logic, whether it is Propositional, First Order, Modal, Temporal, etc.\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "What is Logic ?",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of e"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "What three formal components make up a logic?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "What is Logic ?",
+          "chunk_order": 3,
+          "cosine_sim": 0.4596,
+          "final_score": 0.5286,
+          "content": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of elements in L\n  - R, the logic’s inference system, consisting of derivation rules over L\n- Examples of logics:\n  - Propositional, First Order, Higher Order, Temporal, Fuzzy, Modal, Linear, . . ."
+        },
+        {
+          "chunk_id": "aa3745f1-792d-44e4-a2da-499e696e6a0b",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "First Order Logic (FOL)",
+          "chunk_order": 3,
+          "cosine_sim": 0.3877,
+          "final_score": 0.4459,
+          "content": "- First Order Logic is about\n  - Objects\n  - Relations\n  - Facts\n- The world is made of objects\n  - Objects are things with individual identities and properties to distinguish them\n  - Various relations hold among objects. Some of these relations are functional\n  - Every fact involving objects and their relations are either true or false"
+        },
+        {
+          "chunk_id": "71ca0a1b-17de-41e9-947a-39d6466c0eb1",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 5,
+          "cosine_sim": 0.3623,
+          "final_score": 0.4166,
+          "content": "- Symbols\n  - Variables: x, y, z,…\n  - Constants: a, b, c,…\n  - Function symbols (with arities): f, g, h, …\n  - Relation symbols (with arities): p, r, r\n  - Logical connectives: $¬, \\land, \\lor, \\Rightarrow, \\Leftrightarrow$\n  - Quantifiers: $∃, ∀$"
+        },
+        {
+          "chunk_id": "d72c34da-4060-4c8e-ac81-bf680fd832a6",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Problem Representation",
+          "chunk_order": 8,
+          "cosine_sim": 0.3513,
+          "final_score": 0.404,
+          "content": "- State\n  - What is true about the (hypothesized) world?\n- Goal\n  - What must be true in the final state of the world?\n- Actions\n  - What can be done to change the world?\n  - Preconditions and effects\n- We’ll represent all these as logical predicates"
+        },
+        {
+          "chunk_id": "4f3c4a18-ab7c-4b88-b72e-e5f402d4909f",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Semantic",
+          "chunk_order": 12,
+          "cosine_sim": 0.3426,
+          "final_score": 0.394,
+          "content": "- Variables\n  - Objects\n- Constants\n  - Entities\n- Function symbol\n  - Function from objects to objects\n- Relation symbol\n  - Relation between objects\n- Quantifiers\n  - $\\exists x.P$ true if P is true under some value of x\n  - $\\forall x.P$ true if P is true under every value of x\n- Logical connectives\n  - Similar to Propositional Logic"
+        },
+        {
+          "chunk_id": "9a3ca08b-2245-4783-862a-e3b8fd67bb91",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Language of Propositional Logic",
+          "chunk_order": 5,
+          "cosine_sim": 0.3306,
+          "final_score": 0.3802,
+          "content": "- Symbols\n  - Propositional variables: A,B,...,P,Q,...\n  - Logical constants: TRUE, FALSE\n  - Logical connectives:\n\n```text\n¬, ∧, ∨, ⇒, ⇔\n```\n\n- Sentences\n  - Each propositional variable is a sentence\n  - Each logical constant is a sentence\n  - If $α$ and $β$ are sentences then the following are sentences\n\n$$(α),\\neg α, α \\wedge β, α \\vee β, α \\Rightarrow β, α \\Leftrightarrow β$$"
+        },
+        {
+          "chunk_id": "b5cdd545-1d59-4f39-a146-c68b4edfeb17",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Propositional Logic",
+          "chunk_order": 4,
+          "cosine_sim": 0.3295,
+          "final_score": 0.3789,
+          "content": "- Propositional Logic is about facts in the world that are either true or false, nothing else\n- Propositional variables stand for basic facts\n- Sentences are made of\n  - propositional variables (A,B,…),\n  - logical constants (TRUE, FALSE), and\n  - logical connectives (not,and,or,..)\n- The meaning of sentences ranges over the Boolean values {True, False}\n  - Examples: It’s sunny, John is married"
+        },
+        {
+          "chunk_id": "cbd69d92-9c6c-4b13-9f0b-52fd71da4b57",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 6,
+          "cosine_sim": 0.306,
+          "final_score": 0.3519,
+          "content": "- Variables, constants and function symbols are used to build terms\n  - X, Bill, FatherOf(X), ...\n- Relations and terms are used to build predicates\n  - Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry), Loves(Y,MotherOf(Y)), ...\n- Predicates and logical connective are used to build sentences\n  - Even(4), $\\forall X.\\ Even(X)\\ \\Rightarrow\\ Odd(X+1),\\ \\exists X.\\ X > 0$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 6.3
+}

@@ -1,0 +1,115 @@
+{
+  "qid": "discrete_math_05",
+  "course_code": "IT3020E",
+  "question": "How is an incidence matrix constructed for an undirected graph?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "961e5d02-a6fb-461b-9c2d-f5c49d51030e",
+  "answer": "# Constructing an Incidence Matrix for an Undirected Graph\n\n## Setup\n\nGiven an undirected graph **G = (V, E)** where:\n- **V** = {v₁, v₂, v₃, ..., vₙ} is the set of vertices\n- **E** = {e₁, e₂, ..., eₘ} is the set of edges\n\n## Construction\n\nThe incidence matrix **M** with respect to this ordering of vertices and edges is an **n × m** matrix (rows = vertices, columns = edges), where each entry is defined as:\n\n$$m_{ij} = \\begin{cases} 1 & \\text{if edge } e_j \\text{ is incident with vertex } v_i \\\\ 0 & \\text{otherwise} \\end{cases}$$\n\n### Step-by-Step Process\n\n1. **Create a row for each vertex** v₁, v₂, ..., vₙ\n2. **Create a column for each edge** e₁, e₂, ..., eₘ\n3. **Fill in each cell (i, j):**\n   - Place a **1** if edge eⱼ touches vertex vᵢ\n   - Place a **0** if edge eⱼ does not touch vertex vᵢ\n\n## Special Cases\n\nThe incidence matrix can also represent:\n\n- **Multiple edges:** Use columns with identical entries, since these edges are incident with the same pair of vertices.\n- **Loops:** Use a column with exactly one entry equal to 1, corresponding to the vertex that is incident with the loop.\n\n---\n\n**Note:** The size of the matrix depends on the graph — it will have |V| rows and |E| columns.",
+  "citations": [
+    {
+      "chunk_id": "c39258bf-8827-4abb-8cb7-a247ce1a5dcd",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Incidence Matrix",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "G = (V, E) is an undirected graph:\n\n- V = {v₁, v₂, v₃, ..., vₙ}\n- E = {e₁, e₂, ..., eₘ}\n\nThen the incidence matrix with respect to this ordering of V and E is the n × m matrix M = [mᵢⱼ], where\n\n[Formu"
+    },
+    {
+      "chunk_id": "4c1a9c2f-fec3-49cd-aaac-c26ccdd6a36f",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Incidence Matrix",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "Matrix **M**_{|V| × |E|} = [mᵢⱼ], where\n\n[Formula: m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise]\n\nCan also be used to represent:\n\n- **Multiple edges:** by using columns with identical"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "How is an incidence matrix constructed for an undirected graph?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c39258bf-8827-4abb-8cb7-a247ce1a5dcd",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "1. Incidence Matrix",
+          "chunk_order": 6,
+          "cosine_sim": 0.5227,
+          "final_score": 0.9017,
+          "content": "G = (V, E) is an undirected graph:\n\n- V = {v₁, v₂, v₃, ..., vₙ}\n- E = {e₁, e₂, ..., eₘ}\n\nThen the incidence matrix with respect to this ordering of V and E is the n × m matrix M = [mᵢⱼ], where\n\n[Formula: m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise]\n\nCan also be used to represent:\n\n- **Multiple edges:** by using columns with identical entries, since these edges are incident with the same pair of vertices\n- **Loops:** by using a column with exactly one entry equal to 1, corresponding to the vertex that is incident with the loop"
+        },
+        {
+          "chunk_id": "0f0a8e67-f109-49b5-8a21-4affd1ac8efb",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph Representation",
+          "chunk_order": 5,
+          "cosine_sim": 0.4552,
+          "final_score": 0.7852,
+          "content": "- Incidence matrix\n- Adjacency matrix\n- Weight matrix\n- Adjacency list"
+        },
+        {
+          "chunk_id": "5fdb71d0-d301-499e-9e16-d72e859e869e",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph Representation",
+          "chunk_order": 4,
+          "cosine_sim": 0.4552,
+          "final_score": 0.7852,
+          "content": "- Incidence matrix\n- Adjacency matrix\n- Weight matrix\n- Adjacency list"
+        },
+        {
+          "chunk_id": "58612d91-80f8-4287-8a5f-95cc04006ace",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph Representation",
+          "chunk_order": 9,
+          "cosine_sim": 0.4366,
+          "final_score": 0.7531,
+          "content": "- Incidence matrix\n- **Adjacency matrix**\n- Weight matrix\n- Adjacency list"
+        },
+        {
+          "chunk_id": "1b439c92-6e3f-4305-945a-fe2108ff7ee1",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph Representation",
+          "chunk_order": 17,
+          "cosine_sim": 0.4271,
+          "final_score": 0.7368,
+          "content": "- Incidence matrix\n- Adjacency matrix\n- Weight matrix\n- **Adjacency list**"
+        },
+        {
+          "chunk_id": "4c1a9c2f-fec3-49cd-aaac-c26ccdd6a36f",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "1. Incidence Matrix",
+          "chunk_order": 7,
+          "cosine_sim": 0.4017,
+          "final_score": 0.6929,
+          "content": "Matrix **M**_{|V| × |E|} = [mᵢⱼ], where\n\n[Formula: m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise]\n\nCan also be used to represent:\n\n- **Multiple edges:** by using columns with identical entries, since these edges are incident with the same pair of vertices\n- **Loops:** by using a column with exactly one entry equal to 1, corresponding to the vertex that is incident with the loop"
+        },
+        {
+          "chunk_id": "6be5f140-5d86-4276-9dfd-132cd72a5186",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "For undirected graph",
+          "chunk_order": 11,
+          "cosine_sim": 0.3872,
+          "final_score": 0.6679,
+          "content": "[Formula: a_ij equals 1 if {v_i, v_j} is an edge of G, 0 otherwise]\n\n```\n    [2]\n   /   \\\n  /     \\\n[1]-----[3]\n```\n\n[Formula: 3x3 symmetric adjacency matrix with 0s on diagonal and 1s elsewhere]"
+        },
+        {
+          "chunk_id": "85142cec-d5a8-4294-9eeb-7544db5777a6",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Degree of a vertex in undirected graph",
+          "chunk_order": 33,
+          "cosine_sim": 0.4095,
+          "final_score": 0.4709,
+          "content": "Assume $G$ is undirected graph, $v \\in V$ is a vertex.\n\n- Degree of vertex $v$, $\\mathrm{deg}(v)$, the number of edges incident on a vertex.\n- Vertex with degree 0 is called isolated.\n- Vertex with"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.7
+}

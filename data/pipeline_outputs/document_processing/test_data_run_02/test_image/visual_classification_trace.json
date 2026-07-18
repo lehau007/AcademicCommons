@@ -1,0 +1,21 @@
+{
+  "sample_id": "test_image",
+  "total_images": 1,
+  "decorative_skipped": 0,
+  "decorative_minimal_tagged": 0,
+  "meaningful_extracted": 1,
+  "entries": [
+    {
+      "source": "image_file",
+      "file": "image.png",
+      "classification": {
+        "label": "table_or_matrix",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "structured data grid"
+      },
+      "action_taken": "extract"
+    }
+  ]
+}

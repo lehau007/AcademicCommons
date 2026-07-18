@@ -1,0 +1,56 @@
+{
+  "qid": "discrete_math_17",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The core claim that adding an edge to a cycle-free graph creates a cycle is explicitly stated in chunk 6e826e2c (condition 4), and the term 'maximal acyclic graph' is also quoted verbatim from that chunk.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by stating that adding an edge to a cycle-free undirected graph creates a cycle, and correctly identifies this as the maximal acyclic graph property. The answer is completely on-topic and matches the ground truth.",
+      "evidence": [
+        "Nếu đồ thị **không có chu trình** mà **thêm một cạnh bất kỳ**, thì **sẽ tạo ra một chu trình**",
+        "một đồ thị vô chu trình là **maximal acyclic graph**: chỉ cần thêm 1 cạnh nữa thì nó không còn vô chu trình nữa"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly states that adding any edge to a cycle-free undirected graph creates a cycle and identifies it as a maximal acyclic graph, fully covering both key facts from the ground truth with no contradictions.",
+      "evidence": [
+        "Ground truth: 'adding any edge to it will give rise to a cycle'",
+        "Tutor: 'thêm một cạnh bất kỳ, thì sẽ tạo ra một chu trình'",
+        "Ground truth: 'the graph is a maximal acyclic graph'",
+        "Tutor: 'maximal acyclic graph'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "The first two chunks are highly relevant to the question about adding edges to acyclic graphs. However, the last four chunks (03a5887c, 5c792772, 6447abc1, 6d761f5c) discuss Prim's algorithm, topological sorting, and spanning tree examples—topics unrelated to the specific property asked about.",
+      "evidence": [
+        "chunk 03a5887c: 'Prim's algorithm building a minimum spanning tree'",
+        "chunk 5c792772: 'Topological sorting algorithm'",
+        "chunk 6447abc1: 'void Prim(G, C)'",
+        "chunk 6d761f5c: 'Prim's algorithm grows a minimum spanning tree'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The first retrieved chunk (6e826e2c) explicitly states condition 4 of the theorem: 'G has no cycles, and adding any edge to G gives rise to a cycle. (Thus G is a maximal acyclic graph).' This directly contains both key facts from the ground truth.",
+      "evidence": [
+        "G has no cycles, and adding any edge to G gives rise to a cycle",
+        "Thus G is a maximal acyclic graph"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "The tutor's answer makes two main claims: (1) adding an edge to a cycle-free graph creates a cycle, and (2) such a graph is maximal acyclic. Both claims are directly supported by chunk 6e826e2c, which states 'G has no cycles, and adding any edge to G gives rise to a cycle. (Thus G is a maximal acyclic graph).'",
+      "evidence": [
+        "Tutor: 'Nếu đồ thị không có chu trình mà thêm một cạnh bất kỳ, thì sẽ tạo ra một chu trình'",
+        "Chunk 6e826e2c: 'G has no cycles, and adding any edge to G gives rise to a cycle. (Thus G is a maximal acyclic graph).'"
+      ]
+    }
+  }
+}

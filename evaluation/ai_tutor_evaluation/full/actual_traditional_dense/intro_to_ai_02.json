@@ -1,0 +1,135 @@
+{
+  "qid": "intro_to_ai_02",
+  "course_code": "IT3160E",
+  "question": "What is the difference between progression planners and regression planners in state-space search?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "92ec29c5-0487-42fe-8493-cdf1bd2ce1d9",
+  "answer": "# Difference Between Progression and Regression Planners\n\nBased on the course materials, here are the key differences:\n\n## Progression Planners\n- **Direction**: Perform **forward state-space search**, starting from the initial state and working toward the goal.\n- **Approach**: Consider the effect of **all possible actions** in a given state, generating successors from the applicable actions.\n- **Cost**: Each action has a step cost of 1.\n- **Completeness**: Any complete graph search algorithm (e.g., A*) is a complete planning algorithm.\n- **Drawback**: Inherently inefficient because:\n  1. Irrelevant actions lead to a very broad search tree.\n  2. A good heuristic is required for efficient search.\n\n## Regression Planners\n- **Direction**: Perform **backward state-space search**, starting from the goal and working backward toward the initial state.\n- **Approach**: Determine **what must have been true in the previous state** in order to achieve the current (goal) state. They identify predecessor states from which applying a given action leads to the goal.\n- **Constraint**: Actions must not undo desired literals (the action must be **consistent** with the goal).\n- **Termination**: Continues until a subgoal is produced that is satisfied by the current world state.\n- **Main advantage**: Only **relevant actions** are considered, resulting in a much lower branching factor than forward search.\n\n## Summary\n| Aspect | Progression | Regression |\n|--------|-------------|------------|\n| Search direction | Forward (initial → goal) | Backward (goal → initial) |\n| Focus | Effects of all possible actions | What must have been true previously |\n| Branching factor | Often high (many irrelevant actions) | Lower (only relevant actions) |\n| Key challenge | Irrelevant actions, heuristic quality | Ensuring actions are consistent with desired literals |\n\nIn short, **progression** explores forward from the current state, while **regression** reasons backward from the goal to find states that could lead to it, with regression typically having a more focused search due to its restriction to relevant actions.",
+  "citations": [
+    {
+      "chunk_id": "6f25b02f-6274-487f-b7f8-597e6d8857c5",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning with state-space search",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- Both forward and backward search possible\n- Progression planners\n  - forward state-space search\n  - consider the effect of all possible actions in a given state\n- Regression planners\n  - backward st"
+    },
+    {
+      "chunk_id": "19ce7cd1-6107-43e5-85c2-b0ca65810675",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Progression algorithm",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "- Formulation as state-space search problem:\n  - Initial state and goal test: obvious\n  - Successor function: generate from applicable actions\n  - Step cost = each action costs 1\n- Any complete graph "
+    },
+    {
+      "chunk_id": "8a983bb5-9216-4788-b0aa-a52c46a9264a",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Regression algorithm",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "- How to determine predecessors?\n  - What are the states from which applying a given action leads to the goal?\n  - Goal state = $At(C1, B) \\wedge At(C2, B) \\wedge ... \\wedge At(C20, B)$\n  - Relevant a"
+    },
+    {
+      "chunk_id": "040cefcf-227f-48ae-a88d-b0082c3e7ee8",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Backward search methods",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "[Diagram: The figure illustrates backward search by regressing a goal through an action to form a subgoal that must hold before the action can be applied. This matters because planning can work from t"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "What is the difference between progression planners and regression planners in state-space search?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "6f25b02f-6274-487f-b7f8-597e6d8857c5",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning with state-space search",
+          "chunk_order": 14,
+          "cosine_sim": 0.6183,
+          "final_score": 0.711,
+          "content": "- Both forward and backward search possible\n- Progression planners\n  - forward state-space search\n  - consider the effect of all possible actions in a given state\n- Regression planners\n  - backward state-space search\n  - Determine what must have been true in the previous state in order to achieve the current state"
+        },
+        {
+          "chunk_id": "1d0d4fce-83bb-41bc-a85e-1e511c79750a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Regressing an ungrounded op",
+          "chunk_order": 27,
+          "cosine_sim": 0.4568,
+          "final_score": 0.5253,
+          "content": "[Diagram: This illustrates regression in planning: starting from a goal, a possible action is worked backward to determine the conditions that must have held before it. The constraints show how ungrounded parameters are restricted so the action can be applied consistently, which is essential for backward search in automated planning.]"
+        },
+        {
+          "chunk_id": "19ce7cd1-6107-43e5-85c2-b0ca65810675",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Progression algorithm",
+          "chunk_order": 18,
+          "cosine_sim": 0.4404,
+          "final_score": 0.5064,
+          "content": "- Formulation as state-space search problem:\n  - Initial state and goal test: obvious\n  - Successor function: generate from applicable actions\n  - Step cost = each action costs 1\n- Any complete graph search algorithm is a complete planning algorithm.\n  - E.g. A*\n- Inherently inefficient:\n  - (1) irrelevant actions lead to very broad search tree\n  - (2) good heuristic required for efficient search"
+        },
+        {
+          "chunk_id": "369751a0-845f-48cd-8fd5-d0f9f1c3080a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Forward Search Methods:",
+          "chunk_order": 21,
+          "cosine_sim": 0.4228,
+          "final_score": 0.4863,
+          "content": "[Diagram: This slide illustrates a forward-search state-space representation for a blocks-world planning problem, where states are evaluated and expanded using action costs and heuristic guidance. It matters because A* can efficiently search for a valid plan by combining progress toward the goal with the cost already accumulated.]"
+        },
+        {
+          "chunk_id": "040cefcf-227f-48ae-a88d-b0082c3e7ee8",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Backward search methods",
+          "chunk_order": 25,
+          "cosine_sim": 0.414,
+          "final_score": 0.4761,
+          "content": "[Diagram: The figure illustrates backward search by regressing a goal through an action to form a subgoal that must hold before the action can be applied. This matters because planning can work from the desired outcome back to a state that is reachable in the current world, reducing unnecessary forward exploration.]\n\n- Continue until a subgoal is produced that is satisfied by current world state"
+        },
+        {
+          "chunk_id": "a90c4e92-5939-412a-88b3-4862ec370d04",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "b) regression",
+          "chunk_order": 17,
+          "cosine_sim": 0.3936,
+          "final_score": 0.4527,
+          "content": "[Diagram: The figure contrasts forward state expansion with regression-based reasoning in a simple travel domain. It shows how applying an action changes which facts hold, and how reasoning backward from a goal can identify which earlier state is needed to achieve it.]"
+        },
+        {
+          "chunk_id": "8a983bb5-9216-4788-b0aa-a52c46a9264a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Regression algorithm",
+          "chunk_order": 22,
+          "cosine_sim": 0.3523,
+          "final_score": 0.4051,
+          "content": "- How to determine predecessors?\n  - What are the states from which applying a given action leads to the goal?\n  - Goal state = $At(C1, B) \\wedge At(C2, B) \\wedge ... \\wedge At(C20, B)$\n  - Relevant action for first conjunct: $Unload(C1,p,B)$\n  - Works only if pre-conditions are satisfied.\n  - Previous state = $In(C1, p) \\wedge At(p, B) \\wedge At(C2, B) \\wedge ... \\wedge At(C20, B)$\n  - Subgoal $At(C1,B)$ should not be present in this state.\n- Actions must not undo desired literals (consistent)\n- Main advantage: only relevant actions are considered.\n  - Often much lower branching factor than forward search."
+        },
+        {
+          "chunk_id": "0cfb0139-e23a-4ac1-860e-f54d26e99108",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Backward search methods",
+          "chunk_order": 24,
+          "cosine_sim": 0.3491,
+          "final_score": 0.4015,
+          "content": "- Regressing a ground operator\n\n```text\nInitial world state                     Goal\n+-------------------+           +------------------------+\n|  C on A           |           | On(C, F1)             |\n|  B is separate    |           | On(B, C)              |\n+-------------------+           | On(A, B)              |\n        |                       +------------------------+\n        |  move(A, F1, B)\n        v\n+------------------------+\n| On(C, F1)              |\n| On(B, C)               |\n| Clear(B)               |\n| Clear(A)               |\n| On(A, F1)              |\n+------------------------+\n\nSubgoal regression:\nOn(C, F1) ∧ On(B, C) ∧ On(A, B)\nthrough move(A, F1, B)\n\nGround operator regression chain:\n[Initial world state] --> [Subgoal set] --> [Goal]\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.7
+}

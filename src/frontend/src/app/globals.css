@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --canvas-base: #F8FAFC;
+  --surface-card: #FFFFFF;
+  --charcoal-ink: #0F172A;
+  --muted-steel: #64748B;
+  --whisper-border: #E2E8F0;
+  --hust-red: #990000;
+  --pear-yellow: #F59E0B;
+  --system-green: #22C55E;
+  --system-red: #EF4444;
+
+  --radius-button: 8px;
+  --radius-card: 16px;
+}
+
+/* Dark mode is temporarily disabled to resolve visibility issues and force light mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas-base: #030712;
+    --surface-card: #0F172A;
+    --charcoal-ink: #F8FAFC;
+    --muted-steel: #94A3B8;
+    --whisper-border: #1E293B;
+    --hust-red: #EF4444;
+  }
+}
+
+.dark {
+  --canvas-base: #030712;
+  --surface-card: #0F172A;
+  --charcoal-ink: #F8FAFC;
+  --muted-steel: #94A3B8;
+  --whisper-border: #1E293B;
+  --hust-red: #EF4444;
+}
+*/
+
+@theme {
+  --color-canvas-base: var(--canvas-base);
+  --color-surface-card: var(--surface-card);
+  --color-charcoal-ink: var(--charcoal-ink);
+  --color-muted-steel: var(--muted-steel);
+  --color-whisper-border: var(--whisper-border);
+  --color-hust-red: var(--hust-red);
+  --color-pear-yellow: var(--pear-yellow);
+  --color-system-green: var(--system-green);
+  --color-system-red: var(--system-red);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --radius-button: 8px;
+  --radius-card: 16px;
+}
+
+body {
+  background-color: var(--canvas-base);
+  color: var(--charcoal-ink);
+  font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* HUST Mechanical Tactile Button Styles */
+.tactile-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  border-radius: var(--radius-button);
+  border: 1.5px solid var(--charcoal-ink);
+  border-bottom: 3.5px solid var(--charcoal-ink);
+  background-color: var(--surface-card);
+  color: var(--charcoal-ink);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: transform 0.05s ease, border-bottom-width 0.05s ease;
+  user-select: none;
+}
+
+.tactile-button:active {
+  transform: translateY(2px);
+  border-bottom-width: 1.5px;
+}
+
+.tactile-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  border-bottom-width: 3.5px;
+}
+
+/* Primary/CTA HUST Crimson Variant */
+.tactile-button-primary {
+  background-color: var(--hust-red);
+  color: var(--canvas-base);
+  border-color: var(--charcoal-ink);
+  border-bottom-color: var(--charcoal-ink);
+}
+
+.tactile-button-primary:hover {
+  filter: brightness(1.05);
+}
+
+/* Tactile Card Style */
+.tactile-card {
+  border-radius: var(--radius-card);
+  border: 1.5px solid var(--charcoal-ink);
+  background-color: var(--surface-card);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  padding: 1.5rem;
+}
+
+/* MCQ Choice Surfaces */
+.mcq-choice {
+  border-radius: var(--radius-button);
+  border: 1.5px solid var(--whisper-border);
+  background-color: var(--surface-card);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mcq-choice:hover {
+  border-color: var(--charcoal-ink);
+  transform: translateY(-1px);
+}
+
+/* Selected state has HUST Red border & tint */
+.mcq-choice-selected {
+  border-color: var(--hust-red);
+  background-color: #FEF2F2;
+}
+
+/* .dark .mcq-choice-selected {
+  background-color: rgba(239, 68, 68, 0.1);
+} */
+
+/* Correct state is Green */
+.mcq-choice-correct {
+  border-color: var(--system-green);
+  background-color: #F0FDF4;
+}
+
+/* .dark .mcq-choice-correct {
+  background-color: rgba(34, 197, 94, 0.1);
+} */
+
+/* Incorrect state is Red */
+.mcq-choice-incorrect {
+  border-color: var(--system-red);
+  background-color: #FEF2F2;
+}
+
+/* .dark .mcq-choice-incorrect {
+  background-color: rgba(239, 68, 68, 0.1);
+} */
+
+/* Syntax highlighting (highlight.js tokens) — github-dark palette.
+   Scoped to .hljs blocks rendered inside CodeBlock so the AI Tutor /
+   OCR code fences get ChatGPT-style multi-colour highlighting instead
+   of a single red-on-black colour. */
+.hljs {
+  color: #c9d1d9;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.hljs-comment,
+.hljs-quote {
+  color: #8b949e;
+  font-style: italic;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-doctag,
+.hljs-name {
+  color: #ff7b72;
+}
+.hljs-built_in,
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #ffa657;
+}
+.hljs-string,
+.hljs-attr,
+.hljs-meta .hljs-string,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-regexp,
+.hljs-addition {
+  color: #a5d6ff;
+}
+.hljs-title,
+.hljs-title.function_,
+.hljs-section {
+  color: #d2a8ff;
+}
+.hljs-number,
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-attribute,
+.hljs-title.class_ {
+  color: #79c0ff;
+}
+.hljs-variable,
+.hljs-meta,
+.hljs-params {
+  color: #ffa657;
+}
+.hljs-tag,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #7ee787;
+}
+.hljs-link {
+  color: #a5d6ff;
+  text-decoration: underline;
+}
+.hljs-deletion {
+  color: #ffa198;
+  background-color: rgba(248, 81, 73, 0.15);
+}
+.hljs-addition {
+  background-color: rgba(46, 160, 67, 0.15);
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: 600;
+}
+
+/* Skeletal Shimmer Pulse Animation (banned circular spinners) */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--whisper-border) 25%,
+    var(--canvas-base) 50%,
+    var(--whisper-border) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}

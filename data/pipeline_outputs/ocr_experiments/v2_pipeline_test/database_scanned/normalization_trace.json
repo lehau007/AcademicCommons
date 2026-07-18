@@ -1,0 +1,14 @@
+{
+  "cleaned_blocks": [
+    {
+      "kind": "vision_placeholder",
+      "page": 1,
+      "content": "[VISION_PLACEHOLDER] OCR output pending for scanned page."
+    },
+    {
+      "kind": "vision_placeholder",
+      "page": 2,
+      "content": "[VISION_PLACEHOLDER] OCR output pending for scanned page."
+    }
+  ]
+}

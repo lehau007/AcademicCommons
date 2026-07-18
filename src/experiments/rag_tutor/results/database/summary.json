@@ -1,0 +1,25 @@
+{
+  "course": "database",
+  "chunk_count": 10,
+  "question_count": 10,
+  "strategies": {
+    "naive_top_k": {
+      "answer_similarity": 0.5937,
+      "context_precision": 0.7,
+      "context_recall": 0.9947,
+      "citation_accuracy": 1.0
+    },
+    "mmr": {
+      "answer_similarity": 0.5998,
+      "context_precision": 0.6,
+      "context_recall": 0.9947,
+      "citation_accuracy": 1.0
+    },
+    "mmr_tier_boost": {
+      "answer_similarity": 0.5952,
+      "context_precision": 0.7,
+      "context_recall": 0.9947,
+      "citation_accuracy": 1.0
+    }
+  }
+}

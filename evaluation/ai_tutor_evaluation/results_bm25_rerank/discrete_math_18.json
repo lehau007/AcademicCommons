@@ -1,0 +1,64 @@
+{
+  "qid": "discrete_math_18",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 3,
+      "justification": "The core claims about adjacency list structure (each vertex has a list of adjacent vertices, Adj[v] contains neighbors) are supported by chunk b63736b6 and 40778183. However, the detailed explanation of directed vs. undirected graph behavior and the specific example (Adj[a] = [b, d, e]) are not grounded in the retrieved chunks.",
+      "evidence": [
+        "Nếu là **đồ thị vô hướng**, thì mỗi cạnh \\((u, v)\\) sẽ xuất hiện trong cả `Adj[u]` và `Adj[v]`",
+        "Nếu là **đồ thị có hướng**, thì `Adj[v]` thường chứa các đỉnh mà \\(v\\) có cạnh đi tới",
+        "`Adj[a] = [b, d, e]`",
+        "`Adj[b] = [a, c, d]`"
+      ]
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses how an adjacency list is structured: each vertex has a list containing its adjacent vertices. The explanation covers both directed and undirected cases with concrete examples, staying completely on-topic throughout.",
+      "evidence": [
+        "mỗi đỉnh của đồ thị được gắn với một danh sách các đỉnh kề với nó",
+        "Với mỗi vertex v, ta lưu Adj[v]",
+        "Adj[v] chứa tất cả các đỉnh u sao cho có cạnh nối từ v đến u"
+      ]
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "The answer correctly explains that each vertex has a list of adjacent vertices (Adj[v]) and covers directed vs. undirected cases. However, it does not explicitly mention that the structure is an array of |V| lists, one per vertex.",
+      "evidence": [
+        "Ground truth: 'An adjacency list is an array consisting of |V| lists'",
+        "Answer: 'mỗi đỉnh của đồ thị được gắn với một danh sách' (each vertex is associated with a list) — implies the structure but doesn't explicitly state it's an array of |V| lists"
+      ]
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "Only 1 out of 6 chunks is directly relevant to adjacency list structure. The rest discuss BFS complexity, adjacency definition, transpose graphs, planar graphs, and DFS pseudocode—topics tangential or unrelated to how adjacency lists are structured.",
+      "evidence": [
+        "b63736b6 'Computation time of BFS' - discusses BFS complexity, not adjacency list structure",
+        "56164bf2 'Adjacency' - defines adjacency concept, not list representation",
+        "60be825b 'Reversal graph' - about transpose graphs and adjacency matrices",
+        "1e87fdca 'Planar Graphs' - unrelated topic",
+        "3d626aaf 'Undirected Simple Graph' - example graph, not list structure"
+      ]
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "The retrieved chunks mention adjacency lists in passing (e.g., 'adjacency list of each vertex,' 'Adj[s]') but do not explain the core structural fact that an adjacency list is an array of |V| lists where each vertex has one list containing its adjacent nodes. The ground-truth definition is largely absent.",
+      "evidence": [
+        "array consisting of |V| lists",
+        "each vertex has one list",
+        "list contains the nodes that are adjacent to u"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 2,
+      "justification": "The tutor's answer makes several specific claims about adjacency list structure but provides no citations for those claims. The six citations provided point to chunks about BFS complexity, adjacency definitions, transpose graphs, planar graphs, DFS pseudocode, and graph examples—none of which actually describe how adjacency lists are structured.",
+      "evidence": [
+        "Tutor claims 'Với mỗi vertex v, ta lưu Adj[v]' and 'Adj[v] chứa tất cả các đỉnh u...' with no citation",
+        "Chunk b63736b6 discusses BFS time complexity, not adjacency list structure",
+        "Chunk 56164bf2 defines adjacency/neighbors conceptually, not list structure",
+        "Chunk 40778183 shows DFS pseudocode using Adj[s] but doesn't explain the list structure itself"
+      ]
+    }
+  }
+}

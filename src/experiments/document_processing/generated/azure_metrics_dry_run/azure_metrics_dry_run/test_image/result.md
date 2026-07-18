@@ -1,0 +1,1 @@
+[VISION_PLACEHOLDER] OCR output pending from vision model.

@@ -1,0 +1,517 @@
+{
+  "course": "database",
+  "strategy": "naive_top_k",
+  "top_k": 4,
+  "fetch_k": 8,
+  "mmr_lambda": 0.7,
+  "tier_boost_multiplier": null,
+  "question_count": 10,
+  "aggregate": {
+    "answer_similarity": 0.5937,
+    "context_precision": 0.7,
+    "context_recall": 0.9947,
+    "citation_accuracy": 1.0
+  },
+  "per_question": [
+    {
+      "id": 1,
+      "question": "What are the key properties of a Candidate Key in a relational database?",
+      "ground_truth": "A Candidate Key is a superkey (K) with three main properties: no proper subset of it is a superkey within the relation, the values of K uniquely identify each tuple in the relation (uniqueness), and no proper subset of K has this uniqueness property (irreducibility).",
+      "retrieved": [
+        {
+          "chunk_id": "01_relational_model-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Candidate Keys",
+          "source_path": "01_relational_model.md",
+          "raw_similarity": 0.673,
+          "final_score": 0.673
+        },
+        {
+          "chunk_id": "03_erd_mapping-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping n-m Relationships",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.5126,
+          "final_score": 0.5126
+        },
+        {
+          "chunk_id": "03_erd_mapping-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping Multivalued Attributes",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.497,
+          "final_score": 0.497
+        },
+        {
+          "chunk_id": "01_relational_model-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Relational Algebra Operators",
+          "source_path": "01_relational_model.md",
+          "raw_similarity": 0.3621,
+          "final_score": 0.3621
+        }
+      ],
+      "generated_answer_preview": "[01_relational_model-chunk-001] A Candidate Key is a superkey K with three main properties: no proper subset of it is a superkey within the relation, the values of K uniquely identify each tuple in the relation (uniqueness), and no proper subset of K has this uniqueness property (irreducibility). Th",
+      "scores": {
+        "answer_similarity": 0.5824,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 2,
+      "question": "What is the difference between the Intersection and Difference operators in relational algebra?",
+      "ground_truth": "The Intersection operator outputs a relation by keeping only the common tuples from two union-compatible input relations. In contrast, the Difference operator results in a relation containing tuples that occurred in the first relation but not in the second.",
+      "retrieved": [
+        {
+          "chunk_id": "01_relational_model-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Relational Algebra Operators",
+          "source_path": "01_relational_model.md",
+          "raw_similarity": 0.8458,
+          "final_score": 0.8458
+        },
+        {
+          "chunk_id": "02_sql_history_and_clauses-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "WHERE vs HAVING",
+          "source_path": "02_sql_history_and_clauses.md",
+          "raw_similarity": 0.4127,
+          "final_score": 0.4127
+        },
+        {
+          "chunk_id": "05_query_processing-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Join Algorithms",
+          "source_path": "05_query_processing.md",
+          "raw_similarity": 0.3401,
+          "final_score": 0.3401
+        },
+        {
+          "chunk_id": "03_erd_mapping-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping Multivalued Attributes",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.2633,
+          "final_score": 0.2633
+        }
+      ],
+      "generated_answer_preview": "[01_relational_model-chunk-002] Relational algebra defines a set of operations over relations. Two important operators are intersection and difference, both of which require their inputs to be union-compatible. The Intersection operator outputs a relation by keeping only the common tuples from two u",
+      "scores": {
+        "answer_similarity": 0.6213,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 3,
+      "question": "How did the SQL standard evolve between 1986 and 1999?",
+      "ground_truth": "The first standard, SQL1, was defined in 1986 and adopted by ISO in 1987. In 1992, SQL2 was adopted as the formal standard language for defining and manipulating relational databases. Later, in 1999, SQL3 extended the standard with Object-Oriented features, user-defined data types, triggers, and user-defined functions.",
+      "retrieved": [
+        {
+          "chunk_id": "02_sql_history_and_clauses-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Evolution of the SQL Standard",
+          "source_path": "02_sql_history_and_clauses.md",
+          "raw_similarity": 0.7728,
+          "final_score": 0.7728
+        },
+        {
+          "chunk_id": "02_sql_history_and_clauses-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "WHERE vs HAVING",
+          "source_path": "02_sql_history_and_clauses.md",
+          "raw_similarity": 0.2695,
+          "final_score": 0.2695
+        },
+        {
+          "chunk_id": "05_query_processing-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Query Optimizer Goal",
+          "source_path": "05_query_processing.md",
+          "raw_similarity": 0.2658,
+          "final_score": 0.2658
+        },
+        {
+          "chunk_id": "04_normalization-chunk-001",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Update Anomalies",
+          "source_path": "04_normalization.md",
+          "raw_similarity": 0.2429,
+          "final_score": 0.2429
+        }
+      ],
+      "generated_answer_preview": "[02_sql_history_and_clauses-chunk-001] The first SQL standard, SQL1, was defined in 1986 and adopted by ISO in 1987. In 1992, SQL2 was adopted as the formal standard language for defining and manipulating relational databases. Later, in 1999, SQL3 extended the standard with Object-Oriented features,",
+      "scores": {
+        "answer_similarity": 0.6156,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 4,
+      "question": "How do the HAVING and WHERE clauses differ in SQL?",
+      "ground_truth": "Conditions in a HAVING clause apply to groups as a whole, whereas conditions in a WHERE clause apply to individual tuples.",
+      "retrieved": [
+        {
+          "chunk_id": "02_sql_history_and_clauses-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "WHERE vs HAVING",
+          "source_path": "02_sql_history_and_clauses.md",
+          "raw_similarity": 0.8092,
+          "final_score": 0.8092
+        },
+        {
+          "chunk_id": "05_query_processing-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Query Optimizer Goal",
+          "source_path": "05_query_processing.md",
+          "raw_similarity": 0.2613,
+          "final_score": 0.2613
+        },
+        {
+          "chunk_id": "02_sql_history_and_clauses-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Evolution of the SQL Standard",
+          "source_path": "02_sql_history_and_clauses.md",
+          "raw_similarity": 0.2601,
+          "final_score": 0.2601
+        },
+        {
+          "chunk_id": "01_relational_model-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Relational Algebra Operators",
+          "source_path": "01_relational_model.md",
+          "raw_similarity": 0.2526,
+          "final_score": 0.2526
+        }
+      ],
+      "generated_answer_preview": "[02_sql_history_and_clauses-chunk-002] SQL provides two filtering clauses that operate at different granularities. Conditions in a HAVING clause apply to groups as a whole, whereas conditions in a WHERE clause apply to individual tuples. As a consequence, WHERE is evaluated before grouping and aggre",
+      "scores": {
+        "answer_similarity": 0.4159,
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 5,
+      "question": "How is a many-to-many (n-m) relationship mapped from an ERD to a relational schema?",
+      "ground_truth": "To map an n-m relationship, you create a new relation that includes all the prime-attributes (primary keys) of both participating entity sets. These prime attributes are used as foreign keys in the new relation.",
+      "retrieved": [
+        {
+          "chunk_id": "03_erd_mapping-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping n-m Relationships",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.8363,
+          "final_score": 0.8363
+        },
+        {
+          "chunk_id": "03_erd_mapping-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping Multivalued Attributes",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.4719,
+          "final_score": 0.4719
+        },
+        {
+          "chunk_id": "01_relational_model-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Relational Algebra Operators",
+          "source_path": "01_relational_model.md",
+          "raw_similarity": 0.3364,
+          "final_score": 0.3364
+        },
+        {
+          "chunk_id": "05_query_processing-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Join Algorithms",
+          "source_path": "05_query_processing.md",
+          "raw_similarity": 0.2352,
+          "final_score": 0.2352
+        }
+      ],
+      "generated_answer_preview": "[03_erd_mapping-chunk-001] Mapping an Entity-Relationship Diagram into a relational schema follows systematic rules. To map an n-m (many-to-many) relationship from an ERD to a relational schema, you create a new relation that includes all the prime-attributes (primary keys) of both participating ent",
+      "scores": {
+        "answer_similarity": 0.7109,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 6,
+      "question": "What is the mapping process for a multivalued attribute in an ERD?",
+      "ground_truth": "For each multivalued attribute A, you create a new relation R that includes an attribute corresponding to A, plus the primary key attribute K of the corresponding entity set, which serves as a foreign key in R. The primary key of the new relation R is the combination of A and K.",
+      "retrieved": [
+        {
+          "chunk_id": "03_erd_mapping-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping Multivalued Attributes",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.6712,
+          "final_score": 0.6712
+        },
+        {
+          "chunk_id": "03_erd_mapping-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping n-m Relationships",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.5287,
+          "final_score": 0.5287
+        },
+        {
+          "chunk_id": "04_normalization-chunk-002",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Closure of Functional Dependencies",
+          "source_path": "04_normalization.md",
+          "raw_similarity": 0.2837,
+          "final_score": 0.2837
+        },
+        {
+          "chunk_id": "05_query_processing-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Join Algorithms",
+          "source_path": "05_query_processing.md",
+          "raw_similarity": 0.2649,
+          "final_score": 0.2649
+        }
+      ],
+      "generated_answer_preview": "[03_erd_mapping-chunk-002] For each multivalued attribute A, the mapping process creates a new relation R that includes an attribute corresponding to A, plus the primary key attribute K of the corresponding entity set, which serves as a foreign key in R. The primary key of the new relation R is the ",
+      "scores": {
+        "answer_similarity": 0.6484,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 7,
+      "question": "What is an update anomaly in the context of database normalization?",
+      "ground_truth": "An update anomaly is an instance where the same information must be updated in several different places, which is not efficient. For example, if the name of a subject needs to be changed, it has to be updated in every row where that subject appears.",
+      "retrieved": [
+        {
+          "chunk_id": "04_normalization-chunk-001",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Update Anomalies",
+          "source_path": "04_normalization.md",
+          "raw_similarity": 0.7729,
+          "final_score": 0.7729
+        },
+        {
+          "chunk_id": "02_sql_history_and_clauses-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Evolution of the SQL Standard",
+          "source_path": "02_sql_history_and_clauses.md",
+          "raw_similarity": 0.3335,
+          "final_score": 0.3335
+        },
+        {
+          "chunk_id": "03_erd_mapping-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping Multivalued Attributes",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.1868,
+          "final_score": 0.1868
+        },
+        {
+          "chunk_id": "03_erd_mapping-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping n-m Relationships",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.1758,
+          "final_score": 0.1758
+        }
+      ],
+      "generated_answer_preview": "[04_normalization-chunk-001] An update anomaly is an instance where the same information must be updated in several different places, which is not efficient. For example, if the name of a subject needs to be changed, it has to be updated in every row where that subject appears. Update anomalies, alo",
+      "scores": {
+        "answer_similarity": 0.4458,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 8,
+      "question": "What does the closure of a functional dependency set (F+) represent?",
+      "ground_truth": "The closure of a functional dependency set, denoted as F+, represents all the dependencies that can be inferred from the set F, including the dependencies in F itself.",
+      "retrieved": [
+        {
+          "chunk_id": "04_normalization-chunk-002",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Closure of Functional Dependencies",
+          "source_path": "04_normalization.md",
+          "raw_similarity": 0.8633,
+          "final_score": 0.8633
+        },
+        {
+          "chunk_id": "03_erd_mapping-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping Multivalued Attributes",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.2419,
+          "final_score": 0.2419
+        },
+        {
+          "chunk_id": "01_relational_model-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Relational Algebra Operators",
+          "source_path": "01_relational_model.md",
+          "raw_similarity": 0.1648,
+          "final_score": 0.1648
+        },
+        {
+          "chunk_id": "01_relational_model-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Candidate Keys",
+          "source_path": "01_relational_model.md",
+          "raw_similarity": 0.1541,
+          "final_score": 0.1541
+        }
+      ],
+      "generated_answer_preview": "[04_normalization-chunk-002] The closure of a functional dependency set, denoted as F+, represents all the dependencies that can be inferred from the set F, including the dependencies in F itself. The closure is computed by repeatedly applying Armstrong's axioms (reflexivity, augmentation, and trans",
+      "scores": {
+        "answer_similarity": 0.5672,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 9,
+      "question": "What is the primary goal of a query optimizer?",
+      "ground_truth": "The primary goal of a query optimizer is to choose the cheapest execution plan out of all the possible query execution plans.",
+      "retrieved": [
+        {
+          "chunk_id": "05_query_processing-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Query Optimizer Goal",
+          "source_path": "05_query_processing.md",
+          "raw_similarity": 0.7568,
+          "final_score": 0.7568
+        },
+        {
+          "chunk_id": "05_query_processing-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Join Algorithms",
+          "source_path": "05_query_processing.md",
+          "raw_similarity": 0.4732,
+          "final_score": 0.4732
+        },
+        {
+          "chunk_id": "02_sql_history_and_clauses-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "WHERE vs HAVING",
+          "source_path": "02_sql_history_and_clauses.md",
+          "raw_similarity": 0.3654,
+          "final_score": 0.3654
+        },
+        {
+          "chunk_id": "03_erd_mapping-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Mapping Multivalued Attributes",
+          "source_path": "03_erd_mapping.md",
+          "raw_similarity": 0.268,
+          "final_score": 0.268
+        }
+      ],
+      "generated_answer_preview": "[05_query_processing-chunk-001] The primary goal of a query optimizer is to choose the cheapest execution plan out of all the possible query execution plans for a given SQL query. The optimizer enumerates equivalent plans (using algebraic rewrites and join-order permutations) and uses a cost model t",
+      "scores": {
+        "answer_similarity": 0.6071,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 10,
+      "question": "What are two algorithms mentioned for executing Join operations in query processing?",
+      "ground_truth": "Two algorithms used for executing Join operations are the Sort-merge JOIN, which requires data to be physically sorted by join attributes, and the Partition-hash JOIN, which hashes two relations on join attributes and joins the buckets accordingly.",
+      "retrieved": [
+        {
+          "chunk_id": "05_query_processing-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Join Algorithms",
+          "source_path": "05_query_processing.md",
+          "raw_similarity": 0.8237,
+          "final_score": 0.8237
+        },
+        {
+          "chunk_id": "05_query_processing-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Query Optimizer Goal",
+          "source_path": "05_query_processing.md",
+          "raw_similarity": 0.6212,
+          "final_score": 0.6212
+        },
+        {
+          "chunk_id": "01_relational_model-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Relational Algebra Operators",
+          "source_path": "01_relational_model.md",
+          "raw_similarity": 0.4949,
+          "final_score": 0.4949
+        },
+        {
+          "chunk_id": "02_sql_history_and_clauses-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "WHERE vs HAVING",
+          "source_path": "02_sql_history_and_clauses.md",
+          "raw_similarity": 0.3837,
+          "final_score": 0.3837
+        }
+      ],
+      "generated_answer_preview": "[05_query_processing-chunk-002] Several physical algorithms exist for executing Join operations in query processing. Two important examples are the Sort-merge JOIN, which requires data to be physically sorted by join attributes, and the Partition-hash JOIN, which hashes two relations on join attribu",
+      "scores": {
+        "answer_similarity": 0.7225,
+        "context_precision": 0.75,
+        "context_recall": 0.9474,
+        "citation_accuracy": 1.0
+      }
+    }
+  ]
+}

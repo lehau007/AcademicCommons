@@ -1,0 +1,136 @@
+{
+  "qid": "database_10",
+  "course_code": "IT3292E",
+  "question": "What are two algorithms mentioned for executing Join operations in query processing?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "5cb31e67-020e-40e4-ad7a-c744249ba944",
+  "answer": "Two algorithms mentioned for executing **Join** operations in query processing are:\n\n1. **Sort-merge join**\n2. **Hash join**\n\nThe course material explicitly contrasts them as alternative join algorithms.",
+  "citations": [
+    {
+      "chunk_id": "767043fa-1a26-4e37-9ef5-ef2336fcd295",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- Algebra expression is not a query execution plan.\n- Additional decisions required:\n  - which indexes to use, for example, for joins and selects?\n  - which algorithms to use, for example, sort-merge "
+    },
+    {
+      "chunk_id": "fe8d6b5f-8c26-476e-a33c-1f031f398e42",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 31,
+      "excerpt": "[Diagram: The figure illustrates a query execution plan for relational algebra operations, showing scans, selection, projection, and joins. It highlights how execution strategy affects whether interme"
+    },
+    {
+      "chunk_id": "f8f39aa7-041d-4622-b3a1-d533f23e318f",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 38,
+      "excerpt": "- Query processing is the entire process or activities involved in retrieving data from the database\n  - Parser\n  - Optimizer\n  - Code generator\n- Query optimizer\n  - Step 1: Equivalence transformatio"
+    },
+    {
+      "chunk_id": "de75e698-344b-4d3e-b4e4-9faccb8d3cb8",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Step 1: Equivalence transformation",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "- Equivalence tranformation rules\n- (7) Selection distributes over joins in the following ways\n  - If predicate involves attributes of E1 only\n  - $ \\sigma_{\\theta_1}(E_1 \\bowtie_{\\theta_2} E_2) = \\si"
+    },
+    {
+      "chunk_id": "ca0ed6f1-9597-4ac2-b387-2c22b10c8e8d",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "- Single-loop JOIN (Index-based)\n\n```text\n+--------------------------------------------------------------+\n| for each tube tr in R {                                      |\n|     seach for ts in s thou"
+    },
+    {
+      "chunk_id": "60f1ab19-18a1-48bf-8ec3-2c36c17362d8",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.4. Optimizer",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- Input: RA expression\n- Output: Query execution plan\n- Query execution plan = query plan + the algorithms for the executions of RA operations\n- Aims to choose the cheapest execution plan out of the p"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "two algorithms mentioned for executing Join operations in query processing",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "767043fa-1a26-4e37-9ef5-ef2336fcd295",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 21,
+          "cosine_sim": 0.5106,
+          "final_score": 0.5097,
+          "content": "- Algebra expression is not a query execution plan.\n- Additional decisions required:\n  - which indexes to use, for example, for joins and selects?\n  - which algorithms to use, for example, sort-merge vs. hash join?\n  - materialize intermediate results or pipeline them?"
+        },
+        {
+          "chunk_id": "fe8d6b5f-8c26-476e-a33c-1f031f398e42",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 31,
+          "cosine_sim": 0.5164,
+          "final_score": 0.3934,
+          "content": "[Diagram: The figure illustrates a query execution plan for relational algebra operations, showing scans, selection, projection, and joins. It highlights how execution strategy affects whether intermediate results are materialized or pipelined through the plan.]"
+        },
+        {
+          "chunk_id": "f8f39aa7-041d-4622-b3a1-d533f23e318f",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Remark",
+          "chunk_order": 38,
+          "cosine_sim": 0.4081,
+          "final_score": 0.3388,
+          "content": "- Query processing is the entire process or activities involved in retrieving data from the database\n  - Parser\n  - Optimizer\n  - Code generator\n- Query optimizer\n  - Step 1: Equivalence transformation\n  - Step 2: Annotation for the algorithm of the RA expression\n  - Step 3: Cost estimation for different query execution plans"
+        },
+        {
+          "chunk_id": "de75e698-344b-4d3e-b4e4-9faccb8d3cb8",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.1. Step 1: Equivalence transformation",
+          "chunk_order": 18,
+          "cosine_sim": 0.4543,
+          "final_score": 0.2463,
+          "content": "- Equivalence tranformation rules\n- (7) Selection distributes over joins in the following ways\n  - If predicate involves attributes of E1 only\n  - $ \\sigma_{\\theta_1}(E_1 \\bowtie_{\\theta_2} E_2) = \\sigma_{\\theta_1}(E_1) \\bowtie_{\\theta_2} E_2 $\n  - If predicate $\\theta_1$ involves only attributes of E1 and $\\theta_2$ involves only attributes of E2 (a consequence of rule 7 and 1)\n  - $ \\sigma_{\\theta_1 \\wedge \\theta_2}(E_1 \\bowtie_{\\theta_3} E_2) = \\sigma_{\\theta_1}(E_1) \\bowtie_{\\theta_3} \\sigma_{\\theta_2}(E_2) $\n\n[Diagram: This slide describes equivalence rules used to rewrite relational algebra expressions without changing their meaning. The key idea is to push selection operations closer to the input relations so query processing can become more efficient.]"
+        },
+        {
+          "chunk_id": "ca0ed6f1-9597-4ac2-b387-2c22b10c8e8d",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 25,
+          "cosine_sim": 0.4442,
+          "final_score": 0.2425,
+          "content": "- Single-loop JOIN (Index-based)\n\n```text\n+--------------------------------------------------------------+\n| for each tube tr in R {                                      |\n|     seach for ts in s thought index {                        |\n|         if ts.exist() {                                      |\n|             add tr x ts to the result set                    |\n|         }                                                    |\n|     }                                                            |\n| }                                                            |\n+--------------------------------------------------------------+\n```\n\n[Diagram: This pseudocode describes an index-based single-loop join, where each tuple from one relation probes an index on the other relation to find matches. It matters because using an index can avoid exhaustive pairwise comparison and reduce join cost significantly.]\n\n- Index needed\n- Cheaper: O(nlogm)"
+        },
+        {
+          "chunk_id": "60f1ab19-18a1-48bf-8ec3-2c36c17362d8",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.4. Optimizer",
+          "chunk_order": 11,
+          "cosine_sim": 0.3967,
+          "final_score": 0.237,
+          "content": "- Input: RA expression\n- Output: Query execution plan\n- Query execution plan = query plan + the algorithms for the executions of RA operations\n- Aims to choose the cheapest execution plan out of the possible ones\n  - Step 1: Equivalence transformation\n  - Step 2: Annotation for the algorithm of the RA expression\n  - Step 3: Cost estimation for different query execution plans"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.0
+}

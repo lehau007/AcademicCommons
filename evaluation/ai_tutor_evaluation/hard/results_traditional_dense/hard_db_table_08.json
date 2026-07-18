@@ -1,0 +1,37 @@
+{
+  "qid": "hard_db_table_08",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 3,
+      "justification": "Grounded in the wrong Keywords table for this question.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 4,
+      "justification": "Directly and completely answers the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 2,
+      "justification": "WRONG: answers INSERT/UPDATE/DELETE instead of Defining/Constructing/Manipulating.",
+      "evidence": []
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Nearly all retrieved chunks are relevant to the question.",
+      "evidence": []
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "'Defining ~ specifying types' triple under-retrieved by the raw query.",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "Citations point to chunks that support the statements.",
+      "evidence": []
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "qid": "discrete_math_18",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The core structure (array of |V| lists, one per vertex, containing adjacent vertices) is explicitly stated in chunk 4a1180a7. The distinction between undirected and directed graphs is supported by the examples in chunks fe4e8b85 and 59c3ae5a, and the term 'out-neighbors' for directed graphs is found in chunk cd7e7d21.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how an adjacency list is structured: as an array of |V| lists where each vertex has one list containing its adjacent vertices. The additional examples and clarifications about directed vs. undirected graphs enhance understanding without deviating from the core question.",
+      "evidence": [
+        "An **array** (or table) called `Adjacency`",
+        "The array has **|V| lists** — one list for each vertex",
+        "For each vertex `u`, `Adjacency[u]` contains all vertices **adjacent to `u`**"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: it's an array of |V| lists, each vertex has one list, and each list contains nodes adjacent to that vertex. The additional explanations and examples are correct and helpful.",
+      "evidence": [
+        "Ground truth: 'array consisting of |V| lists' — Tutor: 'array has |V| lists'",
+        "Ground truth: 'each vertex has one list' — Tutor: 'one list for each vertex'",
+        "Ground truth: 'list contains the nodes that are adjacent to u' — Tutor: 'contains all vertices adjacent to u'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six chunks are directly relevant to explaining adjacency list structure. Only the last chunk about topological sorting is unrelated to the question.",
+      "evidence": [
+        "chunk_id=1e4aad16-2406-4cbf-91dc-50799216d7bc: 'Topological sorting algorithm' - discusses topological sorting with DAG input, not adjacency list structure"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 4a1180a7 explicitly states the adjacency list is an array of |V| lists, each vertex has one list, and for each vertex u, Adjacency[u] consists of nodes adjacent to u.",
+      "evidence": [
+        "Is an array **Adjacency** consisting of |V| lists",
+        "Each vertex has 1 list",
+        "Each vertex u ∈ V: Adjacency[u] consists of nodes that are adjacent to u"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports its corresponding statement. The first chunk defines the array structure with |V| lists, the undirected/directed graph chunks support the examples and behavior descriptions, and all cited content aligns precisely with the tutor's claims.",
+      "evidence": [
+        "Tutor: 'An **array** (or table) called `Adjacency`' → Chunk 4a1180a7: 'Is an array **Adjacency** consisting of |V| lists'",
+        "Tutor: 'The array has **|V| lists** — one list for each vertex' → Chunk 4a1180a7: 'Each vertex has 1 list'",
+        "Tutor: '`Adjacency[u]` contains all vertices **adjacent to `u`**' → Chunk 4a1180a7: 'Adjacency[u] consists of nodes that are adjacent to u'",
+        "Tutor: 'For an **undirected graph**, each edge appears in both vertices' lists' → Chunk fe4e8b85: 'u → v → w' and 'v → u → w → y' (symmetric entries)",
+        "Tutor: 'For a **directed graph**, each vertex's list usually contains its **out-neighbors** only' → Chunk 59c3ae5a: 'a → b → c' (only outgoing edges from a)"
+      ]
+    }
+  }
+}

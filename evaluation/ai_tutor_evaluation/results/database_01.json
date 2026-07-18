@@ -1,0 +1,51 @@
+{
+  "qid": "database_01",
+  "course_code": "IT3292E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The properties of uniqueness, minimality/irreducibility, and the superkey relationship are all explicitly stated in chunk d9bf8451. The distinction about primary and alternate keys is supported by chunks d9bf8451 and 71a5aed9.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by clearly listing and explaining the key properties of a Candidate Key: uniqueness, minimality/irreducibility, and its relationship to superkeys. All content is on-topic and relevant to the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all three key properties from the ground truth: uniqueness (values uniquely identify each tuple), irreducibility/minimality (no proper subset has uniqueness), and that it is a superkey with no proper subset being a superkey. The additional context about primary and alternate keys is correct supplementary information.",
+      "evidence": [
+        "Ground truth: 'no proper subset of it is a superkey' vs Answer: 'no proper subset of the candidate key can still uniquely identify tuples'",
+        "Ground truth: 'values of K uniquely identify each tuple' vs Answer: 'its values uniquely identify each tuple'",
+        "Ground truth: 'No proper subset of K has this uniqueness property' vs Answer: 'no proper subset of the candidate key can still uniquely identify tuples'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Four of the five chunks are relevant to understanding candidate keys. Only the summary chunk (b87b24ad) is too generic to help answer the question, merely listing constraint types without explaining candidate key properties.",
+      "evidence": [
+        "b87b24ad-13fb-498f-a892-daa96f07fa58: 'Constraints - Key constraints - Domain constraints - Referential integrity constraints'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All three key properties from the ground truth are explicitly present in the first retrieved chunk: it is a superkey with no proper subset being a superkey, values uniquely identify tuples (uniqueness), and no proper subset has the uniqueness property (irreducibility).",
+      "evidence": [
+        "Superkey (K) such that no proper subset is a superkey within the relation",
+        "values of K uniquely identify that tuple (uniqueness)",
+        "No proper subset of K has the uniqueness property (irreducibility)"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made. The first chunk defines candidate key properties (superkey, uniqueness, irreducibility), the second chunk supports the alternate keys statement, and the third chunk provides general context about constraints.",
+      "evidence": [
+        "Tutor states 'uniqueness' and 'minimality/irreducibility' properties; chunk d9bf8451 confirms 'Superkey (K) such that no proper subset is a superkey... values of K uniquely identify that tuple (uniqueness)... No proper subset of K has the uniqueness property (irreducibility)'",
+        "Tutor mentions 'alternate keys'; chunk 71a5aed9 states 'Alternate Keys: Candidate keys that are not selected to be the primary key'",
+        "Chunk b87b24ad provides summary context about key constraints, appropriately supporting the general discussion"
+      ]
+    }
+  }
+}

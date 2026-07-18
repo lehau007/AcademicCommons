@@ -1,0 +1,66 @@
+{
+  "topic": "Đề 2",
+  "concepts": [
+    "Đề 2",
+    "1.",
+    "2.",
+    "Đề 1",
+    "học",
+    "phần",
+    "các",
+    "thông"
+  ],
+  "language": "vi",
+  "ocr_quality": "low",
+  "section_summaries": [
+    {
+      "heading": "Đề 2",
+      "summary": "**ĐỀ THI GIỮA KỲ** Tên HP: **CƠ SỞ DỮ LIỆU** - Mã HP: **IT3090** Thời gian: **60 phút** *(KHÔNG sử dụng tài liệu)* **Lưu ý: Nộp đề cùng bài thi** Cho một phần cơ sở dữ liệu quản lý thông tin học tập như sau: | Quan hệ | Thông tin | |---|---| | HocPhan(**MaHP**, TenHP, soTC,...",
+      "page_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "heading": "1.",
+      "summary": "Sử dụng câu lệnh SQL để tạo bảng DieuKien. Chú ý sinh viên cần định nghĩa đầy đủ ràng buộc khóa chính, khóa ngoại và miền giá trị nếu có.",
+      "page_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "heading": "2.",
+      "summary": "Biểu diễn các yêu cầu tìm kiếm thông tin sau bằng **ngôn ngữ SQL**: a. Đưa ra danh sách các học phần có hệ số điểm cuối kỳ nhỏ hơn 0.5.",
+      "page_range": [
+        3,
+        3
+      ]
+    },
+    {
+      "heading": "Đề 1",
+      "summary": "**ĐỀ THI GIỮA KỲ** Tên HP: **CƠ SỞ DỮ LIỆU** - Mã HP: **IT3090** Thời gian: **60 phút** *(KHÔNG sử dụng tài liệu)* **Lưu ý: Nộp đề cùng bài thi** Cho một phần cơ sở dữ liệu quản lý thông tin học tập như sau: | Quan hệ | Thuộc tính | Thông tin | |---|---|---| | HocPhan(**MaHP**,...",
+      "page_range": [
+        4,
+        4
+      ]
+    },
+    {
+      "heading": "1.",
+      "summary": "Sử dụng câu lệnh SQL để tạo bảng Hoc. Chú ý sinh viên cần định nghĩa đầy đủ ràng buộc khóa chính, khóa ngoài và miền giá trị nếu có.",
+      "page_range": [
+        5,
+        5
+      ]
+    },
+    {
+      "heading": "2.",
+      "summary": "Biểu diễn các yêu cầu tìm kiếm thông tin sau bằng ngôn ngữ SQL: a. Đưa ra danh sách các mã lớp mở trong học kỳ “20192”.",
+      "page_range": [
+        6,
+        6
+      ]
+    }
+  ],
+  "overall_summary": "Đề 2: **ĐỀ THI GIỮA KỲ** Tên HP: **CƠ SỞ DỮ LIỆU** - Mã HP: **IT3090** Thời gian: **60 phút** *(KHÔNG sử dụng tài liệu)* **Lưu ý: Nộp đề cùng bài thi** Cho một phần cơ sở dữ liệu quản lý thông tin học tập như sau: | Quan hệ | Thông tin | |---|---| | HocPhan(**MaHP**, TenHP, soTC,... 1.: Sử dụng câu lệnh SQL để tạo bảng DieuKien. Chú ý sinh viên cần định nghĩa đầy đủ ràng buộc khóa chính, khóa ngoại và miền giá trị nếu có. 2.: Biểu diễn các yêu cầu tìm kiếm thông tin sau bằng **ngôn ngữ SQL**: a. Đưa ra danh sách các học phần có hệ số điểm cuối kỳ nhỏ hơn 0.5. Đề 1: **ĐỀ THI GIỮA KỲ** Tên HP: **CƠ SỞ DỮ LIỆU** - Mã HP: **IT3090** Thời gian: **60 phút** *(KHÔNG sử dụng tài liệu)* **Lưu ý: Nộp đề cùng bài thi** Cho một phần cơ sở dữ liệu quản lý thông tin học tập như sau: | Quan hệ | Thuộc tính | Thông tin | |---|---|---| | HocPhan(**MaHP**,... 1.: Sử dụng câu lệnh SQL để tạo bảng Hoc. Chú ý sinh viên cần định nghĩa đầy đủ ràng buộc khóa chính, khóa ngoài và miền giá trị nếu có. 2.: Biểu diễn các yêu cầu tìm..."
+}

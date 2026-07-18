@@ -1,0 +1,84 @@
+{
+  "qid": "discrete_math_08",
+  "course_code": "IT3020E",
+  "question": "What is the running time of the Floyd-Warshall algorithm?",
+  "session_id": "94ad7fe0-a39a-4289-8328-8dcbbbef56c8",
+  "answer": "The **Floyd–Warshall algorithm** runs in **\\(\\Theta(n^3)\\)** time, where \\(n\\) is the number of vertices.\n\nWhy:\n- The pseudocode uses **three nested loops**:\n  - \\(k = 1 \\ldots n\\)\n  - \\(i = 1 \\ldots n\\)\n  - \\(j = 1 \\ldots n\\)\n- So the total number of operations grows proportionally to \\(n \\cdot n \\cdot n = n^3\\).\n\nSo the usual answer is:\n\n- **Time complexity:** **\\(O(n^3)\\)**\n- More precisely: **\\(\\Theta(n^3)\\)**",
+  "citations": [
+    {
+      "chunk_id": "c6dd1a45-456c-44b9-8b2e-2056c3ab9984",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Floyd-Warshall",
+      "page_number": null,
+      "chunk_order": 39,
+      "excerpt": "void Floyd-Warshall(n, W)\n{\n    D^(0) ← W\n    for (k = 1; k <= n; k++)           // Path going through only intermediate\n                                        // vertices selected from {1,2,...,k}\n "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Floyd-Warshall algorithm running time complexity",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c6dd1a45-456c-44b9-8b2e-2056c3ab9984",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Floyd-Warshall",
+          "chunk_order": 39,
+          "cosine_sim": 0.5823,
+          "final_score": 0.6697,
+          "content": "void Floyd-Warshall(n, W)\n{\n    D^(0) ← W\n    for (k = 1; k <= n; k++)           // Path going through only intermediate\n                                        // vertices selected from {1,2,...,k}\n        for (i = 1; i <= n; i++)        // All pairs (i,j)\n            for (j = 1; j <= n; j++)\n                d_ij^(k) ← min(d_ij^(k-1), d_ik^(k-1) + d_k\n\n## Floyd-Warshall Algorithm Example\n\n- Graph with 4 nodes and weighted edges\n- Distance matrix $D^{(4)}$ and predecessor matrix $P^{(4)}$ shown"
+        },
+        {
+          "chunk_id": "15094984-a4e6-4f72-916d-fa6d4a0ae0c1",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Theoretical Analysis of Running Time",
+          "chunk_order": 17,
+          "cosine_sim": 0.4216,
+          "final_score": 0.4848,
+          "content": "- Uses a pseudo-code description of the algorithm instead of an implementation\n- Characterizes running time as a function of the input size, $n$\n- Takes into account all possible inputs\n- Allows us to evaluate the speed of an algorithm independent of the hardware/software environment (Changing the hardware/software environment affects the running time by a constant factor, but does not alter the growth rate of the running time)"
+        },
+        {
+          "chunk_id": "0c6e2092-2389-423a-8679-daa135a0e3ce",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Kind of analyses",
+          "chunk_order": 13,
+          "cosine_sim": 0.4075,
+          "final_score": 0.4687,
+          "content": "**Best-case:**\n\n- $T(n)$ = minimum time required to execute the algorithm on any input of size $n$\n- Treat with a slow algorithm that works fast on some input.\n\n**Average-case: (sometimes)**\n\n- $T(n)$ = expected average time of algorithm over all inputs of size $n$.\n- Need assumption of statistical distribution of inputs\n- Very useful but often difficult to determine\n\n**Worst-case: (usually)**\n\n- $T(n)$ = maximum time of algorithm on any input of size $n$.\n- Easier to analyze\n\nTo evaluate the running time: 2 ways:\n\n- Experimental evaluation of running time\n- Theoretical analysis of running time"
+        },
+        {
+          "chunk_id": "b64661a1-7db8-453c-aa4d-789bab3ffe76",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Experimental Evaluation of Running Time",
+          "chunk_order": 15,
+          "cosine_sim": 0.4072,
+          "final_score": 0.4683,
+          "content": "```text\n+------------------------------------------------------+\n|                     Time (ms)                        |\n|                                                      |\n| 9000 |                                               |\n| 8000 |                                           .   |\n| 7000 |                                       .   .   |\n| 6000 |                                     .   .      |\n| 5000 |                                 .   .          |\n| 4000 |                              .   .             |\n| 3000 |                        .   .                   |\n| 2000 |                   .   .                        |\n| 1000 |              .   .                             |\n|    0 +----+----+----+----+----+----+----+----+----+--> Input Size\n|         0   10   20   30   40   50   60   70   80   100\n+------------------------------------------------------+\n```\n\n[Diagram: The plot illustrates how running time increases as input size grows, which is the core idea in experimental algorithm analysis. Measuring and graphing runtime across different input sizes helps reveal the algorithm’s practical performance trend.]"
+        },
+        {
+          "chunk_id": "d654d131-e1cf-4dfb-9d00-37cd120c344b",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Experimental Evaluation of Running Time",
+          "chunk_order": 14,
+          "cosine_sim": 0.3678,
+          "final_score": 0.423,
+          "content": "- Write a program implementing the algorithm\n- Run the program with inputs of varying size and composition\n- Use a method like $clock()$ to get an accurate measure of the actual running time\n\n```c\nclock_t startTime = clock();\ndoSomeOperation();\nclock_t endTime = clock();\nclock_t clockTicksTaken = endTime - startTime;\ndouble timeInSeconds = clockTicksTaken / (double) CLOCKS_PER_SEC;\n```\n\n- Plot the results"
+        },
+        {
+          "chunk_id": "71ee81a7-b761-4dd9-be98-dda2f0a7cb27",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Algorithm analysis example",
+          "chunk_order": 32,
+          "cosine_sim": 0.3528,
+          "final_score": 0.4058,
+          "content": "```text\n+-----------------------------+\n| int Linear_Search(s,n,key)  |\n+-----------------------------+\n| {                           |\n|   i = 0;                    |\n|   do                        |\n|     i = i + 1;              |\n|   while (i <= n) or (key != s_i); |\n|   return i;                 |\n| }                           |\n+-----------------------------+\n```\n\n- Average-case running time:\n  - If `key` is found at position `i` of sequence (`key = s_i`) then the statement `i = i+1` is executed `i` times (`i = 1, 2, ..., n`),\n  - If `key` is not found in the sequence then the statement `i = i+1` is executed `n` times.\n\n- Thus, the average number of times that the statement `i = i+1` being executed is\n\n$[(1 + 2 + \\dots + n) + n]/(n+1) = [n(n+1)/2 + n]/(n+1)$.\n\n- We have:\n\n$n/4 \\le [n(n+1)/2 + n]/(n+1) \\le n \\text{ với mọi } n \\ge 1.$\n\n- Thus, the average-case running time of the algorithm is $\\Theta(n)$."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 6.9
+}

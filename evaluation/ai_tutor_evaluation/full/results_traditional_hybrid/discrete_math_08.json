@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_08",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Theta(n^3) derived from triple loop; honest note"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Critical_Path chunk tangential"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "FW running time not stated; loop retrieved"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  }
+}

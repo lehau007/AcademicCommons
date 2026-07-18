@@ -1,0 +1,39 @@
+{
+  "qid": "intro_to_ai_02",
+  "course_code": "IT3160E",
+  "question": "What is the difference between progression planners and regression planners in state-space search?",
+  "session_id": "598b1bf1-4656-4aa2-8127-a9c65587b886",
+  "answer": "In state-space search, the difference is:\n\n- **Progression planners** use **forward search**:\n  - Start from the **initial state**\n  - Consider the effects of all possible actions from that state\n  - Move step by step toward the goal\n\n- **Regression planners** use **backward search**:\n  - Start from the **goal state**\n  - Determine what must have been true in the **previous state** to achieve the current state\n  - Work backward toward the initial state\n\nSo, in short:\n\n- **Progression = from start to goal**\n- **Regression = from goal back to start**",
+  "citations": [
+    {
+      "chunk_id": "6f25b02f-6274-487f-b7f8-597e6d8857c5",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning with state-space search",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- Both forward and backward search possible\n- Progression planners\n  - forward state-space search\n  - consider the effect of all possible actions in a given state\n- Regression planners\n  - backward st"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "difference between progression planners and regression planners in state-space search",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "6f25b02f-6274-487f-b7f8-597e6d8857c5",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning with state-space search",
+          "chunk_order": 14,
+          "cosine_sim": 0.7461,
+          "final_score": 0.9956,
+          "content": "- Both forward and backward search possible\n- Progression planners\n  - forward state-space search\n  - consider the effect of all possible actions in a given state\n- Regression planners\n  - backward state-space search\n  - Determine what must have been true in the previous state in order to achieve the current state"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.1
+}

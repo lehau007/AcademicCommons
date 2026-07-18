@@ -1,0 +1,168 @@
+{
+  "char_budget": 24000,
+  "batches": [
+    {
+      "batch_index": 0,
+      "block_count": 25,
+      "input_chars": 22642,
+      "page_or_slide_range": [
+        1,
+        17
+      ],
+      "mode": "llm",
+      "output_chars": 2345
+    },
+    {
+      "batch_index": 1,
+      "block_count": 1,
+      "input_chars": 2276,
+      "page_or_slide_range": [
+        17,
+        17
+      ],
+      "mode": "llm",
+      "output_chars": 2276
+    }
+  ],
+  "cleaned_blocks": [
+    {
+      "kind": "text",
+      "page": 1,
+      "content": "Discrete Mathematics"
+    },
+    {
+      "kind": "text",
+      "page": 1,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 1, Image 0)\nThere is no visual element provided. Please share the visual element, and I'll describe its content in a way that focuses on its learning value.\n"
+    },
+    {
+      "kind": "text",
+      "page": 2,
+      "content": "2\nPART 1\nCOMBINATORIAL THEORY    \n(Lý thuyết tổhợp)\nPART 2\nGRAPH THEORY\n(Lý thuyết đồthị)"
+    },
+    {
+      "kind": "text",
+      "page": 3,
+      "content": "Content of Part 2\nChapter 1. Fundamental concepts\nChapter 2. Graph representation\nChapter 3. Graph Traversal\nChapter 4. Tree and Spanning tree\nChapter 5. Shortest path problem\nChapter 6. Maximum flow problem"
+    },
+    {
+      "kind": "text",
+      "page": 4,
+      "content": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n4"
+    },
+    {
+      "kind": "text",
+      "page": 5,
+      "content": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n5\nNGUYỄN KHÁNH PHƯƠNG\nBộ môn KHMT – ĐHBK HN"
+    },
+    {
+      "kind": "text",
+      "page": 6,
+      "content": "1. Incidence Matrix\nG = (V, E) is an unditected graph:\n• V = {v1, v2, v3, …, vn }\n• E = {e1, e2, …, em }\nThen the incidence matrix with respect to this ordering of V and E is the n x\nm matrix M = [mij], where\nCan also be used to represent :\n• Multiple edges: by using columns with identical entries, since these edges\nare incident with the same pair of vertices\n• Loops: by using a column with exactly one entry equal to 1,\ncorresponding to the vertex that is incident with the loop\nî\ní\nì\n=\notherwise\n  \n0\nith v\nincident w\n \nis\n e \nedge\n  when \n1\n \n  \n \nm\ni\nj\nij\n6"
+    },
+    {
+      "kind": "text",
+      "page": 7,
+      "content": "1.Incidence Matrix\nMatrix M |V| x |E| = [mij], where\nCan also be used to represent :\n• Multiple edges: by using columns with identical entries, since these edges\nare incident with the same pair of vertices\n• Loops: by using a column with exactly one entry equal to 1,\ncorresponding to the vertex that is incident with the loop\nî\ní\nì\n=\notherwise\n  \n0\nith v\nincident w\n \nis\n e \nedge\n  when \n1\n \n  \n \nm\ni\nj\nij\n7"
+    },
+    {
+      "kind": "text",
+      "page": 8,
+      "content": "1.Incidence Matrix\nExample: G = (V, E)\ne1\ne2\ne3\nv\n1\n0\n1\nu\n1\n1\n0\nw\n0\n1\n1\n8\nv\nw\nu\ne1\ne3\ne2"
+    },
+    {
+      "kind": "text",
+      "page": 9,
+      "content": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n9"
+    },
+    {
+      "kind": "text",
+      "page": 10,
+      "content": "2. Adjacency Matrix\nThe Adjacency Matrix (NxN) A = [aij] where |V| = N\nFor undirected graph\nFor directed graph\nThis makes it easier to find subgraphs, and to reverse graphs if needed.\nî\ní\nì\n=\notherwise\n  \n0\nG\n \nof\n \nedge\nan \n \nis\n )\n v\n,\n(v\n \nif\n  \n1\n \n  \n a\nj\ni\nij\nî\ní\nì\n=\notherwise\n  \n0\nG\n \nof\n \nedge\nan \n \nis\n }\n v\n,\n{v\n \nif\n  \n1\n \n  \n a\nj\ni\nij\n2\n1\n3\nA=\n0 1 1\n1 0 1\n1 1 0\n2\n1\n3\nA=\n0 1 0\n0 0 0\n1 1 0"
+    },
+    {
+      "kind": "text",
+      "page": 11,
+      "content": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n11"
+    },
+    {
+      "kind": "text",
+      "page": 12,
+      "content": "3. Weight matrix\n• Weighted graphs have values associated with edges.\n• In the case weighted graphs, instead of adjacency matrix, we use \nweight matrix to represent the graph\nC =  c[i, j],  i, j = 1, 2,..., n,\nwhere   \n• q: special value to identify (i, j) is not an edge; depends on the case, \nthe value of q could be:  0, +¥, -¥.\n12\nq\nÎ\nì\n= í\nÏ\nî\n( , ), if  (\n)\n[ , ]\n,       if  (\n)\n,\nc i j\ni, j\nE\nc i j\ni, j\nE"
+    },
+    {
+      "kind": "text",
+      "page": 13,
+      "content": "1     2      3      4       5     6\n0      3      0      5      0     0     \n3      0      2      0      0     0     \n0      2      0      3      6     0     \n5      0      3      0      7     0     \n0      0      6      7      0     0     \n0      0      0      0      0     0     \n1\n2\n3\n4\n5\n6\n1\n2\n3\n5\n4\n6\nWeight matrix of undirected graph\n3\n5\n2\n3\n7\n6"
+    },
+    {
+      "kind": "text",
+      "page": 14,
+      "content": "1      2      3      4      5     6\n0      3      0      7      0     0    \n0      0      1      0      0     0    \n0      0      0      2      3     0    \n0      0      0      0      9     0    \n0      0      0      0      0     0    \n0      0      0      0      0     0    \n1\n2\n3\n4\n5\n6\n1\n2\n3\n5\n4\n6\nWeight matrix of directed graph\n3\n1\n7\n2\n9\n3"
+    },
+    {
+      "kind": "text",
+      "page": 15,
+      "content": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n15"
+    },
+    {
+      "kind": "text",
+      "page": 16,
+      "content": "3. Adjacency List\nAdjacency list: each vertex has a list of which vertices it is adjacent\n• Is an array Adjacency consiststing of |V| list\n• Each vertex has 1 list\n• Each vertex u Î V: Adjacency[u] consists of nodes that are adjacent to u.\nExample:\nUndirected graph\nDirected graph\n16\nv\nu\nu\nz\nv\nx\nw\nw\nv\ny\nu\nv\nw\nx\ny\nz\nt\nb\ne\nb\nb\nf\nc\na\nb\nc\nd\ne\nf"
+    },
+    {
+      "kind": "text",
+      "page": 16,
+      "image_index": 1,
+      "content": "\n### Visual Element (Page 16, Image 1)\nTo provide a structured graph representation in JSON, including node labels, edge lists, and directionality, let's consider a simple example graph. We'll define a directed graph with 5 nodes and 6 edges.\n\n### Example Graph\n\n- **Nodes**: A, B, C, D, E\n- **Edges**:\n  - A → B\n  - A → C\n  - B → D\n  - C → E\n  - D → E\n  - E → B\n\n### JSON Representation\n\nHere's how you could represent this graph in JSON, including node labels, edge lists, and directionality:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\", \"label\": \"Node A\"},\n    {\"id\": \"B\", \"label\": \"Node B\"},\n    {\"id\": \"C\", \"label\": \"Node C\"},\n    {\"id\": \"D\", \"label\": \"Node D\"},\n    {\"id\": \"E\", \"label\": \"Node E\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"OUT\"},\n    {\"source\": \"A\", \"target\": \"C\", \"direction\": \"OUT\"},\n    {\"source\": \"B\", \"target\": \"D\", \"direction\": \"OUT\"},\n    {\"source\": \"C\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"D\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"E\", \"target\": \"B\", \"direction\": \"OUT\"}\n  ]\n}\n\n\nHowever, for a more standard and flexible graph representation, especially in algorithms and graph theory applications, you might use an adjacency list or matrix. But if you're looking for a simple, straightforward JSON structure representing a graph with nodes and directed edges, the above example works well.\n\n### Alternative Adjacency List Representation\n\nFor comparison, here's an adjacency list representation of the same graph in JSON:\n\n\n{\n  \"A\": [\"B\", \"C\"],\n  \"B\": [\"D\"],\n  \"C\": [\"E\"],\n  \"D\": [\"E\"],\n  \"E\": [\"B\"]\n}\n\n\nOr, if you want to emphasize directionality and keep node information:\n\n\n{\n  \"nodes\": [\"A\", \"B\", \"C\", \"D\", \"E\"],\n  \"adjacencyList\": {\n    \"A\": {\"OUT\": [\"B\", \"C\"]},\n    \"B\": {\"OUT\": [\"D\"]},\n    \"C\": {\"OUT\": [\"E\"]},\n    \"D\": {\"OUT\": [\"E\"]},\n    \"E\": {\"OUT\": [\"B\"]}\n  }\n}\n\n\nEach of these representations has its use cases, depending on what you need to do with the graph data.\n"
+    },
+    {
+      "kind": "text",
+      "page": 16,
+      "image_index": 2,
+      "content": "\n### Visual Element (Page 16, Image 2)\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. \n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Vertices):** A, B, C, D\n- **Edges:** \n  - A -> B (directed from A to B)\n  - B -> C (directed from B to C)\n  - C -> A (directed from C to A)\n  - D -> B (directed from D to B)\n\n### JSON Representation\n\nA common JSON representation for a graph might involve specifying nodes and edges separately. Here's one way to structure it:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"out\"},\n    {\"source\": \"B\", \"target\": \"C\", \"direction\": \"out\"},\n    {\"source\": \"C\", \"target\": \"A\", \"direction\": \"out\"},\n    {\"source\": \"D\", \"target\": \"B\", \"direction\": \"out\"}\n  ]\n}\n\n\nHowever, for a more detailed and structured representation that includes directionality explicitly in the graph definition, you might see it defined differently, especially if you're working with a specific graph database or library that has its own format.\n\n### Alternative Representation with Directionality\n\nIf you're working with a library or framework that expects a specific format, you might represent the graph like this:\n\n\n{\n  \"graph\": {\n    \"nodes\": [\n      {\"id\": \"A\"},\n      {\"id\": \"B\"},\n      {\"id\": \"C\"},\n      {\"id\": \"D\"}\n    ],\n    \"edges\": [\n      {\"from\": \"A\", \"to\": \"B\"},\n      {\"from\": \"B\", \"to\": \"C\"},\n      {\"from\": \"C\", \"to\": \"A\"},\n      {\"from\": \"D\", \"to\": \"B\"}\n    ],\n    \"directed\": true\n  }\n}\n\n\nIn this representation, the `\"directed\": true` field explicitly indicates that the graph is directed.\n\n### Code to Generate This JSON\n\nIf you were to generate this JSON programmatically, you might do something like this in Python:\n\npython\ndef create_graph(nodes, edges):\n    graph = {\n        \"nodes\": [{\"id\": node} for node in nodes],\n        \"edges\": [{\"source\": edge[0], \"target\": edge[1]} for edge in edges]\n    }\n    return graph\n\nnodes = ['A', 'B', 'C', 'D']\nedges = [('A', 'B'), ('B', 'C'), ('C', 'A'), ('D', 'B')]\n\ngraph_json = create_graph(nodes, edges)\nprint(graph_json)\n\n\nThis Python snippet creates a simple graph JSON without explicitly detailing directionality, but you could easily add that if needed.\n"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "content": "Graph representation\n17\ngraph\nAdjacency list\nAdjacency matrix"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 1,
+      "content": "\n### Visual Element (Page 17, Image 1)\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. \n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Vertices):** A, B, C, D\n- **Edges:** \n  - A -> B (directed from A to B)\n  - B -> C (directed from B to C)\n  - C -> A (directed from C to A)\n  - D -> B (directed from D to B)\n\n### JSON Representation\n\nA common JSON representation for a graph might involve specifying nodes and edges separately. Here is one way to structure it:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"out\"},\n    {\"source\": \"B\", \"target\": \"C\", \"direction\": \"out\"},\n    {\"source\": \"C\", \"target\": \"A\", \"direction\": \"out\"},\n    {\"source\": \"D\", \"target\": \"B\", \"direction\": \"out\"}\n  ]\n}\n\n\nHowever, for a more detailed and structured representation that also captures directed/undirected nature explicitly and potentially other graph attributes, you might see something like this:\n\n\n{\n  \"graph\": {\n    \"directed\": true,\n    \"nodes\": [\n      {\"id\": \"A\"},\n      {\"id\": \"B\"},\n      {\"id\": \"C\"},\n      {\"id\": \"D\"}\n    ],\n    \"edges\": [\n      {\"source\": \"A\", \"target\": \"B\"},\n      {\"source\": \"B\", \"target\": \"C\"},\n      {\"source\": \"C\", \"target\": \"A\"},\n      {\"source\": \"D\", \"target\": \"B\"}\n    ]\n  }\n}\n\n\nIn this representation:\n- The `directed` property indicates if the graph is directed or not. A value of `true` means the graph is directed, and `false` would mean it's undirected.\n- The `nodes` list contains all the unique node labels.\n- The `edges` list contains all the edges represented by their source and target nodes.\n\n### Code to Generate This JSON\n\nIf you're working in Python, you could create a simple graph representation and convert it to JSON like this:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self, directed=False):\n        self.directed = directed\n        self.nodes = []\n        self.edges = []\n\n    def add_node(self, id):\n        if id not in self.nodes:\n            self.nodes.append({\"id\": id})\n\n    def add_edge(self, source, target):\n        self.edges.append({\"source\": source, \"target\": target})\n\n    def to_json(self):\n        graph_repr = {\n            \"graph\": {\n                \"directed\": self.directed,\n                \"nodes\": self.nodes,\n                \"edges\": self.edges\n            }\n        }\n        return json.dumps(graph_repr, indent=2)\n\n# Usage\ng = Graph(directed=True)\ng.add_node(\"A\")\ng.add_node(\"B\")\ng.add_node(\"C\")\ng.add_node(\"D\")\ng.add_edge(\"A\", \"B\")\ng.add_edge(\"B\", \"C\")\ng.add_edge(\"C\", \"A\")\ng.add_edge(\"D\", \"B\")\n\nprint(g.to_json())\n\n\nThis Python code defines a simple `Graph` class and then creates a directed graph with nodes A, B, C, D and specified edges, finally dumping its representation to JSON.\n"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 2,
+      "content": "\n### Visual Element (Page 17, Image 2)\nTo provide a structured graph representation in JSON, including node labels, edge lists, and directionality, let's consider a simple example graph. We'll define a directed graph with 5 nodes and 6 edges.\n\n### Example Graph\n\n- **Nodes**: A, B, C, D, E\n- **Edges**:\n  - A → B\n  - A → C\n  - B → D\n  - C → E\n  - D → E\n  - E → B\n\n### JSON Representation\n\nHere's how you could represent this graph in JSON, including node labels, edge lists, and directionality:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\", \"label\": \"Node A\"},\n    {\"id\": \"B\", \"label\": \"Node B\"},\n    {\"id\": \"C\", \"label\": \"Node C\"},\n    {\"id\": \"D\", \"label\": \"Node D\"},\n    {\"id\": \"E\", \"label\": \"Node E\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"OUT\"},\n    {\"source\": \"A\", \"target\": \"C\", \"direction\": \"OUT\"},\n    {\"source\": \"B\", \"target\": \"D\", \"direction\": \"OUT\"},\n    {\"source\": \"C\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"D\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"E\", \"target\": \"B\", \"direction\": \"OUT\"}\n  ]\n}\n\n\nHowever, for a more compact and standard representation, especially in graph databases and network analysis tools, you might see graphs represented in formats like GraphSON (a JSON format for graphs) or simple adjacency lists. \n\n### Alternative Compact Representation\n\n\n{\n  \"nodes\": [\"A\", \"B\", \"C\", \"D\", \"E\"],\n  \"edges\": [\n    {\"from\": \"A\", \"to\": \"B\"},\n    {\"from\": \"A\", \"to\": \"C\"},\n    {\"from\": \"B\", \"to\": \"D\"},\n    {\"from\": \"C\", \"to\": \"E\"},\n    {\"from\": \"D\", \"to\": \"E\"},\n    {\"from\": \"E\", \"to\": \"B\"}\n  ]\n}\n\n\nOr, if you want to emphasize directionality explicitly:\n\n\n{\n  \"graph\": {\n    \"directed\": true,\n    \"nodes\": [\n      {\"id\": \"A\"},\n      {\"id\": \"B\"},\n      {\"id\": \"C\"},\n      {\"id\": \"D\"},\n      {\"id\": \"E\"}\n    ],\n    \"edges\": [\n      {\"id\": \"A->B\", \"source\": \"A\", \"target\": \"B\"},\n      {\"id\": \"A->C\", \"source\": \"A\", \"target\": \"C\"},\n      {\"id\": \"B->D\", \"source\": \"B\", \"target\": \"D\"},\n      {\"id\": \"C->E\", \"source\": \"C\", \"target\": \"E\"},\n      {\"id\": \"D->E\", \"source\": \"D\", \"target\": \"E\"},\n      {\"id\": \"E->B\", \"source\": \"E\", \"target\": \"B\"}\n    ]\n  }\n}\n\n\n### Code to Generate This JSON\n\nIf you're working in Python, here's a simple way to generate the structured graph representation:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self, directed=True):\n        self.directed = directed\n        self.nodes = []\n        self.edges = []\n\n    def add_node(self, id, label=None):\n        self.nodes.append({\"id\": id, \"label\": label if label else f\"Node {id}\"})\n\n    def add_edge(self, source, target):\n        self.edges.append({\"source\": source, \"target\": target, \"direction\": \"OUT\"})\n\n    def to_json(self):\n        graph_data = {\n            \"nodes\": self.nodes,\n            \"edges\": self.edges\n        }\n        return json.dumps(graph_data, indent=2)\n\n# Usage\ng = Graph()\nfor node in [\"A\", \"B\", \"C\", \"D\", \"E\"]:\n    g.add_node(node)\n\nedges = [(\"A\", \"B\"), (\"A\", \"C\"), (\"B\", \"D\"), (\"C\", \"E\"), (\"D\", \"E\"), (\"E\", \"B\")]\nfor source, target in edges:\n    g.add_edge(source, target)\n\nprint(g.to_json())\n\n\nThis Python code defines a simple `Graph` class and uses it to construct the example graph, then serialize it to JSON.\n"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 3,
+      "content": "\n### Visual Element (Page 17, Image 3)\nTo provide a structured graph representation in JSON, including node labels, edge lists, and directionality, let's consider a simple example graph. This graph will have 5 nodes and 7 edges with specific directionality.\n\n### Example Graph\n\n- **Nodes**: A, B, C, D, E\n- **Edges**:\n  - A -> B (directed)\n  - A -> C (directed)\n  - B -> D (directed)\n  - C -> E (directed)\n  - D -> E (directed)\n  - E -> B (directed)\n  - E -> A (directed)\n\n### JSON Representation\n\nHere's how you could represent this graph in JSON, including nodes, edges, and their directionality:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"},\n    {\"id\": \"E\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"OUT\"},\n    {\"source\": \"A\", \"target\": \"C\", \"direction\": \"OUT\"},\n    {\"source\": \"B\", \"target\": \"D\", \"direction\": \"OUT\"},\n    {\"source\": \"C\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"D\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"E\", \"target\": \"B\", \"direction\": \"OUT\"},\n    {\"source\": \"E\", \"target\": \"A\", \"direction\": \"OUT\"}\n  ]\n}\n\n\nHowever, for a more conventional and compact graph representation in JSON, especially in formats used by popular graph libraries (like NetworkX in Python), you might see it represented with an adjacency list or matrix. Here's an alternative adjacency list representation:\n\n### Alternative Adjacency List Representation\n\n\n{\n  \"A\": [\"B\", \"C\"],\n  \"B\": [\"D\"],\n  \"C\": [\"E\"],\n  \"D\": [\"E\"],\n  \"E\": [\"B\", \"A\"]\n}\n\n\nOr, if you want to explicitly define it with nodes and edges:\n\n\n{\n  \"nodes\": [\"A\", \"B\", \"C\", \"D\", \"E\"],\n  \"edges\": {\n    \"A\": {\"B\": true, \"C\": true},\n    \"B\": {\"D\": true},\n    \"C\": {\"E\": true},\n    \"D\": {\"E\": true},\n    \"E\": {\"B\": true, \"A\": true}\n  }\n}\n\n\n### Directionality Note\n\n- In the examples above, the directionality of edges is implied by their representation. \n- For the first JSON example, the directionality is explicitly marked as \"OUT\" for outgoing edges, implying all edges are directed.\n\n### Code to Generate/Consume JSON\n\nIf you're working in Python with NetworkX, here's a simple example to create the graph and export it:\n\npython\nimport networkx as nx\nimport json\n\n# Create a directed graph\nG = nx.DiGraph()\n\n# Add nodes\nG.add_nodes_from(['A', 'B', 'C', 'D', 'E'])\n\n# Add edges\nG.add_edges_from([('A', 'B'), ('A', 'C'), ('B', 'D'), ('C', 'E'), ('D', 'E'), ('E', 'B'), ('E', 'A')])\n\n# Convert to JSON (a simple form)\ngraph_json = {\n    \"nodes\": list(G.nodes),\n    \"edges\": list(G.edges)\n}\n\nprint(json.dumps(graph_json, indent=2))\n\n\nThis example creates a directed graph, adds nodes and edges, and then converts it into a simple JSON format. Adjustments might be needed based on the exact requirements or library you're working with.\n"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 4,
+      "content": "\n### Visual Element (Page 17, Image 4)\nTo provide a structured graph representation in JSON, including node labels, edge lists, and directionality, let's consider a simple example graph. We'll define a directed graph with 5 nodes and 6 edges.\n\n### Example Graph\n\n- **Nodes**: A, B, C, D, E\n- **Edges**:\n  - A → B\n  - A → C\n  - B → D\n  - C → E\n  - D → E\n  - E → B\n\n### JSON Representation\n\nHere's how you could represent this graph in JSON, including node labels, edge lists, and directionality:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\", \"label\": \"Node A\"},\n    {\"id\": \"B\", \"label\": \"Node B\"},\n    {\"id\": \"C\", \"label\": \"Node C\"},\n    {\"id\": \"D\", \"label\": \"Node D\"},\n    {\"id\": \"E\", \"label\": \"Node E\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"OUT\"},\n    {\"source\": \"A\", \"target\": \"C\", \"direction\": \"OUT\"},\n    {\"source\": \"B\", \"target\": \"D\", \"direction\": \"OUT\"},\n    {\"source\": \"C\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"D\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"E\", \"target\": \"B\", \"direction\": \"OUT\"}\n  ]\n}\n\n\nHowever, for a more compact and traditional graph data structure representation in JSON, especially when dealing with simple graphs where each node is uniquely identified and directionality is implied by the edge's source and target, you might see it represented like this:\n\n\n{\n  \"nodes\": [\"A\", \"B\", \"C\", \"D\", \"E\"],\n  \"edges\": [\n    {\"from\": \"A\", \"to\": \"B\"},\n    {\"from\": \"A\", \"to\": \"C\"},\n    {\"from\": \"B\", \"to\": \"D\"},\n    {\"from\": \"C\", \"to\": \"E\"},\n    {\"from\": \"D\", \"to\": \"E\"},\n    {\"from\": \"E\", \"to\": \"B\"}\n  ]\n}\n\n\nOr, if you want to explicitly denote directionality and keep a simple structure:\n\n\n{\n  \"nodes\": [\"A\", \"B\", \"C\", \"D\", \"E\"],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\"},\n    {\"source\": \"A\", \"target\": \"C\"},\n    {\"source\": \"B\", \"target\": \"D\"},\n    {\"source\": \"C\", \"target\": \"E\"},\n    {\"source\": \"D\", \"target\": \"E\"},\n    {\"source\": \"E\", \"target\": \"B\"}\n  ]\n}\n\n\n### Code to Generate This JSON\n\nIf you're working in Python and want to generate this JSON from your graph data, you could do something like this:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self):\n        self.nodes = set()\n        self.edges = []\n\n    def add_node(self, node):\n        self.nodes.add(node)\n\n    def add_edge(self, source, target):\n        self.edges.append({\"source\": source, \"target\": target})\n\n    def to_json(self):\n        graph_data = {\n            \"nodes\": list(self.nodes),\n            \"edges\": self.edges\n        }\n        return json.dumps(graph_data, indent=2)\n\n# Usage\ngraph = Graph()\nfor node in [\"A\", \"B\", \"C\", \"D\", \"E\"]:\n    graph.add_node(node)\n\ngraph.add_edge(\"A\", \"B\")\ngraph.add_edge(\"A\", \"C\")\ngraph.add_edge(\"B\", \"D\")\ngraph.add_edge(\"C\", \"E\")\ngraph.add_edge(\"D\", \"E\")\ngraph.add_edge(\"E\", \"B\")\n\nprint(graph.to_json())\n\n\nThis Python code defines a simple `Graph` class and then uses it to construct the example graph, finally outputting the graph data in JSON format.\n"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 5,
+      "content": "\n### Visual Element (Page 17, Image 5)\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. \n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Vertices):** A, B, C, D\n- **Edges:** \n  - A -> B (directed from A to B)\n  - B -> C (directed from B to C)\n  - C -> A (directed from C to A)\n  - D -> B (directed from D to B)\n\n### JSON Representation\n\nA common way to represent a graph in JSON is to specify nodes and edges as separate lists or objects. Here is one such representation:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"out\"},\n    {\"source\": \"B\", \"target\": \"C\", \"direction\": \"out\"},\n    {\"source\": \"C\", \"target\": \"A\", \"direction\": \"out\"},\n    {\"source\": \"D\", \"target\": \"B\", \"direction\": \"out\"}\n  ]\n}\n\n\nOr, if you want to simplify and imply directionality by the presence of an edge from source to target:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\"},\n    {\"source\": \"B\", \"target\": \"C\"},\n    {\"source\": \"C\", \"target\": \"A\"},\n    {\"source\": \"D\", \"target\": \"B\"}\n  ]\n}\n\n\n### Directionality\n\nIn both examples above, the edges are directed. The directionality is implied by the order of `source` and `target` in each edge object. That is, an edge from `A` to `B` is represented as `{\"source\": \"A\", \"target\": \"B\"}`.\n\n### Code to Generate This JSON\n\nIf you're working in Python, here's a simple way to create and represent such a graph:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self):\n        self.nodes = []\n        self.edges = []\n\n    def add_node(self, id):\n        self.nodes.append({\"id\": id})\n\n    def add_edge(self, source, target):\n        self.edges.append({\"source\": source, \"target\": target})\n\n    def to_json(self):\n        return json.dumps(self, default=lambda o: o.__dict__, indent=2)\n\n# Usage\ng = Graph()\ng.add_node(\"A\")\ng.add_node(\"B\")\ng.add_node(\"C\")\ng.add_node(\"D\")\n\ng.add_edge(\"A\", \"B\")\ng.add_edge(\"B\", \"C\")\ng.add_edge(\"C\", \"A\")\ng.add_edge(\"D\", \"B\")\n\nprint(g.to_json())\n\n\nThis Python code defines a simple `Graph` class and then creates a graph with nodes A, B, C, D and directed edges between them. The graph is then converted to a JSON string and printed.\n"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 6,
+      "content": "\n### Visual Element (Page 17, Image 6)\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. The graph will have directionality, meaning the edges have a direction from one node to another.\n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Labels):** A, B, C, D\n- **Edges (List with Directionality):** \n  - A -> B\n  - B -> C\n  - C -> A\n  - D -> B\n\n### Structured Graph Representation in JSON\n\nHere's how we can represent this graph in JSON, including node labels, an edge list, and directionality:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\"},\n    {\"source\": \"B\", \"target\": \"C\"},\n    {\"source\": \"C\", \"target\": \"A\"},\n    {\"source\": \"D\", \"target\": \"B\"}\n  ]\n}\n\n\n### Explanation\n\n- **nodes**: This section lists all the unique node labels in the graph. Each node is represented by an object with an `id` property that corresponds to its label.\n- **edges**: This section lists all the directed edges in the graph. Each edge is represented by an object with `source` and `target` properties, indicating the direction of the edge from the source node to the target node.\n\n### Code to Generate This JSON\n\nIf you're working in a programming language like Python, you could generate this JSON structure programmatically like so:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self):\n        self.nodes = []\n        self.edges = []\n\n    def add_node(self, id):\n        self.nodes.append({\"id\": id})\n\n    def add_edge(self, source, target):\n        self.edges.append({\"source\": source, \"target\": target})\n\n    def to_json(self):\n        return json.dumps({\"nodes\": self.nodes, \"edges\": self.edges}, indent=2)\n\n# Example usage\ngraph = Graph()\ngraph.add_node(\"A\")\ngraph.add_node(\"B\")\ngraph.add_node(\"C\")\ngraph.add_node(\"D\")\n\ngraph.add_edge(\"A\", \"B\")\ngraph.add_edge(\"B\", \"C\")\ngraph.add_edge(\"C\", \"A\")\ngraph.add_edge(\"D\", \"B\")\n\nprint(graph.to_json())\n\n\nThis Python code defines a simple `Graph` class that allows you to add nodes and edges and then convert the graph into a JSON string. The output would match the JSON example provided above.\n"
+    }
+  ]
+}

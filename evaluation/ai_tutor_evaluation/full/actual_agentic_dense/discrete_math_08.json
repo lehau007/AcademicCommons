@@ -1,0 +1,115 @@
+{
+  "qid": "discrete_math_08",
+  "course_code": "IT3020E",
+  "question": "What is the running time of the Floyd-Warshall algorithm?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "86e73f5a-d604-43d0-8455-9f82cbbb070c",
+  "answer": "# Running Time of the Floyd-Warshall Algorithm\n\nBased on the pseudo-code provided in the course material, the Floyd-Warshall algorithm has the following structure:\n\n```text\nvoid Floyd-Warshall(n, W)\n{\n    D^(0) ← W\n    for (k = 1; k <= n; k++)           // outer loop: n iterations\n        for (i = 1; i <= n; i++)        // middle loop: n iterations\n            for (j = 1; j <= n; j++)    // inner loop: n iterations\n                d_ij^(k) ← min(d_ij^(k-1), d_ik^(k-1) + d_kj^(k-1))\n}\n```\n\n## Analysis\n\nThe algorithm consists of **three nested `for` loops**, each running from 1 to n (where n is the number of vertices in the graph). Inside the innermost loop, a single `min` operation is performed, which takes **constant time Θ(1)**.\n\nCounting the total number of operations:\n\n| Loop | Number of iterations |\n|------|---------------------|\n| Outer (k) | n |\n| Middle (i) | n |\n| Inner (j) | n |\n\nThe total number of operations is:\n\n$$n \\times n \\times n = n^3$$\n\n## Running Time\n\n$$\\boxed{\\Theta(n^3)}$$\n\nThe running time of the Floyd-Warshall algorithm is **Θ(n³)** — cubic in the number of vertices n. This makes it a polynomial-time algorithm, which is why it is widely used for the all-pairs shortest path problem on dense graphs.",
+  "citations": [
+    {
+      "chunk_id": "c6dd1a45-456c-44b9-8b2e-2056c3ab9984",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Floyd-Warshall",
+      "page_number": null,
+      "chunk_order": 39,
+      "excerpt": "void Floyd-Warshall(n, W)\n{\n    D^(0) ← W\n    for (k = 1; k <= n; k++)           // Path going through only intermediate\n                                        // vertices selected from {1,2,...,k}\n "
+    },
+    {
+      "chunk_id": "1775cb46-54f3-42e6-ab30-bfe2a3141be8",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Recursive formula computed $d^{(h)}$",
+      "page_number": null,
+      "chunk_order": 38,
+      "excerpt": "- $d_{ij}^{(0)} = w_{ij}$\n\n[i] ---> [j]\n\n- $d_{ij}^{(h)} = \\min(d_{ij}^{(h-1)}, d_{ih}^{(h-1)} + d_{hj}^{(h-1)})$ if $h \\geq 1$\n\nd_{ih}^{(h-1)}\n\n|\n\nv\n[i] ~~~~~~~~~~~~~~~~~~~~>[h]~~~~~~~~~~~~~~~~~~~~>["
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "Floyd-Warshall algorithm running time complexity analysis",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c6dd1a45-456c-44b9-8b2e-2056c3ab9984",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Floyd-Warshall",
+          "chunk_order": 39,
+          "cosine_sim": 0.5225,
+          "final_score": 0.6008,
+          "content": "void Floyd-Warshall(n, W)\n{\n    D^(0) ← W\n    for (k = 1; k <= n; k++)           // Path going through only intermediate\n                                        // vertices selected from {1,2,...,k}\n        for (i = 1; i <= n; i++)        // All pairs (i,j)\n            for (j = 1; j <= n; j++)\n                d_ij^(k) ← min(d_ij^(k-1), d_ik^(k-1) + d_k\n\n## Floyd-Warshall Algorithm Example\n\n- Graph with 4 nodes and weighted edges\n- Distance matrix $D^{(4)}$ and predecessor matrix $P^{(4)}$ shown"
+        },
+        {
+          "chunk_id": "1775cb46-54f3-42e6-ab30-bfe2a3141be8",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Recursive formula computed $d^{(h)}$",
+          "chunk_order": 38,
+          "cosine_sim": 0.3836,
+          "final_score": 0.4411,
+          "content": "- $d_{ij}^{(0)} = w_{ij}$\n\n[i] ---> [j]\n\n- $d_{ij}^{(h)} = \\min(d_{ij}^{(h-1)}, d_{ih}^{(h-1)} + d_{hj}^{(h-1)})$ if $h \\geq 1$\n\nd_{ih}^{(h-1)}\n\n|\n\nv\n[i] ~~~~~~~~~~~~~~~~~~~~>[h]~~~~~~~~~~~~~~~~~~~~>[j]\n\n|                      ^   |                      ^\n |                      |   |                      |\n |                      |   |                      |\n |                      |   d_{hj}^{(h-1)}        |\n |                      |__________________________|\n |\n |_________________________________________________|\n\nd_{ij}^{(h-1)}\n\n[Diagram: The bottom figure shows two paths from node i to node j. The upper path goes through intermediate node h, composed of two segments: i→h with cost $d_{ih}^{(h-1)}$ and h→j with cost $d_{hj}^{(h-1)}$. The recursive formula takes the minimum of these two options.]"
+        },
+        {
+          "chunk_id": "8da44286-7f48-464c-b328-c73f9bb1cde1",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Limitations of Experiments when evaluating the running time of an algorithm",
+          "chunk_order": 16,
+          "cosine_sim": 0.3831,
+          "final_score": 0.4405,
+          "content": "- Experimental evaluation of running time is very useful but\n  - It is necessary to implement the algorithm, which may be difficult\n  - Results may not be indicative of the running time on other inputs not included in the experiment\n  - In order to compare two algorithms, the same hardware and software environments must be used\n\n➔ We need: **Theoretical Analysis of Running Time**"
+        },
+        {
+          "chunk_id": "15094984-a4e6-4f72-916d-fa6d4a0ae0c1",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Theoretical Analysis of Running Time",
+          "chunk_order": 17,
+          "cosine_sim": 0.3831,
+          "final_score": 0.4405,
+          "content": "- Uses a pseudo-code description of the algorithm instead of an implementation\n- Characterizes running time as a function of the input size, $n$\n- Takes into account all possible inputs\n- Allows us to evaluate the speed of an algorithm independent of the hardware/software environment (Changing the hardware/software environment affects the running time by a constant factor, but does not alter the growth rate of the running time)"
+        },
+        {
+          "chunk_id": "65f383ea-4e88-4d6b-b964-ad0592aa5c2c",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS($s$)",
+          "chunk_order": 48,
+          "cosine_sim": 0.3725,
+          "final_score": 0.4284,
+          "content": "1. visited[$s$] = true; //Visit s\n2. $time = time + 1$\n3. $d[s] = time\n4. for each $v \\in Adj[s]$\n5. if $(visited[v] == false)$ {\n6. &nbsp;&nbsp;&nbsp;&nbsp;pred[$v$] $\\leftarrow$ $s$,\n7. &nbsp;&nbsp;&nbsp;&nbsp;DFS($v$);\n8. }\n9. $time = time + 1$\n10. $f[s] = time$\n\n```text\nsource vertex\n      -->\n   a(1|12) ---> e(8|11) ---> g(13|16)\n    |  \\          |  \\         |  \\\n    |   \\         |   \\        |   \\\n    v    v        v    v       v    v\n  b(2|7) -> d(5|6)  c(3|4)   h(14|15)\n    \\      ^  ^      ^\n     \\     |  |      |\n      v    |  |      |\n      d(5|6)  |      |\n              |      |\n           c(3|4) <- d(5|6)\n```"
+        },
+        {
+          "chunk_id": "bb9ef85f-f7ad-4966-a5d0-95418b69e599",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "How to Calculate Running time",
+          "chunk_order": 12,
+          "cosine_sim": 0.3575,
+          "final_score": 0.4111,
+          "content": "- best case\n- worst case\n- average case"
+        },
+        {
+          "chunk_id": "fd3f0980-8dc8-449d-b285-01085db1ebbd",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "Example: Solving the recurrence relation:",
+          "chunk_order": 75,
+          "cosine_sim": 0.3561,
+          "final_score": 0.4095,
+          "content": "$T(n) = 2T(n/2) + n,\\ \\ T(1) = 4$\n\n| Iteration | Recursion tree level / cost |\n|---|---|\n| 0 | $T(n)$, cost $n$ |\n| 1 | $T(n/2) + T(n/2)$, cost $n/2 + n/2$ |\n| 2 | $4 \\cdot T(n/4)$"
+        },
+        {
+          "chunk_id": "16be11b1-9a90-4948-8422-5c36a8ed0aac",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Adjacency list of s",
+          "chunk_order": 8,
+          "cosine_sim": 0.3545,
+          "final_score": 0.4077,
+          "content": "| Step | Operation | Queue Q | Newly visited |\n|---|---|---|---|\n| 1 | From $s$: can go to $b$ and $e$ | $\\{b,e\\}$ | $b,e$ |\n| 2 | Dequeue($Q$): remove $b$ | $\\{e\\}$ | $a,c,k$ |\n| 3 | From $b$: can go to $a,c,k,s$ | $\\{e,a,c,k\\}$ | $a,c,k$ |\n| 4 | Dequeue($Q$): remove $e$ | $\\{a,c,k\\}$ | none |\n| 5 | From $e$: can go to $k,s$ | $\\{a,c,k\\}$ | none |\n| 6 | Dequeue($Q$): remove $a$ | $\\{c,k\\}$ | none |\n| 7 | From $a$: can go to $b,c$ | $\\{c,k\\}$ | none |\n| 8 | Dequeue($Q$): remove $c$ | $\\{k\\}$ | $d,g$ |\n| 9 | From $c$: can go to $a,b,d,g,k$ | $\\{k,d,g\\}$ | $d,g$ |\n| 10 | Dequeue($Q$): remove $k$ | $\\{d,g\\}$ | none |\n| 11 | From $k$: can go to $b,c,e$ | $\\{d,g\\}$ | none |\n| 12 | Dequeue($Q$): remove $d$ | $\\{g\\}$ | none |\n| 13 | From $d$: can go to $c,g$ | $\\{g\\}$ | none |\n| 14 | Dequeue($Q$): remove $g$ | empty | none |\n| 15 | From $g$: can go to $d,c$ | empty | none |\n\n- Q is now empty. All vertices of the graph were visited. Algorithm is finished."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 18.9
+}

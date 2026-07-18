@@ -1,0 +1,130 @@
+{
+  "topic": "Artificial Intelligence",
+  "concepts": [
+    "Artificial Intelligence",
+    "Outline",
+    "What is AI?",
+    "Think like humans",
+    "Act like humans",
+    "Thinking rationally",
+    "Acting rationally",
+    "Rational agents"
+  ],
+  "language": "en",
+  "ocr_quality": "low",
+  "section_summaries": [
+    {
+      "heading": "Artificial Intelligence",
+      "summary": "Lecture 1 - Introduction School of Information and Communication Technology - HUST",
+      "page_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "heading": "Outline",
+      "summary": "- What is AI? - Foundations of AI - Short history of AI - Philosophical discussions",
+      "page_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "heading": "What is AI?",
+      "summary": "Views of AI fall into four categories: | | | |---|---| | Think like humans | Thinking rationally | | Act like humans | Acting rationally | The textbook advocates \"acting rationally\"",
+      "page_range": [
+        3,
+        3
+      ]
+    },
+    {
+      "heading": "Think like humans",
+      "summary": "- 1960s \"cognitive revolution\": information-processing psychology - Scientific theories of internal activities of the brain - What level of abstraction? “Knowledge” or “circuits”?",
+      "page_range": [
+        4,
+        4
+      ]
+    },
+    {
+      "heading": "Act like humans",
+      "summary": "- Turing (1950) \"Computing machinery and intelligence\": - \"Can machines think?\" → \"Can machines behave intelligently?\" - Operational test for intelligent behavior: the Imitation Game [Diagram: The Imitation Game frames intelligence as observable behavior in a conversational...",
+      "page_range": [
+        5,
+        5
+      ]
+    },
+    {
+      "heading": "Thinking rationally",
+      "summary": "- The “Laws of Thought” approach - What does it mean to “think rationally”? - Normative / prescriptive rather than descriptive - Logicist tradition: - Logic: notation and rules of derivation for thoughts - Aristotle: what are correct arguments/thought processes?",
+      "page_range": [
+        6,
+        6
+      ]
+    },
+    {
+      "heading": "Acting rationally",
+      "summary": "- Rational behavior: doing the “right thing” - The right thing: that which is expected to maximize goal achievement, given the available information - Doesn't necessarily involve thinking, e.g., blinking - Thinking can be in the service of rational action - Entirely dependent...",
+      "page_range": [
+        7,
+        7
+      ]
+    },
+    {
+      "heading": "Rational agents",
+      "summary": "- An **agent** is an entity that perceives and acts - An agent function maps from percept histories to actions: $$\\mathcal{P}^* \\rightarrow \\mathcal{A}$$ [Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that...",
+      "page_range": [
+        8,
+        8
+      ]
+    },
+    {
+      "heading": "Foundations of AI",
+      "summary": "- Philosophy: logic, methods of reasoning, mind as physical system foundations of learning, language, rationality - Mathematics: formal representation and proof algorithms, computation, (un)decidability, (in)tractability, probability - Economics: utility, decision theory -...",
+      "page_range": [
+        9,
+        9
+      ]
+    },
+    {
+      "heading": "Short history of AI",
+      "summary": "- 1940-1950: Early days - 1943: McCulloch & Pitts: Boolean circuit model of brain - 1950: Turing's ``Computing Machinery and Intelligence“ - 1950—70: Excitement: Look, Ma, no hands! - 1950s: Early AI programs, including Samuel's checkers program, Newell & Simon's Logic...",
+      "page_range": [
+        10,
+        10
+      ]
+    },
+    {
+      "heading": "Expert system",
+      "summary": "[Diagram: The slide contrasts a conventional computer system with an expert system. The key idea is that expert systems combine human expertise with inference/reasoning, and that knowledge engineering is the process of capturing that expertise so the system can produce useful...",
+      "page_range": [
+        11,
+        11
+      ]
+    },
+    {
+      "heading": "State of the art",
+      "summary": "- May, '97: Deep Blue vs. Kasparov - First match won against world-champion - “Intelligent creative\" play - 200 million board positions per second!",
+      "page_range": [
+        12,
+        12
+      ]
+    },
+    {
+      "heading": "Philosophical discussions",
+      "summary": "What Can AI Do? - Play a decent game of table tennis?",
+      "page_range": [
+        13,
+        13
+      ]
+    },
+    {
+      "heading": "Some problems with AI",
+      "summary": "- People might lose their jobs to automation. - People might have too much (or too little) leisure time.",
+      "page_range": [
+        14,
+        14
+      ]
+    }
+  ],
+  "overall_summary": "Artificial Intelligence: Lecture 1 - Introduction School of Information and Communication Technology - HUST Outline: - What is AI? - Foundations of AI - Short history of AI - Philosophical discussions What is AI?: Views of AI fall into four categories: | | | |---|---| | Think like humans | Thinking rationally | | Act like humans | Acting rationally | The textbook advocates \"acting rationally\" Think like humans: - 1960s \"cognitive revolution\": information-processing psychology - Scientific theories of internal activities of the brain - What level of abstraction? “Knowledge” or “circuits”? Act like humans: - Turing (1950) \"Computing machinery and intelligence\": - \"Can machines think?\" → \"Can machines behave intelligently?\" - Operational test for intelligent behavior: the Imitation Game [Diagram: The Imitation Game frames intelligence as observable behavior in a conversational... Thinking rationally: - The “Laws of Thought” approach - What does it mean to “think rationally”? - Normative / prescriptive rather than descriptive - Logicist tradition: - Logic: notation and rules of derivation for thoughts - Aristotle: what are correct arguments/thought processes?"
+}

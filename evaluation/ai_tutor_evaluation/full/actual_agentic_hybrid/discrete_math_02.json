@@ -1,0 +1,155 @@
+{
+  "qid": "discrete_math_02",
+  "course_code": "IT3020E",
+  "question": "According to Cayley's theorem, how many spanning trees does a complete graph have?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "9941bc30-3150-4bc3-bf38-3d49f55c1483",
+  "answer": "## Cayley's Theorem on Spanning Trees of a Complete Graph\n\nAccording to **Cayley's Theorem** presented in the course materials:\n\n> **Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n### Explanation\n\n- A **complete graph** $K_n$ is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge.\n- The formula $n^{n-2}$ gives the total number of distinct spanning trees of $K_n$, where $n$ is the number of vertices.\n\n### Example: $K_3$\n\nFor the complete graph with 3 vertices:\n\n$$n^{n-2} = 3^{3-2} = 3^1 = 3$$\n\nSo $K_3$ has exactly **3 spanning trees**, as illustrated in the course material:\n1. $a - b - c$ (a path)\n2. $b - c - a$ (a path)\n3. $c - a - b$ (a path)\n\nThese are the only three tree structures spanning all 3 vertices.\n\n### Why This Matters\n\nThe course also notes that this formula highlights a key practical point: because the number of spanning trees grows extremely fast (e.g., $K_4$ has $4^2 = 16$ spanning trees, $K_5$ has $5^3 = 125$, etc.), it is **impossible to solve the Minimum Spanning Tree problem by brute force** — that is why efficient algorithms (like Kruskal's or Prim's) are needed.",
+  "citations": [
+    {
+      "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Co"
+    },
+    {
+      "chunk_id": "84c6bb46-e520-457e-bcd2-5610bdf5ab2f",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "16 spanning trees of $K_4$",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "[Diagram: The slide enumerates all spanning trees of the complete graph on four labeled vertices. This illustrates how a connected graph can be reduced to tree structures while still including every v"
+    },
+    {
+      "chunk_id": "6dc9f9e3-297f-4018-8059-bb33731a711d",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Weighted Graphs and Minimum Spanning Trees",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "[Diagram: The two highlighted spanning trees show that the same weighted graph can have multiple optimal solutions with equal total weight. This matters because minimum spanning tree algorithms may re"
+    },
+    {
+      "chunk_id": "0806e91b-3c90-49b6-acb6-69988e52d9b7",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Build a railway system",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "```text\n+------------------------------+                 +------------------------------+\n| Left railway network         |                 | Right railway network        |\n| (spanning tree example 1) "
+    },
+    {
+      "chunk_id": "79f69592-d6cb-4ebd-98c5-ab0fb9621493",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "**Theorem.** Every undirected connected graph contains a spanning tree.\n\n**Proof.** Let $G$ be an undirected connected graph.\n\n- If $G$ contains no cycle then $G$ is its own spanning tree.\n- If $G$ co"
+    },
+    {
+      "chunk_id": "a6cf7664-fd4f-4de2-a210-93015e369a68",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "[Diagram: The figure illustrates that a spanning tree keeps all vertices of a connected graph while removing enough edges to eliminate cycles. This matters because spanning trees preserve connectivity"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "Cayley's theorem number of spanning trees complete graph formula n^(n-2)",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 13,
+          "cosine_sim": 0.5187,
+          "final_score": 0.5965,
+          "content": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Complete graph $K_3$ | Spanning trees of $K_3$ |\n|---|---|\n| ```text\n\nb\n  / \\\n a---c\n\n``` | ```text\n a---b---c\n\n b---c---a\n\n c---a---b\n``` |\n\n[Diagram: The figure illustrates the idea of a spanning tree as a minimal connected subgraph that includes all vertices without cycles. For the complete graph $K_3$, it shows that there are exactly 3 different spanning trees, motivating Cayley’s formula for complete graphs.]"
+        },
+        {
+          "chunk_id": "84c6bb46-e520-457e-bcd2-5610bdf5ab2f",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "16 spanning trees of $K_4$",
+          "chunk_order": 16,
+          "cosine_sim": 0.3911,
+          "final_score": 0.4498,
+          "content": "[Diagram: The slide enumerates all spanning trees of the complete graph on four labeled vertices. This illustrates how a connected graph can be reduced to tree structures while still including every vertex exactly once, a key idea in graph theory and combinatorics.]"
+        },
+        {
+          "chunk_id": "6c215b9f-e9e4-40e4-8f87-0f9de2080b39",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Some special graphs",
+          "chunk_order": 73,
+          "cosine_sim": 0.3686,
+          "final_score": 0.4238,
+          "content": "- Null graph\n- Complete graphs $K_n$\n- Cycles $C_n$\n- Wheels $W_n$\n- $n$-Cubes $Q_n$\n- Bipartite graphs\n- Complete bipartite graphs $K_{m,n}$\n- $r$-regular graph\n- Planar graph\n- Euler graph and Hamilton graph"
+        },
+        {
+          "chunk_id": "6dc9f9e3-297f-4018-8059-bb33731a711d",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Weighted Graphs and Minimum Spanning Trees",
+          "chunk_order": 21,
+          "cosine_sim": 0.3537,
+          "final_score": 0.4067,
+          "content": "[Diagram: The two highlighted spanning trees show that the same weighted graph can have multiple optimal solutions with equal total weight. This matters because minimum spanning tree algorithms may return any one of several correct trees, not necessarily a unique structure.]\n\nAs the number of spanning trees of $G$ is very large (see Cayley's theorem), we could not solve this problem by brute force."
+        },
+        {
+          "chunk_id": "0806e91b-3c90-49b6-acb6-69988e52d9b7",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Build a railway system",
+          "chunk_order": 25,
+          "cosine_sim": 0.3536,
+          "final_score": 0.4066,
+          "content": "```text\n+------------------------------+                 +------------------------------+\n| Left railway network         |                 | Right railway network        |\n| (spanning tree example 1)    |                 | (spanning tree example 2)    |\n+------------------------------+                 +------------------------------+\n          |                                                     |\n          v                                                     v\n  Length of spanning tree: 17284                       Length of spanning tree: 15932\n```"
+        },
+        {
+          "chunk_id": "4a10d058-8c06-436c-94cb-33d10360808c",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Euler graph",
+          "chunk_order": 79,
+          "cosine_sim": 0.3495,
+          "final_score": 0.4019,
+          "content": "- Definition\n- Recognize Euler graph"
+        },
+        {
+          "chunk_id": "79f69592-d6cb-4ebd-98c5-ab0fb9621493",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 12,
+          "cosine_sim": 0.3275,
+          "final_score": 0.3766,
+          "content": "**Theorem.** Every undirected connected graph contains a spanning tree.\n\n**Proof.** Let $G$ be an undirected connected graph.\n\n- If $G$ contains no cycle then $G$ is its own spanning tree.\n- If $G$ contains a cycle: Removing any edge from the cycle gives a graph which is still connected. If the new graph contains a cycle then again remove one edge of the cycle. Continue this process until the resulting graph $T$ contains no cycles. We have not removed any vertices so $T$ has the same vertex set as $G$, and at each step of the above process we obtain a connected graph. Therefore $T$ is connected and it is a spanning tree for $G$.\n\n[Diagram: The proof describes an iterative pruning process: repeatedly delete one edge from any cycle while preserving connectivity. This guarantees that the graph eventually becomes acyclic without losing any vertices, yielding a spanning tree.]"
+        },
+        {
+          "chunk_id": "a6cf7664-fd4f-4de2-a210-93015e369a68",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 11,
+          "cosine_sim": 0.322,
+          "final_score": 0.3702,
+          "content": "[Diagram: The figure illustrates that a spanning tree keeps all vertices of a connected graph while removing enough edges to eliminate cycles. This matters because spanning trees preserve connectivity with a minimal edge set, which is foundational for efficient network design and many graph algorithms.]\n\nGraph G and its 2 spanning trees $T_1$ and $T_2$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 19.2
+}

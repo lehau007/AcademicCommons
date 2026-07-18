@@ -1,0 +1,155 @@
+{
+  "qid": "discrete_math_01",
+  "course_code": "IT3020E",
+  "question": "What are the definitions of an Articulation Point and a Bridge in an undirected graph?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "f170be85-f25a-4515-8694-06004c67e11e",
+  "answer": "# Articulation Point and Bridge in an Undirected Graph\n\nBoth concepts are defined in terms of what happens to the **connected components** of a graph when we remove a single element (a vertex or an edge).\n\n## Articulation Point (Cut Vertex)\n\n> A vertex whose **removal** (along with all edges incident to it) produces a subgraph with **more connected components** than in the original graph.\n\nEquivalently: removing a cut vertex from a **connected** graph produces a graph that is **no longer connected**. In other words, the vertex is critical for maintaining the connectivity of the graph.\n\n## Bridge\n\n> An edge whose **removal** produces a subgraph with **more connected components** than in the original graph.\n\nIn other words, a bridge is an edge whose deletion **disconnects** the graph (or increases the number of connected components if the graph was already disconnected).\n\n## Summary Table\n\n| Concept | Element removed | Effect on the graph |\n|---|---|---|\n| **Articulation Point** | A vertex | Number of connected components increases |\n| **Bridge** | An edge | Number of connected components increases |\n\n## Related Property (Trees)\n\nA nice consequence appears in tree theory: in any tree, **every edge is a bridge**, and **every non-leaf vertex is an articulation point**. This is because a tree is a connected graph with no cycles, so removing any single vertex (other than a leaf) or any single edge disconnects it.\n\n```text\nExample graph:\n\n        +---+       +---+           +---+\n        | b |-------| c |-----------| e |\n        +---+       +---+           +---+\n          |           |               |\n          |           |               |\n        +---+       +---+             |\n        | a |-------| d |-------------+\n        +---+                         |\n                                      |\n                                    +---+\n                                    | g |\n                                    +---+\n\nIn this graph, vertex `d` is an articulation point:\nremoving `d` (and its incident edges) splits the graph\ninto two components. The edge (d, e) is a bridge:\nremoving it disconnects `e` from the rest.\n```",
+  "citations": [
+    {
+      "chunk_id": "367c4728-ce7e-4aa8-beac-8aaf0b715f16",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Connectedness",
+      "page_number": null,
+      "chunk_order": 46,
+      "excerpt": "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components than in the original graph. The removal of a cut vertex from a connected graph produces a gr"
+    },
+    {
+      "chunk_id": "e0f927c1-d638-4edc-8fdc-cc47fe525f47",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Euler’s theorems",
+      "page_number": null,
+      "chunk_order": 86,
+      "excerpt": "Is there a way to go through all 7 bridges, each exactly once, and then return to the starting position?\n\nWhether or not there exists a cycle on a graph G that traverses through every edge of G exactl"
+    },
+    {
+      "chunk_id": "31c5ea6b-62b9-4d6f-bf64-c4613f981dd2",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Connectedness",
+      "page_number": null,
+      "chunk_order": 47,
+      "excerpt": "[Diagram: The graph shows how certain vertices and edges are critical for maintaining connectivity. Removing the marked cut vertex separates the graph into more parts, while removing the marked bridge"
+    },
+    {
+      "chunk_id": "96805a13-0640-42b5-ae25-cc87f07f1495",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Seven Bridges of Königsberg",
+      "page_number": null,
+      "chunk_order": 77,
+      "excerpt": "- To prove it, Euler reformulated the problem in graph terms:\n  - Each land mass ~ a vertex\n  - Each bridge ~ an edge\n\n```text\n+-------------------+        +-------------------+\n|       A           | "
+    },
+    {
+      "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Tree and its properties",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two"
+    },
+    {
+      "chunk_id": "eedd7861-31ba-4099-819b-b2dd2675c678",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Seven Bridges of Königsberg",
+      "page_number": null,
+      "chunk_order": 75,
+      "excerpt": "```text\n                A\n      +-------------------+\n      |   1         2     |\n      |  /           |    |\n      | /            |    |\n      |/             |    |\n      |      B---4--- |    |\n     "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "Articulation Point Bridge đồ thị vô hướng định nghĩa",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "367c4728-ce7e-4aa8-beac-8aaf0b715f16",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Connectedness",
+          "chunk_order": 46,
+          "cosine_sim": 0.3587,
+          "final_score": 0.4125,
+          "content": "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components than in the original graph. The removal of a cut vertex from a connected graph produces a graph that is not connected\n\n**Bridge**: An edge whose removal produces a subgraph with more connected components than in the original graph.\n\n```text\n        +---+       +---+           +---+\n        | b |-------| c |-----------| e |\n        +---+       +---+           +---+\n          |           |               |\n          |           |               |\n        +---+       +---+             |\n        | a |-------| d |-------------+\n        +---+                         |\n                                      |\n                                    +---+\n                                    | g |\n                                    +---+\n```"
+        },
+        {
+          "chunk_id": "7bab2c98-dbdb-4919-96b4-cf960a8c7051",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.3112,
+          "final_score": 0.3579,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "89005382-f85c-4c56-a264-f414a6544ac9",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.3112,
+          "final_score": 0.3579,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "e0f927c1-d638-4edc-8fdc-cc47fe525f47",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Euler’s theorems",
+          "chunk_order": 86,
+          "cosine_sim": 0.281,
+          "final_score": 0.3231,
+          "content": "Is there a way to go through all 7 bridges, each exactly once, and then return to the starting position?\n\nWhether or not there exists a cycle on a graph G that traverses through every edge of G exactly once.\n\nAnswer: There exists vertex of odd degree ➔ don’t have Euler cycle\n\nWhether or not there exists Euler path in G?\n\nAnswer: There are 3 vertices of degree 3, one vertex of degree 5 ➔ don’t have Euler path"
+        },
+        {
+          "chunk_id": "31c5ea6b-62b9-4d6f-bf64-c4613f981dd2",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Connectedness",
+          "chunk_order": 47,
+          "cosine_sim": 0.2613,
+          "final_score": 0.3005,
+          "content": "[Diagram: The graph shows how certain vertices and edges are critical for maintaining connectivity. Removing the marked cut vertex separates the graph into more parts, while removing the marked bridge disconnects the leaf-like node from the rest of the graph.]"
+        },
+        {
+          "chunk_id": "96805a13-0640-42b5-ae25-cc87f07f1495",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Seven Bridges of Königsberg",
+          "chunk_order": 77,
+          "cosine_sim": 0.2272,
+          "final_score": 0.2612,
+          "content": "- To prove it, Euler reformulated the problem in graph terms:\n  - Each land mass ~ a vertex\n  - Each bridge ~ an edge\n\n```text\n+-------------------+        +-------------------+\n|       A           |        |       D           |\n|   vertex/land     |<------>|   vertex/land     |\n|                   |        |                   |\n|       B           |        |                   |\n|   vertex/land     |        |                   |\n|                   |        |                   |\n|       C           |        |                   |\n|   vertex/land     |        |                   |\n+-------------------+        +-------------------+\n\nBridge labels in the graph abstraction:\n1, 2, 3, 4, 5, 6, 7 = edges\n```"
+        },
+        {
+          "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 8,
+          "cosine_sim": 0.2245,
+          "final_score": 0.2581,
+          "content": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two vertices $u, v \\in V$, there exists exactly one simple path from $u$ to $v$.\n3. $G$ is connected, and removing any edge from $G$ disconnects it (each edge of $G$ is a bridge).\n4. $G$ has no cycles, and adding any edge to $G$ gives rise to a cycle. (Thus $G$ is a maximal acyclic graph).\n5. $G$ is connected and $|E| = |V| - 1$."
+        },
+        {
+          "chunk_id": "eedd7861-31ba-4099-819b-b2dd2675c678",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Seven Bridges of Königsberg",
+          "chunk_order": 75,
+          "cosine_sim": 0.215,
+          "final_score": 0.2473,
+          "content": "```text\n                A\n      +-------------------+\n      |   1         2     |\n      |  /           |    |\n      | /            |    |\n      |/             |    |\n      |      B---4--- |    |\n      |     / \\       |    |\n      |   3/   \\5     |    |\n      |   /     \\     |    |\n      |  C---7----D---6--- |\n      +-------------------+\n```\n\n[Diagram: The picture represents the famous graph of Königsberg, where landmasses are nodes and bridges are edges. It illustrates the classic question of whether one can traverse every bridge exactly once, a problem that led to the foundation of graph theory and Eulerian path reasoning.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 23.4
+}

@@ -1,0 +1,226 @@
+{
+  "qid": "database_02",
+  "course_code": "IT3292E",
+  "question": "What is the difference between the Intersection and Difference operators in relational algebra?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "514e140d-81e2-49be-a87e-46ae1b748463",
+  "answer": "# Difference between Intersection and Difference Operators in Relational Algebra\n\nBoth **Intersection (∩)** and **Difference (−)** are **binary operators** in relational algebra, meaning they take **two relations as input** and produce **one relation as output**. A key requirement for both is that the two input relations must be **union-compatible** (i.e., they must have the same schema/attributes).\n\n## 1. Intersection (∩)\n\n- **Symbol:** `R1 ∩ R2`\n- **Definition:** Keeps only the **common tuples** that appear in **both** input relations.\n- **Logic:** A tuple is included in the result **if and only if** it exists in R1 **AND** in R2.\n- **Example (from the course material):**\n  - R1 contains tuples: `{20162102, 20172201, 20172202}`\n  - R2 contains tuples: `{20162101, 20162102, 20172201}`\n  - **Result:** `{20162102, 20172201}` (the tuples that exist in **both** relations)\n\n## 2. Difference (−)\n\n- **Symbol:** `R1 \\ R2` (or `R1 − R2`)\n- **Definition:** Contains tuples that occur in the **first relation but not in the second**.\n- **Logic:** A tuple is included in the result **if and only if** it exists in R1 **AND NOT** in R2.\n- **Example (from the course material):**\n  - R1 (clazz) contains tuples: `{20162101, 20162102, 20172201, 20172202}`\n  - R2 (clazz 2) contains tuples: `{20172202, 20162102}`\n  - **Result:** `{20162101, 20172201}` (tuples in R1 but **not** in R2)\n\n## Key Comparison\n\n| Aspect | Intersection (∩) | Difference (\\) |\n|---|---|---|\n| **Symbol** | `R1 ∩ R2` | `R1 \\ R2` |\n| **Result includes a tuple if...** | It is in R1 **AND** in R2 | It is in R1 **AND NOT** in R2 |\n| **Set logic** | A ∩ B | A − B |\n| **Order matters?** | No (R1 ∩ R2 = R2 ∩ R1) | **Yes** (R1 \\ R2 ≠ R2 \\ R1 in general) |\n| **Size of result** | ≤ min(|R1|, |R2|) | ≤ |R1| |\n\n## Visual Summary\n\n```\nR1 ∩ R2   →   common tuples (in BOTH)\nR1 \\ R2   →   tuples in R1 ONLY (not in R2)\n```\n\nIn short: **Intersection** returns what the two relations **share**, while **Difference** returns what the first relation has that the second one **does not**.",
+  "citations": [
+    {
+      "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Introduction to relational algebra",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several r"
+    },
+    {
+      "chunk_id": "2d4d5e91-a2fd-40c1-a5fd-7a753df6aff5",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords and descriptions",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "| Keyword | Description |\n|---|---|\n| Relational data model | Is data representation format as a table of values, each row in the table represents a collection of related data values |\n| Set | Is coll"
+    },
+    {
+      "chunk_id": "3cdb6e2e-8b6a-4162-9bd7-d8f1746e2901",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.3. Difference",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "- Containing tuples occurred in the first relation but not in the second.\n\n```text\nR1 \\ R2  →  result\n```\n\n| clazz (R1) | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 "
+    },
+    {
+      "chunk_id": "24ec14e9-4208-44fc-be8f-d524d86d781e",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Intersection",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Keeping only common tuples from 2 input union-compatible relations.\n\n```text\n+------+      ∩      +------+\n| R1   |             | R2   |\n+------+             +------+\n          \\         /\n         "
+    },
+    {
+      "chunk_id": "01398013-cb08-44de-98c7-f4e562a3d54c",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Cartesian Product",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- The concatenation of every tuple of one relation with every tuple of the other relation.\n\n```text\n+-----+      ×      +-----+      -->      +-----+-----+\n|  a  |             |  x  |               | "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "relational algebra intersection and difference operators definition syntax example",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c120ef78-d8c6-4b37-b68b-edc19f658fe8",
+          "document_id": "ffa2105f-b635-4990-9a02-dbf38c9c965e",
+          "section_title": "Additional Rules Derived",
+          "chunk_order": 8,
+          "cosine_sim": 0.4403,
+          "final_score": 0.6605,
+          "content": "| Rule | Statement |\n|------|-----------|\n| Union | if X→Y and X→Z, then X→YZ |\n| Decomposition | if X→YZ, then X→Y and X→Z |\n| Pseudo-transitivity | if X→Y and WY→Z, then WX→Z |\n\n---"
+        },
+        {
+          "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "1. Introduction to relational algebra",
+          "chunk_order": 9,
+          "cosine_sim": 0.4527,
+          "final_score": 0.5206,
+          "content": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several relational algebraic operators:\n  - Operator: represent computations\n    - Input: one or two relation\n    - Output: a relation\n  - Unary operator (one input) vs. binary operator (two inputs)"
+        },
+        {
+          "chunk_id": "2d4d5e91-a2fd-40c1-a5fd-7a753df6aff5",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "Keywords and descriptions",
+          "chunk_order": 3,
+          "cosine_sim": 0.4401,
+          "final_score": 0.5061,
+          "content": "| Keyword | Description |\n|---|---|\n| Relational data model | Is data representation format as a table of values, each row in the table represents a collection of related data values |\n| Set | Is collection of Object |\n| Operator | Is a special token that represent computations such as union, minus, selection, join, etc |\n| Expression | Is a expression built up from operators and operands |"
+        },
+        {
+          "chunk_id": "c60a8df7-4e4f-4f12-a130-3e92af0ea407",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "1.2. Sub-queries: ALL, ANY",
+          "chunk_order": 32,
+          "cosine_sim": 0.4385,
+          "final_score": 0.5043,
+          "content": "- Syntax: `<expression> <comparison_operator> ALL|ANY <subquery>`\n\n- `<comparison_operator>`: `>`, `<`, `<=`, `>=`, `=`, `<>`\n  - `X >=ALL<subquery>`: TRUE if there is **no tuple larger than X** in `<subquery>` result\n  - `X =ANY<subquery>`: TRUE if `x` **equals at least one tuple** in `<subquery>` result\n  - `X >ANY<subquery>`: TRUE if `x` **is not the smallest tuple** produced by `<subquery>`\n- Example:\n\n```sql\n  SELECT *\n  FROM subject\n  WHERE credit >= ALL (SELECT credit FROM subject);\n  ```"
+        },
+        {
+          "chunk_id": "a98c89b1-edf6-469d-a0ff-42bce19213ab",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "SQL Retrieval statement (Part 2)",
+          "chunk_order": 7,
+          "cosine_sim": 0.4318,
+          "final_score": 0.4966,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Union, Intersection and Difference of Queries\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        },
+        {
+          "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.4239,
+          "final_score": 0.4875,
+          "content": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Relational algebra | An algebra whose operands are relations or variables that represent Relations |"
+        },
+        {
+          "chunk_id": "ee134fba-8c15-4e9c-af14-217ec541f4ff",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "1. Data Manipulation: SELECT operation",
+          "chunk_order": 13,
+          "cosine_sim": 0.4176,
+          "final_score": 0.4802,
+          "content": "```text\nSELECT [all|distinct]\n       {*|{table_name.*|expr[alias]}|view_name.*}\n       [, {table_name.*|expr[alias]} ...]\nFROM table_name [alias][, table_name[alias]] ...\n[WHERE condition]\n[GROUP BY expr [, expr] ...]\n[HAVING condition]\n[{UNION|UNION ALL|INTERSECT|MINUS}\n       SELECT ...]\n[ORDER BY {expr|position} [ASC|DESC]\n       [, expr|position} [ASC|DESC]]\n```\n\n[Diagram: This is the general syntax template for an SQL SELECT statement. It shows the optional clauses and their order, which is important for writing valid queries and understanding how filtering, grouping, combining results, and sorting are applied.]"
+        },
+        {
+          "chunk_id": "3cdb6e2e-8b6a-4162-9bd7-d8f1746e2901",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "2.3. Difference",
+          "chunk_order": 13,
+          "cosine_sim": 0.4145,
+          "final_score": 0.4766,
+          "content": "- Containing tuples occurred in the first relation but not in the second.\n\n```text\nR1 \\ R2  →  result\n```\n\n| clazz (R1) | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n| clazz 2 (R2) | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20172202 | CNTT2.02-K62 |  |  |\n| 20162102 | CNTT1.02-K61 |  |  |\n\n| result | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |"
+        }
+      ]
+    },
+    {
+      "mode": "dense_rerank",
+      "query": "intersection operator relational algebra R ∩ S tuples in both relations",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "efd74b7f-b689-4ded-8541-2fa9ced35b6b",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 29,
+          "cosine_sim": 0.4404,
+          "final_score": 0.5064,
+          "content": "[Diagram: The slide illustrates the partition-hash join strategy in relational algebra. Both relations are first partitioned by hashing the join key, so matching tuples end up in the same bucket and can be joined independently and efficiently.]"
+        },
+        {
+          "chunk_id": "24ec14e9-4208-44fc-be8f-d524d86d781e",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "2.2. Intersection",
+          "chunk_order": 12,
+          "cosine_sim": 0.4238,
+          "final_score": 0.4874,
+          "content": "- Keeping only common tuples from 2 input union-compatible relations.\n\n```text\n+------+      ∩      +------+\n| R1   |             | R2   |\n+------+             +------+\n          \\         /\n           \\       /\n            \\     /\n             \\   /\n              \\ /\n             +-------+\n             | result |\n             +-------+\n```\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |"
+        },
+        {
+          "chunk_id": "01398013-cb08-44de-98c7-f4e562a3d54c",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "2.4. Cartesian Product",
+          "chunk_order": 14,
+          "cosine_sim": 0.4211,
+          "final_score": 0.4842,
+          "content": "- The concatenation of every tuple of one relation with every tuple of the other relation.\n\n```text\n+-----+      ×      +-----+      -->      +-----+-----+\n|  a  |             |  x  |               |  a  |  x  |\n|  b  |             |  y  |               |  a  |  y  |\n|  c  |                                -> |  b  |  x  |\n|  d  |                                  | |  b  |  y  |\n+-----+                                  | |  c  |  x  |\n                                         | |  c  |  y  |\n                                         | |  d  |  x  |\n                                         | |  d  |  y  |\n                                         + +-----+-----+\n```"
+        },
+        {
+          "chunk_id": "0e4816a0-8049-4188-a8d0-8fd678117178",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 24,
+          "cosine_sim": 0.4155,
+          "final_score": 0.4778,
+          "content": "- Nested-loop JOIN\n\n```text\n+--------------------------------------------------------------+\n| For each tuple tr in r {                                     |\n|   for each tuple ts in s {                                   |\n|     if (tr and ts satisfy the join condition) {              |\n|       add tuple tr x ts to the result set                    |\n|     }                                                        |\n|   }                                                            |\n| }                                                            |\n+--------------------------------------------------------------+\n```\n\n[Diagram: This shows the nested-loop strategy for joining two relations by comparing every tuple in one relation with every tuple in the other. It is simple and does not require an index, but its quadratic cost makes it expensive for large inputs.]\n\n- No index needed\n- Any join condition types\n- Expensive: $O(n^2)$"
+        },
+        {
+          "chunk_id": "3cdb6e2e-8b6a-4162-9bd7-d8f1746e2901",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "2.3. Difference",
+          "chunk_order": 13,
+          "cosine_sim": 0.4058,
+          "final_score": 0.4666,
+          "content": "- Containing tuples occurred in the first relation but not in the second.\n\n```text\nR1 \\ R2  →  result\n```\n\n| clazz (R1) | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n| clazz 2 (R2) | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20172202 | CNTT2.02-K62 |  |  |\n| 20162102 | CNTT1.02-K61 |  |  |\n\n| result | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |"
+        },
+        {
+          "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "1. Introduction to relational algebra",
+          "chunk_order": 9,
+          "cosine_sim": 0.3964,
+          "final_score": 0.4559,
+          "content": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several relational algebraic operators:\n  - Operator: represent computations\n    - Input: one or two relation\n    - Output: a relation\n  - Unary operator (one input) vs. binary operator (two inputs)"
+        },
+        {
+          "chunk_id": "011637a3-9499-4694-a0b7-b0bfb0234d59",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "1.1. Joins operators: Join types",
+          "chunk_order": 22,
+          "cosine_sim": 0.3805,
+          "final_score": 0.4375,
+          "content": "- Product:\n  - R CROSS JOIN S\n- Theta join:\n  - R [INNER] JOIN S ON &lt;condition&gt;\n- Natural join: (Be careful!)\n  - R NATURAL JOIN S\n- Outer join:\n  - R [LEFT|RIGHT|FULL] [OUTER] JOIN S ON &lt;condition&gt;\n  - R NATURAL [LEFT|RIGHT|FULL] [OUTER] JOIN S"
+        },
+        {
+          "chunk_id": "4e89458e-54dc-4c74-a7c9-5912c676c706",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "1.6. Controlling the output: Eliminating Duplicates",
+          "chunk_order": 36,
+          "cosine_sim": 0.3766,
+          "final_score": 0.433,
+          "content": "- Remove duplicate tuples: DISTINCT\n\n`SELECT DISTINCT student_id FROM enrollment;`\n\n- UNION | INTERSECT | EXCEPT: remove duplicate rows\n- UNION | INTERSECT | EXCEPT ALL:\n\n- does not remove duplicate rows"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 26.9
+}

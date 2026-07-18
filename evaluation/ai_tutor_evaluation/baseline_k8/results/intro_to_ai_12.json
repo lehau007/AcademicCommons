@@ -1,0 +1,64 @@
+{
+  "qid": "intro_to_ai_12",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 2,
+      "justification": "The tutor's answer contains significant unsupported claims. While Mitchell's definition involves task T, performance P, and experience E, the tutor incorrectly describes these as 'training examples/experience,' 'target function/hypothesis/concept,' and 'performance measure.' The retrieved chunks mention 'target function' and 'training examples' as key elements of ML problems generally, but do not attribute this specific three-element framework to Mitchell (1997).",
+      "evidence": [
+        "Tập huấn luyện / trải nghiệm (training examples or experience)",
+        "Mục tiêu cần học (target function / hypothesis / concept)",
+        "một chương trình được xem là học nếu hiệu năng của nó trên nhiệm vụ T tăng lên nhờ kinh nghiệm E, đối với lớp nhiệm vụ P"
+      ]
+    },
+    "answer_relevancy": {
+      "score": 4,
+      "justification": "The answer addresses the question directly by identifying three core elements from Mitchell (1997) and concludes with Mitchell's formal definition involving T, E, and P. However, it frames the elements slightly differently than Mitchell's canonical formulation (Task T, Performance P, Experience E), instead listing training examples, target function, and performance measure as the three elements.",
+      "evidence": [
+        "Tập huấn luyện / trải nghiệm (training examples or experience)",
+        "Mục tiêu cần học (target function / hypothesis / concept)",
+        "Thước đo hiệu năng (performance measure / evaluation criterion)",
+        "hiệu năng của nó trên nhiệm vụ T tăng lên nhờ kinh nghiệm E, đối với lớp nhiệm vụ P"
+      ]
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "The tutor correctly identifies the three core elements (experience E, task T, performance measure P) and accurately paraphrases Mitchell's definition. However, the tutor lists 'target function/hypothesis' as one of the three core elements, which is actually a design choice within the learning problem, not one of Mitchell's three defining elements (T, P, E).",
+      "evidence": [
+        "Ground truth: 'improving over a task T, with respect to a performance measure P, based on experience E'",
+        "Tutor: 'Mục tiêu cần học (target function / hypothesis / concept)' listed as core element #2"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Roughly half the chunks are relevant. Chunks e8e13d75, 02d82e69, 5b9a4ab2, and 4d943037 directly address Mitchell's ML problem definition and key elements. However, chunks 183cd87b (generic AI foundations), bb78f7dc (ANN usage), ae50e9e8 (RL features), and c2c1e177 (types of learning) are tangential or irrelevant to Mitchell's three core elements.",
+      "evidence": [
+        "183cd87b: 'Foundations of AI... Machine Learning, Deep Learning'",
+        "bb78f7dc: 'When using ANNs?'",
+        "ae50e9e8: 'Features of RL'",
+        "c2c1e177: 'Types of learning problems'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All three core elements from Mitchell's definition are present in the retrieved chunks: task T, performance measure P, and experience E. Chunk e8e13d75 explicitly states Mitchell's definition about improving performance at a task through experience, and chunks 5b9a4ab2 and 02d82e69 cover training examples/experience and performance measures.",
+      "evidence": [
+        "Any computer program that improves its performance at some task through experience [Mitchell, 1997]",
+        "Selection of the training examples",
+        "Choosing the target function",
+        "performance criterion"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 2,
+      "justification": "The tutor's answer misrepresents Mitchell's definition. The cited chunks discuss 'key elements of a ML problem' (training examples, target function, performance measure) but Mitchell's actual definition is about a program improving performance on task T with respect to measure P through experience E. The tutor conflates implementation elements with the definitional framework.",
+      "evidence": [
+        "Tutor claims: 'Tập huấn luyện / trải nghiệm (training examples or experience)' as first element",
+        "Chunk e8e13d75: 'Any computer program that improves its performance at some task through experience [Mitchell, 1997]'",
+        "Tutor's summary: 'hiệu năng của nó trên nhiệm vụ T tăng lên nhờ kinh nghiệm E, đối với lớp nhiệm vụ P' (confuses P as task class rather than performance measure)",
+        "Chunks 02d82e69 and 5b9a4ab2 discuss 'Key elements of a ML problem' but these are implementation considerations, not Mitchell's three-part definition (T, P, E)"
+      ]
+    }
+  }
+}

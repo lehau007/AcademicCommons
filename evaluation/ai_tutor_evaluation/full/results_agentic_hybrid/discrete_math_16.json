@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_16",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "derived from spanning-tree def; honest"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "V(H)=V(G) correct"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "spanning-tree/MST, no standalone def"
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "standalone spanning-subgraph def not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  }
+}

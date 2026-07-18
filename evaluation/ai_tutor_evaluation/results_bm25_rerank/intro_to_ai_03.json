@@ -1,0 +1,53 @@
+{
+  "qid": "intro_to_ai_03",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The core mechanism (expanding the node with smallest/lowest f(n)), the evaluation function formula, and the definitions of g(n), h(n), and f(n) all match chunk d556b3ac exactly.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how A* determines which node to expand next: by selecting the unexpanded node with the smallest f(n) value, where f(n) = g(n) + h(n). All content is on-topic and relevant to the question.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: A* expands the unexpanded node with the lowest evaluation value, uses f(n) = g(n) + h(n), correctly defines g(n) as cost to reach n, and h(n) as estimated cost from n to goal. No contradictions present.",
+      "evidence": [
+        "Ground truth: 'expands the unexpanded node with the lowest evaluation value'",
+        "Tutor: 'expands the unexpanded node with the smallest evaluation value'",
+        "Ground truth: 'f(n) = g(n) + h(n)'",
+        "Tutor: 'f(n) = g(n) + h(n)'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six chunks are directly relevant to how A* determines node expansion. Only the Greedy Best-First Search chunk (cccb065b) describes a different algorithm's evaluation function and is not relevant to A*.",
+      "evidence": [
+        "cccb065b: 'Greedy best-first search expands the node that appears to be closest to goal' with f(n)=h(n), not the A* evaluation function"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk d556b3ac explicitly states A* expands the unexpanded node with lowest evaluation value and defines f(n)=g(n)+h(n) with complete explanations of g(n) and h(n).",
+      "evidence": [
+        "Expand unexpanded node with lowest evaluation value",
+        "Evaluation function $f(n) = g(n) + h(n)$",
+        "$g(n)$ = cost so far to reach $n$",
+        "$h(n)$ = estimated cost from $n$ to goal"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The core claim about expanding nodes with lowest f(n) and the formula f(n)=g(n)+h(n) are explicitly confirmed in chunk d556b3ac, while the example chunks provide concrete illustrations of this principle in action.",
+      "evidence": [
+        "Statement: 'A* search expands the unexpanded node with the smallest evaluation value' → Chunk d556b3ac: 'Idea: Expand unexpanded node with lowest evaluation value'",
+        "Statement: 'f(n) = g(n) + h(n)' with definitions → Chunk d556b3ac: 'Evaluation function $f(n) = g(n) + h(n)$' with matching definitions for g(n), h(n), and f(n)",
+        "Statement: 'A* chooses the frontier node with the lowest f(n)' → Chunk fa65614b: 'A* expands nodes in order of increasing $f$ value'"
+      ]
+    }
+  }
+}

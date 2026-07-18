@@ -1,0 +1,58 @@
+{
+  "qid": "intro_to_ai_08",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 3,
+      "justification": "Most core claims are supported by the retrieved chunks, but several specific claims about games and determinism lack direct support. The chunks discuss standard search problems and alpha-beta for games, but don't explicitly state that games involve 'competing objectives,' 'multiple agents/players,' or that standard search is 'deterministic.'",
+      "evidence": [
+        "The world is usually **deterministic**: an action leads to a predictable next state.",
+        "A game involves **multiple agents/players** with **competing objectives**.",
+        "The outcome depends not only on your actions but also on the **opponent's actions**.",
+        "the agent must choose actions while assuming the other player also acts strategically"
+      ]
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by clearly distinguishing standard search problems (single-agent, deterministic, finding a path to a goal) from games (multi-agent, adversarial, strategic decision-making against an opponent). All content is on-topic and relevant to the distinction asked about.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 3,
+      "justification": "The answer correctly identifies multiple agents and opponent actions as key game distinctions, but misses critical ground-truth facts: that standard search uses heuristics to find optimal solutions and evaluates cost from start to goal, while games require strategies for every opponent reply and evaluate position goodness rather than cost to goal.",
+      "evidence": [
+        "Ground truth: 'aims to find an optimal solution or goal using heuristics, and evaluates the estimated cost from the start to the goal'",
+        "Ground truth: 'requires a strategy that specifies a move for every possible opponent reply, and evaluates the goodness of a game position rather than the cost to a goal'",
+        "Answer mentions 'multiple agents/players with competing objectives' and 'opponent's actions' but omits heuristics, cost evaluation, strategy specification, and position evaluation"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Roughly half the chunks are relevant. Chunks about standard search problems (67acdf6b, a9f924dc) and alpha-beta algorithm (5b2f0195) are relevant, but chunks about planning/regression (0b538699, b7119f3c, 19ce7cd1) address different topics and don't help distinguish search problems from games.",
+      "evidence": [
+        "0b538699: 'get milk, bananas, and a cordless drill' - planning task example",
+        "b7119f3c: 'Regression algorithm...predecessor construction' - planning algorithm",
+        "19ce7cd1: 'Progression algorithm...state-space search problem' - planning algorithm"
+      ]
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "The retrieved chunks mention standard search problems and game algorithms (alpha-beta), but lack the key distinguishing concepts from the ground truth: no adversary vs. adversary, optimal solution vs. strategy for every opponent reply, and cost-to-goal vs. position evaluation.",
+      "evidence": [
+        "no adversary",
+        "strategy that specifies a move for every possible opponent reply",
+        "evaluates the estimated cost from the start to the goal",
+        "evaluates the goodness of a game position"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "The first citation supports the claim about standard search problems having black-box states with initial states, goal states, and successor functions. However, the second citation (alpha-beta algorithm pseudocode) does not directly support the statement it's attached to about games using minimax and alpha-beta pruning—it shows implementation details but doesn't explain the conceptual distinction between games and search problems.",
+      "evidence": [
+        "Claim: 'standard search problems are described as having a state that is essentially a \"black-box\"' → Chunk 67acdf6b: 'Standard search problems - State is a \"black-box\" - Any data structure that implements initial states, goal states, successor function' (supports well)",
+        "Claim: 'game search uses methods like minimax and alpha-beta pruning' → Chunk 5b2f0195: 'function ALPHA-BETA-SEARCH(state) returns an action...' (shows algorithm code but doesn't explain why games need this approach or the conceptual distinction)"
+      ]
+    }
+  }
+}

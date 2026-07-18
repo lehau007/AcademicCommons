@@ -1,0 +1,175 @@
+{
+  "qid": "intro_to_ai_19",
+  "course_code": "IT3160E",
+  "question": "What is the primary purpose of Alpha-Beta pruning in minimax game search trees?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "2c1b0879-5675-4c99-ba32-a7da82393fea",
+  "answer": "## Primary Purpose of Alpha-Beta Pruning\n\nThe **primary purpose of Alpha-Beta pruning** is to **reduce the number of game states that must be evaluated** in a minimax search tree, **without changing the final decision**.\n\nBecause the number of game states grows exponentially with the number of moves, examining every node is infeasible. Alpha-Beta pruning addresses this problem by **removing branches that do not influence the final decision**, while still preserving the optimal minimax result.\n\n### How it works\nAlpha-Beta pruning keeps track of two bounds during the search:\n- **α (alpha)**: the best value already guaranteed for the **MAX** player\n- **β (beta)**: the best value already guaranteed for the **MIN** player\n\nAs the algorithm propagates these bounds down the tree, once a node's value proves it **cannot improve on the already known bound**, the remaining branches under that node are **cut off (pruned)**. This skipping of work:\n- Saves computation,\n- Improves efficiency,\n- Does **not** affect the correctness of the final decision.\n\nIn short, Alpha-Beta pruning makes adversarial search tractable by eliminating redundant exploration while guaranteeing the same optimal outcome as full minimax search.\n\n---\n\n### Sources Used\n```json",
+  "citations": [
+    {
+      "chunk_id": "32690667-bdac-41d9-b6f2-8045d24755db",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The α-β algorithm",
+      "page_number": null,
+      "chunk_order": 31,
+      "excerpt": "[Diagram: This pseudocode describes alpha-beta pruning for adversarial search, where MAX and MIN propagate bounds to avoid exploring branches that cannot affect the final decision. It matters because "
+    },
+    {
+      "chunk_id": "3c7c1876-b8c1-406b-a234-a5ddb9b5b0de",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "α-β pruning example",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "[Diagram: This illustrates alpha-beta pruning in a minimax tree. Once a MAX ancestor already has a better option, a MIN node can stop exploring remaining children as soon as its value falls below β, s"
+    },
+    {
+      "chunk_id": "483e247e-a55b-44e4-989f-495d91b2d69d",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The α-β algorithm",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "[Diagram: This pseudocode describes the MIN-VALUE step of the alpha-beta pruning algorithm used in game-tree search. It shows how the algorithm tracks best-known bounds for MAX and MIN to avoid explor"
+    },
+    {
+      "chunk_id": "30a6263c-6cb1-48ca-93cf-560dcfce0b89",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Why is it called α-β?",
+      "page_number": null,
+      "chunk_order": 29,
+      "excerpt": "[Diagram: The figure shows how α and β act as bounds during game-tree search. α captures the best value already guaranteed for the maximizing player, while β captures the best value for the minimizing"
+    },
+    {
+      "chunk_id": "bceb78ba-c85b-48ae-a524-f45699fd86df",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "α-β pruning",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- α: the best values achievable for MAX\n- β: the best values achievable for MIN\n\n```text\n                MAX\n                 |\n                 |\n                MIN\n              /  |  \\\n           "
+    },
+    {
+      "chunk_id": "77fa1ae1-ea22-4e21-9b8f-a83fa3ed77c5",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "α-β pruning example",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "```text\n                          MAX (≥3)\n                         /    |    \\\n                    MIN (3)  MIN (≤2)  MIN (pruned ≤5)\n                    / | \\      / | \\        /     \\\n             "
+    },
+    {
+      "chunk_id": "650b7f8a-a68a-4c9d-a86b-3749890a685c",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Problem of minimax search",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "- Number of games states is exponential to the number of moves.\n  - Solution: Do not examine every node\n\n⇒ Alpha-beta pruning:\n\n- Remove branches that do not influence final decision\n- Revisit example"
+    },
+    {
+      "chunk_id": "ca596b3a-1ffc-4802-acc1-83f191ba1eec",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "α-β pruning example",
+      "page_number": null,
+      "chunk_order": 24,
+      "excerpt": "```text\n                         MAX\n                          ≥3\n                        /  |  \\\n                       /   |   \\\n                    MIN    MIN   MIN\n                     3     ≤2   "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "What is the primary purpose of Alpha-Beta pruning in minimax game search trees?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "32690667-bdac-41d9-b6f2-8045d24755db",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "The α-β algorithm",
+          "chunk_order": 31,
+          "cosine_sim": 0.6707,
+          "final_score": 0.7713,
+          "content": "[Diagram: This pseudocode describes alpha-beta pruning for adversarial search, where MAX and MIN propagate bounds to avoid exploring branches that cannot affect the final decision. It matters because it preserves the optimal minimax result while dramatically reducing the number of game states that must be evaluated.]"
+        },
+        {
+          "chunk_id": "3c7c1876-b8c1-406b-a234-a5ddb9b5b0de",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "α-β pruning example",
+          "chunk_order": 23,
+          "cosine_sim": 0.6459,
+          "final_score": 0.7428,
+          "content": "[Diagram: This illustrates alpha-beta pruning in a minimax tree. Once a MAX ancestor already has a better option, a MIN node can stop exploring remaining children as soon as its value falls below β, saving work without changing the final decision.]"
+        },
+        {
+          "chunk_id": "483e247e-a55b-44e4-989f-495d91b2d69d",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "The α-β algorithm",
+          "chunk_order": 33,
+          "cosine_sim": 0.602,
+          "final_score": 0.6923,
+          "content": "[Diagram: This pseudocode describes the MIN-VALUE step of the alpha-beta pruning algorithm used in game-tree search. It shows how the algorithm tracks best-known bounds for MAX and MIN to avoid exploring branches that cannot affect the final decision, improving efficiency.]"
+        },
+        {
+          "chunk_id": "30a6263c-6cb1-48ca-93cf-560dcfce0b89",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Why is it called α-β?",
+          "chunk_order": 29,
+          "cosine_sim": 0.578,
+          "final_score": 0.6647,
+          "content": "[Diagram: The figure shows how α and β act as bounds during game-tree search. α captures the best value already guaranteed for the maximizing player, while β captures the best value for the minimizing player, enabling branches to be pruned when they cannot affect the final decision.]"
+        },
+        {
+          "chunk_id": "bceb78ba-c85b-48ae-a524-f45699fd86df",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "α-β pruning",
+          "chunk_order": 21,
+          "cosine_sim": 0.5686,
+          "final_score": 0.6538,
+          "content": "- α: the best values achievable for MAX\n- β: the best values achievable for MIN\n\n```text\n                MAX\n                 |\n                 |\n                MIN\n              /  |  \\\n             /   |   \\\n            3    12    8\n\n        α >= 3\n```\n\n[Diagram: This illustrates how alpha-beta pruning keeps track of the best guaranteed outcomes for MAX and MIN while searching a game tree. The idea matters because once a branch cannot improve on already known bounds, it can be skipped to reduce computation without affecting the final decision.]"
+        },
+        {
+          "chunk_id": "77fa1ae1-ea22-4e21-9b8f-a83fa3ed77c5",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "α-β pruning example",
+          "chunk_order": 25,
+          "cosine_sim": 0.5329,
+          "final_score": 0.6128,
+          "content": "```text\n                          MAX (≥3)\n                         /    |    \\\n                    MIN (3)  MIN (≤2)  MIN (pruned ≤5)\n                    / | \\      / | \\        /     \\\n                   3 12  8    2  X  X     14       5\n```\n\n[Diagram: This tree shows how alpha-beta pruning cuts off branches that cannot affect the final decision in a minimax search. Once a node’s value is already guaranteed to be worse than an existing bound, exploring its remaining descendants is unnecessary, which reduces computation without changing the result.]"
+        },
+        {
+          "chunk_id": "650b7f8a-a68a-4c9d-a86b-3749890a685c",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Problem of minimax search",
+          "chunk_order": 19,
+          "cosine_sim": 0.5162,
+          "final_score": 0.5936,
+          "content": "- Number of games states is exponential to the number of moves.\n  - Solution: Do not examine every node\n\n⇒ Alpha-beta pruning:\n\n- Remove branches that do not influence final decision\n- Revisit example …"
+        },
+        {
+          "chunk_id": "ca596b3a-1ffc-4802-acc1-83f191ba1eec",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "α-β pruning example",
+          "chunk_order": 24,
+          "cosine_sim": 0.4808,
+          "final_score": 0.5529,
+          "content": "```text\n                         MAX\n                          ≥3\n                        /  |  \\\n                       /   |   \\\n                    MIN    MIN   MIN\n                     3     ≤2    ≤14\n                   / | \\   /|\\     |\n                  /  |  \\ / | \\    |\n                 3  12  8  2 x x   14\n```\n\n[Diagram: This tree shows α-β pruning in a minimax search. As soon as a node’s bound proves it cannot improve the final decision, the remaining branches are cut off, reducing the number of evaluations needed.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.6
+}

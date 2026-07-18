@@ -1,0 +1,62 @@
+{
+  "qid": "discrete_math_12",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 1,
+      "justification": "The tutor's answer makes multiple core claims about the Dirichlet/Pigeonhole principle, but none of these claims are supported by the retrieved chunks. The chunks discuss the inclusion-exclusion principle, derangements, and proof by contradiction—none mention the Dirichlet or Pigeonhole principle.",
+      "evidence": [
+        "Nếu có **(n+1)** đồ vật được đặt vào **n** hộp, thì **ít nhất một hộp chứa từ 2 đồ vật trở lên**",
+        "Nếu có **N** đồ vật được phân vào **k** hộp, thì sẽ có **ít nhất một hộp chứa không ít hơn ⌈N/k⌉** đồ vật",
+        "Nếu N > k(m-1), thì khi chia N đồ vật vào k hộp, sẽ có ít nhất một hộp chứa **ít nhất m** đồ vật"
+      ]
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by providing the formal statement of the Dirichlet/Pigeonhole principle, then extends with generalized forms and applications. All content is on-topic.",
+      "evidence": [
+        "Nếu có **(n+1)** đồ vật được đặt vào **n** hộp, thì **ít nhất một hộp chứa từ 2 đồ vật trở lên**",
+        "Dạng tổng quát hơn",
+        "Một cách tương đương thường dùng"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly states the Dirichlet principle as 'if n+1 objects are put into n boxes, then at least one box contains at least 2 objects,' which is factually equivalent to the ground truth ('more than n objects' = 'n+1 objects'). The additional generalizations provided are correct extensions and do not contradict the ground truth.",
+      "evidence": [
+        "Ground truth: 'if more than n objects are put into n boxes, then at least one box has at least 2 objects'",
+        "Tutor: 'Nếu có (n+1) đồ vật được đặt vào (n) hộp, thì ít nhất một hộp chứa từ 2 đồ vật trở lên'"
+      ]
+    },
+    "context_precision": {
+      "score": 1,
+      "justification": "All retrieved chunks discuss the inclusion-exclusion principle, derangements, proof by contradiction, and backtracking algorithms—none address the Dirichlet/Pigeonhole principle. The retrieval is entirely noise for this question.",
+      "evidence": [
+        "ccaba2e3: 'Inclusion-exclusion principle... multiples of 3'",
+        "ef9eef10: 'Derangement... permutations'",
+        "7a79504d: 'inclusion–exclusion principle'",
+        "ddc0de17: 'Proof by contradiction'",
+        "0727e164: 'backtracking... Try(k)'",
+        "6436ffb3: 'inclusion-exclusion principle'"
+      ]
+    },
+    "context_recall": {
+      "score": 1,
+      "justification": "The retrieved chunks discuss the inclusion-exclusion principle and derangements, but contain no information about the Dirichlet (Pigeonhole) principle. The ground-truth fact that 'if more than n objects are put into n boxes, then at least one box has at least 2 objects' does not appear in any retrieved chunk.",
+      "evidence": [
+        "if more than n objects are put into n boxes, then at least one box has at least 2 objects"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 1,
+      "justification": "The tutor's answer makes specific mathematical claims about the Dirichlet/Pigeonhole principle but provides no citations at all. The four cited chunks are all about the inclusion-exclusion principle and derangements, which are completely unrelated to the Pigeonhole principle.",
+      "evidence": [
+        "Tutor states: 'Nếu có n+1 đồ vật được đặt vào n hộp...' with no citation",
+        "Chunk ccaba2e3: 'A = set of all integers from 1 to 1000 that are multiples of 3' (about inclusion-exclusion, not Pigeonhole)",
+        "Chunk 7a79504d: 'The inclusion–exclusion principle is an equation relating the sizes of two sets' (wrong topic)",
+        "Chunk ef9eef10: 'Denote D_n the number of derangements' (about derangements, not Pigeonhole)"
+      ]
+    }
+  }
+}

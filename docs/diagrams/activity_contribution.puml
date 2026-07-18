@@ -1,0 +1,85 @@
+@startuml activity_contribution
+' Activity Diagram - Document Contribution & Review (community + official tiers)
+' Render: java -jar plantuml.jar docs/diagrams/activity_contribution.puml -o ../../thesis_book/figures
+' Requires Graphviz (dot). For a no-Graphviz fallback add: !pragma layout smetana
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Helvetica
+skinparam ArrowColor #5B6470
+skinparam ActivityBorderColor #6B7480
+skinparam ActivityBackgroundColor #F4F6F8
+skinparam ActivityFontColor #1F2730
+skinparam ActivityDiamondBackgroundColor #FDF3E7
+skinparam ActivityDiamondBorderColor #6B7480
+skinparam SwimlaneBorderColor #2B3440
+skinparam SwimlaneTitleFontStyle bold
+
+|Uploader (Student / Admin)|
+start
+:Submit upload (file + metadata);
+:Validate file format;
+if (Document tier?) then (Community)
+  :Check seed document (Level 1);
+  if (Course has seed?) then (no)
+    #FAD4D4:Reject upload (HTTP 409),
+    no Document record created;
+    stop
+  else (yes)
+  endif
+  :Persist Document (UPLOADED);
+  :Store raw file in object storage;
+
+  |AI Async Pipeline|
+  :OCR / parse to normalized Markdown
+  (status PARSING);
+  :Generate DocumentSummary;
+  :status EVALUATING;
+  fork
+    :ML duplicate check;
+  fork again
+    :Agent 1 - Course context;
+    :Agent 2 - Internet search;
+    :Agent 3 - Quality scoring
+    + justification;
+  end fork
+  :Persist EvaluationReport
+  (status NEEDS_REVIEW);
+
+  |Reviewer / Admin|
+  :Open review workspace
+  (raw + Markdown + AI report);
+  if (Review decision?) then (approve / override-approve)
+    :status APPROVED;
+  else (reject)
+    #FAD4D4:status REJECTED;
+    stop
+  endif
+
+else (Official)
+  :Archive previous active version;
+  :Persist Document (UPLOADED);
+  :Store raw file in object storage;
+
+  |AI Async Pipeline|
+  :OCR / parse to normalized Markdown
+  (status PARSING);
+  :Generate DocumentSummary;
+  note right
+    Shortcut: skip AI evaluation
+    and HITL review
+  end note
+  :status APPROVED;
+endif
+
+|AI Async Pipeline|
+:Semantic chunk and embed
+(status INDEXING);
+:Upsert vectors into pgvector;
+if (Community tier?) then (yes)
+  :Award ContributionScore;
+else (no)
+endif
+:status INDEXED;
+stop
+@enduml

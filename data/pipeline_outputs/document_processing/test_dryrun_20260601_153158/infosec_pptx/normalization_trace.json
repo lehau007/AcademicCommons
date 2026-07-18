@@ -1,0 +1,1843 @@
+{
+  "char_budget": 24000,
+  "batches": [
+    {
+      "batch_index": 0,
+      "block_count": 1,
+      "input_chars": 86,
+      "page_or_slide_range": [
+        1,
+        1
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 86,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 1,
+      "block_count": 1,
+      "input_chars": 103,
+      "page_or_slide_range": [
+        2,
+        2
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 103,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 2,
+      "block_count": 1,
+      "input_chars": 284,
+      "page_or_slide_range": [
+        3,
+        3
+      ],
+      "mode": "llm",
+      "output_chars": 371
+    },
+    {
+      "batch_index": 3,
+      "block_count": 1,
+      "input_chars": 248,
+      "page_or_slide_range": [
+        4,
+        4
+      ],
+      "mode": "llm",
+      "output_chars": 372
+    },
+    {
+      "batch_index": 4,
+      "block_count": 1,
+      "input_chars": 483,
+      "page_or_slide_range": [
+        5,
+        5
+      ],
+      "mode": "llm",
+      "output_chars": 519
+    },
+    {
+      "batch_index": 5,
+      "block_count": 1,
+      "input_chars": 243,
+      "page_or_slide_range": [
+        6,
+        6
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 243,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 6,
+      "block_count": 1,
+      "input_chars": 253,
+      "page_or_slide_range": [
+        7,
+        7
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 253,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 7,
+      "block_count": 1,
+      "input_chars": 339,
+      "page_or_slide_range": [
+        8,
+        8
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 339,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 8,
+      "block_count": 1,
+      "input_chars": 526,
+      "page_or_slide_range": [
+        9,
+        9
+      ],
+      "mode": "llm",
+      "output_chars": 566
+    },
+    {
+      "batch_index": 9,
+      "block_count": 1,
+      "input_chars": 527,
+      "page_or_slide_range": [
+        10,
+        10
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 527,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 10,
+      "block_count": 1,
+      "input_chars": 298,
+      "page_or_slide_range": [
+        11,
+        11
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 298,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 11,
+      "block_count": 1,
+      "input_chars": 381,
+      "page_or_slide_range": [
+        12,
+        12
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 381,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 12,
+      "block_count": 1,
+      "input_chars": 364,
+      "page_or_slide_range": [
+        13,
+        13
+      ],
+      "mode": "llm",
+      "output_chars": 664
+    },
+    {
+      "batch_index": 13,
+      "block_count": 1,
+      "input_chars": 256,
+      "page_or_slide_range": [
+        14,
+        14
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 256,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 14,
+      "block_count": 1,
+      "input_chars": 337,
+      "page_or_slide_range": [
+        15,
+        15
+      ],
+      "mode": "llm",
+      "output_chars": 515
+    },
+    {
+      "batch_index": 15,
+      "block_count": 1,
+      "input_chars": 973,
+      "page_or_slide_range": [
+        16,
+        16
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 973,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 16,
+      "block_count": 1,
+      "input_chars": 157,
+      "page_or_slide_range": [
+        17,
+        17
+      ],
+      "mode": "llm",
+      "output_chars": 177
+    },
+    {
+      "batch_index": 17,
+      "block_count": 1,
+      "input_chars": 317,
+      "page_or_slide_range": [
+        18,
+        18
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 317,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 18,
+      "block_count": 1,
+      "input_chars": 470,
+      "page_or_slide_range": [
+        19,
+        19
+      ],
+      "mode": "llm",
+      "output_chars": 635
+    },
+    {
+      "batch_index": 19,
+      "block_count": 1,
+      "input_chars": 411,
+      "page_or_slide_range": [
+        20,
+        20
+      ],
+      "mode": "llm",
+      "output_chars": 431
+    },
+    {
+      "batch_index": 20,
+      "block_count": 1,
+      "input_chars": 384,
+      "page_or_slide_range": [
+        21,
+        21
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 384,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 21,
+      "block_count": 1,
+      "input_chars": 248,
+      "page_or_slide_range": [
+        22,
+        22
+      ],
+      "mode": "llm",
+      "output_chars": 335
+    },
+    {
+      "batch_index": 22,
+      "block_count": 1,
+      "input_chars": 274,
+      "page_or_slide_range": [
+        23,
+        23
+      ],
+      "mode": "llm",
+      "output_chars": 332
+    },
+    {
+      "batch_index": 23,
+      "block_count": 1,
+      "input_chars": 336,
+      "page_or_slide_range": [
+        24,
+        24
+      ],
+      "mode": "llm",
+      "output_chars": 456
+    },
+    {
+      "batch_index": 24,
+      "block_count": 1,
+      "input_chars": 1009,
+      "page_or_slide_range": [
+        25,
+        25
+      ],
+      "mode": "llm",
+      "output_chars": 1317
+    },
+    {
+      "batch_index": 25,
+      "block_count": 1,
+      "input_chars": 431,
+      "page_or_slide_range": [
+        26,
+        26
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 431,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 26,
+      "block_count": 1,
+      "input_chars": 388,
+      "page_or_slide_range": [
+        27,
+        27
+      ],
+      "mode": "llm",
+      "output_chars": 377
+    },
+    {
+      "batch_index": 27,
+      "block_count": 1,
+      "input_chars": 324,
+      "page_or_slide_range": [
+        28,
+        28
+      ],
+      "mode": "llm",
+      "output_chars": 277
+    },
+    {
+      "batch_index": 28,
+      "block_count": 1,
+      "input_chars": 545,
+      "page_or_slide_range": [
+        29,
+        29
+      ],
+      "mode": "llm",
+      "output_chars": 531
+    },
+    {
+      "batch_index": 29,
+      "block_count": 1,
+      "input_chars": 470,
+      "page_or_slide_range": [
+        30,
+        30
+      ],
+      "mode": "llm",
+      "output_chars": 479
+    },
+    {
+      "batch_index": 30,
+      "block_count": 1,
+      "input_chars": 515,
+      "page_or_slide_range": [
+        31,
+        31
+      ],
+      "mode": "llm",
+      "output_chars": 572
+    },
+    {
+      "batch_index": 31,
+      "block_count": 1,
+      "input_chars": 233,
+      "page_or_slide_range": [
+        32,
+        32
+      ],
+      "mode": "llm",
+      "output_chars": 388
+    },
+    {
+      "batch_index": 32,
+      "block_count": 1,
+      "input_chars": 333,
+      "page_or_slide_range": [
+        33,
+        33
+      ],
+      "mode": "llm",
+      "output_chars": 334
+    },
+    {
+      "batch_index": 33,
+      "block_count": 1,
+      "input_chars": 279,
+      "page_or_slide_range": [
+        34,
+        34
+      ],
+      "mode": "llm",
+      "output_chars": 528
+    },
+    {
+      "batch_index": 34,
+      "block_count": 2,
+      "input_chars": 395,
+      "page_or_slide_range": [
+        35,
+        35
+      ],
+      "mode": "llm",
+      "output_chars": 286
+    },
+    {
+      "batch_index": 35,
+      "block_count": 1,
+      "input_chars": 339,
+      "page_or_slide_range": [
+        36,
+        36
+      ],
+      "mode": "llm",
+      "output_chars": 578
+    },
+    {
+      "batch_index": 36,
+      "block_count": 1,
+      "input_chars": 281,
+      "page_or_slide_range": [
+        37,
+        37
+      ],
+      "mode": "llm",
+      "output_chars": 435
+    },
+    {
+      "batch_index": 37,
+      "block_count": 1,
+      "input_chars": 282,
+      "page_or_slide_range": [
+        38,
+        38
+      ],
+      "mode": "llm",
+      "output_chars": 352
+    },
+    {
+      "batch_index": 38,
+      "block_count": 1,
+      "input_chars": 478,
+      "page_or_slide_range": [
+        39,
+        39
+      ],
+      "mode": "llm",
+      "output_chars": 705
+    },
+    {
+      "batch_index": 39,
+      "block_count": 1,
+      "input_chars": 393,
+      "page_or_slide_range": [
+        40,
+        40
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 393,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 40,
+      "block_count": 1,
+      "input_chars": 94,
+      "page_or_slide_range": [
+        41,
+        41
+      ],
+      "mode": "llm",
+      "output_chars": 110
+    },
+    {
+      "batch_index": 41,
+      "block_count": 1,
+      "input_chars": 292,
+      "page_or_slide_range": [
+        42,
+        42
+      ],
+      "mode": "llm",
+      "output_chars": 192
+    },
+    {
+      "batch_index": 42,
+      "block_count": 1,
+      "input_chars": 380,
+      "page_or_slide_range": [
+        43,
+        43
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 380,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 43,
+      "block_count": 1,
+      "input_chars": 326,
+      "page_or_slide_range": [
+        44,
+        44
+      ],
+      "mode": "llm",
+      "output_chars": 444
+    },
+    {
+      "batch_index": 44,
+      "block_count": 2,
+      "input_chars": 566,
+      "page_or_slide_range": [
+        45,
+        45
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 566,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 45,
+      "block_count": 1,
+      "input_chars": 440,
+      "page_or_slide_range": [
+        46,
+        46
+      ],
+      "mode": "llm",
+      "output_chars": 558
+    },
+    {
+      "batch_index": 46,
+      "block_count": 1,
+      "input_chars": 30,
+      "page_or_slide_range": [
+        47,
+        47
+      ],
+      "mode": "llm",
+      "output_chars": 150
+    },
+    {
+      "batch_index": 47,
+      "block_count": 1,
+      "input_chars": 350,
+      "page_or_slide_range": [
+        48,
+        48
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 350,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 48,
+      "block_count": 1,
+      "input_chars": 447,
+      "page_or_slide_range": [
+        49,
+        49
+      ],
+      "mode": "llm",
+      "output_chars": 431
+    },
+    {
+      "batch_index": 49,
+      "block_count": 1,
+      "input_chars": 505,
+      "page_or_slide_range": [
+        50,
+        50
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 505,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 50,
+      "block_count": 1,
+      "input_chars": 208,
+      "page_or_slide_range": [
+        51,
+        51
+      ],
+      "mode": "llm",
+      "output_chars": 164
+    },
+    {
+      "batch_index": 51,
+      "block_count": 1,
+      "input_chars": 291,
+      "page_or_slide_range": [
+        52,
+        52
+      ],
+      "mode": "llm",
+      "output_chars": 258
+    },
+    {
+      "batch_index": 52,
+      "block_count": 1,
+      "input_chars": 469,
+      "page_or_slide_range": [
+        53,
+        53
+      ],
+      "mode": "llm",
+      "output_chars": 822
+    },
+    {
+      "batch_index": 53,
+      "block_count": 2,
+      "input_chars": 4022,
+      "page_or_slide_range": [
+        54,
+        54
+      ],
+      "mode": "llm",
+      "output_chars": 3720
+    },
+    {
+      "batch_index": 54,
+      "block_count": 2,
+      "input_chars": 346,
+      "page_or_slide_range": [
+        55,
+        55
+      ],
+      "mode": "llm",
+      "output_chars": 451
+    },
+    {
+      "batch_index": 55,
+      "block_count": 2,
+      "input_chars": 781,
+      "page_or_slide_range": [
+        56,
+        56
+      ],
+      "mode": "llm",
+      "output_chars": 304
+    },
+    {
+      "batch_index": 56,
+      "block_count": 2,
+      "input_chars": 275,
+      "page_or_slide_range": [
+        57,
+        57
+      ],
+      "mode": "llm",
+      "output_chars": 196
+    },
+    {
+      "batch_index": 57,
+      "block_count": 1,
+      "input_chars": 178,
+      "page_or_slide_range": [
+        58,
+        58
+      ],
+      "mode": "llm",
+      "output_chars": 206
+    },
+    {
+      "batch_index": 58,
+      "block_count": 1,
+      "input_chars": 455,
+      "page_or_slide_range": [
+        59,
+        59
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 455,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 59,
+      "block_count": 1,
+      "input_chars": 319,
+      "page_or_slide_range": [
+        60,
+        60
+      ],
+      "mode": "llm",
+      "output_chars": 413
+    },
+    {
+      "batch_index": 60,
+      "block_count": 1,
+      "input_chars": 462,
+      "page_or_slide_range": [
+        61,
+        61
+      ],
+      "mode": "llm",
+      "output_chars": 578
+    },
+    {
+      "batch_index": 61,
+      "block_count": 1,
+      "input_chars": 460,
+      "page_or_slide_range": [
+        62,
+        62
+      ],
+      "mode": "llm",
+      "output_chars": 824
+    },
+    {
+      "batch_index": 62,
+      "block_count": 1,
+      "input_chars": 518,
+      "page_or_slide_range": [
+        63,
+        63
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 518,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 63,
+      "block_count": 1,
+      "input_chars": 173,
+      "page_or_slide_range": [
+        64,
+        64
+      ],
+      "mode": "llm",
+      "output_chars": 190
+    },
+    {
+      "batch_index": 64,
+      "block_count": 1,
+      "input_chars": 540,
+      "page_or_slide_range": [
+        65,
+        65
+      ],
+      "mode": "llm",
+      "output_chars": 598
+    },
+    {
+      "batch_index": 65,
+      "block_count": 1,
+      "input_chars": 866,
+      "page_or_slide_range": [
+        66,
+        66
+      ],
+      "mode": "llm",
+      "output_chars": 916
+    },
+    {
+      "batch_index": 66,
+      "block_count": 1,
+      "input_chars": 566,
+      "page_or_slide_range": [
+        67,
+        67
+      ],
+      "mode": "llm",
+      "output_chars": 765
+    },
+    {
+      "batch_index": 67,
+      "block_count": 1,
+      "input_chars": 390,
+      "page_or_slide_range": [
+        68,
+        68
+      ],
+      "mode": "llm",
+      "output_chars": 509
+    },
+    {
+      "batch_index": 68,
+      "block_count": 2,
+      "input_chars": 210,
+      "page_or_slide_range": [
+        69,
+        69
+      ],
+      "mode": "llm",
+      "output_chars": 51
+    },
+    {
+      "batch_index": 69,
+      "block_count": 2,
+      "input_chars": 3109,
+      "page_or_slide_range": [
+        70,
+        70
+      ],
+      "mode": "llm",
+      "output_chars": 3213
+    },
+    {
+      "batch_index": 70,
+      "block_count": 1,
+      "input_chars": 353,
+      "page_or_slide_range": [
+        71,
+        71
+      ],
+      "mode": "llm",
+      "output_chars": 470
+    },
+    {
+      "batch_index": 71,
+      "block_count": 1,
+      "input_chars": 301,
+      "page_or_slide_range": [
+        72,
+        72
+      ],
+      "mode": "llm",
+      "output_chars": 350
+    },
+    {
+      "batch_index": 72,
+      "block_count": 2,
+      "input_chars": 201,
+      "page_or_slide_range": [
+        73,
+        73
+      ],
+      "mode": "llm",
+      "output_chars": 47
+    },
+    {
+      "batch_index": 73,
+      "block_count": 2,
+      "input_chars": 3187,
+      "page_or_slide_range": [
+        74,
+        74
+      ],
+      "mode": "llm",
+      "output_chars": 3232
+    },
+    {
+      "batch_index": 74,
+      "block_count": 2,
+      "input_chars": 2376,
+      "page_or_slide_range": [
+        75,
+        75
+      ],
+      "mode": "llm",
+      "output_chars": 2368
+    },
+    {
+      "batch_index": 75,
+      "block_count": 1,
+      "input_chars": 409,
+      "page_or_slide_range": [
+        76,
+        76
+      ],
+      "mode": "llm",
+      "output_chars": 447
+    },
+    {
+      "batch_index": 76,
+      "block_count": 2,
+      "input_chars": 205,
+      "page_or_slide_range": [
+        77,
+        77
+      ],
+      "mode": "llm",
+      "output_chars": 190
+    },
+    {
+      "batch_index": 77,
+      "block_count": 2,
+      "input_chars": 183,
+      "page_or_slide_range": [
+        78,
+        78
+      ],
+      "mode": "llm",
+      "output_chars": 168
+    },
+    {
+      "batch_index": 78,
+      "block_count": 1,
+      "input_chars": 359,
+      "page_or_slide_range": [
+        79,
+        79
+      ],
+      "mode": "llm",
+      "output_chars": 482
+    },
+    {
+      "batch_index": 79,
+      "block_count": 2,
+      "input_chars": 213,
+      "page_or_slide_range": [
+        80,
+        80
+      ],
+      "mode": "llm",
+      "output_chars": 59
+    },
+    {
+      "batch_index": 80,
+      "block_count": 1,
+      "input_chars": 552,
+      "page_or_slide_range": [
+        81,
+        81
+      ],
+      "mode": "llm",
+      "output_chars": 599
+    },
+    {
+      "batch_index": 81,
+      "block_count": 1,
+      "input_chars": 119,
+      "page_or_slide_range": [
+        82,
+        82
+      ],
+      "mode": "llm",
+      "output_chars": 301
+    },
+    {
+      "batch_index": 82,
+      "block_count": 1,
+      "input_chars": 350,
+      "page_or_slide_range": [
+        83,
+        83
+      ],
+      "mode": "llm",
+      "output_chars": 737
+    },
+    {
+      "batch_index": 83,
+      "block_count": 1,
+      "input_chars": 553,
+      "page_or_slide_range": [
+        84,
+        84
+      ],
+      "mode": "llm",
+      "output_chars": 622
+    },
+    {
+      "batch_index": 84,
+      "block_count": 1,
+      "input_chars": 465,
+      "page_or_slide_range": [
+        85,
+        85
+      ],
+      "mode": "llm",
+      "output_chars": 641
+    },
+    {
+      "batch_index": 85,
+      "block_count": 1,
+      "input_chars": 470,
+      "page_or_slide_range": [
+        86,
+        86
+      ],
+      "mode": "llm",
+      "output_chars": 552
+    },
+    {
+      "batch_index": 86,
+      "block_count": 1,
+      "input_chars": 551,
+      "page_or_slide_range": [
+        87,
+        87
+      ],
+      "mode": "llm",
+      "output_chars": 563
+    },
+    {
+      "batch_index": 87,
+      "block_count": 1,
+      "input_chars": 517,
+      "page_or_slide_range": [
+        88,
+        88
+      ],
+      "mode": "llm",
+      "output_chars": 553
+    },
+    {
+      "batch_index": 88,
+      "block_count": 1,
+      "input_chars": 435,
+      "page_or_slide_range": [
+        89,
+        89
+      ],
+      "mode": "llm",
+      "output_chars": 487
+    },
+    {
+      "batch_index": 89,
+      "block_count": 1,
+      "input_chars": 440,
+      "page_or_slide_range": [
+        90,
+        90
+      ],
+      "mode": "llm",
+      "output_chars": 404
+    },
+    {
+      "batch_index": 90,
+      "block_count": 4,
+      "input_chars": 761,
+      "page_or_slide_range": [
+        91,
+        91
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 761,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 91,
+      "block_count": 1,
+      "input_chars": 208,
+      "page_or_slide_range": [
+        92,
+        92
+      ],
+      "mode": "llm",
+      "output_chars": 167
+    },
+    {
+      "batch_index": 92,
+      "block_count": 1,
+      "input_chars": 291,
+      "page_or_slide_range": [
+        93,
+        93
+      ],
+      "mode": "llm",
+      "output_chars": 258
+    },
+    {
+      "batch_index": 93,
+      "block_count": 1,
+      "input_chars": 346,
+      "page_or_slide_range": [
+        94,
+        94
+      ],
+      "mode": "llm",
+      "output_chars": 362
+    },
+    {
+      "batch_index": 94,
+      "block_count": 1,
+      "input_chars": 332,
+      "page_or_slide_range": [
+        95,
+        95
+      ],
+      "mode": "llm",
+      "output_chars": 249
+    },
+    {
+      "batch_index": 95,
+      "block_count": 4,
+      "input_chars": 1476,
+      "page_or_slide_range": [
+        96,
+        96
+      ],
+      "mode": "llm",
+      "output_chars": 217
+    },
+    {
+      "batch_index": 96,
+      "block_count": 1,
+      "input_chars": 334,
+      "page_or_slide_range": [
+        97,
+        97
+      ],
+      "mode": "llm",
+      "output_chars": 266
+    },
+    {
+      "batch_index": 97,
+      "block_count": 7,
+      "input_chars": 13985,
+      "page_or_slide_range": [
+        98,
+        98
+      ],
+      "mode": "llm",
+      "output_chars": 4938
+    },
+    {
+      "batch_index": 98,
+      "block_count": 1,
+      "input_chars": 468,
+      "page_or_slide_range": [
+        99,
+        99
+      ],
+      "mode": "llm",
+      "output_chars": 512
+    },
+    {
+      "batch_index": 99,
+      "block_count": 4,
+      "input_chars": 8236,
+      "page_or_slide_range": [
+        100,
+        100
+      ],
+      "mode": "llm",
+      "output_chars": 6338
+    },
+    {
+      "batch_index": 100,
+      "block_count": 1,
+      "input_chars": 364,
+      "page_or_slide_range": [
+        101,
+        101
+      ],
+      "mode": "llm",
+      "output_chars": 429
+    },
+    {
+      "batch_index": 101,
+      "block_count": 1,
+      "input_chars": 543,
+      "page_or_slide_range": [
+        102,
+        102
+      ],
+      "mode": "llm_fallback_to_input",
+      "output_chars": 543,
+      "error": "[LLM_ERROR] Azure and Groq both failed: Groq error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}})."
+    },
+    {
+      "batch_index": 102,
+      "block_count": 1,
+      "input_chars": 456,
+      "page_or_slide_range": [
+        103,
+        103
+      ],
+      "mode": "llm",
+      "output_chars": 402
+    },
+    {
+      "batch_index": 103,
+      "block_count": 2,
+      "input_chars": 247,
+      "page_or_slide_range": [
+        104,
+        104
+      ],
+      "mode": "llm",
+      "output_chars": 1787
+    }
+  ],
+  "cleaned_blocks": [
+    {
+      "kind": "text",
+      "slide": 1,
+      "content": "Identity Authentication\nWith extra material for further reading, indicated by symbol *"
+    },
+    {
+      "kind": "text",
+      "slide": 2,
+      "content": "Info-Sec 2023\n2\nAuthentication\nBasics\nPasswords\nChallenge-Response\nBiometrics\nLocation\nMultiple Methods"
+    },
+    {
+      "kind": "text",
+      "slide": 3,
+      "content": "Info-Sec 2023\n3\nBasics\nAuthentication: binding of identity to subject\nIdentity is that of external entity (my identity, Van, etc.)\nSubject is computer entity (process, etc.)\nNote: \nmessage authentication is a different topic and already mentioned in the applications of hash functions"
+    },
+    {
+      "kind": "text",
+      "slide": 4,
+      "content": "4\nEstablishing Identity\nOne or more of the following\nWhat entity knows (eg. password)\nWhat entity has (eg. Identity card, smart card)\nWhat entity is (eg. fingerprints, retinal characteristics)\nWhere entity is (eg. In front of a particular terminal)"
+    },
+    {
+      "kind": "text",
+      "slide": 5,
+      "content": "Info-Sec 2023\n5\nAuthentication System\nWe need a formal definition, rather abstract view, of an AS \nA 5-tuple (A, C, F, L, S)\nA – a set: information that proves identity\nC – a set: information stored on computer and used to validate authentication information\nF: a set of complementation functions; f : A → C\nTo compute complement information from identity information\nL: authentication functions that prove identity\nS: functions enabling entity to create, alter information in A or C"
+    },
+    {
+      "kind": "text",
+      "slide": 6,
+      "content": "Info-Sec 2023\n6\nExample\nPassword system, with passwords stored on line in clear text\nA set of strings making up passwords\nC = A\nF singleton set of identity function { I }\nL single equality test function { eq }\nS function to set/change password"
+    },
+    {
+      "kind": "text",
+      "slide": 7,
+      "content": "Info-Sec 2023\n7\nPasswords\nSequence of characters\nExamples: 10 digits, a string of letters, etc.\nGenerated randomly, by user, by computer with user input\nSequence of words\nExamples: pass-phrases\nAlgorithms\nExamples: challenge-response, one-time passwords"
+    },
+    {
+      "kind": "text",
+      "slide": 8,
+      "content": "Info-Sec 2023\n8\nStorage\nStore as cleartext\nIf password file compromised, all passwords revealed\nEncipher file\nNeed to have decipherment, encipherment keys in memory\nReduces to previous problem 🡺 need something else\nSolution: Instead store one-way hash of password\nGot the file, attacker must still guess passwords or invert the hash values"
+    },
+    {
+      "kind": "text",
+      "slide": 9,
+      "content": "Info-Sec 2023\n9\nExample: Unix\nBy definition, a 5-tuple (A, C, F, L, S)\nA – a set: information that proves identity\nA = { strings of 8 chars or less }\nC – a set: information stored on computer and used to validate authentication information\nC = {hash values of password}\nF: a set of complementation functions; f : A → C\nF = { versions of modified DES }\nL: authentication functions that prove identity\nL = { login, su, … }\nS: functions enabling entity to create, alter information in A or C\nS = { passwd, nispasswd, passwd+, … }"
+    },
+    {
+      "kind": "text",
+      "slide": 10,
+      "content": "Info-Sec 2023\n10\nExample: Unix\nBy definition, a 5-tuple (A, C, F, L, S)\nA – a set: information that proves identity\nA = { strings of 8 chars or less }\nC – a set: information stored on computer and used to validate authentication information\nC = {hash values of password}\nF: a set of complementation functions; f : A → C\nF = { versions of modified DES }\nL: authentication functions that prove identity\nL = { login, su, … }\nS: functions enabling entity to create, alter information in A or C\nS = { passwd, nispasswd, passwd+, … }"
+    },
+    {
+      "kind": "text",
+      "slide": 11,
+      "content": "Info-Sec 2023\n11\nAttacking passwords\nGoal: find a ∈ A such that:\nFor some f ∈ F, f(a) = c ∈ C \nc is associated with entity\nTwo ways to determine whether a meets these requirements:\nBy trying computing f(a) for a set of a values until succeed\nBy trying calling I(a) until succeed (I(a) returns true)"
+    },
+    {
+      "kind": "text",
+      "slide": 12,
+      "content": "Info-Sec 2023\n12\nPreventing Attacks\nHow to prevent this:\nHide at least one of a, f, or c \nPrevents obvious attack from above\nExample: UNIX/Linux shadow password files\nHides the c’s\nBlock access to all l ∈ L or result of l(a)\nPrevents attacker from knowing if guess succeeded\nExample: preventing any logins to an account from a network\nPrevents knowing results of l (or accessing l)"
+    },
+    {
+      "kind": "text",
+      "slide": 13,
+      "content": "Info-Sec 2023\n13\nDictionary Attacks\nTrial-and-error from a list of potential passwords\nOff-line: know f and c’s, and repeatedly try different guesses g ∈ A until the list is done or passwords guessed\nExamples: crack, john-the-ripper\nOn-line: have access to functions in L and try guesses g until some l(g) succeeds\nExamples: trying to log in by guessing a password"
+    },
+    {
+      "kind": "text",
+      "slide": 14,
+      "content": "Info-Sec 2023\n14\nSuccess probability over a time period\nAnderson’s formula:\nP probability of guessing a password in specified period of time\nG number of guesses tested in 1 time unit\nT number of time units\nN number of possible passwords (|A|)\nThen P ≥ TG/N"
+    },
+    {
+      "kind": "text",
+      "slide": 15,
+      "content": "Info-Sec 2023\n15\nExample\nGoal\nPasswords drawn from a 96-char alphabet\nCan test 104 guesses per second\nProbability of a success to be 0.5 over a 365 day period\nWhat is minimum password length?\nSolution\nN ≥ TG/P = (365×24×60×60)×104/0.5 = 6.31×1011\nChoose s such that Σsj=0 96j ≥ N\nSo s ≥ 6, meaning passwords must be at least 6 chars long"
+    },
+    {
+      "kind": "text",
+      "slide": 16,
+      "content": "Exercise\nX = number defined by last 2 digits of your student ID; Y = X mod 4\nAssume that H is a cryptographic hash function with output size (Y+2)*16 bits. Assume that Scorpion-i (i=1-9) is a specifically designed line of hardware chips for computing H, where Scorpion-i can create 10i * 1000 hash values a second (e.g. Scorpion-2 can do 100,000 hashes/sec). This product line is the best, fastest and affordable, in the market, priced at ii/2 *$1000 (e.g $2000 for i=2, $16000 for i=4). \n\nAn authentication system requires its users to pick their passwords of length exactly 6 from an alphabet of size N=(X mod 50)+ 40. Using H, this system maintains the hash values of the passwords of all the users. An enemy, who has gained access to this hashed password file, aims to launch an off-line attack to break the password of an important user. Using the Scorpion chips, how much the enemy has to spend in order to finish within a month with success probability (6+Y)*10%?\n16"
+    },
+    {
+      "kind": "text",
+      "slide": 17,
+      "content": "Info-Sec 2023\n17\nOn password selection\nRandom selection\nAny password from A equally likely to be selected\nPronounceable passwords\nUser selection of passwords"
+    },
+    {
+      "kind": "text",
+      "slide": 18,
+      "content": "Info-Sec 2023\n18\nPronounceable Passwords\nGenerate phonemes randomly\nPhoneme is unit of sound, eg. cv, vc, cvc, vcv\nExamples: helgoret, juttelon are; przbqxdfl, zxrptglfn are not\nProblem: too few\nSolution: key crunching\nRun long key through hash function and convert to printable sequence\nUse this sequence as password"
+    },
+    {
+      "kind": "text",
+      "slide": 19,
+      "content": "Info-Sec 2023\n19\nUser Selection\nProblem: people pick easy to guess passwords\nBased on account names, user names, computer names, place names\nDictionary words (also reversed, odd capitalizations, control characters, “elite-speak”, conjugations or declensions, swear words, Torah/Bible/Koran/… words)\nToo short, digits only, letters only\nLicense plates, acronyms, social security numbers\nPersonal characteristics or foibles (pet names, nicknames, job characteristics, etc."
+    },
+    {
+      "kind": "text",
+      "slide": 20,
+      "content": "Info-Sec 2023\n20\nPicking Good Passwords\n“LlMm*2^Ap”\nNames of members of 2 families\n“OoHeO/FSK”\nSecond letter of each word of length 4 or more in third line of third verse of Star-Spangled Banner, followed by “/”, followed by author’s initials \nWhat’s good here may be bad there\n“DMC/MHmh” bad at Dartmouth (“Dartmouth Medical Center/Mary Hitchcock memorial hospital”), ok here\nWhy are these now bad passwords? ☹"
+    },
+    {
+      "kind": "text",
+      "slide": 21,
+      "content": "Info-Sec 2023\n21\nProactive Password Checking\nAnalyze proposed password for “goodness”\nAlways invoked\nCan detect, reject bad passwords for an appropriate definition of “bad”\nDiscriminate on per-user, per-site basis\nNeeds to do pattern matching  on words\nNeeds to execute subprograms and use results\nSpell checker, for example\nEasy to set up and integrate into password selection system"
+    },
+    {
+      "kind": "text",
+      "slide": 22,
+      "content": "Info-Sec 2023\n22\nSalting\nGoal: slow dictionary attacks\nMethod: perturb hash function so that:\nParameter controls which hash function is used\nParameter differs for each password\nSo given n password hashes, and therefore n salts, need to hash guess n"
+    },
+    {
+      "kind": "text",
+      "slide": 23,
+      "content": "Info-Sec 2023\n23\nExamples\nVanilla UNIX method\nUse DES to encipher 0 message with password as key; iterate 25 times\nPerturb E table in DES in one of 4096 ways\n12 bit salt flips entries 1–11 with entries 25–36\nAlternate methods\nUse salt as first part of input to hash function"
+    },
+    {
+      "kind": "text",
+      "slide": 24,
+      "content": "Info-Sec 2023\n24\nUnix actually is …\nUNIX system standard hash function\nHashes password into 11 char string using one of 4096 hash functions\nAs authentication system:\nA = { strings of 8 chars or less }\nC = { 2 char hash id || 11 char hash }\nF = { 4096 versions of modified DES }\nL = { login, su, … }\nS = { passwd, nispasswd, passwd+, … }"
+    },
+    {
+      "kind": "text",
+      "slide": 25,
+      "content": "Exercise\nAssume that H is a cryptographic hash function with output size (Y+2)*16 bits. Assume that Scorpion-i (i=1-9) is a specifically designed line of hardware chips for computing H, where Scorpion-i can create 10i * 1000 hash values a second, priced at ii/2 *$1000.\n1. An authentication system requires its users to pick their passwords of length exactly 6 from an alphabet of size N=(X mod 50)+ 40. Using H, this system maintains the hash values of the passwords of all the users. An enemy, who has gained access to this hashed password file, aims to launch an off-line attack to break the password of an important user. Using the Scorpion chips, how much the enemy has to spend in order to finish within a month with success probability (6+Y)*10%?\n2. The owner decides to enhance the above password system by using salt so that the enemy will need to spend at least 10 times the above mentioned amount of money to achieve the same goal. How many salt bits he/she need to use to achieve this purpose ?\n25"
+    },
+    {
+      "kind": "text",
+      "slide": 26,
+      "content": "Part 2 ⎯ Access Control                                                                                                  26\nPassword Cracking: Do the Math*\n* Further reading\nAssumptions:\nPwds are 8 chars, 128 choices per character\nThen 1288 = 256 possible passwords\nThere is a password file with 210 pwds\nAttacker has dictionary of 220 common pwds\nProbability 1/4 that password is in dictionary\nWork is measured by number of hashes"
+    },
+    {
+      "kind": "text",
+      "slide": 27,
+      "content": "Part 2 ⎯ Access Control                                                                                                  27\nSalt with slow hash *\nHash password with salt\nChoose random salt s and compute \n\t\t\ty = h(password, s) \n\tand store (s,y) in the password file\nNote that the salt s is not secret\nAnalogous to IV \nStill easy to verify salted password\nBut lots more work for Hacker\nWhy?"
+    },
+    {
+      "kind": "text",
+      "slide": 28,
+      "content": "Part 2 ⎯ Access Control                                                                                                  28\nPassword Cracking: Case I *\nAttack 1 specific password without using a dictionary\nE.g., administrator’s password\nMust try 256/2 = 255 on average\nLike exhaustive key search\nDoes salt help in this case?"
+    },
+    {
+      "kind": "text",
+      "slide": 29,
+      "content": "Part 2 ⎯ Access Control                                                                                                  29\nPassword Cracking: Case II *\nAttack 1 specific password with dictionary\nWith salt\nExpected work: 1/4 (219) + 3/4 (255) ≈ 254.6\nIn practice, try all pwds in dictionary…\n…then work is at most 220 and probability of success is 1/4 \nWhat if no salt is used?\nOne-time work to compute dictionary: 220\nExpected work is of same order as above\nBut with precomputed dictionary hashes, the  “in practice” attack is essentially free…"
+    },
+    {
+      "kind": "text",
+      "slide": 30,
+      "content": "Part 2 ⎯ Access Control                                                                                                  30\nPassword Cracking: Case III *\nAny of 1024 pwds in file, without dictionary\nAssume all 210 passwords are distinct \nNeed 255 comparisons before expect to find pwd\nIf no salt is used\nEach computed hash yields 210 comparisons\nSo expected work (hashes) is 255/210 = 245\nIf salt is used\nExpected work is 255 \nEach comparison requires a hash computation"
+    },
+    {
+      "kind": "text",
+      "slide": 31,
+      "content": "Part 2 ⎯ Access Control                                                                                                  31\nPassword Cracking: Case IV *\nAny of 1024 pwds in file, with dictionary\nProb. one or more pwd in dict.: 1 – (3/4)1024 ≈ 1\nSo, we ignore case where no pwd is in dictionary\nIf salt is used, expected work less than 222\nSee book, or slide notes for details\nWork ≈ size of dictionary / P(pwd in dictionary)\nWhat if no salt is used? \nIf dictionary hashes not precomputed, work is about 219/210 = 29"
+    },
+    {
+      "kind": "text",
+      "slide": 32,
+      "content": "Info-Sec 2023\n32\nGuessing Through L\nCannot prevent these\nOtherwise, legitimate users cannot log in\nMake them slow\nBackoff\nDisconnection\nDisabling\nBe very careful with administrative accounts!\nJailing\nAllow in, but restrict activities"
+    },
+    {
+      "kind": "text",
+      "slide": 33,
+      "content": "Info-Sec 2023\n33\nPassword Aging\nForce users to change passwords after some time has expired\nHow do you force users not to re-use passwords?\nRecord previous passwords\nBlock changes for a period of time\nGive users time to think of good passwords\nDon’t force them to change before they can log in\nWarn them of expiration days in advance"
+    },
+    {
+      "kind": "text",
+      "slide": 34,
+      "content": "Info-Sec 2023\n34\nChallenge-Response\nUser, system share a secret function f (in practice, f is a\n\tknown function with unknown parameters, such as a\n\tcryptographic key)\nuser\nsystem\nrequest to authenticate\nuser\nsystem\nrandom message r\n(the challenge)\nuser\nsystem\nf(r)\n(the response)"
+    },
+    {
+      "kind": "text",
+      "slide": 35,
+      "content": "Info-Sec 2023\n35\nPass Algorithms\nChallenge-response with the function f itself a secret\nChallenge is a random string of characters \nResponse is some function of that string \nUsually used in conjunction with fixed, reusable password"
+    },
+    {
+      "kind": "text",
+      "slide": 35,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I'll describe its content in a way that focuses on its learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 36,
+      "content": "Info-Sec 2023\n36\nOne-Time Passwords\nPassword that can be used exactly once\nAfter use, it is immediately invalidated\nChallenge-response mechanism\nChallenge is number of authentications; response is password for that particular number\nProblems\nSynchronization of user, system\nGeneration of good random passwords\nPassword distribution problem"
+    },
+    {
+      "kind": "text",
+      "slide": 37,
+      "content": "Info-Sec 2023\n37\nS/Key\nOne-time password scheme based on idea of Lamport\nh one-way hash function (MD5 or SHA-1, for example)\nUser chooses initial seed k\nSystem calculates:\nh(k) = k1, h(k1) = k2, …, h(kn–1) = kn\nPasswords are reverse order:\np1 = kn, p2 = kn–1, …, pn–1 = k2, pn = k1"
+    },
+    {
+      "kind": "text",
+      "slide": 38,
+      "content": "Info-Sec 2023\n38\nS/Key Protocol\nSystem stores maximum number of authentications n, number\nof next authentication i, last correctly supplied password pi–1.\nSystem computes h(pi) = h(kn–i+1) = kn–i+2 = pi–1. If match with\nwhat is stored, system replaces pi–1 with pi and increments i."
+    },
+    {
+      "kind": "text",
+      "slide": 39,
+      "content": "Info-Sec 2023\n39\nC-R and Dictionary Attacks\nSame as for fixed passwords\nAttacker knows challenge r and response f(r); if f encryption function, can try different keys\nMay only need to know form of response; attacker can tell if guess correct by looking to see if deciphered object is of right form\nExample: Kerberos Version 4 used DES, but keys had 20 bits of randomness; Purdue attackers guessed keys quickly because deciphered tickets had a fixed set of bits in some locations"
+    },
+    {
+      "kind": "text",
+      "slide": 40,
+      "content": "Info-Sec 2023\n40\nEncrypted Key Exchange *\nDefeats off-line dictionary attacks\nIdea: random challenges enciphered, so attacker cannot verify correct decipherment of challenge\nAssume Alice, Bob share secret password s\nIn what follows, Alice needs to generate a random public key p and a corresponding private key q\nAlso, k is a randomly generated session key, and RA and RB are random challenges"
+    },
+    {
+      "kind": "text",
+      "slide": 41,
+      "content": "Info-Sec 2023\n41\nEKE Protocol *\nNow Alice, Bob share a randomly generated\nsecret session key k"
+    },
+    {
+      "kind": "text",
+      "slide": 42,
+      "content": "Part 2 ⎯ Access Control                                                                                                  42\nSomething You Have\nSomething in your possession\nExamples include following…\nCar key\nLaptop computer (or MAC address)\nPassword generator (next)\nATM card, smartcard, etc."
+    },
+    {
+      "kind": "text",
+      "slide": 43,
+      "content": "Info-Sec 2023\n43\nHardware Support\nToken-based authentication\nUsed to compute response to challenge\nMay encipher or hash challenge\nMay require PIN from user\nObject user possesses to authenticate, e.g.\nmemory card (magnetic stripe)\nsmartcard\nTemporally-based\nEvery minute (or so) different number shown\nComputer knows what number to expect when\nUser enters number and fixed password"
+    },
+    {
+      "kind": "text",
+      "slide": 44,
+      "content": "Memory Card\nstore but do not process data\nmagnetic stripe card, e.g. bank card\nelectronic memory card\nused alone for physical access (e.g., hotel rooms)\nsome with password/PIN (e.g., ATMs)\nDrawbacks of memory cards include:\nneed special reader\nloss of token issues\nuser dissatisfaction (OK for ATM, not OK for computer access)"
+    },
+    {
+      "kind": "text",
+      "slide": 45,
+      "content": "Smartcard\ncredit-card like \nhas own processor, memory, I/O ports\nROM, EEPROM, RAM memory\nexecutes protocol to authenticate with reader/computer\nstatic: similar to memory cards\ndynamic: passwords created every minute; entered manually by user or electronically\nchallenge-response: computer creates a random number; smart card provides its hash (similar to PK)\nalso have USB dongles"
+    },
+    {
+      "kind": "text",
+      "slide": 45,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I will describe its content, focusing on the information that contributes to learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 46,
+      "content": "Electronic identity cards *\nAn important application of smart cards\nA national e-identity (eID)\nServes the same purpose as other national ID cards (e.g., a driver’s licence)\nCan provide stronger proof of identity\nA German card\nPersonal data, Document number, Card access number (six digit random number), Machine readable zone (MRZ): the password\nUses: ePass (government use), eID (general use), eSign (can have private key and certificate)"
+    },
+    {
+      "kind": "text",
+      "slide": 47,
+      "content": "User authentication with eID *"
+    },
+    {
+      "kind": "text",
+      "slide": 48,
+      "content": "Part 2 ⎯ Access Control                                                                                                  48\nSomething You Are\nBiometric\n“You are your key” ⎯ Schneier\nAre\nKnow\nHave\nExamples\nFingerprint\nHandwritten signature\nFacial recognition\nSpeech recognition\nGait (walking) recognition\n“Digital doggie” (odor recognition)\nMany more!"
+    },
+    {
+      "kind": "text",
+      "slide": 49,
+      "content": "Part 2 ⎯ Access Control                                                                                                  49\nWhy Biometrics?\nMay be better than passwords\nBut, cheap and reliable biometrics needed\nToday, an active area of research\nBiometrics are used in security today\nThumbprint mouse\nPalm print for secure entry\nFingerprint to unlock car door, etc.\nBut biometrics not really that popular\nHas not lived up to its promise/hype (yet?)"
+    },
+    {
+      "kind": "text",
+      "slide": 50,
+      "content": "Info-Sec 2023\n50\nBiometrics: core idea\nAutomated measurement of biological, behavioral features that identify a person\nFingerprints: optical or electrical techniques\nMaps fingerprint into a graph, then compares with database\nMeasurements imprecise, so approximate matching algorithms used\nVoices: speaker verification or recognition\nVerification: uses statistical techniques to test hypothesis that speaker is who is claimed (speaker dependent)\nRecognition: checks content of answers (speaker independent)"
+    },
+    {
+      "kind": "text",
+      "slide": 51,
+      "content": "Part 2 ⎯ Access Control                                                                                                  51\nFingerprint: Enrollment\nCapture image of fingerprint\nEnhance image\nIdentify “points”"
+    },
+    {
+      "kind": "text",
+      "slide": 52,
+      "content": "Part 2 ⎯ Access Control                                                                                                  52\nFingerprint: Recognition\nExtracted points are compared with information stored in a database\nIs it a statistical match?\nAside: Do identical twins’ fingerprints differ?"
+    },
+    {
+      "kind": "text",
+      "slide": 53,
+      "content": "Info-Sec 2023\n53\nOther Characteristics\nCan use several other characteristics\nEyes: patterns in irises unique\nMeasure patterns, determine if differences are random; or correlate images using statistical tests\nFaces: image, or specific characteristics like distance from nose to chin\nLighting, view of face, other noise can hinder this\nKeystroke dynamics: believed to be unique\nKeystroke intervals, pressure, duration of stroke, where key is struck\nStatistical tests used"
+    },
+    {
+      "kind": "text",
+      "slide": 54,
+      "content": "Authenticate user based on one of their physical characteristics:\nfacial\nfingerprint\nhand geometry\nretina pattern\niris\nsignature\nvoice\nBiometric authentication"
+    },
+    {
+      "kind": "text",
+      "slide": 54,
+      "content": "\n### Slide Image\nTo accurately extract row labels, column labels, and cell values from a given table or matrix and return them in a structured JSON format, I'll need a sample table as input. Since no specific table was provided, I'll demonstrate the process with a hypothetical example.\n\nLet's assume we have the following table:\n\n| **Country** | **City** | **Population (in millions)** | **Area (in km²)** |\n|-------------|----------|-----------------------------|------------------|\n| France      | Paris    | 2.1                          | 1054             |\n| Japan       | Tokyo    | 13.9                         | 1424             |\n| Brazil      | São Paulo| 22.1                         | 1221             |\n\nThe structured JSON output based on this table would look like this:\n\n\n{\n  \"schema_version\": \"1.0\",\n  \"content_type\": \"table\",\n  \"row_labels\": [\"France\", \"Japan\", \"Brazil\"],\n  \"column_labels\": [\"City\", \"Population (in millions)\", \"Area (in km²)\"],\n  \"values\": [\n    [\"Paris\", 2.1, 1054],\n    [\"Tokyo\", 13.9, 1424],\n    [\"São Paulo\", 22.1, 1221]\n  ],\n  \"notes\": \"Population and Area values are approximate.\"\n}\n\n\nHowever, to make the JSON more detailed and clear, especially regarding which city belongs to which country, we might adjust the structure to include a unique identifier for each row (if available) or ensure the country is clearly associated with each city. Here's an alternative:\n\n\n{\n  \"schema_version\": \"1.0\",\n  \"content_type\": \"table\",\n  \"row_labels\": [\"France\", \"Japan\", \"Brazil\"],\n  \"column_labels\": [\"City\", \"Population (in millions)\", \"Area (in km²)\"],\n  \"values\": [\n    {\n      \"City\": \"Paris\",\n      \"Population (in millions)\": 2.1,\n      \"Area (in km²)\": 1054\n    },\n    {\n      \"City\": \"Tokyo\",\n      \"Population (in millions)\": 13.9,\n      \"Area (in km²)\": 1424\n    },\n    {\n      \"City\": \"São Paulo\",\n      \"Population (in millions)\": 22.1,\n      \"Area (in km²)\": 1221\n    }\n  ],\n  \"notes\": \"Population and Area values are approximate.\"\n}\n\n\nOr, preserving the original table's structure more closely:\n\n\n{\n  \"schema_version\": \"1.0\",\n  \"content_type\": \"table\",\n  \"data\": [\n    {\n      \"Country\": \"France\",\n      \"City\": \"Paris\",\n      \"Population (in millions)\": 2.1,\n      \"Area (in km²)\": 1054\n    },\n    {\n      \"Country\": \"Japan\",\n      \"City\": \"Tokyo\",\n      \"Population (in millions)\": 13.9,\n      \"Area (in km²)\": 1424\n    },\n    {\n      \"Country\": \"Brazil\",\n      \"City\": \"São Paulo\",\n      \"Population (in millions)\": 22.1,\n      \"Area (in km²)\": 1221\n    }\n  ],\n  \"notes\": \"Population and Area values are approximate.\"\n}\n\n\nFor actual implementation, you would:\n\n1. **Read the table**: Depending on the source, use libraries like pandas in Python for data manipulation.\n2. **Extract headers and data**: Use methods like `df.columns` for column labels and `df.values` or iteration for row values.\n3. **Serialize to JSON**: Use JSON libraries (e.g., `json.dumps()` in Python) to convert your structured data into JSON format.\n\nHere's a simple Python example:\n\npython\nimport pandas as pd\nimport json\n\n# Sample data\ndata = {\n    \"Country\": [\"France\", \"Japan\", \"Brazil\"],\n    \"City\": [\"Paris\", \"Tokyo\", \"São Paulo\"],\n    \"Population (in millions)\": [2.1, 13.9, 22.1],\n    \"Area (in km²)\": [1054, 1424, 1221]\n}\n\ndf = pd.DataFrame(data).set_index('Country')\n\n# Preparing data\nschema_version = \"1.0\"\ncontent_type = \"table\"\nrow_labels = df.index.tolist()\ncolumn_labels = df.columns.tolist()\nvalues = df.to_dict(orient='index')\n\n# JSON\noutput = {\n    \"schema_version\": schema_version,\n    \"content_type\": content_type,\n    \"row_labels\": row_labels,\n    \"column_labels\": column_labels,\n    \"values\": values,\n    \"notes\": \"Sample note.\"\n}\n\n# Convert to JSON\njson_output = json.dumps(output, indent=2)\n\nprint(json_output)\n\n\nThis example assumes a pandas DataFrame but can be adapted to work with any data structure or source.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 55,
+      "content": "Operation of a biometric\u000bsystem\nVerification is analogous to user login via a smart card and a PIN\n\nIdentification is biometric info but no IDs; system compares with stored templates"
+    },
+    {
+      "kind": "text",
+      "slide": 55,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I'll describe its content in a way that focuses on its learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 56,
+      "content": "Biometric Accuracy *\nPalm print The system generates a matching score (a number) that quantifies similarity between the input and the stored template\nConcerns: sensor noise and detection inaccuracy\nProblems of false match/false non-match\n* Further reading (Stallings textbook)"
+    },
+    {
+      "kind": "text",
+      "slide": 56,
+      "content": "\n### Slide Image\n[LLM_ERROR] All providers failed: Gemini (timed out), Azure, Groq (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}).\n"
+    },
+    {
+      "kind": "text",
+      "slide": 57,
+      "content": "Biometric Accuracy *\nCan plot characteristic curve (2,000,000 comparisons)\nPick threshold balancing error rates"
+    },
+    {
+      "kind": "text",
+      "slide": 57,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I'll describe its content in a way that focuses on its learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 58,
+      "content": "Info-Sec 2023\n58\nCautions\nThese can be fooled!\nAssumes biometric device accurate in the environment it is being used in!\nTransmission of data to validator is tamperproof, correct"
+    },
+    {
+      "kind": "text",
+      "slide": 59,
+      "content": "Part 2 ⎯ Access Control                                                                                                  59\nBiometrics: The Bottom Line\nBiometrics are hard to forge\nBut attacker could\nSteal Alice’s thumb\nPhotocopy Bob’s fingerprint, eye, etc.\nSubvert software, database, “trusted path” …\nAnd how to revoke a “broken” biometric?\nBiometrics are not foolproof\nBiometric use is relatively limited today\nThat should change in the (near?) future"
+    },
+    {
+      "kind": "text",
+      "slide": 60,
+      "content": "Info-Sec 2023\n60\nLocation – Just a brief\nIf you know where user is, validate identity by seeing if person is where the user is\nRequires special-purpose hardware to locate user\nGPS (global positioning system) device gives location signature of entity\nHost uses LSS (location signature sensor) to get signature for entity"
+    },
+    {
+      "kind": "text",
+      "slide": 61,
+      "content": "Info-Sec 2023\n61\nMultiple Methods\nExample: “where you are” also requires entity to have LSS and GPS, so also “what you have”\nCan assign different methods to different tasks\nAs users perform more and more sensitive tasks, must authenticate in more and more ways (presumably, more stringently) File describes authentication required\nAlso includes controls on access (time of day, etc.), resources, and requests to change passwords\n\nPluggable Authentication Modules"
+    },
+    {
+      "kind": "text",
+      "slide": 62,
+      "content": "Info-Sec 2023\n62\nPAM\nIdea: when program needs to authenticate, it checks central repository for methods to use\nLibrary call: pam_authenticate\nAccesses file with name of program in /etc/pam_d\nModules do authentication checking\nsufficient: succeed if module succeeds\nrequired: fail if module fails, but all required modules executed before reporting failure\nrequisite: like required, but don’t check all modules\noptional: invoke only if all previous modules fail"
+    },
+    {
+      "kind": "text",
+      "slide": 63,
+      "content": "Info-Sec 2023\n63\nExample PAM File\nauth\tsufficient\t/usr/lib/pam_ftp.so\nauth\trequired\t/usr/lib/pam_unix_auth.so use_first_pass\nauth\trequired\t/usr/lib/pam_listfile.so onerr=succeed \\ \t\t\t\titem=user sense=deny file=/etc/ftpusers\nFor ftp:\nIf user “anonymous”, return okay; if not, set PAM_AUTHTOK to password, PAM_RUSER to name, and fail\nNow check that password in PAM_AUTHTOK belongs to that of user in PAM_RUSER; if not, fail\nNow see if user in PAM_RUSER named in /etc/ftpusers; if so, fail; if error or not found, succeed"
+    },
+    {
+      "kind": "text",
+      "slide": 64,
+      "content": "Extended Material *\u000bKerberos authentication protocol\nMaterial sources: History & some general info from Wiki;\nDetails on Kerberos versions 4&5 from Stallings Text and slides"
+    },
+    {
+      "kind": "text",
+      "slide": 65,
+      "content": "Info-Sec 2023\n65\nKerberos\nA computer network authentication protocol\nwhich allows nodes communicating over a non-secure network to prove their identity to one another in a secure manner. \naimed primarily at a client-server model, and it provides mutual authentication -- both the user and the server verify each other's identity. Messages are protected against eaves dropping & replay attacks.\nKerberos builds on SKC and requires a trusted third party, and optionally may use public-key cryptography during certain phases of authentication."
+    },
+    {
+      "kind": "text",
+      "slide": 66,
+      "content": "Sep 2009\nInformation Security by Van K Nguyen Hanoi University of Technology\n66\nKerberos\nHistory [Wiki]\nnamed after the character Kerberos (or Cerberus), the ferocious three-headed guard dog of Hades (from Greek mythology) \nMIT developed Kerberos in 1988 to protect network services provided by Project Athena. \n1st  version was primarily designed by Steve Miller and Clifford Neuman based on the earlier  Needham–Schroeder symmetric-key protocol. Ver 1 - 3 were experimental, internal.\nKerberos version 4, the first public version, was released on January 24, 1989.\nNeuman and John Kohl published v5 in 1993 with the intention of overcoming existing limitations and security problems. Version 5 appeared as RFC 1510, which was then made obsolete by RFC 4120 in 2005. In 2005, the Internet Engineering Task Force (IETF) Kerberos working group updated specifications."
+    },
+    {
+      "kind": "text",
+      "slide": 67,
+      "content": "Sep 2009\nInformation Security by Van K Nguyen Hanoi University of Technology\n67\nIdea\nTicket\nIssuer vouches for identity of requester of service\nIdentifies sender\nKey Distribution Center (KDC) combines two severs: \nAuthentication Server, AS  (Also, Kerberos server)\nTicket Granting Server, TGS\nUser u authenticates to AS\nObtains ticket Tu,TGS for ticket granting service (TGS)\nUser u wants to use service s:\nUser sends authenticator Au, ticket Tu,TGS to TGS asking for ticket for service\nTGS sends ticket Tu,s to user\nUser sends Au, Tu,s to server as request to use s"
+    },
+    {
+      "kind": "text",
+      "slide": 68,
+      "content": "Kerberos v4 Overview\na basic third-party authentication scheme\nhave an Authentication Server (AS) \nusers initially negotiate with AS to identify self \nAS provides a non-corruptible authentication credential (ticket granting ticket TGT) \nhave a Ticket Granting server (TGS)\nusers subsequently request access to other services from TGS on basis of users TGT\nusing a complex protocol using DES"
+    },
+    {
+      "kind": "text",
+      "slide": 69,
+      "content": "Kerberos 4 Overview"
+    },
+    {
+      "kind": "text",
+      "slide": 69,
+      "content": "\n### Slide Image\nThere is no visual element provided for me to describe. Please share the visual element, and I will focus on describing the content that contributes to its learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 70,
+      "content": "Kerberos v4 Dialogue"
+    },
+    {
+      "kind": "text",
+      "slide": 70,
+      "content": "\n### Slide Image\nTo provide a structured graph representation in JSON, including node labels, edge lists, and directionality, let's consider a simple example graph. We'll define a directed graph with 5 nodes and 6 edges.\n\n### Example Graph\n\n- **Nodes**: A, B, C, D, E\n- **Edges**: \n  - A → B\n  - A → C\n  - B → D\n  - C → E\n  - D → E\n  - E → B\n\n### JSON Representation\n\nHere's how you could represent this graph in JSON, including node labels, edge lists, and directionality:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\", \"label\": \"Node A\"},\n    {\"id\": \"B\", \"label\": \"Node B\"},\n    {\"id\": \"C\", \"label\": \"Node C\"},\n    {\"id\": \"D\", \"label\": \"Node D\"},\n    {\"id\": \"E\", \"label\": \"Node E\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"OUT\"},\n    {\"source\": \"A\", \"target\": \"C\", \"direction\": \"OUT\"},\n    {\"source\": \"B\", \"target\": \"D\", \"direction\": \"OUT\"},\n    {\"source\": \"C\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"D\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"E\", \"target\": \"B\", \"direction\": \"OUT\"}\n  ]\n}\n\n\nHowever, a more compact and commonly used representation for graphs, especially in graph databases and algorithms, is to use an adjacency list or to directly list nodes with their neighbors. For directed graphs, you might see representations that inherently imply directionality.\n\n### Alternative Adjacency List Representation\n\n\n{\n  \"nodes\": [\"A\", \"B\", \"C\", \"D\", \"E\"],\n  \"edges\": [\n    {\"from\": \"A\", \"to\": \"B\"},\n    {\"from\": \"A\", \"to\": \"C\"},\n    {\"from\": \"B\", \"to\": \"D\"},\n    {\"from\": \"C\", \"to\": \"E\"},\n    {\"from\": \"D\", \"to\": \"E\"},\n    {\"from\": \"E\", \"to\": \"B\"}\n  ]\n}\n\n\nOr, even more compactly, an adjacency list:\n\n\n{\n  \"A\": [\"B\", \"C\"],\n  \"B\": [\"D\"],\n  \"C\": [\"E\"],\n  \"D\": [\"E\"],\n  \"E\": [\"B\"]\n}\n\n\nThe best representation depends on your specific use case, such as the graph library you're using, the operations you'll be performing, and personal or project preference. \n\nTo **extract** node labels, edge lists, and directionality from a graph (assuming it's already in a structured format), you would typically parse the JSON and access the respective fields. For example, in Python:\n\npython\nimport json\n\n# Assuming graph_json is your JSON string\ngraph_json = '''\n{\n  \"nodes\": [\n    {\"id\": \"A\", \"label\": \"Node A\"},\n    {\"id\": \"B\", \"label\": \"Node B\"},\n    {\"id\": \"C\", \"label\": \"Node C\"},\n    {\"id\": \"D\", \"label\": \"Node D\"},\n    {\"id\": \"E\", \"label\": \"Node E\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"OUT\"},\n    {\"source\": \"A\", \"target\": \"C\", \"direction\": \"OUT\"},\n    {\"source\": \"B\", \"target\": \"D\", \"direction\": \"OUT\"},\n    {\"source\": \"C\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"D\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"E\", \"target\": \"B\", \"direction\": \"OUT\"}\n  ]\n}\n'''\n\ngraph = json.loads(graph_json)\n\nnode_labels = {node['id']: node['label'] for node in graph['nodes']}\nedges = [(edge['source'], edge['target'], edge['direction']) for edge in graph['edges']]\n\nprint(\"Node Labels:\", node_labels)\nprint(\"Edges:\", edges)\n\n\nThis example extracts node labels into a dictionary and edges into a list of tuples.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 71,
+      "content": "Kerberos Version 5\ndeveloped in mid 1990’s\nspecified as Internet standard RFC 1510\nprovides improvements over v4\naddresses environmental shortcomings\nencryption alg, network protocol, byte order, ticket lifetime, authentication forwarding, interrealm auth\nand technical deficiencies\ndouble encryption, non-std mode of use, session keys, password attacks"
+    },
+    {
+      "kind": "text",
+      "slide": 72,
+      "content": "Kerberos Realms\na Kerberos environment consists of:\na Kerberos server\na number of clients, all registered with server\napplication servers, sharing keys with server\nthis is termed a realm\ntypically a single administrative domain\nif have multiple realms, their Kerberos servers must share keys and trust"
+    },
+    {
+      "kind": "text",
+      "slide": 73,
+      "content": "Kerberos Realms"
+    },
+    {
+      "kind": "text",
+      "slide": 73,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I will describe its content, focusing on the information that contributes to learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 74,
+      "content": "Protocol\n[From Wiki]\nClient Authentication to the AS\nClient Service Authorization\nClient Service Request"
+    },
+    {
+      "kind": "text",
+      "slide": 74,
+      "content": "\n### Slide Image\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. \n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Vertices):** A, B, C, D\n- **Edges:** \n  - A -> B (directed from A to B)\n  - B -> C (directed from B to C)\n  - C -> A (directed from C to A)\n  - D -> B (directed from D to B)\n\n### JSON Representation\n\nA common JSON representation for a graph might involve specifying nodes and edges separately. Here is one way to structure it:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"out\"},\n    {\"source\": \"B\", \"target\": \"C\", \"direction\": \"out\"},\n    {\"source\": \"C\", \"target\": \"A\", \"direction\": \"out\"},\n    {\"source\": \"D\", \"target\": \"B\", \"direction\": \"out\"}\n  ]\n}\n\n\nHowever, if you're working with a more complex graph or specific graph libraries, the representation might vary. For instance, some representations might include additional properties for nodes and edges (like labels, weights, etc.), or they might imply directionality based on the structure.\n\n### Directionality\n\nIn the provided example, all edges have a clear direction specified (`out` for outgoing, but you might also see `in` for incoming if the representation includes that). If an edge is undirected, you might see a notation like `\"direction\": \"both\"` or simply omit the directionality field for undirected graphs.\n\n### Alternative Representations\n\nSome graph formats (like GraphJSON or Cytoscape.js) might structure the data differently. For example, consider a simple directed graph:\n\n\n{\n  \"elements\": [\n    {\"data\": {\"id\": \"A\"}},\n    {\"data\": {\"id\": \"B\"}},\n    {\"data\": {\"id\": \"C\"}},\n    {\"data\": {\"id\": \"D\"}},\n    {\"data\": {\"id\": \"e1\", \"source\": \"A\", \"target\": \"B\"}},\n    {\"data\": {\"id\": \"e2\", \"source\": \"B\", \"target\": \"C\"}},\n    {\"data\": {\"id\": \"e3\", \"source\": \"C\", \"target\": \"A\"}},\n    {\"data\": {\"id\": \"e4\", \"source\": \"D\", \"target\": \"B\"}}\n  ]\n}\n\n\n### Code to Generate This\n\nIf you have a graph in a different format and want to convert it to JSON, you might write a script. Here's a simple Python example to create the JSON from basic graph definitions:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self):\n        self.nodes = []\n        self.edges = []\n\n    def add_node(self, id):\n        self.nodes.append({\"id\": id})\n\n    def add_edge(self, source, target):\n        self.edges.append({\"source\": source, \"target\": target, \"direction\": \"out\"})\n\n    def to_json(self):\n        graph_json = {\"nodes\": self.nodes, \"edges\": self.edges}\n        return json.dumps(graph_json, indent=2)\n\n# Usage\ng = Graph()\ng.add_node(\"A\")\ng.add_node(\"B\")\ng.add_node(\"C\")\ng.add_node(\"D\")\n\ng.add_edge(\"A\", \"B\")\ng.add_edge(\"B\", \"C\")\ng.add_edge(\"C\", \"A\")\ng.add_edge(\"D\", \"B\")\n\nprint(g.to_json())\n\n\nThis example creates a simple directed graph and converts it into a JSON string. Adjustments would be needed based on the specifics of your graph data.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 75,
+      "content": "Kerberos v5 Dialogue"
+    },
+    {
+      "kind": "text",
+      "slide": 75,
+      "content": "\n### Slide Image\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. \n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Vertices):** A, B, C, D\n- **Edges:** \n  - A -> B (directed from A to B)\n  - B -> C (directed from B to C)\n  - C -> A (directed from C to A)\n  - D -> B (directed from D to B)\n\n### JSON Representation\n\nA common way to represent a graph in JSON is to specify nodes and edges as separate lists or objects. Here is one such representation:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"out\"},\n    {\"source\": \"B\", \"target\": \"C\", \"direction\": \"out\"},\n    {\"source\": \"C\", \"target\": \"A\", \"direction\": \"out\"},\n    {\"source\": \"D\", \"target\": \"B\", \"direction\": \"out\"}\n  ]\n}\n\n\nOr, if you want to emphasize the directed nature more explicitly and potentially add edge labels or other properties:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"from\": \"A\", \"to\": \"B\", \"directed\": true},\n    {\"from\": \"B\", \"to\": \"C\", \"directed\": true},\n    {\"from\": \"C\", \"to\": \"A\", \"directed\": true},\n    {\"from\": \"D\", \"to\": \"B\", \"directed\": true}\n  ]\n}\n\n\n### Directionality\n\n- In both representations, the directionality of edges is implied by the order of `source` and `target` (or `from` and `to`) fields in the edge definitions. \n- An edge from A to B is represented as `{\"source\": \"A\", \"target\": \"B\"}` (or `{\"from\": \"A\", \"to\": \"B\"}`), indicating a directed edge.\n\n### Code to Generate This JSON\n\nIf you were to generate this JSON programmatically, you might do something like this in Python:\n\npython\ndef create_graph(nodes, edges):\n    graph = {\n        \"nodes\": [{\"id\": node} for node in nodes],\n        \"edges\": [{\"source\": edge[0], \"target\": edge[1]} for edge in edges]\n    }\n    return graph\n\n# Define the graph\nnodes = ['A', 'B', 'C', 'D']\nedges = [('A', 'B'), ('B', 'C'), ('C', 'A'), ('D', 'B')]\n\n# Generate and print the graph\ngraph_json = create_graph(nodes, edges)\nimport json\nprint(json.dumps(graph_json, indent=2))\n\n\nThis Python snippet creates a simple directed graph from given nodes and edges and prints its JSON representation.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 76,
+      "content": "Federated Identity Management\nuse of common identity management scheme\nacross multiple enterprises & numerous applications \nsupporting many thousands, even millions of users \nprincipal elements are:\nauthentication, authorization, accounting, provisioning, workflow automation, delegated administration, password synchronization, self-service password reset, federation\nKerberos contains many of these elements"
+    },
+    {
+      "kind": "text",
+      "slide": 77,
+      "content": "Identity Management"
+    },
+    {
+      "kind": "text",
+      "slide": 77,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I will describe its content, focusing on the information that contributes to learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 78,
+      "content": "Identity Federation"
+    },
+    {
+      "kind": "text",
+      "slide": 78,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I'll describe its content in a way that focuses on its learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 79,
+      "content": "Standards Used\nSecurity Assertion Markup Language (SAML)\nXML-based language for exchange of security information between online business partners\npart of OASIS (Organization for the Advancement of Structured Information Standards) standards for federated identity management\ne.g. WS-Federation for browser-based federation\nneed a few mature industry standards"
+    },
+    {
+      "kind": "text",
+      "slide": 80,
+      "content": "Federated Identity Examples"
+    },
+    {
+      "kind": "text",
+      "slide": 80,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I will describe its content, focusing on the information that contributes to learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 81,
+      "content": "FIM vs. SSO\nSSO: Single Sign-On\nAllows users to access multiple web applications at once, using just one set of credentials. \nBeyond the workforce, companies can utilize SSO to help customers access various sections of one account. \nFIM \nAs a tool, SSO fits within the broader model of FIM.\nThe key difference between SSO and FIM is while SSO is designed to authenticate a single credential across various systems within one organization, federated identity management systems offer single access to a number of applications across various enterprises."
+    },
+    {
+      "kind": "text",
+      "slide": 82,
+      "content": "Extended Material *\u000bBiometrics\nSlides borrowed from Mark Stamp’s web\nhttps://www.cs.sjsu.edu/~stamp/infosec/powerpoint/"
+    },
+    {
+      "kind": "text",
+      "slide": 83,
+      "content": "Part 2 ⎯ Access Control                                                                                                  83\nSomething You Are\nBiometric\n“You are your key” ⎯ Schneier\nAre\nKnow\nHave\nExamples\nFingerprint\nHandwritten signature\nFacial recognition\nSpeech recognition\nGait (walking) recognition\n“Digital doggie” (odor recognition)\nMany more!"
+    },
+    {
+      "kind": "text",
+      "slide": 84,
+      "content": "Part 2 ⎯ Access Control                                                                                                  84\nIdeal Biometric\nUniversal ⎯ applies to (almost) everyone\nIn reality, no biometric applies to everyone\nDistinguishing ⎯ distinguish with certainty\nIn reality, cannot hope for 100% certainty\nPermanent ⎯ physical characteristic being measured never changes\nIn reality, OK if it to remains valid for long time\nCollectable ⎯ easy to collect required data \nDepends on whether subjects are cooperative\nAlso, safe, user-friendly, and ???"
+    },
+    {
+      "kind": "text",
+      "slide": 85,
+      "content": "Part 2 ⎯ Access Control                                                                                                  85\nIdentification vs Authentication\nIdentification ⎯ Who goes there?\nCompare one-to-many\nExample: FBI fingerprint database\nAuthentication ⎯ Are you who you say you are?\nCompare one-to-one\nExample: Thumbprint mouse\nIdentification problem is more difficult\nMore “random” matches since more comparisons\nWe are (mostly) interested in authentication"
+    },
+    {
+      "kind": "text",
+      "slide": 86,
+      "content": "Part 2 ⎯ Access Control                                                                                                  86\nEnrollment vs Recognition\nEnrollment phase\nSubject’s biometric info put into database\nMust carefully measure the required info\nOK if slow and repeated measurement needed\nMust be very precise\nMay be a weak point in real-world use\nRecognition phase\nBiometric detection, when used in practice\nMust be quick and simple\nBut must be reasonably accurate"
+    },
+    {
+      "kind": "text",
+      "slide": 87,
+      "content": "Part 2 ⎯ Access Control                                                                                                  87\nCooperative Subjects?\nAuthentication ⎯ cooperative subjects\nIdentification ⎯ uncooperative subjects\nFor example, facial recognition\nUsed in Las Vegas casinos to detect known cheaters (also, terrorists in airports, etc.)\nOften, less than ideal enrollment conditions\nSubject will try to confuse recognition phase\nCooperative subject makes it much easier\nWe are focused on authentication\nSo, we can assume subjects are cooperative"
+    },
+    {
+      "kind": "text",
+      "slide": 88,
+      "content": "Part 2 ⎯ Access Control                                                                                                  88\nBiometric Errors\nFraud rate versus insult rate\nFraud ⎯ Trudy mis-authenticated as Alice\nInsult ⎯ Alice not authenticated as Alice\nFor any biometric, can decrease fraud or insult, but other one will increase\nFor example\n99% voiceprint match ⇒ low fraud, high insult\n30% voiceprint match ⇒ high fraud, low insult\nEqual error rate: rate where fraud == insult\nA way to compare different biometrics"
+    },
+    {
+      "kind": "text",
+      "slide": 89,
+      "content": "Part 2 ⎯ Access Control                                                                                                  89\nFingerprint History\n1823 ⎯ Professor Johannes Evangelist Purkinje discussed 9 fingerprint patterns \n1856 ⎯ Sir William Hershel used fingerprint (in India) on contracts\n1880 ⎯ Dr. Henry Faulds article in Nature about fingerprints for ID\n1883 ⎯ Mark Twain’s Life on the Mississippi (murderer ID’ed by fingerprint)"
+    },
+    {
+      "kind": "text",
+      "slide": 90,
+      "content": "Part 2 ⎯ Access Control                                                                                                  90\nFingerprint History\n1888 ⎯ Sir Francis Galton developed classification system\nHis system  of “minutia” can be used today\nAlso verified that fingerprints do not change\nSome countries require fixed number of “points” (minutia) to match in criminal cases\nIn Britain, at least 15 points \nIn US, no fixed number of points"
+    },
+    {
+      "kind": "text",
+      "slide": 91,
+      "content": "Part 2 ⎯ Access Control                                                                                                  91\nFingerprint Comparison\nLoop (double)\nWhorl\nArch\nExamples of loops, whorls, and arches\nMinutia extracted from these features"
+    },
+    {
+      "kind": "text",
+      "slide": 91,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I'll describe its content in a way that focuses on its learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 91,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I will describe its content, focusing on the information that contributes to learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 91,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I'll describe its content in a way that focuses on its learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 92,
+      "content": "Part 2 ⎯ Access Control                                                                                                  92\nFingerprint: Enrollment\nCapture image of fingerprint\nEnhance image\nIdentify “points”"
+    },
+    {
+      "kind": "text",
+      "slide": 93,
+      "content": "Part 2 ⎯ Access Control                                                                                                  93\nFingerprint: Recognition\nExtracted points are compared with information stored in a database\nIs it a statistical match?\nAside: Do identical twins’ fingerprints differ?"
+    },
+    {
+      "kind": "text",
+      "slide": 94,
+      "content": "Part 2 ⎯ Access Control                                                                                                  94\nHand Geometry\nA popular biometric\nMeasures shape of hand\nWidth of hand, fingers\nLength of fingers, etc.\nHuman hands not so unique\nHand geometry sufficient for many situations\nOK for authentication\nNot useful for ID problem"
+    },
+    {
+      "kind": "text",
+      "slide": 95,
+      "content": "Part 2 ⎯ Access Control                                                                                                  95\nHand Geometry\nAdvantages\nQuick ⎯ 1 minute for enrollment,           5 seconds for recognition\nHands are symmetric ⎯ so what?\nDisadvantages\nCannot use on very young or very old\nRelatively high equal error rate"
+    },
+    {
+      "kind": "text",
+      "slide": 96,
+      "content": "Part 2 ⎯ Access Control                                                                                                  96\nIris Patterns\nIris pattern development is “chaotic”\nLittle or no genetic influence\nEven for identical twins, uncorrelated\nPattern is stable through lifetime"
+    },
+    {
+      "kind": "text",
+      "slide": 96,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I will describe its content, focusing on the information that contributes to learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 96,
+      "content": "\n### Slide Image\n[LLM_ERROR] All providers failed: Gemini (timed out), Azure, Groq (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}).\n"
+    },
+    {
+      "kind": "text",
+      "slide": 96,
+      "content": "\n### Slide Image\n[LLM_ERROR] All providers failed: Gemini (timed out), Azure, Groq (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kkedd9pnejqr8cfvvrfp64h7` service tier `on_demand` on requests per minute (RPM): Limit 30, Used 30, Requested 1. Please try again in 2s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'requests', 'code': 'rate_limit_exceeded'}}).\n"
+    },
+    {
+      "kind": "text",
+      "slide": 97,
+      "content": "Part 2 ⎯ Access Control                                                                                                  97\nIris Recognition: History\n1936 ⎯ suggested by ophthalmologist\n1980s ⎯ James Bond film(s)\n1986 ⎯ first patent appeared\n1994 ⎯ John Daugman patents new-and-improved technique\nPatents owned by Iridian Technologies"
+    },
+    {
+      "kind": "text",
+      "slide": 98,
+      "content": "Part 2 ⎯ Access Control                                                                                                  98\nIris Scan\nScanner locates iris\nTake b/w photo\nUse polar coordinates…\n2-D wavelet transform\nGet 256 byte iris code"
+    },
+    {
+      "kind": "text",
+      "slide": 98,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I will describe its content, focusing on the information that contributes to learning value.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 98,
+      "content": "\n### Slide Image\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. The graph will have directionality, meaning the edges have a direction from one node to another.\n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Labels):** A, B, C, D\n- **Edges (List with Directionality):** \n  - A -> B\n  - B -> C\n  - C -> A\n  - D -> B\n\n### JSON Representation\n\nThe JSON representation of this graph can be structured as follows:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"from\": \"A\", \"to\": \"B\"},\n    {\"from\": \"B\", \"to\": \"C\"},\n    {\"from\": \"C\", \"to\": \"A\"},\n    {\"from\": \"D\", \"to\": \"B\"}\n  ]\n}\n\n\n### Explanation\n\n- **Nodes:** Each node is represented by an object with an `id` property that corresponds to its label.\n- **Edges:** Each edge is represented by an object with `from` and `to` properties, indicating the direction of the edge.\n\n### Code to Generate This JSON\n\nIf you were to generate this JSON programmatically, you could do something like the following in Python:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self):\n        self.nodes = []\n        self.edges = []\n\n    def add_node(self, id):\n        self.nodes.append({\"id\": id})\n\n    def add_edge(self, from_node, to_node):\n        self.edges.append({\"from\": from_node, \"to\": to_node})\n\n    def to_json(self):\n        return json.dumps(self, default=lambda o: o.__dict__, indent=2)\n\n# Usage\ngraph = Graph()\ngraph.add_node(\"A\")\ngraph.add_node(\"B\")\ngraph.add_node(\"C\")\ngraph.add_node(\"D\")\n\ngraph.add_edge(\"A\", \"B\")\ngraph.add_edge(\"B\", \"C\")\ngraph.add_edge(\"C\", \"A\")\ngraph.add_edge(\"D\", \"B\")\n\nprint(graph.to_json())\n\n\nThis Python code defines a simple `Graph` class, adds nodes and edges to it, and then converts the graph into a JSON string. The output would match the JSON example provided above.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 98,
+      "content": "\n### Slide Image\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. \n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Vertices):** A, B, C, D\n- **Edges:** \n  - A -> B (directed from A to B)\n  - B -> C (directed from B to C)\n  - C -> A (directed from C to A)\n  - D -> B (directed from D to B)\n\n### JSON Representation\n\nA common JSON representation for a graph might involve specifying nodes and edges separately. Here is one way to structure it:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"out\"},\n    {\"source\": \"B\", \"target\": \"C\", \"direction\": \"out\"},\n    {\"source\": \"C\", \"target\": \"A\", \"direction\": \"out\"},\n    {\"source\": \"D\", \"target\": \"B\", \"direction\": \"out\"}\n  ]\n}\n\n\nHowever, for a more detailed and structured representation that includes directionality explicitly in the graph definition, you might see variations. For instance, if an edge's directionality isn't explicitly stated, it might be assumed to be undirected. \n\n### Alternative Representation with Directionality\n\nIf you want to explicitly highlight directionality (directed vs. undirected) and possibly add more details like edge weights or labels, you could structure the JSON like this:\n\n\n{\n  \"graphType\": \"directed\", // or \"undirected\"\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\"},\n    {\"source\": \"B\", \"target\": \"C\"},\n    {\"source\": \"C\", \"target\": \"A\"},\n    {\"source\": \"D\", \"target\": \"B\"}\n  ]\n}\n\n\nOr, with additional properties like edge labels and weights:\n\n\n{\n  \"graphType\": \"directed\",\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"label\": \"E1\", \"weight\": 1.0},\n    {\"source\": \"B\", \"target\": \"C\", \"label\": \"E2\", \"weight\": 2.0},\n    {\"source\": \"C\", \"target\": \"A\", \"label\": \"E3\", \"weight\": 3.0},\n    {\"source\": \"D\", \"target\": \"B\", \"label\": \"E4\", \"weight\": 4.0}\n  ]\n}\n\n\n### Code to Generate This JSON\n\nIf you're working in Python, here's a simple way to construct and output such a graph representation:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self, directed=False):\n        self.nodes = []\n        self.edges = []\n        self.directed = directed\n\n    def add_node(self, id):\n        self.nodes.append({\"id\": id})\n\n    def add_edge(self, source, target, label=None, weight=None):\n        edge = {\"source\": source, \"target\": target}\n        if label:\n            edge[\"label\"] = label\n        if weight:\n            edge[\"weight\"] = weight\n        self.edges.append(edge)\n\n    def to_json(self):\n        graph_repr = {\n            \"graphType\": \"directed\" if self.directed else \"undirected\",\n            \"nodes\": self.nodes,\n            \"edges\": self.edges\n        }\n        return json.dumps(graph_repr, indent=2)\n\n# Usage\ng = Graph(directed=True)\ng.add_node(\"A\")\ng.add_node(\"B\")\ng.add_node(\"C\")\ng.add_node(\"D\")\ng.add_edge(\"A\", \"B\")\ng.add_edge(\"B\", \"C\")\ng.add_edge(\"C\", \"A\")\ng.add_edge(\"D\", \"B\")\n\nprint(g.to_json())\n\n\nThis example constructs a directed graph and outputs its JSON representation. Adjustments can be made based on specific requirements or programming languages.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 98,
+      "content": "\n### Slide Image\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. The graph will have directionality, meaning the edges have a direction from one node to another.\n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Labels):** A, B, C, D\n- **Edges (List with Directionality):** \n  - A -> B\n  - B -> C\n  - C -> A\n  - D -> B\n\n### Structured Graph Representation in JSON\n\nHere's how we can represent this graph in a structured JSON format:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\"},\n    {\"source\": \"B\", \"target\": \"C\"},\n    {\"source\": \"C\", \"target\": \"A\"},\n    {\"source\": \"D\", \"target\": \"B\"}\n  ],\n  \"graphProperties\": {\n    \"directed\": true\n  }\n}\n\n\n### Explanation\n\n- **nodes**: This section lists all the unique node labels in the graph. Each node is represented by an object with an `id` property that corresponds to its label.\n- **edges**: This section lists all the edges in the graph. Each edge is represented by an object with `source` and `target` properties, indicating the direction of the edge. For example, the edge `{ \"source\": \"A\", \"target\": \"B\" }` represents a directed edge from node A to node B.\n- **graphProperties**: This section provides additional properties about the graph. In this case, it indicates that the graph is directed (`\"directed\": true`).\n\n### Code to Generate This JSON\n\nIf you're working in a programming environment and want to dynamically create this JSON from your graph data, you might do something like this in Python:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self, directed=False):\n        self.nodes = []\n        self.edges = []\n        self.directed = directed\n\n    def add_node(self, id):\n        self.nodes.append({\"id\": id})\n\n    def add_edge(self, source, target):\n        self.edges.append({\"source\": source, \"target\": target})\n\n    def to_json(self):\n        graph_json = {\n            \"nodes\": self.nodes,\n            \"edges\": self.edges,\n            \"graphProperties\": {\"directed\": self.directed}\n        }\n        return json.dumps(graph_json, indent=2)\n\n# Usage\ngraph = Graph(directed=True)\ngraph.add_node(\"A\")\ngraph.add_node(\"B\")\ngraph.add_node(\"C\")\ngraph.add_node(\"D\")\n\ngraph.add_edge(\"A\", \"B\")\ngraph.add_edge(\"B\", \"C\")\ngraph.add_edge(\"C\", \"A\")\ngraph.add_edge(\"D\", \"B\")\n\nprint(graph.to_json())\n\n\nThis Python code defines a simple `Graph` class and uses it to create the example graph, then converts it to a JSON string.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 98,
+      "content": "\n### Slide Image\nTo accomplish the task of extracting surrounding explanatory text separately from formula text and returning formulas in LaTeX, we'll need to follow a step-by-step approach. This process typically involves:\n\n1. **Input Preparation**: Preparing the input text that contains both explanatory text and formula text.\n2. **Formula Identification**: Identifying the parts of the text that are formulas. This can be complex and might require regular expressions or more sophisticated Natural Language Processing (NLP) techniques, depending on the format of the input.\n3. **LaTeX Conversion**: Converting the identified formula text into LaTeX format.\n4. **Text Separation**: Separating the explanatory text from the formula text.\n\nLet's consider a hypothetical example to illustrate this process. Suppose we have a string that contains explanatory text along with a formula:\n\n`\"The equation for the area of a circle is \\(A = \\pi r^2\\), which is a fundamental concept in geometry.\"`\n\n### Step 1 & 2: Input Preparation and Formula Identification\n\nFor simplicity, let's assume formulas are enclosed in specific markers like `\\(formula)\\)`. In real-world scenarios, you might need to use more complex methods to identify formulas.\n\n### Step 3: LaTeX Conversion\n\nIf the formula is already in a LaTeX-like format or easily convertible, we just ensure it's properly formatted. The example formula \\(A = \\pi r^2\\) is already LaTeX-compatible.\n\n### Step 4: Text Separation\n\nHere's a simple Python script to illustrate how you could achieve this:\n\npython\nimport re\n\ndef separate_text_and_formula(text):\n    # Assuming formulas are enclosed in \\( and \\)\n    pattern = r'\\([^)]+\\)'\n    formulas = re.findall(pattern, text)\n    cleaned_text = re.sub(pattern, '', text)\n\n    # Convert found formulas to LaTeX (if not already)\n    latex_formulas = [f'${formula[1:-1]}$' for formula in formulas]\n\n    return cleaned_text.strip(), latex_formulas\n\n# Example usage\ntext = \"The equation for the area of a circle is \\(A = \\pi r^2\\), which is a fundamental concept in geometry.\"\nexplanatory_text, latex_formulas = separate_text_and_formula(text)\n\nprint(\"Explanatory Text:\")\nprint(explanatory_text)\nprint(\"\\nLaTeX Formulas:\")\nfor i, formula in enumerate(latex_formulas):\n    print(f\"Formula {i+1}: {formula}\")\n\n\nThis script performs the following:\n\n- **Identifies** potential formulas enclosed in \\( and \\).\n- **Extracts** these formulas.\n- **Converts** them into a LaTeX format (in this case, just wraps them in `$` symbols, assuming a simple conversion; real conversion might require a more sophisticated approach).\n- **Separates** the explanatory text from the formulas.\n\n**Output:**\n\n\nExplanatory Text:\nThe equation for the area of a circle is , which is a fundamental concept in geometry.\n\nLaTeX Formulas:\nFormula 1: $A = \\pi r^2$\n\n\nThis example provides a basic approach. Real-world text can be much more complex, requiring advanced NLP techniques for accurate identification and conversion of mathematical expressions.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 98,
+      "content": "\n### Slide Image\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. The graph will have directionality, meaning the edges have a direction from one node to another.\n\nLet's say we have a graph with the following properties:\n\n- **Node Labels**: A, B, C, D\n- **Edge List**: (A, B), (B, C), (C, D), (D, A), (A, C)\n- **Directionality**: The graph is directed.\n\nHere's how we can represent this in a structured JSON format:\n\n\n{\n  \"graph\": {\n    \"directed\": true,\n    \"nodes\": [\n      {\"id\": \"A\"},\n      {\"id\": \"B\"},\n      {\"id\": \"C\"},\n      {\"id\": \"D\"}\n    ],\n    \"edges\": [\n      {\"from\": \"A\", \"to\": \"B\"},\n      {\"from\": \"B\", \"to\": \"C\"},\n      {\"from\": \"C\", \"to\": \"D\"},\n      {\"from\": \"D\", \"to\": \"A\"},\n      {\"from\": \"A\", \"to\": \"C\"}\n    ]\n  }\n}\n\n\nIn this JSON representation:\n- The `directed` property indicates that the graph is directed.\n- The `nodes` list contains objects representing each node, identified solely by their `id` in this simple example.\n- The `edges` list contains objects representing each edge, with `from` and `to` properties indicating the direction of the edge.\n\nIf you were to extract this information from a specific data source (like a database, a file, or another data structure), you would replace the static definitions of `nodes` and `edges` with dynamically extracted data.\n\n### Example in Python\n\nIf you're working in Python and want to create such a graph from scratch, then convert it into the JSON format, you could do something like this:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self, directed=False):\n        self.directed = directed\n        self.nodes = []\n        self.edges = []\n\n    def add_node(self, id):\n        self.nodes.append({\"id\": id})\n\n    def add_edge(self, from_node, to_node):\n        self.edges.append({\"from\": from_node, \"to\": to_node})\n\n    def to_json(self):\n        graph_repr = {\n            \"graph\": {\n                \"directed\": self.directed,\n                \"nodes\": self.nodes,\n                \"edges\": self.edges\n            }\n        }\n        return json.dumps(graph_repr, indent=2)\n\n# Usage\ng = Graph(directed=True)\ng.add_node(\"A\")\ng.add_node(\"B\")\ng.add_node(\"C\")\ng.add_node(\"D\")\n\ng.add_edge(\"A\", \"B\")\ng.add_edge(\"B\", \"C\")\ng.add_edge(\"C\", \"D\")\ng.add_edge(\"D\", \"A\")\ng.add_edge(\"A\", \"C\")\n\nprint(g.to_json())\n\n\nThis Python code defines a simple `Graph` class, adds nodes and edges to it, and then outputs the graph's representation in JSON format.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 99,
+      "content": "Part 2 ⎯ Access Control                                                                                                  99\nMeasuring Iris Similarity\nBased on Hamming distance\nDefine d(x,y) to be\n# of non-match bits / # of bits compared\nd(0010,0101) = 3/4 and d(101111,101001) = 1/3\nCompute d(x,y) on 2048-bit iris code\nPerfect match is d(x,y) = 0\nFor same iris, expected distance is 0.08\nAt random, expect distance of 0.50\nAccept iris scan as match if distance < 0.32"
+    },
+    {
+      "kind": "text",
+      "slide": 100,
+      "content": "Part 2 ⎯ Access Control                                                                                                  100\nIris Scan Error Rate\ndistance\ndistance\nFraud rate\n== equal error rate"
+    },
+    {
+      "kind": "text",
+      "slide": 100,
+      "content": "\n### Slide Image\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. \n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Vertices):** A, B, C, D\n- **Edges:** \n  - A -> B (directed from A to B)\n  - B -> C (directed from B to C)\n  - C -> A (directed from C to A)\n  - D -> B (directed from D to B)\n\n### JSON Representation\n\nA common JSON representation for a graph might involve specifying nodes and edges as separate lists. For edges, we can specify the source node, target node, and optionally, the directionality (though in a directed graph, all edges are by definition directed).\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\"},\n    {\"source\": \"B\", \"target\": \"C\"},\n    {\"source\": \"C\", \"target\": \"A\"},\n    {\"source\": \"D\", \"target\": \"B\"}\n  ],\n  \"directed\": true\n}\n\n\n### Explanation\n\n- **nodes**: A list of node objects, each identified by an `id`.\n- **edges**: A list of edge objects, each with a `source` and a `target`, indicating a directed edge from the source node to the target node.\n- **directed**: A boolean indicating whether the graph is directed. In our case, it's `true`.\n\n### Code to Generate This JSON\n\nIf you were to generate this in Python, for example, you could do something like:\n\npython\nclass Node:\n    def __init__(self, id):\n        self.id = id\n\nclass Edge:\n    def __init__(self, source, target):\n        self.source = source\n        self.target = target\n\nclass Graph:\n    def __init__(self, directed=True):\n        self.nodes = []\n        self.edges = []\n        self.directed = directed\n\n    def add_node(self, node):\n        self.nodes.append({\"id\": node.id})\n\n    def add_edge(self, edge):\n        self.edges.append({\"source\": edge.source, \"target\": edge.target})\n\n    def to_json(self):\n        graph_repr = {\n            \"nodes\": self.nodes,\n            \"edges\": self.edges,\n            \"directed\": self.directed\n        }\n        return graph_repr\n\n# Usage\nif __name__ == \"__main__\":\n    graph = Graph()\n\n    node_a = Node(\"A\")\n    node_b = Node(\"B\")\n    node_c = Node(\"C\")\n    node_d = Node(\"D\")\n\n    graph.add_node(node_a)\n    graph.add_node(node_b)\n    graph.add_node(node_c)\n    graph.add_node(node_d)\n\n    edge_ab = Edge(\"A\", \"B\")\n    edge_bc = Edge(\"B\", \"C\")\n    edge_ca = Edge(\"C\", \"A\")\n    edge_db = Edge(\"D\", \"B\")\n\n    graph.add_edge(edge_ab)\n    graph.add_edge(edge_bc)\n    graph.add_edge(edge_ca)\n    graph.add_edge(edge_db)\n\n    import json\n    print(json.dumps(graph.to_json(), indent=2))\n\n\nThis Python code defines simple classes for `Node`, `Edge`, and `Graph`, and then constructs a graph with the specified nodes and edges, finally outputting the graph's JSON representation.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 100,
+      "content": "\n### Slide Image\nTo provide a structured graph representation in JSON, let's consider a simple example graph. We'll define a directed graph with nodes (also known as vertices) and edges. The graph will have directionality, meaning the edges have a direction from one node to another.\n\n### Example Graph\n\nSuppose we have a graph with the following properties:\n\n- **Nodes (Labels):** A, B, C, D\n- **Edges (List with Directionality):** \n  - A -> B\n  - B -> C\n  - C -> A\n  - D -> B\n\n### Structured Graph Representation in JSON\n\nHere's how you could represent this graph in JSON, including node labels, an edge list, and directionality:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\"},\n    {\"id\": \"B\"},\n    {\"id\": \"C\"},\n    {\"id\": \"D\"}\n  ],\n  \"edges\": [\n    {\"from\": \"A\", \"to\": \"B\"},\n    {\"from\": \"B\", \"to\": \"C\"},\n    {\"from\": \"C\", \"to\": \"A\"},\n    {\"from\": \"D\", \"to\": \"B\"}\n  ]\n}\n\n\n### Explanation\n\n- **Nodes:** Each node is represented by a unique identifier (`id`). In a more complex scenario, nodes could also have properties (or attributes) like labels, colors, sizes, etc., but for simplicity, we've only included an `id`.\n- **Edges:** Each edge is defined by a `from` node and a `to` node, which clearly represents the directionality of the edge.\n\n### Python Code to Generate This JSON\n\nIf you want to create this JSON programmatically, you could use Python with its built-in `json` module:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self):\n        self.nodes = []\n        self.edges = []\n\n    def add_node(self, id):\n        self.nodes.append({\"id\": id})\n\n    def add_edge(self, from_node, to_node):\n        self.edges.append({\"from\": from_node, \"to\": to_node})\n\n    def to_json(self):\n        return json.dumps(self, indent=2, default=lambda o: o.__dict__)\n\n# Usage\ngraph = Graph()\ngraph.add_node(\"A\")\ngraph.add_node(\"B\")\ngraph.add_node(\"C\")\ngraph.add_node(\"D\")\n\ngraph.add_edge(\"A\", \"B\")\ngraph.add_edge(\"B\", \"C\")\ngraph.add_edge(\"C\", \"A\")\ngraph.add_edge(\"D\", \"B\")\n\nprint(graph.to_json())\n\n\nThis Python code defines a simple `Graph` class, adds nodes and edges to it, and then converts the graph into a JSON string. The result is the same JSON structure shown above.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 100,
+      "content": "\n### Slide Image\nTo provide a structured graph representation in JSON, including node labels, edge lists, and directionality, let's consider a simple example graph. We'll define a directed graph with 5 nodes and 6 edges.\n\n### Example Graph\n\n- **Nodes**: A, B, C, D, E\n- **Edges**:\n  - A → B\n  - A → C\n  - B → D\n  - C → E\n  - D → E\n  - E → B\n\n### JSON Representation\n\nHere's how you could represent this graph in JSON, including node labels, edge lists, and directionality:\n\n\n{\n  \"nodes\": [\n    {\"id\": \"A\", \"label\": \"Node A\"},\n    {\"id\": \"B\", \"label\": \"Node B\"},\n    {\"id\": \"C\", \"label\": \"Node C\"},\n    {\"id\": \"D\", \"label\": \"Node D\"},\n    {\"id\": \"E\", \"label\": \"Node E\"}\n  ],\n  \"edges\": [\n    {\"source\": \"A\", \"target\": \"B\", \"direction\": \"OUT\"},\n    {\"source\": \"A\", \"target\": \"C\", \"direction\": \"OUT\"},\n    {\"source\": \"B\", \"target\": \"D\", \"direction\": \"OUT\"},\n    {\"source\": \"C\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"D\", \"target\": \"E\", \"direction\": \"OUT\"},\n    {\"source\": \"E\", \"target\": \"B\", \"direction\": \"OUT\"}\n  ]\n}\n\n\nHowever, a more compact and commonly used format for graph representation, especially in graph databases and algorithms libraries (like Neo4j, NetworkX), would be to imply directionality through the structure and use an adjacency list or a simple nodes and edges list:\n\n### Alternative JSON Representation\n\n\n{\n  \"nodes\": [\"A\", \"B\", \"C\", \"D\", \"E\"],\n  \"edges\": [\n    {\"from\": \"A\", \"to\": \"B\"},\n    {\"from\": \"A\", \"to\": \"C\"},\n    {\"from\": \"B\", \"to\": \"D\"},\n    {\"from\": \"C\", \"to\": \"E\"},\n    {\"from\": \"D\", \"to\": \"E\"},\n    {\"from\": \"E\", \"to\": \"B\"}\n  ]\n}\n\n\nOr, for an even more compact form that directly implies edges are directional from source to target:\n\n\n{\n  \"nodes\": [\"A\", \"B\", \"C\", \"D\", \"E\"],\n  \"edges\": [[\"A\", \"B\"], [\"A\", \"C\"], [\"B\", \"D\"], [\"C\", \"E\"], [\"D\", \"E\"], [\"E\", \"B\"]]\n}\n\n\n### Directionality Note\n\n- In these representations, edges are considered directional, meaning an edge from A to B does not imply the existence of an edge from B to A.\n- The absence of an edge in the list does not necessarily imply a lack of connection; it simply means there's no directed edge in that specified direction.\n\n### Code to Generate This\n\nIf you're working with Python and want to create such a graph representation programmatically:\n\npython\nimport json\n\nclass Graph:\n    def __init__(self):\n        self.nodes = []\n        self.edges = []\n\n    def add_node(self, id, label=None):\n        self.nodes.append({\"id\": id, \"label\": label or f\"Node {id}\"})\n\n    def add_edge(self, source, target):\n        self.edges.append({\"source\": source, \"target\": target})\n\n    def to_json(self):\n        return json.dumps(self, default=lambda o: o.__dict__, indent=2)\n\n# Example usage\ngraph = Graph()\nfor char in 'ABCDE':\n    graph.add_node(char)\n\nedges = [(\"A\", \"B\"), (\"A\", \"C\"), (\"B\", \"D\"), (\"C\", \"E\"), (\"D\", \"E\"), (\"E\", \"B\")]\nfor edge in edges:\n    graph.add_edge(*edge)\n\nprint(graph.to_json())\n\n\nThis Python snippet creates a simple graph, adds nodes and edges, and then dumps it into a JSON string.\n"
+    },
+    {
+      "kind": "text",
+      "slide": 101,
+      "content": "Part 2 ⎯ Access Control                                                                                                  101\nAttack on Iris Scan\nGood photo of eye can be scanned\nAttacker could use photo of eye\nAfghan woman was authenticated by iris scan of old photo\nStory can be found here\nTo prevent attack, scanner could use light to be sure it is a “live” iris"
+    },
+    {
+      "kind": "text",
+      "slide": 102,
+      "content": "Part 2 ⎯ Access Control                                                                                                  102\nEqual Error Rate Comparison\nEqual error rate (EER): fraud == insult rate\nFingerprint biometrics used in practice have EER ranging from about 10-3 to as high as 5%\nHand geometry has EER of about 10-3\nIn theory, iris scan has EER of about 10-6\nEnrollment phase may be critical to accuracy\nMost biometrics much worse than fingerprint!\nBiometrics useful for authentication…\n…but for identification, not so impressive today"
+    },
+    {
+      "kind": "text",
+      "slide": 103,
+      "content": "Part 2 ⎯ Access Control                                                                                                  103\nBiometrics: The Bottom Line\nBiometrics are hard to forge\nBut attacker could\nSteal Alice’s thumb\nPhotocopy Bob’s fingerprint, eye, etc.\nSubvert software, database, “trusted path” …\nAnd how to revoke a “broken” biometric?\nBiometrics are not foolproof\nBiometric use is relatively limited today\nThat should change in the (near?) future"
+    },
+    {
+      "kind": "text",
+      "slide": 104,
+      "content": "http://pc.vietica.com/van.nguyen/InfoSec-VietNhat/InfoSec.htm"
+    },
+    {
+      "kind": "text",
+      "slide": 104,
+      "content": "\n### Slide Image\nThere is no visual element provided. Please share the visual element, and I will describe its content, focusing on the information that contributes to learning value.\n"
+    }
+  ]
+}

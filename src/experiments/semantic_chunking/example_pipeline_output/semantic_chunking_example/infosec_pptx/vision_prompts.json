@@ -1,0 +1,152 @@
+[
+  {
+    "kind": "vision_prompt",
+    "slide": 35,
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 45,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 54,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 55,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 56,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 57,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 69,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 70,
+    "instruction": "Extract surrounding explanatory text separately from formula text. Return formulas in LaTeX."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 73,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 74,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 75,
+    "instruction": "Extract surrounding explanatory text separately from formula text. Return formulas in LaTeX."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 77,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 78,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 80,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 91,
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 91,
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 91,
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 96,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 96,
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 96,
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 100,
+    "instruction": "Extract node labels, edge list and directionality. Return a structured graph representation in JSON."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 100,
+    "instruction": "This is a decorative image. Describe it minimally."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 100,
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 104,
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style."
+  }
+]

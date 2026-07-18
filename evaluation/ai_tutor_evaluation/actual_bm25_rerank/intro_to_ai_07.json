@@ -1,0 +1,136 @@
+{
+  "qid": "intro_to_ai_07",
+  "course_code": "IT3160E",
+  "question": "How does forward chaining work in propositional logic inference?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "9692c670-5a0c-4751-8fd1-e2ffa360d218",
+  "answer": "Forward chaining trong **logic mệnh đề** là kiểu suy diễn **từ các факт đã biết đi lên các kết luận mới** bằng cách áp dụng các luật dạng:\n\n\\[\n\\text{premises} \\Rightarrow \\text{conclusion}\n\\]\n\n## Cách nó hoạt động\n\n1. **Bắt đầu từ các факт ban đầu**  \n   Hệ thống có một tập các mệnh đề đúng đã biết, ví dụ: \\(A\\), \\(B\\).\n\n2. **Tìm luật có tiền đề thỏa mãn**  \n   Nếu một luật có tất cả vế trái đều đã đúng, thì luật đó có thể được kích hoạt.  \n   Ví dụ:\n   \\[\n   A \\land B \\Rightarrow L\n   \\]\n   Nếu cả \\(A\\) và \\(B\\) đều đúng, suy ra \\(L\\).\n\n3. **Thêm kết luận mới vào tập факт đã biết**  \n   Sau khi suy ra \\(L\\), ta coi \\(L\\) là факт mới.\n\n4. **Lặp lại quá trình**  \n   Dùng các факт mới để kích hoạt các luật khác, cho đến khi:\n   - suy ra được mục tiêu cần tìm, hoặc\n   - không còn luật nào áp dụng được nữa.\n\n## Ví dụ từ tài liệu\n\nCác luật trong ví dụ:\n\n\\[\nP \\Rightarrow Q\n\\]\n\\[\nL \\land M \\Rightarrow P\n\\]\n\\[\nB \\land L \\Rightarrow M\n\\]\n\\[\nA \\land P \\Rightarrow L\n\\]\n\\[\nA \\land B \\Rightarrow L\n\\]\n\nVà các факт ban đầu:\n\n\\[\nA,\\; B\n\\]\n\n### Diễn tiến suy diễn\n- Từ \\(A\\) và \\(B\\), suy ra \\(L\\) nhờ luật \\(A \\land B \\Rightarrow L\\)\n- Từ \\(B\\) và \\(L\\), suy ra \\(M\\) nhờ luật \\(B \\land L \\Rightarrow M\\)\n- Từ \\(L\\) và \\(M\\), suy ra \\(P\\) nhờ luật \\(L \\land M \\Rightarrow P\\)\n- Từ \\(P\\), suy ra \\(Q\\) nhờ luật \\(P \\Rightarrow Q\\)\n\n## Ý nghĩa\nForward chaining là phương pháp suy luận **data-driven**:\n- xuất phát từ dữ kiện,\n- áp dụng luật,\n- tạo ra kết luận mới,\n- tiến dần tới mục tiêu.\n\nNó thường được dùng trong **hệ luật**, **hệ chuyên gia**, và các bài toán suy luận tự động.",
+  "citations": [
+    {
+      "chunk_id": "ad72dbb6-7b19-4c18-98b4-d55cb645b1f6",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "```text\n      Q\n      ^\n      |\n      P\n      ^\n      |\n      o-----> M\n     / \\      ^\n    /   \\     |\n   /     \\    |\n  o-----> L   o\n   \\      / \\  \\\n    \\    /   \\  \\\n     \\  /     \\  \\\n      A   "
+    },
+    {
+      "chunk_id": "89edf918-cbdf-467b-b9cf-2f9e52f40d37",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "```text\n      Q\n      ↑\n      P\n      ↑\n      ●\n     / \\\n    /   \\\n   L     M\n   ↑     ↑\n   ●     ●\n  / \\   / \\\n A   ● ●   B\n```\n\n[Diagram: This shows inference progressing from known facts at the bot"
+    },
+    {
+      "chunk_id": "7b3af5ef-2f86-4d10-9b51-f95d9dda0bd1",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "```text\n        Q\n        ↑\n        P\n        ↑\n        ●───────M\n       ╱ \\      ↑\n      ╱   \\     ●\n     L─────●────╱\n     ↑     ╱   ╱\n     ●    ╱   ╱\n    ╱ \\  ╱   ╱\n   A   ●────B\n```\n\n[Diagram: Mô "
+    },
+    {
+      "chunk_id": "fac75206-7568-4e93-8e11-365e2367c8ad",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Example\n\n$$\nP \\Rightarrow Q\n$$\n\n$$\nL \\land M \\Rightarrow P\n$$\n\n$$\nB \\land L \\Rightarrow M\n$$\n\n$$\nA \\land P \\Rightarrow L\n$$\n\n$$\nA \\land B \\Rightarrow L\n$$\n\n$$\nA\n$$\n\n$$\nB\n$$\n\n```text\nA ──► L ──► P ──"
+    },
+    {
+      "chunk_id": "dac4bbe7-a9cb-4cf2-ae72-90436005f614",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "```text\n      Q\n      |\n      P\n      |\n      o\n     / \\\n    /   M\n   /    |\n  /     o\n / \\   / \\\no   L--o   \\\n \\  / \\     \\\n  A     \\     B\n         \\\n          B\n```\n\n[Diagram: This shows a forward-"
+    },
+    {
+      "chunk_id": "db8bde85-ca42-4f40-9f85-37c90468a3ae",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 15,
+      "excerpt": "```text\n        Q\n        ↑\n        P\n        ↑\n        ●\n       / \\\n      /   \\\n     L     M\n     ○     ●\n    / \\   / \\\n   ●   \\ /   ●\n    \\    X    /\n     \\  / \\  /\n      A     B\n```\n\n[Diagram: This"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "forward chaining in propositional logic inference",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ad72dbb6-7b19-4c18-98b4-d55cb645b1f6",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 16,
+          "cosine_sim": 0.5363,
+          "final_score": 0.8887,
+          "content": "```text\n      Q\n      ^\n      |\n      P\n      ^\n      |\n      o-----> M\n     / \\      ^\n    /   \\     |\n   /     \\    |\n  o-----> L   o\n   \\      / \\  \\\n    \\    /   \\  \\\n     \\  /     \\  \\\n      A         B\n```\n\n[Diagram: The figure illustrates forward chaining in a rule-based knowledge system, where facts and inferred propositions propagate upward through rules until a goal is reached. This matters because it shows how new conclusions are derived automatically from known facts by repeatedly applying inference rules.]"
+        },
+        {
+          "chunk_id": "89edf918-cbdf-467b-b9cf-2f9e52f40d37",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 13,
+          "cosine_sim": 0.5694,
+          "final_score": 0.8691,
+          "content": "```text\n      Q\n      ↑\n      P\n      ↑\n      ●\n     / \\\n    /   \\\n   L     M\n   ↑     ↑\n   ●     ●\n  / \\   / \\\n A   ● ●   B\n```\n\n[Diagram: This shows inference progressing from known facts at the bottom toward higher-level conclusions at the top. Forward chaining is important because it derives new facts step by step until a target conclusion is reached.]"
+        },
+        {
+          "chunk_id": "7b3af5ef-2f86-4d10-9b51-f95d9dda0bd1",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 17,
+          "cosine_sim": 0.484,
+          "final_score": 0.8544,
+          "content": "```text\n        Q\n        ↑\n        P\n        ↑\n        ●───────M\n       ╱ \\      ↑\n      ╱   \\     ●\n     L─────●────╱\n     ↑     ╱   ╱\n     ●    ╱   ╱\n    ╱ \\  ╱   ╱\n   A   ●────B\n```\n\n[Diagram: Mô hình này minh họa suy diễn tiến (forward chaining) trong hệ luật: từ các факт ban đầu, các luật được kích hoạt để suy ra факт mới cho đến khi đạt được kết luận. Nó quan trọng vì cho thấy cách tri thức được lan truyền theo hướng từ dữ kiện đến mục tiêu trong hệ chuyên gia và suy luận logic.]"
+        },
+        {
+          "chunk_id": "fac75206-7568-4e93-8e11-365e2367c8ad",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 12,
+          "cosine_sim": 0.6369,
+          "final_score": 0.8225,
+          "content": "- Example\n\n$$\nP \\Rightarrow Q\n$$\n\n$$\nL \\land M \\Rightarrow P\n$$\n\n$$\nB \\land L \\Rightarrow M\n$$\n\n$$\nA \\land P \\Rightarrow L\n$$\n\n$$\nA \\land B \\Rightarrow L\n$$\n\n$$\nA\n$$\n\n$$\nB\n$$\n\n```text\nA ──► L ──► P ──► Q\n│     ▲     ▲\n│     │     │\n└──► M ◄────┘\n      ▲\n      │\n      B ─────────►\n```\n\n[Diagram: The figure shows a forward-chaining inference network where facts and rules propagate implications to derive new conclusions. It matters because it illustrates how a system can start from known facts (A, B) and repeatedly apply rules to infer higher-level facts until reaching a goal such as Q.]"
+        },
+        {
+          "chunk_id": "dac4bbe7-a9cb-4cf2-ae72-90436005f614",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 18,
+          "cosine_sim": 0.5551,
+          "final_score": 0.8021,
+          "content": "```text\n      Q\n      |\n      P\n      |\n      o\n     / \\\n    /   M\n   /    |\n  /     o\n / \\   / \\\no   L--o   \\\n \\  / \\     \\\n  A     \\     B\n         \\\n          B\n```\n\n[Diagram: This shows a forward-chaining inference network, where facts at the bottom are combined through rules to derive higher-level conclusions. It matters because it illustrates how reasoning starts from known information and propagates upward to infer new facts until a goal is reached.]"
+        },
+        {
+          "chunk_id": "db8bde85-ca42-4f40-9f85-37c90468a3ae",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 15,
+          "cosine_sim": 0.5486,
+          "final_score": 0.7667,
+          "content": "```text\n        Q\n        ↑\n        P\n        ↑\n        ●\n       / \\\n      /   \\\n     L     M\n     ○     ●\n    / \\   / \\\n   ●   \\ /   ●\n    \\    X    /\n     \\  / \\  /\n      A     B\n```\n\n[Diagram: This is a forward-chaining inference network where facts at the bottom support intermediate conclusions that propagate upward toward higher-level goals. It illustrates how deriving new facts from known ones can eventually enable the system to reach a target conclusion efficiently.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.4
+}

@@ -1,0 +1,1017 @@
+{
+  "course": "intro_to_ai",
+  "strategy": "mmr_tier_boost",
+  "top_k": 4,
+  "fetch_k": 8,
+  "mmr_lambda": 0.7,
+  "tier_boost_multiplier": 1.15,
+  "question_count": 20,
+  "aggregate": {
+    "answer_similarity": 0.6789,
+    "context_precision": 0.8875,
+    "context_recall": 0.989,
+    "citation_accuracy": 1.0
+  },
+  "per_question": [
+    {
+      "id": 1,
+      "question": "What are the four factors (PEAS) that should be considered when designing an automated agent?",
+      "ground_truth": "When designing an automated agent, the four factors to consider are the Performance measure, Environment, Actuators, and Sensors. For example, an automated taxi driver's performance measure might be a safe and fast trip, its environment includes roads and traffic, its actuators are the steering wheel and brakes, and its sensors include cameras and GPS.",
+      "retrieved": [
+        {
+          "chunk_id": "01_agents_and_environments-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Intelligent Agents",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.7946,
+          "final_score": 0.9138
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Rational Behavior",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.336,
+          "final_score": 0.3864
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Agent Types",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.3194,
+          "final_score": 0.3674
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Search Problem",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.2908,
+          "final_score": 0.3345
+        }
+      ],
+      "generated_answer_preview": "[01_agents_and_environments-chunk-001] An intelligent agent perceives its environment through sensors and acts upon it through actuators. When designing an automated agent, four factors must be considered: the Performance measure, the Environment, the Actuators, and the Sensors. These four factors a",
+      "scores": {
+        "answer_similarity": 0.6721,
+        "context_precision": 1.0,
+        "context_recall": 0.963,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 2,
+      "question": "What is the difference between progression planners and regression planners in state-space search?",
+      "ground_truth": "Progression planners use forward state-space search by considering the effect of all possible actions from a given state. Regression planners use backward state-space search, determining what must have been true in the previous state in order to achieve the current state or goal.",
+      "retrieved": [
+        {
+          "chunk_id": "03_csp_and_planning-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Progression vs Regression Planners",
+          "source_path": "03_csp_and_planning.md",
+          "raw_similarity": 0.8246,
+          "final_score": 0.9483
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Search Problem",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.4538,
+          "final_score": 0.5218
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.3724,
+          "final_score": 0.4282
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Games vs Standard Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.3519,
+          "final_score": 0.4047
+        }
+      ],
+      "generated_answer_preview": "[03_csp_and_planning-chunk-003] In state-space search for planning, two complementary strategies exist. Progression planners use forward state-space search by considering the effect of all possible actions from a given state, expanding outward from the initial state toward the goal. Regression plann",
+      "scores": {
+        "answer_similarity": 0.7981,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 3,
+      "question": "How does A* search determine which node to expand next?",
+      "ground_truth": "A* search expands the unexpanded node with the lowest evaluation value. It uses the evaluation function f(n) = g(n) + h(n), where g(n) represents the cost so far to reach node n, and h(n) represents the estimated cost from node n to the goal.",
+      "retrieved": [
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.7395,
+          "final_score": 0.8504
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Search Problem",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.4669,
+          "final_score": 0.5369
+        },
+        {
+          "chunk_id": "03_csp_and_planning-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Progression vs Regression Planners",
+          "source_path": "03_csp_and_planning.md",
+          "raw_similarity": 0.4068,
+          "final_score": 0.4678
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-005",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Alpha-Beta Pruning",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.3928,
+          "final_score": 0.4517
+        }
+      ],
+      "generated_answer_preview": "[02_search_problems-chunk-002] A* search expands the unexpanded node with the lowest evaluation value at each step. It uses the evaluation function f(n) = g(n) + h(n), where g(n) represents the cost so far to reach node n, and h(n) represents the estimated cost from node n to the goal. When the heur",
+      "scores": {
+        "answer_similarity": 0.6252,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 4,
+      "question": "How does a model-based reflex agent differ from a simple reflex agent?",
+      "ground_truth": "A simple reflex agent selects actions based solely on the current percept, completely ignoring the rest of its percept history. In contrast, a model-based reflex agent maintains internal states that depend on the percept history, which helps reflect unobserved aspects of the current state.",
+      "retrieved": [
+        {
+          "chunk_id": "01_agents_and_environments-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Agent Types",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.7628,
+          "final_score": 0.8773
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Environment Properties",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.367,
+          "final_score": 0.4221
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Intelligent Agents",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.3596,
+          "final_score": 0.4135
+        },
+        {
+          "chunk_id": "06_machine_learning-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Reinforcement Learning Discounting",
+          "source_path": "06_machine_learning.md",
+          "raw_similarity": 0.3563,
+          "final_score": 0.4097
+        }
+      ],
+      "generated_answer_preview": "[01_agents_and_environments-chunk-002] A simple reflex agent selects actions based solely on the current percept, completely ignoring the rest of its percept history. This works only in fully observable environments. A model-based reflex agent improves on this by maintaining internal states that dep",
+      "scores": {
+        "answer_similarity": 0.7729,
+        "context_precision": 1.0,
+        "context_recall": 0.9167,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 5,
+      "question": "What defines a Constraint Satisfaction Problem (CSP)?",
+      "ground_truth": "A CSP is a type of search problem where the state is composed of variables Xi that take values from a specific domain Di. The goal test for a CSP is defined by a set of constraints that these variables must satisfy.",
+      "retrieved": [
+        {
+          "chunk_id": "03_csp_and_planning-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Constraint Satisfaction Problems",
+          "source_path": "03_csp_and_planning.md",
+          "raw_similarity": 0.9262,
+          "final_score": 1.0652
+        },
+        {
+          "chunk_id": "03_csp_and_planning-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Iterative Algorithms and Min-Conflicts",
+          "source_path": "03_csp_and_planning.md",
+          "raw_similarity": 0.6429,
+          "final_score": 0.7394
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Search Problem",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.4318,
+          "final_score": 0.4966
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.3598,
+          "final_score": 0.4138
+        }
+      ],
+      "generated_answer_preview": "[03_csp_and_planning-chunk-001] A Constraint Satisfaction Problem (CSP) is a type of search problem where the state is composed of variables Xi that take values from a specific domain Di. The goal test for a CSP is defined by a set of constraints that these variables must satisfy. Many real-world pr",
+      "scores": {
+        "answer_similarity": 0.6968,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 6,
+      "question": "What is the min-conflicts heuristic used in Iterative Algorithms for CSPs?",
+      "ground_truth": "The min-conflicts heuristic is a value selection strategy where the algorithm chooses the value that violates the fewest constraints. It functions like hill-climbing where the evaluation function h(n) equals the total number of violated constraints.",
+      "retrieved": [
+        {
+          "chunk_id": "03_csp_and_planning-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Iterative Algorithms and Min-Conflicts",
+          "source_path": "03_csp_and_planning.md",
+          "raw_similarity": 0.8627,
+          "final_score": 0.9921
+        },
+        {
+          "chunk_id": "03_csp_and_planning-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Constraint Satisfaction Problems",
+          "source_path": "03_csp_and_planning.md",
+          "raw_similarity": 0.6234,
+          "final_score": 0.7169
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.4525,
+          "final_score": 0.5204
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Games vs Standard Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.4171,
+          "final_score": 0.4797
+        }
+      ],
+      "generated_answer_preview": "[03_csp_and_planning-chunk-002] Iterative algorithms for CSPs start from a complete but possibly inconsistent assignment and repair conflicts step by step. The min-conflicts heuristic is a value selection strategy where the algorithm chooses the value that violates the fewest constraints. It functio",
+      "scores": {
+        "answer_similarity": 0.6644,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 7,
+      "question": "How does forward chaining work in propositional logic inference?",
+      "ground_truth": "In forward chaining, when a new fact is added, the system finds all rules that have that fact as a premise. If the other premises of those rules are already known to hold, the consequent is added to the set of known facts, which can then trigger further inferences.",
+      "retrieved": [
+        {
+          "chunk_id": "04_logic_and_inference-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Forward Chaining in Propositional Logic",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.7847,
+          "final_score": 0.9025
+        },
+        {
+          "chunk_id": "04_logic_and_inference-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "First Order Logic Terms and Predicates",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.4651,
+          "final_score": 0.5348
+        },
+        {
+          "chunk_id": "04_logic_and_inference-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "What is a Logic",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.4621,
+          "final_score": 0.5314
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Agent Types",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.2699,
+          "final_score": 0.3104
+        }
+      ],
+      "generated_answer_preview": "[04_logic_and_inference-chunk-002] Forward chaining is a data-driven inference procedure for propositional Horn-clause knowledge bases. In forward chaining, when a new fact is added, the system finds all rules that have that fact as a premise. If the other premises of those rules are already known t",
+      "scores": {
+        "answer_similarity": 0.6518,
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 8,
+      "question": "What distinguishes a standard search problem from a game?",
+      "ground_truth": "A standard search problem has no adversary, aims to find an optimal solution or goal using heuristics, and evaluates the estimated cost from the start to the goal. A game involves an adversary, requires a strategy that specifies a move for every possible opponent reply, and evaluates the goodness of a game position rather than the cost to a goal.",
+      "retrieved": [
+        {
+          "chunk_id": "02_search_problems-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Games vs Standard Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.6895,
+          "final_score": 0.7929
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Search Problem",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.6208,
+          "final_score": 0.714
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.4856,
+          "final_score": 0.5585
+        },
+        {
+          "chunk_id": "03_csp_and_planning-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Constraint Satisfaction Problems",
+          "source_path": "03_csp_and_planning.md",
+          "raw_similarity": 0.4704,
+          "final_score": 0.541
+        }
+      ],
+      "generated_answer_preview": "[02_search_problems-chunk-004] A standard search problem has no adversary, aims to find an optimal solution or goal using heuristics, and evaluates the estimated cost from the start to the goal. A game involves an adversary, requires a strategy that specifies a move for every possible opponent reply",
+      "scores": {
+        "answer_similarity": 0.7047,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 9,
+      "question": "In First Order Logic (FOL), how are terms and predicates constructed?",
+      "ground_truth": "Terms are built using variables, constants, and function symbols (e.g., FatherOf(X)). Predicates are then built by applying relations to these terms (e.g., Tall(FatherOf(Bill))).",
+      "retrieved": [
+        {
+          "chunk_id": "04_logic_and_inference-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "First Order Logic Terms and Predicates",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.8319,
+          "final_score": 0.9567
+        },
+        {
+          "chunk_id": "04_logic_and_inference-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "What is a Logic",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.4045,
+          "final_score": 0.4651
+        },
+        {
+          "chunk_id": "04_logic_and_inference-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Forward Chaining in Propositional Logic",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.3905,
+          "final_score": 0.4491
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Search Problem",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.2318,
+          "final_score": 0.2666
+        }
+      ],
+      "generated_answer_preview": "[04_logic_and_inference-chunk-003] First Order Logic (FOL) extends propositional logic with quantifiers, variables, and structured objects. In FOL, terms are built using variables, constants, and function symbols (for example FatherOf(X)). Predicates are then built by applying relations to these ter",
+      "scores": {
+        "answer_similarity": 0.6068,
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 10,
+      "question": "What is the termination condition for the training loop of a neural network?",
+      "ground_truth": "After the entire training set has been exploited (completing one epoch), the system checks the total error. If the current total error E is less than the tolerable error (E_threshold), training terminates and outputs the final weights; otherwise, the error is reset to 0 and a new epoch begins.",
+      "retrieved": [
+        {
+          "chunk_id": "05_neural_networks-chunk-002",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Training Loop and Termination",
+          "source_path": "05_neural_networks.md",
+          "raw_similarity": 0.7821,
+          "final_score": 0.7821
+        },
+        {
+          "chunk_id": "05_neural_networks-chunk-001",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Network Architectures",
+          "source_path": "05_neural_networks.md",
+          "raw_similarity": 0.4953,
+          "final_score": 0.4953
+        },
+        {
+          "chunk_id": "06_machine_learning-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Machine Learning Problem",
+          "source_path": "06_machine_learning.md",
+          "raw_similarity": 0.2402,
+          "final_score": 0.2762
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.215,
+          "final_score": 0.2472
+        }
+      ],
+      "generated_answer_preview": "[05_neural_networks-chunk-002] Training a neural network typically proceeds in epochs. An epoch is one complete pass over the training set. The termination condition for the training loop of a neural network can be stated as follows: after the entire training set has been exploited (completing one e",
+      "scores": {
+        "answer_similarity": 0.6011,
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 11,
+      "question": "What is Information Gain and how is it used in Decision Tree Learning?",
+      "ground_truth": "Information gain is a statistical measure that calculates the expected reduction in entropy caused by partitioning instances according to a specific attribute. In Decision Tree learning, it is used to determine which attribute is most useful for classifying training instances at each node, with the algorithm selecting the attribute that yields the highest information gain.",
+      "retrieved": [
+        {
+          "chunk_id": "06_machine_learning-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Information Gain in Decision Trees",
+          "source_path": "06_machine_learning.md",
+          "raw_similarity": 0.8657,
+          "final_score": 0.9955
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.304,
+          "final_score": 0.3496
+        },
+        {
+          "chunk_id": "06_machine_learning-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Machine Learning Problem",
+          "source_path": "06_machine_learning.md",
+          "raw_similarity": 0.2881,
+          "final_score": 0.3313
+        },
+        {
+          "chunk_id": "04_logic_and_inference-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Forward Chaining in Propositional Logic",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.2492,
+          "final_score": 0.2866
+        }
+      ],
+      "generated_answer_preview": "[06_machine_learning-chunk-002] Information gain is a statistical measure that calculates the expected reduction in entropy caused by partitioning instances according to a specific attribute. In Decision Tree learning, information gain is used to determine which attribute is most useful for classify",
+      "scores": {
+        "answer_similarity": 0.6748,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 12,
+      "question": "According to Mitchell (1997), what are the three core elements that define a machine learning problem?",
+      "ground_truth": "A machine learning problem is defined as improving with experience at some task. Specifically, it requires improving over a task T, with respect to a performance measure P, based on experience E.",
+      "retrieved": [
+        {
+          "chunk_id": "06_machine_learning-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Machine Learning Problem",
+          "source_path": "06_machine_learning.md",
+          "raw_similarity": 0.714,
+          "final_score": 0.8211
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Search Problem",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.3995,
+          "final_score": 0.4595
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Intelligent Agents",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.3309,
+          "final_score": 0.3805
+        },
+        {
+          "chunk_id": "03_csp_and_planning-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Constraint Satisfaction Problems",
+          "source_path": "03_csp_and_planning.md",
+          "raw_similarity": 0.3202,
+          "final_score": 0.3682
+        }
+      ],
+      "generated_answer_preview": "[06_machine_learning-chunk-001] According to Mitchell (1997), a machine learning problem is defined as improving with experience at some task. Specifically, the three core elements that define a machine learning problem are: improving over a task T, with respect to a performance measure P, based on ",
+      "scores": {
+        "answer_similarity": 0.6775,
+        "context_precision": 1.0,
+        "context_recall": 0.9333,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 13,
+      "question": "In Reinforcement Learning, what is the purpose of the discount rate in the discounted return model?",
+      "ground_truth": "The discount rate (a value between 0 and 1) is used to bound the infinite sum of rewards over time. It also favors earlier rewards over later ones, giving the agent a preference for finding shorter paths to its goal.",
+      "retrieved": [
+        {
+          "chunk_id": "06_machine_learning-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Reinforcement Learning Discounting",
+          "source_path": "06_machine_learning.md",
+          "raw_similarity": 0.8349,
+          "final_score": 0.9601
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Games vs Standard Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.2705,
+          "final_score": 0.3111
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Agent Types",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.2655,
+          "final_score": 0.3053
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.2247,
+          "final_score": 0.2584
+        }
+      ],
+      "generated_answer_preview": "[06_machine_learning-chunk-003] In Reinforcement Learning the agent learns from delayed rewards. The discount rate (a value between 0 and 1) is used to bound the infinite sum of rewards over time in the discounted return model. It also favors earlier rewards over later ones, giving the agent a prefe",
+      "scores": {
+        "answer_similarity": 0.5614,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 14,
+      "question": "What defines a feed-forward neural network compared to a recurrent neural network?",
+      "ground_truth": "A feed-forward network is structured so that no node output is used as an input to a node in the same layer or in a preceding layer. In contrast, a recurrent network features closed loops, allowing node outputs to be directed back as inputs to nodes in the same or preceding layers.",
+      "retrieved": [
+        {
+          "chunk_id": "05_neural_networks-chunk-001",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Network Architectures",
+          "source_path": "05_neural_networks.md",
+          "raw_similarity": 0.7901,
+          "final_score": 0.7901
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Agent Types",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.3329,
+          "final_score": 0.3828
+        },
+        {
+          "chunk_id": "05_neural_networks-chunk-002",
+          "tier": "community",
+          "subtype": "summary_note",
+          "section_title": "Training Loop and Termination",
+          "source_path": "05_neural_networks.md",
+          "raw_similarity": 0.3582,
+          "final_score": 0.3582
+        },
+        {
+          "chunk_id": "04_logic_and_inference-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Forward Chaining in Propositional Logic",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.2954,
+          "final_score": 0.3397
+        }
+      ],
+      "generated_answer_preview": "[05_neural_networks-chunk-001] Neural networks come in several architectural styles. A feed-forward network is structured so that no node output is used as an input to a node in the same layer or in a preceding layer. Information flows strictly from input toward output. In contrast, a recurrent netw",
+      "scores": {
+        "answer_similarity": 0.6764,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 15,
+      "question": "How does the 'Acting rationally' approach define rational behavior for an AI agent?",
+      "ground_truth": "Rational behavior is defined as doing the right thing, which means selecting an action that is expected to maximize goal achievement given the available information, evidences, and constraints. Rationality is entirely dependent on the agent's goals and does not necessarily require thinking, as seen in reflexes like blinking.",
+      "retrieved": [
+        {
+          "chunk_id": "01_agents_and_environments-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Rational Behavior",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.8285,
+          "final_score": 0.9528
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Intelligent Agents",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.4737,
+          "final_score": 0.5448
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Agent Types",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.3555,
+          "final_score": 0.4088
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Games vs Standard Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.3335,
+          "final_score": 0.3835
+        }
+      ],
+      "generated_answer_preview": "[01_agents_and_environments-chunk-003] The \"Acting rationally\" approach defines rational behavior as doing the right thing. Doing the right thing means selecting an action that is expected to maximize goal achievement given the available information, evidences, and constraints. Rationality is entire",
+      "scores": {
+        "answer_similarity": 0.586,
+        "context_precision": 1.0,
+        "context_recall": 0.9667,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 16,
+      "question": "What characterizes a 'fully observable' environment in AI?",
+      "ground_truth": "A fully observable environment is one where an agent's sensors give it complete access to the entire state of the environment at each point in time. This is in contrast to a partially observable environment where some states are hidden.",
+      "retrieved": [
+        {
+          "chunk_id": "01_agents_and_environments-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Environment Properties",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.7865,
+          "final_score": 0.9045
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Agent Types",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.4518,
+          "final_score": 0.5195
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Intelligent Agents",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.3958,
+          "final_score": 0.4551
+        },
+        {
+          "chunk_id": "06_machine_learning-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Machine Learning Problem",
+          "source_path": "06_machine_learning.md",
+          "raw_similarity": 0.3156,
+          "final_score": 0.3629
+        }
+      ],
+      "generated_answer_preview": "[01_agents_and_environments-chunk-004] A fully observable environment is one where an agent's sensors give it complete access to the entire state of the environment at each point in time. This is in contrast to a partially observable environment where some states are hidden from the agent. Other use",
+      "scores": {
+        "answer_similarity": 0.6687,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 17,
+      "question": "What are the four items required to formally define a Search Problem?",
+      "ground_truth": "A search problem is defined by four items: the initial state (where the search begins), the actions or successor function (a set of action-state pairs), the goal test (which can be explicit or implicit), and the path cost (an additive measure such as the sum of distances or actions).",
+      "retrieved": [
+        {
+          "chunk_id": "02_search_problems-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Search Problem",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.7615,
+          "final_score": 0.8757
+        },
+        {
+          "chunk_id": "03_csp_and_planning-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Constraint Satisfaction Problems",
+          "source_path": "03_csp_and_planning.md",
+          "raw_similarity": 0.4677,
+          "final_score": 0.5378
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.4619,
+          "final_score": 0.5312
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Games vs Standard Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.4336,
+          "final_score": 0.4986
+        }
+      ],
+      "generated_answer_preview": "[02_search_problems-chunk-001] A search problem is defined formally by four items: the initial state where the search begins, the actions or successor function which is a set of action-state pairs, the goal test which can be explicit or implicit, and the path cost which is an additive measure such a",
+      "scores": {
+        "answer_similarity": 0.7078,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 18,
+      "question": "How does Local Beam Search differ from Random-Restart Search?",
+      "ground_truth": "The major difference is that in Local Beam Search, information is shared among the k search threads. If one state generates a good successor, the other threads are drawn to it, whereas random-restart threads operate completely independently of one another.",
+      "retrieved": [
+        {
+          "chunk_id": "02_search_problems-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Local Beam vs Random-Restart Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.8596,
+          "final_score": 0.9885
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Search Problem",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.3457,
+          "final_score": 0.3975
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.3389,
+          "final_score": 0.3898
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-005",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Alpha-Beta Pruning",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.3338,
+          "final_score": 0.3839
+        }
+      ],
+      "generated_answer_preview": "[02_search_problems-chunk-003] Local Beam Search keeps k states at every iteration and generates successors from all of them. The major difference between Local Beam Search and Random-Restart Search is that in Local Beam Search, information is shared among the k search threads. If one state generate",
+      "scores": {
+        "answer_similarity": 0.7251,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 19,
+      "question": "What is the primary purpose of Alpha-Beta pruning in minimax game search trees?",
+      "ground_truth": "Alpha-beta pruning removes branches of the search tree that do not influence the final decision, addressing the exponential number of game states in minimax search. With perfect move ordering, this technique can double the depth of the search, allowing the agent to look twice as far in the same amount of time.",
+      "retrieved": [
+        {
+          "chunk_id": "02_search_problems-chunk-005",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Alpha-Beta Pruning",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.8388,
+          "final_score": 0.9646
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-004",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Games vs Standard Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.6776,
+          "final_score": 0.7792
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "A* Search",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.4097,
+          "final_score": 0.4711
+        },
+        {
+          "chunk_id": "02_search_problems-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Defining a Search Problem",
+          "source_path": "02_search_problems.md",
+          "raw_similarity": 0.3144,
+          "final_score": 0.3615
+        }
+      ],
+      "generated_answer_preview": "[02_search_problems-chunk-005] Alpha-beta pruning removes branches of the search tree that do not influence the final decision, addressing the exponential number of game states in minimax search. With perfect move ordering, this technique can double the depth of the search, allowing the agent to loo",
+      "scores": {
+        "answer_similarity": 0.875,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    },
+    {
+      "id": 20,
+      "question": "What three formal components make up a logic?",
+      "ground_truth": "A logic is defined as a triplet consisting of a language, a semantic, and an inference system. The language is a class of sentences described by a precise syntax, the semantic describes the meaning of elements in the language, and the inference system consists of derivation rules used over the language.",
+      "retrieved": [
+        {
+          "chunk_id": "04_logic_and_inference-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "What is a Logic",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.6196,
+          "final_score": 0.7125
+        },
+        {
+          "chunk_id": "04_logic_and_inference-chunk-003",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "First Order Logic Terms and Predicates",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.5774,
+          "final_score": 0.664
+        },
+        {
+          "chunk_id": "04_logic_and_inference-chunk-002",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Forward Chaining in Propositional Logic",
+          "source_path": "04_logic_and_inference.md",
+          "raw_similarity": 0.3474,
+          "final_score": 0.3995
+        },
+        {
+          "chunk_id": "01_agents_and_environments-chunk-001",
+          "tier": "official",
+          "subtype": "lecture_slides",
+          "section_title": "Intelligent Agents",
+          "source_path": "01_agents_and_environments.md",
+          "raw_similarity": 0.2977,
+          "final_score": 0.3424
+        }
+      ],
+      "generated_answer_preview": "[04_logic_and_inference-chunk-001] A logic is defined as a triplet consisting of a language, a semantic, and an inference system. The language is a class of sentences described by a precise syntax. The semantic describes the meaning of elements in the language, typically by mapping sentences to trut",
+      "scores": {
+        "answer_similarity": 0.6317,
+        "context_precision": 0.75,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0
+      }
+    }
+  ]
+}

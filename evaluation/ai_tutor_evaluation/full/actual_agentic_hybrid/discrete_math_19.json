@@ -1,0 +1,307 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "question": "When are two simple graphs considered isomorphic?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "6cb21a49-2840-4060-b9d1-2987c9c5076e",
+  "answer": "# When are Two Simple Graphs Considered Isomorphic?\n\nBased on the course materials, two simple graphs **G** and **H** are considered **isomorphic** when there exists a **one-to-one correspondence (bijection)** between their vertex sets that preserves the structure of the graph.\n\n## Formal Condition\n\nLet $G = (V, E)$ and $H = (V', E')$ be two simple graphs. They are isomorphic if and only if there exists a bijection:\n$$f: V(G) \\to V(H)$$\n\nsuch that for any two vertices $u, v \\in V(G)$:\n$$\\{u, v\\} \\in E(G) \\iff \\{f(u), f(v)\\} \\in E(H)$$\n\nIn other words, two vertices are adjacent in **G** if and only if their corresponding images are adjacent in **H**. The function $f$ is called an **isomorphism**.\n\n## Intuition\n\nThe course example illustrates this idea clearly: two graphs drawn differently on paper can still be **isomorphic** if one can be obtained from the other simply by **relabeling the vertices** — that is, if they have the same underlying structure regardless of how they are drawn.\n\n## Necessary Conditions for Isomorphism\n\nAccording to the course materials, if two graphs are isomorphic, then the following must all hold:\n\n1. **Same number of vertices**: $|V(G)| = |V(H)|$\n2. **Same number of edges**: $|E(G)| = |E(H)|$\n3. **Same degree sequence**: the multiset of vertex degrees must match between the two graphs\n\n> ⚠️ **Important**: These three conditions are **necessary but not sufficient**. To prove two graphs are isomorphic, you must explicitly construct a vertex bijection $f$ that preserves adjacency (i.e., the edges map to edges). If you only verify the three conditions above without finding such a bijection, you cannot conclude the graphs are isomorphic.\n\n## Example from the Course\n\nFor the two graphs G (with vertices $u_1, u_2, u_3, u_4$) and H (with vertices $v_1, v_2, v_3, v_4$), the function:\n$$f(u_1) = v_1,\\; f(u_2) = v_4,\\; f(u_3) = v_3,\\; f(u_4) = v_2$$\n\nis a valid isomorphism because it pairs every edge of G with an edge of H, and vice versa.\n\n---\n\nIf two graphs are **not** isomorphic, we often prove this by finding a **graph invariant** (a property preserved under isomorphism, such as number of vertices, number of edges, or degree sequence) that differs between them.",
+  "citations": [
+    {
+      "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  "
+    },
+    {
+      "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Solution.",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number "
+    },
+    {
+      "chunk_id": "56164bf2-d83f-450c-8d33-619ba88f3396",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Adjacency",
+      "page_number": null,
+      "chunk_order": 29,
+      "excerpt": "Given $G$ the undirected graph with edge set $E$. Assume $e \\in E$ is pair $(u,v)$.\n\nThen we say:\n\n- $u, v$ are adjacent / neighbors / connected\n- Edge $e$ connects $u$ and $v$.\n- Vertices $u$ and $v$"
+    },
+    {
+      "chunk_id": "85142cec-d5a8-4294-9eeb-7544db5777a6",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Degree of a vertex in undirected graph",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "Assume $G$ is undirected graph, $v \\in V$ is a vertex.\n\n- Degree of vertex $v$, $\\mathrm{deg}(v)$, the number of edges incident on a vertex.\n- Vertex with degree 0 is called isolated.\n- Vertex with"
+    },
+    {
+      "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graphs",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "định nghĩa hai đồ thị đẳng cấu isomorphic simple graph",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "e612287f-649c-4715-86b9-1198b1349845",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3836,
+          "final_score": 0.6618,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "89005382-f85c-4c56-a264-f414a6544ac9",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.474,
+          "final_score": 0.5451,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+          "chunk_order": 34,
+          "cosine_sim": 0.4297,
+          "final_score": 0.4941,
+          "content": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\n[Diagram: The two drawings illustrate two graphs that have the same structure even though their edges are arranged differently. The point is to show that a relabeling of vertices can preserve adjacency, which is exactly what graph isomorphism means.]"
+        },
+        {
+          "chunk_id": "48217b0a-aa00-4801-8671-315a4d678263",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3837,
+          "final_score": 0.4413,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "8d2308ca-8945-4d28-ae2b-2c19818231cd",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3836,
+          "final_score": 0.4412,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "9a7f52f3-54b6-4e47-acc9-30881170427a",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3836,
+          "final_score": 0.4412,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "f8845059-e289-4482-ad10-e410c803ea09",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3836,
+          "final_score": 0.4412,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "d4ba262d-b46f-43d8-9aa5-85ef7adf3c86",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3836,
+          "final_score": 0.4412,
+          "content": "(Lý thuyết đồ thị)"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "graph isomorphism definition bijection adjacency preserved",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "0cc2d690-ad9d-4956-b901-6b6374310083",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "For directed graph",
+          "chunk_order": 12,
+          "cosine_sim": 0.3621,
+          "final_score": 0.6246,
+          "content": "[Formula: a_ij equals 1 if (v_i, v_j) is an edge of G, 0 otherwise]\n\n```\n    [2]\n   ↗   ↖\n  /       \\\n[1]←-----[3]\n```\n\n[Formula: 3x3 non-symmetric adjacency matrix]\n\nThis makes it easier to find subgraphs, and to reverse graphs if needed."
+        },
+        {
+          "chunk_id": "6be5f140-5d86-4276-9dfd-132cd72a5186",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "For undirected graph",
+          "chunk_order": 11,
+          "cosine_sim": 0.3572,
+          "final_score": 0.6162,
+          "content": "[Formula: a_ij equals 1 if {v_i, v_j} is an edge of G, 0 otherwise]\n\n```\n    [2]\n   /   \\\n  /     \\\n[1]-----[3]\n```\n\n[Formula: 3x3 symmetric adjacency matrix with 0s on diagonal and 1s elsewhere]"
+        },
+        {
+          "chunk_id": "cd7e7d21-fba2-4d9d-8712-a247ab9ed15e",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph representation",
+          "chunk_order": 21,
+          "cosine_sim": 0.3418,
+          "final_score": 0.5897,
+          "content": "**Undirected Graph:**\n\n```\n    [1]---[2]\n     |    /|\n     |   / |\n     |  /  |\n    [5]---[4]---[3]\n         /\n        /\n```\n\n**Adjacency List (Undirected):**\n\n| Vertex | Neighbors |\n|--------|-----------|\n| 1 | 2 → 5 |\n| 2 | 1 → 5 → 3 → 4 |\n| 3 | 2 → 4 |\n| 4 | 2 → 5 → 3 |\n| 5 | 4 → 1 → 2 |\n\n**Adjacency Matrix (Undirected):**\n\n|   | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| 1 | 0 | 1 | 0 | 0 | 1 |\n| 2 | 1 | 0 | 1 | 1 | 1 |\n| 3 | 0 | 1 | 0 | 1 | 0 |\n| 4 | 0 | 1 | 1 | 0 | 1 |\n| 5 | 1 | 1 | 0 | 1 | 0 |\n\n**Directed Graph:**\n\n```\n    [1]--->[2]<---[3]\n     |      |      |\n     v      v      v\n    [4]<---[5]    [6]-->(self-loop)\n           ^\n           |\n          (from 3)\n```\n\n**Adjacency List (Directed):**\n\n| Vertex | Out-neighbors |\n|--------|---------------|\n| 1 | 2 → 4 |\n| 2 | 5 |\n| 3 | 6 → 5 |\n| 4 | 2 |\n| 5 | 4 |\n| 6 | 6 |\n\n**Adjacency Matrix (Directed):**\n\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| 1 | 0 | 1 | 0 | 1 | 0 | 0 |\n| 2 | 0 | 0 | 0 | 0 | 1 | 0 |\n| 3 | 0 | 0 | 0 | 0 | 1 | 1 |\n| 4 | 0 | 1 | 0 | 0 | 0 | 0 |\n| 5 | 0 | 0 | 0 | 1 | 0 | 0 |\n| 6 | 0 | 0 | 0 | 0 | 0 | 1 |"
+        },
+        {
+          "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+          "chunk_order": 34,
+          "cosine_sim": 0.4659,
+          "final_score": 0.5357,
+          "content": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\n[Diagram: The two drawings illustrate two graphs that have the same structure even though their edges are arranged differently. The point is to show that a relabeling of vertices can preserve adjacency, which is exactly what graph isomorphism means.]"
+        },
+        {
+          "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Solution.",
+          "chunk_order": 35,
+          "cosine_sim": 0.4509,
+          "final_score": 0.5185,
+          "content": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number of vertices\n  - (2) The same number of edges\n  - (3) The same number of degree"
+        },
+        {
+          "chunk_id": "56164bf2-d83f-450c-8d33-619ba88f3396",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Adjacency",
+          "chunk_order": 29,
+          "cosine_sim": 0.3621,
+          "final_score": 0.4164,
+          "content": "Given $G$ the undirected graph with edge set $E$. Assume $e \\in E$ is pair $(u,v)$.\n\nThen we say:\n\n- $u, v$ are adjacent / neighbors / connected\n- Edge $e$ connects $u$ and $v$.\n- Vertices $u$ and $v$ are endpoints (đầu mút) of $e$.\n\n```text\n   (u)\n    \\\n     \\  e\n      \\\n       (v)\n```\n\n[Diagram: The figure shows an undirected edge joining two vertices, illustrating the basic meaning of adjacency in a graph. This matters because many graph concepts and algorithms are built on identifying when two vertices are directly connected by an edge.]"
+        },
+        {
+          "chunk_id": "85142cec-d5a8-4294-9eeb-7544db5777a6",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Degree of a vertex in undirected graph",
+          "chunk_order": 33,
+          "cosine_sim": 0.3517,
+          "final_score": 0.4044,
+          "content": "Assume $G$ is undirected graph, $v \\in V$ is a vertex.\n\n- Degree of vertex $v$, $\\mathrm{deg}(v)$, the number of edges incident on a vertex.\n- Vertex with degree 0 is called isolated.\n- Vertex with"
+        },
+        {
+          "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graphs",
+          "chunk_order": 19,
+          "cosine_sim": 0.3235,
+          "final_score": 0.372,
+          "content": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs $(u,v)$, where $u, v \\in V$, $u \\ne v$\n\n```text\n            (a, b)\n        +------------+\n        |            |\n   a ---+------------+--- b\n         \\          /\n          \\        /\n           \\      /\n            \\    /\n             \\  /\n              c\n\n            (b, c)\n```"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "definition isomorphic graphs bijection function preserves adjacency edges",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "930353ba-e818-4b02-80bd-60e2e4db3023",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "2. Adjacency Matrix",
+          "chunk_order": 10,
+          "cosine_sim": 0.3835,
+          "final_score": 0.6616,
+          "content": "The Adjacency Matrix (N×N) A = [aᵢⱼ] where |V| = N"
+        },
+        {
+          "chunk_id": "0cc2d690-ad9d-4956-b901-6b6374310083",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "For directed graph",
+          "chunk_order": 12,
+          "cosine_sim": 0.3656,
+          "final_score": 0.6307,
+          "content": "[Formula: a_ij equals 1 if (v_i, v_j) is an edge of G, 0 otherwise]\n\n```\n    [2]\n   ↗   ↖\n  /       \\\n[1]←-----[3]\n```\n\n[Formula: 3x3 non-symmetric adjacency matrix]\n\nThis makes it easier to find subgraphs, and to reverse graphs if needed."
+        },
+        {
+          "chunk_id": "6be5f140-5d86-4276-9dfd-132cd72a5186",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "For undirected graph",
+          "chunk_order": 11,
+          "cosine_sim": 0.3649,
+          "final_score": 0.6295,
+          "content": "[Formula: a_ij equals 1 if {v_i, v_j} is an edge of G, 0 otherwise]\n\n```\n    [2]\n   /   \\\n  /     \\\n[1]-----[3]\n```\n\n[Formula: 3x3 symmetric adjacency matrix with 0s on diagonal and 1s elsewhere]"
+        },
+        {
+          "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Solution.",
+          "chunk_order": 35,
+          "cosine_sim": 0.4829,
+          "final_score": 0.5554,
+          "content": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number of vertices\n  - (2) The same number of edges\n  - (3) The same number of degree"
+        },
+        {
+          "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+          "chunk_order": 34,
+          "cosine_sim": 0.4662,
+          "final_score": 0.5361,
+          "content": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\n[Diagram: The two drawings illustrate two graphs that have the same structure even though their edges are arranged differently. The point is to show that a relabeling of vertices can preserve adjacency, which is exactly what graph isomorphism means.]"
+        },
+        {
+          "chunk_id": "85142cec-d5a8-4294-9eeb-7544db5777a6",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Degree of a vertex in undirected graph",
+          "chunk_order": 33,
+          "cosine_sim": 0.3766,
+          "final_score": 0.433,
+          "content": "Assume $G$ is undirected graph, $v \\in V$ is a vertex.\n\n- Degree of vertex $v$, $\\mathrm{deg}(v)$, the number of edges incident on a vertex.\n- Vertex with degree 0 is called isolated.\n- Vertex with"
+        },
+        {
+          "chunk_id": "60be825b-c126-4bba-838f-5f717bf00bb4",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Reversal graph (transpose graph)",
+          "chunk_order": 71,
+          "cosine_sim": 0.3724,
+          "final_score": 0.4283,
+          "content": "- Given the directed graph $G=(V,E)$. We call reversal graph (transpose graph) of graph $G$ is the directed graph $G^T=(V, E^T)$, where $E^T=\\{(u, v): (v, u)\\in E\\}$, it means edge set $E^T$ is obtained from edge set $E$ by reversing direction of all edges.\n- It is easy to see if $A$ is the adjacency matrix of graph $G$, then the transpose matrix $A^T$ is the adjacency matrix of $G^T$ (this explains the name of the transpose graph)."
+        },
+        {
+          "chunk_id": "56164bf2-d83f-450c-8d33-619ba88f3396",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Adjacency",
+          "chunk_order": 29,
+          "cosine_sim": 0.3719,
+          "final_score": 0.4277,
+          "content": "Given $G$ the undirected graph with edge set $E$. Assume $e \\in E$ is pair $(u,v)$.\n\nThen we say:\n\n- $u, v$ are adjacent / neighbors / connected\n- Edge $e$ connects $u$ and $v$.\n- Vertices $u$ and $v$ are endpoints (đầu mút) of $e$.\n\n```text\n   (u)\n    \\\n     \\  e\n      \\\n       (v)\n```\n\n[Diagram: The figure shows an undirected edge joining two vertices, illustrating the basic meaning of adjacency in a graph. This matters because many graph concepts and algorithms are built on identifying when two vertices are directly connected by an edge.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 37.0
+}

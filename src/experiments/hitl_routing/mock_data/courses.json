@@ -1,0 +1,22 @@
+[
+  {
+    "course_code": "IT3210",
+    "name": "C Programming Language",
+    "sla_hours": 48
+  },
+  {
+    "course_code": "IT3292E",
+    "name": "Database",
+    "sla_hours": 24
+  },
+  {
+    "course_code": "IT3160E",
+    "name": "Introduction to Artificial Intelligence",
+    "sla_hours": 72
+  },
+  {
+    "course_code": "IT3220",
+    "name": "C Programming (Introduction)",
+    "sla_hours": 48
+  }
+]

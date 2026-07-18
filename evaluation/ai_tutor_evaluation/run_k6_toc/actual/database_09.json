@@ -1,0 +1,124 @@
+{
+  "qid": "database_09",
+  "course_code": "IT3292E",
+  "question": "What is the primary goal of a query optimizer?",
+  "session_id": "aa3a888e-a781-4ab6-8a38-eeacb64e4553",
+  "answer": "The primary goal of a **query optimizer** is to **select an efficient query execution plan**.\n\nFrom the course material, this means it tries to find a plan that **lowers query cost** by choosing a better physical execution strategy, often using:\n- equivalence transformations,\n- algorithm annotation for relational algebra expressions,\n- cost estimation of different execution plans.\n\nSo in short: **the optimizer aims to minimize the cost of executing the query while producing the same result**.",
+  "citations": [
+    {
+      "chunk_id": "b47df70f-ce06-4146-a657-69347163ed02",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.4. Optimizer",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "[Diagram: The figure illustrates how a relational algebra expression can be turned into an executable plan by selecting specific algorithms, such as using an index for selection. This matters because "
+    },
+    {
+      "chunk_id": "f8f39aa7-041d-4622-b3a1-d533f23e318f",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 38,
+      "excerpt": "- Query processing is the entire process or activities involved in retrieving data from the database\n  - Parser\n  - Optimizer\n  - Code generator\n- Query optimizer\n  - Step 1: Equivalence transformatio"
+    },
+    {
+      "chunk_id": "89e0e540-25e8-4b89-821c-84e4a645da64",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. What is query processing",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- The entire process or activities involved in retrieving data from the database\n  - SQL query translation into low level instructions (usually relational algebra)\n  - Query optimization to save resou"
+    },
+    {
+      "chunk_id": "00e810cf-7d93-4016-ad9a-aeb8d9fb73b0",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.2. Phases of query processing",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "```text\nSQL\n |\n v\n+---------+      Query plan      +-----------+   Optimized execution plan   +----------------+\n| Parser  | -------------------> | Optimizer | ---------------------------> | Code Gene"
+    },
+    {
+      "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Rel"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "primary goal of a query optimizer",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "b47df70f-ce06-4146-a657-69347163ed02",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.4. Optimizer",
+          "chunk_order": 13,
+          "cosine_sim": 0.501,
+          "final_score": 0.5761,
+          "content": "[Diagram: The figure illustrates how a relational algebra expression can be turned into an executable plan by selecting specific algorithms, such as using an index for selection. This matters because the optimizer lowers query cost by choosing a more efficient physical execution strategy.]"
+        },
+        {
+          "chunk_id": "f8f39aa7-041d-4622-b3a1-d533f23e318f",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Remark",
+          "chunk_order": 38,
+          "cosine_sim": 0.4818,
+          "final_score": 0.5541,
+          "content": "- Query processing is the entire process or activities involved in retrieving data from the database\n  - Parser\n  - Optimizer\n  - Code generator\n- Query optimizer\n  - Step 1: Equivalence transformation\n  - Step 2: Annotation for the algorithm of the RA expression\n  - Step 3: Cost estimation for different query execution plans"
+        },
+        {
+          "chunk_id": "89e0e540-25e8-4b89-821c-84e4a645da64",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.1. What is query processing",
+          "chunk_order": 7,
+          "cosine_sim": 0.4136,
+          "final_score": 0.4756,
+          "content": "- The entire process or activities involved in retrieving data from the database\n  - SQL query translation into low level instructions (usually relational algebra)\n  - Query optimization to save resources, cost estimation or evaluation of query\n  - Query execution for the extraction of data from the database."
+        },
+        {
+          "chunk_id": "00e810cf-7d93-4016-ad9a-aeb8d9fb73b0",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.2. Phases of query processing",
+          "chunk_order": 8,
+          "cosine_sim": 0.4107,
+          "final_score": 0.4723,
+          "content": "```text\nSQL\n |\n v\n+---------+      Query plan      +-----------+   Optimized execution plan   +----------------+\n| Parser  | -------------------> | Optimizer | ---------------------------> | Code Generator |\n+---------+                        +-----------+                              +----------------+\n                                                                                      |\n                                                                                      v\n                                                                               Code for executing\n```\n\n[Diagram: The slide shows the main stages of turning an SQL statement into executable code. Each phase refines the request further, which is important because efficient query processing depends on parsing the query correctly, choosing a good plan, and then generating runnable code.]"
+        },
+        {
+          "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.3993,
+          "final_score": 0.4592,
+          "content": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Relational algebra | An algebra whose operands are relations or variables that represent Relations |"
+        },
+        {
+          "chunk_id": "fc3086cc-0b24-4315-b70e-0cb6a456e8ca",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "Data Manipulation: Advanced SELECT",
+          "chunk_order": 14,
+          "cosine_sim": 0.366,
+          "final_score": 0.421,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.2
+}

@@ -1,0 +1,58 @@
+{
+  "qid": "database_03",
+  "course_code": "IT3292E",
+  "question": "How did the SQL standard evolve between 1986 and 1999?",
+  "session_id": "ed3de2c3-b6e6-47bc-a4eb-9bf6a73c4c3c",
+  "answer": "Between **1986 and 1999**, the SQL standard evolved as follows:\n\n- **1986: SQL1** — the **first official SQL standard** was defined.\n- **1987** — it was **adopted by ISO** as an international standard.\n- **1992: SQL2 / SQL-92** — a **revised version** of SQL, adopted as the **formal standard language** for defining and manipulating relational databases.\n- **1999: SQL3 / SQL:1999** — the standard was **extended** with more advanced features, including:\n  - **user-defined data types**\n  - **triggers**\n  - **user-defined functions**\n  - other **object-oriented features**\n\nSo, in short:  \n**1986 introduced the first standard, 1992 revised and formalized it, and 1999 expanded it with more powerful and object-oriented capabilities.**",
+  "citations": [
+    {
+      "chunk_id": "fe2e9a29-780e-4691-8961-ee2b5387c10d",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Brief history of SQL",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- 1975: SEQUEL: System-R\n- 1976: SEQUEL 2\n- 1978/79: SQL (Structured Query Language) (used in System-R)\n- SQL1: The first standard for SQL defined in 1986; adopted as an international by Standards Org"
+    },
+    {
+      "chunk_id": "b4a83699-70a2-4b79-b573-f782022240e8",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "- Each DBMS has its own implementation. So the syntax for each statement can vary from one database system to another:\n  - Meaning of special characters used $(\\%, \\_, *, \", ')$,\n  - less or more opti"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "SQL standard evolution between 1986 and 1999, including SQL-86, SQL-89, SQL-92, SQL:1999",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "fe2e9a29-780e-4691-8961-ee2b5387c10d",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1.1. Brief history of SQL",
+          "chunk_order": 8,
+          "cosine_sim": 0.635,
+          "final_score": 0.8721,
+          "content": "- 1975: SEQUEL: System-R\n- 1976: SEQUEL 2\n- 1978/79: SQL (Structured Query Language) (used in System-R)\n- SQL1: The first standard for SQL defined in 1986; adopted as an international by Standards Organisation (ISO) in 1987.\n- 1992: SQL2 - revised version of the processor (also called SQL 92); adopted as the formal standard language for defining and manipulating relational database.\n- 1999: SQL3 - extension with additional features such as user-defined data types, triggers, user-defined functions and other Object Oriented features.\n- New versions of the standard were published in 2003, 2006, 2008, 2011, 2016: more additional features: XML-based features, columns with auto-generated values, JSON,…"
+        },
+        {
+          "chunk_id": "b4a83699-70a2-4b79-b573-f782022240e8",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Remark",
+          "chunk_order": 35,
+          "cosine_sim": 0.4145,
+          "final_score": 0.4035,
+          "content": "- Each DBMS has its own implementation. So the syntax for each statement can vary from one database system to another:\n  - Meaning of special characters used $(\\%, \\_, *, \", ')$,\n  - less or more options\n  - standard part & extension part\n- More options for each statement: see documentations of the DBMS used in your system"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.3
+}

@@ -1,0 +1,134 @@
+{
+  "qid": "discrete_math_11",
+  "course_code": "IT3020E",
+  "question": "What is the generalized product rule in combinatorial counting?",
+  "session_id": "e2a43d74-af48-4896-9b25-37646ebc0f89",
+  "answer": "The **generalized product rule** in combinatorial counting says:\n\nIf a procedure consists of sequential tasks \\(T_1, T_2, \\dots, T_k\\), and\n\n- task \\(T_1\\) can be done in \\(m_1\\) ways,\n- after choosing \\(T_1\\), task \\(T_2\\) can be done in \\(m_2\\) ways,\n- ...\n- after choosing \\(T_1, T_2, \\dots, T_{k-1}\\), task \\(T_k\\) can be done in \\(m_k\\) ways,\n\nthen the total number of ways to perform the whole procedure is\n\n\\[\nm_1 \\cdot m_2 \\cdot \\dots \\cdot m_k.\n\\]\n\n### Set-theoretic form\nIf \\(A_1, A_2, \\dots, A_k\\) are finite sets, then the number of ways to choose one element from each set in order is\n\n\\[\n|A_1 \\times A_2 \\times \\dots \\times A_k|\n= |A_1|\\,|A_2| \\cdots |A_k|.\n\\]\n\n### Intuition\nYou **multiply** because each choice for one step can be combined with every choice from the next step.\n\nFor example, if there are 3 choices for the first step and 4 choices for the second step, then there are \\(3 \\times 4 = 12\\) total outcomes.",
+  "citations": [
+    {
+      "chunk_id": "9a556532-dfef-4b15-9500-0f6aa550b859",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.2. The product rule",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "Generalized product rule: If we have a procedure consisting of sequential tasks $T_1, T_2, \\dots, T_k$ that can be done in $m_1, m_2, \\dots, m_k$ ways, respectively, then there are $m_1 * m_2 * \\dots "
+    },
+    {
+      "chunk_id": "8459a7f1-afa7-4f54-b828-8041842feb38",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The product rule",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "[Diagram: The picture illustrates how independent choices combine across successive tasks. If one task has $m_1$ options and the next has $m_2$ options, the total number of combined outcomes is the pr"
+    },
+    {
+      "chunk_id": "0fc7ec54-d255-4c18-a82e-e7e85b06a3f6",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.2. The product rule",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "In many counting problems, it is only after building the first element, we just know how to build the second element; after building the first two elements we only know how to build the third element,"
+    },
+    {
+      "chunk_id": "5e7417c4-ebfc-4825-a05a-ea0d7125c7b7",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. The sum rule",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "Generalized sum rule: If we have tasks $T_1, T_2, \\dots, T_k$ that can be done in $m_1, m_2, \\dots, m_k$ ways, respectively, and any two of these tasks can not be done at the same time, then there are"
+    },
+    {
+      "chunk_id": "22239dd4-b8cc-43b5-86d9-e0b1c5eb18c4",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The product rule",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- Consider two tasks:\n  - $m_1$ is the number of ways to do task 1\n  - $m_2$ is the number of ways to do task 2\n  - Tasks are independent of each other, i.e.,\n    - Performing task 1 does not accompli"
+    },
+    {
+      "chunk_id": "5adf5a34-4508-4383-b2ea-8f818db2a305",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. The sum rule",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "Let us consider two tasks:\n\n- $m_1$ is the number of ways to do **task 1**\n- $m_2$ is the number of ways to do **task 2**\n- Tasks are **independent** of each other, i.e.,\n- Performing **task 1** does "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "generalized product rule in combinatorial counting",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "9a556532-dfef-4b15-9500-0f6aa550b859",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "1.2. The product rule",
+          "chunk_order": 10,
+          "cosine_sim": 0.6958,
+          "final_score": 0.8002,
+          "content": "Generalized product rule: If we have a procedure consisting of sequential tasks $T_1, T_2, \\dots, T_k$ that can be done in $m_1, m_2, \\dots, m_k$ ways, respectively, then there are $m_1 * m_2 * \\dots * m_k$ ways to carry out the procedure.\n\n- The product rule can also be phrased in terms of set theory: Let $A_1, A_2, \\dots, A_k$ be finite sets. Then the number of ways to choose one element from each set in the order of $A_1, A_2, \\dots, A_k$ is\n- $|A_1 \\times A_2 \\times \\dots \\times A_k| = |A_1| * |A_2| * \\dots * |A_k|.$"
+        },
+        {
+          "chunk_id": "8459a7f1-afa7-4f54-b828-8041842feb38",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "The product rule",
+          "chunk_order": 9,
+          "cosine_sim": 0.6023,
+          "final_score": 0.6926,
+          "content": "[Diagram: The picture illustrates how independent choices combine across successive tasks. If one task has $m_1$ options and the next has $m_2$ options, the total number of combined outcomes is the product $m_1m_2$, which is the basis of the product rule in counting.]\n\n- Generalize to multiple tasks ..."
+        },
+        {
+          "chunk_id": "0fc7ec54-d255-4c18-a82e-e7e85b06a3f6",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "1.2. The product rule",
+          "chunk_order": 12,
+          "cosine_sim": 0.5807,
+          "final_score": 0.6678,
+          "content": "In many counting problems, it is only after building the first element, we just know how to build the second element; after building the first two elements we only know how to build the third element,... In that case, we use the general product rules:\n\nSuppose we construct a $k$-tuple $(a_1, a_2, ..., a_k)$ by building each element in turn and\n\n- $a_1$ can be chosen by $m_1$ way;\n- After $a_1$ is selected, $a_2$ can be chosen by $m_2$ way;\n- ...\n- After $a_1, a_2, ..., a_{k-1}$ are chosen, $a_k$ can be chosen by $m_k$ ways;\n\nThen the number of $k$-tuples generated is $m_1 m_2 ... m_k$\n\nExample 1: 6 persons are competing for 4 prizes. How many different outcomes are possible?\n\n```text\n+-----------+-----------+-----------+-----------+\n| 1st prize | 2nd prize | 3rd prize | 4th prize |\n+-----------+-----------+-----------+-----------+\n```"
+        },
+        {
+          "chunk_id": "5e7417c4-ebfc-4825-a05a-ea0d7125c7b7",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "1.1. The sum rule",
+          "chunk_order": 5,
+          "cosine_sim": 0.5547,
+          "final_score": 0.6379,
+          "content": "Generalized sum rule: If we have tasks $T_1, T_2, \\dots, T_k$ that can be done in $m_1, m_2, \\dots, m_k$ ways, respectively, and any two of these tasks can not be done at the same time, then there are $m_1 + m_2 + \\dots + m_k$ ways to do one of these tasks.\n\n➔ The sum rule can also be phrased in terms of *set theory*: The size of the union on $k$ finite pair wise disjoint sets is the sum of their sizes:\n\n- Let $A_1, A_2, \\dots, A_k$ be disjoint sets. Then the number of ways to choose any element from one of these sets is\n\n$|A_1 \\cup A_2 \\cup \\dots \\cup A_k| = |A_1| + |A_2| + \\dots + |A_k|$."
+        },
+        {
+          "chunk_id": "22239dd4-b8cc-43b5-86d9-e0b1c5eb18c4",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "The product rule",
+          "chunk_order": 8,
+          "cosine_sim": 0.5457,
+          "final_score": 0.6276,
+          "content": "- Consider two tasks:\n  - $m_1$ is the number of ways to do task 1\n  - $m_2$ is the number of ways to do task 2\n  - Tasks are independent of each other, i.e.,\n    - Performing task 1 does not accomplish task 2 and vice versa.\n\n- *Product rule*: the number of ways that “both tasks 1 and 2 can be done” in $m_1m_2$.\n\n```text\ntask 1                         task 2\n\n(o) --\\                    /(o) --\\ \n      \\ \\                  /      \\ \\\n       \\ \\---->(o)----\\   /        \\ \\---->(o)\n       / /              \\ /         / /\n(o) --/                  X         / / \n      / /              / \\        / /\n     / /---->(o)----/   \\  \\---->/ /\n(o) --/                    \\      / \n                             \\----/\n```"
+        },
+        {
+          "chunk_id": "5adf5a34-4508-4383-b2ea-8f818db2a305",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "1.1. The sum rule",
+          "chunk_order": 4,
+          "cosine_sim": 0.4804,
+          "final_score": 0.5525,
+          "content": "Let us consider two tasks:\n\n- $m_1$ is the number of ways to do **task 1**\n- $m_2$ is the number of ways to do **task 2**\n- Tasks are **independent** of each other, i.e.,\n- Performing **task 1** does not accomplish **task 2** and vice versa.\n\n```text\nTask 1 / Task 2 sum-rule diagram\n\n  (start) ●\n           \\\\\\\n            \\\\\\   Task 1\n             \\\\\\___________\n             / /           \\\\\n            / /             \\\\\n           / /               ● (end)\n          / /________________/\n         / /               /\n        / /               /\n       Task 2\n```\n\n[Diagram: The picture illustrates two independent sets of choices leading from one situation to another without overlap. This matters because independent alternatives can be counted by adding their numbers of possibilities rather than multiplying them.]\n\n- **Sum rule**: the number of ways that “**either** task 1 **or** task 2 can be done, but **not both**”, is $m_1 + m_2$.\n\nGeneralizes to multiple tasks ...\n\n| Things | 1 | 2 | 3 | ... | $k$ |\n|---|---:|---:|---:|---:|---:|\n| ways | $m_1$ | $m_2$ | $m_3$ | ... | $m_k$ |\n\n- select one of them: $m_1 + m_2 + m_3 + \\dots + m_k$ ways"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.2
+}

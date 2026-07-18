@@ -1,0 +1,60 @@
+{
+  "qid": "intro_to_ai_06",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunks. The description of min-conflicts as choosing the value that violates the fewest constraints, the complete state assignment, the hill-climbing analogy, and h(n) as total violated constraints all match chunk 2aed7a58 verbatim.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by explaining what the min-conflicts heuristic is in the context of Iterative Algorithms for CSPs, covering its value selection strategy, how it minimizes constraint violations, and its relationship to hill-climbing with h(n) as the total violated constraints.",
+      "evidence": [
+        "min-conflicts heuristic là cách chọn giá trị cho biến sao cho nó gây ra ít ràng buộc vi phạm nhất",
+        "Min-conflicts sẽ chọn giá trị làm vi phạm ít constraint nhất",
+        "Có thể hiểu đây là một dạng hill climbing, với hàm đánh giá h(n) là tổng số ràng buộc bị vi phạm"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: it identifies min-conflicts as a value selection strategy that chooses the value violating the fewest constraints, describes it as functioning like hill-climbing, and states that h(n) equals the total number of violated constraints. No contradictions are present.",
+      "evidence": [
+        "Ground truth: 'chooses the value that violates the fewest constraints' vs Tutor: 'chọn giá trị làm vi phạm ít constraint nhất'",
+        "Ground truth: 'like hill-climbing where the evaluation function h(n) equals the total number of violated constraints' vs Tutor: 'dạng hill climbing, với hàm đánh giá h(n) là tổng số ràng buộc bị vi phạm'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "The first two chunks directly address min-conflicts heuristic in iterative CSP algorithms and are highly relevant. The remaining four chunks discuss backtracking search, general CSP structure, and n-queens examples, which provide context but are not directly relevant to the specific question about min-conflicts heuristic.",
+      "evidence": [
+        "chunk a0252995-6183-4122-bf53-69942d2216b1: 'Variable assignments are commutative... Backtracking search'",
+        "chunk 83e54421-60e1-4c3d-ab15-dd085ef21ff8: 'CSPs example - Backtracking search - Problem structure'",
+        "chunk 0a1b8b3f-36ff-4f93-afa4-ad62eda60463: 'depth-first search strategy... backtracking'",
+        "chunk 40156ecc-be69-4483-8d57-b66f19383e89: 'n-queens... backtracking-style refinement'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 2aed7a58 explicitly states the min-conflicts heuristic chooses the value violating fewest constraints and describes it as hill climbing with h(n) = total number of violated constraints.",
+      "evidence": [
+        "Value selection by min-conflicts heuristic",
+        "Choose value that violates the fewest constraints",
+        "hill climbing with $h(n) =$ total number of violated constraints"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation points to chunks that directly support the statements made. The answer's key claims about min-conflicts (choosing values that violate fewest constraints, complete state assignment, hill-climbing analogy with h(n) = total violated constraints) are all explicitly present in chunk 2aed7a58, which is cited.",
+      "evidence": [
+        "Answer claims: 'chọn giá trị làm vi phạm ít constraint nhất' (choose value violating fewest constraints)",
+        "Chunk 2aed7a58: 'Value selection by min-conflicts heuristic - Choose value that violates the fewest constraints'",
+        "Answer claims: 'dạng hill climbing, với hàm đánh giá h(n) là tổng số ràng buộc bị vi phạm' (hill climbing with h(n) = total violated constraints)",
+        "Chunk 2aed7a58: 'i.e., hill climbing with $h(n) =$ total number of violated constraints'",
+        "Answer claims: 'complete state: mọi biến đều đã được gán giá trị' (all variables assigned)",
+        "Chunk 2aed7a58: 'Complete state, e.g., all variables are assigned at each node'"
+      ]
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "cleaned_blocks": [
+    {
+      "kind": "text",
+      "page": 1,
+      "content": "Artificial Intelligence\nLecture 1 - Introduction\nSchool of Information and Communication \nTechnology - HUST"
+    },
+    {
+      "kind": "text",
+      "page": 1,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 1, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 499404, Requested 2565. Please try again in 5m40.243199999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 2,
+      "content": "Outline\n• What is AI?\n• Foundations of AI\n• Short history of AI\n• Philosophical discussions\n2"
+    },
+    {
+      "kind": "text",
+      "page": 2,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 2, Image 0)\nA white background with a horizontal red and yellow border at the top, and a logo with text at the bottom left.\n"
+    },
+    {
+      "kind": "text",
+      "page": 3,
+      "content": "What is AI?\n3\nViews of AI fall into four categories:\nThink like humans   Thinking rationally \nAct like humans  \nActing rationally \nThe textbook advocates \"acting rationally\""
+    },
+    {
+      "kind": "text",
+      "page": 3,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 3, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 498943, Requested 2565. Please try again in 4m20.5824s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 4,
+      "content": "Think like humans\n• 1960s \"cognitive revolution\": information-processing \npsychology\n• Scientific theories of internal activities of the brain\n• What level of abstraction? “Knowledge'' or “circuits”?\n• Cognitive science: Predicting and testing behavior of \nhuman subjects (top-down)\n• This approach now distinct from AI\n• share with AI the following characteristic:\n• The available theories do not explain anything \nresembling human-level general intelligence\n4"
+    },
+    {
+      "kind": "text",
+      "page": 4,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 4, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 498527, Requested 3174. Please try again in 4m53.9328s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 5,
+      "content": "Act like humans\n• Turing (1950) \"Computing machinery and intelligence\":\n• \"Can machines think?\" \"Can machines behave intelligently?\"\n• Operational test for intelligent behavior: the Imitation Game\n• Predicted that by 2000, a machine might have a 30% chance of fooling a lay \nperson for 5 minutes\n• Anticipated all major arguments against AI in following 50 years\n• Suggested major components of AI: knowledge, reasoning, language \nunderstanding, learning\n5"
+    },
+    {
+      "kind": "text",
+      "page": 5,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 5, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 498106, Requested 3174. Please try again in 3m41.184s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 5,
+      "image_index": 1,
+      "content": "\n### Visual Element (Page 5, Image 1)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 497719, Requested 3457. Please try again in 3m23.2128s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 6,
+      "content": "Thinking rationally\n•\nThe “Laws of Thought” approach\n•\nWhat does it mean to “think rationally”?\n•\nNormative / prescriptive rather than descriptive\n•\nLogicist tradition:\n•\nLogic: notation and rules of derivation for thoughts\n•\nAristotle: what are correct arguments/thought processes?\n• E.g.: Socrat is a human, human cannot live forever Socrat human cannot \nlive forever\n•\nDirect line through mathematics, philosophy, to modern AI\n•\nProblems:\n•\nNot all intelligent behavior is mediated by logical deliberation\n•\nWhat is the purpose of thinking? What thoughts should I have?\n•\nLogical systems tend to do the wrong thing in the presence of \nuncertainty\n6"
+    },
+    {
+      "kind": "text",
+      "page": 6,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 6, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 497224, Requested 3457. Please try again in 1m57.6768s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 7,
+      "content": "Acting rationally\n• Rational behavior: doing the “right thing”\n• The right thing: that which is expected to maximize goal \nachievement, given the available information\n• Doesn't necessarily involve thinking, e.g., blinking\n• Thinking can be in the service of rational action\n• Entirely dependent on goals!\n• Irrational ≠ insane, irrationality is sub-optimal action\n• Rational ≠ successful\n• Our focus here: rational agents\n• Systems which make the best possible decisions given goals, \nevidences, and constraints\n• In the real world, usually lots of uncertainty… and lots of \ncomplexity\n• Usually, we’re just approximating rationality\n• “Computational rationality” a better title for this course\n7"
+    },
+    {
+      "kind": "text",
+      "page": 7,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 7, Image 0)\nThe image presents a white background with a red and yellow border at the top, accompanied by a logo and text in the bottom-left corner. The logo features a red rectangle with a gold symbol on the left side, followed by \"25 SOICT\" in gold and red text. To the right of the logo, there is red text that reads \"VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG.\" A red line extends from the logo to the right edge of the image.\n\n*   The image has a white background.\n*   A red and yellow border is located at the top of the image.\n*   In the bottom-left corner, there is a logo consisting of:\n    *   A red rectangle with a gold symbol on the left side.\n    *   \"25 SOICT\" in gold and red text.\n*   To the right of the logo, there is red text that reads \"VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG.\"\n*   A red line extends from the logo to the right edge of the image.\n"
+    },
+    {
+      "kind": "text",
+      "page": 8,
+      "content": "Rational agents\n• An agent is an entity that \nperceives and acts\n• An agent function maps from \npercept histories to actions:\n8\n?\nSensors\nActuators\nPercepts\nActions\nAgent\nEnvironment\n\nFor any given class of environments and tasks, we seek the \nagent (or class of agents) with the best performance\n\nComputational limitations make perfect rationality unachievable\n\nSo we want the best program for given machine resources\nP* A"
+    },
+    {
+      "kind": "text",
+      "page": 8,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 8, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 499572, Requested 3457. Please try again in 8m43.4112s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 9,
+      "content": "Foundations of AI\n• Philosophy\nlogic, methods of reasoning, mind as physical \nsystem foundations of learning, language,\nrationality\n• Mathematics\nformal representation and proof algorithms,\ncomputation, (un)decidability, (in)tractability,\nprobability\n• Economics\nutility, decision theory \n• Neuroscience\nphysical substrate for mental activity\n• Psychology \nphenomena of perception and motor control,\nexperimental techniques\n• Computer \nbuilding fast computers \nengineering\n• Control theory design systems that maximize an objective\nfunction over time \n• Linguistics\nknowledge representation, grammar\n9"
+    },
+    {
+      "kind": "text",
+      "page": 9,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 9, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 499116, Requested 2655. Please try again in 5m6.0288s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 10,
+      "content": "Short history of AI\n• 1940-1950: Early days\n• 1943: McCulloch & Pitts: Boolean circuit model of brain\n• 1950: Turing's ``Computing Machinery and Intelligence'‘\n• 1950—70: Excitement: Look, Ma, no hands!\n• 1950s: Early AI programs, including Samuel's checkers program, Newell & \nSimon's Logic Theorist, Gelernter's Geometry Engine\n• 1956: Dartmouth meeting: ``Artificial Intelligence'' adopted\n• 1964: ELIZA\n• 1965: Robinson's complete algorithm for logical reasoning\n• 1970—88: Knowledge-based approaches\n• 1969—79: Early development of knowledge-based systems\n• 1980—88: Expert systems industry booms\n• 1988—93: Expert systems industry busts: “AI Winter”\n• 1988—: Statistical approaches\n• Resurgence of probability, focus on uncertainty\n• General increase in technical depth\n• Agents, agents, everywhere… “AI Spring”?\n• 2000—: Where are we now?\n10"
+    },
+    {
+      "kind": "text",
+      "page": 10,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 10, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 498701, Requested 3457. Please try again in 6m12.9024s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 11,
+      "content": "Expert system\nSome examples: DENDRAL, MYCIN, PROSPECTOR, \nMOLGEN, ICAD/ICAM\n11\nsoftware\nhardware\ndata input\noutput\nknowledge engineering\ninput\noutput\nknowledge\ncomputer\nExpert system = Human Expertise + Inference/Reasoning"
+    },
+    {
+      "kind": "text",
+      "page": 11,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 11, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 498307, Requested 3457. Please try again in 5m4.819199999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 11,
+      "image_index": 1,
+      "content": "\n### Visual Element (Page 11, Image 1)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 497889, Requested 3457. Please try again in 3m52.5888s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 12,
+      "content": "State of the art\n• May, '97: Deep Blue vs. Kasparov\n• First match won against world-champion\n• “Intelligent creative'' play\n• 200 million board positions per second!\n• Humans understood 99.9 of Deep Blue's moves\n• Can do about the same now with a big PC cluster\n• Proved a mathematical conjecture (Robbins conjecture) unsolved for \ndecades \n• No hands across America (driving autonomously 98% of the time from \nPittsburgh to San Diego) \n• During the 1991 Gulf War, US forces deployed an AI logistics planning \nand scheduling program that involved up to 50,000 vehicles, cargo, and \npeople \n• NASA's on-board autonomous planning program controlled the \nscheduling of operations for a spacecraft \n• Proverb solves crossword puzzles better than most humans\n12"
+    },
+    {
+      "kind": "text",
+      "page": 12,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 12, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 497473, Requested 3457. Please try again in 2m40.704s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 12,
+      "image_index": 1,
+      "content": "\n### Visual Element (Page 12, Image 1)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 497038, Requested 3457. Please try again in 1m25.536s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 13,
+      "content": "Philosophical discussions\nWhat Can AI Do?\n• Play a decent game of table tennis?\n• Drive safely along a curving mountain road?\n• Buy a week's worth of groceries on the web?\n• Discover and prove a new mathematical theorem?\n• Converse successfully with another person for an hour?\n• Perform a complex surgical operation?\n• Unload a dishwasher and put everything away?\n• Translate spoken English into spoken Vietnamese in real time?\n• Write an intentionally funny story?\nCan machine think?\n13"
+    },
+    {
+      "kind": "text",
+      "page": 13,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 13, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 499743, Requested 2425. Please try again in 6m14.630399999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    },
+    {
+      "kind": "text",
+      "page": 14,
+      "content": "Some problems with AI\n• People might lose their jobs to automation.\n• People might have too much (or too little) leisure time.\n• People might lose their sense of being unique.\n• People might lose some of their privacy rights.\n• The use of AI systems might result in a loss of accountability.\n• The success of AI might mean the end of the human race.\n14"
+    },
+    {
+      "kind": "text",
+      "page": 14,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 14, Image 0)\n[VISION_ERROR] Gemini failed (503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}) and Groq fallback failed twice (Error code: 429 - {'error': {'message': 'Rate limit reached for model `meta-llama/llama-4-scout-17b-16e-instruct` in organization `org_01kp5t5yq2f2ja0v399smk24ze` service tier `on_demand` on tokens per day (TPD): Limit 500000, Used 499325, Requested 3457. Please try again in 8m0.7296s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}})\n"
+    }
+  ]
+}

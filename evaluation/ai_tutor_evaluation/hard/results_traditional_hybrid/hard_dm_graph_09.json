@@ -1,0 +1,37 @@
+{
+  "qid": "hard_dm_graph_09",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "All claims traceable to the retrieved chunks; no invented content.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "Directly and completely answers the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "Matches the ground-truth key facts with no contradiction.",
+      "evidence": []
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Raw query got the Try() tree, not the explicit subset table — unlike agentic_hybrid, which rewrote the query to a BM25-friendly form.",
+      "evidence": []
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "Explicit listing table not retrieved.",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "Citations point to chunks that support the statements.",
+      "evidence": []
+    }
+  }
+}

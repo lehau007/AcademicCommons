@@ -1,0 +1,31 @@
+{
+  "qid": "hard_db_table_05",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "student table + clazz_id link explicit ([Table:] enriched)"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "student table + clazz_id link explicit ([Table:] enriched)"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "student table + clazz_id link explicit ([Table:] enriched)"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "student table + clazz_id link explicit ([Table:] enriched)"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "student table + clazz_id link explicit ([Table:] enriched)"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "student table + clazz_id link explicit ([Table:] enriched)"
+    }
+  }
+}

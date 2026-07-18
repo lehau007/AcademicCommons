@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_08",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "triple-nested loop pseudocode -> Theta(n^3)"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "triple-nested loop pseudocode -> Theta(n^3)"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "triple-nested loop pseudocode -> Theta(n^3)"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "triple-nested loop pseudocode -> Theta(n^3)"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "triple-nested loop pseudocode -> Theta(n^3)"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "triple-nested loop pseudocode -> Theta(n^3)"
+    }
+  }
+}

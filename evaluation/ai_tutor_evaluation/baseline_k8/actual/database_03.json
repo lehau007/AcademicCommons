@@ -1,0 +1,162 @@
+{
+  "qid": "database_03",
+  "course_code": "IT3292E",
+  "question": "How did the SQL standard evolve between 1986 and 1999?",
+  "session_id": "35adc8d9-8929-4706-869c-db8ab7fd55fa",
+  "answer": "Between **1986 and 1999**, the SQL standard evolved as follows:\n\n- **1986: SQL1** — the **first official SQL standard** was defined.\n- **1987** — SQL1 was **adopted as an international standard** by **ISO**.\n- **1992: SQL2 (SQL-92)** — a **revised version** of SQL, and it became the **formal standard language** for defining and manipulating relational databases.\n- **1999: SQL3 (SQL:1999)** — SQL was extended with more advanced features, including:\n  - **user-defined data types**\n  - **triggers**\n  - **user-defined functions**\n  - other **object-oriented features**\n\nSo, in short, the timeline moved from the **first formal standard (SQL1)** to a **major revision (SQL-92)** and then to an **extended version with richer programming and object-oriented capabilities (SQL:1999)**.",
+  "citations": [
+    {
+      "chunk_id": "fe2e9a29-780e-4691-8961-ee2b5387c10d",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Brief history of SQL",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- 1975: SEQUEL: System-R\n- 1976: SEQUEL 2\n- 1978/79: SQL (Structured Query Language) (used in System-R)\n- SQL1: The first standard for SQL defined in 1986; adopted as an international by Standards Org"
+    },
+    {
+      "chunk_id": "3333a309-8a0c-4925-aba5-d3f4186d3f35",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 43,
+      "excerpt": "- Introduction to SQL\n  - A brief history of SQL\n  - SQL languages\n- Definition a relation schema\n  - Creating a simple table\n  - Defining constraints\n  - Modifying relation schema: modifying data str"
+    },
+    {
+      "chunk_id": "f05880bc-a007-4fb5-825e-78e031fd5473",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Introduction to SQL",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "```text\n+-------------------+        +-------------------------+        +------------------+\n|   DB Administrator |        |  Standard Languages     |        |   DBMS Server    |\n|                   |"
+    },
+    {
+      "chunk_id": "f386dd06-1a4e-4405-9a21-32ff64ddd73e",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Introduction to SQL",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "[Diagram: The slide shows SQL as the standard language used between people or applications and a DBMS server. It highlights that different database tasks, such as defining tables or manipulating data,"
+    },
+    {
+      "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, r"
+    },
+    {
+      "chunk_id": "2d1e7dac-c80c-4142-bc55-30409d1865f8",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Learning Map",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "| Sequence | Title |\n|---:|---|\n| 1 | Introduction to Databases |\n| 2 | Relational Databases |\n| 3 | Relational Algebra |\n| 4 | Structured Query Language – Part 1 |\n| 5 | Structured Query Language – P"
+    },
+    {
+      "chunk_id": "c175c288-4b0e-4b14-ad79-abba33d97275",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Outline",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- Introduction to SQL\n- Definition a Relation schema\n- Data Manipulation"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "How did the SQL standard evolve between 1986 and 1999? SQL-86 SQL-89 SQL-92 SQL-99 evolution",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "fe2e9a29-780e-4691-8961-ee2b5387c10d",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1.1. Brief history of SQL",
+          "chunk_order": 8,
+          "cosine_sim": 0.5328,
+          "final_score": 0.6127,
+          "content": "- 1975: SEQUEL: System-R\n- 1976: SEQUEL 2\n- 1978/79: SQL (Structured Query Language) (used in System-R)\n- SQL1: The first standard for SQL defined in 1986; adopted as an international by Standards Organisation (ISO) in 1987.\n- 1992: SQL2 - revised version of the processor (also called SQL 92); adopted as the formal standard language for defining and manipulating relational database.\n- 1999: SQL3 - extension with additional features such as user-defined data types, triggers, user-defined functions and other Object Oriented features.\n- New versions of the standard were published in 2003, 2006, 2008, 2011, 2016: more additional features: XML-based features, columns with auto-generated values, JSON,…"
+        },
+        {
+          "chunk_id": "5237a814-6d16-4741-a054-bc1af9d204e8",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "Learning Map",
+          "chunk_order": 3,
+          "cosine_sim": 0.2974,
+          "final_score": 0.5131,
+          "content": "| Sequence | Title |\n|----------|-------|\n| 1 | Introduction to Databases |\n| 2 | Relational Databases |\n| 3 | Relational Algebra |\n| 4 | Structured Query Language – Part 1 |\n| 5 | Structured Query Language – Part 2 |\n| 6 | Constraints and Triggers |\n| 7 | Entity Relationship Model |\n| 8 | Functional Dependency |\n| 9 | Normalization |\n| 10 | Storage – Indexing |\n| 11 | Query Processing |\n| 12 | Transaction Management – Part 1 |\n| 13 | Transaction Management – Part 2 |"
+        },
+        {
+          "chunk_id": "3333a309-8a0c-4925-aba5-d3f4186d3f35",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Summary",
+          "chunk_order": 43,
+          "cosine_sim": 0.3231,
+          "final_score": 0.3715,
+          "content": "- Introduction to SQL\n  - A brief history of SQL\n  - SQL languages\n- Definition a relation schema\n  - Creating a simple table\n  - Defining constraints\n  - Modifying relation schema: modifying data structure, modifying constraints\n- Data manipulation\n  - Populating a table with rows\n  - Removing row(s) from a table\n  - Updating existing rows\n  - Querying a table"
+        },
+        {
+          "chunk_id": "f05880bc-a007-4fb5-825e-78e031fd5473",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1. Introduction to SQL",
+          "chunk_order": 6,
+          "cosine_sim": 0.2978,
+          "final_score": 0.3424,
+          "content": "```text\n+-------------------+        +-------------------------+        +------------------+\n|   DB Administrator |        |  Standard Languages     |        |   DBMS Server    |\n|                   |        |  (Ex.: SQL)             |        |                  |\n+-------------------+        |                         |        | PostgreSQL       |\n                             | Table/view definition,  |        | MySQL            |\n+-------------------+        | constraint declaration, |        | Microsoft SQL    |\n|     End-users     | <----> | ...                     |        | Server           |\n+-------------------+        |                         |        | Oracle           |\n+-------------------+        +-------------------------+        +------------------+\n|   Client-applications |\n| (in C#, Java, php, ..) |\n+-------------------+\n\n                 +-------------------+\n                 | Which language?   |\n                 +-------------------+\n```"
+        },
+        {
+          "chunk_id": "f386dd06-1a4e-4405-9a21-32ff64ddd73e",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1. Introduction to SQL",
+          "chunk_order": 7,
+          "cosine_sim": 0.2977,
+          "final_score": 0.3423,
+          "content": "[Diagram: The slide shows SQL as the standard language used between people or applications and a DBMS server. It highlights that different database tasks, such as defining tables or manipulating data, are expressed through SQL rather than through the programming languages of client applications.]"
+        },
+        {
+          "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.297,
+          "final_score": 0.3415,
+          "content": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n| CREATE TABLE | SQL statement to define a table into a database |\n| ALTER TABLE | SQL statement to modify table structure if needed (add /delete/modify column(s), add/remove constraint(s)) |\n| INSERT/UPDATE/DELETE | SQL statements to add new record to a table; to change the data of one or more records in a table; to remove single record or multiple records from a table |\n| SELECT | SQL statement to retrieve data from a database |"
+        },
+        {
+          "chunk_id": "2d1e7dac-c80c-4142-bc55-30409d1865f8",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Learning Map",
+          "chunk_order": 2,
+          "cosine_sim": 0.2864,
+          "final_score": 0.3293,
+          "content": "| Sequence | Title |\n|---:|---|\n| 1 | Introduction to Databases |\n| 2 | Relational Databases |\n| 3 | Relational Algebra |\n| 4 | Structured Query Language – Part 1 |\n| 5 | Structured Query Language – Part 2 |\n| 6 | Constraints and Triggers |\n| 7 | Entity Relationship Model |\n| 8 | Functional Dependency |\n| 9 | Normalization |\n| 10 | Storage – Indexing |\n| 11 | Query Processing |\n| 12 | Transaction Management – Part 1 |\n| 13 | Transaction Management – Part 2 |"
+        },
+        {
+          "chunk_id": "c175c288-4b0e-4b14-ad79-abba33d97275",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Outline",
+          "chunk_order": 3,
+          "cosine_sim": 0.2842,
+          "final_score": 0.3268,
+          "content": "- Introduction to SQL\n- Definition a Relation schema\n- Data Manipulation"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.7
+}

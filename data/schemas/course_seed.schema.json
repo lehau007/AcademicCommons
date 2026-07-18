@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "course_seed.schema.json",
+  "title": "Course Seed Document",
+  "description": "Admin-managed seed document required for each course before the evaluation pipeline can operate fully.",
+  "type": "object",
+  "required": ["course_code", "name", "description", "topic_summary"],
+  "properties": {
+    "course_code": {
+      "type": "string",
+      "description": "Official SoICT course code (e.g., IT3210, IT4062)",
+      "pattern": "^[A-Z]{2}[0-9]{4}$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Course name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Short course description"
+    },
+    "topic_summary": {
+      "type": "string",
+      "description": "Official topic summary — used by Agent 1 for relevance checking and by Mindmap/Mock Test as canonical topic context",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}

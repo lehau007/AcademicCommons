@@ -1,0 +1,95 @@
+{
+  "qid": "intro_to_ai_09",
+  "course_code": "IT3160E",
+  "question": "In First Order Logic (FOL), how are terms and predicates constructed?",
+  "session_id": "76469d2c-dafb-4d66-a6b7-4a708e6e56ad",
+  "answer": "Trong **First Order Logic (FOL)**:\n\n### 1) Terms được xây dựng như thế nào?\nCác **term** được tạo từ:\n- **hằng số** (constants),\n- **biến** (variables),\n- **hàm** (function symbols).\n\nVí dụ:\n- `X`\n- `Bill`\n- `FatherOf(X)`\n\n### 2) Predicates được xây dựng như thế nào?\nMột **predicate** được tạo bằng cách lấy:\n- một **relation symbol** (ký hiệu quan hệ) `p` có số đối số là `n`,\n- và `n` term `t1, t2, ..., tn`.\n\nKhi đó ta có dạng:\n\n\\[\np(t_1, t_2, \\ldots, t_n)\n\\]\n\nVí dụ:\n- `Tall(FatherOf(Bill))`\n- `Odd(X)`\n- `Married(Tom, Marry)`\n- `Loves(Y, MotherOf(Y))`\n\n### Tóm lại\n- **Terms** dùng để biểu diễn đối tượng.\n- **Predicates** dùng để biểu diễn mệnh đề/quan hệ đúng-sai giữa các đối tượng.",
+  "citations": [
+    {
+      "chunk_id": "dca8ed08-87dc-4cdf-bda1-d9b9a3e27a9a",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Syntax",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- Predicates\n  - If $t_1,\\ldots,t_n$ are terms and p is a relation symbol with arity $n$ then $p(t_1,\\ldots,t_n)$ is a predicate"
+    },
+    {
+      "chunk_id": "aa3745f1-792d-44e4-a2da-499e696e6a0b",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "First Order Logic (FOL)",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- First Order Logic is about\n  - Objects\n  - Relations\n  - Facts\n- The world is made of objects\n  - Objects are things with individual identities and properties to distinguish them\n  - Various relatio"
+    },
+    {
+      "chunk_id": "cbd69d92-9c6c-4b13-9f0b-52fd71da4b57",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Syntax",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "- Variables, constants and function symbols are used to build terms\n  - X, Bill, FatherOf(X), ...\n- Relations and terms are used to build predicates\n  - Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "First Order Logic terms and predicates construction",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "dca8ed08-87dc-4cdf-bda1-d9b9a3e27a9a",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 8,
+          "cosine_sim": 0.5631,
+          "final_score": 0.6526,
+          "content": "- Predicates\n  - If $t_1,\\ldots,t_n$ are terms and p is a relation symbol with arity $n$ then $p(t_1,\\ldots,t_n)$ is a predicate"
+        },
+        {
+          "chunk_id": "aa3745f1-792d-44e4-a2da-499e696e6a0b",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "First Order Logic (FOL)",
+          "chunk_order": 3,
+          "cosine_sim": 0.6004,
+          "final_score": 0.6307,
+          "content": "- First Order Logic is about\n  - Objects\n  - Relations\n  - Facts\n- The world is made of objects\n  - Objects are things with individual identities and properties to distinguish them\n  - Various relations hold among objects. Some of these relations are functional\n  - Every fact involving objects and their relations are either true or false"
+        },
+        {
+          "chunk_id": "cbd69d92-9c6c-4b13-9f0b-52fd71da4b57",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 6,
+          "cosine_sim": 0.6421,
+          "final_score": 0.616,
+          "content": "- Variables, constants and function symbols are used to build terms\n  - X, Bill, FatherOf(X), ...\n- Relations and terms are used to build predicates\n  - Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry), Loves(Y,MotherOf(Y)), ...\n- Predicates and logical connective are used to build sentences\n  - Even(4), $\\forall X.\\ Even(X)\\ \\Rightarrow\\ Odd(X+1),\\ \\exists X.\\ X > 0$"
+        },
+        {
+          "chunk_id": "b7119f3c-3e4f-49f6-ae7b-cf57915b5d2a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Regression algorithm",
+          "chunk_order": 23,
+          "cosine_sim": 0.4332,
+          "final_score": 0.4569,
+          "content": "- General process for predecessor construction\n  - Give a goal description G\n  - Let A be an action that is relevant and consistent\n  - The predecessors are as follows:\n    - Any positive effects of A that appear in G are deleted.\n    - Each precondition literal of A is added, unless it already appears.\n- Any standard search algorithm can be added to perform the search.\n- Termination when predecessor satisfied by initial state.\n  - In FO case, satisfaction might require a substitution."
+        },
+        {
+          "chunk_id": "1b633408-86cc-4281-89fd-e57055d98063",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Example: Blocks world",
+          "chunk_order": 42,
+          "cosine_sim": 0.4146,
+          "final_score": 0.4274,
+          "content": "```text\n[START]\n  |\n  |  On(C,A)  On(A,Table)  Cl(B)  On(B,Table)  Cl(C)\n  v\nCl(B)  On(B,z)  Cl(C)\n[PutOn(B,C)]\n  |\n  v\nOn(A,B)  On(B,C)\n[FINISH]\n```\n\n[Diagram: The figure shows a blocks-world planning example, where an initial arrangement of blocks is transformed into a goal arrangement through an action. It illustrates how preconditions must be satisfied before an operator can be applied, which is the core idea in symbolic planning.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.7
+}

@@ -1,0 +1,135 @@
+{
+  "qid": "discrete_math_06",
+  "course_code": "IT3020E",
+  "question": "In the general algorithm for finding a Minimum Spanning Tree (MST), what defines a 'safe' edge?",
+  "session_id": "592380a5-6210-4835-bb02-cd9103534168",
+  "answer": "In the general algorithm for finding an MST, a **safe edge** is the edge of **minimum weight** among all edges that connect:\n\n- a vertex **inside** the current tree \\(T\\), and\n- a vertex **outside** \\(T\\).\n\nIn other words, it is the lightest edge that can be added next to expand the current tree without breaking the MST construction process.",
+  "citations": [
+    {
+      "chunk_id": "c8ffa216-c9bd-4f14-a34f-82bfc603abae",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm:",
+      "page_number": null,
+      "chunk_order": 39,
+      "excerpt": "- $T$ is tree (initialize: $T$ has one vertex).\n- The “safe” edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$.\n"
+    },
+    {
+      "chunk_id": "dcb796ad-7779-4125-946a-d84edbb7eab7",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm:",
+      "page_number": null,
+      "chunk_order": 31,
+      "excerpt": "- $T$ is tree (initialize: $T$ has one vertex).\n- The “safe” edge included in $T$ at each iteration is the edge with smallest weight\n\namong edges connecting a vertex of $T$ to other vertex not in $T$"
+    },
+    {
+      "chunk_id": "5f06dbd7-815f-4e42-872b-eede8473f4bb",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm:",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "- $T$ is tree (initialize: $T$ has one vertex).\n- The “safe” edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$"
+    },
+    {
+      "chunk_id": "590abc5b-e157-4927-b58e-f61412d42062",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm:",
+      "page_number": null,
+      "chunk_order": 37,
+      "excerpt": "- $T$ is tree (initialize: $T$ has one vertex).\n- The “safe” edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$"
+    },
+    {
+      "chunk_id": "73844cf8-a48b-403f-ae72-26e221ac06e6",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Prim()",
+      "page_number": null,
+      "chunk_order": 45,
+      "excerpt": "```text\nvoid Prim() {\n    // Initialize:\n    V(T) = { r }; E(T) = ∅;\n    d[r] = 0; near[r] = r;\n    for v ∈ V \\ V(T) {\n        d[v] = c[r,v]; near[v] = r;\n    }\n\n    // Iteration:\n    for (k=2; k<=n,k"
+    },
+    {
+      "chunk_id": "86bda5b7-f329-4799-993a-f50523316b8c",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm: an example",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "[Diagram: The graph illustrates how Prim’s algorithm grows a minimum spanning tree by repeatedly choosing the lightest edge that connects the current tree to a new vertex. The colored edges show candi"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "general algorithm Minimum Spanning Tree safe edge definition",
+      "namespaces": [
+        "knowledge",
+        "exercise"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c8ffa216-c9bd-4f14-a34f-82bfc603abae",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm:",
+          "chunk_order": 39,
+          "cosine_sim": 0.6437,
+          "final_score": 0.9601,
+          "content": "- $T$ is tree (initialize: $T$ has one vertex).\n- The “safe” edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$.\n\n[Diagram: The graph illustrates an example of Prim’s algorithm building a minimum spanning tree by repeatedly choosing the lightest edge that expands the current tree to a new vertex. The highlighted edges show how local greedy choices gradually connect all vertices while avoiding unnecessary heavier edges.]"
+        },
+        {
+          "chunk_id": "dcb796ad-7779-4125-946a-d84edbb7eab7",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm:",
+          "chunk_order": 31,
+          "cosine_sim": 0.6483,
+          "final_score": 0.9092,
+          "content": "- $T$ is tree (initialize: $T$ has one vertex).\n- The “safe” edge included in $T$ at each iteration is the edge with smallest weight\n\namong edges connecting a vertex of $T$ to other vertex not in $T$"
+        },
+        {
+          "chunk_id": "5f06dbd7-815f-4e42-872b-eede8473f4bb",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm:",
+          "chunk_order": 34,
+          "cosine_sim": 0.6459,
+          "final_score": 0.9092,
+          "content": "- $T$ is tree (initialize: $T$ has one vertex).\n- The “safe” edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$"
+        },
+        {
+          "chunk_id": "590abc5b-e157-4927-b58e-f61412d42062",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm:",
+          "chunk_order": 37,
+          "cosine_sim": 0.6459,
+          "final_score": 0.9092,
+          "content": "- $T$ is tree (initialize: $T$ has one vertex).\n- The “safe” edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$"
+        },
+        {
+          "chunk_id": "73844cf8-a48b-403f-ae72-26e221ac06e6",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Prim()",
+          "chunk_order": 45,
+          "cosine_sim": 0.5752,
+          "final_score": 0.84,
+          "content": "```text\nvoid Prim() {\n    // Initialize:\n    V(T) = { r }; E(T) = ∅;\n    d[r] = 0; near[r] = r;\n    for v ∈ V \\ V(T) {\n        d[v] = c[r,v]; near[v] = r;\n    }\n\n    // Iteration:\n    for (k=2; k<=n,k++) {\n        Find v ∈ V \\ V(T) satisfying: d[v] = min { d[i] : i ∈ V \\ V(T) };\n        V(T) = V(T) ∪ { v }; E(T) = E(T) ∪ { (v, near[v]) };\n        for v' ∈ V \\ V(T)\n            if (d[v'] > c[v,v']) {\n                d[v'] = c[v,v']; near[v'] = v;\n            }\n    }\n}\n```\n\n- Prepare data for finding “safe” edge process\n- $d[v]$: the edge with minimum weight connecting vertex $v$ *(not yet in the spanning tree $T$)* to other vertex of $T$\n- $T$ is the minimum spanning tree;\n- Computation time: $O(|V|^2)$\n\n[Diagram: Prim’s algorithm grows a spanning tree one vertex at a time by repeatedly choosing the cheapest edge that connects the current tree to a new vertex. The labels $d[v]$ and $near[v]$ keep track of the best known connection for each outside vertex, which makes the next “safe” edge easy to identify and update.]"
+        },
+        {
+          "chunk_id": "86bda5b7-f329-4799-993a-f50523316b8c",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm: an example",
+          "chunk_order": 30,
+          "cosine_sim": 0.6042,
+          "final_score": 0.6941,
+          "content": "[Diagram: The graph illustrates how Prim’s algorithm grows a minimum spanning tree by repeatedly choosing the lightest edge that connects the current tree to a new vertex. The colored edges show candidate connections and the selected safe edge, highlighting the greedy choice that preserves optimality.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 6.1
+}

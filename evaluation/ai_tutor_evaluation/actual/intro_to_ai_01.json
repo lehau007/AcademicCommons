@@ -1,0 +1,114 @@
+{
+  "qid": "intro_to_ai_01",
+  "course_code": "IT3160E",
+  "question": "What are the four factors (PEAS) that should be considered when designing an automated agent?",
+  "session_id": "0ef8ce00-5210-41ea-a4ac-81a728e41751",
+  "answer": "The four factors in **PEAS** are:\n\n- **P**erformance measure — how success is evaluated\n- **E**nvironment — the world in which the agent operates\n- **A**ctuators — the mechanisms the agent uses to act\n- **S**ensors — the mechanisms the agent uses to perceive\n\nThese are the main considerations when designing an automated agent.",
+  "citations": [
+    {
+      "chunk_id": "847fc99d-65cd-4f7c-8cbd-e6937b3a31d2",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PEAS",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- 4 factors should be considered when design an automated agent:\n  - **P**erformance measure\n  - **E**nvironment\n  - **A**ctuators\n  - **S**ensors"
+    },
+    {
+      "chunk_id": "fcbd419e-67d2-41a5-ad08-017147bd1fcd",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Multi-agent planning",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- Environment: **cooperative** or **competitive**\n- Issue: the environment is not **static** → **synchronization**\n- Require a model of the other agent's plans\n- **Cooperation**: joint goals and plans"
+    },
+    {
+      "chunk_id": "2a04385e-d343-4a77-9aa0-64c56716a43e",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Knowledge bases",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- Knowledge base is a set of sentences in a formal language, telling an agent what it needs to know\n- Agent can ASK itself what to do, the answer should follow from the KB\n- Agents can be viewed at:\n "
+    },
+    {
+      "chunk_id": "17b10140-d5bc-42c2-b508-6673c005a7c6",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Environment types",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- **Static** (vs. dynamic): The environment is unchanged while an agent is deliberating.\n- **Discrete** (vs. continuous): A limited number of distinct, clearly defined percepts and actions.\n- **Single"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "PEAS four factors designing an automated agent",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "847fc99d-65cd-4f7c-8cbd-e6937b3a31d2",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "PEAS",
+          "chunk_order": 9,
+          "cosine_sim": 0.7813,
+          "final_score": 1.0418,
+          "content": "- 4 factors should be considered when design an automated agent:\n  - **P**erformance measure\n  - **E**nvironment\n  - **A**ctuators\n  - **S**ensors"
+        },
+        {
+          "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Rational agents",
+          "chunk_order": 14,
+          "cosine_sim": 0.4501,
+          "final_score": 0.7672,
+          "content": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|       |--------------|\n|  Percepts    |\n|  <---------- \n|  Actions     |\n|  ----------> \n|               |\n|               |\n|  Sensors|       | Actuators|\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "fcbd419e-67d2-41a5-ad08-017147bd1fcd",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Multi-agent planning",
+          "chunk_order": 23,
+          "cosine_sim": 0.4063,
+          "final_score": 0.6612,
+          "content": "- Environment: **cooperative** or **competitive**\n- Issue: the environment is not **static** → **synchronization**\n- Require a model of the other agent's plans\n- **Cooperation**: joint goals and plans, e.g., team planning in doubles tennis.\n  - Joint goal: returning the ball that has been hit to them and ensuring that at least one of them is covering the net\n  - Joint plan: multibody planning\n  - Coordination mechanisms: decompose and distribute tasks\n- **Competition**: e.g., chess-playing\n  - An agent in a competitive environment must\n    - recognize that there are other agents\n    - compute some of the other agent's possible plans\n    - compute how the other agent's plans interact with its own plans\n    - decide on the best action in view of these interactions."
+        },
+        {
+          "chunk_id": "2a04385e-d343-4a77-9aa0-64c56716a43e",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Knowledge bases",
+          "chunk_order": 21,
+          "cosine_sim": 0.3581,
+          "final_score": 0.6114,
+          "content": "- Knowledge base is a set of sentences in a formal language, telling an agent what it needs to know\n- Agent can ASK itself what to do, the answer should follow from the KB\n- Agents can be viewed at:\n  - the knowledge level: what they know, what its goals are\n  - the implementation level: data structures in KB and algorithms that manipulate them"
+        },
+        {
+          "chunk_id": "17b10140-d5bc-42c2-b508-6673c005a7c6",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Environment types",
+          "chunk_order": 14,
+          "cosine_sim": 0.4263,
+          "final_score": 0.5785,
+          "content": "- **Static** (vs. dynamic): The environment is unchanged while an agent is deliberating.\n- **Discrete** (vs. continuous): A limited number of distinct, clearly defined percepts and actions.\n- **Single agent** (vs. multiagent): An agent operating by itself in an environment."
+        },
+        {
+          "chunk_id": "54833ea9-1da5-4953-b4e5-dc8c0a87bfca",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Policy, Reward and Goal",
+          "chunk_order": 8,
+          "cosine_sim": 0.3963,
+          "final_score": 0.5581,
+          "content": "- Policy\n  - defines the agent’s behaviour at a given time\n  - maps from perceptions to actions\n  - can be defined by: look-up table, neural net, search algorithm...\n  - may be stochastic\n\n- Reward Function\n  - defines the goal(s) in an RL problem\n  - maps from states, state-action pairs, or state-action-successor state, triplets to a numerical reward\n  - goal of the agent is to maximise the total reward in the long run\n  - the policy is altered to achieve this goal"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.6
+}

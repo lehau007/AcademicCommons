@@ -1,0 +1,31 @@
+{
+  "qid": "hard_db_table_08",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "INSERT/UPDATE/DELETE content grounded but wrong framing"
+    },
+    "answer_relevancy": {
+      "score": 3,
+      "justification": "answers plausible-but-not-GT interpretation"
+    },
+    "answer_correctness": {
+      "score": 2,
+      "justification": "DENSE MISS: GT=defining/constructing/manipulating; answer gives INSERT/UPDATE/DELETE"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "student/subject tables noise"
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "define/construct/manipulate mapping not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "cites loosely related"
+    }
+  }
+}

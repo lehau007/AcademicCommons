@@ -1,0 +1,116 @@
+{
+  "qid": "discrete_math_12",
+  "course_code": "IT3020E",
+  "question": "How is the Dirichlet (or Pigeonhole) principle formally stated?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "1d15d8f2-878c-4fd5-a257-0c0116f57601",
+  "answer": "**Nguyên lý Dirichlet** (hay **nguyên lý cái hộp / Pigeonhole principle**) được phát biểu chính thức như sau:\n\n> Nếu có **\\(n+1\\)** đồ vật được đặt vào **\\(n\\)** hộp, thì **ít nhất một hộp chứa từ 2 đồ vật trở lên**.\n\nDạng tổng quát hơn:\n\n> Nếu có **\\(N\\)** đồ vật được phân vào **\\(k\\)** hộp, thì sẽ có **ít nhất một hộp chứa không ít hơn \\(\\lceil N/k \\rceil\\)** đồ vật.\n\nMột cách tương đương thường dùng:\n\n> Nếu \\(N > k(m-1)\\), thì khi chia \\(N\\) đồ vật vào \\(k\\) hộp, sẽ có ít nhất một hộp chứa **ít nhất \\(m\\)** đồ vật.\n\nNguyên lý này thường được dùng để chứng minh **sự tồn tại** của một đối tượng nào đó mà không cần chỉ ra cụ thể đối tượng đó là gì.",
+  "citations": [
+    {
+      "chunk_id": "ccaba2e3-c003-461f-b4bc-e5944a2efab7",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Inclusion-exclusion principle",
+      "page_number": null,
+      "chunk_order": 37,
+      "excerpt": "A = set of all integers from 1 to 1000 that are multiples of 3 ➔ $|A| = ?$\n\nFrom 1 to 1000, every third integer is a multiple of 3, each multiple of 3 is of the form $3p$, for any integer $p$ from 1 t"
+    },
+    {
+      "chunk_id": "ef9eef10-aca2-4c36-8066-6f0e1e088ed4",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Derangement",
+      "page_number": null,
+      "chunk_order": 40,
+      "excerpt": "- Denote $D_n$ the number of derangements of $\\{1,2,\\dots,n\\}$ $\\Rightarrow D_n = ??$\n- Let $S$ = set of all permutations of $\\{1,2,\\dots,n\\}$ $\\Rightarrow |S| = n!$\n- Let $A_i$ = subset of permutatio"
+    },
+    {
+      "chunk_id": "7a79504d-9cd9-4c65-b446-ad5c8c71c9ee",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Inclusion-exclusion principle",
+      "page_number": null,
+      "chunk_order": 31,
+      "excerpt": "The inclusion–exclusion principle is an equation relating the sizes of two sets and their union. It states that if A and B are two (finite) sets, then\n\n$|A \\cup B| = |A| + |B| - |A \\cap B|$\n\nThe meani"
+    },
+    {
+      "chunk_id": "6436ffb3-2533-415a-9038-5d9c85c55bb9",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Inclusion-exclusion principle",
+      "page_number": null,
+      "chunk_order": 36,
+      "excerpt": "To use the inclusion-exclusion principle to obtain $|A \\cup B|$, we need\n\n$$\n|A|\n$$\n\n$$\n|B|\n$$\n\n$$\n|A \\cap B|\n$$"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "Dirichlet principle pigeonhole principle formal statement",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ccaba2e3-c003-461f-b4bc-e5944a2efab7",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 37,
+          "cosine_sim": 0.3665,
+          "final_score": 0.3585,
+          "content": "A = set of all integers from 1 to 1000 that are multiples of 3 ➔ $|A| = ?$\n\nFrom 1 to 1000, every third integer is a multiple of 3, each multiple of 3 is of the form $3p$, for any integer $p$ from 1 through $[1000/3]=333$, Hence $|A| = 333$.\n\nB = set of all integers from 1 to 1000 that are multiples of 5 ➔ $|B| = ?$\n\nSimilarly for multiples of 5, each multiple of 5 is of the form $5q$ for some integer $q$ from 1 through $[1000/5]=200$. Hence, we have $|B| = 200$.\n\nA ∩ B: set of all integers from 1 to 1000 that are multiples of 15 ➔ $|A \\cap B| = ?$\n\nTo determine the number of multiples of 15 from 1 through 1000, each multiple of 15 is of the form $15r$ for some integer $r$ from 1 through $[1000/15]=66$. ➔ $|A \\cap B| = 66$.\n\nFrom the principle, we have the number of integers either multiples of 3 or multiples of 5 from 1 to 1000 given by"
+        },
+        {
+          "chunk_id": "ef9eef10-aca2-4c36-8066-6f0e1e088ed4",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.2. Derangement",
+          "chunk_order": 40,
+          "cosine_sim": 0.3721,
+          "final_score": 0.1292,
+          "content": "- Denote $D_n$ the number of derangements of $\\{1,2,\\dots,n\\}$ $\\Rightarrow D_n = ??$\n- Let $S$ = set of all permutations of $\\{1,2,\\dots,n\\}$ $\\Rightarrow |S| = n!$\n- Let $A_i$ = subset of permutations of $\\{1,2,\\dots,n\\}$ such that the $i$th element = $i$ in the permutation.\n- $|A_1 \\cup A_2 \\cup \\cdots \\cup A_n|$ counts the number of permutations in which at least one object $i$ of the $n$ objects appears in the $i$th position (its original position).\n- $D_n$: number of permutations such that none of the $n$ objects appears in their original positions. Therefore:\n\n$$\nD_n = n! - |A_1 \\cup A_2 \\cup \\cdots \\cup A_n|\n$$\n\n- Remember the inclusion-exclusion principle:\n\n$$\n|A_1 \\cup A_2 \\cup \\cdots \\cup A_n|\n=\n\\sum_{i=1}^{n} |A_i|\n-\n\\sum_{i<j} |A_i \\cap A_j|\n+\n\\sum_{i<j<k} |A_i \\cap A_j \\cap A_k|\n-\n\\sum_{i<j<k<\\ell} |A_i \\cap A_j \\cap A_k \\cap A_\\ell|\n+\\cdots+(-1)^{n+1}|A_1 \\cap A_2 \\cap \\cdots \\cap A_n|\n$$"
+        },
+        {
+          "chunk_id": "7a79504d-9cd9-4c65-b446-ad5c8c71c9ee",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 31,
+          "cosine_sim": 0.3638,
+          "final_score": 0.0974,
+          "content": "The inclusion–exclusion principle is an equation relating the sizes of two sets and their union. It states that if A and B are two (finite) sets, then\n\n$|A \\cup B| = |A| + |B| - |A \\cap B|$\n\nThe meaning of the statement is that the number of elements in the union of the two sets is the sum of the elements in each set, respectively, minus the number of elements that are in both."
+        },
+        {
+          "chunk_id": "ddc0de17-e6b4-4913-b610-c1bb479e0dff",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "2.2. Proof by Contradiction",
+          "chunk_order": 22,
+          "cosine_sim": 0.4371,
+          "final_score": 0.0728,
+          "content": "Requirement: Proof the statement P\n\n**Proof by contradiction:**\n\n- Assume it is false (Assume ¬P)\n- Prove that ¬P cannot occur\n  - (it means a contradiction exists: not satisfying the properties given in the problem or come to the absurd such as $1 = 0$)\n\nRequirement: Proof “If P, Then Q”,\n\n**Proof by contradiction:**\n\n- Assume it is false (Assume that \"P and Not Q\" are true).\n- It thus means a contradiction exists."
+        },
+        {
+          "chunk_id": "0727e164-5a8d-44b1-9103-bb77996611cf",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Note",
+          "chunk_order": 61,
+          "cosine_sim": 0.2751,
+          "final_score": 0.0534,
+          "content": "- If the length of complete solution is not known in advanced, and solutions are not needed to have the same length:\n\n```text\nvoid Try(int k)\n{\n    <Build S_k as the set to consist of candidates for the k^th component of solution>;\n    for y ∈ S_k  //Each candidate y of S_k\n    {\n        a_k = y;\n        if (k == n) then <Record (a_1, a_2, ..., a_k) as a complete solution >;\n        else Try(k+1);\n        Return the variables to their old states;\n    }\n}\n```\n\n- Then we need to modify statement\n\n```text\nif (k == n) then <Record (a_1, a_2, ..., a_k) as a complete solution >;\nelse Try(k+1);\n```\n\nto\n\n```text\nif <(a_1, a_2, ..., a_k) is a complete solution> then <Record (a_1, a_2, ..., a_k) as a complete solution >;\nelse Try(k+1);\n```\n\n- Need to build a function to check whether $(a_1, a_2, ..., a_k)$ is the complete solution."
+        },
+        {
+          "chunk_id": "6436ffb3-2533-415a-9038-5d9c85c55bb9",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 36,
+          "cosine_sim": 0.4308,
+          "final_score": 0.0531,
+          "content": "To use the inclusion-exclusion principle to obtain $|A \\cup B|$, we need\n\n$$\n|A|\n$$\n\n$$\n|B|\n$$\n\n$$\n|A \\cap B|\n$$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.9
+}

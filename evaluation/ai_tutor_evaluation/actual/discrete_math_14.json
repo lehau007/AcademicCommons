@@ -1,0 +1,115 @@
+{
+  "qid": "discrete_math_14",
+  "course_code": "IT3020E",
+  "question": "What are the two core procedures involved in the Branch and Bound algorithm?",
+  "session_id": "2ba5049d-24c7-41f0-9ae7-aa8117395705",
+  "answer": "The two core procedures in the **Branch and Bound** algorithm are:\n\n1. **Branching procedure**  \n   - This partitions the solution set into smaller subsets, gradually reducing their size until each subset contains only one element.\n\n2. **Bounding procedure**  \n   - This computes a bound for the objective function on each subset, so the algorithm can prune subsets that cannot lead to a better solution.",
+  "citations": [
+    {
+      "chunk_id": "2401e062-3312-45ff-a30a-5fe815cba442",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. General diagram",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "- Branch and bound algorithm consists of 2 procedures:\n  - Branching Procedure\n  - Bounding Procedure\n\n- **Branching procedure:** The process of partitioning the set of solutions into subsets of size "
+    },
+    {
+      "chunk_id": "c0c7643d-ddf6-4899-b2c1-7a16025e4050",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Implement",
+      "page_number": null,
+      "chunk_order": 45,
+      "excerpt": "```text\nvoid BranchAndBound()\n{\n    f* = +∞;\n    for (v = 1; v<=n; v++) visited[v] = FALSE;\n    f = 0;  x1 = 1;  visited[x1] = TRUE;\n    Branch(2);\n    return f*;\n}\n```\n\n```text\nvoid BranchAndBound()\n"
+    },
+    {
+      "chunk_id": "cfeb2b74-29ce-4bff-b0e6-22adeab604ad",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Implement",
+      "page_number": null,
+      "chunk_order": 44,
+      "excerpt": "```text\nvoid Branch(int k)\n{\n    for (int v = 2; v <= n; v++) {\n        if (visited[v] == FALSE) {\n            x_k = v; visited[v] = TRUE;\n            f = f + c(x_(k-1), x_k);\n\n            if (k == n)"
+    },
+    {
+      "chunk_id": "f246aceb-3a31-4525-ba16-160d0dd1c058",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example",
+      "page_number": null,
+      "chunk_order": 53,
+      "excerpt": "- Solve the knap sack problem using the branch and bound algorithm:\n\n$$\nf(x) = 10x_1 + 5x_2 + 3x_3 + 6x_4 \\rightarrow \\max,\n$$\n\n$$\n5x_1 + 3x_2 + 2x_3 + 4x_4 \\le 8,\n$$\n\n$$\nx_j \\in \\mathbb{Z}_+, \\; j = "
+    },
+    {
+      "chunk_id": "3a74defe-5b42-4299-bfb3-0a88368fe020",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Comment",
+      "page_number": null,
+      "chunk_order": 32,
+      "excerpt": "- Then, a problem arises that in the process of enumerating all solutions, we need to make use of the found information to eliminate solutions that are definitely not optimal.\n- In the next section, w"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Branch and Bound algorithm two core procedures",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "2401e062-3312-45ff-a30a-5fe815cba442",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "3.1. General diagram",
+          "chunk_order": 35,
+          "cosine_sim": 0.7517,
+          "final_score": 1.0698,
+          "content": "- Branch and bound algorithm consists of 2 procedures:\n  - Branching Procedure\n  - Bounding Procedure\n\n- **Branching procedure:** The process of partitioning the set of solutions into subsets of size decreasing gradually until the subsets consists only one element.\n\n- **Bounding procedure:** It is necessary to give an approach to calculate the bound for the value of the objective function on each subset A in the partition of the set of solutions."
+        },
+        {
+          "chunk_id": "c0c7643d-ddf6-4899-b2c1-7a16025e4050",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Implement",
+          "chunk_order": 45,
+          "cosine_sim": 0.6564,
+          "final_score": 0.8443,
+          "content": "```text\nvoid BranchAndBound()\n{\n    f* = +∞;\n    for (v = 1; v<=n; v++) visited[v] = FALSE;\n    f = 0;  x1 = 1;  visited[x1] = TRUE;\n    Branch(2);\n    return f*;\n}\n```\n\n```text\nvoid BranchAndBound()\n{\n    f* = +∞;\n    //if you know any solution x* then set f* = f(x*)\n    Branch(1);\n    if (f* < +∞)\n        <f* is the optimal objective value, x* is optimal solution>\n    else < problem does not have any solutions >;\n}\n```\n\n[Diagram: The slide shows two pseudocode variants of the Branch-and-Bound procedure. The first initializes the search state and starts branching from the second position, while the second emphasizes the logic of updating the best known objective value and deciding whether a feasible optimal solution exists.]"
+        },
+        {
+          "chunk_id": "cfeb2b74-29ce-4bff-b0e6-22adeab604ad",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Implement",
+          "chunk_order": 44,
+          "cosine_sim": 0.6029,
+          "final_score": 0.5813,
+          "content": "```text\nvoid Branch(int k)\n{\n    for (int v = 2; v <= n; v++) {\n        if (visited[v] == FALSE) {\n            x_k = v; visited[v] = TRUE;\n            f = f + c(x_(k-1), x_k);\n\n            if (k == n)  //Update record:\n            {   if (f + c(x_n, x_1) < f*) f* = f + c(x_n, x_1);  }\n            else {\n                g = f + (n-k + 1)*cmin;  //calculate bound\n                if (g < f*) Branch(k + 1);\n            }\n        }\n    }\n\n    f = f - c(x_(k-1), x_k);\n    visited[v] = FALSE;\n}\n```\n\n```text\nvoid Branch(int k)\n{\n    //Construct x_k from partial solution (x_1, x_2, ..., x_(k-1))\n    for a_k ∈ A_k\n        if (a_k ∈ S_k)\n        {\n            x_k = a_k;\n            if (k == n)  <Update Record>;\n            else if (g(x_1, ..., x_k) ≤ f*) Branch(k+1);\n        }\n}\n```\n\n[Diagram: The slide shows a branch-and-bound style recursive search for constructing a solution one step at a time while tracking the current cost and a lower bound. It matters because the bound allows the algorithm to prune partial solutions that cannot beat the best known answer, reducing the search space.]"
+        },
+        {
+          "chunk_id": "f246aceb-3a31-4525-ba16-160d0dd1c058",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Example",
+          "chunk_order": 53,
+          "cosine_sim": 0.4496,
+          "final_score": 0.4811,
+          "content": "- Solve the knap sack problem using the branch and bound algorithm:\n\n$$\nf(x) = 10x_1 + 5x_2 + 3x_3 + 6x_4 \\rightarrow \\max,\n$$\n\n$$\n5x_1 + 3x_2 + 2x_3 + 4x_4 \\le 8,\n$$\n\n$$\nx_j \\in \\mathbb{Z}_+, \\; j = 1, 2, 3, 4.\n$$\n\n- Note that in this example, all four items are already sorted in descending order of profit on an unit weight\n\n$$\n\\frac{10}{5} = 2 > \\frac{5}{3} \\approx 1,66 > \\frac{3}{2} = 1,5 = \\frac{6}{4}\n$$"
+        },
+        {
+          "chunk_id": "3a74defe-5b42-4299-bfb3-0a88368fe020",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Comment",
+          "chunk_order": 32,
+          "cosine_sim": 0.5326,
+          "final_score": 0.4653,
+          "content": "- Then, a problem arises that in the process of enumerating all solutions, we need to make use of the found information to eliminate solutions that are definitely not optimal.\n- In the next section, we will look at such a search approach to solve the combinatorial optimization problems. In literature, it is called $Branch\\ and\\ bound\\ algorithm$."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.2
+}

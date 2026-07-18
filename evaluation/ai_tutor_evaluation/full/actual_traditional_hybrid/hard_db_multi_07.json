@@ -1,0 +1,135 @@
+{
+  "qid": "hard_db_multi_07",
+  "course_code": "IT3292E",
+  "question": "Trả lời hai ý: (1) ba nhóm chức năng chính mà một DBMS cho phép (defining, constructing, manipulating) nghĩa là gì; (2) bảng student minh họa có những cột nào.",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "e12256fe-52ce-4c5d-9f2b-2e71b3114c8b",
+  "answer": "## Câu trả lời\n\n### (1) Ba nhóm chức năng chính của một DBMS\n\nTheo nội dung mục **2.4. Database Management System (DBMS)**, ba nhóm chức năng chính mà một DBMS cho phép thực hiện được hiểu như sau:\n\n| Nhóm chức năng | Ý nghĩa |\n|---|---|\n| **Defining** (Định nghĩa) | **Chỉ định kiểu dữ liệu** — tức là mô tả cấu trúc của dữ liệu sẽ được lưu trữ (ví dụ: xác định các bảng, các cột và kiểu dữ liệu tương ứng bằng các câu lệnh như `CREATE TABLE`, `ALTER TABLE`). |\n| **Constructing** (Xây dựng) | **Lưu trữ và đưa dữ liệu vào** — tức là tạo ra các bảng đã định nghĩa và nhập dữ liệu thực tế vào đó (sử dụng các câu lệnh `INSERT`, cập nhật metadata, …). |\n| **Manipulating** (Thao tác) | **Truy vấn, cập nhật và tạo báo cáo** — tức là thao tác trên dữ liệu đã có: truy vấn (`SELECT`), sửa (`UPDATE`), xóa (`DELETE`), cũng như tạo các báo cáo từ dữ liệu. |\n\nTóm lại: **Định nghĩa** trả lời câu hỏi *\"dữ liệu trông như thế nào?\"*, **Xây dựng** trả lời *\"dữ liệu được đưa vào đâu?\"*, và **Thao tác** trả lời *\"làm sao để dùng được dữ liệu?\"*.\n\n---\n\n### (2) Các cột của bảng `student` minh họa\n\nQuan sát bảng `student` trong phần **3. Data Manipulation** và phần **student**, bảng minh họa gồm **8 cột (thuộc tính)** sau:\n\n1. `student_id` — mã sinh viên  \n2. `first_name` — tên  \n3. `last_name` — họ  \n4. `dob` — ngày sinh  \n5. `gender` — giới tính  \n6. `address` — địa chỉ  \n7. `note` — ghi chú  \n8. `clazz_id` — mã lớp (khóa ngoại liên kết tới bảng `clazz`)\n\nTheo thuật ngữ quan hệ, bảng này có **degree (bậc) = 8** (số cột).\n\n---\n\n**Chunk IDs đã sử dụng:**\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "6392b873-ede6-448d-9388-876329e08c99",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Database Management System (DBMS)",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Defining ~ specifying types of data\n- Constructing ~ storing & populating\n- Manipulating ~ querying, updating, reporting\n\n```text\n+-----------+   +--------------+   +-------------------------------+"
+    },
+    {
+      "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3. Data Manipulation",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa,"
+    },
+    {
+      "chunk_id": "bde12caf-d990-4793-812a-e343f78fe627",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "student",
+      "page_number": null,
+      "chunk_order": 60,
+      "excerpt": "| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 1234 | David | Beckham | 12/21/1997 | Male | London, UK |  | 1 |\n| 1238 | Theresa"
+    },
+    {
+      "chunk_id": "cd9860b1-d072-4523-a0ba-df78a47a7280",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Diagram",
+      "page_number": null,
+      "chunk_order": 48,
+      "excerpt": "```text\n                         Relation name\n                              |\n                              v\n                           student\n\n                                     Attributes\n     "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "Trả lời hai ý: (1) ba nhóm chức năng chính mà một DBMS cho phép (defining, constructing, manipulating) nghĩa là gì; (2) bảng student minh họa có những cột nào.",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.4467,
+          "final_score": 0.5137,
+          "content": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n| CREATE TABLE | SQL statement to define a table into a database |\n| ALTER TABLE | SQL statement to modify table structure if needed (add /delete/modify column(s), add/remove constraint(s)) |\n| INSERT/UPDATE/DELETE | SQL statements to add new record to a table; to change the data of one or more records in a table; to remove single record or multiple records from a table |\n| SELECT | SQL statement to retrieve data from a database |"
+        },
+        {
+          "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "3. Data Manipulation",
+          "chunk_order": 28,
+          "cosine_sim": 0.4185,
+          "final_score": 0.4812,
+          "content": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa, HN |  | 20162101 |\n| 20160002 | Anh | Hoàng | 5/20/1987 | M | 513 B5 KTX BKHN |  | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | F | 15 Trần Đại Nghĩa, HBT, Hà nội |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | 5/20/1987 | F | 513 TT Phương Mai, Đ. Đa, HN |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | F | 214 B6 KTX BKHN |  | 20172201 |\n| 20170002 | Nhật Cường | Nguyễn | 10/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170003 | Nhật Cường | Nguyễn | 1/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170004 | Minh Đức | Bùi | 1/25/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n\n**clazz**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n- Modifying address?\n- Adding new student / new class?\n- Deleting student data?\n- Retrieving list of all students?"
+        },
+        {
+          "chunk_id": "d42ace20-c14b-440d-85cc-01caee818759",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "3.2. Database approach",
+          "chunk_order": 36,
+          "cosine_sim": 0.3984,
+          "final_score": 0.4582,
+          "content": "```text\nLecturer     Enrollment     Student\n   |             |             |\n   +-------------+-------------+\n                 |\n                 v\n               +-------+\n               | DBMS  |\n               +-------+\n                /     \\\n               v       v\n        +-----------+  +----------------+\n        | Database  |  |   Metadata     |\n        |           |  |   (Catalog)    |\n        | Lecturer  |  +----------------+\n        | Student   |\n        | Class     |\n        | Course    |\n        | Note      |\n        +-----------+\n```\n\n[Diagram: The slide illustrates a database-centered approach in which different user-facing entities such as lecturers, enrollments, and students are mediated by a DBMS rather than accessing data directly. This matters because the DBMS separates application access from both the stored data and the metadata/catalog, enabling organization, control, and consistent management of information.]"
+        },
+        {
+          "chunk_id": "6392b873-ede6-448d-9388-876329e08c99",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 26,
+          "cosine_sim": 0.3804,
+          "final_score": 0.4374,
+          "content": "- Defining ~ specifying types of data\n- Constructing ~ storing & populating\n- Manipulating ~ querying, updating, reporting\n\n```text\n+-----------+   +--------------+   +-------------------------------+\n| MySQL     |   | Microsoft    |   | Microsoft SQL Server          |\n|           |   | Access       |   |                               |\n+-----------+   +--------------+   +-------------------------------+\n\n+------------------+   +--------+   +-------------+\n| Oracle Database   |   | IBM DB2|   | PostgreSQL  |\n+------------------+   +--------+   +-------------+\n```"
+        },
+        {
+          "chunk_id": "c966cb75-ac1a-4497-9754-f83f923e20fe",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "student",
+          "chunk_order": 21,
+          "cosine_sim": 0.3663,
+          "final_score": 0.4212,
+          "content": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi |  |  |\n| 20160002 | Anh | Hoàng |  | 20162101 |\n| 20160003 | Thu Hồng | Trần |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn |  | 20172201 |\n\n[Table: Sample rows of the student relation showing student_id, first_name, last_name and the clazz_id that links each student to a class.]"
+        },
+        {
+          "chunk_id": "cd9860b1-d072-4523-a0ba-df78a47a7280",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "Diagram",
+          "chunk_order": 48,
+          "cosine_sim": 0.3483,
+          "final_score": 0.4006,
+          "content": "```text\n                         Relation name\n                              |\n                              v\n                           student\n\n                                     Attributes\n                         /    /    /    /    /    /    \\\n                        v    v    v    v    v    v    v\n+-----------------------------------------------------------------------------------+\n| student_id | first_name | last_name | dob       | gender | address    | note | clazz_id |\n+-----------------------------------------------------------------------------------+\n| 1234       | David      | Beckham   | 12/21/1997| Male    | London, UK |      | 1        |\n| 1238       | Theresa    | May       | 08/06/1998| Female  | London, UK |      | 1        |\n| 1452       | David      | Cameron   | 07/06/1997| Male    | Bangor, UK |      | 1        |\n| 1497       | Tony       | Blair     | 03/01/1999| Male    | Bath, UK   |      | 2        |\n| 1516       | John       | Major     | 03/01/1998| Male    | Bradford   |      | 2        |\n| 1542       | Margaret   | Thatcher  | 05/08/1997| Female  | Cambridge  |      | 2        |\n+-----------------------------------------------------------------------------------+\n\nTuples\n\nCardinality = 6\n\nDegree = 8\n```"
+        },
+        {
+          "chunk_id": "a0278c86-58c7-41e7-87f2-4442fa5dc26d",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 27,
+          "cosine_sim": 0.3295,
+          "final_score": 0.379,
+          "content": "[Diagram: This slide highlights examples of DBMS products used in practice across different vendors. It emphasizes that database management is a general concept implemented by many tools, each supporting defining, constructing, and manipulating data.]"
+        },
+        {
+          "chunk_id": "bde12caf-d990-4793-812a-e343f78fe627",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "student",
+          "chunk_order": 60,
+          "cosine_sim": 0.3106,
+          "final_score": 0.3571,
+          "content": "| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 1234 | David | Beckham | 12/21/1997 | Male | London, UK |  | 1 |\n| 1238 | Theresa | May | 08/06/1998 | Female | London, UK |  | 1 |\n| 1452 | David | Cameron | 07/06/1997 | Male | Bangor, UK |  | 1 |\n| 1497 | Tony | Blair | 03/01/1999 | Male | Bath, UK |  | 2 |\n| 1516 | John | Major | 03/01/1998 | Male | Bradford |  | 2 |\n| 1542 | Margaret | Thatcher | 05/08/1997 | Female | Cambridge |  | 2 |"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 11.4
+}

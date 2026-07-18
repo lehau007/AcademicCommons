@@ -1,0 +1,11 @@
+{
+  "qid": "intro_to_ai_16",
+  "course_code": "IT3160E",
+  "question": "What characterizes a 'fully observable' environment in AI?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "96d9aa0e-4189-4853-8976-706bd4ec3c4d",
+  "answer": "A **fully observable** environment in AI là môi trường mà **tác tử có thể quan sát đầy đủ và chính xác toàn bộ trạng thái liên quan của môi trường tại mỗi thời điểm**.\n\n### Đặc điểm chính\n- Tác tử **không bị thiếu thông tin** về trạng thái hiện tại.\n- Các cảm biến của tác tử cung cấp **toàn bộ thông tin cần thiết** để quyết định hành động.\n- Không có phần quan trọng nào của trạng thái môi trường bị che khuất hay ẩn.\n\n### Ví dụ\n- Cờ vua là môi trường gần như fully observable, vì cả bàn cờ đều nhìn thấy được.\n- Ngược lại, lái xe trong giao thông thường là **partially observable**, vì tác tử không thể biết hết mọi thứ xung quanh.\n\n### Ý nghĩa\nTrong môi trường fully observable, việc ra quyết định thường **đơn giản hơn** vì tác tử không cần suy đoán nhiều về thông tin còn thiếu.\n\nNếu bạn muốn, tôi có thể giải thích thêm sự khác nhau giữa **fully observable**, **partially observable**, và **accessible/inaccessible** environments.",
+  "citations": [],
+  "retrieval_calls": [],
+  "elapsed_s": 4.5
+}

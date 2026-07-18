@@ -1,0 +1,47 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "The tutor's answer makes no factual claims about graph isomorphism; it is simply a polite refusal in Vietnamese stating they don't know the answer and asking the student to rephrase. Since there are no claims to verify, there are no unsupported claims.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 1,
+      "justification": "The tutor's answer does not address the question at all. It is a Vietnamese phrase declining to answer and asking the user to rephrase, providing zero information about graph isomorphism.",
+      "evidence": [
+        "Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?"
+      ]
+    },
+    "answer_correctness": {
+      "score": 1,
+      "justification": "The tutor's answer is in Vietnamese and states 'Sorry, I don't know the answer — please ask me again,' providing no information about graph isomorphism. This completely fails to address the question and contradicts the ground truth by omitting all key facts.",
+      "evidence": [
+        "Ground truth: 'Two simple graphs G1 and G2 are isomorphic if there is a one-to-one and onto function f...'",
+        "Tutor answer: 'Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?' (provides no definition)"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Roughly half the chunks are relevant. Chunks 1 and 4 directly address isomorphism; chunks 2, 3, and 6 provide basic graph definitions that are tangentially related. Chunks 5 (directed graphs) is largely irrelevant to the question about simple graph isomorphism.",
+      "evidence": [
+        "5b6e92b8-dd38-436d-9349-d58a8ccee03b: 'Directed simple *(multi)* graph'",
+        "d9033feb-a231-4376-b67b-f2b54fe8b181: 'compares a multigraph and a simple graph'"
+      ]
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "The retrieved chunks contain partial information about isomorphism (a one-to-one correspondence function and properties like same number of vertices/edges) but critically lack the formal definition that adjacency must be preserved: 'vertices a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2.'",
+      "evidence": [
+        "vertices a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "N/A — no citations needed. The tutor's answer is a polite refusal in Vietnamese ('Sorry, I'm not sure of the answer — please ask me again') that makes no factual claims requiring citation support.",
+      "evidence": []
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "qid": "hard_ai_graph_02",
+  "course_code": "IT3160E",
+  "question": "Trong sơ đồ planning graph cho bài toán thay lốp dự phòng (spare tire), trạng thái mức S2 có tính chất gì khiến ta có thể trích xuất lời giải, và có thể trích xuất bằng những cách nào?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "799659c3-115e-4d03-8d97-5bdc04f46399",
+  "answer": "# Trích xuất lời giải từ trạng thái S2 trong Planning Graph\n\n## Tính chất của S2 cho phép trích xuất lời giải\n\nTheo nội dung trong tài liệu, tại mức trạng thái **S2** của planning graph cho bài toán thay lốp dự phòng, hai điều kiện quan trọng cùng được thỏa mãn:\n\n1. **S2 chứa tất cả các goal**: Tại S2, mệnh đề mục tiêu `at(spare, axle)` đã xuất hiện trong tập các sự kiện (literal) của tầng trạng thái.\n\n2. **Không còn quan hệ mutex giữa các goal**: Các mệnh đề mục tiêu tại S2 không mâu thuẫn lẫn nhau (no-mutex), nghĩa là có thể đồng thời đạt được tất cả các goal cùng lúc trong cùng một tầng hành động.\n\nĐây chính là điều kiện cần (mà chưa đủ) để GRAPHPLAN có thể bắt đầu quá trình trích xuất lời giải — chính vì vậy mà vòng lặp trong thuật toán kiểm tra `if goals all non-mutex in last level of graph` trước khi gọi `EXTRACT-SOLUTION`.\n\n## Các phương pháp trích xuất lời giải\n\nKhi S2 đã thỏa mãn điều kiện trên, tài liệu nêu ra **hai cách** để trích xuất lời giải:\n\n### Cách 1: Giải bài toán thỏa mãn ràng buộc (CSP)\n- Coi **các action là biến** (variables).\n- Ràng buộc giữa các biến là:\n  - Tiền điều kiện (preconditions) của mỗi action phải được thỏa mãn bởi kết quả của action ở tầng trước.\n  - Hai action được chọn tại cùng một tầng không được mâu thuẫn (mutex) với nhau.\n- Dùng thuật toán CSP để tìm tập action thỏa mãn tất cả ràng buộc.\n\n### Cách 2: Tìm kiếm ngược (Backward search)\n- Bắt đầu từ tập goal ở S2.\n- Lùi về các tầng trước: tại mỗi bước lùi, chọn một action có thể tạo ra một số goal con, rồi thêm tiền điều kiện của action đó làm goal mới cần đạt.\n- Nếu đụng mutex thì quay lui (backtrack) và chọn action khác.\n\n## Mối liên hệ với thuật toán GRAPHPLAN\n\nTrong pseudocode của thuật toán GRAPHPLAN, quá trình này được thể hiện rõ qua hàm `EXTRACT-SOLUTION(graph, goals, LENGTH(graph))`. Nếu trích xuất thất bại (ví dụ chọn một action kéo theo ràng buộc không thỏa mãn), thuật toán sẽ tiếp tục mở rộng graph thêm một tầng nữa và thử lại, cho đến khi tìm được lời giải hoặc chứng minh được không có lời giải (`NO-SOLUTION-POSSIBLE`).\n\n```text\nEXTRACT-SOLUTION(graph, goals, LENGTH(graph))\n   → Thử CSP / backward search tại tầng hiện tại\n   → Nếu thất bại: trả failure (để GRAPHPLAN mở rộng thêm tầng)\n   → Nếu thành công: trả về plan\n```\n\nTóm lại: **S2 đặc biệt ở chỗ chứa toàn bộ goal mà không có mutex**, và ta có thể trích xuất lời giải bằng cách **giải bài toán CSP với action làm biến** hoặc **tìm kiếm lùi từ goal về Start**.\n\n---",
+  "citations": [
+    {
+      "chunk_id": "3ee13f47-a21d-4661-bcc7-def43f301313",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning graph for spare tire a S2",
+      "page_number": null,
+      "chunk_order": 56,
+      "excerpt": "goal: at(spare,axle)\n\n- S2 has all goals and no mutex so we can try to extract solutions\n- Use either CSP algorithm with actions as variables\n- Or search backwards\n\n```text\nS0                     A0  "
+    },
+    {
+      "chunk_id": "9e35dead-7fd9-4935-a575-6dba4efd2a76",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning graph for spare tire a S2",
+      "page_number": null,
+      "chunk_order": 57,
+      "excerpt": "Figure 11.14 The planning graph for the spare tire problem after expansion to level $S_2$. Mutex links are shown as gray lines. Only some representative mutexes are shown, because the graph would be t"
+    },
+    {
+      "chunk_id": "c2267876-167a-4c0b-8ffc-58ff737795c2",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The graphplan algorithm",
+      "page_number": null,
+      "chunk_order": 54,
+      "excerpt": "```text\n+--------------------------------------------------------------+\n| function GRAPHPLAN(problem) returns solution or failure      |\n|                                                             "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "Trong sơ đồ planning graph cho bài toán thay lốp dự phòng (spare tire), trạng thái mức S2 có tính chất gì khiến ta có thể trích xuất lời giải, và có thể trích xuất bằng những cách nào?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "3649613f-a92b-4591-9ed1-b145e651b564",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Minimax algorithm",
+          "chunk_order": 17,
+          "cosine_sim": 0.478,
+          "final_score": 0.5497,
+          "content": "[Diagram: Đây là thuật toán ra quyết định trong trò chơi đối kháng bằng cách luân phiên tối đa hóa và tối thiểu hóa giá trị trạng thái. Nó quan trọng vì cho phép chọn nước đi tối ưu khi giả định đối thủ cũng chơi tối ưu.]"
+        },
+        {
+          "chunk_id": "9e35dead-7fd9-4935-a575-6dba4efd2a76",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning graph for spare tire a S2",
+          "chunk_order": 57,
+          "cosine_sim": 0.4757,
+          "final_score": 0.5471,
+          "content": "Figure 11.14 The planning graph for the spare tire problem after expansion to level $S_2$. Mutex links are shown as gray lines. Only some representative mutexes are shown, because the graph would be too cluttered if we showed them all. The solution is indicated by bold lines and outlines."
+        },
+        {
+          "chunk_id": "3ee13f47-a21d-4661-bcc7-def43f301313",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning graph for spare tire a S2",
+          "chunk_order": 56,
+          "cosine_sim": 0.4252,
+          "final_score": 0.489,
+          "content": "goal: at(spare,axle)\n\n- S2 has all goals and no mutex so we can try to extract solutions\n- Use either CSP algorithm with actions as variables\n- Or search backwards\n\n```text\nS0                     A0                     S1                     A1                     S2\n|                      |                      |                      |                      |\nat(spare,trunk)   ---> [RemoveSpare,Trunk] --> ¬at(spare,trunk)  ---> [RemoveSpare,Trunk] --> ¬at(spare,trunk)\nat(flat,axle)     ---> [RemoveFlat,Axle]     --> ¬at(flat,axle)    ---> [RemoveFlat,Axle]     --> ¬at(flat,axle)\n¬at(spare,axle)                                 [LeaveOvernight]    ---> ¬at(spare,axle)      ---> ¬at(spare,axle)\n¬at(flat,ground)                                                                              [PutOn,Spare,Axle]\n¬at(spare,ground)\n\n[Diagram: This is a planning graph showing how actions are layered between successive state levels to achieve the goal of having the spare tire on the axle. It matters because it illustrates how goal satisfaction and mutex relationships can be used to extract a valid plan or reason backward from the goal state.]\n```"
+        },
+        {
+          "chunk_id": "90bdd731-1cd9-40c2-bf7a-fbec32711413",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "A partial order plan for putting shoes and socks",
+          "chunk_order": 31,
+          "cosine_sim": 0.3913,
+          "final_score": 0.45,
+          "content": "```text\nPartial-Order Plan\n\n+--------+                     +-----------+\n| Start  |                     |           |\n+--------+                     |           |\n   /   \\                       |           |\n  v     v                      |           |\n+----------+   +-----------+   |           |\n| Left     |   | Right     |   |           |\n| Sock     |   | Sock      |   |           |\n+----------+   +-----------+   |           |\n    |             |            |           |\n    v             v            |           |\nLeftSockOn     RightSockOn     |           |\n    |             |            |           |\n+----------+   +-----------+   |           |\n| Left     |   | Right     |   |           |\n| Shoe     |   | Shoe      |   |           |\n+----------+   +-----------+   |           |\n    \\             /            |           |\n     v           v             |           |\n   LeftShoeOn, RightShoeOn     |           |\n               |               |           |\n               v               |           |\n+--------+                     +-----------+\n| Finish |                     +-----------+\n\nTotal-Order Plans\n\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n| Start  |-->| Right    |-->| Left     |-->| Right    |-->| Left     |-->| Finish |\n|        |   | Sock     |   | Sock     |   | Shoe     |   | Shoe     |   |        |\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n| Start  |-->| Right    |-->| Left     |-->| Right    |-->| Left     |-->| Finish |\n|        |   | Sock     |   | Sock     |   | Shoe     |   | Shoe     |   |        |\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n| Start  |-->| Left     |-->| Right    |-->| Left     |-->| Right    |-->| Finish |\n|        |   | Sock     |   | Sock     |   | Shoe     |   | Shoe     |   |        |\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n| Start  |-->| Left     |-->| Right    |-->| Left     |-->| Right    |-->| Finish |\n|        |   | Sock     |   | Sock     |   | Shoe     |   | Shoe     |   |        |\n+--------+   +----------+   +----------+   +----------+   +"
+        },
+        {
+          "chunk_id": "c2267876-167a-4c0b-8ffc-58ff737795c2",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "The graphplan algorithm",
+          "chunk_order": 54,
+          "cosine_sim": 0.3786,
+          "final_score": 0.4354,
+          "content": "```text\n+--------------------------------------------------------------+\n| function GRAPHPLAN(problem) returns solution or failure      |\n|                                                              |\n|   graph ← INITIAL-PLANNING-GRAPH(problem)                    |\n|   goals ← GOALS[problem]                                    |\n|   loop do                                                    |\n|     if goals all non-mutex in last level of graph then do    |\n|       solution ← EXTRACT-SOLUTION(graph, goals, LENGTH(graph))|\n|       if solution ≠ failure then return solution             |\n|       else if NO-SOLUTION-POSSIBLE(graph) then return failure|\n|     graph ← EXPAND-GRAPH(graph, problem)                     |\n+--------------------------------------------------------------+\n```\n\n[Diagram: This pseudocode describes the GRAPHPLAN planning procedure, which alternates between building a layered planning graph and trying to extract a valid plan from it. The key idea is that the graph grows until either a solution is found by backward search or the algorithm proves no plan is possible.]"
+        },
+        {
+          "chunk_id": "ff84716d-53a3-41f7-aff6-d0a27e010b75",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Iterative Deepening A* Search Algorithm ( for tree search)",
+          "chunk_order": 5,
+          "cosine_sim": 0.3429,
+          "final_score": 0.3943,
+          "content": "```text\n+-------+      +----------------------+\n| start | ---> | set threshold as h(s) |\n+-------+      +----------------------+\n                      |\n                      v\n             +--------------------------+\n             | put s in OPEN, compute f(s) |\n             +--------------------------+\n                      |\n                      v\n                 /----------------\\\n                |   OPEN empty ?   |\n                 \\----------------/\n                   |            |\n                 yes|            | no\n                   v            v\n      +-------------------------------+\n      | threshold = min( f(.) )       |\n      +-------------------------------+\n                      |\n                      └───────────────> back to \"put s in OPEN, compute f(s)\"\n\n             +-----------------------------------------------------------+\n             | Remove the node of OPEN whose f(.) value is smallest       |\n             | and put it in CLOSE (call it n)                           |\n             +-----------------------------------------------------------+\n                      |\n                      v\n                 /---------------\\\n                |   n = goal ?    |\n                 \\---------------/\n                   |          |\n                 yes|          | no\n                   v          v\n              +----------+   +------------------------------------------------------+\n              | Success  |   | Expand n. calculate f(.) of successor                 |\n              +----------+   | if f(suc) < threshold then                           |\n                             |   Put successors to OPEN if                           |\n                             |   pointers back to n                                 |\n                             +------------------------------------------------------+\n                                      |\n                                      └───────────────> back to \"Remove the node of OPEN...\"\n```"
+        },
+        {
+          "chunk_id": "0a219c93-0574-4e43-ae1c-d5fa1d32adb9",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Initial",
+          "chunk_order": 12,
+          "cosine_sim": 0.3414,
+          "final_score": 0.3927,
+          "content": "```text\n   +---+\n   | C |\n   +---+\n   | A |\n   +---+      +---+\n              | B |\n              +---+\n========================\n```\n\n[Diagram: The initial configuration shows a stack with C on A and B separately on the table. It matters because planning actions must transform this arrangement into the desired goal state while respecting block-precondition constraints.]"
+        },
+        {
+          "chunk_id": "8d6df43e-a917-44fb-8e23-3c8af51b7ebb",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning graphs for heuristic estimation",
+          "chunk_order": 53,
+          "cosine_sim": 0.3386,
+          "final_score": 0.3894,
+          "content": "- Estimate the cost of achieving a goal by the level in the planning graph where it appears.\n- To estimate the cost of a conjunction of goals use one of the following:\n  - Max-level: take the maximum level of any goal (admissible)\n  - Sum-cost: Take the sum of levels (inadmissible)\n  - Set-level: find the level where they all appear without Mutex\n- Graph plans are relaxation of the problem.\n- Representing more than pair-wise mutex is not cost-effective"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 28.1
+}

@@ -1,0 +1,55 @@
+{
+  "qid": "intro_to_ai_17",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The four items (initial state, actions/successor function, goal test, path cost) and their descriptions match chunk 3d8f7320 exactly.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by listing all four required items to formally define a search problem: initial state, actions/successor function, goal test, and path cost, with brief explanations for each.",
+      "evidence": [
+        "A search problem is formally defined by **four items**:",
+        "initial state, actions/successor function, goal test, and path cost"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly identifies all four required items (initial state, actions/successor function, goal test, and path cost) and accurately describes each one, fully consistent with the ground truth.",
+      "evidence": [
+        "Ground truth: 'initial state (where the search begins), the actions or successor function (a set of action-state pairs), the goal test (which can be explicit or implicit), and the path cost (an additive measure such as the sum of distances or actions)'",
+        "Tutor: 'Initial state... Actions / successor function... Goal test... Path cost... a function that assigns a cost to a sequence of actions, usually the sum of step costs'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Most retrieved chunks are relevant to defining search problems. Two chunks (67acdf6b on CSPs and 19ce7cd1 on planning) discuss related but distinct problem formulations rather than the core search problem definition.",
+      "evidence": [
+        "67acdf6b: 'CSPs - State is composed of variables'",
+        "19ce7cd1: 'Formulation as state-space search problem' (planning context)"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All four key facts from the ground truth are present in the retrieved chunks. Chunk 3d8f7320 explicitly lists all four items: initial state, actions/successor function, goal test (with explicit/implicit distinction), and path cost (with additive property and examples).",
+      "evidence": [
+        "initial state: e.g., Arad",
+        "actions or successor function $S(x)$ = set of action-state pairs",
+        "goal test, can be explicit, e.g., $x$ = Bucharest implicit, e.g., $Checkmate(x)$",
+        "path cost (additive) e.g., sum of distances, number of actions executed"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The primary citation (3d8f7320) explicitly lists all four items with detailed explanations, and the supporting citation (d24868af) confirms these are the four ingredients needed to specify a search problem.",
+      "evidence": [
+        "Tutor states 'four items' and cites chunk 3d8f7320 which says 'A problem is defined by four items: 1. initial state... 2. actions or successor function... 3. goal test... 4. path cost'",
+        "Tutor describes each item matching chunk 3d8f7320's definitions: 'initial state: e.g., Arad', 'actions or successor function $S(x)$', 'goal test, can be explicit... or implicit', 'path cost (additive)'",
+        "Chunk d24868af confirms 'these four ingredients fully specify' a search problem"
+      ]
+    }
+  }
+}

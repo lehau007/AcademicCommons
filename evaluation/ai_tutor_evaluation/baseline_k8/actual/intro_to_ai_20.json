@@ -1,0 +1,172 @@
+{
+  "qid": "intro_to_ai_20",
+  "course_code": "IT3160E",
+  "question": "What three formal components make up a logic?",
+  "session_id": "a1be33a5-363f-47af-a349-f039519d0a58",
+  "answer": "A logic is made up of **three formal components**:\n\n1. **Language (L)** — the set of sentences, defined by a precise syntax  \n2. **Semantics (S)** — the meaning of the sentences in the language  \n3. **Inference system (R)** — the set of derivation rules used to infer new sentences\n\nSo, a logic can be written as the triplet **⟨L, S, R⟩**.",
+  "citations": [
+    {
+      "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "What is Logic ?",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of e"
+    },
+    {
+      "chunk_id": "aa3745f1-792d-44e4-a2da-499e696e6a0b",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "First Order Logic (FOL)",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- First Order Logic is about\n  - Objects\n  - Relations\n  - Facts\n- The world is made of objects\n  - Objects are things with individual identities and properties to distinguish them\n  - Various relatio"
+    },
+    {
+      "chunk_id": "71ca0a1b-17de-41e9-947a-39d6466c0eb1",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Syntax",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Symbols\n  - Variables: x, y, z,…\n  - Constants: a, b, c,…\n  - Function symbols (with arities): f, g, h, …\n  - Relation symbols (with arities): p, r, r\n  - Logical connectives: $¬, \\land, \\lor, \\Righ"
+    },
+    {
+      "chunk_id": "4f3c4a18-ab7c-4b88-b72e-e5f402d4909f",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Semantic",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Variables\n  - Objects\n- Constants\n  - Entities\n- Function symbol\n  - Function from objects to objects\n- Relation symbol\n  - Relation between objects\n- Quantifiers\n  - $\\exists x.P$ true if P is true"
+    },
+    {
+      "chunk_id": "9a3ca08b-2245-4783-862a-e3b8fd67bb91",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Language of Propositional Logic",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Symbols\n  - Propositional variables: A,B,...,P,Q,...\n  - Logical constants: TRUE, FALSE\n  - Logical connectives:\n\n```text\n¬, ∧, ∨, ⇒, ⇔\n```\n\n- Sentences\n  - Each propositional variable is a sentence"
+    },
+    {
+      "chunk_id": "6cc71333-6e7a-4da7-a400-de6ab3b19efc",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+    },
+    {
+      "chunk_id": "65040f6f-d00f-4429-9c1d-63bcd642be7c",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+    },
+    {
+      "chunk_id": "445fad8f-9d0f-41dd-a04e-07112429a5e2",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "First Order Logic",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "What three formal components make up a logic?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "What is Logic ?",
+          "chunk_order": 3,
+          "cosine_sim": 0.4596,
+          "final_score": 0.5286,
+          "content": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of elements in L\n  - R, the logic’s inference system, consisting of derivation rules over L\n- Examples of logics:\n  - Propositional, First Order, Higher Order, Temporal, Fuzzy, Modal, Linear, . . ."
+        },
+        {
+          "chunk_id": "aa3745f1-792d-44e4-a2da-499e696e6a0b",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "First Order Logic (FOL)",
+          "chunk_order": 3,
+          "cosine_sim": 0.3877,
+          "final_score": 0.4459,
+          "content": "- First Order Logic is about\n  - Objects\n  - Relations\n  - Facts\n- The world is made of objects\n  - Objects are things with individual identities and properties to distinguish them\n  - Various relations hold among objects. Some of these relations are functional\n  - Every fact involving objects and their relations are either true or false"
+        },
+        {
+          "chunk_id": "71ca0a1b-17de-41e9-947a-39d6466c0eb1",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 5,
+          "cosine_sim": 0.3623,
+          "final_score": 0.4166,
+          "content": "- Symbols\n  - Variables: x, y, z,…\n  - Constants: a, b, c,…\n  - Function symbols (with arities): f, g, h, …\n  - Relation symbols (with arities): p, r, r\n  - Logical connectives: $¬, \\land, \\lor, \\Rightarrow, \\Leftrightarrow$\n  - Quantifiers: $∃, ∀$"
+        },
+        {
+          "chunk_id": "4f3c4a18-ab7c-4b88-b72e-e5f402d4909f",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Semantic",
+          "chunk_order": 12,
+          "cosine_sim": 0.3426,
+          "final_score": 0.394,
+          "content": "- Variables\n  - Objects\n- Constants\n  - Entities\n- Function symbol\n  - Function from objects to objects\n- Relation symbol\n  - Relation between objects\n- Quantifiers\n  - $\\exists x.P$ true if P is true under some value of x\n  - $\\forall x.P$ true if P is true under every value of x\n- Logical connectives\n  - Similar to Propositional Logic"
+        },
+        {
+          "chunk_id": "9a3ca08b-2245-4783-862a-e3b8fd67bb91",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Language of Propositional Logic",
+          "chunk_order": 5,
+          "cosine_sim": 0.3306,
+          "final_score": 0.3802,
+          "content": "- Symbols\n  - Propositional variables: A,B,...,P,Q,...\n  - Logical constants: TRUE, FALSE\n  - Logical connectives:\n\n```text\n¬, ∧, ∨, ⇒, ⇔\n```\n\n- Sentences\n  - Each propositional variable is a sentence\n  - Each logical constant is a sentence\n  - If $α$ and $β$ are sentences then the following are sentences\n\n$$(α),\\neg α, α \\wedge β, α \\vee β, α \\Rightarrow β, α \\Leftrightarrow β$$"
+        },
+        {
+          "chunk_id": "6cc71333-6e7a-4da7-a400-de6ab3b19efc",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL",
+          "chunk_order": 11,
+          "cosine_sim": 0.2853,
+          "final_score": 0.3281,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "65040f6f-d00f-4429-9c1d-63bcd642be7c",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL",
+          "chunk_order": 4,
+          "cosine_sim": 0.2853,
+          "final_score": 0.3281,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "445fad8f-9d0f-41dd-a04e-07112429a5e2",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "First Order Logic",
+          "chunk_order": 2,
+          "cosine_sim": 0.2853,
+          "final_score": 0.3281,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.5
+}

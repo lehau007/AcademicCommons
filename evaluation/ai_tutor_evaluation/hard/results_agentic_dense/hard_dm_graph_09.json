@@ -1,0 +1,39 @@
+{
+  "qid": "hard_dm_graph_09",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 3,
+      "justification": "Listing correct but derived from the Try() tree / general reasoning, not the (missing) subset table.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "Directly and completely answers the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "Matches the ground-truth key facts with no contradiction.",
+      "evidence": []
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "Retrieval mostly noise: empty '(Lý thuyết tổ hợp)' stubs + a Try() tree; answer correct but weakly grounded.",
+      "evidence": [
+        "c0-c4: (Lý thuyết tổ hợp)"
+      ]
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "The target 3-subset listing table was not retrieved.",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "Citations point to chunks that support the statements.",
+      "evidence": []
+    }
+  }
+}

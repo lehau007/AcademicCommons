@@ -1,0 +1,47 @@
+{
+  "qid": "discrete_math_02",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The formula n^(n-2) and both examples (K_3 with 3 trees, K_4 with 16 trees) are explicitly stated in chunk 69ed7168.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by stating Cayley's theorem and providing the formula n^(n-2) for the number of spanning trees in a complete graph K_n. The examples given are on-topic illustrations of the formula.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly states that a complete graph K_n has n^(n-2) spanning trees according to Cayley's theorem, matching the ground truth exactly. The additional examples (K_3 and K_4) provide correct supplementary detail that does not contradict the ground truth.",
+      "evidence": [
+        "Ground truth: 'n^(n-2) spanning trees'",
+        "Tutor: 'n^{n-2} spanning trees'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six chunks are relevant to Cayley's theorem and spanning trees of complete graphs. Only chunk 0806e91b (railway system diagram with specific lengths) is tangential, showing application examples rather than addressing the theorem itself.",
+      "evidence": [
+        "0806e91b: 'Length of spanning tree: 17284'",
+        "0806e91b: 'Length of spanning tree: 15932'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The first retrieved chunk explicitly states Cayley's theorem: 'A complete graph $K_n$ has $n^{n-2}$ spanning trees.' This contains all key facts from the ground truth (Cayley's theorem, complete graph K_n, and the formula n^(n-2)).",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The primary claim about Cayley's theorem is perfectly supported by chunk 69ed7168, and the examples for K_3 and K_4 are validated by chunks 69ed7168 and 84c6bb46 respectively.",
+      "evidence": [
+        "Tutor states 'According to Cayley's theorem, the complete graph K_n has n^(n-2) spanning trees' — Chunk 69ed7168: 'Theorem (Cayley). A complete graph $K_n$ has $n^{n-2}$ spanning trees.'",
+        "Tutor states 'K_3 has 3^(3-2) = 3 spanning trees' — Chunk 69ed7168 shows K_3 with exactly 3 spanning trees illustrated",
+        "Tutor states 'K_4 has 4^(4-2) = 16 spanning trees' — Chunk 84c6bb46 titled '16 spanning trees of $K_4$' enumerates all spanning trees"
+      ]
+    }
+  }
+}

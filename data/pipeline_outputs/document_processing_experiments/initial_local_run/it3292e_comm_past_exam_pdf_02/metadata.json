@@ -1,0 +1,19 @@
+{
+  "sample_id": "it3292e_comm_past_exam_pdf_02",
+  "course_code": "IT3292E",
+  "tier": "community",
+  "input_path": "data/sample/community/IT3292E/past_exam/Database-cuối kì20232.pdf",
+  "expected_type": "scanned_pdf",
+  "expected_route": "vision_only",
+  "actual_route": "direct_text",
+  "route_evidence": {
+    "reason": "pymupdf_unavailable",
+    "inferred_type": "text_pdf",
+    "text_chars": null,
+    "page_count": null,
+    "image_count": null
+  },
+  "file_sha256": "5d9e1034e9ddd5aac152148f0eb1191ad198cf0ff0f7579f3c60e525f28b1e1b",
+  "model": "local_placeholder",
+  "duration_ms": 30
+}

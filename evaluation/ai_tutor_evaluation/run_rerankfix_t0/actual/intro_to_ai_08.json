@@ -1,0 +1,104 @@
+{
+  "qid": "intro_to_ai_08",
+  "course_code": "IT3160E",
+  "question": "What distinguishes a standard search problem from a game?",
+  "session_id": "9b5123c9-f2b6-4502-bb6e-e49a2a7d17f5",
+  "answer": "A **standard search problem** và một **game** khác nhau chủ yếu ở chỗ có hay không có **đối thủ**:\n\n### 1) Standard search problem\n- **Không có adversary** (không có đối thủ).\n- Mục tiêu là tìm một **đường đi / lời giải** từ trạng thái ban đầu đến trạng thái đích.\n- Thường có thể dùng heuristic hoặc CSP để tìm **lời giải tối ưu**.\n- Ví dụ: **path planning**, **scheduling activities**.\n\n### 2) Game\n- **Có adversary**: kết quả phụ thuộc vào hành động của đối thủ.\n- “Lời giải” không chỉ là một đường đi mà là một **chiến lược**:\n  - chiến lược phải chỉ ra nên đi nước nào cho **mọi phản ứng có thể** của đối thủ.\n- Do giới hạn thời gian, thường chỉ tìm được **lời giải xấp xỉ** thay vì tối ưu tuyệt đối.\n- Ví dụ: **chess**, **checkers**, **Othello**, **backgammon**.\n\n### Tóm lại\n- **Search problem**: tìm cách đi đến mục tiêu trong môi trường không đối kháng.\n- **Game**: tìm chiến lược trong môi trường **đối kháng nhiều tác nhân**.",
+  "citations": [
+    {
+      "chunk_id": "a0987283-c423-4f4c-8151-3144edea7054",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Relation of Games to Search",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Search – no adversary\n  - Solution is (heuristic) method for finding goal\n  - Heuristics and CSP techniques can find *optimal* solution\n  - Evaluation function: estimate of cost from start to goal t"
+    },
+    {
+      "chunk_id": "d1fea5ae-b4db-42bd-a737-b76c8d0476ec",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Why study games?",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- Games are a form of *multi-agent environment*\n  - What do other agents do and how do they affect our success?\n  - Cooperative vs. competitive multi-agent environments.\n  - Competitive multi-agent en"
+    },
+    {
+      "chunk_id": "fea36428-21e8-40af-b062-6c51e8c26d96",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Minimax",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- Two players: MAX and MIN\n- MAX moves first and they take turns until the game is over. Winner gets award, looser gets penalty.\n- Games as search:\n  - Initial state: e.g. board configuration of chess"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "difference between standard search problem and game in AI",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "a0987283-c423-4f4c-8151-3144edea7054",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Relation of Games to Search",
+          "chunk_order": 9,
+          "cosine_sim": 0.5679,
+          "final_score": 0.73,
+          "content": "- Search – no adversary\n  - Solution is (heuristic) method for finding goal\n  - Heuristics and CSP techniques can find *optimal* solution\n  - Evaluation function: estimate of cost from start to goal through given node\n  - Examples: path planning, scheduling activities\n\n- Games – adversary\n  - Solution is strategy (strategy specifies move for every possible opponent reply).\n  - Time limits force an *approximate* solution\n  - Evaluation function: evaluate “goodness” of game position\n  - Examples: chess, checkers, Othello, backgammon\n\n- Ignoring computational complexity, games are a perfect application for a complete search.\n- Of course, ignoring complexity is a bad idea, so games are a good place to study resource bounded searches."
+        },
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.5545,
+          "final_score": 0.52,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "0b538699-9f0f-49c0-8107-f5bde8e6fa34",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Search vs. planning",
+          "chunk_order": 3,
+          "cosine_sim": 0.4163,
+          "final_score": 0.2123,
+          "content": "- Consider the task *get milk, bananas, and a cordless drill*\n- Standard search algorithms seem to fail miserably:\n\n```text\nStart\n  ├── Go To Pet Store ──> [ ] ──> Talk to Parrot ──> [ ]\n  │                      └──────> Buy a Dog ───────> [ ]\n  ├── Go To School ─────> [ ] ──> Go To Class ─────> [ ]\n  ├── Go To Supermarket ─> [ ] ──> Buy Tuna Fish ──> [ ]\n  │                      ├──────> Buy Arugula ─────> [ ]\n  │                      └──────> Buy Milk ────────> [ ] ──> ... ──> Finish\n  ├── Go To Sleep ───────> [ ]\n  ├── Read A Book ───────> [ ]\n  ├── Sit in Chair ──────> [ ] ──> Sit Some More ───> [ ]\n  │                      └──────> Read A Book ─────> [ ]\n  └── Etc. Etc. ... ─────> ...\n```"
+        },
+        {
+          "chunk_id": "d1fea5ae-b4db-42bd-a737-b76c8d0476ec",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Why study games?",
+          "chunk_order": 8,
+          "cosine_sim": 0.4778,
+          "final_score": 0.2027,
+          "content": "- Games are a form of *multi-agent environment*\n  - What do other agents do and how do they affect our success?\n  - Cooperative vs. competitive multi-agent environments.\n  - Competitive multi-agent environments give rise to adversarial search a.k.a. *games*\n\n- Why study games?\n  - Fun, historically entertaining\n  - Interesting subject of study because they are hard\n  - Easy to represent and agents restricted to small number of actions"
+        },
+        {
+          "chunk_id": "d24868af-9916-46a2-a249-4335ac624367",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Example: The 8-puzzle",
+          "chunk_order": 13,
+          "cosine_sim": 0.4149,
+          "final_score": 0.1975,
+          "content": "[Diagram: The slide introduces the 8-puzzle as a search problem by defining its state space, allowed actions, goal condition, and step cost. This matters because these four ingredients fully specify how an algorithm can evaluate and solve the puzzle.]"
+        },
+        {
+          "chunk_id": "fea36428-21e8-40af-b062-6c51e8c26d96",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Minimax",
+          "chunk_order": 11,
+          "cosine_sim": 0.4639,
+          "final_score": 0.1823,
+          "content": "- Two players: MAX and MIN\n- MAX moves first and they take turns until the game is over. Winner gets award, looser gets penalty.\n- Games as search:\n  - Initial state: e.g. board configuration of chess\n  - Successor function: list of (move,state) pairs specifying legal moves.\n  - Terminal test: Is the game finished?\n  - Utility function: Gives numerical value of terminal states.\n  - E.g. win (+1), loose (-1) and draw (0) in tic-tac-toe\n- MAX uses search tree to determine next move.\n- Perfect play for deterministic games"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.5
+}

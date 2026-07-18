@@ -1,0 +1,105 @@
+{
+  "qid": "discrete_math_04",
+  "course_code": "IT3020E",
+  "question": "What is the overall computational time complexity of the Breadth-First Search (BFS) algorithm?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "e298961d-fecc-4d01-b313-28d88b1a9ffc",
+  "answer": "# Computational Time Complexity of BFS\n\nBased on the provided context, the overall computational time complexity of BFS is **O(|V| + |E|)**.\n\n## Breakdown of the Time Complexity\n\nThe complexity comes from three main components, as explained in the \"Computation time of BFS\" section:\n\n1. **Initialization**: $O(|V|)$\n   - The `visited` array (and other tracking arrays like `d[]` and `pred[]`) must be initialized for every vertex.\n\n2. **Queue operations**: $O(|V|)$\n   - Each vertex is inserted into and removed from the queue **exactly once**.\n   - Since each queue operation (enqueue/dequeue) takes $O(1)$, the total is $O(|V|)$.\n\n3. **Adjacency list traversal**: $O(|E|)$\n   - The adjacency list of each vertex is scanned **exactly once**.\n   - The total length of all adjacency lists combined is $O(|E|)$.\n\n## Total\n\n$$\\text{Time}(BFS(s)) = O(|V|) + O(|V|) + O(|E|) = O(|V| + |E|)$$\n\nThis means BFS runs in **linear time** relative to the size of the graph's adjacency list representation (number of vertices plus number of edges).\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "b63736b6-0137-4172-8b88-152978c49a56",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Computation time of BFS",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Initialize: need $O(|V|)$.\n\n- The loop for\n  - Each vertex is inserted into and removed from queue exactly once, each operation needs $O(1)$. So, the total computation time with queue is $O(|V|)$.\n "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "What is the overall computational time complexity of the Breadth-First Search (BFS) algorithm?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "b63736b6-0137-4172-8b88-152978c49a56",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Computation time of BFS",
+          "chunk_order": 12,
+          "cosine_sim": 0.5138,
+          "final_score": 0.5909,
+          "content": "- Initialize: need $O(|V|)$.\n\n- The loop for\n  - Each vertex is inserted into and removed from queue exactly once, each operation needs $O(1)$. So, the total computation time with queue is $O(|V|)$.\n  - The adjacency list of each vertex is traversed exactly once. The total length of all adjacency list is $O(|E|)$.\n- In total, the computation time of BFS(s) is $O(|V|+|E|)$, linear to the size of adjacency list that represents the graph.\n\n[Diagram: The pseudocode shows the BFS process and its cost drivers: one-time initialization, one queue operation per vertex, and one scan across all adjacency lists. This matters because it explains why BFS runs in linear time relative to the graph’s vertices and edges when using adjacency lists.]"
+        },
+        {
+          "chunk_id": "8d8b97e8-6ca3-4dd9-ae0c-368dba2d7484",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Graph traversal (Graph searching)",
+          "chunk_order": 4,
+          "cosine_sim": 0.4795,
+          "final_score": 0.5514,
+          "content": "Searching a graph means systematically following the edges of the graph so as to visit the vertices.\n\n2 algorithms:\n\n- Breadth First Search – BFS\n- Depth First Search – DFS"
+        },
+        {
+          "chunk_id": "7b29c5c3-a9c0-4382-85a0-575e53ae2c8c",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Breadth-first Search",
+          "chunk_order": 9,
+          "cosine_sim": 0.4154,
+          "final_score": 0.4778,
+          "content": "```text\nBFS(s)\n // Breadth first search starts from vertex s\n    visited[s] ← 1; //visited\n    Q ← ∅; enqueue(Q,s); // insert s into Q\n    while (Q ≠ ∅)\n    {\n        u ← dequeue(Q); // Remove u from Q\n        for v ∈ Adj[u]\n            if (visited[v] == 0) //not visited yet\n            {\n                visited[v] ← 1; //visited\n                enqueue(Q,v)  // insert v into Q\n            }\n    }\n\n(*Main Program*)\nmain()\n    for s ∈ V // Initialize\n        visited[s] ← 0;\n\n    for s ∈ V\n        if (visited[s]==0) BFS(s);\n```\n\n```text\nGraph G=(V,E)\n\n      a ----- b ----- e\n      | \\     | \\     |\n      |  \\    |  \\    |\n      c ----- k      s\n      | \\     |\n      |  \\    |\n      d ----- g\n```"
+        },
+        {
+          "chunk_id": "707d7426-5c59-4bee-a07c-a036a69f81a8",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Computation time of BFS",
+          "chunk_order": 11,
+          "cosine_sim": 0.3928,
+          "final_score": 0.4518,
+          "content": "```text\n+--------------------------------------------------------------+\n| BFS(s)                                                       |\n| // Breadth first search starts from vertex s                 |\n|   visited[s] ← 1; //visited                                   |\n|   Q ← ∅; enqueue(Q,s); // insert s into Q                    |\n|   while (Q ≠ ∅)                                             |\n|   {                                                          |\n|       u ← dequeue(Q); // Remove u from Q                    |\n|       for v ∈ Adj[u]                                        |\n|           if (visited[v] == 0) //not visited yet            |\n|           {                                                  |\n|               visited[v] ← 1; //visited                      |\n|               enqueue(Q,v)  // insert v into Q              |\n|           }                                                  |\n|   }                                                          |\n|                                                              |\n| (*Main Program*)                                             |\n| main ()                                                      |\n|     for s ∈ V // Initialize                                  |\n|         visited[s] ← 0;                                      |\n|                                                              |\n|     for s ∈ V                                               |\n|         if (visited[s]==0) BFS(s);                           |\n+--------------------------------------------------------------+\n```"
+        },
+        {
+          "chunk_id": "f6078ca0-c92c-45e5-abf2-471f991650f2",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "(*Main Program*)",
+          "chunk_order": 15,
+          "cosine_sim": 0.3841,
+          "final_score": 0.4417,
+          "content": "- for s $\\in$ V //initialize\n- {\n- visited[s] $\\leftarrow$ 0; d[s] $\\leftarrow \\infty$; pred[s] $\\leftarrow$ NULL;\n- }\n- for s $\\in$ V\n- if (visited[s]==0) BFS(s);\n\n| Symbol | Meaning |\n|---|---|\n| $Q$ | queue contain all visited vertices |\n| visited[v] | mark visit state of vertex v |\n| d[v] | distance from to v |\n| pred[v] | vertex that is preceding v |"
+        },
+        {
+          "chunk_id": "65f383ea-4e88-4d6b-b964-ad0592aa5c2c",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS($s$)",
+          "chunk_order": 48,
+          "cosine_sim": 0.3769,
+          "final_score": 0.4335,
+          "content": "1. visited[$s$] = true; //Visit s\n2. $time = time + 1$\n3. $d[s] = time\n4. for each $v \\in Adj[s]$\n5. if $(visited[v] == false)$ {\n6. &nbsp;&nbsp;&nbsp;&nbsp;pred[$v$] $\\leftarrow$ $s$,\n7. &nbsp;&nbsp;&nbsp;&nbsp;DFS($v$);\n8. }\n9. $time = time + 1$\n10. $f[s] = time$\n\n```text\nsource vertex\n      -->\n   a(1|12) ---> e(8|11) ---> g(13|16)\n    |  \\          |  \\         |  \\\n    |   \\         |   \\        |   \\\n    v    v        v    v       v    v\n  b(2|7) -> d(5|6)  c(3|4)   h(14|15)\n    \\      ^  ^      ^\n     \\     |  |      |\n      v    |  |      |\n      d(5|6)  |      |\n              |      |\n           c(3|4) <- d(5|6)\n```"
+        },
+        {
+          "chunk_id": "9d3197f2-90b6-4884-938e-fa50f0da8ae4",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Algorithm to check strongly connectedness of directed graph",
+          "chunk_order": 67,
+          "cosine_sim": 0.3636,
+          "final_score": 0.4181,
+          "content": "- Pick an arbitrary vertex $v \\in V$.\n- Perform DFS($v$) on $G$. If there exists vertex $u$ not visited yet, then $G$ is not strongly connected and the algorithm finishes. Otherwise, the algorithm continues the following step:\n  - Perform DFS($v$) on $G^T = (V, E^T)$, where $E^T$ is obtained from $E$ by reversing the direction of edges. If exist vertex $u$ not visited, then $G$ is not strongly connected, otherwise $G$ is strongly connected.\n- Computation time: $O(|V|+|E|)$"
+        },
+        {
+          "chunk_id": "99743fa6-773b-43bf-a916-e70e772540a8",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "BFS(s)",
+          "chunk_order": 14,
+          "cosine_sim": 0.3602,
+          "final_score": 0.4142,
+          "content": "- //Breadth first search starts from vertex s\n- visited[s] $\\leftarrow$ 1; //visited\n- d[s] $\\leftarrow$ 0; pred[s] $\\leftarrow$ NULL;\n- Q $\\leftarrow$ $\\emptyset$; enqueue(Q,s); //Insert s into Q\n- while (Q $\\ne$ $\\emptyset$)\n- {\n- u $\\leftarrow$ dequeue(Q); //Remove u from Q\n- for v $\\in$ Adj[u]\n- if (visited[v] == 0) //not visited yet\n- {\n- visited[v] $\\leftarrow$ 1; //visited\n- d[v] $\\leftarrow$ d[u] + 1; pred[v] $\\leftarrow$ u;\n- enqueue(Q,v) //Insert v into Q\n- }\n- }"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.1
+}

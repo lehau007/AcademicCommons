@@ -1,0 +1,42 @@
+# OCR Result: test_image
+
+Source: `src/experiments/document_processing/test_data/image.png`
+
+## Segment ?
+
+{
+  "schema_version": "1.0",
+  "content_type": "battery_report_table",
+  "row_labels": [
+    "NAME",
+    "MANUFACTURER",
+    "SERIAL NUMBER",
+    "CHEMISTRY",
+    "DESIGN CAPACITY",
+    "FULL CHARGE CAPACITY"
+  ],
+  "column_labels": [
+    "BATTERY 1"
+  ],
+  "values": [
+    [
+      "BIF0_9"
+    ],
+    [
+      "MSI"
+    ],
+    [
+      "-"
+    ],
+    [
+      "LION"
+    ],
+    [
+      "52,440 mWh"
+    ],
+    [
+      "33,584 mWh"
+    ]
+  ],
+  "notes": "The data is extracted from the 'Installed batteries' section of the Windows Battery report."
+}

@@ -1,0 +1,116 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "question": "When are two simple graphs considered isomorphic?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "2c20e368-a80e-49b4-a414-2bc947f62ad9",
+  "answer": "Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?",
+  "citations": [
+    {
+      "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  "
+    },
+    {
+      "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Simple Graph",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /"
+    },
+    {
+      "chunk_id": "471a244c-03a7-437d-8e1b-2d50e3298c01",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Euler’s Formula (Cont.)",
+      "page_number": null,
+      "chunk_order": 70,
+      "excerpt": "- Corollary 2: If $G$ is a connected planar simple graph, then $G$ must have a vertex of degree not exceeding 5.\n\nIf $G$ has one or two vertices, it is true; thus, we assume that $G$ has at least thre"
+    },
+    {
+      "chunk_id": "5b6e92b8-dd38-436d-9349-d58a8ccee03b",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Directed Graph",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "**Definition.** Directed simple *(multi)* graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is finite element, each element is called vertex\n- Edge set $E$ is set (*family*) of ordered pairs\n\n$(u,"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "When are two simple graphs considered isomorphic? definition of graph isomorphism simple graphs",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+          "chunk_order": 34,
+          "cosine_sim": 0.5863,
+          "final_score": 0.6964,
+          "content": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\n[Diagram: The two drawings illustrate two graphs that have the same structure even though their edges are arranged differently. The point is to show that a relabeling of vertices can preserve adjacency, which is exactly what graph isomorphism means.]"
+        },
+        {
+          "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Simple Graph",
+          "chunk_order": 21,
+          "cosine_sim": 0.5348,
+          "final_score": 0.3099,
+          "content": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /|    /     /\n      e |   /     /\n       \\ |  /    /\n         d —— ——\n\n        f\n        |\n        g\n\n        h\n```\n\n[Diagram: The figure shows an undirected graph split into two connected components plus one isolated vertex. It illustrates how a simple graph is defined by its vertex set and edge set, and that not all vertices need to be part of the same connected structure.]"
+        },
+        {
+          "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 8,
+          "cosine_sim": 0.4612,
+          "final_score": 0.2998,
+          "content": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two vertices $u, v \\in V$, there exists exactly one simple path from $u$ to $v$.\n3. $G$ is connected, and removing any edge from $G$ disconnects it (each edge of $G$ is a bridge).\n4. $G$ has no cycles, and adding any edge to $G$ gives rise to a cycle. (Thus $G$ is a maximal acyclic graph).\n5. $G$ is connected and $|E| = |V| - 1$."
+        },
+        {
+          "chunk_id": "471a244c-03a7-437d-8e1b-2d50e3298c01",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Euler’s Formula (Cont.)",
+          "chunk_order": 70,
+          "cosine_sim": 0.3897,
+          "final_score": 0.2283,
+          "content": "- Corollary 2: If $G$ is a connected planar simple graph, then $G$ must have a vertex of degree not exceeding 5.\n\nIf $G$ has one or two vertices, it is true; thus, we assume that $G$ has at least three vertices.\n\nIf the degree of each vertex were at least 6, then by Handshaking Theorem,  \n$2e \\ge 6v$, i.e., $e \\ge 3v$,\n\n$$\n2e = \\sum_{v \\in V} \\deg(v)\n$$\n\nbut this contradicts the inequality from Corollary 1: $e \\le 3v - 6$."
+        },
+        {
+          "chunk_id": "c39258bf-8827-4abb-8cb7-a247ce1a5dcd",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "1. Incidence Matrix",
+          "chunk_order": 6,
+          "cosine_sim": 0.3209,
+          "final_score": 0.2173,
+          "content": "G = (V, E) is an undirected graph:\n\n- V = {v₁, v₂, v₃, ..., vₙ}\n- E = {e₁, e₂, ..., eₘ}\n\nThen the incidence matrix with respect to this ordering of V and E is the n × m matrix M = [mᵢⱼ], where\n\n[Formula: m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise]\n\nCan also be used to represent:\n\n- **Multiple edges:** by using columns with identical entries, since these edges are incident with the same pair of vertices\n- **Loops:** by using a column with exactly one entry equal to 1, corresponding to the vertex that is incident with the loop"
+        },
+        {
+          "chunk_id": "5b6e92b8-dd38-436d-9349-d58a8ccee03b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Directed Graph",
+          "chunk_order": 23,
+          "cosine_sim": 0.5222,
+          "final_score": 0.2035,
+          "content": "**Definition.** Directed simple *(multi)* graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is finite element, each element is called vertex\n- Edge set $E$ is set (*family*) of ordered pairs\n\n$(u,v)$, where $u, v \\in V, u \\ne v$\n\n```text\n      (v, u)\n   u ---------> v\n    \\--------->\n      (u, v)\n\n      w ---------> v\n          (w, v)\n```\n\n[Diagram: The figure illustrates that directed edges have an order, so $(u,v)$ and $(v,u)$ are different relationships. It also shows how a directed multigraph may allow multiple directed edges between the same two vertices, which distinguishes it from a simple directed graph.]\n\n- Directed multigraph\n- (Simple) Directed graph\n- $\\sim$ Digraph"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 5.4
+}

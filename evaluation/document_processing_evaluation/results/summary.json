@@ -1,0 +1,222 @@
+{
+  "n_files": 10,
+  "metrics": [
+    "classification_routing",
+    "text_coverage",
+    "extraction_fidelity",
+    "structure_preservation",
+    "faithfulness_no_hallucination",
+    "formula_table_code"
+  ],
+  "per_metric": {
+    "classification_routing": {
+      "mean": 4.7,
+      "min": 4,
+      "max": 5
+    },
+    "text_coverage": {
+      "mean": 4.4,
+      "min": 3,
+      "max": 5
+    },
+    "extraction_fidelity": {
+      "mean": 4.4,
+      "min": 2,
+      "max": 5
+    },
+    "structure_preservation": {
+      "mean": 4.2,
+      "min": 3,
+      "max": 5
+    },
+    "faithfulness_no_hallucination": {
+      "mean": 3.9,
+      "min": 2,
+      "max": 5
+    },
+    "formula_table_code": {
+      "mean": 4.2,
+      "min": 3,
+      "max": 5
+    }
+  },
+  "overall": {
+    "mean": 4.3,
+    "min": 2,
+    "max": 5
+  },
+  "classification_pass_rate": 1.0,
+  "hallucination_counts": {
+    "it3020e_graph_presentation": 12,
+    "it3160e_ai_introduction": 5,
+    "it3160e_intro_ai_presentation": 0,
+    "it3160e_machine_learning": 10,
+    "it3210_clang_lect13_vi": 0,
+    "it3210_ocr_demo_chart_png": 0,
+    "it4015e_access_control_pptx": 0,
+    "it3292e_exam_cuoiki_2022_pdf": 17,
+    "it3292e_exam_giuaki_oanh_pdf": 2,
+    "it3292e_exam_giuaki_trinh_jpg": 0
+  },
+  "total_hallucinations": 46,
+  "per_file_avg": {
+    "it3020e_graph_presentation": 3.33,
+    "it3160e_ai_introduction": 4.17,
+    "it3160e_intro_ai_presentation": 4.67,
+    "it3160e_machine_learning": 4.5,
+    "it3210_clang_lect13_vi": 4.83,
+    "it3210_ocr_demo_chart_png": 5.0,
+    "it4015e_access_control_pptx": 4.33,
+    "it3292e_exam_cuoiki_2022_pdf": 3.17,
+    "it3292e_exam_giuaki_oanh_pdf": 4.33,
+    "it3292e_exam_giuaki_trinh_jpg": 4.67
+  },
+  "per_route": {
+    "hybrid": {
+      "classification_routing": {
+        "mean": 4.5,
+        "min": 4,
+        "max": 5
+      },
+      "text_coverage": {
+        "mean": 4.33,
+        "min": 3,
+        "max": 5
+      },
+      "extraction_fidelity": {
+        "mean": 4.83,
+        "min": 4,
+        "max": 5
+      },
+      "structure_preservation": {
+        "mean": 4.0,
+        "min": 3,
+        "max": 5
+      },
+      "faithfulness_no_hallucination": {
+        "mean": 3.83,
+        "min": 2,
+        "max": 5
+      },
+      "formula_table_code": {
+        "mean": 4.33,
+        "min": 3,
+        "max": 5
+      }
+    },
+    "vision_only": {
+      "classification_routing": {
+        "mean": 5.0,
+        "min": 5,
+        "max": 5
+      },
+      "text_coverage": {
+        "mean": 4.5,
+        "min": 3,
+        "max": 5
+      },
+      "extraction_fidelity": {
+        "mean": 3.75,
+        "min": 2,
+        "max": 5
+      },
+      "structure_preservation": {
+        "mean": 4.5,
+        "min": 4,
+        "max": 5
+      },
+      "faithfulness_no_hallucination": {
+        "mean": 4.0,
+        "min": 2,
+        "max": 5
+      },
+      "formula_table_code": {
+        "mean": 4.0,
+        "min": 3,
+        "max": 5
+      }
+    }
+  },
+  "per_file_scores": {
+    "it3020e_graph_presentation": {
+      "classification_routing": 4,
+      "text_coverage": 3,
+      "extraction_fidelity": 4,
+      "structure_preservation": 4,
+      "faithfulness_no_hallucination": 2,
+      "formula_table_code": 3
+    },
+    "it3160e_ai_introduction": {
+      "classification_routing": 4,
+      "text_coverage": 5,
+      "extraction_fidelity": 5,
+      "structure_preservation": 4,
+      "faithfulness_no_hallucination": 3,
+      "formula_table_code": 4
+    },
+    "it3160e_intro_ai_presentation": {
+      "classification_routing": 4,
+      "text_coverage": 5,
+      "extraction_fidelity": 5,
+      "structure_preservation": 4,
+      "faithfulness_no_hallucination": 5,
+      "formula_table_code": 5
+    },
+    "it3160e_machine_learning": {
+      "classification_routing": 5,
+      "text_coverage": 5,
+      "extraction_fidelity": 5,
+      "structure_preservation": 4,
+      "faithfulness_no_hallucination": 3,
+      "formula_table_code": 5
+    },
+    "it3210_clang_lect13_vi": {
+      "classification_routing": 5,
+      "text_coverage": 4,
+      "extraction_fidelity": 5,
+      "structure_preservation": 5,
+      "faithfulness_no_hallucination": 5,
+      "formula_table_code": 5
+    },
+    "it3210_ocr_demo_chart_png": {
+      "classification_routing": 5,
+      "text_coverage": 5,
+      "extraction_fidelity": 5,
+      "structure_preservation": 5,
+      "faithfulness_no_hallucination": 5,
+      "formula_table_code": 5
+    },
+    "it4015e_access_control_pptx": {
+      "classification_routing": 5,
+      "text_coverage": 4,
+      "extraction_fidelity": 5,
+      "structure_preservation": 3,
+      "faithfulness_no_hallucination": 5,
+      "formula_table_code": 4
+    },
+    "it3292e_exam_cuoiki_2022_pdf": {
+      "classification_routing": 5,
+      "text_coverage": 3,
+      "extraction_fidelity": 2,
+      "structure_preservation": 4,
+      "faithfulness_no_hallucination": 2,
+      "formula_table_code": 3
+    },
+    "it3292e_exam_giuaki_oanh_pdf": {
+      "classification_routing": 5,
+      "text_coverage": 5,
+      "extraction_fidelity": 4,
+      "structure_preservation": 4,
+      "faithfulness_no_hallucination": 4,
+      "formula_table_code": 4
+    },
+    "it3292e_exam_giuaki_trinh_jpg": {
+      "classification_routing": 5,
+      "text_coverage": 5,
+      "extraction_fidelity": 4,
+      "structure_preservation": 5,
+      "faithfulness_no_hallucination": 5,
+      "formula_table_code": 4
+    }
+  }
+}

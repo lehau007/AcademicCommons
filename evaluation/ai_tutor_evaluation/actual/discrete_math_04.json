@@ -1,0 +1,39 @@
+{
+  "qid": "discrete_math_04",
+  "course_code": "IT3020E",
+  "question": "What is the overall computational time complexity of the Breadth-First Search (BFS) algorithm?",
+  "session_id": "dd698bf2-92f1-494f-a998-ef1ae1a854dc",
+  "answer": "The overall computational time complexity of **Breadth-First Search (BFS)** is:\n\n\\[\nO(|V| + |E|)\n\\]\n\nwhere:\n- \\(|V|\\) = number of vertices\n- \\(|E|\\) = number of edges\n\nThis is assuming the graph is represented using an **adjacency list**. In that case:\n- each vertex is enqueued and dequeued at most once,\n- each adjacency list is scanned once,\n- so the total time is linear in the size of the graph.",
+  "citations": [
+    {
+      "chunk_id": "b63736b6-0137-4172-8b88-152978c49a56",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Computation time of BFS",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Initialize: need $O(|V|)$.\n\n- The loop for\n  - Each vertex is inserted into and removed from queue exactly once, each operation needs $O(1)$. So, the total computation time with queue is $O(|V|)$.\n "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Breadth-First Search BFS overall computational time complexity",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "b63736b6-0137-4172-8b88-152978c49a56",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Computation time of BFS",
+          "chunk_order": 12,
+          "cosine_sim": 0.6265,
+          "final_score": 0.7992,
+          "content": "- Initialize: need $O(|V|)$.\n\n- The loop for\n  - Each vertex is inserted into and removed from queue exactly once, each operation needs $O(1)$. So, the total computation time with queue is $O(|V|)$.\n  - The adjacency list of each vertex is traversed exactly once. The total length of all adjacency list is $O(|E|)$.\n- In total, the computation time of BFS(s) is $O(|V|+|E|)$, linear to the size of adjacency list that represents the graph.\n\n[Diagram: The pseudocode shows the BFS process and its cost drivers: one-time initialization, one queue operation per vertex, and one scan across all adjacency lists. This matters because it explains why BFS runs in linear time relative to the graph’s vertices and edges when using adjacency lists.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.3
+}

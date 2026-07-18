@@ -1,0 +1,116 @@
+{
+  "qid": "database_03",
+  "course_code": "IT3292E",
+  "question": "How did the SQL standard evolve between 1986 and 1999?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "ca6e9c86-a89f-4dfc-b854-0b30c35e5319",
+  "answer": "Từ tài liệu môn học, chuẩn SQL đã phát triển như sau:\n\n- **1986**: ra đời **SQL1** — chuẩn SQL đầu tiên.\n- **1987**: SQL1 được **ISO** chấp nhận như một chuẩn quốc tế.\n- **1992**: **SQL2** (còn gọi là **SQL-92**) — phiên bản sửa đổi, và được xem là **chuẩn chính thức cho việc định nghĩa và thao tác trên cơ sở dữ liệu quan hệ**.\n- **1999**: **SQL3** — mở rộng thêm các tính năng như:\n  - **user-defined data types**\n  - **triggers**\n  - **user-defined functions**\n  - và một số **đặc trưng hướng đối tượng** khác\n\nTóm lại, giai đoạn **1986 → 1999** cho thấy SQL chuyển từ một chuẩn ban đầu cơ bản sang các phiên bản ngày càng mạnh hơn, hỗ trợ tốt hơn cho mô hình quan hệ và bổ sung nhiều tính năng nâng cao.",
+  "citations": [
+    {
+      "chunk_id": "fe2e9a29-780e-4691-8961-ee2b5387c10d",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Brief history of SQL",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- 1975: SEQUEL: System-R\n- 1976: SEQUEL 2\n- 1978/79: SQL (Structured Query Language) (used in System-R)\n- SQL1: The first standard for SQL defined in 1986; adopted as an international by Standards Org"
+    },
+    {
+      "chunk_id": "f386dd06-1a4e-4405-9a21-32ff64ddd73e",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Introduction to SQL",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "[Diagram: The slide shows SQL as the standard language used between people or applications and a DBMS server. It highlights that different database tasks, such as defining tables or manipulating data,"
+    },
+    {
+      "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, r"
+    },
+    {
+      "chunk_id": "f59b1aaa-c7c6-4a4a-a5b5-8ddcba9c50db",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Leaning objective",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "- Have notions about the SQL language\n- Use SQL to define a relation schema in a database\n- Use SQL to populate a table with rows, update / delete data and to retrieve data from a table"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "How did the SQL standard evolve between 1986 and 1999? SQL standards 1986 1989 1992 1999 evolution",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "fe2e9a29-780e-4691-8961-ee2b5387c10d",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1.1. Brief history of SQL",
+          "chunk_order": 8,
+          "cosine_sim": 0.6988,
+          "final_score": 0.9096,
+          "content": "- 1975: SEQUEL: System-R\n- 1976: SEQUEL 2\n- 1978/79: SQL (Structured Query Language) (used in System-R)\n- SQL1: The first standard for SQL defined in 1986; adopted as an international by Standards Organisation (ISO) in 1987.\n- 1992: SQL2 - revised version of the processor (also called SQL 92); adopted as the formal standard language for defining and manipulating relational database.\n- 1999: SQL3 - extension with additional features such as user-defined data types, triggers, user-defined functions and other Object Oriented features.\n- New versions of the standard were published in 2003, 2006, 2008, 2011, 2016: more additional features: XML-based features, columns with auto-generated values, JSON,…"
+        },
+        {
+          "chunk_id": "f386dd06-1a4e-4405-9a21-32ff64ddd73e",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1. Introduction to SQL",
+          "chunk_order": 7,
+          "cosine_sim": 0.4612,
+          "final_score": 0.4957,
+          "content": "[Diagram: The slide shows SQL as the standard language used between people or applications and a DBMS server. It highlights that different database tasks, such as defining tables or manipulating data, are expressed through SQL rather than through the programming languages of client applications.]"
+        },
+        {
+          "chunk_id": "7207bed0-3332-41e3-bdae-9bdd972279b8",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "2.3. Updatable views",
+          "chunk_order": 46,
+          "cosine_sim": 0.415,
+          "final_score": 0.4831,
+          "content": "- The SQL rules are complex\n- They permit modifications on views that are defined by selecting (using SELECT, not SELECT DISTINCT) some attributes from one relation $R$ (which may itself be an updatable view):\n  - The WHERE clause must not involve $R$ in a subquery\n  - The FROM clause can only consist of one occurrence of $R$ and no other relation\n  - The list in the SELECT clause must include enough attributes that for every tuple inserted into the relation $R$ (other attributes filled with NULL values or the proper default)\n  - There is no GROUP BY clause"
+        },
+        {
+          "chunk_id": "a873461e-794c-4204-b0d9-a9d5edcbe977",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "Remark",
+          "chunk_order": 56,
+          "cosine_sim": 0.3921,
+          "final_score": 0.4162,
+          "content": "- Complex query\n  - Clauses in SQL statement are not exchangeable\n  - A SQL statement executed successfully, it's not sure that this statement provides the correct result\n  - A query provides correct result at a moment, it may not the correct query for a demand\n  - Be careful with \"natural join\"\n- Virtual vs. materialized view\n- Privileges and User Management\n  - Superuser account is not for everybody\n  - An user no need to access all database objects"
+        },
+        {
+          "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.3535,
+          "final_score": 0.3016,
+          "content": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n| CREATE TABLE | SQL statement to define a table into a database |\n| ALTER TABLE | SQL statement to modify table structure if needed (add /delete/modify column(s), add/remove constraint(s)) |\n| INSERT/UPDATE/DELETE | SQL statements to add new record to a table; to change the data of one or more records in a table; to remove single record or multiple records from a table |\n| SELECT | SQL statement to retrieve data from a database |"
+        },
+        {
+          "chunk_id": "f59b1aaa-c7c6-4a4a-a5b5-8ddcba9c50db",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Leaning objective",
+          "chunk_order": 4,
+          "cosine_sim": 0.4417,
+          "final_score": 0.2754,
+          "content": "- Have notions about the SQL language\n- Use SQL to define a relation schema in a database\n- Use SQL to populate a table with rows, update / delete data and to retrieve data from a table"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.3
+}

@@ -1,0 +1,165 @@
+{
+  "qid": "hard_ai_graph_01",
+  "course_code": "IT3160E",
+  "question": "Trong sơ đồ minh họa nhược điểm của thuật toán leo đồi (hill climbing) trên không gian trạng thái, có những dạng địa hình nào khiến thuật toán ngừng cải thiện dù chưa đạt lời giải tốt nhất? Giải thích ngắn gọn vì sao.",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "cc63ecf3-e1e7-4ffc-896f-5038f500a92d",
+  "answer": "# Nhược điểm của thuật toán leo đồi (Hill Climbing)\n\nTheo tài liệu môn học, sơ đồ minh họa không gian trạng thái của hill climbing cho thấy **4 dạng địa hình** khiến thuật toán ngừng cải thiện dù chưa đạt lời giải tốt nhất (global maximum):\n\n## 1. 🏔️ Local Maximum (Cực đại cục bộ)\n- **Mô tả:** Đỉnh thấp hơn global maximum nhưng cao hơn tất cả các điểm lân cận.\n- **Vì sao dừng:** Vì hill climbing luôn chọn neighbor có giá trị tốt hơn hiện tại, khi đến đỉnh cục bộ thì **mọi bước đi tiếp theo đều đi xuống**, nên thuật toán dừng lại — tưởng rằng đã tìm được điểm tối ưu.\n- **Phụ thuộc vào điểm khởi đầu:** Nếu xuất phát ở vị trí khác, có thể rơi vào local maximum khác.\n\n## 2. ➡️ Plateau (Cao nguyên / Vùng phẳng)\n- **Mô tả:** Một vùng rộng có giá trị hàm mục tiêu xấp xỉ nhau.\n- **Vì sao dừng:** Trong vùng này, các neighbor **không tốt hơn** current state, nên hill climbing **không có hướng đi rõ ràng** — thuật toán buộc phải đi \"random walk\" (đi ngẫu nhiên) hoặc dừng hẳn.\n\n## 3. ⛰️ Ridge (Sống núi)\n- **Mô tả:** Trông giống plateau nhưng có **dốc xuống ở hai bên**.\n- **Vì sao dừng:** Khi đi theo 4 hướng Đông/Tây/Nam/Bắc thì **đều đi xuống**, nhưng thực tế cần **kết hợp 2 bước** (ví dụ: Bắc + Tây) mới đi lên được. Do hill climbing **chỉ nhìn neighbor đơn lẻ** chứ không nhìn xa hơn một bước, nên không phát hiện được hướng đi lên này.\n\n## 4. 🌄 Shoulder (Vai đồi)\n- **Mô tả:** Một vùng có độ dốc tăng dần nhưng chưa phải đỉnh.\n- **Vì sao khó:** Tuy không phải local maximum, nhưng nếu hàm đánh giá quá \"phẳng\" ở vùng này, thuật toán có thể di chuyển rất chậm hoặc lệch hướng.\n\n---\n\n## 💡 Hệ quả & Giải pháp\n\nVì hill climbing có tính chất **\"tham lam cục bộ\" (greedy local)** — chỉ chọn neighbor tốt hơn hiện tại và không nhìn về phía trước — nên thuật toán rất dễ **bỏ lỡ global maximum**. Tài liệu gợi ý một số biến thể để khắc phục:\n\n| Biến thể | Ý tưởng chính |\n|---|---|\n| **Stochastic hill climbing** | Chọn ngẫu nhiên trong các bước đi lên (xác suất theo độ dốc) |\n| **First-choice hill climbing** | Sinh successor ngẫu nhiên cho tới khi gặp neighbor tốt hơn |\n| **Random-restart hill climbing** | Thử lại từ điểm khởi đầu khác khi bị kẹt ở local maximum |\n\n➡️ Trong đó, **Random-restart hill climbing** được đánh giá là hiệu quả: *\"If at first you don't succeed, try, try again…\"* — về mặt lý thuyết, nếu để xác suất đủ lâu, thuật toán sẽ tìm được global maximum vì sẽ có lần khởi đầu rơi vào đúng vùng dẫn tới đỉnh cao nhất.",
+  "citations": [
+    {
+      "chunk_id": "e10e33e0-0ae4-41ff-b484-9cc16de19c8b",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local search and optimization",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "[Diagram: The graph illustrates an optimization landscape with multiple peaks and plateaus, showing that a local search method can become guided by nearby improvements rather than finding the overall "
+    },
+    {
+      "chunk_id": "c247d5c4-7694-4e84-bdde-f39bbe5038d6",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Drawbacks of hill climbing",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "[Diagram: The graph illustrates how hill climbing can fail on different landscape features: a global maximum, a shoulder, a local maximum, and a flat local maximum. It matters because these shapes exp"
+    },
+    {
+      "chunk_id": "d74d562d-2801-4058-b1e4-d2a07e60f322",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Hill-climbing variations",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Stochastic hill-climbing\n  - Random selection among the uphill moves.\n  - The selection probability can vary with the steepness of the uphill move.\n- First-choice hill-climbing\n  - Stochastic hill c"
+    },
+    {
+      "chunk_id": "dab795c0-eba1-4517-92c3-dfa850f7665c",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Drawbacks of hill climbing",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- Problems:\n  - **Local Maxima**: depending on initial state, can get stuck in local maxima\n  - **Plateaus**: the space has a broad flat region that gives the search algorithm no direction (random wal"
+    },
+    {
+      "chunk_id": "6962ac95-4308-480a-8879-39484c84722f",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Hill-climbing search",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "function HILL-CLIMBING(problem) return a state that is a local maximum\n\n- input: problem, a problem\n- local variables: current, a node.\n- local variables: neighbor, a node.\n\n```text\ncurrent ← MAKE-NOD"
+    },
+    {
+      "chunk_id": "03693514-c469-4006-8f44-a42dfdbf5df4",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Drawbacks of hill climbing",
+      "page_number": null,
+      "chunk_order": 24,
+      "excerpt": "```text\n                           objective function\n                                  ^\n                                  |\n                                  |                         global maximum"
+    },
+    {
+      "chunk_id": "6685831c-b8a7-46cb-8207-a1bf03d2e360",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Hill-climbing search",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "- Simple, general idea:\n  - Start wherever\n  - Always choose the best neighbor\n  - If no neighbors have better scores than current, quit\n- Hill climbing does not look ahead of the immediate neighbors "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "nhược điểm của thuật toán leo đồi hill climbing, các dạng địa hình: local maximum, plateau, ridge",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "e10e33e0-0ae4-41ff-b484-9cc16de19c8b",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Local search and optimization",
+          "chunk_order": 16,
+          "cosine_sim": 0.3872,
+          "final_score": 0.4452,
+          "content": "[Diagram: The graph illustrates an optimization landscape with multiple peaks and plateaus, showing that a local search method can become guided by nearby improvements rather than finding the overall best solution. This matters because it explains why algorithms may stop at local maxima or flat regions instead of reaching the global maximum.]"
+        },
+        {
+          "chunk_id": "c247d5c4-7694-4e84-bdde-f39bbe5038d6",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Drawbacks of hill climbing",
+          "chunk_order": 25,
+          "cosine_sim": 0.3722,
+          "final_score": 0.428,
+          "content": "[Diagram: The graph illustrates how hill climbing can fail on different landscape features: a global maximum, a shoulder, a local maximum, and a flat local maximum. It matters because these shapes explain why greedy search may stop improving even when a better solution exists elsewhere in the state space.]"
+        },
+        {
+          "chunk_id": "d74d562d-2801-4058-b1e4-d2a07e60f322",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Hill-climbing variations",
+          "chunk_order": 26,
+          "cosine_sim": 0.3655,
+          "final_score": 0.4203,
+          "content": "- Stochastic hill-climbing\n  - Random selection among the uphill moves.\n  - The selection probability can vary with the steepness of the uphill move.\n- First-choice hill-climbing\n  - Stochastic hill climbing by generating successors randomly until a better one is found.\n- Random-restart hill-climbing\n  - Tries to avoid getting stuck in local maxima.\n  - If at first you don’t succeed, try, try again…"
+        },
+        {
+          "chunk_id": "dab795c0-eba1-4517-92c3-dfa850f7665c",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Drawbacks of hill climbing",
+          "chunk_order": 23,
+          "cosine_sim": 0.3372,
+          "final_score": 0.3878,
+          "content": "- Problems:\n  - **Local Maxima**: depending on initial state, can get stuck in local maxima\n  - **Plateaus**: the space has a broad flat region that gives the search algorithm no direction (random walk)\n  - **Ridges**: flat like a plateau, but with dropoffs to the sides; steps to the North, East, South and West may go down, but a combination of two steps (e.g. N, W) may go up\n- Introduce randomness"
+        },
+        {
+          "chunk_id": "6962ac95-4308-480a-8879-39484c84722f",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Hill-climbing search",
+          "chunk_order": 20,
+          "cosine_sim": 0.3348,
+          "final_score": 0.3851,
+          "content": "function HILL-CLIMBING(problem) return a state that is a local maximum\n\n- input: problem, a problem\n- local variables: current, a node.\n- local variables: neighbor, a node.\n\n```text\ncurrent ← MAKE-NODE(INITIAL-STATE[problem])\nloop do\n    neighbor ← a highest valued successor of current\n    if VALUE [neighbor] < VALUE[current] then return STATE[current]\n    current ← neighbor\n```\n\n[Diagram: This is the hill-climbing search procedure, which repeatedly moves from the current state to a better neighboring state until no improvement is possible. It matters because it captures a simple local search strategy that can quickly find a local optimum, even though it may not be the global best.]"
+        },
+        {
+          "chunk_id": "03693514-c469-4006-8f44-a42dfdbf5df4",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Drawbacks of hill climbing",
+          "chunk_order": 24,
+          "cosine_sim": 0.3244,
+          "final_score": 0.373,
+          "content": "```text\n                           objective function\n                                  ^\n                                  |\n                                  |                         global maximum\n                                  |                           /\\\n                                  |                          /  \\\n                                  |                 shoulder /    \\\n                                  |                        _/      \\_\n                                  |                       /          \\\n                                  |                      /            \\\n                                  |                     /              \\\n                                  |                    /                \\\n                                  |                   /                  \\\n                                  |                  /                    \\__\n                                  |                 /                        \\  local maximum\n                                  |                /                          \\____\n                                  |               /                                 \\__ \"flat\" local maximum\n                                  |\n                                  +--------------------------------------------------------> state space\n                                                          |\n                                                          |\n                                                       current\n                                                        state\n```"
+        },
+        {
+          "chunk_id": "6685831c-b8a7-46cb-8207-a1bf03d2e360",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Hill-climbing search",
+          "chunk_order": 19,
+          "cosine_sim": 0.2972,
+          "final_score": 0.3418,
+          "content": "- Simple, general idea:\n  - Start wherever\n  - Always choose the best neighbor\n  - If no neighbors have better scores than current, quit\n- Hill climbing does not look ahead of the immediate neighbors of the current state.\n- Hill-climbing chooses randomly among the set of best successors, if there is more than one.\n- Some problem spaces are great for hill climbing and others are terrible."
+        },
+        {
+          "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Iterative Algorithms for CSPs",
+          "chunk_order": 26,
+          "cosine_sim": 0.2168,
+          "final_score": 0.2493,
+          "content": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables\n- Variable selection\n  - Random\n- Value selection by min-conflicts heuristic\n  - Choose value that violates the fewest constraints\n    - i.e., hill climbing with $h(n) =$ total number of violated constraints"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 53.0
+}

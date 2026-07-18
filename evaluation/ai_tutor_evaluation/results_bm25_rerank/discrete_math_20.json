@@ -1,0 +1,13 @@
+{
+  "qid": "discrete_math_20",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": null,
+    "answer_relevancy": null,
+    "answer_correctness": null,
+    "context_precision": null,
+    "context_recall": null,
+    "citation_accuracy": null
+  }
+}

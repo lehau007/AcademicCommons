@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "topic": "Intelligent Agents and Search",
+  "concepts": [
+    "Intelligent Agent",
+    "PEAS",
+    "Rational Agent",
+    "Simple Reflex Agent",
+    "Model-Based Reflex Agent",
+    "Goal-Based Agent",
+    "Utility-Based Agent",
+    "Search Problem",
+    "Uninformed Search",
+    "Breadth-First Search",
+    "Depth-First Search",
+    "Informed Search",
+    "A* Search",
+    "Heuristic Function",
+    "Local Beam Search"
+  ],
+  "language": "en",
+  "ocr_quality": "high",
+  "section_summaries": [
+    {
+      "heading": "Introduction to Intelligent Agents",
+      "summary": "Defines what an intelligent agent is, the PEAS framework (Performance, Environment, Actuators, Sensors), and the notion of a rational agent that selects actions to maximize expected performance given evidence.",
+      "page_range": [1, 8]
+    },
+    {
+      "heading": "Agent Types",
+      "summary": "Classifies agents into simple reflex, model-based reflex, goal-based and utility-based agents, explaining the role of internal state and goals in decision making.",
+      "page_range": [9, 18]
+    },
+    {
+      "heading": "Search Problem Formulation",
+      "summary": "Presents a search problem as initial state, successor function, goal test and path cost. Reviews fully vs partially observable environments.",
+      "page_range": [19, 26]
+    },
+    {
+      "heading": "Uninformed and Informed Search",
+      "summary": "Compares BFS and DFS to informed strategies like A* search using f(n)=g(n)+h(n) with admissible heuristics. Discusses local beam search vs random restart.",
+      "page_range": [27, 42]
+    }
+  ],
+  "overall_summary": "This lecture document introduces the foundations of Artificial Intelligence through the lens of intelligent agents. It begins by defining intelligent agents using the PEAS framework and the notion of rational behavior. Different agent architectures are surveyed, from simple reflex agents that map percepts directly to actions, through model-based reflex agents that maintain internal state, to goal-based and utility-based agents that reason about outcomes. The second half of the document formalizes the search problem as a quadruple of initial state, successor function, goal test and path cost. Uninformed strategies such as breadth-first and depth-first search are contrasted with informed strategies, particularly A* search, which uses an evaluation function f(n)=g(n)+h(n) with an admissible heuristic to expand the most promising node next. Local beam search is presented as a memory-bounded variant that shares information across k parallel threads, distinguishing it from random-restart hill climbing. Together the sections set up the agent and search vocabulary used throughout the rest of the course."
+}

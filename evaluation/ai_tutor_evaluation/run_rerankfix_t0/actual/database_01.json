@@ -1,0 +1,104 @@
+{
+  "qid": "database_01",
+  "course_code": "IT3292E",
+  "question": "What are the key properties of a Candidate Key in a relational database?",
+  "session_id": "c353a42e-3b26-4a3a-8e88-b6f604c4795a",
+  "answer": "A **candidate key** in a relational database has two key properties:\n\n1. **Uniqueness**  \n   Its attribute value(s) must uniquely identify each tuple (row) in the relation.\n\n2. **Minimality / Irreducibility**  \n   No proper subset of that candidate key can still uniquely identify tuples.  \n   In other words, it is a **minimal superkey**.\n\nSo, in short: a candidate key is a **unique** and **minimal** set of attributes used to identify a tuple.",
+  "citations": [
+    {
+      "chunk_id": "d9bf8451-1bf7-4e5f-ba83-d76a7366b192",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.3.2. Types of constraints",
+      "page_number": null,
+      "chunk_order": 54,
+      "excerpt": "- Some types of key\n  - Superkey: An attribute, or a set of attributes, that uniquely identifies a tuple within a relation.\n  - Candidate Key:\n    - Superkey (K) such that no proper subset is a superk"
+    },
+    {
+      "chunk_id": "71a5aed9-21f3-4519-8589-1b5d6db86eb9",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.3.2. Types of constraints",
+      "page_number": null,
+      "chunk_order": 55,
+      "excerpt": "- Some types of key\n  - Alternate Keys: Candidate keys that are not selected to be the primary key.\n  - Minimal key: a minimal set of attributes that can be used to identify a single tuple.\n  - Foreig"
+    },
+    {
+      "chunk_id": "b87b24ad-13fb-498f-a892-daa96f07fa58",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 65,
+      "excerpt": "- Relational data model\n  - Relations, relation instance/state, relation schema\n  - Database, tuple\n  - Cardinality, degree\n- Constraints\n  - Key constraints\n  - Domain constraints\n  - Referential int"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "candidate key properties in a relational database",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "d9bf8451-1bf7-4e5f-ba83-d76a7366b192",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.3.2. Types of constraints",
+          "chunk_order": 54,
+          "cosine_sim": 0.5829,
+          "final_score": 0.8965,
+          "content": "- Some types of key\n  - Superkey: An attribute, or a set of attributes, that uniquely identifies a tuple within a relation.\n  - Candidate Key:\n    - Superkey (K) such that no proper subset is a superkey within the relation\n    - In each tuple of the relation, values of K uniquely identify that tuple (uniqueness)\n    - No proper subset of K has the uniqueness property (irreducibility)\n  - Primary Key: Candidate key selected to identify tuples uniquely within a relation. Each key attribute of primary key has its name underlined."
+        },
+        {
+          "chunk_id": "d8619ad5-572a-461e-b182-08c0cf892643",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "2.3. Second Normal Form (2NF)",
+          "chunk_order": 16,
+          "cosine_sim": 0.4484,
+          "final_score": 0.768,
+          "content": "- Based on the concept of full functional dependency\n- A prime attribute\n  - It is an attribute that is member of some candidate key\n- 2NF relation is\n  - in 1NF and every non-prime attribute is fully functionally dependent on the primary key"
+        },
+        {
+          "chunk_id": "736444a5-ecb9-40d1-8135-fd1cffe70dc7",
+          "document_id": "ffa2105f-b635-4990-9a02-dbf38c9c965e",
+          "section_title": "QUESTION 3: Normalization",
+          "chunk_order": 9,
+          "cosine_sim": 0.5112,
+          "final_score": 0.7198,
+          "content": "**Given:** R(ABEIJGH) with F = {AB→E; AG→J; BE→I; E→G; GI→H}\n\n**Part a:** Find candidate key(s)\n\n**Part b:** Normalize to 3NF\n\n---"
+        },
+        {
+          "chunk_id": "71a5aed9-21f3-4519-8589-1b5d6db86eb9",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.3.2. Types of constraints",
+          "chunk_order": 55,
+          "cosine_sim": 0.5706,
+          "final_score": 0.6363,
+          "content": "- Some types of key\n  - Alternate Keys: Candidate keys that are not selected to be the primary key.\n  - Minimal key: a minimal set of attributes that can be used to identify a single tuple.\n  - Foreign Key:\n    - Attribute, or set of attributes, within one relation that matches candidate key of some relation\n    - Used to model relationships between relations\n    - Each key attribute of foreign key has its name italic"
+        },
+        {
+          "chunk_id": "b87b24ad-13fb-498f-a892-daa96f07fa58",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "Summary",
+          "chunk_order": 65,
+          "cosine_sim": 0.4828,
+          "final_score": 0.4514,
+          "content": "- Relational data model\n  - Relations, relation instance/state, relation schema\n  - Database, tuple\n  - Cardinality, degree\n- Constraints\n  - Key constraints\n  - Domain constraints\n  - Referential integrity constraints"
+        },
+        {
+          "chunk_id": "15ab4a7d-230a-4f68-8b37-41b87a95d171",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "1.4. Key",
+          "chunk_order": 14,
+          "cosine_sim": 0.4949,
+          "final_score": 0.3324,
+          "content": "- One or more attributes whose values are distinct for each individual entity in the entity set. Such an attribute is called **a key attribute**, and its values can be used to identify each entity uniquely.\n- Each entity can have some keys. We choose one of them to be **primary key**.\n- In ER diagrammatic notation, each key attribute has its name **underlined** inside the oval.\n\n[Diagram: ER diagram showing a \"student\" entity (rectangle) with four attributes (ovals): \"student_id\" (underlined, indicating it's a key attribute), \"full_name\", \"dob\", and \"gender\"]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 6.7
+}

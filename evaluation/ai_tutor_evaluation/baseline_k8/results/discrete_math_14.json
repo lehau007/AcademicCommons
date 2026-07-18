@@ -1,0 +1,57 @@
+{
+  "qid": "discrete_math_14",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The description of both branching and bounding procedures aligns with the definitions provided in chunk 2401e062.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by identifying and explaining the two core procedures (Branching and Bounding) involved in the Branch and Bound algorithm.",
+      "evidence": [
+        "The two core procedures in the **Branch and Bound** algorithm are: 1. **Branching procedure** 2. **Bounding procedure**"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: it correctly identifies both the Branching procedure (partitioning solutions into subsets) and the Bounding procedure (calculating bounds for the objective function). The additional detail about eliminating subsets is correct and enhances understanding without contradicting the ground truth.",
+      "evidence": [
+        "Ground truth: 'Branching procedure, which partitions the set of solutions into subsets'",
+        "Tutor: 'Branching procedure...splits the set of feasible solutions into smaller subsets'",
+        "Ground truth: 'Bounding procedure, which calculates the bound for the objective function's value on each subset'",
+        "Tutor: 'Bounding procedure...computes a bound on the objective function for each subset'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "The first chunk directly answers the question with both procedures defined. However, 5 out of 8 chunks are irrelevant: three are duplicate table-of-contents entries, one is implementation code without conceptual explanation, one is a knapsack diagram example, one is a generic comment about optimization, and one is more implementation code.",
+      "evidence": [
+        "chunk 1e267fc6 (CONTENTS: '1. Introduction to problem 2. Brute force 3. Branch and bound')",
+        "chunk 2cb3fb48 (duplicate CONTENTS)",
+        "chunk 6c861b0c (duplicate CONTENTS)",
+        "chunk 3a74defe ('problem arises that in the process of enumerating...')",
+        "chunk b86170ee ('branch-and-bound search tree for a 0-1 knapsack problem')"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The first retrieved chunk contains all key facts from the ground truth: it explicitly states that Branch and Bound consists of two procedures (Branching and Bounding), describes the Branching procedure as partitioning the set of solutions into subsets of decreasing size, and describes the Bounding procedure as calculating the bound for the objective function's value on each subset.",
+      "evidence": [
+        "Branch and bound algorithm consists of 2 procedures: Branching Procedure, Bounding Procedure",
+        "Branching procedure: The process of partitioning the set of solutions into subsets of size decreasing gradually",
+        "Bounding procedure: It is necessary to give an approach to calculate the bound for the value of the objective function on each subset"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "The tutor's answer describes two procedures (branching and bounding) and the first cited chunk (2401e062) directly supports both statements, explicitly defining both the branching procedure as partitioning solutions into subsets and the bounding procedure as calculating bounds on the objective function.",
+      "evidence": [
+        "Tutor: 'Branching procedure... splits the set of feasible solutions into smaller subsets' — Chunk 2401e062: 'Branching procedure: The process of partitioning the set of solutions into subsets'",
+        "Tutor: 'Bounding procedure... computes a bound on the objective function' — Chunk 2401e062: 'Bounding procedure: It is necessary to give an approach to calculate the bound for the value of the objective function'"
+      ]
+    }
+  }
+}

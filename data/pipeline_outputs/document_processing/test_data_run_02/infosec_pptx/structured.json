@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "content_type": "table",
+  "row_labels": [
+    "France",
+    "Japan",
+    "Brazil"
+  ],
+  "column_labels": [
+    "Country",
+    "City",
+    "Population (in thousands)",
+    "Area (in km²)"
+  ],
+  "values": [
+    [
+      "France",
+      "Paris",
+      2.161,
+      1054
+    ],
+    [
+      "Japan",
+      "Tokyo",
+      13.9,
+      1424
+    ],
+    [
+      "Brazil",
+      "São Paulo",
+      21.3,
+      1221
+    ]
+  ],
+  "notes": "Preserving exact numeric values."
+}

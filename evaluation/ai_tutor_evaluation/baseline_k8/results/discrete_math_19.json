@@ -1,0 +1,53 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 1,
+      "justification": "The tutor provided no answer text whatsoever—only a document ID reference. Since there are no claims to evaluate, the response fails to address the question about when two simple graphs are considered isomorphic.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 1,
+      "justification": "The tutor provided no answer text at all—only a document ID reference. The question asks when two simple graphs are considered isomorphic, but no definition or explanation was given.",
+      "evidence": [
+        "{\"used_doc_ids\":[\"057616a7-05cc-4688-8a79-da9edd276028\"]}"
+      ]
+    },
+    "answer_correctness": {
+      "score": 1,
+      "justification": "The tutor's answer is completely missing. The response only contains metadata (used_doc_ids) but no actual answer to the question about when two simple graphs are considered isomorphic.",
+      "evidence": [
+        "Ground truth requires: 'one-to-one and onto function f' and 'vertices a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2'",
+        "Tutor's answer: only '{\"used_doc_ids\":[\"057616a7-05cc-4688-8a79-da9edd276028\"]}' with no definition provided"
+      ]
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "Only 2 of 8 chunks are directly relevant to defining graph isomorphism. The first two chunks provide examples and properties of isomorphic graphs, while the remaining 6 chunks are either table-of-contents entries or general graph definitions that don't help answer when graphs are isomorphic.",
+      "evidence": [
+        "3a669181: '- 1. Graph in practice... 5. Isomorphism of Graphs...'",
+        "abc6ce21: same table of contents",
+        "f9a6154a: same table of contents",
+        "c4c2cded: same table of contents",
+        "3d626aaf: 'Example: Simple graph $G_1 = (V_1, E_1)$'",
+        "ea17385f: 'Definition. Undirected simple (*multi*) graph'"
+      ]
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "The retrieved chunks contain examples and properties of isomorphic graphs but lack the formal definition. The ground truth's key requirement—that adjacency must be preserved by the bijection (a and b adjacent in G1 iff f(a) and f(b) adjacent in G2)—is not explicitly stated in any chunk.",
+      "evidence": [
+        "vertices a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 1,
+      "justification": "The tutor's answer is completely missing from the provided data, making it impossible to verify whether any citations support any statements. Without the actual answer text, we cannot assess citation accuracy.",
+      "evidence": [
+        "No tutor answer text provided to evaluate against citations"
+      ]
+    }
+  }
+}

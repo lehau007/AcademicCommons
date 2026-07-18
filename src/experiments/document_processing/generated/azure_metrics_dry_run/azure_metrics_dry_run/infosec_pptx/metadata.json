@@ -1,0 +1,15 @@
+{
+  "sample_id": "infosec_pptx",
+  "course_code": "TEST03",
+  "tier": "official",
+  "input_path": "src/experiments/document_processing/test_data/SoICT - 4010E IntroInfoSec - C6- VanNK -extra.pptx",
+  "expected_type": "pptx",
+  "expected_route": "hybrid",
+  "actual_route": "hybrid",
+  "route_evidence": {
+    "reason": "pptx_text_plus_embedded_images"
+  },
+  "file_sha256": "09604e5813f3730b8e9b75c8d586f464ffe6e51f7938448834882bc7b42517fe",
+  "model": "local_placeholder",
+  "duration_ms": 146
+}

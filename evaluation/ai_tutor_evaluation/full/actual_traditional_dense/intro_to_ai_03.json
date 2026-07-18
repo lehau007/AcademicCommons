@@ -1,0 +1,125 @@
+{
+  "qid": "intro_to_ai_03",
+  "course_code": "IT3160E",
+  "question": "How does A* search determine which node to expand next?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "9c9ccc0d-67d7-4afe-b610-0f1b7e3c70fb",
+  "answer": "# How A* Search Determines the Next Node to Expand\n\nAccording to the course materials, A* search selects the next node to expand based on an **evaluation function** that estimates the total cost of a path through that node.\n\n## The Evaluation Function\n\nA* uses the evaluation function:\n\n$$f(n) = g(n) + h(n)$$\n\nwhere:\n- **$g(n)$** = the cost so far to reach node $n$ (the path cost from the start)\n- **$h(n)$** = the estimated cost from node $n$ to the goal (a heuristic estimate)\n- **$f(n)$** = the estimated total cost of a path through $n$ to the goal\n\n## The Selection Rule\n\nA* **expands the unexpanded node with the lowest evaluation value $f(n)$**. In other words, the nodes in the frontier are ordered by their $f$ value, and A* always picks the most promising one (the one with the smallest $f$).\n\nThis is a special case of **best-first search**, where the evaluation function $f(n)$ serves as an estimate of \"desirability\" — nodes with lower $f$ values are more desirable because they represent cheaper estimated total paths.\n\n## Why This Works\n\nBecause A* expands nodes in order of **increasing $f$ value**, it gradually adds \"f-contours\" of nodes to the explored region. The algorithm balances two competing concerns:\n- **$g(n)$** keeps it from wasting effort on paths that are already expensive.\n- **$h(n)$** keeps it focused on reaching the goal rather than wandering.\n\nBy combining them, A* efficiently finds an optimal route while still guaranteeing optimality when the heuristic is admissible.\n\n---\n\n**Used chunks:**\n```json",
+  "citations": [
+    {
+      "chunk_id": "d556b3ac-bea3-41f1-86ed-96896363e059",
+      "document_title": "lecture4-search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "A* search",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "- Idea: Expand unexpanded node with lowest evaluation value\n- Evaluation function $f(n) = g(n) + h(n)$\n- $g(n)$ = cost so far to reach $n$\n- $h(n)$ = estimated cost from $n$ to goal\n- $f(n)$ = estimat"
+    },
+    {
+      "chunk_id": "bc5950d8-1710-4e18-b1b3-120dc5701986",
+      "document_title": "lecture4-search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Best-first search",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Idea: use an evaluation function $f(n)$ for each node\n  - estimate of \"desirability\"\n  - Expand most desirable unexpanded node\n- Order the nodes in fringe in decreasing order of desirability\n- Speci"
+    },
+    {
+      "chunk_id": "fa65614b-8fe0-4ce1-8623-c3565087ecbc",
+      "document_title": "lecture4-search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Contours of A* Search",
+      "page_number": null,
+      "chunk_order": 32,
+      "excerpt": "- A* expands nodes in order of increasing $f$ value\n- Gradually adds \"$f$-contours\" of nodes\n- Contour $i$ has all nodes with $f=f_i$, where $f_i < f_{i+1}$\n\n```text\n                 o\n               "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "How does A* search determine which node to expand next?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "faf9fa6c-8f40-42fe-896a-be7c31009d35",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "A* search example",
+          "chunk_order": 27,
+          "cosine_sim": 0.5529,
+          "final_score": 0.6358,
+          "content": "[Diagram: This search tree shows how A* expands frontier nodes using the estimated total cost $f=g+h$. The highlighted path choices illustrate how the algorithm balances cost already spent with heuristic distance to the goal, which is why it can find an optimal route efficiently.]"
+        },
+        {
+          "chunk_id": "fa65614b-8fe0-4ce1-8623-c3565087ecbc",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Contours of A* Search",
+          "chunk_order": 32,
+          "cosine_sim": 0.5423,
+          "final_score": 0.6237,
+          "content": "- A* expands nodes in order of increasing $f$ value\n- Gradually adds \"$f$-contours\" of nodes\n- Contour $i$ has all nodes with $f=f_i$, where $f_i < f_{i+1}$\n\n```text\n                 o\n                 |\n                 z\n                / \\\n               /   \\\n              A     S ---- F ---- B ---- U ---- H ---- E\n             / \\     \\      \\      \\      |\n            T   \\     R      P       \\     |\n             \\   \\    |     /         \\    |\n              L   \\   C    /           G    |\n              |    \\  |   /                 |\n              M     \\ |  /                  |\n              |      D--                    |\n```\n\n```text\n   --- contour around earlier / lower-nodes ---\n```\n\n[Diagram: The red dashed contours illustrate how A* reveals the search space in layers of increasing evaluation value $f=g+h$. This matters because it shows why A* can remain efficient while still guaranteeing optimality when the heuristic is admissible.]"
+        },
+        {
+          "chunk_id": "dc890ba1-627e-49f4-b468-1b1ffa21eaf6",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "A* search example",
+          "chunk_order": 25,
+          "cosine_sim": 0.5343,
+          "final_score": 0.6144,
+          "content": "[Diagram: This illustrates the A* search process on a road map, where each node is evaluated by combining the path cost so far and the heuristic estimate to the goal. The highlighted nodes indicate the currently preferred frontier choices, showing how A* balances exploration and estimated promise to find an efficient path.]"
+        },
+        {
+          "chunk_id": "3a5f2840-957c-4ff1-a102-5fa560bb5cfb",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "A* search example",
+          "chunk_order": 29,
+          "cosine_sim": 0.5142,
+          "final_score": 0.5913,
+          "content": "[Diagram: The figure illustrates how A* prioritizes frontier nodes by the estimated total cost $f=g+h$, balancing path cost so far with a heuristic estimate to the goal. This matters because it guides the search toward the most promising route while avoiding unnecessary expansion of clearly worse alternatives.]"
+        },
+        {
+          "chunk_id": "a2de2a96-80a1-4eaa-9c58-52e527ad4ab0",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "A* search example",
+          "chunk_order": 21,
+          "cosine_sim": 0.4989,
+          "final_score": 0.5738,
+          "content": "```text\n        ▶\n     ( Arad )\n\n        366 = 0 + 366\n```\n\n[Diagram: This illustrates the A* evaluation of the start node, showing how the total estimated cost is computed as the path cost so far plus the heuristic estimate. It matters because A* uses this combined score to decide which node to expand next.]"
+        },
+        {
+          "chunk_id": "319a2c48-63d4-402b-93ce-d64b217c4dcb",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Tree search algorithms",
+          "chunk_order": 22,
+          "cosine_sim": 0.4397,
+          "final_score": 0.5057,
+          "content": "[Diagram: The diagram illustrates tree search as an exploration process that expands states into successors while maintaining a frontier of candidates. It matters because the search strategy determines which parts of the state space are explored first, strongly affecting efficiency and whether a goal is found quickly.]\n\n```text\nfunction TREE-SEARCH(problem, strategy) returns a solution, or failure\n    initialize the search tree using the initial state of problem\n    loop do\n        if there are no candidates for expansion then return failure\n        choose a leaf node for expansion according to strategy\n        if the node contains a goal state then return the corresponding solution\n        else expand the node and add the resulting nodes to the search tree\n```"
+        },
+        {
+          "chunk_id": "d556b3ac-bea3-41f1-86ed-96896363e059",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "A* search",
+          "chunk_order": 20,
+          "cosine_sim": 0.4259,
+          "final_score": 0.4897,
+          "content": "- Idea: Expand unexpanded node with lowest evaluation value\n- Evaluation function $f(n) = g(n) + h(n)$\n- $g(n)$ = cost so far to reach $n$\n- $h(n)$ = estimated cost from $n$ to goal\n- $f(n)$ = estimated total cost of path through $n$ to goal\n- Nodes are ordered according to f(n)."
+        },
+        {
+          "chunk_id": "bc5950d8-1710-4e18-b1b3-120dc5701986",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Best-first search",
+          "chunk_order": 9,
+          "cosine_sim": 0.399,
+          "final_score": 0.4588,
+          "content": "- Idea: use an evaluation function $f(n)$ for each node\n  - estimate of \"desirability\"\n  - Expand most desirable unexpanded node\n- Order the nodes in fringe in decreasing order of desirability\n- Special cases:\n  - greedy best-first search\n  - A* search"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 14.9
+}

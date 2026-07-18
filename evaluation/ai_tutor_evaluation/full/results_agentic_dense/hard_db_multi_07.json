@@ -1,0 +1,31 @@
+{
+  "qid": "hard_db_multi_07",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "DBMS fns + full student schema; extra cols beyond GT are correct"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "DBMS fns + full student schema; extra cols beyond GT are correct"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "DBMS fns + full student schema; extra cols beyond GT are correct"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "DBMS fns + full student schema; extra cols beyond GT are correct"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "DBMS fns + full student schema; extra cols beyond GT are correct"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "DBMS fns + full student schema; extra cols beyond GT are correct"
+    }
+  }
+}

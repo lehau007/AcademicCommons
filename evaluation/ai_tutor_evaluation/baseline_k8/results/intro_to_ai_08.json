@@ -1,0 +1,61 @@
+{
+  "qid": "intro_to_ai_08",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The distinction between no adversary vs. adversary, solution types (path vs. strategy), optimality vs. approximation, and the examples are all grounded in chunk a0987283-c423-4f4c-8151-3144edea7054.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by clearly distinguishing standard search problems from games on the key dimension of adversary presence, solution type (path vs. strategy), and evaluation approach. All content is on-topic and relevant to the question asked.",
+      "evidence": [
+        "no opponent trying to interfere",
+        "adversary (another player)",
+        "solution is not just a single path, but a strategy",
+        "Search problem: find a goal. Game: choose a strategy against an opponent"
+      ]
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "The tutor's answer correctly identifies the key distinctions: presence of an adversary, solution type (path vs. strategy), and provides accurate examples. However, it omits the specific evaluation function difference mentioned in the ground truth—that search problems evaluate 'estimated cost from start to goal' while games evaluate 'goodness of a game position.'",
+      "evidence": [
+        "Ground truth: 'evaluates the estimated cost from the start to the goal' vs. 'evaluates the goodness of a game position'",
+        "Tutor mentions evaluation implicitly but does not explicitly contrast the two evaluation approaches"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Most chunks are relevant to distinguishing search problems from games. Chunks a0987283, 67acdf6b, dbbf4495, d1fea5ae, and fea36428 all contribute to understanding the distinction. However, chunks 90eebcf2 (outline), 0b538699 (planning example), and d24868af (8-puzzle example) are tangential or irrelevant to the specific question.",
+      "evidence": [
+        "90eebcf2: 'Local beam search, Game and search, Alpha-beta pruning'",
+        "0b538699: 'get milk, bananas, and a cordless drill'",
+        "d24868af: 'The 8-puzzle as a search problem'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk a0987283 explicitly covers adversary presence, solution types (goal vs. strategy), and evaluation functions (cost vs. goodness of position).",
+      "evidence": [
+        "Search – no adversary",
+        "Solution is (heuristic) method for finding goal",
+        "Evaluation function: estimate of cost from start to goal",
+        "Games – adversary",
+        "Solution is strategy (strategy specifies move for every possible opponent reply)",
+        "Evaluation function: evaluate \"goodness\" of game position"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made. The primary chunk (a0987283) directly addresses all key distinctions mentioned: no adversary vs. adversary, finding a goal vs. strategy, optimal vs. approximate solutions, and evaluation functions.",
+      "evidence": [
+        "Tutor: 'no opponent trying to interfere' → Chunk a0987283: 'Search – no adversary'",
+        "Tutor: 'solution is not just a single path, but a strategy: a move for every possible opponent reply' → Chunk a0987283: 'Solution is strategy (strategy specifies move for every possible opponent reply)'",
+        "Tutor: 'the answer is often an approximate one rather than fully optimal' → Chunk a0987283: 'Time limits force an *approximate* solution'",
+        "Tutor: 'Example: chess, checkers, Othello' → Chunk a0987283: 'Examples: chess, checkers, Othello, backgammon'"
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "qid": "intro_to_ai_13",
+  "course_code": "IT3160E",
+  "question": "In Reinforcement Learning, what is the purpose of the discount rate in the discounted return model?",
+  "session_id": "c765fcd5-d893-4c6a-b286-2ac90dfcee9a",
+  "answer": "In **Reinforcement Learning**, the **discount rate** \\( \\gamma \\) trong mô hình **discounted return** có 2 mục đích chính:\n\n1. **Làm cho tổng phần thưởng vô hạn trở nên hữu hạn**  \n   Khi chuỗi phần thưởng kéo dài rất dài hoặc vô hạn, việc nhân với \\( \\gamma \\) giúp tổng return không bị “phình” ra.\n\n2. **Ưu tiên phần thưởng đến sớm hơn**  \n   Các phần thưởng nhận được sớm có giá trị cao hơn phần thưởng ở tương lai, nên tác nhân có xu hướng chọn các **đường đi ngắn hơn / đạt mục tiêu sớm hơn**.\n\nNói ngắn gọn: **discount rate dùng để giới hạn tổng return và giảm trọng số của phần thưởng xa trong tương lai**.",
+  "citations": [
+    {
+      "chunk_id": "4749a60f-0207-4a2f-8b16-da4bd232c199",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Discounted Return",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- The geometrically discounted model of return\n\n$$\nR_t = r_{t+1} + \\gamma r_{t+2} + \\cdots + \\gamma^T r_T\n$$\n\n$$\n0 \\le \\gamma \\le 1\n$$\n\n- $\\gamma$ is called discount rate, used to\n  - Bound the infini"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "discount rate purpose in discounted return model reinforcement learning",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "4749a60f-0207-4a2f-8b16-da4bd232c199",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Discounted Return",
+          "chunk_order": 10,
+          "cosine_sim": 0.5939,
+          "final_score": 0.81,
+          "content": "- The geometrically discounted model of return\n\n$$\nR_t = r_{t+1} + \\gamma r_{t+2} + \\cdots + \\gamma^T r_T\n$$\n\n$$\n0 \\le \\gamma \\le 1\n$$\n\n- $\\gamma$ is called discount rate, used to\n  - Bound the infinite sum\n  - Favor earlier rewards, in other words to give preference to shorter paths"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.7
+}

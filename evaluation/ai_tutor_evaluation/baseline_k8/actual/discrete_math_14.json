@@ -1,0 +1,173 @@
+{
+  "qid": "discrete_math_14",
+  "course_code": "IT3020E",
+  "question": "What are the two core procedures involved in the Branch and Bound algorithm?",
+  "session_id": "218f3bfe-56e5-4eea-9d81-410864ccc3b1",
+  "answer": "The two core procedures in the **Branch and Bound** algorithm are:\n\n1. **Branching procedure**  \n   - This splits the set of feasible solutions into smaller subsets, progressively narrowing them until only one solution remains in a subset.\n\n2. **Bounding procedure**  \n   - This computes a bound on the objective function for each subset, so the algorithm can eliminate subsets that cannot contain an optimal solution.",
+  "citations": [
+    {
+      "chunk_id": "2401e062-3312-45ff-a30a-5fe815cba442",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. General diagram",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "- Branch and bound algorithm consists of 2 procedures:\n  - Branching Procedure\n  - Bounding Procedure\n\n- **Branching procedure:** The process of partitioning the set of solutions into subsets of size "
+    },
+    {
+      "chunk_id": "c0c7643d-ddf6-4899-b2c1-7a16025e4050",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Implement",
+      "page_number": null,
+      "chunk_order": 45,
+      "excerpt": "```text\nvoid BranchAndBound()\n{\n    f* = +∞;\n    for (v = 1; v<=n; v++) visited[v] = FALSE;\n    f = 0;  x1 = 1;  visited[x1] = TRUE;\n    Branch(2);\n    return f*;\n}\n```\n\n```text\nvoid BranchAndBound()\n"
+    },
+    {
+      "chunk_id": "1e267fc6-3e5b-40e5-bfc5-5a0ebc0dbad9",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "CONTENTS",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "1. Introduction to problem\n2. Brute force\n3. Branch and bound"
+    },
+    {
+      "chunk_id": "2cb3fb48-519a-4e11-a9b8-3f153b3de6d3",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "CONTENTS",
+      "page_number": null,
+      "chunk_order": 24,
+      "excerpt": "1. Introduction to problem\n\n2. Brute force\n\n3. Branch and bound"
+    },
+    {
+      "chunk_id": "6c861b0c-581e-40a1-ab89-b957832145c9",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "CONTENTS",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "1. Introduction to problem  \n2. Brute force  \n3. Branch and bound"
+    },
+    {
+      "chunk_id": "3a74defe-5b42-4299-bfb3-0a88368fe020",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Comment",
+      "page_number": null,
+      "chunk_order": 32,
+      "excerpt": "- Then, a problem arises that in the process of enumerating all solutions, we need to make use of the found information to eliminate solutions that are definitely not optimal.\n- In the next section, w"
+    },
+    {
+      "chunk_id": "cfeb2b74-29ce-4bff-b0e6-22adeab604ad",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Implement",
+      "page_number": null,
+      "chunk_order": 44,
+      "excerpt": "```text\nvoid Branch(int k)\n{\n    for (int v = 2; v <= n; v++) {\n        if (visited[v] == FALSE) {\n            x_k = v; visited[v] = TRUE;\n            f = f + c(x_(k-1), x_k);\n\n            if (k == n)"
+    },
+    {
+      "chunk_id": "b86170ee-d7fa-4a24-b177-6916c21429df",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Root, $f^*=-\\infty$",
+      "page_number": null,
+      "chunk_order": 57,
+      "excerpt": "[Diagram: This is a branch-and-bound search tree for a 0-1 knapsack problem. It shows how item selections are explored, upper bounds are computed to prune unpromising branches, and the best feasible s"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Branch and Bound algorithm two core procedures",
+      "namespaces": [
+        "knowledge",
+        "exercise"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "2401e062-3312-45ff-a30a-5fe815cba442",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "3.1. General diagram",
+          "chunk_order": 35,
+          "cosine_sim": 0.5475,
+          "final_score": 0.6296,
+          "content": "- Branch and bound algorithm consists of 2 procedures:\n  - Branching Procedure\n  - Bounding Procedure\n\n- **Branching procedure:** The process of partitioning the set of solutions into subsets of size decreasing gradually until the subsets consists only one element.\n\n- **Bounding procedure:** It is necessary to give an approach to calculate the bound for the value of the objective function on each subset A in the partition of the set of solutions."
+        },
+        {
+          "chunk_id": "c0c7643d-ddf6-4899-b2c1-7a16025e4050",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Implement",
+          "chunk_order": 45,
+          "cosine_sim": 0.4622,
+          "final_score": 0.5315,
+          "content": "```text\nvoid BranchAndBound()\n{\n    f* = +∞;\n    for (v = 1; v<=n; v++) visited[v] = FALSE;\n    f = 0;  x1 = 1;  visited[x1] = TRUE;\n    Branch(2);\n    return f*;\n}\n```\n\n```text\nvoid BranchAndBound()\n{\n    f* = +∞;\n    //if you know any solution x* then set f* = f(x*)\n    Branch(1);\n    if (f* < +∞)\n        <f* is the optimal objective value, x* is optimal solution>\n    else < problem does not have any solutions >;\n}\n```\n\n[Diagram: The slide shows two pseudocode variants of the Branch-and-Bound procedure. The first initializes the search state and starts branching from the second position, while the second emphasizes the logic of updating the best known objective value and deciding whether a feasible optimal solution exists.]"
+        },
+        {
+          "chunk_id": "1e267fc6-3e5b-40e5-bfc5-5a0ebc0dbad9",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "CONTENTS",
+          "chunk_order": 4,
+          "cosine_sim": 0.4283,
+          "final_score": 0.4925,
+          "content": "1. Introduction to problem\n2. Brute force\n3. Branch and bound"
+        },
+        {
+          "chunk_id": "2cb3fb48-519a-4e11-a9b8-3f153b3de6d3",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "CONTENTS",
+          "chunk_order": 24,
+          "cosine_sim": 0.4283,
+          "final_score": 0.4925,
+          "content": "1. Introduction to problem\n\n2. Brute force\n\n3. Branch and bound"
+        },
+        {
+          "chunk_id": "6c861b0c-581e-40a1-ab89-b957832145c9",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "CONTENTS",
+          "chunk_order": 33,
+          "cosine_sim": 0.4283,
+          "final_score": 0.4925,
+          "content": "1. Introduction to problem  \n2. Brute force  \n3. Branch and bound"
+        },
+        {
+          "chunk_id": "3a74defe-5b42-4299-bfb3-0a88368fe020",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Comment",
+          "chunk_order": 32,
+          "cosine_sim": 0.4118,
+          "final_score": 0.4736,
+          "content": "- Then, a problem arises that in the process of enumerating all solutions, we need to make use of the found information to eliminate solutions that are definitely not optimal.\n- In the next section, we will look at such a search approach to solve the combinatorial optimization problems. In literature, it is called $Branch\\ and\\ bound\\ algorithm$."
+        },
+        {
+          "chunk_id": "cfeb2b74-29ce-4bff-b0e6-22adeab604ad",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Implement",
+          "chunk_order": 44,
+          "cosine_sim": 0.4017,
+          "final_score": 0.462,
+          "content": "```text\nvoid Branch(int k)\n{\n    for (int v = 2; v <= n; v++) {\n        if (visited[v] == FALSE) {\n            x_k = v; visited[v] = TRUE;\n            f = f + c(x_(k-1), x_k);\n\n            if (k == n)  //Update record:\n            {   if (f + c(x_n, x_1) < f*) f* = f + c(x_n, x_1);  }\n            else {\n                g = f + (n-k + 1)*cmin;  //calculate bound\n                if (g < f*) Branch(k + 1);\n            }\n        }\n    }\n\n    f = f - c(x_(k-1), x_k);\n    visited[v] = FALSE;\n}\n```\n\n```text\nvoid Branch(int k)\n{\n    //Construct x_k from partial solution (x_1, x_2, ..., x_(k-1))\n    for a_k ∈ A_k\n        if (a_k ∈ S_k)\n        {\n            x_k = a_k;\n            if (k == n)  <Update Record>;\n            else if (g(x_1, ..., x_k) ≤ f*) Branch(k+1);\n        }\n}\n```\n\n[Diagram: The slide shows a branch-and-bound style recursive search for constructing a solution one step at a time while tracking the current cost and a lower bound. It matters because the bound allows the algorithm to prune partial solutions that cannot beat the best known answer, reducing the search space.]"
+        },
+        {
+          "chunk_id": "b86170ee-d7fa-4a24-b177-6916c21429df",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Root, $f^*=-\\infty$",
+          "chunk_order": 57,
+          "cosine_sim": 0.3917,
+          "final_score": 0.4504,
+          "content": "[Diagram: This is a branch-and-bound search tree for a 0-1 knapsack problem. It shows how item selections are explored, upper bounds are computed to prune unpromising branches, and the best feasible solution is updated when a complete assignment is found.]\n\n$f(x)=10x_1+5x_2+3x_3+6x_4 \\rightarrow \\max,$  \n$5x_1+3x_2+2x_3+4x_4 \\le 8,$  \n$x_j\\in Z_+,\\, j=1,2,3,4.$\n\nEliminate because upper bound $g < f^*=15$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.3
+}

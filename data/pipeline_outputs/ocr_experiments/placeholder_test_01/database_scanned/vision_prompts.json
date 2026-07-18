@@ -1,0 +1,12 @@
+[
+  {
+    "kind": "vision_ocr",
+    "page": 1,
+    "instruction": "This is a scanned PDF page. Perform OCR to extract all text, maintain markdown structure. Describe any tables or diagrams."
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 2,
+    "instruction": "This is a scanned PDF page. Perform OCR to extract all text, maintain markdown structure. Describe any tables or diagrams."
+  }
+]

@@ -1,0 +1,115 @@
+{
+  "qid": "intro_to_ai_04",
+  "course_code": "IT3160E",
+  "question": "How does a model-based reflex agent differ from a simple reflex agent?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "35c651ad-95d3-43c8-a01a-c858ba844f33",
+  "answer": "# Model-Based Reflex Agent vs. Simple Reflex Agent\n\nBased on the provided context, the key difference between these two agent types lies in how they use percept information:\n\n## Simple Reflex Agent\n- Selects actions on the basis of the **current percept only**\n- **Ignores the rest of the percept history**\n- Reacts directly to what it perceives in the present moment\n\n## Model-Based Reflex Agent\n- Maintains an **internal state** that **depends on the percept history**\n- This internal state reflects at least some of the **unobserved aspects of the current state**\n- Uses a model of the world to keep track of things it cannot directly observe right now\n\n## Key Distinction\nThe fundamental difference is **memory and world modeling**:\n\n| Aspect | Simple Reflex | Model-Based Reflex |\n|--------|---------------|-------------------|\n| Percept history used? | No | Yes |\n| Internal state? | None | Maintained |\n| Handles unobserved aspects? | No | Yes (via internal state) |\n\nIn short, a simple reflex agent is purely reactive and stateless, while a model-based reflex agent extends this by keeping an internal model of the world that incorporates past percepts, allowing it to reason about parts of the environment it cannot currently perceive.\n\n---\n**Used chunk IDs:**\n```json",
+  "citations": [
+    {
+      "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Simple reflex agent",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+    },
+    {
+      "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Model-based reflex agents",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "How does a model-based reflex agent differ from a simple reflex agent?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agent types",
+          "chunk_order": 15,
+          "cosine_sim": 0.5037,
+          "final_score": 0.5792,
+          "content": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+        },
+        {
+          "chunk_id": "75437ac4-f4c2-40fc-b423-73af5390e468",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Vacuum-cleaner world",
+          "chunk_order": 6,
+          "cosine_sim": 0.4173,
+          "final_score": 0.4799,
+          "content": "**Function Reflex-Vacuum-Agent([position, state]) returns action**\nIf state = Dirty then return Suck\nElse if position = A then return Right\nElse if position = B then return Left\nEnd Function\n\n- Does the agent act reasonably?"
+        },
+        {
+          "chunk_id": "796d1cc0-37d9-49ea-9d9e-5c3f0792167b",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agents and environments (con't)",
+          "chunk_order": 3,
+          "cosine_sim": 0.3781,
+          "final_score": 0.4348,
+          "content": "- The **agent function** maps from percept histories to actions: \n  - [Formula: agent function mapping]\n- The **agent program** runs on the physical **architecture** to produce the agent function\n  - agent = architecture + program\n\n| Agent        | Environment |\n|--------------|-------------|\n| +-------------+  |             |\n| |   Sensors   |<--+--Percepts            |\n| +------+------+  |             |\n|         |         |             |\n|    +----+----+    |             |\n|    |    ?    |    |             |\n|    +----+----+    |             |\n|         |         |             |\n|  +------+------+  |             |\n|  |  Actuators  |--+--+->Actions            |\n|  +-------------+  |             |"
+        },
+        {
+          "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Simple reflex agent",
+          "chunk_order": 16,
+          "cosine_sim": 0.3662,
+          "final_score": 0.4211,
+          "content": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+        },
+        {
+          "chunk_id": "510f0071-bb3f-4556-a2bd-e64ce8eedd02",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem-solving agents",
+          "chunk_order": 3,
+          "cosine_sim": 0.3482,
+          "final_score": 0.4004,
+          "content": "```text\nfunction SIMPLE-PROBLEM-SOLVING-AGENT(percept) returns an action\n    static: seq, an action sequence, initially empty\n            state, some description of the current world state\n            goal, a goal, initially null\n            problem, a problem formulation\n\n    state ← UPDATE-STATE(state, percept)\n    if seq is empty then do\n        goal ← FORMULATE-GOAL(state)\n        problem ← FORMULATE-PROBLEM(state, goal)\n        seq ← SEARCH(problem)\n    action ← FIRST(seq)\n    seq ← REST(seq)\n    return action\n```\n\n[Diagram: This pseudocode shows a simple agent loop that maintains internal state, formulates a goal and problem when it has no planned actions, and then uses search to produce an action sequence. It matters because it illustrates how an agent can act deliberately rather than reacting only to the current percept.]"
+        },
+        {
+          "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Model-based reflex agents",
+          "chunk_order": 17,
+          "cosine_sim": 0.3434,
+          "final_score": 0.395,
+          "content": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+        },
+        {
+          "chunk_id": "17b10140-d5bc-42c2-b508-6673c005a7c6",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Environment types",
+          "chunk_order": 14,
+          "cosine_sim": 0.3427,
+          "final_score": 0.3941,
+          "content": "- **Static** (vs. dynamic): The environment is unchanged while an agent is deliberating.\n- **Discrete** (vs. continuous): A limited number of distinct, clearly defined percepts and actions.\n- **Single agent** (vs. multiagent): An agent operating by itself in an environment."
+        },
+        {
+          "chunk_id": "2a04385e-d343-4a77-9aa0-64c56716a43e",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Knowledge bases",
+          "chunk_order": 21,
+          "cosine_sim": 0.3243,
+          "final_score": 0.373,
+          "content": "- Knowledge base is a set of sentences in a formal language, telling an agent what it needs to know\n- Agent can ASK itself what to do, the answer should follow from the KB\n- Agents can be viewed at:\n  - the knowledge level: what they know, what its goals are\n  - the implementation level: data structures in KB and algorithms that manipulate them"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.0
+}

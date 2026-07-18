@@ -1,0 +1,136 @@
+{
+  "qid": "discrete_math_18",
+  "course_code": "IT3020E",
+  "question": "In an Adjacency List representation of a graph, how is the list structured?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "bfbf9838-6e49-425e-8c4e-53390688a7a8",
+  "answer": "Trong **biểu diễn danh sách kề (Adjacency List)**, mỗi đỉnh của đồ thị được gắn với **một danh sách các đỉnh kề với nó**.\n\nCụ thể:\n\n- Với mỗi vertex \\(v\\), ta lưu `Adj[v]`\n- `Adj[v]` chứa tất cả các đỉnh \\(u\\) sao cho có cạnh nối từ \\(v\\) đến \\(u\\)\n- Nếu là **đồ thị vô hướng**, thì mỗi cạnh \\((u, v)\\) sẽ xuất hiện trong cả `Adj[u]` và `Adj[v]`\n- Nếu là **đồ thị có hướng**, thì `Adj[v]` thường chứa các đỉnh mà \\(v\\) có cạnh đi tới\n\nVí dụ đơn giản:\n\n- `Adj[a] = [b, d, e]`\n- `Adj[b] = [a, c, d]`\n\nTóm lại, danh sách kề là một tập các danh sách, **mỗi đỉnh đi kèm danh sách các đỉnh láng giềng của nó**.",
+  "citations": [
+    {
+      "chunk_id": "b63736b6-0137-4172-8b88-152978c49a56",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Computation time of BFS",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Initialize: need $O(|V|)$.\n\n- The loop for\n  - Each vertex is inserted into and removed from queue exactly once, each operation needs $O(1)$. So, the total computation time with queue is $O(|V|)$.\n "
+    },
+    {
+      "chunk_id": "56164bf2-d83f-450c-8d33-619ba88f3396",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Adjacency",
+      "page_number": null,
+      "chunk_order": 29,
+      "excerpt": "Given $G$ the undirected graph with edge set $E$. Assume $e \\in E$ is pair $(u,v)$.\n\nThen we say:\n\n- $u, v$ are adjacent / neighbors / connected\n- Edge $e$ connects $u$ and $v$.\n- Vertices $u$ and $v$"
+    },
+    {
+      "chunk_id": "60be825b-c126-4bba-838f-5f717bf00bb4",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Reversal graph (transpose graph)",
+      "page_number": null,
+      "chunk_order": 71,
+      "excerpt": "- Given the directed graph $G=(V,E)$. We call reversal graph (transpose graph) of graph $G$ is the directed graph $G^T=(V, E^T)$, where $E^T=\\{(u, v): (v, u)\\in E\\}$, it means edge set $E^T$ is obtain"
+    },
+    {
+      "chunk_id": "1e87fdca-b8fa-4c71-8ced-021ffa340857",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planar Graphs",
+      "page_number": null,
+      "chunk_order": 55,
+      "excerpt": "- A graph is called *planar* if it can be drawn in the plane without any edges crossing.\n  - A crossing of edges is the intersection of the lines or arcs representing them at a point other than their "
+    },
+    {
+      "chunk_id": "40778183-c409-4418-9aa6-aaf732605ecf",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Source vertex",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "[Diagram: The graph illustrates a directed depth-first search starting from a chosen source vertex and exploring neighbors recursively. The stated lexical-order rule makes the traversal deterministic,"
+    },
+    {
+      "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Simple Graph",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "Adjacency list representation of a graph: how is the list structured?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "b63736b6-0137-4172-8b88-152978c49a56",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Computation time of BFS",
+          "chunk_order": 12,
+          "cosine_sim": 0.4192,
+          "final_score": 0.4564,
+          "content": "- Initialize: need $O(|V|)$.\n\n- The loop for\n  - Each vertex is inserted into and removed from queue exactly once, each operation needs $O(1)$. So, the total computation time with queue is $O(|V|)$.\n  - The adjacency list of each vertex is traversed exactly once. The total length of all adjacency list is $O(|E|)$.\n- In total, the computation time of BFS(s) is $O(|V|+|E|)$, linear to the size of adjacency list that represents the graph.\n\n[Diagram: The pseudocode shows the BFS process and its cost drivers: one-time initialization, one queue operation per vertex, and one scan across all adjacency lists. This matters because it explains why BFS runs in linear time relative to the graph’s vertices and edges when using adjacency lists.]"
+        },
+        {
+          "chunk_id": "56164bf2-d83f-450c-8d33-619ba88f3396",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Adjacency",
+          "chunk_order": 29,
+          "cosine_sim": 0.4394,
+          "final_score": 0.2316,
+          "content": "Given $G$ the undirected graph with edge set $E$. Assume $e \\in E$ is pair $(u,v)$.\n\nThen we say:\n\n- $u, v$ are adjacent / neighbors / connected\n- Edge $e$ connects $u$ and $v$.\n- Vertices $u$ and $v$ are endpoints (đầu mút) of $e$.\n\n```text\n   (u)\n    \\\n     \\  e\n      \\\n       (v)\n```\n\n[Diagram: The figure shows an undirected edge joining two vertices, illustrating the basic meaning of adjacency in a graph. This matters because many graph concepts and algorithms are built on identifying when two vertices are directly connected by an edge.]"
+        },
+        {
+          "chunk_id": "60be825b-c126-4bba-838f-5f717bf00bb4",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Reversal graph (transpose graph)",
+          "chunk_order": 71,
+          "cosine_sim": 0.433,
+          "final_score": 0.1687,
+          "content": "- Given the directed graph $G=(V,E)$. We call reversal graph (transpose graph) of graph $G$ is the directed graph $G^T=(V, E^T)$, where $E^T=\\{(u, v): (v, u)\\in E\\}$, it means edge set $E^T$ is obtained from edge set $E$ by reversing direction of all edges.\n- It is easy to see if $A$ is the adjacency matrix of graph $G$, then the transpose matrix $A^T$ is the adjacency matrix of $G^T$ (this explains the name of the transpose graph)."
+        },
+        {
+          "chunk_id": "1e87fdca-b8fa-4c71-8ced-021ffa340857",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Planar Graphs",
+          "chunk_order": 55,
+          "cosine_sim": 0.3858,
+          "final_score": 0.1565,
+          "content": "- A graph is called *planar* if it can be drawn in the plane without any edges crossing.\n  - A crossing of edges is the intersection of the lines or arcs representing them at a point other than their common endpoint.\n  - Such a drawing is called a *planar representation* of the graph."
+        },
+        {
+          "chunk_id": "40778183-c409-4418-9aa6-aaf732605ecf",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Source vertex",
+          "chunk_order": 25,
+          "cosine_sim": 0.4623,
+          "final_score": 0.1527,
+          "content": "[Diagram: The graph illustrates a directed depth-first search starting from a chosen source vertex and exploring neighbors recursively. The stated lexical-order rule makes the traversal deterministic, which matters because DFS discovery/finish order and the resulting tree depend on neighbor visitation order.]\n\n(*Main program *)\n\n1. for each $s \\in V$\n2. &nbsp;&nbsp;&nbsp;&nbsp;pred[$s$] = NULL;\n3. &nbsp;&nbsp;&nbsp;&nbsp;visited[$s$] = false;\n4. time = 0\n5. for each $s \\in V$\n6. &nbsp;&nbsp;&nbsp;&nbsp;if (visited[$s$] == false) DFS($s$);\n\nDFS($s$)\n\n1. visited[$s$] = true; //Visit s\n2. time = time + 1\n3. d[$s$] = time\n4. for each $v \\in Adj[$s$]$\n5. &nbsp;&nbsp;&nbsp;&nbsp;if (visited[$v$] == false) {\n6. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pred[$v$] $\\leftarrow$ $s$;\n7. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DFS($v$);\n8. &nbsp;&nbsp;&nbsp;&nbsp;}\n9. time = time + 1\n10. f[$s$] = time\n\nFor the operation of the algorithm to be deterministic, assume that we traverse the vertices in the adjacency list of a vertex in lexical order."
+        },
+        {
+          "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Simple Graph",
+          "chunk_order": 21,
+          "cosine_sim": 0.5439,
+          "final_score": 0.1139,
+          "content": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /|    /     /\n      e |   /     /\n       \\ |  /    /\n         d —— ——\n\n        f\n        |\n        g\n\n        h\n```\n\n[Diagram: The figure shows an undirected graph split into two connected components plus one isolated vertex. It illustrates how a simple graph is defined by its vertex set and edge set, and that not all vertices need to be part of the same connected structure.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.0
+}

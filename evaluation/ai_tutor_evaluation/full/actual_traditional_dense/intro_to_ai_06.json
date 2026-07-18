@@ -1,0 +1,115 @@
+{
+  "qid": "intro_to_ai_06",
+  "course_code": "IT3160E",
+  "question": "What is the min-conflicts heuristic used in Iterative Algorithms for CSPs?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "bfac5832-8736-4953-9056-bc112c1358bb",
+  "answer": "## Min-Conflicts Heuristic\n\nAccording to the context on **Iterative Algorithms for CSPs**, the **min-conflicts heuristic** is a **value selection** strategy used in local search methods (such as hill-climbing and simulated annealing) for solving Constraint Satisfaction Problems.\n\n### Key Points\n\n- **Purpose:** It is used to select which **value** to assign to a chosen variable.\n- **How it works:** It **chooses the value that violates the fewest constraints** (i.e., the value that conflicts with the fewest other variable assignments).\n- **Underlying mechanism:** This is essentially **hill climbing**, where the heuristic function is:\n  $$h(n) = \\text{total number of violated constraints}$$\n  The algorithm moves toward states that minimize the number of conflicts.\n\n### Context Within Iterative Algorithms\n\nIn this approach:\n- The state representation is **complete** (all variables are assigned at every node, even if some constraints are violated).\n- The operator **reassigns** a single variable at each step.\n- **Variable selection** is typically **random**.\n- Once a variable is chosen, **min-conflicts** picks the new value for it.\n\n### Why It Matters\n\nThis heuristic is highlighted in the course summary as being **usually effective in practice** for solving CSPs via local search.\n\n---\n\n**Used chunk IDs:**\n```json",
+  "citations": [
+    {
+      "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative Algorithms for CSPs",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables"
+    },
+    {
+      "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one vari"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "What is the min-conflicts heuristic used in Iterative Algorithms for CSPs?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Summary",
+          "chunk_order": 28,
+          "cosine_sim": 0.5114,
+          "final_score": 0.5881,
+          "content": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one variable assigned per node\n- Variable ordering and value selection heuristics help significantly\n- Forward checking prevents assignments that guarantee later failure\n- Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistencies\n- The CSPs representation allows analysis of problem structure\n- Tree-structured CSPs can be solved in linear time\n- Iterative min-conflicts is usually effective in practice"
+        },
+        {
+          "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Iterative Algorithms for CSPs",
+          "chunk_order": 26,
+          "cosine_sim": 0.4624,
+          "final_score": 0.5318,
+          "content": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables\n- Variable selection\n  - Random\n- Value selection by min-conflicts heuristic\n  - Choose value that violates the fewest constraints\n    - i.e., hill climbing with $h(n) =$ total number of violated constraints"
+        },
+        {
+          "chunk_id": "52733f6a-7c15-410b-b719-3c170aa04cae",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Choosing Variables",
+          "chunk_order": 22,
+          "cosine_sim": 0.4068,
+          "final_score": 0.4678,
+          "content": "- Minimum remaining values (MRV)\n  - Choose the variable with the fewest legal values\n- Degree heuristic\n  - Choose the variable with the most constraints on remaining variables"
+        },
+        {
+          "chunk_id": "40156ecc-be69-4483-8d57-b66f19383e89",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Example: *n*-queens",
+          "chunk_order": 18,
+          "cosine_sim": 0.3992,
+          "final_score": 0.4591,
+          "content": "[Diagram: The sequence shows a backtracking-style refinement of candidate queen placements on a chessboard. It illustrates how the puzzle is solved by progressively removing conflicts until a valid configuration remains, which is the key idea behind efficient search for constraint-satisfaction problems.]"
+        },
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.3747,
+          "final_score": 0.4309,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "0a1b8b3f-36ff-4f93-afa4-ad62eda60463",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Backtracking Search Algorithm",
+          "chunk_order": 18,
+          "cosine_sim": 0.3675,
+          "final_score": 0.4226,
+          "content": "[Diagram: This pseudocode describes a depth-first search strategy that builds a solution incrementally while checking constraints at each step. If a partial assignment leads to a dead end, the algorithm undoes the last choice and tries the next option, which is what makes backtracking effective for constraint satisfaction problems.]"
+        },
+        {
+          "chunk_id": "83e54421-60e1-4c3d-ab15-dd085ef21ff8",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraints Satisfaction Problems (CSPs)",
+          "chunk_order": 1,
+          "cosine_sim": 0.366,
+          "final_score": 0.4209,
+          "content": "- CSPs example\n- Backtracking search\n- Problem structure\n- Local search for CSPs"
+        },
+        {
+          "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 7,
+          "cosine_sim": 0.3488,
+          "final_score": 0.4011,
+          "content": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n        \\        /   \\      /\n         \\      /     \\    /\n          \\    /       \\  /\n           \\  /         \\/\n            SA -------- NSW\n             \\           /\n              \\         /\n               \\       /\n                \\     /\n                  V\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.5
+}

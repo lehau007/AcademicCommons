@@ -1,0 +1,51 @@
+{
+  "file_id": "it4015e_access_control_pptx",
+  "scores": {
+    "classification_routing": {
+      "score": 5,
+      "justification": "processing_meta.json persists no explicit route/inferred_type field, but classification is correct on every recoverable signal: file_format 'pptx' matches expected_type, summary.language 'en' matches, and the output itself exhibits hybrid behavior (native text extraction plus vision-style figure descriptions), consistent with the expected 'hybrid' route. Route unavailable from logs, so pass is decided by consistent type/language signals.",
+      "evidence": ["\"file_format\": \"pptx\"", "\"language\": \"en\""]
+    },
+    "text_coverage": {
+      "score": 5,
+      "justification": "All substantive text across the 58 slides is present and in order; the output even recovers content the expected reference dropped, e.g. the full slide-33 BLP security-level table. Only the repeated 'Sep 2009 / Information Security by Van K Nguyen...' footer boilerplate is omitted, which is not substantive content.",
+      "evidence": []
+    },
+    "extraction_fidelity": {
+      "score": 5,
+      "justification": "Characters are fully correct with no mojibake or garbling; Unicode math and logic symbols are preserved (s₁, sᵢ, oⱼ, ⊆, ≥, ⊇) and English names/terms are accurate (e.g. 'Van K Nguyen - HUT', 'Harrison, Ruzzo, and Ullman').",
+      "evidence": []
+    },
+    "structure_preservation": {
+      "score": 5,
+      "justification": "Structure is faithfully reflected in correct reading order: per-slide boundaries are marked with <!-- slide N --> comments, headings map to real slide titles, nested bullets keep their hierarchy, and tables/code are kept as distinct blocks. It does NOT show the footer-as-heading promotion or flattened nesting the manifest warned about for the native-pptx path.",
+      "evidence": ["<!-- slide 4 -->", "- Application\n  - business applications"]
+    },
+    "faithfulness_no_hallucination": {
+      "score": 4,
+      "justification": "No factual content is fabricated and every reconstructed table/formula matches the source; however the output adds model-generated figure alt-text (bracketed ![figure: ...] captions) that is not literal source text. These captions were verified accurate against the reference's diagram labels (RBAC family, ACL Object F/G values, lattice nodes), so they are accurate non-source annotations rather than harmful hallucinations, but they are still invented strings and prevent a perfect score.",
+      "evidence": ["![figure: access control matrix diagram. Rows are subjects s₁, s₂, …, sₙ; columns are objects o₁, …, oₘ ... The matrix is empty in this illustration.]"]
+    },
+    "formula_table_code": {
+      "score": 5,
+      "justification": "Tables, code, and formulas are all captured correctly and legibly: access-matrix and BLP tables render as clean markdown grids, HRU commands appear in fenced code blocks, and set-theoretic formulas are typeset with correct symbols — clearer than the expected reference, which flattened the code into bullets and left a '[Formula: ...]' placeholder.",
+      "evidence": ["```\ncommand create•file(p, f)\n    create object f;", "`roles(sᵢ) ⊆ { r | (user(sᵢ),r) ∈ UA }`"]
+    }
+  },
+  "classification": {
+    "expected_type": "pptx",
+    "expected_route": "hybrid",
+    "actual_type": "pptx",
+    "actual_route": "hybrid (inferred from output; no explicit route field in processing_meta)",
+    "pass": true
+  },
+  "hallucinations": [
+    "![figure: access control matrix diagram. Rows are subjects s₁, s₂, …, sₙ; columns are objects o₁, …, oₘ and subjects s₁, …, sₙ. Cell (sᵢ, oⱼ) holds the rights of subject sᵢ over object oⱼ. The matrix is empty in this illustration.]",
+    "![figure: lattice diagram of security classes. Top: (confidential, {student-info, dept-info}). ... Bottom: (public, {}). Lines connect each element to the elements it dominates, forming a lattice.]",
+    "![figure: RBAC family diagram. A diamond layout: RBAC₃ consolidated model at top, RBAC₀ base model at bottom, RBAC₁ role hierarchy on the left, RBAC₂ constraints on the right.]",
+    "![figure: RBAC₀ diagram. Three circles labeled \"U Users\", \"R Roles\", and \"P Permissions\" ... arrows from the sessions point up to both U and R.]",
+    "![figure: Role Hierarchy example with four nodes. ... An upward arrow on the right side of the diagram is labeled \"Inheritance of privileges\".]"
+  ],
+  "normalization_note": "The 58-slide native .pptx binary could not be rendered directly by the Read tool, so expected/it4015e_access_control_pptx.md was used as the ground-truth reference. The normalized markdown reads coherently end to end with no dropped or corrupted large spans; it is in fact cleaner and better-structured than the expected reference (proper per-slide markers, nested bullets, markdown tables, fenced code, and the recovered slide-33 table). Notably the actual output does NOT exhibit the native-pptx degradation the manifest describes (footers-as-headings, flattened nesting) — instead it shows hybrid-route behavior including vision-generated figure alt-text. The only content not literally present in the source is that bracketed figure alt-text, which was cross-checked against the reference and found accurate.",
+  "overall_comment": "Excellent extraction that meets or exceeds the reference on coverage, character fidelity, structure, and table/code/formula handling. The single deduction is on faithfulness: the pipeline injects five blocks of model-generated figure captions that are accurate descriptions of real source diagrams but are still non-source strings (docking faithfulness to 4). Classification is correct (pptx/en) and routing passes; the hybrid route is inferred from the dual text+figure output since no explicit route field is persisted in processing_meta."
+}

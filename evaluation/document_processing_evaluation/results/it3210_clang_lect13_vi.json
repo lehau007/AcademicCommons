@@ -1,0 +1,48 @@
+{
+  "file_id": "it3210_clang_lect13_vi",
+  "scores": {
+    "classification_routing": {
+      "score": 4,
+      "justification": "processing_meta.json persists no route/inferred_type, so the hybrid route cannot be directly confirmed from logs; however supporting signals are fully consistent (summary.language 'vi' matches the manifest, and the output mixes cleanly extracted text slides with figure placeholders for image-only slides — exactly the text+vision hybrid behavior). Score held at 4 only because the routing decision itself is unrecoverable from metadata.",
+      "evidence": [
+        "processing_meta.json exposes only \"file_format\": \"pdf\" plus the ocr_job block — no \"route\" or \"inferred_type\" field to compare against expected_route=hybrid",
+        "\"language\": \"vi\""
+      ]
+    },
+    "text_coverage": {
+      "score": 5,
+      "justification": "Every substantive slide (2-15) is captured: all NỘI DUNG bullets, the KHÁI NIỆM prose, every code block, all speech-bubble callouts, the array diagram values, and the BÀI TẬP list are present — and the ✗/✓ comparison glyphs on slide 9 are retained as figure descriptions. The only drop is the non-substantive social footer on the closing slide.",
+      "evidence": []
+    },
+    "extraction_fidelity": {
+      "score": 5,
+      "justification": "Vietnamese diacritics are fully intact with no mojibake or stripped tone marks (e.g. 'ĐỊNH NGHĨA KIỂU', 'quản lí như một đơn vị logic', 'đóng gói vào một khối hợp nhất'), and code tokens are character-exact, including the easily-confused 'char lastname[MAXLEN];' (slide 11) and 'char name[30];' vs 'char name[80];' (slide 6).",
+      "evidence": []
+    },
+    "structure_preservation": {
+      "score": 5,
+      "justification": "Slide boundaries are explicitly marked with '<!-- slide N -->' for all 16 slides, each title maps to a heading, bullet and nested sub-bullet lists are preserved (e.g. the two-level list on CẤU TRÚC VÀ HÀM), code is fenced, and reading order is correct — including the two-column code on slide 14 merged top-to-bottom. Heading level (# vs the reference's ##) is a free formatting choice and not penalized.",
+      "evidence": []
+    },
+    "faithfulness_no_hallucination": {
+      "score": 5,
+      "justification": "No invented text. The bracketed figure descriptions and italic 'Chú thích' callouts all correspond to elements actually in the source: the red ✗ / green ✓ icons on slide 9, the stud_list array with fred:5/ralph:7/fong:4/rachel:9 on slide 10, and the genuine speech-bubble annotations on slides 6-8 — faithful descriptions, not fabrications.",
+      "evidence": []
+    },
+    "formula_table_code": {
+      "score": 5,
+      "justification": "All C code is captured legibly in fenced blocks and is character-accurate, including pointer syntax (ptr->name, &(s->mark)), format strings (\"%s co diem la %d\"), and the full số-phức program on slide 14; source quirks are faithfully preserved (int field 'mark' read with 'scanf(\"%f\",&(s->mark))', and the slide-11 example left unclosed exactly as the source truncates it).",
+      "evidence": []
+    }
+  },
+  "classification": {
+    "expected_type": "slide_pdf",
+    "expected_route": "hybrid",
+    "actual_type": "slide_pdf (inferred from content; not stored in logs)",
+    "actual_route": "unrecoverable from logs (output behavior consistent with hybrid text+vision)",
+    "pass": true
+  },
+  "hallucinations": [],
+  "normalization_note": "The normalized markdown reads coherently end-to-end with no dropped or corrupted spans relative to the 16-page source; all code blocks and Vietnamese prose are intact and diacritics clean. The only omissions are the decorative closing-slide footer ('hust.edu.vn', 'fb.com/dhbkhn') and slide 1's cover text (collapsed to an image placeholder) — both non-substantive and also absent from the human reference. Note summary.ocr_quality='low' appears to mislabel the result, since the extracted text is in fact highly accurate.",
+  "overall_comment": "Excellent extraction of a diacritic- and code-heavy Vietnamese slide deck: OCR fidelity, structure, and code handling are essentially perfect with zero hallucinations, and the callout/figure annotations are all genuine source content. The only weakness is that the routing decision cannot be verified because processing_meta.json stores no route/inferred_type field; all supporting signals (language=vi, slide content, hybrid text+figure output) are consistent with the expected hybrid route, so routing passes."
+}

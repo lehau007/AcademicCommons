@@ -1,0 +1,105 @@
+{
+  "qid": "hard_db_table_06",
+  "course_code": "IT3292E",
+  "question": "Theo bảng định nghĩa DBMS trong slide, Wikipedia và Techtarget định nghĩa DBMS như thế nào, và slide liệt kê những ví dụ DBMS nào?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "2110c936-4b9f-41d3-b328-c13cd9539b7d",
+  "answer": "Dựa vào slide, em có thể trả lời như sau:\n\n## 1. Định nghĩa DBMS theo Wikipedia và Techtarget\n\n| Nguồn | Định nghĩa |\n|---|---|\n| **Wikipedia** | Một phần mềm để tạo điều kiện thuận lợi cho việc **tạo và bảo trì cơ sở dữ liệu** (A software to facilitate the creation and maintenance of a database) |\n| **Techtarget** | DBMS cung cấp cho người dùng và lập trình viên một **phương pháp có hệ thống** để **tạo, truy xuất, cập nhật và quản lý dữ liệu** (a systematic way to create, retrieve, update and manage data) |\n\n### So sánh nhanh:\n- **Wikipedia**: nhấn mạnh khía cạnh *\"tạo và bảo trì\"* cơ sở dữ liệu.\n- **Techtarget**: mở rộng hơn với 4 hoạt động cốt lõi — **tạo (Create), truy xuất (Retrieve), cập nhật (Update), quản lý (Manage)** — và hướng đến cả người dùng lẫn lập trình viên.\n\n## 2. Các ví dụ DBMS được liệt kê trong slide\n\nSlide liệt kê 6 hệ quản trị cơ sở dữ liệu phổ biến:\n\n1. **MySQL**\n2. **Microsoft Access**\n3. **Microsoft SQL Server**\n4. **ORACLE DATABASE**\n5. **IBM DB2**\n6. **PostgreSQL**\n\n👉 Đây đều là những DBMS rất phổ biến trong thực tế, phản ánh nhận định *\"hơn 80% các ứng dụng máy tính trong thực tế đều liên quan đến cơ sở dữ liệu\"* (theo Korth & Silberschatz).\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "786cf68a-c479-46bf-9556-87695dc6e3d1",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Database Management System (DBMS)",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- Definitions\n\n| Source | Definition |\n|---|---|\n| Wikipedia | A software to facilitate the creation and maintenance of a database |\n| Techtarget | The DBMS provides users and programmers with a syste"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "Theo bảng định nghĩa DBMS trong slide, Wikipedia và Techtarget định nghĩa DBMS như thế nào, và slide liệt kê những ví dụ DBMS nào?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "786cf68a-c479-46bf-9556-87695dc6e3d1",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 23,
+          "cosine_sim": 0.4472,
+          "final_score": 0.5143,
+          "content": "- Definitions\n\n| Source | Definition |\n|---|---|\n| Wikipedia | A software to facilitate the creation and maintenance of a database |\n| Techtarget | The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n\n```text\n+-------------------+--------------------------------------------------------------+\n| MySQL             | Microsoft Access | Microsoft SQL Server | ORACLE DATABASE   |\n| IBM DB2           | PostgreSQL                                              |\n+-------------------+--------------------------------------------------------------+\n```\n\n[Table: DBMS definitions (Wikipedia: software to create and maintain a database; Techtarget: a systematic way to create, retrieve, update and manage data) and a list of example DBMS products: MySQL, Microsoft Access, Microsoft SQL Server, ORACLE DATABASE, IBM DB2, PostgreSQL.]"
+        },
+        {
+          "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.3987,
+          "final_score": 0.4585,
+          "content": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n| CREATE TABLE | SQL statement to define a table into a database |\n| ALTER TABLE | SQL statement to modify table structure if needed (add /delete/modify column(s), add/remove constraint(s)) |\n| INSERT/UPDATE/DELETE | SQL statements to add new record to a table; to change the data of one or more records in a table; to remove single record or multiple records from a table |\n| SELECT | SQL statement to retrieve data from a database |"
+        },
+        {
+          "chunk_id": "d42ace20-c14b-440d-85cc-01caee818759",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "3.2. Database approach",
+          "chunk_order": 36,
+          "cosine_sim": 0.3446,
+          "final_score": 0.3963,
+          "content": "```text\nLecturer     Enrollment     Student\n   |             |             |\n   +-------------+-------------+\n                 |\n                 v\n               +-------+\n               | DBMS  |\n               +-------+\n                /     \\\n               v       v\n        +-----------+  +----------------+\n        | Database  |  |   Metadata     |\n        |           |  |   (Catalog)    |\n        | Lecturer  |  +----------------+\n        | Student   |\n        | Class     |\n        | Course    |\n        | Note      |\n        +-----------+\n```\n\n[Diagram: The slide illustrates a database-centered approach in which different user-facing entities such as lecturers, enrollments, and students are mediated by a DBMS rather than accessing data directly. This matters because the DBMS separates application access from both the stored data and the metadata/catalog, enabling organization, control, and consistent management of information.]"
+        },
+        {
+          "chunk_id": "39afb781-017d-4f1c-ba00-48567d0028b3",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "Keywords and descriptions",
+          "chunk_order": 5,
+          "cosine_sim": 0.3433,
+          "final_score": 0.3948,
+          "content": "| Keyword | Description |\n|---|---|\n| Database | A shared collection of related data designed to meet the information needs of an organization |\n| DBMS | A software to facilitate the creation and maintenance of a database |\n| Data model | A set of concepts used to describe the structure of a database: data types, relationships, constraints, semantics, ... |\n| Schema | A data structure fulfilled all features of the parts of the real world which is of interest to the users |\n| Instance | The data itself (in the context of data model and database schema) |"
+        },
+        {
+          "chunk_id": "6392b873-ede6-448d-9388-876329e08c99",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 26,
+          "cosine_sim": 0.3425,
+          "final_score": 0.3939,
+          "content": "- Defining ~ specifying types of data\n- Constructing ~ storing & populating\n- Manipulating ~ querying, updating, reporting\n\n```text\n+-----------+   +--------------+   +-------------------------------+\n| MySQL     |   | Microsoft    |   | Microsoft SQL Server          |\n|           |   | Access       |   |                               |\n+-----------+   +--------------+   +-------------------------------+\n\n+------------------+   +--------+   +-------------+\n| Oracle Database   |   | IBM DB2|   | PostgreSQL  |\n+------------------+   +--------+   +-------------+\n```"
+        },
+        {
+          "chunk_id": "f05880bc-a007-4fb5-825e-78e031fd5473",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1. Introduction to SQL",
+          "chunk_order": 6,
+          "cosine_sim": 0.3111,
+          "final_score": 0.3578,
+          "content": "```text\n+-------------------+        +-------------------------+        +------------------+\n|   DB Administrator |        |  Standard Languages     |        |   DBMS Server    |\n|                   |        |  (Ex.: SQL)             |        |                  |\n+-------------------+        |                         |        | PostgreSQL       |\n                             | Table/view definition,  |        | MySQL            |\n+-------------------+        | constraint declaration, |        | Microsoft SQL    |\n|     End-users     | <----> | ...                     |        | Server           |\n+-------------------+        |                         |        | Oracle           |\n+-------------------+        +-------------------------+        +------------------+\n|   Client-applications |\n| (in C#, Java, php, ..) |\n+-------------------+\n\n                 +-------------------+\n                 | Which language?   |\n                 +-------------------+\n```"
+        },
+        {
+          "chunk_id": "a0278c86-58c7-41e7-87f2-4442fa5dc26d",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 27,
+          "cosine_sim": 0.3102,
+          "final_score": 0.3568,
+          "content": "[Diagram: This slide highlights examples of DBMS products used in practice across different vendors. It emphasizes that database management is a general concept implemented by many tools, each supporting defining, constructing, and manipulating data.]"
+        },
+        {
+          "chunk_id": "ccabb5ee-7596-44ac-b774-7da46b9d5afb",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 25,
+          "cosine_sim": 0.2845,
+          "final_score": 0.3272,
+          "content": "> “More than $80\\%$ of real world computer applications are associated with databases”\n\n* Korth & Silberschatz. Database System Concepts.\n\n| DBMS Examples |\n|---|\n| MySQL |\n| Microsoft Access |\n| Microsoft SQL Server |\n| ORACLE DATABASE |\n| IBM DB2 |\n| PostgreSQL |\n\n[Diagram: The slide emphasizes how widespread database usage is in real-world applications and illustrates that this importance is reflected in many major DBMS products. The logos serve as examples of widely used database systems across different platforms and vendors.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.2
+}

@@ -1,0 +1,91 @@
+{
+  "Search": [
+    {
+      "chunk_id": "intro_ai_search_01",
+      "section_title": "Search Problems",
+      "source": "intro_to_ai_qa#17",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/01_search_problem.md",
+      "sentence_count": 5
+    },
+    {
+      "chunk_id": "intro_ai_search_02",
+      "section_title": "Informed and Local Search",
+      "source": "intro_to_ai_qa#3,#18,#19",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/02_search_astar.md",
+      "sentence_count": 6
+    }
+  ],
+  "CSP": [
+    {
+      "chunk_id": "intro_ai_csp_01",
+      "section_title": "Constraint Satisfaction Problems",
+      "source": "intro_to_ai_qa#5",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/03_csp_definition.md",
+      "sentence_count": 6
+    },
+    {
+      "chunk_id": "intro_ai_csp_02",
+      "section_title": "Iterative CSP Algorithms",
+      "source": "intro_to_ai_qa#6",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/04_csp_min_conflicts.md",
+      "sentence_count": 6
+    }
+  ],
+  "Logic": [
+    {
+      "chunk_id": "intro_ai_logic_01",
+      "section_title": "Components of a Logic",
+      "source": "intro_to_ai_qa#20,#9",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/05_logic_components.md",
+      "sentence_count": 6
+    },
+    {
+      "chunk_id": "intro_ai_logic_02",
+      "section_title": "Forward Chaining Inference",
+      "source": "intro_to_ai_qa#7",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/06_logic_forward_chaining.md",
+      "sentence_count": 6
+    }
+  ],
+  "ML": [
+    {
+      "chunk_id": "intro_ai_ml_01",
+      "section_title": "Defining a Machine Learning Problem",
+      "source": "intro_to_ai_qa#12,#11",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/07_ml_definition.md",
+      "sentence_count": 6
+    },
+    {
+      "chunk_id": "intro_ai_ml_02",
+      "section_title": "Neural Network Training and Topology",
+      "source": "intro_to_ai_qa#10,#14",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/08_ml_neural_networks.md",
+      "sentence_count": 7
+    }
+  ],
+  "RL": [
+    {
+      "chunk_id": "intro_ai_rl_01",
+      "section_title": "Discounted Return in Reinforcement Learning",
+      "source": "intro_to_ai_qa#13",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/09_rl_discount.md",
+      "sentence_count": 6
+    }
+  ],
+  "Planning": [
+    {
+      "chunk_id": "intro_ai_planning_01",
+      "section_title": "Progression and Regression Planning",
+      "source": "intro_to_ai_qa#2",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/10_planning_progression.md",
+      "sentence_count": 6
+    },
+    {
+      "chunk_id": "intro_ai_planning_02",
+      "section_title": "Agents, PEAS, and Environments",
+      "source": "intro_to_ai_qa#1,#4,#15,#16",
+      "file_path": "src/experiments/mock_test/sample_chunks/intro_to_ai/11_agents_peas.md",
+      "sentence_count": 7
+    }
+  ]
+}

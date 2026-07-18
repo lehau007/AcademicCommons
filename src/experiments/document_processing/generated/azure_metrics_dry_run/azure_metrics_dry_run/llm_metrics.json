@@ -1,0 +1,11 @@
+{
+  "total_calls": 0,
+  "successful_calls": 0,
+  "failed_calls": 0,
+  "total_prompt_tokens": 0,
+  "total_completion_tokens": 0,
+  "total_tokens": 0,
+  "total_cost_usd": 0,
+  "avg_latency_ms": 0.0,
+  "records": []
+}

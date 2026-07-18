@@ -1,0 +1,56 @@
+{
+  "qid": "database_04",
+  "course_code": "IT3292E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The core distinction (WHERE filters individual rows/tuples, HAVING filters groups), the timing (before vs. after grouping), the conditions for moving HAVING to WHERE (grouping vs. aggregated attributes), and the example are all grounded in chunk ef945d50.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question about how HAVING and WHERE differ in SQL. It clearly explains that WHERE filters individual rows/tuples before grouping while HAVING filters groups after aggregation, which is exactly what the question asks.",
+      "evidence": [
+        "WHERE filters individual rows/tuples before grouping or aggregation",
+        "HAVING filters groups after GROUP BY and aggregation have been performed",
+        "WHERE = row filtering, HAVING = group filtering"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer fully captures the ground truth's core distinction: WHERE applies to individual tuples/rows while HAVING applies to groups. The additional correct details about timing, aggregation, and when conditions can be moved enhance understanding without contradicting the ground truth.",
+      "evidence": [
+        "Ground truth: 'Conditions in a HAVING clause apply to groups as a whole, whereas conditions in a WHERE clause apply to individual tuples.'",
+        "Tutor: '**`WHERE`** filters **individual rows/tuples**' and '**`HAVING`** filters **groups**'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are relevant to explaining the difference between HAVING and WHERE clauses. The first chunk directly addresses the core distinction, chunks 2 and 5 provide concrete examples of HAVING usage, and chunks 3, 4, and 6 are topical overviews that contextualize HAVING within SQL query structure.",
+      "evidence": [
+        "ef945d50: 'Conditions in HAVING clause apply to groups as a whole. Conditions in WHERE clause apply to individual tuples.'",
+        "e138740d: 'Requirements on HAVING conditions... either a grouping attribute or aggregated'",
+        "d03b4fb8: 'Which subject in which semester has it the most enrollments? ... HAVING count(student_id) >= ALL'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The retrieved chunks contain all key facts from the ground truth. Chunk ef945d50 explicitly states both that 'Conditions in HAVING clause apply to groups as a whole' and 'Conditions in WHERE clause apply to individual tuples,' which are the exact core facts in the ground-truth answer.",
+      "evidence": [
+        "Conditions in HAVING clause apply to groups as a whos e.",
+        "Conditions in WHERE clause apply to individual tuples."
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made. The chunks directly address WHERE vs HAVING differences, when conditions can be moved between clauses, and provide the exact SQL example used.",
+      "evidence": [
+        "Chunk ef945d50 states 'Conditions in HAVING clause apply to groups as a whole. Conditions in WHERE clause apply to individual tuples' — directly supports the core distinction",
+        "Chunk ef945d50 feedback explains 'If condition in HAVING clause refers to grouping attribute, then this condition can be placed in WHERE clause' — supports the 'Sometimes yes' claim",
+        "Chunk e138740d shows the exact enrollment example with HAVING count(student_id) >= ALL — supports the SQL example provided",
+        "Chunk e138740d states HAVING conditions 'may refer to attributes only if they are: either a grouping attribute or aggregated' — supports the requirements discussion"
+      ]
+    }
+  }
+}

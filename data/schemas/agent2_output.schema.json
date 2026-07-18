@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent2_output.schema.json",
+  "title": "Agent 2: Internet Search Agent Output Contract (v1)",
+  "description": "Output of Agent 2 in the 3-agent evaluation pipeline. Provides external authoritative references as supplementary context. See project_description.md Section 6.2.",
+  "type": "object",
+  "required": ["schema_version", "references", "search_status", "search_duration_ms"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "url", "snippet", "source_type"],
+        "properties": {
+          "title": { "type": "string" },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "snippet": {
+            "type": "string",
+            "description": "Relevant excerpt from the source"
+          },
+          "source_type": {
+            "type": "string",
+            "enum": ["textbook", "course_page", "paper", "other"]
+          }
+        }
+      }
+    },
+    "search_status": {
+      "type": "string",
+      "enum": ["success", "timeout", "error"],
+      "description": "Whether the search completed successfully. Timeout and error are graceful fallbacks."
+    },
+    "search_duration_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Time taken for the search in milliseconds. Default timeout: 15000ms."
+    }
+  },
+  "additionalProperties": false
+}

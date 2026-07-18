@@ -1,0 +1,15 @@
+{
+  "sample_id": "test_image",
+  "course_code": "TEST04",
+  "tier": "community",
+  "input_path": "src/experiments/document_processing/test_data/image.png",
+  "expected_type": "image",
+  "expected_route": "vision_only",
+  "actual_route": "vision_only",
+  "route_evidence": {
+    "reason": "image_input"
+  },
+  "file_sha256": "eda54a02a4577dc44f500ba151c5d92a84ec79944be5f30b3da21c85403c4d78",
+  "model": "local_placeholder",
+  "duration_ms": 27176
+}

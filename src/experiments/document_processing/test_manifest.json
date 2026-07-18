@@ -1,0 +1,29 @@
+[
+  {
+    "id": "graph_presentation",
+    "course_code": "TEST01",
+    "tier": "official",
+    "input_path": "src/experiments/document_processing/test_data/2_2-GraphPresentation.pdf",
+    "expected_type": "slide_pdf",
+    "expected_route": "vision_only",
+    "notes": "Landscape slide PDF exported from presentation"
+  },
+  {
+    "id": "database_scanned",
+    "course_code": "TEST02",
+    "tier": "community",
+    "input_path": "src/experiments/document_processing/test_data/Database-giữa kì cô Oanh.pdf",
+    "expected_type": "scanned_pdf",
+    "expected_route": "vision_only",
+    "notes": "Scanned exam PDF"
+  },
+  {
+    "id": "infosec_pptx",
+    "course_code": "TEST03",
+    "tier": "official",
+    "input_path": "src/experiments/document_processing/test_data/SoICT - 4010E IntroInfoSec - C6- VanNK -extra.pptx",
+    "expected_type": "pptx",
+    "expected_route": "hybrid",
+    "notes": "Official lecture slides PPTX"
+  }
+]

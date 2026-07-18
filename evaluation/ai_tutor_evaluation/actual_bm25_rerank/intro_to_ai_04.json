@@ -1,0 +1,96 @@
+{
+  "qid": "intro_to_ai_04",
+  "course_code": "IT3160E",
+  "question": "How does a model-based reflex agent differ from a simple reflex agent?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "3a727708-f376-46ee-a31e-8f1930217d76",
+  "answer": "A **simple reflex agent** chooses actions **only from the current percept** using condition–action rules. It does **not** keep track of the past, so it can only react to what it senses **right now**.\n\nA **model-based reflex agent** is similar, but it also keeps an **internal state/model of the world**. This internal model lets it use the current percept **plus information about how the world may have changed over time**, so it can handle partially observable environments better.\n\n### In short\n- **Simple reflex agent:** current percept → action\n- **Model-based reflex agent:** current percept + internal state/model → action\n\nSo the key difference is that **model-based reflex agents remember and model the world**, while **simple reflex agents do not**.",
+  "citations": [
+    {
+      "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Agent types",
+      "page_number": null,
+      "chunk_order": 15,
+      "excerpt": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+    },
+    {
+      "chunk_id": "00d7b922-e2e8-4311-922a-651df539f47a",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Rational agent",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- For each possible percept sequence, a rational agent should select an **action** that is expected to maximize its **performance measure**, given the evidence provided by the **percept sequence** and"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "difference between model-based reflex agent and simple reflex agent intelligent agents",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agent types",
+          "chunk_order": 15,
+          "cosine_sim": 0.6829,
+          "final_score": 0.6877,
+          "content": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+        },
+        {
+          "chunk_id": "487f414b-66e1-4240-9d55-ff717bb5a3f6",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Points of view",
+          "chunk_order": 4,
+          "cosine_sim": 0.4438,
+          "final_score": 0.2232,
+          "content": "- From the point of view of agents\n  - RL is a process of trial-and-error learning\n  - How much reward will I get if I do this action?\n- From the point of view of trainers\n  - RL is training by rewards and punishments\n  - Train computers like we train animals"
+        },
+        {
+          "chunk_id": "30300eec-d65c-472b-927a-37480bf0e42b",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 10,
+          "cosine_sim": 0.4595,
+          "final_score": 0.1968,
+          "content": "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is the core design problem in rational agent systems.]\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Rational agents",
+          "chunk_order": 14,
+          "cosine_sim": 0.3927,
+          "final_score": 0.1723,
+          "content": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|       |--------------|\n|  Percepts    |\n|  <---------- \n|  Actions     |\n|  ----------> \n|               |\n|               |\n|  Sensors|       | Actuators|\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "510f0071-bb3f-4556-a2bd-e64ce8eedd02",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem-solving agents",
+          "chunk_order": 3,
+          "cosine_sim": 0.3966,
+          "final_score": 0.1563,
+          "content": "```text\nfunction SIMPLE-PROBLEM-SOLVING-AGENT(percept) returns an action\n    static: seq, an action sequence, initially empty\n            state, some description of the current world state\n            goal, a goal, initially null\n            problem, a problem formulation\n\n    state ← UPDATE-STATE(state, percept)\n    if seq is empty then do\n        goal ← FORMULATE-GOAL(state)\n        problem ← FORMULATE-PROBLEM(state, goal)\n        seq ← SEARCH(problem)\n    action ← FIRST(seq)\n    seq ← REST(seq)\n    return action\n```\n\n[Diagram: This pseudocode shows a simple agent loop that maintains internal state, formulates a goal and problem when it has no planned actions, and then uses search to produce an action sequence. It matters because it illustrates how an agent can act deliberately rather than reacting only to the current percept.]"
+        },
+        {
+          "chunk_id": "00d7b922-e2e8-4311-922a-651df539f47a",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Rational agent",
+          "chunk_order": 8,
+          "cosine_sim": 0.404,
+          "final_score": 0.1486,
+          "content": "- For each possible percept sequence, a rational agent should select an **action** that is expected to maximize its **performance measure**, given the evidence provided by the **percept sequence** and whatever **built-in knowledge** the agent has.\n- An agent is **autonomous** if its behavior is determined by its own experience (with ability to learn and adapt)"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.7
+}

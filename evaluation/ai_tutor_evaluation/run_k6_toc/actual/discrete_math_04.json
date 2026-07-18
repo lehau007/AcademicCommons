@@ -1,0 +1,134 @@
+{
+  "qid": "discrete_math_04",
+  "course_code": "IT3020E",
+  "question": "What is the overall computational time complexity of the Breadth-First Search (BFS) algorithm?",
+  "session_id": "6ecd698b-c6a7-4572-b1bd-c6183341472f",
+  "answer": "The overall computational time complexity of **Breadth-First Search (BFS)** is:\n\n\\[\n\\boxed{O(|V| + |E|)}\n\\]\n\nwhere:\n- \\(|V|\\) = number of vertices\n- \\(|E|\\) = number of edges\n\n### Why?\nAccording to the course material:\n- Initializing the `visited` array takes \\(O(|V|)\\)\n- Each vertex is enqueued and dequeued exactly once, contributing \\(O(|V|)\\)\n- All adjacency lists are scanned once in total, contributing \\(O(|E|)\\)\n\nSo the total time is:\n\n\\[\nO(|V|) + O(|E|) = O(|V| + |E|)\n\\]\n\nThis is the standard BFS complexity when the graph is represented using **adjacency lists**.",
+  "citations": [
+    {
+      "chunk_id": "b63736b6-0137-4172-8b88-152978c49a56",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Computation time of BFS",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Initialize: need $O(|V|)$.\n\n- The loop for\n  - Each vertex is inserted into and removed from queue exactly once, each operation needs $O(1)$. So, the total computation time with queue is $O(|V|)$.\n "
+    },
+    {
+      "chunk_id": "707d7426-5c59-4bee-a07c-a036a69f81a8",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Computation time of BFS",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "```text\n+--------------------------------------------------------------+\n| BFS(s)                                                       |\n| // Breadth first search starts from vertex s                "
+    },
+    {
+      "chunk_id": "7b29c5c3-a9c0-4382-85a0-575e53ae2c8c",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Breadth-first Search",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "```text\nBFS(s)\n // Breadth first search starts from vertex s\n    visited[s] ← 1; //visited\n    Q ← ∅; enqueue(Q,s); // insert s into Q\n    while (Q ≠ ∅)\n    {\n        u ← dequeue(Q); // Remove u from "
+    },
+    {
+      "chunk_id": "8d8b97e8-6ca3-4dd9-ae0c-368dba2d7484",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Graph traversal (Graph searching)",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "Searching a graph means systematically following the edges of the graph so as to visit the vertices.\n\n2 algorithms:\n\n- Breadth First Search – BFS\n- Depth First Search – DFS"
+    },
+    {
+      "chunk_id": "2898b18f-8e2a-49b2-b379-421314babf06",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Breadth First Search",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Given\n  - a graph $G=(V,E)$ – set of vertices and edges\n  - a distinguished source vertex $s$\n- Breadth first search systematically explores the edges of $G$ to discover every vertex that is reachab"
+    },
+    {
+      "chunk_id": "191e2481-0430-430d-a364-5e54bfb04a4a",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Breadth First Search",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "- Given\n  - a graph $G=(V,E)$ – set of vertices and edges\n  - a distinguished source vertex $s$\n- Breadth first search systematically explores the edges of $G$ to discover every vertex that is reachab"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Breadth-First Search BFS computational time complexity",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "b63736b6-0137-4172-8b88-152978c49a56",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Computation time of BFS",
+          "chunk_order": 12,
+          "cosine_sim": 0.6283,
+          "final_score": 0.7226,
+          "content": "- Initialize: need $O(|V|)$.\n\n- The loop for\n  - Each vertex is inserted into and removed from queue exactly once, each operation needs $O(1)$. So, the total computation time with queue is $O(|V|)$.\n  - The adjacency list of each vertex is traversed exactly once. The total length of all adjacency list is $O(|E|)$.\n- In total, the computation time of BFS(s) is $O(|V|+|E|)$, linear to the size of adjacency list that represents the graph.\n\n[Diagram: The pseudocode shows the BFS process and its cost drivers: one-time initialization, one queue operation per vertex, and one scan across all adjacency lists. This matters because it explains why BFS runs in linear time relative to the graph’s vertices and edges when using adjacency lists.]"
+        },
+        {
+          "chunk_id": "707d7426-5c59-4bee-a07c-a036a69f81a8",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Computation time of BFS",
+          "chunk_order": 11,
+          "cosine_sim": 0.5851,
+          "final_score": 0.6729,
+          "content": "```text\n+--------------------------------------------------------------+\n| BFS(s)                                                       |\n| // Breadth first search starts from vertex s                 |\n|   visited[s] ← 1; //visited                                   |\n|   Q ← ∅; enqueue(Q,s); // insert s into Q                    |\n|   while (Q ≠ ∅)                                             |\n|   {                                                          |\n|       u ← dequeue(Q); // Remove u from Q                    |\n|       for v ∈ Adj[u]                                        |\n|           if (visited[v] == 0) //not visited yet            |\n|           {                                                  |\n|               visited[v] ← 1; //visited                      |\n|               enqueue(Q,v)  // insert v into Q              |\n|           }                                                  |\n|   }                                                          |\n|                                                              |\n| (*Main Program*)                                             |\n| main ()                                                      |\n|     for s ∈ V // Initialize                                  |\n|         visited[s] ← 0;                                      |\n|                                                              |\n|     for s ∈ V                                               |\n|         if (visited[s]==0) BFS(s);                           |\n+--------------------------------------------------------------+\n```"
+        },
+        {
+          "chunk_id": "7b29c5c3-a9c0-4382-85a0-575e53ae2c8c",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Breadth-first Search",
+          "chunk_order": 9,
+          "cosine_sim": 0.5057,
+          "final_score": 0.5816,
+          "content": "```text\nBFS(s)\n // Breadth first search starts from vertex s\n    visited[s] ← 1; //visited\n    Q ← ∅; enqueue(Q,s); // insert s into Q\n    while (Q ≠ ∅)\n    {\n        u ← dequeue(Q); // Remove u from Q\n        for v ∈ Adj[u]\n            if (visited[v] == 0) //not visited yet\n            {\n                visited[v] ← 1; //visited\n                enqueue(Q,v)  // insert v into Q\n            }\n    }\n\n(*Main Program*)\nmain()\n    for s ∈ V // Initialize\n        visited[s] ← 0;\n\n    for s ∈ V\n        if (visited[s]==0) BFS(s);\n```\n\n```text\nGraph G=(V,E)\n\n      a ----- b ----- e\n      | \\     | \\     |\n      |  \\    |  \\    |\n      c ----- k      s\n      | \\     |\n      |  \\    |\n      d ----- g\n```"
+        },
+        {
+          "chunk_id": "8d8b97e8-6ca3-4dd9-ae0c-368dba2d7484",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Graph traversal (Graph searching)",
+          "chunk_order": 4,
+          "cosine_sim": 0.503,
+          "final_score": 0.5785,
+          "content": "Searching a graph means systematically following the edges of the graph so as to visit the vertices.\n\n2 algorithms:\n\n- Breadth First Search – BFS\n- Depth First Search – DFS"
+        },
+        {
+          "chunk_id": "2898b18f-8e2a-49b2-b379-421314babf06",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Breadth First Search",
+          "chunk_order": 5,
+          "cosine_sim": 0.4556,
+          "final_score": 0.524,
+          "content": "- Given\n  - a graph $G=(V,E)$ – set of vertices and edges\n  - a distinguished source vertex $s$\n- Breadth first search systematically explores the edges of $G$ to discover every vertex that is reachable from $s$.\n- It also produces a ‘breadth first tree’ with root $s$ that contains all the vertices reachable from $s$.\n- For any vertex $v$ reachable from $s$, the path in the breadth first tree corresponds to the shortest path in graph $G$ from $s$ to $v$.\n- It works on both directed and undirected graphs."
+        },
+        {
+          "chunk_id": "191e2481-0430-430d-a364-5e54bfb04a4a",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Breadth First Search",
+          "chunk_order": 6,
+          "cosine_sim": 0.4444,
+          "final_score": 0.511,
+          "content": "- Given\n  - a graph $G=(V,E)$ – set of vertices and edges\n  - a distinguished source vertex $s$\n- Breadth first search systematically explores the edges of $G$ to discover every vertex that is reachable from $s$.\n- For any vertex $v$ reachable from $s$, the path in the breadth first tree corresponds to the shortest path in graph $G$ from $s$ to $v$."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.5
+}

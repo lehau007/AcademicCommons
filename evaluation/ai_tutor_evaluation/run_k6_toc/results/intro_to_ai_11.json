@@ -1,0 +1,56 @@
+{
+  "qid": "intro_to_ai_11",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The definition, formula, interpretation, usage in decision tree learning, and example are all grounded in the provided materials.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses both parts of the question: it defines Information Gain as a measure of expected entropy reduction and explains how it is used in Decision Tree Learning to select the best attribute at each node. All content is on-topic and relevant.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: it defines information gain as a measure of expected reduction in entropy caused by partitioning instances according to an attribute, and explains that it is used in Decision Tree learning to select the attribute most useful for classifying training instances at each node by choosing the one with highest information gain.",
+      "evidence": [
+        "Ground truth: 'expected reduction in entropy caused by partitioning instances according to a specific attribute' vs Tutor: 'mức giảm entropy kỳ vọng' and 'entropy kỳ vọng sau khi chia tập theo thuộc tính'",
+        "Ground truth: 'used to determine which attribute is most useful for classifying training instances at each node' vs Tutor: 'Chọn thuộc tính có Information Gain lớn nhất làm phép chia tại nút đó'",
+        "Ground truth: 'selecting the attribute that yields the highest information gain' vs Tutor: 'Chọn thuộc tính có Information Gain lớn nhất'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to explaining Information Gain and its use in Decision Tree Learning. Each chunk contributes meaningfully to answering the question, covering the definition, formula, interpretation, selection process, and examples.",
+      "evidence": [
+        "All chunks relevant: f38cf2ef (definition & formula)",
+        "9e649ef6 (selection of test attribute)",
+        "eeeec84e & 285a53b7 (examples of usage)",
+        "5f427356 (concrete calculation)",
+        "d364e05e (DT context)"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk f38cf2ef defines information gain as 'expected reduction in entropy' caused by 'partitioning the instances according to the attribute,' and chunk 9e649ef6 states it is used 'to select the attribute that is most useful for classifying the training instances' at each node.",
+      "evidence": [
+        "expected reduction in entropy",
+        "caused by partitioning the instances according to the attribute",
+        "To select the attribute that is most useful for classifying the training instances"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports its corresponding statement. The formula, definition, interpretation, and usage of Information Gain in decision tree learning are all directly backed by the cited chunks.",
+      "evidence": [
+        "Formula citation (chunk f38cf2ef): Answer provides 'Gain(S,A)=Entropy(S)-∑...' which matches chunk's exact formula",
+        "Definition citation (chunk f38cf2ef): Answer states 'expected reduction in entropy' matching chunk's 'the expected reduction in entropy'",
+        "Usage citation (chunks eeeec84e, 285a53b7, 9e649ef6): Answer's 'Chọn thuộc tính có Information Gain lớn nhất' aligns with chunk's 'picks the one with the highest information gain'",
+        "Example citation (chunk 5f427356): Answer's 'Gain(S, Wind) = 0.048' directly matches the calculated value in the chunk"
+      ]
+    }
+  }
+}

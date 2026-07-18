@@ -1,0 +1,165 @@
+{
+  "qid": "hard_db_multi_07",
+  "course_code": "IT3292E",
+  "question": "Trả lời hai ý: (1) ba nhóm chức năng chính mà một DBMS cho phép (defining, constructing, manipulating) nghĩa là gì; (2) bảng student minh họa có những cột nào.",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "f8549b17-a016-463b-8914-d3e70fd58b73",
+  "answer": "# Trả lời\n\n## 1) Ba nhóm chức năng chính của DBMS: Defining, Constructing, Manipulating\n\nTheo tài liệu môn học, một DBMS cho phép người dùng thực hiện ba nhóm chức năng chính:\n\n| Nhóm chức năng | Ý nghĩa |\n|---|---|\n| **Defining** (Định nghĩa) | **Đặc tả kiểu dữ liệu** — xác định cấu trúc của dữ liệu trong database (các bảng, các cột, kiểu dữ liệu của từng cột, các ràng buộc…). Đây chính là việc dùng **Data Definition Language (DDL)**, ví dụ câu lệnh `CREATE TABLE` để tạo bảng, `ALTER TABLE` để sửa cấu trúc. |\n| **Constructing** (Xây dựng) | **Lưu trữ và đưa dữ liệu vào** — tạo ra database trên thiết bị lưu trữ và nạp (populate) dữ liệu thực tế vào các bảng đã được định nghĩa (thường dùng câu lệnh `INSERT`). |\n| **Manipulating** (Thao tác / Xử lý) | **Truy vấn, cập nhật và tạo báo cáo** — bao gồm:<br>• **Truy vấn** (retrieval): lấy dữ liệu ra, dùng `SELECT`<br>• **Cập nhật** (updating): sửa/xóa/thêm bản ghi, dùng `INSERT`, `UPDATE`, `DELETE`<br>• **Báo cáo** (reporting): trình bày dữ liệu theo nhu cầu người dùng<br>Đây là phần việc của **Data Manipulation Language (DML)**. |\n\nNói ngắn gọn: **Defining** = thiết kế cấu trúc; **Constructing** = lưu trữ + nhập dữ liệu; **Manipulating** = truy vấn/cập nhật/khai thác dữ liệu.\n\n---\n\n## 2) Bảng `student` minh họa gồm những cột nào\n\nBảng `student` được dùng làm ví dụ trong slide môn học có **8 cột** sau:\n\n| # | Tên cột | Ý nghĩa |\n|---|---|---|\n| 1 | `student_id` | Mã sinh viên (khóa chính) |\n| 2 | `first_name` | Tên |\n| 3 | `last_name` | Họ |\n| 4 | `dob` | Ngày sinh |\n| 5 | `gender` | Giới tính |\n| 6 | `address` | Địa chỉ |\n| 7 | `note` | Ghi chú |\n| 8 | `clazz_id` | Mã lớp (liên kết tới bảng `clazz`) |\n\nCâu lệnh `CREATE TABLE` tương ứng trong slide cũng mô tả đúng các cột trên (lưu ý: ví dụ cú pháp trong slide ghi `class_id`, còn tiêu đề bảng dữ liệu mẫu ghi `clazz_id` — về bản chất đều chỉ cột mã lớp của sinh viên).\n\nVí dụ một số dòng dữ liệu trong bảng:\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa, HN |  | 20162101 |\n| 20160002 | Anh | Hoàng | 5/20/1987 | M | 513 B5 KTX BKHN |  | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | F | 15 Trần Đại Nghĩa, HBT, Hà nội |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | F | 214 B6 KTX BKHN |  | 20172201 |\n\nCác câu hỏi gợi mở trong slide (sửa địa chỉ, thêm sinh viên mới, xóa sinh viên, truy vấn danh sách sinh viên…) chính là minh họa cho nhóm chức năng **Manipulating** đã nêu ở ý (1).",
+  "citations": [
+    {
+      "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, r"
+    },
+    {
+      "chunk_id": "d42ace20-c14b-440d-85cc-01caee818759",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Database approach",
+      "page_number": null,
+      "chunk_order": 36,
+      "excerpt": "```text\nLecturer     Enrollment     Student\n   |             |             |\n   +-------------+-------------+\n                 |\n                 v\n               +-------+\n               | DBMS  |\n  "
+    },
+    {
+      "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3. Data Manipulation",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa,"
+    },
+    {
+      "chunk_id": "786cf68a-c479-46bf-9556-87695dc6e3d1",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Database Management System (DBMS)",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- Definitions\n\n| Source | Definition |\n|---|---|\n| Wikipedia | A software to facilitate the creation and maintenance of a database |\n| Techtarget | The DBMS provides users and programmers with a syste"
+    },
+    {
+      "chunk_id": "6392b873-ede6-448d-9388-876329e08c99",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Database Management System (DBMS)",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Defining ~ specifying types of data\n- Constructing ~ storing & populating\n- Manipulating ~ querying, updating, reporting\n\n```text\n+-----------+   +--------------+   +-------------------------------+"
+    },
+    {
+      "chunk_id": "f297f240-dc65-46cc-9127-b325c6f0df61",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.2. Languages",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Data Definition Language (DDL)\n  - define the logical schema (relations, views...) and storage schema stored in a Data Dictionary\n- Data Manipulation Language (DML)\n  - Manipulative populate schema,"
+    },
+    {
+      "chunk_id": "b2517c0a-b117-49ef-aee2-b7784e7955b0",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Creating a Simple Table",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Syntax:\n\n```text\nCREATE TABLE <table_name>(\n    <col1> <type1>(<size1>) [NOT NULL] [DEFAULT <value>],\n    <col2> <type2>(<size2>) [NOT NULL],\n    ...,\n    [[CONSTRAINT <constraint_name>] <constraint"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "ba nhóm chức năng chính của DBMS: defining, constructing, manipulating database là gì? Bảng student ví dụ có những cột nào?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.5065,
+          "final_score": 0.5825,
+          "content": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n| CREATE TABLE | SQL statement to define a table into a database |\n| ALTER TABLE | SQL statement to modify table structure if needed (add /delete/modify column(s), add/remove constraint(s)) |\n| INSERT/UPDATE/DELETE | SQL statements to add new record to a table; to change the data of one or more records in a table; to remove single record or multiple records from a table |\n| SELECT | SQL statement to retrieve data from a database |"
+        },
+        {
+          "chunk_id": "d42ace20-c14b-440d-85cc-01caee818759",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "3.2. Database approach",
+          "chunk_order": 36,
+          "cosine_sim": 0.4563,
+          "final_score": 0.5247,
+          "content": "```text\nLecturer     Enrollment     Student\n   |             |             |\n   +-------------+-------------+\n                 |\n                 v\n               +-------+\n               | DBMS  |\n               +-------+\n                /     \\\n               v       v\n        +-----------+  +----------------+\n        | Database  |  |   Metadata     |\n        |           |  |   (Catalog)    |\n        | Lecturer  |  +----------------+\n        | Student   |\n        | Class     |\n        | Course    |\n        | Note      |\n        +-----------+\n```\n\n[Diagram: The slide illustrates a database-centered approach in which different user-facing entities such as lecturers, enrollments, and students are mediated by a DBMS rather than accessing data directly. This matters because the DBMS separates application access from both the stored data and the metadata/catalog, enabling organization, control, and consistent management of information.]"
+        },
+        {
+          "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "3. Data Manipulation",
+          "chunk_order": 28,
+          "cosine_sim": 0.4548,
+          "final_score": 0.523,
+          "content": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa, HN |  | 20162101 |\n| 20160002 | Anh | Hoàng | 5/20/1987 | M | 513 B5 KTX BKHN |  | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | F | 15 Trần Đại Nghĩa, HBT, Hà nội |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | 5/20/1987 | F | 513 TT Phương Mai, Đ. Đa, HN |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | F | 214 B6 KTX BKHN |  | 20172201 |\n| 20170002 | Nhật Cường | Nguyễn | 10/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170003 | Nhật Cường | Nguyễn | 1/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170004 | Minh Đức | Bùi | 1/25/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n\n**clazz**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n- Modifying address?\n- Adding new student / new class?\n- Deleting student data?\n- Retrieving list of all students?"
+        },
+        {
+          "chunk_id": "786cf68a-c479-46bf-9556-87695dc6e3d1",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 23,
+          "cosine_sim": 0.4458,
+          "final_score": 0.5127,
+          "content": "- Definitions\n\n| Source | Definition |\n|---|---|\n| Wikipedia | A software to facilitate the creation and maintenance of a database |\n| Techtarget | The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n\n```text\n+-------------------+--------------------------------------------------------------+\n| MySQL             | Microsoft Access | Microsoft SQL Server | ORACLE DATABASE   |\n| IBM DB2           | PostgreSQL                                              |\n+-------------------+--------------------------------------------------------------+\n```\n\n[Table: DBMS definitions (Wikipedia: software to create and maintain a database; Techtarget: a systematic way to create, retrieve, update and manage data) and a list of example DBMS products: MySQL, Microsoft Access, Microsoft SQL Server, ORACLE DATABASE, IBM DB2, PostgreSQL.]"
+        },
+        {
+          "chunk_id": "fdcc0159-1937-4d63-856e-9332344ea841",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "result",
+          "chunk_order": 23,
+          "cosine_sim": 0.4455,
+          "final_score": 0.5124,
+          "content": "| student_id | first_name | last_name | name |\n|---|---|---|---|\n| 20160002 | Anh | Hoàng | CNTT1.01-K61 |\n| 20160003 | Thu Hồng | Trần | CNTT1.01-K61 |\n| 20160004 | Minh Anh | Nguyễn | CNTT1.01-K61 |\n| 20170001 | Nhật Ánh | Nguyễn | CNTT2.01-K62 |"
+        },
+        {
+          "chunk_id": "6392b873-ede6-448d-9388-876329e08c99",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 26,
+          "cosine_sim": 0.4379,
+          "final_score": 0.5036,
+          "content": "- Defining ~ specifying types of data\n- Constructing ~ storing & populating\n- Manipulating ~ querying, updating, reporting\n\n```text\n+-----------+   +--------------+   +-------------------------------+\n| MySQL     |   | Microsoft    |   | Microsoft SQL Server          |\n|           |   | Access       |   |                               |\n+-----------+   +--------------+   +-------------------------------+\n\n+------------------+   +--------+   +-------------+\n| Oracle Database   |   | IBM DB2|   | PostgreSQL  |\n+------------------+   +--------+   +-------------+\n```"
+        },
+        {
+          "chunk_id": "f297f240-dc65-46cc-9127-b325c6f0df61",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1.2. Languages",
+          "chunk_order": 9,
+          "cosine_sim": 0.4325,
+          "final_score": 0.4973,
+          "content": "- Data Definition Language (DDL)\n  - define the logical schema (relations, views...) and storage schema stored in a Data Dictionary\n- Data Manipulation Language (DML)\n  - Manipulative populate schema, update database\n  - Retrieval querying content of a database\n- Data Control Language (DCL)\n  - permissions, access control..."
+        },
+        {
+          "chunk_id": "b2517c0a-b117-49ef-aee2-b7784e7955b0",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "2.1. Creating a Simple Table",
+          "chunk_order": 12,
+          "cosine_sim": 0.4243,
+          "final_score": 0.488,
+          "content": "- Syntax:\n\n```text\nCREATE TABLE <table_name>(\n    <col1> <type1>(<size1>) [NOT NULL] [DEFAULT <value>],\n    <col2> <type2>(<size2>) [NOT NULL],\n    ...,\n    [[CONSTRAINT <constraint_name>] <constraint_type> clause], ...);\n```\n\n- Example:\n\n```text\nCREATE TABLE student(\n    student_id CHAR(8) NOT NULL,\n    first_name VARCHAR(20) NOT NULL,\n    last_name VARCHAR(20) NOT NULL,\n    dob DATE NOT NULL,\n    gender CHAR(1), address VARCHAR(30),\n    note TEXT, class_id CHAR(8) );\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 33.2
+}

@@ -1,0 +1,67 @@
+{
+  "qid": "intro_to_ai_18",
+  "course_code": "IT3160E",
+  "question": "How does Local Beam Search differ from Random-Restart Search?",
+  "session_id": "4793a6a9-b5ae-4b69-a481-946342940c73",
+  "answer": "**Local Beam Search** khác **Random-Restart Search** ở chỗ:\n\n- **Local Beam Search** giữ **k trạng thái/tia tìm kiếm** song song và **chia sẻ thông tin** giữa chúng.\n- Ở mỗi bước, nó xét các hậu duệ tốt nhất từ tất cả các trạng thái hiện tại rồi chọn ra các trạng thái hứa hẹn nhất để tiếp tục.\n- Vì các tia “trao đổi” thông tin nên nếu một trạng thái sinh ra hậu duệ tốt, các tia khác cũng có thể “đi theo” hướng đó.\n\nNgược lại:\n\n- **Random-Restart Search** thường chạy **nhiều lần độc lập** của cùng một thuật toán tìm kiếm cục bộ.\n- Mỗi lần khởi động lại từ **một trạng thái ngẫu nhiên khác nhau**.\n- Các lần chạy **không chia sẻ thông tin** với nhau.\n\n### Ý chính\n- **Local Beam Search**: nhiều trạng thái được duy trì **đồng thời và có tương tác**.\n- **Random-Restart Search**: nhiều lần tìm kiếm **độc lập**, không chia sẻ kinh nghiệm.\n\n### Hệ quả\n- Local Beam Search có thể hiệu quả hơn trong thực tế, nhưng có thể bị **thiếu đa dạng** và dễ hội tụ sớm vào cùng một vùng của không gian tìm kiếm.\n- Random-Restart Search đa dạng hơn vì mỗi lần thử bắt đầu lại từ điểm khác nhau.",
+  "citations": [
+    {
+      "chunk_id": "267f5e6d-587d-4294-ac6e-197aeac294ed",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local beam search",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Major difference with random-restart search\n  - Information is shared among k search threads: If one state generated good successor, but others did not → “come here, the grass is greener!”\n- Can suf"
+    },
+    {
+      "chunk_id": "f140b8d1-d2de-436c-bd9b-109bed1b0259",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local beam search",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "[Diagram: Greedy search commits to a single best path at each step, which can quickly lose alternative possibilities. Beam search keeps multiple promising states in parallel, improving the chance of r"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Local Beam Search and Random-Restart Search differences",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "267f5e6d-587d-4294-ac6e-197aeac294ed",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 5,
+          "cosine_sim": 0.577,
+          "final_score": 0.8255,
+          "content": "- Major difference with random-restart search\n  - Information is shared among k search threads: If one state generated good successor, but others did not → “come here, the grass is greener!”\n- Can suffer from lack of diversity.\n  - Stochastic variant: choose k successors at proportionally to state success.\n- The best choice in MANY practical settings"
+        },
+        {
+          "chunk_id": "f140b8d1-d2de-436c-bd9b-109bed1b0259",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 4,
+          "cosine_sim": 0.5459,
+          "final_score": 0.4989,
+          "content": "[Diagram: Greedy search commits to a single best path at each step, which can quickly lose alternative possibilities. Beam search keeps multiple promising states in parallel, improving the chance of reaching a goal by preserving breadth while still limiting search cost.]"
+        },
+        {
+          "chunk_id": "7b29c8aa-6966-4bc1-a230-e2edd01e97d2",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Can we Prove Anything?",
+          "chunk_order": 30,
+          "cosine_sim": 0.3573,
+          "final_score": 0.3727,
+          "content": "- If the state space is finite and we avoid repeated states, the search is complete\n- If the state space is finite and we do not avoid repeated states, the search is in general not complete\n- If the state space is infinite, the search is in general not complete"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.6
+}

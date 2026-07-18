@@ -1,0 +1,31 @@
+{
+  "qid": "hard_dm_table_13",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "list from decision tree + arithmetic"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "C(5,3)=10 + list correct"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "isomorphism-drawing noise; enumerated table not retrieved"
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "only decision tree retrieved (dense also had the list)"
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "-"
+    }
+  }
+}

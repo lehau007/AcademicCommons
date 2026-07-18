@@ -1,0 +1,152 @@
+[
+  {
+    "kind": "vision_prompt",
+    "page": 1,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 2,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 3,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 4,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 5,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 6,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 7,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 8,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 9,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 10,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 11,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 12,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 13,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 14,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 15,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 16,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 16,
+    "image_index": 1,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 16,
+    "image_index": 2,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 1,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 2,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 3,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 4,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 5,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 17,
+    "image_index": 6,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  }
+]

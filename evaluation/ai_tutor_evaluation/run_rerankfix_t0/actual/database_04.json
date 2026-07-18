@@ -1,0 +1,134 @@
+{
+  "qid": "database_04",
+  "course_code": "IT3292E",
+  "question": "How do the HAVING and WHERE clauses differ in SQL?",
+  "session_id": "5bec7712-f94a-49aa-a0dc-ae5a21d481c3",
+  "answer": "## Difference between `WHERE` and `HAVING` in SQL\n\n- **`WHERE`** filters **individual rows (tuples)** **before** grouping or aggregation happens.\n- **`HAVING`** filters **groups** **after** `GROUP BY` and aggregation.\n\n### Key idea\n- Use **`WHERE`** for conditions on raw rows.\n- Use **`HAVING`** for conditions on aggregated results, such as `COUNT()`, `SUM()`, `AVG()`, etc.\n\n### Example\n```sql\nSELECT subject_id, semester, COUNT(student_id)\nFROM enrollment\nGROUP BY subject_id, semester\nHAVING COUNT(student_id) >= 10;\n```\nThis keeps only groups with at least 10 students.\n\n### Can a `HAVING` condition be moved to `WHERE`?\n- **Sometimes yes**\n  - If the condition refers to a **grouping attribute**, it can often be placed in `WHERE`.\n- **No**\n  - If the condition refers to an **aggregate value**, it cannot be moved to `WHERE`.\n\n### Short summary\n- `WHERE` = filter rows\n- `HAVING` = filter grouped results",
+  "citations": [
+    {
+      "chunk_id": "ef945d50-12ec-4335-b79f-c1be84416491",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Quiz Number | 3 | Quiz Type | OX | Example Select",
+      "page_number": null,
+      "chunk_order": 59,
+      "excerpt": "|  |  |\n|---|---|\n| Question | Can we put the condition in HAVING clause into the WHERE clause ? |\n| Example | A. Sometimes yes<br>B. No, never<br>C. Yes, we can |\n| Answer | A |\n| Feedback | Conditio"
+    },
+    {
+      "chunk_id": "e138740d-4dff-41ed-85e6-d96843ba7c02",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.5. Grouping results: HAVING",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "- Requirements on HAVING conditions:\n  - Anything goes in a subquery\n  - Outside subqueries, they may refer to attributes only if they are:\n    - either a grouping attribute\n    - or aggregated\n\n```sq"
+    },
+    {
+      "chunk_id": "a98c89b1-edf6-469d-a0ff-42bce19213ab",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "SQL Retrieval statement (Part 2)",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Union, Intersection and Difference of Queries\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING claus"
+    },
+    {
+      "chunk_id": "fc3086cc-0b24-4315-b70e-0cb6a456e8ca",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Data Manipulation: Advanced SELECT",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate eliminatio"
+    },
+    {
+      "chunk_id": "7207bed0-3332-41e3-bdae-9bdd972279b8",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.3. Updatable views",
+      "page_number": null,
+      "chunk_order": 46,
+      "excerpt": "- The SQL rules are complex\n- They permit modifications on views that are defined by selecting (using SELECT, not SELECT DISTINCT) some attributes from one relation $R$ (which may itself be an updatab"
+    },
+    {
+      "chunk_id": "43fee3be-7b73-48ab-916b-db4c306087e1",
+      "document_title": "04_structured_query_language - part 2.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 61,
+      "excerpt": "- Data manipulation (part 2)\n  - Joins operators\n  - Subqueries: in FROM clause and in WHERE clause\n  - Aggregation operators\n  - Grouping and aggregation in SQL, conditions in HAVING clause\n  - Contr"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "HAVING clause vs WHERE clause in SQL differences",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ef945d50-12ec-4335-b79f-c1be84416491",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "Quiz Number | 3 | Quiz Type | OX | Example Select",
+          "chunk_order": 59,
+          "cosine_sim": 0.5407,
+          "final_score": 0.931,
+          "content": "|  |  |\n|---|---|\n| Question | Can we put the condition in HAVING clause into the WHERE clause ? |\n| Example | A. Sometimes yes<br>B. No, never<br>C. Yes, we can |\n| Answer | A |\n| Feedback | Conditions in HAVING clause and in WHERE clause are not the same meaning. Conditions in HAVING clause apply to groups as a whos e.<br>Conditions in WHERE clause apply to individual tuples.<br>- If condition in HAVING clause refers to grouping attribute, then this condition can be placed in WHERE clause.<br>- If condition in HAVING clause refers to aggregated attributes, it can not be moved to WHERE clause. |"
+        },
+        {
+          "chunk_id": "e138740d-4dff-41ed-85e6-d96843ba7c02",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "1.5. Grouping results: HAVING",
+          "chunk_order": 34,
+          "cosine_sim": 0.5004,
+          "final_score": 0.8628,
+          "content": "- Requirements on HAVING conditions:\n  - Anything goes in a subquery\n  - Outside subqueries, they may refer to attributes only if they are:\n    - either a grouping attribute\n    - or aggregated\n\n```sql\nSELECT subject_id, semester, count(student_id)\nFROM enrollment\nGROUP BY subject_id, semester\nHAVING count(student_id) >= ALL\n      (SELECT count(student_id)\nFROM enrollment\n       GROUP BY subject_id, semester)\n```\n\n[Diagram: The SQL example shows how HAVING filters grouped results after aggregation, using a subquery to compare each group’s count against the maximum group count. This matters because HAVING can express conditions on aggregated values that cannot be handled by WHERE.]"
+        },
+        {
+          "chunk_id": "a98c89b1-edf6-469d-a0ff-42bce19213ab",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "SQL Retrieval statement (Part 2)",
+          "chunk_order": 7,
+          "cosine_sim": 0.4789,
+          "final_score": 0.6096,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Union, Intersection and Difference of Queries\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        },
+        {
+          "chunk_id": "fc3086cc-0b24-4315-b70e-0cb6a456e8ca",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "Data Manipulation: Advanced SELECT",
+          "chunk_order": 14,
+          "cosine_sim": 0.4806,
+          "final_score": 0.5783,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        },
+        {
+          "chunk_id": "7207bed0-3332-41e3-bdae-9bdd972279b8",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "2.3. Updatable views",
+          "chunk_order": 46,
+          "cosine_sim": 0.4103,
+          "final_score": 0.397,
+          "content": "- The SQL rules are complex\n- They permit modifications on views that are defined by selecting (using SELECT, not SELECT DISTINCT) some attributes from one relation $R$ (which may itself be an updatable view):\n  - The WHERE clause must not involve $R$ in a subquery\n  - The FROM clause can only consist of one occurrence of $R$ and no other relation\n  - The list in the SELECT clause must include enough attributes that for every tuple inserted into the relation $R$ (other attributes filled with NULL values or the proper default)\n  - There is no GROUP BY clause"
+        },
+        {
+          "chunk_id": "43fee3be-7b73-48ab-916b-db4c306087e1",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "Summary",
+          "chunk_order": 61,
+          "cosine_sim": 0.405,
+          "final_score": 0.355,
+          "content": "- Data manipulation (part 2)\n  - Joins operators\n  - Subqueries: in FROM clause and in WHERE clause\n  - Aggregation operators\n  - Grouping and aggregation in SQL, conditions in HAVING clause\n  - Controlling the output: duplicate elimination, ordering the result\n- View\n  - View definition\n  - View accessing\n  - Updatable view\n  - Materialized view\n- Privileges and User Managements\n  - Privileges\n  - Creating user\n  - Granting / Revoking privileges"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.9
+}

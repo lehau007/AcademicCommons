@@ -1,0 +1,58 @@
+{
+  "qid": "discrete_math_10",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The special value θ (0, +∞, or -∞), the directed graph example using ∞, and the undirected graph example using 0 are all explicitly present in the retrieved materials.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question about how non-existent edges are represented in a weight matrix, explaining that special values (0, +∞, or -∞) are used depending on context, with specific examples from the course material.",
+      "evidence": [
+        "non-existent edges are represented by a special value",
+        "This special value can be 0, +∞, or −∞, depending on the context",
+        "non-existent edges are represented by ∞",
+        "0 entries indicate no edge"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: non-existent edges are represented by a special value (θ), and this value can be 0, +∞, or -∞ depending on the application. The answer provides additional context with examples, which is appropriate and does not contradict the ground truth.",
+      "evidence": [
+        "Ground truth: 'a special value θ is used to identify that (i,j) is not an edge'",
+        "Tutor: 'non-existent edges are represented by a special value'",
+        "Ground truth: 'θ could be assigned a value of 0, +∞, or -∞'",
+        "Tutor: 'This special value can be 0, +∞, or −∞, depending on the context'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Roughly half the chunks are relevant. Three chunks (0f0a8e67, 5fdb71d0, 58612d91) are just lists of graph representation types without explaining weight matrices. Chunk d3884097 shows shortest path examples unrelated to weight matrix representation of non-existent edges.",
+      "evidence": [
+        "0f0a8e67: 'Incidence matrix - Adjacency matrix - Weight matrix - Adjacency list'",
+        "5fdb71d0: same list repeated",
+        "58612d91: same list with Adjacency matrix bolded",
+        "d3884097: shortest path tree diagram, not about weight matrix representation"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 52f037bf explicitly states that θ is a special value to identify non-edges and can be 0, +∞, or -∞ depending on the case.",
+      "evidence": [
+        "θ: special value to identify (i, j) is not an edge; depends on the case, the value of θ could be: 0, +∞, −∞"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "Most citations support their statements well. The claim about ∞ for directed graphs is supported by chunk 2161fa9f, and the claim about 0 for undirected graphs is supported by chunk ecbe0028. However, the general statement about special values (0, +∞, −∞) is not directly supported by any cited chunk, though it appears in uncited chunk 52f037bf.",
+      "evidence": [
+        "Claim: 'non-existent edges are represented by ∞' → Chunk 2161fa9f: 'w_{ij} = ... \\infty & \\text{otherwise}'",
+        "Claim: '0 entries indicate no edge' → Chunk ecbe0028: 'Zero entries indicate no edge between vertices'",
+        "Claim: 'special value can be 0, +∞, or −∞' → Not found in cited chunks (appears in uncited chunk 52f037bf)"
+      ]
+    }
+  }
+}

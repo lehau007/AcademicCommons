@@ -1,0 +1,114 @@
+{
+  "qid": "database_03",
+  "course_code": "IT3292E",
+  "question": "How did the SQL standard evolve between 1986 and 1999?",
+  "session_id": "b0533612-0d77-4989-9e3a-aa375fe2d121",
+  "answer": "Between **1986 and 1999**, the SQL standard evolved in these main steps:\n\n- **1986: SQL1**  \n  The **first official SQL standard** was defined.\n- **1987: ISO adoption**  \n  SQL1 was adopted as an **international standard** by ISO.\n- **1992: SQL2 (SQL-92)**  \n  A **revised version** of SQL that became the formal standard language for **defining and manipulating relational databases**.\n- **1999: SQL3**  \n  SQL was extended with more advanced features such as:\n  - **user-defined data types**\n  - **triggers**\n  - **user-defined functions**\n  - other **object-oriented features**\n\nIn short: **SQL started as a basic standard in 1986, was formally internationalized in 1987, revised significantly in 1992, and expanded into a more powerful language in 1999.**",
+  "citations": [
+    {
+      "chunk_id": "fe2e9a29-780e-4691-8961-ee2b5387c10d",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Brief history of SQL",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- 1975: SEQUEL: System-R\n- 1976: SEQUEL 2\n- 1978/79: SQL (Structured Query Language) (used in System-R)\n- SQL1: The first standard for SQL defined in 1986; adopted as an international by Standards Org"
+    },
+    {
+      "chunk_id": "f386dd06-1a4e-4405-9a21-32ff64ddd73e",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Introduction to SQL",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "[Diagram: The slide shows SQL as the standard language used between people or applications and a DBMS server. It highlights that different database tasks, such as defining tables or manipulating data,"
+    },
+    {
+      "chunk_id": "b4a83699-70a2-4b79-b573-f782022240e8",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "- Each DBMS has its own implementation. So the syntax for each statement can vary from one database system to another:\n  - Meaning of special characters used $(\\%, \\_, *, \", ')$,\n  - less or more opti"
+    },
+    {
+      "chunk_id": "f297f240-dc65-46cc-9127-b325c6f0df61",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.2. Languages",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Data Definition Language (DDL)\n  - define the logical schema (relations, views...) and storage schema stored in a Data Dictionary\n- Data Manipulation Language (DML)\n  - Manipulative populate schema,"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "How did the SQL standard evolve between 1986 and 1999? timeline SQL standard versions 1986 1999",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "fe2e9a29-780e-4691-8961-ee2b5387c10d",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1.1. Brief history of SQL",
+          "chunk_order": 8,
+          "cosine_sim": 0.6902,
+          "final_score": 0.9432,
+          "content": "- 1975: SEQUEL: System-R\n- 1976: SEQUEL 2\n- 1978/79: SQL (Structured Query Language) (used in System-R)\n- SQL1: The first standard for SQL defined in 1986; adopted as an international by Standards Organisation (ISO) in 1987.\n- 1992: SQL2 - revised version of the processor (also called SQL 92); adopted as the formal standard language for defining and manipulating relational database.\n- 1999: SQL3 - extension with additional features such as user-defined data types, triggers, user-defined functions and other Object Oriented features.\n- New versions of the standard were published in 2003, 2006, 2008, 2011, 2016: more additional features: XML-based features, columns with auto-generated values, JSON,…"
+        },
+        {
+          "chunk_id": "7207bed0-3332-41e3-bdae-9bdd972279b8",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "2.3. Updatable views",
+          "chunk_order": 46,
+          "cosine_sim": 0.413,
+          "final_score": 0.5203,
+          "content": "- The SQL rules are complex\n- They permit modifications on views that are defined by selecting (using SELECT, not SELECT DISTINCT) some attributes from one relation $R$ (which may itself be an updatable view):\n  - The WHERE clause must not involve $R$ in a subquery\n  - The FROM clause can only consist of one occurrence of $R$ and no other relation\n  - The list in the SELECT clause must include enough attributes that for every tuple inserted into the relation $R$ (other attributes filled with NULL values or the proper default)\n  - There is no GROUP BY clause"
+        },
+        {
+          "chunk_id": "f386dd06-1a4e-4405-9a21-32ff64ddd73e",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1. Introduction to SQL",
+          "chunk_order": 7,
+          "cosine_sim": 0.4817,
+          "final_score": 0.5098,
+          "content": "[Diagram: The slide shows SQL as the standard language used between people or applications and a DBMS server. It highlights that different database tasks, such as defining tables or manipulating data, are expressed through SQL rather than through the programming languages of client applications.]"
+        },
+        {
+          "chunk_id": "b4a83699-70a2-4b79-b573-f782022240e8",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Remark",
+          "chunk_order": 35,
+          "cosine_sim": 0.4095,
+          "final_score": 0.4237,
+          "content": "- Each DBMS has its own implementation. So the syntax for each statement can vary from one database system to another:\n  - Meaning of special characters used $(\\%, \\_, *, \", ')$,\n  - less or more options\n  - standard part & extension part\n- More options for each statement: see documentations of the DBMS used in your system"
+        },
+        {
+          "chunk_id": "a873461e-794c-4204-b0d9-a9d5edcbe977",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "Remark",
+          "chunk_order": 56,
+          "cosine_sim": 0.3842,
+          "final_score": 0.4087,
+          "content": "- Complex query\n  - Clauses in SQL statement are not exchangeable\n  - A SQL statement executed successfully, it's not sure that this statement provides the correct result\n  - A query provides correct result at a moment, it may not the correct query for a demand\n  - Be careful with \"natural join\"\n- Virtual vs. materialized view\n- Privileges and User Management\n  - Superuser account is not for everybody\n  - An user no need to access all database objects"
+        },
+        {
+          "chunk_id": "f297f240-dc65-46cc-9127-b325c6f0df61",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "1.2. Languages",
+          "chunk_order": 9,
+          "cosine_sim": 0.4112,
+          "final_score": 0.3839,
+          "content": "- Data Definition Language (DDL)\n  - define the logical schema (relations, views...) and storage schema stored in a Data Dictionary\n- Data Manipulation Language (DML)\n  - Manipulative populate schema, update database\n  - Retrieval querying content of a database\n- Data Control Language (DCL)\n  - permissions, access control..."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.3
+}

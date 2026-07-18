@@ -1,0 +1,15 @@
+{
+  "file_id": "it3292e_exam_giuaki_trinh_jpg",
+  "document_id": "a57cffd6-0d24-4bbd-a333-389f79fcb8d1",
+  "file_format": "jpg",
+  "document_status": "NEEDS_REVIEW",
+  "storage_md_path": "documents/afaeed24-0be8-4627-b6b2-1d5fcf0877fe/a57cffd6-0d24-4bbd-a333-389f79fcb8d1/markdown/output.md",
+  "markdown_chars": 2642,
+  "chunk_count": 0,
+  "ocr_job": {
+    "status": "COMPLETED",
+    "failure_reason": null,
+    "started_at": "2026-07-05T03:03:52.798846+00:00",
+    "completed_at": "2026-07-05T03:04:07.626404+00:00"
+  }
+}

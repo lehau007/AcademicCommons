@@ -1,0 +1,106 @@
+{
+  "topic": "Lecturer 13 – Machine Learning",
+  "concepts": [
+    "Lecturer 13 – Machine Learning",
+    "Introduction of Machine learning",
+    "Web pages filtering problem",
+    "Web pages categorization problem",
+    "Handwriting recognition problem",
+    "Robot driving problem",
+    "Key elements of a ML problem (1)",
+    "Key elements of a ML problem (2)"
+  ],
+  "language": "en",
+  "ocr_quality": "low",
+  "section_summaries": [
+    {
+      "heading": "Lecturer 13 – Machine Learning",
+      "summary": "School of Information and Communication Technology - HUST",
+      "page_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "heading": "Introduction of Machine learning",
+      "summary": "- Definitions of Machine learning… - A process by which a system improves its performance [Simon, 1983] - Any computer program that improves its performance at some task through experience [Mitchell, 1997] - Programming computers to optimize a performance criterion using...",
+      "page_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "heading": "Web pages filtering problem",
+      "summary": "- **T:** to predict which Web pages a given user is interested in - **P:** % of Web pages correctly predicted - **E:** a set of Web pages identified as interested/uninterested for the user [Diagram: This illustrates a binary filtering task, where a system decides whether a page...",
+      "page_range": [
+        3,
+        3
+      ]
+    },
+    {
+      "heading": "Web pages categorization problem",
+      "summary": "- **T:** to categorize Web pages in predefined categories - **P:** % of Web pages correctly categorized - **E:** a set of Web pages with specified categories [Diagram: This shows a multi-class classification task that assigns each page to one of several predefined topics. It...",
+      "page_range": [
+        4,
+        4
+      ]
+    },
+    {
+      "heading": "Handwriting recognition problem",
+      "summary": "- **T:** to recognize and classify handwritten words within images - **P:** % of words correctly classified - **E:** a database of handwritten words with given classifications (i.e., labels) [Diagram: This illustrates a handwriting recognition task, where an image is processed...",
+      "page_range": [
+        5,
+        5
+      ]
+    },
+    {
+      "heading": "Robot driving problem",
+      "summary": "- **T:** to drive on public highways using vision sensors - **P:** average distance traveled before an error (as judged by human overseer) - **E:** a sequence of images and steering commands recorded while observing a human driver [Diagram: This shows a driving-control task...",
+      "page_range": [
+        6,
+        6
+      ]
+    },
+    {
+      "heading": "Key elements of a ML problem (1)",
+      "summary": "- Selection of the training examples - Direct or indirect training feedback - With teacher (i.e., with labels) or without - The training examples set should be representative of the future test examples - Choosing the target function (a.k.a. hypothesis, concept, etc.) - $F: X...",
+      "page_range": [
+        7,
+        7
+      ]
+    },
+    {
+      "heading": "Key elements of a ML problem (2)",
+      "summary": "- Choosing a representation of the target function - A polynomial function - A set of rules - A decision tree - A neural network - … - Choosing a learning algorithm that learns (approximately) the target function - Regression-based - Rule induction - ID3 or C4.5 -...",
+      "page_range": [
+        8,
+        8
+      ]
+    },
+    {
+      "heading": "Issues in Machine Learning (1)",
+      "summary": "- Learning algorithm - Which algorithms can approximate the target function? - Under which conditions does a selected algorithm converge (approximately) to the target function?",
+      "page_range": [
+        9,
+        9
+      ]
+    },
+    {
+      "heading": "Issues in Machine Learning (2)",
+      "summary": "- Learning process - What is the best strategy for selecting a next training example? How do selection strategies alter the complexity of the learning problem?",
+      "page_range": [
+        10,
+        10
+      ]
+    },
+    {
+      "heading": "Types of learning problems",
+      "summary": "- A rough (and somewhat outdated) classification of learning problems: - Supervised learning, where we get a set of training inputs and outputs - classification, regression - Unsupervised learning, where we are interested in capturing inherent organization in the data -...",
+      "page_range": [
+        11,
+        11
+      ]
+    }
+  ],
+  "overall_summary": "Lecturer 13 – Machine Learning: School of Information and Communication Technology - HUST Introduction of Machine learning: - Definitions of Machine learning… - A process by which a system improves its performance [Simon, 1983] - Any computer program that improves its performance at some task through experience [Mitchell, 1997] - Programming computers to optimize a performance criterion using... Web pages filtering problem: - **T:** to predict which Web pages a given user is interested in - **P:** % of Web pages correctly predicted - **E:** a set of Web pages identified as interested/uninterested for the user [Diagram: This illustrates a binary filtering task, where a system decides whether a page... Web pages categorization problem: - **T:** to categorize Web pages in predefined categories - **P:** % of Web pages correctly categorized - **E:** a set of Web pages with specified categories [Diagram: This shows a multi-class classification task that assigns each page to one of several predefined topics. It... Handwriting recognition problem: - **T:** to recognize and classify handwritten words within images - **P:** % of words correctly classified - **E:** a database of handwritten words with given classifications (i.e., labels) [Diagram: This illustrates a handwriting recognition task, where an image is processed... Robot driving problem: - **T:** to drive on public highways using vision sensors - **P:** average distance..."
+}

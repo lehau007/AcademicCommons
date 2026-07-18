@@ -1,0 +1,134 @@
+{
+  "qid": "discrete_math_07",
+  "course_code": "IT3020E",
+  "question": "How does Prim's algorithm determine which edge to add during each iteration?",
+  "session_id": "685d9ed3-0087-41b4-b7c9-373d8331237c",
+  "answer": "Trong **Prim’s algorithm**, ở mỗi bước nó chọn:\n\n- **một cạnh có trọng số nhỏ nhất**\n- trong số các cạnh **nối từ cây hiện tại \\(T\\)** ra **một đỉnh chưa thuộc \\(T\\)**\n\nNói cách khác, Prim luôn tìm **“cạnh an toàn”** nhẹ nhất để **mở rộng cây khung hiện tại** thêm 1 đỉnh mới, và **không tạo chu trình**.\n\nTheo tài liệu, thuật toán có thể được mô tả bằng cách:\n\n1. Bắt đầu từ một đỉnh bất kỳ \\(r\\)\n2. Với mỗi đỉnh ngoài cây, lưu:\n   - `d[v]`: trọng số nhỏ nhất của cạnh nối \\(v\\) vào cây\n   - `near[v]`: đỉnh trong cây đang cho kết nối tốt nhất\n3. Ở mỗi vòng lặp, chọn đỉnh \\(v\\) chưa thuộc cây sao cho `d[v]` là nhỏ nhất\n4. Thêm cạnh \\((v, near[v])\\) vào cây\n\nVì vậy, **Prim không xét tất cả cạnh trong đồ thị mỗi lần**, mà chỉ chọn cạnh nhẹ nhất đang nối giữa **tập đỉnh đã có trong cây** và **tập đỉnh bên ngoài**.",
+  "citations": [
+    {
+      "chunk_id": "678546a0-181d-495e-a020-31928b9de35b",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM: Implementation",
+      "page_number": null,
+      "chunk_order": 44,
+      "excerpt": "[Diagram: The figure shows how PRIM maintains, for each outside vertex, the cheapest connection into the current tree. This allows the algorithm to choose the next edge efficiently by comparing only t"
+    },
+    {
+      "chunk_id": "73844cf8-a48b-403f-ae72-26e221ac06e6",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Prim()",
+      "page_number": null,
+      "chunk_order": 45,
+      "excerpt": "```text\nvoid Prim() {\n    // Initialize:\n    V(T) = { r }; E(T) = ∅;\n    d[r] = 0; near[r] = r;\n    for v ∈ V \\ V(T) {\n        d[v] = c[r,v]; near[v] = r;\n    }\n\n    // Iteration:\n    for (k=2; k<=n,k"
+    },
+    {
+      "chunk_id": "c8ffa216-c9bd-4f14-a34f-82bfc603abae",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm:",
+      "page_number": null,
+      "chunk_order": 39,
+      "excerpt": "- $T$ is tree (initialize: $T$ has one vertex).\n- The “safe” edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$.\n"
+    },
+    {
+      "chunk_id": "86bda5b7-f329-4799-993a-f50523316b8c",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm: an example",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "[Diagram: The graph illustrates how Prim’s algorithm grows a minimum spanning tree by repeatedly choosing the lightest edge that connects the current tree to a new vertex. The colored edges show candi"
+    },
+    {
+      "chunk_id": "f5138f6d-07ea-46a0-83b6-a06326a9779e",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm: an example",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "[Diagram: This graph illustrates how Prim's algorithm grows a minimum spanning tree by repeatedly choosing the lightest edge that connects the current tree to a new vertex. The colored edges show the "
+    },
+    {
+      "chunk_id": "6447abc1-dc73-4ab8-bb3d-b65ca8203362",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm",
+      "page_number": null,
+      "chunk_order": 42,
+      "excerpt": "```text\nvoid Prim(G, C) //G: graph; C: weight matrix\n{\n    Select an arbitrary vertex r ∈ V;\n    Initialize: tree T=(V(T), E(T)) where V(T) = {r} and E(T)=∅;\n    while (T has < n vertices)\n    {\n     "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Prim's algorithm how to choose the next edge in each iteration",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "678546a0-181d-495e-a020-31928b9de35b",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM: Implementation",
+          "chunk_order": 44,
+          "cosine_sim": 0.6261,
+          "final_score": 0.9363,
+          "content": "[Diagram: The figure shows how PRIM maintains, for each outside vertex, the cheapest connection into the current tree. This allows the algorithm to choose the next edge efficiently by comparing only the stored best distances rather than scanning all possible edges repeatedly.]"
+        },
+        {
+          "chunk_id": "73844cf8-a48b-403f-ae72-26e221ac06e6",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Prim()",
+          "chunk_order": 45,
+          "cosine_sim": 0.6142,
+          "final_score": 0.9301,
+          "content": "```text\nvoid Prim() {\n    // Initialize:\n    V(T) = { r }; E(T) = ∅;\n    d[r] = 0; near[r] = r;\n    for v ∈ V \\ V(T) {\n        d[v] = c[r,v]; near[v] = r;\n    }\n\n    // Iteration:\n    for (k=2; k<=n,k++) {\n        Find v ∈ V \\ V(T) satisfying: d[v] = min { d[i] : i ∈ V \\ V(T) };\n        V(T) = V(T) ∪ { v }; E(T) = E(T) ∪ { (v, near[v]) };\n        for v' ∈ V \\ V(T)\n            if (d[v'] > c[v,v']) {\n                d[v'] = c[v,v']; near[v'] = v;\n            }\n    }\n}\n```\n\n- Prepare data for finding “safe” edge process\n- $d[v]$: the edge with minimum weight connecting vertex $v$ *(not yet in the spanning tree $T$)* to other vertex of $T$\n- $T$ is the minimum spanning tree;\n- Computation time: $O(|V|^2)$\n\n[Diagram: Prim’s algorithm grows a spanning tree one vertex at a time by repeatedly choosing the cheapest edge that connects the current tree to a new vertex. The labels $d[v]$ and $near[v]$ keep track of the best known connection for each outside vertex, which makes the next “safe” edge easy to identify and update.]"
+        },
+        {
+          "chunk_id": "c8ffa216-c9bd-4f14-a34f-82bfc603abae",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm:",
+          "chunk_order": 39,
+          "cosine_sim": 0.5806,
+          "final_score": 0.8762,
+          "content": "- $T$ is tree (initialize: $T$ has one vertex).\n- The “safe” edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$.\n\n[Diagram: The graph illustrates an example of Prim’s algorithm building a minimum spanning tree by repeatedly choosing the lightest edge that expands the current tree to a new vertex. The highlighted edges show how local greedy choices gradually connect all vertices while avoiding unnecessary heavier edges.]"
+        },
+        {
+          "chunk_id": "86bda5b7-f329-4799-993a-f50523316b8c",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm: an example",
+          "chunk_order": 30,
+          "cosine_sim": 0.6187,
+          "final_score": 0.8206,
+          "content": "[Diagram: The graph illustrates how Prim’s algorithm grows a minimum spanning tree by repeatedly choosing the lightest edge that connects the current tree to a new vertex. The colored edges show candidate connections and the selected safe edge, highlighting the greedy choice that preserves optimality.]"
+        },
+        {
+          "chunk_id": "f5138f6d-07ea-46a0-83b6-a06326a9779e",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm: an example",
+          "chunk_order": 33,
+          "cosine_sim": 0.5985,
+          "final_score": 0.7932,
+          "content": "[Diagram: This graph illustrates how Prim's algorithm grows a minimum spanning tree by repeatedly choosing the lightest edge that connects the current tree to a new vertex. The colored edges show the incremental structure of the tree and why local greedy choices can build an optimal global solution.]"
+        },
+        {
+          "chunk_id": "6447abc1-dc73-4ab8-bb3d-b65ca8203362",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm",
+          "chunk_order": 42,
+          "cosine_sim": 0.5024,
+          "final_score": 0.7854,
+          "content": "```text\nvoid Prim(G, C) //G: graph; C: weight matrix\n{\n    Select an arbitrary vertex r ∈ V;\n    Initialize: tree T=(V(T), E(T)) where V(T) = {r} and E(T)=∅;\n    while (T has < n vertices)\n    {\n        Among edges connecting a vertex of T to other vertex not in T: find the edge with minimum weight\n        (u, v) is the minimum weight where u ∈ V(T) and v ∈ V(G) − V(T)\n        E(T) ← E(T) ∪ { (u, v) };\n        V(T) ← V(T) ∪ { v }\n        add vertex v and edge (u,v) to tree T\n    }\n}\n```\n\n[Diagram: The slide explains Prim’s greedy process for building a minimum spanning tree by growing a connected tree from one starting vertex. At each step, it chooses the cheapest edge that expands the tree without creating a cycle, which is what guarantees the final tree is minimum-cost.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 11.4
+}

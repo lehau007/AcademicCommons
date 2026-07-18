@@ -1,0 +1,96 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "question": "When are two simple graphs considered isomorphic?",
+  "session_id": "b71713b5-ed0d-427b-8384-45a4eb58019e",
+  "answer": "Two simple graphs are considered **isomorphic** if there is a **one-to-one correspondence** between their vertex sets that **preserves adjacency**.\n\nIn other words, two simple graphs \\(G\\) and \\(H\\) are isomorphic when you can rename the vertices of one graph to get the other graph, without changing which vertices are connected by edges.\n\n### Formally\nA graph isomorphism is a bijection\n\\[\nf: V(G) \\to V(H)\n\\]\nsuch that for any vertices \\(u,v \\in V(G)\\),\n\\[\nuv \\in E(G) \\iff f(u)f(v) \\in E(H).\n\\]\n\n### Key properties\nIf two simple graphs are isomorphic, then they have:\n- the same number of vertices,\n- the same number of edges,\n- the same degree sequence.",
+  "citations": [
+    {
+      "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  "
+    },
+    {
+      "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Solution.",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number "
+    },
+    {
+      "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Simple Graph",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /"
+    },
+    {
+      "chunk_id": "d9033feb-a231-4376-b67b-f2b54fe8b181",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graphs",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "[Diagram: The drawing compares a multigraph and a simple graph using the same vertex set. It emphasizes that multiple edges can exist between the same pair of vertices in an undirected multigraph, whi"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "two simple graphs considered isomorphic definition",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+          "chunk_order": 34,
+          "cosine_sim": 0.6203,
+          "final_score": 0.7595,
+          "content": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\n[Diagram: The two drawings illustrate two graphs that have the same structure even though their edges are arranged differently. The point is to show that a relabeling of vertices can preserve adjacency, which is exactly what graph isomorphism means.]"
+        },
+        {
+          "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Solution.",
+          "chunk_order": 35,
+          "cosine_sim": 0.5454,
+          "final_score": 0.7002,
+          "content": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number of vertices\n  - (2) The same number of edges\n  - (3) The same number of degree"
+        },
+        {
+          "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Simple Graph",
+          "chunk_order": 21,
+          "cosine_sim": 0.5601,
+          "final_score": 0.4071,
+          "content": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /|    /     /\n      e |   /     /\n       \\ |  /    /\n         d —— ——\n\n        f\n        |\n        g\n\n        h\n```\n\n[Diagram: The figure shows an undirected graph split into two connected components plus one isolated vertex. It illustrates how a simple graph is defined by its vertex set and edge set, and that not all vertices need to be part of the same connected structure.]"
+        },
+        {
+          "chunk_id": "d9033feb-a231-4376-b67b-f2b54fe8b181",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graphs",
+          "chunk_order": 20,
+          "cosine_sim": 0.5503,
+          "final_score": 0.3482,
+          "content": "[Diagram: The drawing compares a multigraph and a simple graph using the same vertex set. It emphasizes that multiple edges can exist between the same pair of vertices in an undirected multigraph, while an undirected simple graph forbids parallel edges.]\n\n- (a, b): multiple edges (parallel edges)\n\nUndirected Multigraph\n\nUndirected (simple) graph"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.7
+}

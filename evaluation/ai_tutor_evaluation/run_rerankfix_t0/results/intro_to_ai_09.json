@@ -1,0 +1,58 @@
+{
+  "qid": "intro_to_ai_09",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The construction of terms from variables, constants, and function symbols, and predicates from relation symbols applied to terms, along with all examples provided, are explicitly present in the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how terms and predicates are constructed in FOL, explaining that terms are built from variables, constants, and function symbols, and predicates are built by applying relations to terms, with appropriate examples.",
+      "evidence": [
+        "Terms được tạo từ: biến (variables), hằng số (constants), ký hiệu hàm (function symbols)",
+        "Một predicate được tạo bằng cách lấy: các term t1, ..., tn và một ký hiệu quan hệ p",
+        "Ví dụ: FatherOf(X), Tall(FatherOf(Bill))"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: terms are built from variables, constants, and function symbols (with example FatherOf(X)), and predicates are built by applying relations to terms (with example Tall(FatherOf(Bill))). No contradictions exist.",
+      "evidence": [
+        "Ground truth: 'Terms are built using variables, constants, and function symbols (e.g., FatherOf(X))'",
+        "Tutor: 'terms được tạo từ: biến (variables), hằng số (constants), ký hiệu hàm (function symbols). Ví dụ: ... FatherOf(X)'",
+        "Ground truth: 'Predicates are then built by applying relations to these terms (e.g., Tall(FatherOf(Bill)))'",
+        "Tutor: 'Một predicate được tạo bằng cách lấy: các term t1, ..., tn và một ký hiệu quan hệ p ... Ví dụ: Tall(FatherOf(Bill))'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "The first two chunks directly address term and predicate construction in FOL syntax. The third chunk provides general FOL context (somewhat relevant). The fourth chunk on FOL semantics is tangentially related but doesn't directly explain construction. The last two chunks on regression algorithms and blocks world are completely irrelevant to the question.",
+      "evidence": [
+        "b7119f3c-3e4f-49f6-ae7b-cf57915b5d2a: 'General process for predecessor construction'",
+        "1b633408-86cc-4281-89fd-e57055d98063: 'Example: Blocks world'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk cbd69d92 explicitly states that terms are built from variables, constants, and function symbols (with example FatherOf(X)), and that predicates are built by applying relations to terms (with example Tall(FatherOf(Bill))).",
+      "evidence": [
+        "Variables, constants and function symbols are used to build terms",
+        "X, Bill, FatherOf(X)",
+        "Relations and terms are used to build predicates",
+        "Tall(FatherOf(Bill))"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports its corresponding statement. The chunks explicitly describe how terms are built from variables, constants, and function symbols, and how predicates are constructed by applying relation symbols to terms, with matching examples.",
+      "evidence": [
+        "Statement: 'terms được tạo từ biến, hằng số, ký hiệu hàm' → Chunk cbd69d92: 'Variables, constants and function symbols are used to build terms'",
+        "Statement: 'một predicate được tạo bằng cách lấy các term t1,...,tn và một ký hiệu quan hệ p' → Chunk dca8ed08: 'If t_1,...,t_n are terms and p is a relation symbol with arity n then p(t_1,...,t_n) is a predicate'",
+        "Examples FatherOf(X), Tall(FatherOf(Bill)) → Chunk cbd69d92: 'X, Bill, FatherOf(X)' and 'Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry)'"
+      ]
+    }
+  }
+}

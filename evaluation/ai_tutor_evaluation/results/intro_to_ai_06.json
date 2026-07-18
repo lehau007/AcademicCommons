@@ -1,0 +1,54 @@
+{
+  "qid": "intro_to_ai_06",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The description of min-conflicts as a value-selection strategy, its use in iterative algorithms with complete assignments, the hill-climbing analogy, and the h(n) formula all match the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses what the min-conflicts heuristic is in the context of Iterative Algorithms for CSPs. It explains it as a value-selection strategy that chooses values violating the fewest constraints, describes it as hill-climbing with h(n) = total violated constraints, and provides relevant context about how it works.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: it identifies min-conflicts as a value selection strategy, states it chooses the value violating the fewest constraints, and explicitly notes it functions like hill-climbing with h(n) = total number of violated constraints. The additional context provided does not contradict the ground truth.",
+      "evidence": [
+        "Ground truth: 'value selection strategy where the algorithm chooses the value that violates the fewest constraints'",
+        "Tutor: 'value-selection strategy... assign it the value that minimizes the number of violated constraints'",
+        "Ground truth: 'functions like hill-climbing where the evaluation function h(n) equals the total number of violated constraints'",
+        "Tutor: 'It is hill climbing for CSPs... h(n) = total number of violated constraints'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "Both retrieved chunks are highly relevant to the question. The first chunk explicitly mentions 'Iterative min-conflicts' in the summary, and the second chunk directly defines the min-conflicts heuristic in the context of iterative algorithms for CSPs.",
+      "evidence": [
+        "chunk cb0570c6: 'Iterative min-conflicts is usually effective in practice'",
+        "chunk 2aed7a58: 'Value selection by min-conflicts heuristic - Choose value that violates the fewest constraints'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 2aed7a58 explicitly states that min-conflicts is a value selection strategy that chooses the value violating the fewest constraints and that it functions like hill-climbing with h(n) = total number of violated constraints.",
+      "evidence": [
+        "Value selection by min-conflicts heuristic",
+        "Choose value that violates the fewest constraints",
+        "hill climbing with $h(n) =$ total number of violated constraints"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Both citations accurately support the tutor's statements. Chunk 2aed7a58 directly describes min-conflicts as a value selection heuristic that chooses values violating fewest constraints with h(n) = total violated constraints. Chunk cb0570c6 confirms iterative min-conflicts is effective in practice for CSPs.",
+      "evidence": [
+        "Tutor: 'value-selection strategy' → Chunk 2aed7a58: 'Value selection by min-conflicts heuristic'",
+        "Tutor: 'minimizes the number of violated constraints' → Chunk 2aed7a58: 'Choose value that violates the fewest constraints'",
+        "Tutor: 'h(n) = total number of violated constraints' → Chunk 2aed7a58: 'hill climbing with $h(n) =$ total number of violated constraints'",
+        "Tutor: 'can work very well in practice' → Chunk cb0570c6: 'Iterative min-conflicts is usually effective in practice'"
+      ]
+    }
+  }
+}

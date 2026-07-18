@@ -1,0 +1,409 @@
+{
+  "sample_id": "graph_presentation",
+  "total_images": 25,
+  "decorative_skipped": 16,
+  "decorative_minimal_tagged": 0,
+  "meaningful_extracted": 9,
+  "entries": [
+    {
+      "source": "page",
+      "page": 1,
+      "image_index": 0,
+      "image_hash_prefix": "564129fb32e21807",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.5,
+        "reason": "likely an academic figure"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "page",
+      "page": 2,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 3,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 4,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 5,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 6,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 7,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 8,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 9,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 10,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 11,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 12,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 13,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 14,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 15,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 16,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 16,
+      "image_index": 1,
+      "image_hash_prefix": "590c6f4e8b1436a8",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.95,
+        "reason": "diagram illustrating adjacency list representation of graphs"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "page",
+      "page": 16,
+      "image_index": 2,
+      "image_hash_prefix": "68297c66b33b1d7f",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.95,
+        "reason": "diagram illustrating adjacency list representation of graphs"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "page",
+      "page": 17,
+      "image_index": 0,
+      "image_hash_prefix": "63a04650c21558af",
+      "repeat_count": 16,
+      "position_hint": "inline",
+      "classification": {
+        "label": "decorative",
+        "learning_value": "none",
+        "action": "skip",
+        "confidence": 1.0,
+        "reason": "repeated_across_pages"
+      },
+      "action_taken": "skip"
+    },
+    {
+      "source": "page",
+      "page": 17,
+      "image_index": 1,
+      "image_hash_prefix": "bd85b0ae0b44639e",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "image likely represents a graph concept"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "page",
+      "page": 17,
+      "image_index": 2,
+      "image_hash_prefix": "a504490085316993",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.9,
+        "reason": "Image illustrates graph representation concepts."
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "page",
+      "page": 17,
+      "image_index": 3,
+      "image_hash_prefix": "f31743b9f2fe87b1",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram representing graph concepts"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "page",
+      "page": 17,
+      "image_index": 4,
+      "image_hash_prefix": "b467a600984af8c7",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.9,
+        "reason": "Image likely illustrates graph representation concepts."
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "page",
+      "page": 17,
+      "image_index": 5,
+      "image_hash_prefix": "7159f0728330e3f2",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "image likely represents a graph concept"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "page",
+      "page": 17,
+      "image_index": 6,
+      "image_hash_prefix": "28a7dd944ff847ce",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.9,
+        "reason": "Image likely illustrates graph representation concepts."
+      },
+      "action_taken": "extract"
+    }
+  ]
+}

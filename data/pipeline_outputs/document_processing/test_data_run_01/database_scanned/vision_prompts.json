@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "vision_ocr",
+    "page": 1,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 2,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  }
+]

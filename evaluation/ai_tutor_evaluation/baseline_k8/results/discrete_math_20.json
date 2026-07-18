@@ -1,0 +1,56 @@
+{
+  "qid": "discrete_math_20",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The definition of near[v] as the closest tree vertex to v, the condition that v is not in T, the minimum weight criterion, and the purpose of helping identify which edge to use are all grounded in chunk f8b4bfd3-9e24-4144-a117-d72dd5cd583b and chunk 73844cf8-a48b-403f-ae72-26e221ac06e6.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses what near[v] indicates in Prim's Algorithm: it stores the vertex in the current tree T that is closest to v. The explanation is on-topic throughout, providing the core definition and helpful clarifying details about its role.",
+      "evidence": [
+        "near[v] indicates the vertex in the current tree T that is closest to v",
+        "near[v] stores the vertex z ∈ V(T) such that the edge (v, z) has the minimum weight"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: near[v] is for vertices not yet in T, it records the vertex of T that is nearest to v, and it tracks the best connection by minimum weight. No contradictions are present.",
+      "evidence": [
+        "Ground truth: 'For a vertex v that is not yet in the spanning tree T, the label near[v] records the vertex of T that is currently nearest to vertex v.'",
+        "Tutor: 'For each vertex v ∉ T, near[v] stores the vertex z ∈ V(T) such that the edge (v, z) has the minimum weight among all edges connecting v to the tree.'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "The first chunk directly shows the near[v] variable in Prim's pseudocode and explains its purpose. Chunk 8 explicitly defines near[v]. Chunks 2-6 are diagram descriptions of Prim's examples that provide general context but don't specifically explain near[v]. Chunk 7 mentions maintaining connections but is vague about near[v] specifically. Most chunks are at least tangentially relevant to understanding Prim's algorithm, though several diagrams add limited value for this specific question.",
+      "evidence": [
+        "chunk 2: 'colored edges show candidate connections'",
+        "chunk 3: 'lightest edge that connects a new vertex'",
+        "chunk 5: 'colored edges show the incremental structure'",
+        "chunk 6: 'highlighted edges illustrate how the tree grows'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk f8b4bfd3 explicitly states 'near[v] := z record the vertex of T that is nearest to vertex v', and chunk 73844cf8 shows the algorithm implementation with near[v] usage for vertices not yet in T.",
+      "evidence": [
+        "near[v] := z record the vertex of T that is nearest to vertex v",
+        "for v ∈ V \\ V(T) { d[v] = c[r,v]; near[v] = r; }",
+        "Label of a vertex v ∈ V \\setminus V(T)"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the tutor's statements. The first chunk shows the pseudocode with near[v] assignments, and the eighth chunk explicitly defines near[v] as recording 'the vertex of T that is nearest to vertex v,' perfectly matching the answer's claims.",
+      "evidence": [
+        "Tutor: 'near[v] indicates the vertex in the current tree T that is closest to v' — Chunk f8b4bfd3: 'near[v] := z record the vertex of T that is nearest to vertex v'",
+        "Tutor: 'near[v] stores the vertex z ∈ V(T) such that the edge (v, z) has the minimum weight' — Chunk f8b4bfd3: 'd[v] := min { c[v,w] : w ∈ V(T) } ... near[v] := z'",
+        "Tutor: implementation details — Chunk 73844cf8: 'near[v] = r; ... near[v'] = v;' shows the algorithm updating near values"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_15",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "0/1 knapsack binary-vector representation in ctx"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "0/1 knapsack binary-vector representation in ctx"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "0/1 knapsack binary-vector representation in ctx"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "0/1 knapsack binary-vector representation in ctx"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "0/1 knapsack binary-vector representation in ctx"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "0/1 knapsack binary-vector representation in ctx"
+    }
+  }
+}

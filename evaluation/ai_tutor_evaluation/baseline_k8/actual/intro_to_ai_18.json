@@ -1,0 +1,132 @@
+{
+  "qid": "intro_to_ai_18",
+  "course_code": "IT3160E",
+  "question": "How does Local Beam Search differ from Random-Restart Search?",
+  "session_id": "608eedf8-6ed0-4ca8-a8da-d705e42adc46",
+  "answer": "Local Beam Search và Random-Restart Search đều bắt đầu từ nhiều trạng thái, nhưng **cách chúng dùng các trạng thái đó khác nhau**:\n\n### Local Beam Search\n- Giữ **k trạng thái tốt nhất cùng lúc**.\n- Ở mỗi bước, nó **xét tất cả các successor** của cả k trạng thái này.\n- Sau đó chọn lại **k trạng thái tốt nhất** từ toàn bộ successor để tiếp tục.\n- Nghĩa là các “luồng” tìm kiếm **chia sẻ thông tin với nhau**: nếu một trạng thái sinh ra successor tốt, các luồng khác cũng có thể “nhảy” sang vùng đó.\n\n### Random-Restart Search\n- Chạy **nhiều lần tìm kiếm độc lập** từ các điểm khởi đầu ngẫu nhiên.\n- Mỗi lần restart là một lần search riêng, **không chia sẻ thông tin** giữa các lần chạy.\n- Ý tưởng là tăng cơ hội gặp được nghiệm tốt bằng cách thử nhiều điểm bắt đầu khác nhau.\n\n### Khác nhau chính\n- **Local Beam Search**: nhiều trạng thái được theo dõi **đồng thời trong một tiến trình**, có chia sẻ thông tin.\n- **Random-Restart Search**: nhiều lần tìm kiếm **độc lập**, không chia sẻ thông tin.\n\n### Hệ quả\n- Local Beam Search thường hiệu quả hơn vì tận dụng được các trạng thái tốt trong toàn bộ nhóm.\n- Nhưng nó có thể bị **thiếu đa dạng**: nhiều luồng dễ hội tụ vào cùng một vùng xấu.\n- Random-Restart Search thì đơn giản hơn và giữ đa dạng tốt hơn vì mỗi lần chạy bắt đầu lại từ đầu.\n\nNếu bạn muốn, mình có thể vẽ một ví dụ nhỏ để so sánh hai thuật toán này trực quan hơn.",
+  "citations": [
+    {
+      "chunk_id": "267f5e6d-587d-4294-ac6e-197aeac294ed",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local beam search",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Major difference with random-restart search\n  - Information is shared among k search threads: If one state generated good successor, but others did not → “come here, the grass is greener!”\n- Can suf"
+    },
+    {
+      "chunk_id": "f140b8d1-d2de-436c-bd9b-109bed1b0259",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local beam search",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "[Diagram: Greedy search commits to a single best path at each step, which can quickly lose alternative possibilities. Beam search keeps multiple promising states in parallel, improving the chance of r"
+    },
+    {
+      "chunk_id": "90eebcf2-a7f3-4bb0-b121-3b355e8301dd",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Outline",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Local beam search\n- Game and search\n- Alpha-beta pruning"
+    },
+    {
+      "chunk_id": "927c0e46-0fda-4820-bbab-7c984442d7ff",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local beam search",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- Like greedy search, but keep K states at all times:\n  - Initially: $k$ random states\n  - Next: determine all successors of $k$ states\n  - If any of successors is goal → finished\n  - Else select $k$ "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Local Beam Search Random-Restart Search differences",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "267f5e6d-587d-4294-ac6e-197aeac294ed",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 5,
+          "cosine_sim": 0.5639,
+          "final_score": 0.6484,
+          "content": "- Major difference with random-restart search\n  - Information is shared among k search threads: If one state generated good successor, but others did not → “come here, the grass is greener!”\n- Can suffer from lack of diversity.\n  - Stochastic variant: choose k successors at proportionally to state success.\n- The best choice in MANY practical settings"
+        },
+        {
+          "chunk_id": "f140b8d1-d2de-436c-bd9b-109bed1b0259",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 4,
+          "cosine_sim": 0.4752,
+          "final_score": 0.5465,
+          "content": "[Diagram: Greedy search commits to a single best path at each step, which can quickly lose alternative possibilities. Beam search keeps multiple promising states in parallel, improving the chance of reaching a goal by preserving breadth while still limiting search cost.]"
+        },
+        {
+          "chunk_id": "90eebcf2-a7f3-4bb0-b121-3b355e8301dd",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Outline",
+          "chunk_order": 2,
+          "cosine_sim": 0.4658,
+          "final_score": 0.5356,
+          "content": "- Local beam search\n- Game and search\n- Alpha-beta pruning"
+        },
+        {
+          "chunk_id": "927c0e46-0fda-4820-bbab-7c984442d7ff",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 3,
+          "cosine_sim": 0.4201,
+          "final_score": 0.4832,
+          "content": "- Like greedy search, but keep K states at all times:\n  - Initially: $k$ random states\n  - Next: determine all successors of $k$ states\n  - If any of successors is goal → finished\n  - Else select $k$ best from successors and repeat.\n\n```text\nGreedy Search\n\n+-----+      +-----+      +-----+      +-----+\n|  o  | ---> |  o  | ---> |  o  | ---> |  o  |\n+-----+      +-----+      +-----+      +-----+\n   \\            \\            \\\n    \\            \\            \\\n     v            v            v\n    (o)          (o)          (o)\n     \\            \\            \\\n      \\            \\            \\\n       v            v            v\n      (o)          (o)          (o)\n\nBeam Search\n\n+-----+      +-----+      +-----+      (o)\n|  o  | ---> |  o  | ---> |  o  | ....>\n+-----+       /   \\         /   \\\n   \\         v     v       v     v\n    v      +-----+ (o)   (o)   +-----+\n   (o)     |  o  |   \\     \\    |  o  |\n    \\      +-----+    \\     v   +-----+\n     v        \\        v    (o)    \\\n    (o)       (o)     +-----+       v\n                       |  o  |      +-----+\n                       +-----+      |  o  |\n                                     +-----+\n```"
+        },
+        {
+          "chunk_id": "e294c187-81f5-4432-8c88-f0aa88dfa7e8",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Outline",
+          "chunk_order": 2,
+          "cosine_sim": 0.382,
+          "final_score": 0.4393,
+          "content": "- Memory-bounded heuristic search\n- Hill-climbing search\n- Simulated annealing search"
+        },
+        {
+          "chunk_id": "7b29c8aa-6966-4bc1-a230-e2edd01e97d2",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Can we Prove Anything?",
+          "chunk_order": 30,
+          "cosine_sim": 0.3665,
+          "final_score": 0.4215,
+          "content": "- If the state space is finite and we avoid repeated states, the search is complete\n- If the state space is finite and we do not avoid repeated states, the search is in general not complete\n- If the state space is infinite, the search is in general not complete"
+        },
+        {
+          "chunk_id": "c94c8c3d-66e7-4fa2-b086-1f62b10765e1",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Simulated annealing",
+          "chunk_order": 29,
+          "cosine_sim": 0.3633,
+          "final_score": 0.4178,
+          "content": "- Escape local maxima by allowing “bad” moves.\n  - Idea: but gradually decrease their size and frequency.\n- Origin; metallurgical annealing\n- Implement:\n  - Randomly select a move instead of selecting best move\n  - Accept a bad move with probability less than 1 (p<1)\n  - p decreases by time\n- If T decreases slowly enough, best state is reached.\n- Applied for VLSI layout, airline scheduling, etc."
+        },
+        {
+          "chunk_id": "333425a4-4538-464b-9348-64909ca09d9b",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Outline",
+          "chunk_order": 2,
+          "cosine_sim": 0.3624,
+          "final_score": 0.4167,
+          "content": "- Graph search\n- Best-first search\n- A* search"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 12.2
+}

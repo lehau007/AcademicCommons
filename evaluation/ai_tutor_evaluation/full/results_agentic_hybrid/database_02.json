@@ -1,0 +1,31 @@
+{
+  "qid": "database_02",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "HYBRID improves: equivalence rules + commutativity of intersection retrieved; core defs still partly from prior knowledge"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "more relevant chunks than dense but FD-rule noise remains"
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "operator properties retrieved; verbatim common-tuples/first-not-second defs still absent"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  }
+}

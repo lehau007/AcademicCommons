@@ -1,0 +1,58 @@
+{
+  "file_id": "it3160e_machine_learning",
+  "scores": {
+    "classification_routing": {
+      "score": 4,
+      "justification": "processing_meta.json records no route/inferred_type (it is byte-identical to summary.json), so the exact route label is not recoverable from logs; however the supporting signals are fully consistent with expectations: summary.language 'en' matches the manifest, the deck is clearly a slide_pdf, and the output mixes clean per-slide text with vision-derived [Diagram:...] descriptions, which is what a hybrid text+vision route would produce.",
+      "evidence": [
+        "processing_meta.json contains no \"route\" or \"inferred_type\" field",
+        "\"language\": \"en\"",
+        "[Diagram: This illustrates a binary filtering task"
+      ]
+    },
+    "text_coverage": {
+      "score": 5,
+      "justification": "All substantive text from all 9 source slides is present: every definition/citation, all T/P/E triples for the four example problems, both key-elements slides, both issues slides, and the learning-types slide; the six web-categorization labels and all diagram candidate words also match the source. No source section or bullet is omitted.",
+      "evidence": []
+    },
+    "extraction_fidelity": {
+      "score": 5,
+      "justification": "Character/word extraction is clean English with no garbling or mojibake; citations ('[Simon, 1983]', '[Alpaydin, 2004]') and label words (we, do, in, the, right, way; Go straight, Move left, ...) match the source exactly, and the source ligature glitch 'classication' is silently normalized to 'classification'.",
+      "evidence": []
+    },
+    "structure_preservation": {
+      "score": 5,
+      "justification": "Headings, nested bullet hierarchies, and reading order are faithfully preserved and match the source: the two-column slide 4 is linearized left-to-right (Handwriting then Robot, matching source layout), and 'Planning' is correctly nested under 'Reinforcement learning' exactly as indented on source page 9.",
+      "evidence": []
+    },
+    "faithfulness_no_hallucination": {
+      "score": 3,
+      "justification": "The academic slide content is faithful and the six web-category names are genuinely in the source, but the diagram synthesis injects invented material: each figure is given an editorial 'It matters because...' rationale absent from the source, and the filtering diagram invents leaf labels 'Interested'/'Uninterested' where the source figure actually branches to a photo of a person at a computer and a document/printer icon.",
+      "evidence": [
+        "It matters because it reduces information overload by separating relevant content from irrelevant content.",
+        "| Interested|  | Uninterested | (source figure branches to a photo of a woman at a computer and a document/printer icon, not these text labels)"
+      ]
+    },
+    "formula_table_code": {
+      "score": 5,
+      "justification": "The only genuine math (the target-function mappings) is rendered correctly and legibly in LaTeX, and T/P/E are wrapped as inline math; there are no real tables or code, and the ASCII diagrams' factual labels (six categories, steering commands, candidate words) match the source.",
+      "evidence": []
+    }
+  },
+  "classification": {
+    "expected_type": "slide_pdf",
+    "expected_route": "hybrid",
+    "actual_type": "slide_pdf (inferred from output; not recorded in processing_meta)",
+    "actual_route": "unrecoverable from logs (no route field); text+vision output consistent with hybrid",
+    "pass": true
+  },
+  "hallucinations": [
+    "It matters because it reduces information overload by separating relevant content from irrelevant content.",
+    "It matters because it enables organizing large collections of web content for search, browsing, and recommendation.",
+    "It matters because the system learns from labeled examples to convert visual text into usable digital information.",
+    "It matters because the learned policy can imitate human driving behavior and support autonomous navigation.",
+    "Filtering-diagram leaf labels 'Interested' / 'Uninterested' (source figure branches to a photo of a woman at a computer and a document/printer icon, not text labels)"
+  ],
+  "normalization_note": "Markdown reads coherently end-to-end with no dropped or corrupted spans relative to the 9-slide source; all headings and nested bullets are intact, math is valid LaTeX, and the source ligature glitch 'classication' is normalized to 'classification'. The only integrity concerns are additive: invented per-diagram 'It matters because...' commentary and two fabricated leaf labels in the filtering figure.",
+  "overall_comment": "Strong, near-complete digitization of the English slide deck: 100% text coverage across all 9 slides, clean OCR, correctly rendered LaTeX formulas, and structure (headings, nested lists, slide-4 left-to-right order, 'Planning' nested under Reinforcement) that faithfully matches the source. The six web-category labels are genuinely present in the source and are NOT hallucinations. The main weakness is hallucination confined to the diagram descriptions - four invented 'It matters because...' rationales plus fabricated 'Interested'/'Uninterested' leaf labels. Routing passes: route was not persisted in processing_meta, but language ('en') and slide_pdf/hybrid signals (clean text + vision-derived diagram descriptions) are consistent with expectations."
+}

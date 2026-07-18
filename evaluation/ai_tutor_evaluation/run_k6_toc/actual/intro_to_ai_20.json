@@ -1,0 +1,104 @@
+{
+  "qid": "intro_to_ai_20",
+  "course_code": "IT3160E",
+  "question": "What three formal components make up a logic?",
+  "session_id": "1aca953e-9ac5-44cd-b23f-070bc4bdf02d",
+  "answer": "A logic consists of **three formal components**:\n\n1. **L — Language**: the set of sentences, defined by a precise syntax  \n2. **S — Semantics**: the meaning of the expressions in the language  \n3. **R — Inference system**: the derivation rules used to infer new sentences\n\nSo, in short: **Language, Semantics, and Inference system**.",
+  "citations": [
+    {
+      "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "What is Logic ?",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of e"
+    },
+    {
+      "chunk_id": "9a3ca08b-2245-4783-862a-e3b8fd67bb91",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Language of Propositional Logic",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Symbols\n  - Propositional variables: A,B,...,P,Q,...\n  - Logical constants: TRUE, FALSE\n  - Logical connectives:\n\n```text\n¬, ∧, ∨, ⇒, ⇔\n```\n\n- Sentences\n  - Each propositional variable is a sentence"
+    },
+    {
+      "chunk_id": "a3744ffb-a4ad-470d-8119-ded53ac7c99f",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Method: Use",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "- Temp - a set of propositional variables which are true at the current time\n- Sat - a set of satisfied rules"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "What three formal components make up a logic? formal components of a logic syntax semantics proof system",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "What is Logic ?",
+          "chunk_order": 3,
+          "cosine_sim": 0.6897,
+          "final_score": 0.7932,
+          "content": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of elements in L\n  - R, the logic’s inference system, consisting of derivation rules over L\n- Examples of logics:\n  - Propositional, First Order, Higher Order, Temporal, Fuzzy, Modal, Linear, . . ."
+        },
+        {
+          "chunk_id": "6cc71333-6e7a-4da7-a400-de6ab3b19efc",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL",
+          "chunk_order": 11,
+          "cosine_sim": 0.5997,
+          "final_score": 0.6896,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "445fad8f-9d0f-41dd-a04e-07112429a5e2",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "First Order Logic",
+          "chunk_order": 2,
+          "cosine_sim": 0.5997,
+          "final_score": 0.6896,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "4f3c4a18-ab7c-4b88-b72e-e5f402d4909f",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Semantic",
+          "chunk_order": 12,
+          "cosine_sim": 0.5734,
+          "final_score": 0.6594,
+          "content": "- Variables\n  - Objects\n- Constants\n  - Entities\n- Function symbol\n  - Function from objects to objects\n- Relation symbol\n  - Relation between objects\n- Quantifiers\n  - $\\exists x.P$ true if P is true under some value of x\n  - $\\forall x.P$ true if P is true under every value of x\n- Logical connectives\n  - Similar to Propositional Logic"
+        },
+        {
+          "chunk_id": "9a3ca08b-2245-4783-862a-e3b8fd67bb91",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Language of Propositional Logic",
+          "chunk_order": 5,
+          "cosine_sim": 0.548,
+          "final_score": 0.6302,
+          "content": "- Symbols\n  - Propositional variables: A,B,...,P,Q,...\n  - Logical constants: TRUE, FALSE\n  - Logical connectives:\n\n```text\n¬, ∧, ∨, ⇒, ⇔\n```\n\n- Sentences\n  - Each propositional variable is a sentence\n  - Each logical constant is a sentence\n  - If $α$ and $β$ are sentences then the following are sentences\n\n$$(α),\\neg α, α \\wedge β, α \\vee β, α \\Rightarrow β, α \\Leftrightarrow β$$"
+        },
+        {
+          "chunk_id": "a3744ffb-a4ad-470d-8119-ded53ac7c99f",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Method: Use",
+          "chunk_order": 22,
+          "cosine_sim": 0.435,
+          "final_score": 0.5003,
+          "content": "- Temp - a set of propositional variables which are true at the current time\n- Sat - a set of satisfied rules"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.0
+}

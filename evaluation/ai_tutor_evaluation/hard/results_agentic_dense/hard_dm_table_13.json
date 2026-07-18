@@ -1,0 +1,39 @@
+{
+  "qid": "hard_dm_table_13",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 3,
+      "justification": "C(5,3)=10 + listing is arithmetic/general knowledge; retrieved chunks do not support it.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "Directly and completely answers the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "Matches the ground-truth key facts with no contradiction.",
+      "evidence": []
+    },
+    "context_precision": {
+      "score": 1,
+      "justification": "All retrieved chunks are noise stubs; answer correct via combinatorial reasoning, not grounding.",
+      "evidence": [
+        "c0-c5: (Lý thuyết tổ hợp)"
+      ]
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "Target example table not retrieved.",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "Citations point to chunks that support the statements.",
+      "evidence": []
+    }
+  }
+}

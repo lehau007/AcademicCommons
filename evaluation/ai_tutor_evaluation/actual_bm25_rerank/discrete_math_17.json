@@ -1,0 +1,126 @@
+{
+  "qid": "discrete_math_17",
+  "course_code": "IT3020E",
+  "question": "According to the properties of trees, what happens when an edge is added to an undirected graph that currently has no cycles?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "776e9ac8-e26f-4736-a7c3-841d5870f97e",
+  "answer": "When you add an edge to an undirected graph that has **no cycles**, a **cycle is created**.\n\nIn tree terminology, this means such a graph is a **maximal acyclic graph**: it has no cycles, but adding any new edge forces the appearance of a cycle.",
+  "citations": [
+    {
+      "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Tree and its properties",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two"
+    },
+    {
+      "chunk_id": "79f69592-d6cb-4ebd-98c5-ab0fb9621493",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "**Theorem.** Every undirected connected graph contains a spanning tree.\n\n**Proof.** Let $G$ be an undirected connected graph.\n\n- If $G$ contains no cycle then $G$ is its own spanning tree.\n- If $G$ co"
+    },
+    {
+      "chunk_id": "03a5887c-7892-41c3-96fe-5d6cf8993fd7",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm: an example",
+      "page_number": null,
+      "chunk_order": 36,
+      "excerpt": "[Diagram: This graph shows an example of Prim’s algorithm building a minimum spanning tree by repeatedly choosing the lightest edge that connects the current tree to a new vertex. The highlighted edge"
+    },
+    {
+      "chunk_id": "6447abc1-dc73-4ab8-bb3d-b65ca8203362",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PRIM algorithm",
+      "page_number": null,
+      "chunk_order": 42,
+      "excerpt": "```text\nvoid Prim(G, C) //G: graph; C: weight matrix\n{\n    Select an arbitrary vertex r ∈ V;\n    Initialize: tree T=(V(T), E(T)) where V(T) = {r} and E(T)=∅;\n    while (T has < n vertices)\n    {\n     "
+    },
+    {
+      "chunk_id": "a6cf7664-fd4f-4de2-a210-93015e369a68",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "[Diagram: The figure illustrates that a spanning tree keeps all vertices of a connected graph while removing enough edges to eliminate cycles. This matters because spanning trees preserve connectivity"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "properties of trees adding an edge to an undirected graph with no cycles what happens",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 8,
+          "cosine_sim": 0.567,
+          "final_score": 0.8976,
+          "content": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two vertices $u, v \\in V$, there exists exactly one simple path from $u$ to $v$.\n3. $G$ is connected, and removing any edge from $G$ disconnects it (each edge of $G$ is a bridge).\n4. $G$ has no cycles, and adding any edge to $G$ gives rise to a cycle. (Thus $G$ is a maximal acyclic graph).\n5. $G$ is connected and $|E| = |V| - 1$."
+        },
+        {
+          "chunk_id": "79f69592-d6cb-4ebd-98c5-ab0fb9621493",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 12,
+          "cosine_sim": 0.5447,
+          "final_score": 0.7458,
+          "content": "**Theorem.** Every undirected connected graph contains a spanning tree.\n\n**Proof.** Let $G$ be an undirected connected graph.\n\n- If $G$ contains no cycle then $G$ is its own spanning tree.\n- If $G$ contains a cycle: Removing any edge from the cycle gives a graph which is still connected. If the new graph contains a cycle then again remove one edge of the cycle. Continue this process until the resulting graph $T$ contains no cycles. We have not removed any vertices so $T$ has the same vertex set as $G$, and at each step of the above process we obtain a connected graph. Therefore $T$ is connected and it is a spanning tree for $G$.\n\n[Diagram: The proof describes an iterative pruning process: repeatedly delete one edge from any cycle while preserving connectivity. This guarantees that the graph eventually becomes acyclic without losing any vertices, yielding a spanning tree.]"
+        },
+        {
+          "chunk_id": "03a5887c-7892-41c3-96fe-5d6cf8993fd7",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm: an example",
+          "chunk_order": 36,
+          "cosine_sim": 0.4923,
+          "final_score": 0.6282,
+          "content": "[Diagram: This graph shows an example of Prim’s algorithm building a minimum spanning tree by repeatedly choosing the lightest edge that connects the current tree to a new vertex. The highlighted edges illustrate how the tree grows while avoiding cycles, which is the key idea behind obtaining a minimum total weight connection of all vertices.]"
+        },
+        {
+          "chunk_id": "6447abc1-dc73-4ab8-bb3d-b65ca8203362",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "PRIM algorithm",
+          "chunk_order": 42,
+          "cosine_sim": 0.467,
+          "final_score": 0.6228,
+          "content": "```text\nvoid Prim(G, C) //G: graph; C: weight matrix\n{\n    Select an arbitrary vertex r ∈ V;\n    Initialize: tree T=(V(T), E(T)) where V(T) = {r} and E(T)=∅;\n    while (T has < n vertices)\n    {\n        Among edges connecting a vertex of T to other vertex not in T: find the edge with minimum weight\n        (u, v) is the minimum weight where u ∈ V(T) and v ∈ V(G) − V(T)\n        E(T) ← E(T) ∪ { (u, v) };\n        V(T) ← V(T) ∪ { v }\n        add vertex v and edge (u,v) to tree T\n    }\n}\n```\n\n[Diagram: The slide explains Prim’s greedy process for building a minimum spanning tree by growing a connected tree from one starting vertex. At each step, it chooses the cheapest edge that expands the tree without creating a cycle, which is what guarantees the final tree is minimum-cost.]"
+        },
+        {
+          "chunk_id": "5c792772-adb3-42b3-adee-6be56c51c0d8",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Topological sorting algorithm",
+          "chunk_order": 23,
+          "cosine_sim": 0.4708,
+          "final_score": 0.6154,
+          "content": "- We see that: *In the DAG, there always exists a vertex with in-degree = 0*\n\nIndeed, starting at vertex $v_1$ if there is an incoming edge to it from vertex $v_2$ then we move to $v_2$. If there is an edge from $v_3$ to $v_2$, then we switch to $v_3$, ... Since there is not any cycle in the graph, so after a finite number of such transfers we have to go to the vertex without incoming edge.\n\n[v1] <-- [v2] <-- [v3] <-- ... <-- [x]\n\n[Diagram: A linear chain of vertices showing the \"backtracking\" proof. Arrows point right-to-left, indicating that each vertex has an incoming edge from the next vertex, until reaching vertex x which has no incoming edges.]\n\n- **Topological sorting algorithm:**\n\nFirst, finding all vertices with in-degree = 0. We index these vertices starting from 1.\n\nNext, removing from graphs vertices that have just been indexed together with the edge going out of them, we get a new graph also without cycle, and we again starting index vertices on this new graph.\n\nThe process is repeated until all vertices of the graph has been indexed."
+        },
+        {
+          "chunk_id": "a6cf7664-fd4f-4de2-a210-93015e369a68",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 11,
+          "cosine_sim": 0.5383,
+          "final_score": 0.5835,
+          "content": "[Diagram: The figure illustrates that a spanning tree keeps all vertices of a connected graph while removing enough edges to eliminate cycles. This matters because spanning trees preserve connectivity with a minimal edge set, which is foundational for efficient network design and many graph algorithms.]\n\nGraph G and its 2 spanning trees $T_1$ and $T_2$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.5
+}

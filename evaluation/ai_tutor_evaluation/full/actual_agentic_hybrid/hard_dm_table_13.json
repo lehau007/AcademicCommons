@@ -1,0 +1,217 @@
+{
+  "qid": "hard_dm_table_13",
+  "course_code": "IT3020E",
+  "question": "Liệt kê theo thứ tự từ điển tất cả các tập con 3 phần tử của {1,2,3,4,5}; có tất cả bao nhiêu tập con như vậy?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "14b6880b-c61e-465e-8e05-952be0e06156",
+  "answer": "# Liệt kê tập con 3 phần tử của {1, 2, 3, 4, 5}\n\n## 1. Công thức đếm\n\nSố tập con 3 phần tử của một tập hợp có 5 phần tử được tính bằng **tổ hợp chập 3 của 5**:\n\n$$C(5,3) = \\binom{5}{3} = \\frac{5!}{3!\\,(5-3)!} = \\frac{5!}{3!\\cdot 2!} = \\frac{120}{6 \\cdot 2} = 10$$\n\n## 2. Liệt kê theo thứ tự từ điển (lexicographic order)\n\nTheo thứ tự từ điển, ta sắp xếp các tập con bằng cách so sánh phần tử đầu tiên, nếu bằng nhau thì so sánh phần tử thứ hai, v.v. Mỗi tập con được viết theo thứ tự tăng dần:\n\n| STT | Tập con |\n|-----|---------|\n| 1   | {1, 2, 3} |\n| 2   | {1, 2, 4} |\n| 3   | {1, 2, 5} |\n| 4   | {1, 3, 4} |\n| 5   | {1, 3, 5} |\n| 6   | {1, 4, 5} |\n| 7   | {2, 3, 4} |\n| 8   | {2, 3, 5} |\n| 9   | {2, 4, 5} |\n| 10  | {3, 4, 5} |\n\n## 3. Kết luận\n\n- Có **tất cả 10 tập con** 3 phần tử của tập {1, 2, 3, 4, 5}.\n- Quy tắc liệt kê theo thứ tự từ điển đảm bảo đủ 2 yêu cầu cơ bản của một thuật toán liệt kê (enumeration algorithm):\n  - **Không trùng** cấu hình\n  - **Không sót** cấu hình",
+  "citations": [
+    {
+      "chunk_id": "5345a0b6-484d-4ad1-a500-87062a3c0b0e",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "COMBINATORIAL THEORY",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "(Lý thuyết tổ hợp)"
+    },
+    {
+      "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PART 1",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+    },
+    {
+      "chunk_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+      "document_title": "1-1-counting.pdf",
+      "document_tier": "official",
+      "document_subtype": "summary",
+      "section_title": "Document Summary",
+      "page_number": 1,
+      "chunk_order": 0,
+      "excerpt": "COMBINATORIAL THEORY: (Lý thuyết tổ hợp) GRAPH THEORY: (Lý thuyết đồ thị) Contents: 1. Basic counting principles 2. 1.1. The sum rule: Let us consider two tasks: - $m_1$ is the number of ways to do **"
+    },
+    {
+      "chunk_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "summary",
+      "section_title": "Document Summary",
+      "page_number": 1,
+      "chunk_order": 0,
+      "excerpt": "PART 1: COMBINATORIAL THEORY (Lý thuyết tổ hợp) PART 2: GRAPH THEORY (Lý thuyết đồ thị) Contents of Part 1: - Chapter 0: Sets, Relations - Chapter 1: Counting problem - Chapter 2: Existence problem - "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "liệt kê tập con k phần tử, tổ hợp, combinatorics counting subsets",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "1e08b37c-ec49-45ae-9d25-064325e6ebe5",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4388,
+          "final_score": 0.757,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4392,
+          "final_score": 0.5051,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "69c897f3-cf84-4477-808b-1496d9753d9b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4388,
+          "final_score": 0.5047,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c4ff42b1-09bb-41fc-a2a7-b77b7e8ce8a9",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4388,
+          "final_score": 0.5047,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "50d11fba-c0c1-4a1c-8305-d2cf75485847",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4387,
+          "final_score": 0.5045,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "5345a0b6-484d-4ad1-a500-87062a3c0b0e",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4387,
+          "final_score": 0.5045,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.4033,
+          "final_score": 0.4638,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "821d0a90-7e19-4133-a41e-540601076d3a",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.4033,
+          "final_score": 0.4638,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "C(n,k) tổ hợp chập k của n, công thức đếm tập con",
+      "namespaces": [
+        "knowledge",
+        "exercise"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4551,
+          "final_score": 0.5233,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "5345a0b6-484d-4ad1-a500-87062a3c0b0e",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4547,
+          "final_score": 0.5229,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "50d11fba-c0c1-4a1c-8305-d2cf75485847",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4547,
+          "final_score": 0.5229,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c4ff42b1-09bb-41fc-a2a7-b77b7e8ce8a9",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4545,
+          "final_score": 0.5227,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "a9e1ef20-4640-4464-89e3-25ec3ecdca7f",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4545,
+          "final_score": 0.5227,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "69c897f3-cf84-4477-808b-1496d9753d9b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.4545,
+          "final_score": 0.5227,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "821d0a90-7e19-4133-a41e-540601076d3a",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.3881,
+          "final_score": 0.4463,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.3881,
+          "final_score": 0.4463,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 25.1
+}

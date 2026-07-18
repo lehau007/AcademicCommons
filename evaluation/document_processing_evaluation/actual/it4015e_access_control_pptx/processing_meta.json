@@ -1,0 +1,15 @@
+{
+  "file_id": "it4015e_access_control_pptx",
+  "document_id": "9aa90603-1764-4a34-b0dd-fc0d67e7711a",
+  "file_format": "pptx",
+  "document_status": "NEEDS_REVIEW",
+  "storage_md_path": "documents/36269675-e41a-4227-ab55-78a995fd8bf2/9aa90603-1764-4a34-b0dd-fc0d67e7711a/markdown/output.md",
+  "markdown_chars": 18642,
+  "chunk_count": 0,
+  "ocr_job": {
+    "status": "COMPLETED",
+    "failure_reason": null,
+    "started_at": "2026-07-06T09:11:12.025650+00:00",
+    "completed_at": "2026-07-06T09:13:08.112714+00:00"
+  }
+}

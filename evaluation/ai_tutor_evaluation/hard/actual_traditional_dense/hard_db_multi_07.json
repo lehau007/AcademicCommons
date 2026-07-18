@@ -1,0 +1,125 @@
+{
+  "qid": "hard_db_multi_07",
+  "course_code": "IT3292E",
+  "question": "Trả lời hai ý: (1) ba nhóm chức năng chính mà một DBMS cho phép (defining, constructing, manipulating) nghĩa là gì; (2) bảng student minh họa có những cột nào.",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "db820d59-4697-47fa-84a9-a0b259655fd7",
+  "answer": "# Trả lời\n\n## (1) Ba nhóm chức năng chính của DBMS\n\nTheo tài liệu, một DBMS cho phép thực hiện ba nhóm chức năng chính:\n\n- **Defining (Định nghĩa)**: đặc tả các kiểu dữ liệu (specifying types of data). Nghĩa là người dùng khai báo cấu trúc dữ liệu, các kiểu dữ liệu cho từng cột, các ràng buộc (constraint)… thông qua các câu lệnh như `CREATE TABLE`, `ALTER TABLE`.\n\n- **Constructing (Xây dựng)**: lưu trữ và đưa dữ liệu vào (storing & populating). Nghĩa là sau khi đã định nghĩa cấu trúc, ta sẽ lưu các bảng vào cơ sở dữ liệu và chèn dữ liệu vào các bảng đó, ví dụ thông qua câu lệnh `INSERT`.\n\n- **Manipulating (Thao tác)**: truy vấn, cập nhật và tạo báo cáo (querying, updating, reporting). Nghĩa là thực hiện các thao tác trên dữ liệu đã có như truy vấn (`SELECT`), cập nhật (`UPDATE`), xóa (`DELETE`).\n\n## (2) Các cột của bảng `student` minh họa\n\nDựa trên bảng dữ liệu mẫu và lệnh `CREATE TABLE student` trong tài liệu, bảng `student` có **8 cột** sau:\n\n| # | Tên cột | Kiểu dữ liệu (theo ví dụ CREATE TABLE) | Ghi chú |\n|---|---|---|---|\n| 1 | `student_id` | `CHAR(8)` | `NOT NULL` – mã sinh viên |\n| 2 | `first_name` | `VARCHAR(20)` | `NOT NULL` – tên |\n| 3 | `last_name` | `VARCHAR(20)` | `NOT NULL` – họ |\n| 4 | `dob` | `DATE` | `NOT NULL` – ngày sinh |\n| 5 | `gender` | `CHAR(1)` | giới tính |\n| 6 | `address` | `VARCHAR(30)` | địa chỉ |\n| 7 | `note` | `TEXT` | ghi chú |\n| 8 | `clazz_id` (trong CREATE TABLE viết là `class_id`) | `CHAR(8)` | mã lớp, liên kết với bảng `clazz` |\n\nCó thể thấy quan hệ giữa hai bảng: cột `clazz_id` của bảng `student` tham chiếu tới cột `clazz_id` của bảng `clazz` (ví dụ: sinh viên 20160003 – Trần Thu Hồng thuộc lớp 20162101 – CNTT1.01-K61).\n\n---\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "6392b873-ede6-448d-9388-876329e08c99",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Database Management System (DBMS)",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Defining ~ specifying types of data\n- Constructing ~ storing & populating\n- Manipulating ~ querying, updating, reporting\n\n```text\n+-----------+   +--------------+   +-------------------------------+"
+    },
+    {
+      "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3. Data Manipulation",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa,"
+    },
+    {
+      "chunk_id": "b2517c0a-b117-49ef-aee2-b7784e7955b0",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Creating a Simple Table",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Syntax:\n\n```text\nCREATE TABLE <table_name>(\n    <col1> <type1>(<size1>) [NOT NULL] [DEFAULT <value>],\n    <col2> <type2>(<size2>) [NOT NULL],\n    ...,\n    [[CONSTRAINT <constraint_name>] <constraint"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "Trả lời hai ý: (1) ba nhóm chức năng chính mà một DBMS cho phép (defining, constructing, manipulating) nghĩa là gì; (2) bảng student minh họa có những cột nào.",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.4467,
+          "final_score": 0.5137,
+          "content": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n| CREATE TABLE | SQL statement to define a table into a database |\n| ALTER TABLE | SQL statement to modify table structure if needed (add /delete/modify column(s), add/remove constraint(s)) |\n| INSERT/UPDATE/DELETE | SQL statements to add new record to a table; to change the data of one or more records in a table; to remove single record or multiple records from a table |\n| SELECT | SQL statement to retrieve data from a database |"
+        },
+        {
+          "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "3. Data Manipulation",
+          "chunk_order": 28,
+          "cosine_sim": 0.4185,
+          "final_score": 0.4812,
+          "content": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa, HN |  | 20162101 |\n| 20160002 | Anh | Hoàng | 5/20/1987 | M | 513 B5 KTX BKHN |  | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | F | 15 Trần Đại Nghĩa, HBT, Hà nội |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | 5/20/1987 | F | 513 TT Phương Mai, Đ. Đa, HN |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | F | 214 B6 KTX BKHN |  | 20172201 |\n| 20170002 | Nhật Cường | Nguyễn | 10/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170003 | Nhật Cường | Nguyễn | 1/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170004 | Minh Đức | Bùi | 1/25/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n\n**clazz**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n- Modifying address?\n- Adding new student / new class?\n- Deleting student data?\n- Retrieving list of all students?"
+        },
+        {
+          "chunk_id": "d42ace20-c14b-440d-85cc-01caee818759",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "3.2. Database approach",
+          "chunk_order": 36,
+          "cosine_sim": 0.3984,
+          "final_score": 0.4582,
+          "content": "```text\nLecturer     Enrollment     Student\n   |             |             |\n   +-------------+-------------+\n                 |\n                 v\n               +-------+\n               | DBMS  |\n               +-------+\n                /     \\\n               v       v\n        +-----------+  +----------------+\n        | Database  |  |   Metadata     |\n        |           |  |   (Catalog)    |\n        | Lecturer  |  +----------------+\n        | Student   |\n        | Class     |\n        | Course    |\n        | Note      |\n        +-----------+\n```\n\n[Diagram: The slide illustrates a database-centered approach in which different user-facing entities such as lecturers, enrollments, and students are mediated by a DBMS rather than accessing data directly. This matters because the DBMS separates application access from both the stored data and the metadata/catalog, enabling organization, control, and consistent management of information.]"
+        },
+        {
+          "chunk_id": "fdcc0159-1937-4d63-856e-9332344ea841",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "result",
+          "chunk_order": 23,
+          "cosine_sim": 0.3956,
+          "final_score": 0.4549,
+          "content": "| student_id | first_name | last_name | name |\n|---|---|---|---|\n| 20160002 | Anh | Hoàng | CNTT1.01-K61 |\n| 20160003 | Thu Hồng | Trần | CNTT1.01-K61 |\n| 20160004 | Minh Anh | Nguyễn | CNTT1.01-K61 |\n| 20170001 | Nhật Ánh | Nguyễn | CNTT2.01-K62 |"
+        },
+        {
+          "chunk_id": "6392b873-ede6-448d-9388-876329e08c99",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 26,
+          "cosine_sim": 0.3804,
+          "final_score": 0.4374,
+          "content": "- Defining ~ specifying types of data\n- Constructing ~ storing & populating\n- Manipulating ~ querying, updating, reporting\n\n```text\n+-----------+   +--------------+   +-------------------------------+\n| MySQL     |   | Microsoft    |   | Microsoft SQL Server          |\n|           |   | Access       |   |                               |\n+-----------+   +--------------+   +-------------------------------+\n\n+------------------+   +--------+   +-------------+\n| Oracle Database   |   | IBM DB2|   | PostgreSQL  |\n+------------------+   +--------+   +-------------+\n```"
+        },
+        {
+          "chunk_id": "4dbba64d-22f2-4d67-a776-28562d2aa163",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "student",
+          "chunk_order": 26,
+          "cosine_sim": 0.3755,
+          "final_score": 0.4318,
+          "content": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160003 | Thu Hồng | Trần | ... | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | ... | 20162101 |\n| ... | ... | ... | ... | ... |"
+        },
+        {
+          "chunk_id": "b2517c0a-b117-49ef-aee2-b7784e7955b0",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "2.1. Creating a Simple Table",
+          "chunk_order": 12,
+          "cosine_sim": 0.3741,
+          "final_score": 0.4303,
+          "content": "- Syntax:\n\n```text\nCREATE TABLE <table_name>(\n    <col1> <type1>(<size1>) [NOT NULL] [DEFAULT <value>],\n    <col2> <type2>(<size2>) [NOT NULL],\n    ...,\n    [[CONSTRAINT <constraint_name>] <constraint_type> clause], ...);\n```\n\n- Example:\n\n```text\nCREATE TABLE student(\n    student_id CHAR(8) NOT NULL,\n    first_name VARCHAR(20) NOT NULL,\n    last_name VARCHAR(20) NOT NULL,\n    dob DATE NOT NULL,\n    gender CHAR(1), address VARCHAR(30),\n    note TEXT, class_id CHAR(8) );\n```"
+        },
+        {
+          "chunk_id": "c966cb75-ac1a-4497-9754-f83f923e20fe",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "student",
+          "chunk_order": 21,
+          "cosine_sim": 0.3663,
+          "final_score": 0.4212,
+          "content": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi |  |  |\n| 20160002 | Anh | Hoàng |  | 20162101 |\n| 20160003 | Thu Hồng | Trần |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn |  | 20172201 |\n\n[Table: Sample rows of the student relation showing student_id, first_name, last_name and the clazz_id that links each student to a class.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 15.5
+}

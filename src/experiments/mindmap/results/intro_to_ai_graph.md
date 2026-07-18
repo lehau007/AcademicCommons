@@ -1,0 +1,73 @@
+# Concept Graph
+
+- **Introduction to Artificial Intelligence** (level 0)  _(docs: doc1, doc2, doc3, doc4, doc5, doc6)_
+  - **Constraint Satisfaction Problems** (level 1)  _(docs: doc2)_
+    - **Arc Consistency** (level 2)  _(docs: doc2)_
+    - **Backtracking Search** (level 2)  _(docs: doc2)_
+    - **Constraint** (level 2)  _(docs: doc2)_
+    - **CSP** (level 2)  _(docs: doc2)_
+    - **Domain** (level 2)  _(docs: doc2)_
+    - **Forward Checking** (level 2)  _(docs: doc2)_
+    - **Iterative Algorithm** (level 2)  _(docs: doc2)_
+    - **Local Search** (level 2)  _(docs: doc2)_
+    - **Min-Conflicts Heuristic** (level 2)  _(docs: doc2)_
+    - **Variable** (level 2)  _(docs: doc2)_
+  - **Heuristic Function** (level 1)  _(docs: doc1, doc2, doc4)_
+  - **Intelligent Agent** (level 1)  _(docs: doc1, doc6)_
+  - **Intelligent Agents and Search** (level 1)  _(docs: doc1)_
+    - **A* Search** (level 2)  _(docs: doc1)_
+    - **Breadth-First Search** (level 2)  _(docs: doc1)_
+    - **Depth-First Search** (level 2)  _(docs: doc1)_
+    - **Goal-Based Agent** (level 2)  _(docs: doc1)_
+    - **Informed Search** (level 2)  _(docs: doc1)_
+    - **Local Beam Search** (level 2)  _(docs: doc1)_
+    - **PEAS** (level 2)  _(docs: doc1)_
+    - **Rational Agent** (level 2)  _(docs: doc1)_
+    - **Simple Reflex Agent** (level 2)  _(docs: doc1)_
+    - **Uninformed Search** (level 2)  _(docs: doc1)_
+    - **Utility-Based Agent** (level 2)  _(docs: doc1)_
+  - **Logic and Inference** (level 1)  _(docs: doc3)_
+    - **First Order Logic** (level 2)  _(docs: doc3)_
+    - **FOL** (level 2)  _(docs: doc3)_
+    - **Forward Chaining** (level 2)  _(docs: doc3)_
+    - **Inference System** (level 2)  _(docs: doc3)_
+    - **Knowledge Base** (level 2)  _(docs: doc3)_
+    - **Logic** (level 2)  _(docs: doc3)_
+    - **Predicate** (level 2)  _(docs: doc3)_
+    - **Propositional Logic** (level 2)  _(docs: doc3)_
+    - **Resolution** (level 2)  _(docs: doc3)_
+    - **Semantic** (level 2)  _(docs: doc3)_
+    - **Syntax** (level 2)  _(docs: doc3)_
+    - **Term** (level 2)  _(docs: doc3)_
+  - **Machine Learning Foundations** (level 1)  _(docs: doc5)_
+    - **Backpropagation** (level 2)  _(docs: doc5)_
+    - **Decision Tree Learning** (level 2)  _(docs: doc5)_
+    - **Entropy** (level 2)  _(docs: doc5)_
+    - **Epoch** (level 2)  _(docs: doc5)_
+    - **Error Threshold** (level 2)  _(docs: doc5)_
+    - **Feed-Forward Neural Network** (level 2)  _(docs: doc5)_
+    - **Information Gain** (level 2)  _(docs: doc5)_
+    - **Machine Learning** (level 2)  _(docs: doc5)_
+    - **Neural Network** (level 2)  _(docs: doc5)_
+    - **Recurrent Neural Network** (level 2)  _(docs: doc5)_
+    - **Supervised Learning** (level 2)  _(docs: doc5)_
+    - **Training Loop** (level 2)  _(docs: doc5)_
+  - **Planning and Games** (level 1)  _(docs: doc4)_
+    - **Adversarial Search** (level 2)  _(docs: doc4)_
+    - **Alpha-Beta Pruning** (level 2)  _(docs: doc4)_
+    - **Game** (level 2)  _(docs: doc4)_
+    - **Minimax** (level 2)  _(docs: doc4)_
+    - **Planning** (level 2)  _(docs: doc4)_
+    - **Progression Planner** (level 2)  _(docs: doc4)_
+    - **Regression Planner** (level 2)  _(docs: doc4)_
+    - **State-Space Search** (level 2)  _(docs: doc4)_
+  - **Reinforcement Learning** (level 1)  _(docs: doc6)_
+    - **Discount Rate** (level 2)  _(docs: doc6)_
+    - **Discounted Return** (level 2)  _(docs: doc6)_
+    - **Exploration vs Exploitation** (level 2)  _(docs: doc6)_
+    - **Markov Decision Process** (level 2)  _(docs: doc6)_
+    - **Policy** (level 2)  _(docs: doc6)_
+    - **Q-Learning** (level 2)  _(docs: doc6)_
+    - **Reward** (level 2)  _(docs: doc6)_
+    - **Value Function** (level 2)  _(docs: doc6)_
+  - **Search Problem** (level 1)  _(docs: doc1, doc4)_

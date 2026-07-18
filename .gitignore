@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Environment
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.kiro/
+
+# Build
+.next/
+out/
+dist/
+build/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git worktrees (isolated task workspaces)
+.worktrees/
+
+# Data
+../data/
+
+# LaTeX build artifacts
+thesis/*.aux
+# Backend error log file (ERROR_LOG_FILE_PATH); rotated locally, never committed
+logs/
+
+thesis/*.bbl
+thesis/*.blg
+thesis/*.lof
+thesis/*.log
+thesis/*.lot
+thesis/*.out
+thesis/*.toc
+thesis/*.run.xml
+thesis/main-blx.bib
+
+# Playwright MCP artifacts
+.playwright-mcp/
+# Local DB backups (pg_dump)
+backups/

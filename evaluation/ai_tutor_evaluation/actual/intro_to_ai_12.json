@@ -1,0 +1,94 @@
+{
+  "qid": "intro_to_ai_12",
+  "course_code": "IT3160E",
+  "question": "According to Mitchell (1997), what are the three core elements that define a machine learning problem?",
+  "session_id": "873480af-d971-4e12-b461-8e8f4913d520",
+  "answer": "Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?",
+  "citations": [
+    {
+      "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Problem types",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent "
+    },
+    {
+      "chunk_id": "3d8f7320-9702-4965-868b-c8b835361eba",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Search Problem Definition",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- A problem is defined by four items:\n  1. initial state: e.g., Arad\n  2. actions or successor function $S(x)$ = set of action-state pairs\n     - e.g., $S(Arad)$ = {<Arad → Zerind, Zerind>, ... }\n  3."
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Mitchell (1997) three core elements define a machine learning problem",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem types",
+          "chunk_order": 10,
+          "cosine_sim": 0.4177,
+          "final_score": 0.6599,
+          "content": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent may have no idea where it is; solution is a sequence\n- Nondeterministic and/or partially observable → contingency problem\n  - percepts provide new information about current state\n  - often interleave → search, execution\n- Unknown state space → exploration problem"
+        },
+        {
+          "chunk_id": "e416993d-d4f9-479c-974a-cfac73754814",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Expert system",
+          "chunk_order": 20,
+          "cosine_sim": 0.3586,
+          "final_score": 0.6299,
+          "content": "- Expert system = Human Expertise + Inference/Reasoning\n- Some examples: DENDRAL, MYCIN, PROSPECTOR, MOLGEN, ICAD/ICAM\n\n|  data  | ---> | software| ---> | output |\n| input  |      |         |      |        |\n\n+-------+      +--------+      +--------+\n\n|                       |\n                  |                       |\n                  |                       |\n                  |                       |\n\nv                       v\n+-------+      +--------+\n\n| hardware|      | knowledge|\n\n+-------+      +--------+\n\n|                       |\n                  |                       |\n\nv                       v\n                             knowledge engineering"
+        },
+        {
+          "chunk_id": "ae50e9e8-47d8-4721-9de7-0b2d63d378dc",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Features of RL",
+          "chunk_order": 3,
+          "cosine_sim": 0.4091,
+          "final_score": 0.6233,
+          "content": "- Learning from numerical rewards\n- Interaction with the task; sequences of states, actions and rewards\n- Uncertainty and non-deterministic worlds\n- Delayed consequences\n- The explore/exploit dilemma\n- The whole problem of goal-directed learning"
+        },
+        {
+          "chunk_id": "bb78f7dc-39fe-4290-8d13-b71e8997ed36",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "When using ANNs?",
+          "chunk_order": 64,
+          "cosine_sim": 0.4443,
+          "final_score": 0.6178,
+          "content": "- Input is high-dimensional discrete or real-valued\n- The target function is real-valued, discrete-valued or vector-valued\n- Possibly noisy data\n- The form of the target function is unknown\n- Human readability of result is not (very) important\n- Long training time is accepted\n- Short classification/prediction time is required"
+        },
+        {
+          "chunk_id": "3d8f7320-9702-4965-868b-c8b835361eba",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Search Problem Definition",
+          "chunk_order": 11,
+          "cosine_sim": 0.3586,
+          "final_score": 0.5705,
+          "content": "- A problem is defined by four items:\n  1. initial state: e.g., Arad\n  2. actions or successor function $S(x)$ = set of action-state pairs\n     - e.g., $S(Arad)$ = {<Arad → Zerind, Zerind>, ... }\n  3. goal test, can be\n     - explicit, e.g., $x$ = Bucharest\n     - implicit, e.g., $Checkmate(x)$\n  4. path cost (additive)\n     - e.g., sum of distances, number of actions executed, etc.\n     - $c(x,a,y)$ is the step cost, assumed to be $\\ge 0$\n- A solution is a sequence of actions leading from the initial state to a goal state"
+        },
+        {
+          "chunk_id": "c1c65690-ce15-4210-b5ce-51ca58f39d4c",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Reinforcement Learning (RL)",
+          "chunk_order": 2,
+          "cosine_sim": 0.3697,
+          "final_score": 0.5364,
+          "content": "- RL is ML method that optimize the reward\n  - A class of tasks\n  - A process of trial-and-error learning\n    - Good actions are “rewarded”\n    - Bad actions are “punished”"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 19.6
+}

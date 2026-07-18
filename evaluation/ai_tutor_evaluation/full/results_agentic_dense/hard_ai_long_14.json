@@ -1,0 +1,31 @@
+{
+  "qid": "hard_ai_long_14",
+  "course_code": "IT3160E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "names all 4 terrains + strong shoulder-vs-flat distinction; minor ridge/plateau extra"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "names all 4 terrains + strong shoulder-vs-flat distinction; minor ridge/plateau extra"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "names all 4 terrains + strong shoulder-vs-flat distinction; minor ridge/plateau extra"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "names all 4 terrains + strong shoulder-vs-flat distinction; minor ridge/plateau extra"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "names all 4 terrains + strong shoulder-vs-flat distinction; minor ridge/plateau extra"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "names all 4 terrains + strong shoulder-vs-flat distinction; minor ridge/plateau extra"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "qid": "discrete_math_08",
+  "course_code": "IT3020E",
+  "question": "What is the running time of the Floyd-Warshall algorithm?",
+  "session_id": "fdc40c02-f21d-4cd1-8670-b25f90f2c6cc",
+  "answer": "The **Floyd–Warshall algorithm** runs in **\\(O(n^3)\\)** time, where \\(n\\) is the number of vertices.\n\nWhy: the pseudocode has **three nested loops** over \\(k\\), \\(i\\), and \\(j\\), each ranging from 1 to \\(n\\), so the total work is proportional to \\(n \\times n \\times n\\).",
+  "citations": [
+    {
+      "chunk_id": "c6dd1a45-456c-44b9-8b2e-2056c3ab9984",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Floyd-Warshall",
+      "page_number": null,
+      "chunk_order": 39,
+      "excerpt": "void Floyd-Warshall(n, W)\n{\n    D^(0) ← W\n    for (k = 1; k <= n; k++)           // Path going through only intermediate\n                                        // vertices selected from {1,2,...,k}\n "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Floyd-Warshall algorithm running time shortest path all-pairs shortest path complexity",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c6dd1a45-456c-44b9-8b2e-2056c3ab9984",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Floyd-Warshall",
+          "chunk_order": 39,
+          "cosine_sim": 0.6169,
+          "final_score": 0.7833,
+          "content": "void Floyd-Warshall(n, W)\n{\n    D^(0) ← W\n    for (k = 1; k <= n; k++)           // Path going through only intermediate\n                                        // vertices selected from {1,2,...,k}\n        for (i = 1; i <= n; i++)        // All pairs (i,j)\n            for (j = 1; j <= n; j++)\n                d_ij^(k) ← min(d_ij^(k-1), d_ik^(k-1) + d_k\n\n## Floyd-Warshall Algorithm Example\n\n- Graph with 4 nodes and weighted edges\n- Distance matrix $D^{(4)}$ and predecessor matrix $P^{(4)}$ shown"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.1
+}

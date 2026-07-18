@@ -1,0 +1,65 @@
+[
+  {
+    "id": "it3292e_comm_past_exam_img_01",
+    "course_code": "IT3292E",
+    "tier": "community",
+    "input_path": "data/sample/community/IT3292E/past_exam/Database - giữa kì cô Trinh.jpg",
+    "expected_type": "image",
+    "expected_route": "vision_only",
+    "notes": "Community past exam image sample"
+  },
+  {
+    "id": "it3292e_comm_past_exam_pdf_01",
+    "course_code": "IT3292E",
+    "tier": "community",
+    "input_path": "data/sample/community/IT3292E/past_exam/Database-giữa kì cô Oanh.pdf",
+    "expected_type": "scanned_pdf",
+    "expected_route": "vision_only",
+    "notes": "Community PDF currently behaves as scanned/image-heavy under probe"
+  },
+  {
+    "id": "it3292e_comm_past_exam_pdf_02",
+    "course_code": "IT3292E",
+    "tier": "community",
+    "input_path": "data/sample/community/IT3292E/past_exam/Database-cuối kì20232.pdf",
+    "expected_type": "scanned_pdf",
+    "expected_route": "vision_only",
+    "notes": "Candidate scanned exam PDF"
+  },
+  {
+    "id": "it3210_official_slides_pdf_01",
+    "course_code": "IT3210",
+    "tier": "official",
+    "input_path": "data/sample/official/IT3210/lecture_slides/CLang-Lect01-vi-v2_1.9m.pdf",
+    "expected_type": "mixed_pdf",
+    "expected_route": "hybrid",
+    "notes": "Official lecture slide currently classified mixed due text+visual layout"
+  },
+  {
+    "id": "it3160e_official_slides_pdf_01",
+    "course_code": "IT3160E",
+    "tier": "official",
+    "input_path": "data/sample/official/IT3160E/lecture_slides/lecture1_introduction.pdf",
+    "expected_type": "mixed_pdf",
+    "expected_route": "hybrid",
+    "notes": "Official introductory slide currently classified mixed due visual blocks"
+  },
+  {
+    "id": "it3292e_official_textbook_pdf_01",
+    "course_code": "IT3292E",
+    "tier": "official",
+    "input_path": "data/sample/official/IT3292E/textbook/ullman_the_complete_book.pdf",
+    "expected_type": "mixed_pdf",
+    "expected_route": "hybrid",
+    "notes": "Textbook with mixed text and diagrams"
+  },
+  {
+    "id": "it3210_official_pptx_demo_01",
+    "course_code": "IT3210",
+    "tier": "official",
+    "input_path": "data/sample/official/IT3210/lecture_slides/IT3210_OCR_Demo_Slides.pptx",
+    "expected_type": "pptx",
+    "expected_route": "hybrid",
+    "notes": "Real PowerPoint demo with text and embedded image"
+  }
+]

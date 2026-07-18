@@ -1,0 +1,1354 @@
+{
+  "generated_at": "2026-05-04T18:22:55.375178+00:00",
+  "sample_root": "data/sample",
+  "total_files": 73,
+  "format_counts": {
+    "pdf": 70,
+    "pptx": 1,
+    "image": 2,
+    "other": 0
+  },
+  "inferred_edge_case_counts": {
+    "text_pdf": 0,
+    "scanned_pdf": 3,
+    "mixed_pdf": 67,
+    "pptx": 1,
+    "image": 2
+  },
+  "by_course_tier": {
+    "community:IT3292E": {
+      "past_exam": {
+        "image": 1,
+        "pdf": 3
+      }
+    },
+    "official:IT3020E": {
+      "lecture_slides": {
+        "pdf": 10
+      },
+      "syllabus": {
+        "pdf": 1
+      }
+    },
+    "official:IT3160E": {
+      "lecture_slides": {
+        "pdf": 16
+      }
+    },
+    "official:IT3210": {
+      "lecture_slides": {
+        "pdf": 14,
+        "image": 1,
+        "pptx": 1
+      }
+    },
+    "official:IT3220": {
+      "lecture_slides": {
+        "pdf": 14
+      }
+    },
+    "official:IT3292E": {
+      "lecture_slides": {
+        "pdf": 11
+      },
+      "textbook": {
+        "pdf": 1
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "data/sample/community/IT3292E/past_exam/Database - giữa kì cô Trinh.jpg",
+      "tier": "community",
+      "course_code": "IT3292E",
+      "doc_subtype": "past_exam",
+      "extension": ".jpg",
+      "format": "image",
+      "file_name": "Database - giữa kì cô Trinh.jpg",
+      "size_bytes": 227286,
+      "inferred_expected_type": "image"
+    },
+    {
+      "path": "data/sample/community/IT3292E/past_exam/Database-cuối kì 20222.pdf",
+      "tier": "community",
+      "course_code": "IT3292E",
+      "doc_subtype": "past_exam",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "Database-cuối kì 20222.pdf",
+      "size_bytes": 85521,
+      "inferred_expected_type": "scanned_pdf",
+      "type_evidence": {
+        "text_chars": 0,
+        "page_count": 2,
+        "image_count": 2,
+        "avg_chars_per_page": 0.0,
+        "images_per_page": 1.0
+      }
+    },
+    {
+      "path": "data/sample/community/IT3292E/past_exam/Database-cuối kì20232.pdf",
+      "tier": "community",
+      "course_code": "IT3292E",
+      "doc_subtype": "past_exam",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "Database-cuối kì20232.pdf",
+      "size_bytes": 28881334,
+      "inferred_expected_type": "scanned_pdf",
+      "type_evidence": {
+        "text_chars": 0,
+        "page_count": 32,
+        "image_count": 49,
+        "avg_chars_per_page": 0.0,
+        "images_per_page": 1.531
+      }
+    },
+    {
+      "path": "data/sample/community/IT3292E/past_exam/Database-giữa kì cô Oanh.pdf",
+      "tier": "community",
+      "course_code": "IT3292E",
+      "doc_subtype": "past_exam",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "Database-giữa kì cô Oanh.pdf",
+      "size_bytes": 898064,
+      "inferred_expected_type": "scanned_pdf",
+      "type_evidence": {
+        "text_chars": 0,
+        "page_count": 2,
+        "image_count": 2,
+        "avg_chars_per_page": 0.0,
+        "images_per_page": 1.0
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/lecture_slides/1-0-Set.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "1-0-Set.pdf",
+      "size_bytes": 2639266,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 27584,
+        "page_count": 97,
+        "image_count": 115,
+        "avg_chars_per_page": 284.37,
+        "images_per_page": 1.186
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/lecture_slides/1-1-counting.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "1-1-counting.pdf",
+      "size_bytes": 3905854,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 45262,
+        "page_count": 113,
+        "image_count": 133,
+        "avg_chars_per_page": 400.55,
+        "images_per_page": 1.177
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/lecture_slides/1-2-Existence.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "1-2-Existence.pdf",
+      "size_bytes": 1862405,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 15390,
+        "page_count": 44,
+        "image_count": 48,
+        "avg_chars_per_page": 349.77,
+        "images_per_page": 1.091
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/lecture_slides/1-3-Enumeration.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "1-3-Enumeration.pdf",
+      "size_bytes": 3896575,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 36173,
+        "page_count": 93,
+        "image_count": 120,
+        "avg_chars_per_page": 388.96,
+        "images_per_page": 1.29
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/lecture_slides/1-4-Optimization.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "1-4-Optimization.pdf",
+      "size_bytes": 3149355,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 21210,
+        "page_count": 63,
+        "image_count": 87,
+        "avg_chars_per_page": 336.67,
+        "images_per_page": 1.381
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/lecture_slides/2_1-GraphFundamentals.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "2_1-GraphFundamentals.pdf",
+      "size_bytes": 3111722,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 22535,
+        "page_count": 87,
+        "image_count": 127,
+        "avg_chars_per_page": 259.02,
+        "images_per_page": 1.46
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/lecture_slides/2_2-GraphPresentation.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "2_2-GraphPresentation.pdf",
+      "size_bytes": 855022,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 3815,
+        "page_count": 17,
+        "image_count": 25,
+        "avg_chars_per_page": 224.41,
+        "images_per_page": 1.471
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/lecture_slides/2_3-GraphTraversal.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "2_3-GraphTraversal.pdf",
+      "size_bytes": 5179133,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 19214,
+        "page_count": 61,
+        "image_count": 93,
+        "avg_chars_per_page": 314.98,
+        "images_per_page": 1.525
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/lecture_slides/2_4-GraphSpanningTree.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "2_4-GraphSpanningTree.pdf",
+      "size_bytes": 3033075,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 14090,
+        "page_count": 36,
+        "image_count": 56,
+        "avg_chars_per_page": 391.39,
+        "images_per_page": 1.556
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/lecture_slides/2_5-ShortestPath.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "2_5-ShortestPath.pdf",
+      "size_bytes": 2216615,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 20051,
+        "page_count": 53,
+        "image_count": 65,
+        "avg_chars_per_page": 378.32,
+        "images_per_page": 1.226
+      }
+    },
+    {
+      "path": "data/sample/official/IT3020E/syllabus/Giáo trình toán rời rạc - Nguyễn Đức Nghĩa.pdf",
+      "tier": "official",
+      "course_code": "IT3020E",
+      "doc_subtype": "syllabus",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "Giáo trình toán rời rạc - Nguyễn Đức Nghĩa.pdf",
+      "size_bytes": 9421330,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 413161,
+        "page_count": 298,
+        "image_count": 431,
+        "avg_chars_per_page": 1386.45,
+        "images_per_page": 1.446
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture10-FirstOrderLogic.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture10-FirstOrderLogic.pdf",
+      "size_bytes": 531142,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 3503,
+        "page_count": 18,
+        "image_count": 22,
+        "avg_chars_per_page": 194.61,
+        "images_per_page": 1.222
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture11-InferenceFirstOrderLogic.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture11-InferenceFirstOrderLogic.pdf",
+      "size_bytes": 603327,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 6018,
+        "page_count": 36,
+        "image_count": 71,
+        "avg_chars_per_page": 167.17,
+        "images_per_page": 1.972
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture12-Planning.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture12-Planning.pdf",
+      "size_bytes": 1008009,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 12866,
+        "page_count": 48,
+        "image_count": 73,
+        "avg_chars_per_page": 268.04,
+        "images_per_page": 1.521
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture13-DecisionTreeLearning.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture13-DecisionTreeLearning.pdf",
+      "size_bytes": 689606,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 11514,
+        "page_count": 23,
+        "image_count": 23,
+        "avg_chars_per_page": 500.61,
+        "images_per_page": 1.0
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture13-MachineLearning.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture13-MachineLearning.pdf",
+      "size_bytes": 547695,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 4112,
+        "page_count": 9,
+        "image_count": 15,
+        "avg_chars_per_page": 456.89,
+        "images_per_page": 1.667
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture14-ReinforcementLearning.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture14-ReinforcementLearning.pdf",
+      "size_bytes": 620888,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 4735,
+        "page_count": 23,
+        "image_count": 26,
+        "avg_chars_per_page": 205.87,
+        "images_per_page": 1.13
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture15-NeuronNetworks.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture15-NeuronNetworks.pdf",
+      "size_bytes": 1081320,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 23062,
+        "page_count": 61,
+        "image_count": 63,
+        "avg_chars_per_page": 378.07,
+        "images_per_page": 1.033
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture1_introduction.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture1_introduction.pdf",
+      "size_bytes": 395339,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 6334,
+        "page_count": 14,
+        "image_count": 17,
+        "avg_chars_per_page": 452.43,
+        "images_per_page": 1.214
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture1_presentation.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture1_presentation.pdf",
+      "size_bytes": 347529,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 1081,
+        "page_count": 7,
+        "image_count": 7,
+        "avg_chars_per_page": 154.43,
+        "images_per_page": 1.0
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture2_agent.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture2_agent.pdf",
+      "size_bytes": 483193,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 7659,
+        "page_count": 24,
+        "image_count": 50,
+        "avg_chars_per_page": 319.12,
+        "images_per_page": 2.083
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture3_search.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture3_search.pdf",
+      "size_bytes": 1275491,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 7148,
+        "page_count": 33,
+        "image_count": 68,
+        "avg_chars_per_page": 216.61,
+        "images_per_page": 2.061
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture4-search.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture4-search.pdf",
+      "size_bytes": 865366,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 7209,
+        "page_count": 37,
+        "image_count": 61,
+        "avg_chars_per_page": 194.84,
+        "images_per_page": 1.649
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture5-Advanced search methods.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture5-Advanced search methods.pdf",
+      "size_bytes": 631495,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 9402,
+        "page_count": 26,
+        "image_count": 30,
+        "avg_chars_per_page": 361.62,
+        "images_per_page": 1.154
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture6-Advanced search methods.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture6-Advanced search methods.pdf",
+      "size_bytes": 912085,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 10110,
+        "page_count": 37,
+        "image_count": 57,
+        "avg_chars_per_page": 273.24,
+        "images_per_page": 1.541
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture8-ConstraintSatisfactionProblems.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "size_bytes": 619257,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 5885,
+        "page_count": 24,
+        "image_count": 35,
+        "avg_chars_per_page": 245.21,
+        "images_per_page": 1.458
+      }
+    },
+    {
+      "path": "data/sample/official/IT3160E/lecture_slides/lecture9-PropositionalLogic.pdf",
+      "tier": "official",
+      "course_code": "IT3160E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "lecture9-PropositionalLogic.pdf",
+      "size_bytes": 875681,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 9114,
+        "page_count": 49,
+        "image_count": 64,
+        "avg_chars_per_page": 186.0,
+        "images_per_page": 1.306
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lec11-vi-v2_2.0m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lec11-vi-v2_2.0m.pdf",
+      "size_bytes": 2008566,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 6919,
+        "page_count": 31,
+        "image_count": 33,
+        "avg_chars_per_page": 223.19,
+        "images_per_page": 1.065
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect01-vi-v2_1.9m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect01-vi-v2_1.9m.pdf",
+      "size_bytes": 1922535,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 7177,
+        "page_count": 31,
+        "image_count": 42,
+        "avg_chars_per_page": 231.52,
+        "images_per_page": 1.355
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect02_vi_ver2_1.9m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect02_vi_ver2_1.9m.pdf",
+      "size_bytes": 1946786,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 6259,
+        "page_count": 30,
+        "image_count": 35,
+        "avg_chars_per_page": 208.63,
+        "images_per_page": 1.167
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect03-vi-v2_1.6m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect03-vi-v2_1.6m.pdf",
+      "size_bytes": 1581330,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 5592,
+        "page_count": 23,
+        "image_count": 25,
+        "avg_chars_per_page": 243.13,
+        "images_per_page": 1.087
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect04-vi-v2_1.4m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect04-vi-v2_1.4m.pdf",
+      "size_bytes": 1444941,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 4658,
+        "page_count": 20,
+        "image_count": 21,
+        "avg_chars_per_page": 232.9,
+        "images_per_page": 1.05
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect05-vi_ver2_1.8m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect05-vi_ver2_1.8m.pdf",
+      "size_bytes": 1838775,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 5237,
+        "page_count": 30,
+        "image_count": 34,
+        "avg_chars_per_page": 174.57,
+        "images_per_page": 1.133
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect06-vi_V2_1.4m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect06-vi_V2_1.4m.pdf",
+      "size_bytes": 1404704,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 3930,
+        "page_count": 17,
+        "image_count": 17,
+        "avg_chars_per_page": 231.18,
+        "images_per_page": 1.0
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect07-vi-v2_1.7m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect07-vi-v2_1.7m.pdf",
+      "size_bytes": 1681285,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 4951,
+        "page_count": 20,
+        "image_count": 21,
+        "avg_chars_per_page": 247.55,
+        "images_per_page": 1.05
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect08-vi_ver2_1.4m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect08-vi_ver2_1.4m.pdf",
+      "size_bytes": 1382971,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 3201,
+        "page_count": 17,
+        "image_count": 18,
+        "avg_chars_per_page": 188.29,
+        "images_per_page": 1.059
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect09-vi_v2_1.2m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect09-vi_v2_1.2m.pdf",
+      "size_bytes": 1217991,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 7534,
+        "page_count": 20,
+        "image_count": 23,
+        "avg_chars_per_page": 376.7,
+        "images_per_page": 1.15
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect10-vi_v2_1.7m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect10-vi_v2_1.7m.pdf",
+      "size_bytes": 1727750,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 5741,
+        "page_count": 21,
+        "image_count": 22,
+        "avg_chars_per_page": 273.38,
+        "images_per_page": 1.048
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect12-vi_v2_1.9m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect12-vi_v2_1.9m.pdf",
+      "size_bytes": 1912573,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 5585,
+        "page_count": 27,
+        "image_count": 34,
+        "avg_chars_per_page": 206.85,
+        "images_per_page": 1.259
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect13-vi_v2_1.5m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect13-vi_v2_1.5m.pdf",
+      "size_bytes": 1477999,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 5247,
+        "page_count": 16,
+        "image_count": 19,
+        "avg_chars_per_page": 327.94,
+        "images_per_page": 1.188
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/CLang-Lect14-vi_ver2_1.6m.pdf",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CLang-Lect14-vi_ver2_1.6m.pdf",
+      "size_bytes": 1630549,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 6825,
+        "page_count": 22,
+        "image_count": 24,
+        "avg_chars_per_page": 310.23,
+        "images_per_page": 1.091
+      }
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/it3210_ocr_demo_chart.png",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".png",
+      "format": "image",
+      "file_name": "it3210_ocr_demo_chart.png",
+      "size_bytes": 6337,
+      "inferred_expected_type": "image"
+    },
+    {
+      "path": "data/sample/official/IT3210/lecture_slides/IT3210_OCR_Demo_Slides.pptx",
+      "tier": "official",
+      "course_code": "IT3210",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pptx",
+      "format": "pptx",
+      "file_name": "IT3210_OCR_Demo_Slides.pptx",
+      "size_bytes": 33923,
+      "inferred_expected_type": "pptx"
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week01-vi-v2_1.8m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week01-vi-v2_1.8m.pdf",
+      "size_bytes": 1793075,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 5804,
+        "page_count": 28,
+        "image_count": 32,
+        "avg_chars_per_page": 207.29,
+        "images_per_page": 1.143
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week02_vi_ver2_1.9m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week02_vi_ver2_1.9m.pdf",
+      "size_bytes": 1930873,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 3814,
+        "page_count": 27,
+        "image_count": 35,
+        "avg_chars_per_page": 141.26,
+        "images_per_page": 1.296
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week03-vi-v2_2.5m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week03-vi-v2_2.5m.pdf",
+      "size_bytes": 2484251,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 10521,
+        "page_count": 34,
+        "image_count": 74,
+        "avg_chars_per_page": 309.44,
+        "images_per_page": 2.176
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week04-vi-v2_1.6m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week04-vi-v2_1.6m.pdf",
+      "size_bytes": 1601313,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 12181,
+        "page_count": 41,
+        "image_count": 42,
+        "avg_chars_per_page": 297.1,
+        "images_per_page": 1.024
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week05-vi_ver2_1.7m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week05-vi_ver2_1.7m.pdf",
+      "size_bytes": 1702473,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 8764,
+        "page_count": 31,
+        "image_count": 32,
+        "avg_chars_per_page": 282.71,
+        "images_per_page": 1.032
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week06-vi_V2_1.8m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week06-vi_V2_1.8m.pdf",
+      "size_bytes": 1821026,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 8433,
+        "page_count": 31,
+        "image_count": 37,
+        "avg_chars_per_page": 272.03,
+        "images_per_page": 1.194
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week07-vi-v2_1.8m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week07-vi-v2_1.8m.pdf",
+      "size_bytes": 1794115,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 6462,
+        "page_count": 28,
+        "image_count": 29,
+        "avg_chars_per_page": 230.79,
+        "images_per_page": 1.036
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week08-vi_ver2_1.8m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week08-vi_ver2_1.8m.pdf",
+      "size_bytes": 1770119,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 7246,
+        "page_count": 30,
+        "image_count": 33,
+        "avg_chars_per_page": 241.53,
+        "images_per_page": 1.1
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week09-vi_V2_1.6m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week09-vi_V2_1.6m.pdf",
+      "size_bytes": 1563580,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 9867,
+        "page_count": 30,
+        "image_count": 34,
+        "avg_chars_per_page": 328.9,
+        "images_per_page": 1.133
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week10-vi_v2_1.6m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week10-vi_v2_1.6m.pdf",
+      "size_bytes": 1630664,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 7696,
+        "page_count": 38,
+        "image_count": 39,
+        "avg_chars_per_page": 202.53,
+        "images_per_page": 1.026
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week11-vi_ver2_1.7m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week11-vi_ver2_1.7m.pdf",
+      "size_bytes": 1718528,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 5021,
+        "page_count": 27,
+        "image_count": 30,
+        "avg_chars_per_page": 185.96,
+        "images_per_page": 1.111
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week12-vi_v2_1.5m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week12-vi_v2_1.5m.pdf",
+      "size_bytes": 1510052,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 4056,
+        "page_count": 22,
+        "image_count": 23,
+        "avg_chars_per_page": 184.36,
+        "images_per_page": 1.045
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week13-vi_v2_1.6m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week13-vi_v2_1.6m.pdf",
+      "size_bytes": 1626244,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 10884,
+        "page_count": 25,
+        "image_count": 31,
+        "avg_chars_per_page": 435.36,
+        "images_per_page": 1.24
+      }
+    },
+    {
+      "path": "data/sample/official/IT3220/lecture_slides/CIntro-week14-vi_ver2_1.6m.pdf",
+      "tier": "official",
+      "course_code": "IT3220",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "CIntro-week14-vi_ver2_1.6m.pdf",
+      "size_bytes": 1595412,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 9184,
+        "page_count": 34,
+        "image_count": 35,
+        "avg_chars_per_page": 270.12,
+        "images_per_page": 1.029
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/01_02_Introduction_RDB.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "01_02_Introduction_RDB.pdf",
+      "size_bytes": 2270598,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 14320,
+        "page_count": 55,
+        "image_count": 191,
+        "avg_chars_per_page": 260.36,
+        "images_per_page": 3.473
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/02_Relational_Algebra.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "02_Relational_Algebra.pdf",
+      "size_bytes": 1809091,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 10906,
+        "page_count": 32,
+        "image_count": 101,
+        "avg_chars_per_page": 340.81,
+        "images_per_page": 3.156
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/03_structured_query_language.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "03_structured_query_language.pdf",
+      "size_bytes": 2128463,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 21309,
+        "page_count": 49,
+        "image_count": 161,
+        "avg_chars_per_page": 434.88,
+        "images_per_page": 3.286
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/04_structured_query_language - part 2.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "04_structured_query_language - part 2.pdf",
+      "size_bytes": 2114966,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 23499,
+        "page_count": 61,
+        "image_count": 188,
+        "avg_chars_per_page": 385.23,
+        "images_per_page": 3.082
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/05_entity_relationship_model.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "05_entity_relationship_model.pdf",
+      "size_bytes": 1183205,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 8487,
+        "page_count": 34,
+        "image_count": 105,
+        "avg_chars_per_page": 249.62,
+        "images_per_page": 3.088
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/05_Functional_Dependency.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "05_Functional_Dependency.pdf",
+      "size_bytes": 1545252,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 9563,
+        "page_count": 35,
+        "image_count": 103,
+        "avg_chars_per_page": 273.23,
+        "images_per_page": 2.943
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/06_Normalization.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "06_Normalization.pdf",
+      "size_bytes": 1388347,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 9248,
+        "page_count": 29,
+        "image_count": 84,
+        "avg_chars_per_page": 318.9,
+        "images_per_page": 2.897
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/08_storage_index.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "08_storage_index.pdf",
+      "size_bytes": 1866351,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 7114,
+        "page_count": 32,
+        "image_count": 110,
+        "avg_chars_per_page": 222.31,
+        "images_per_page": 3.438
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/09_10_query_processing.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "09_10_query_processing.pdf",
+      "size_bytes": 1436810,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 10772,
+        "page_count": 36,
+        "image_count": 112,
+        "avg_chars_per_page": 299.22,
+        "images_per_page": 3.111
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/11_Transaction_Concurrency.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "11_Transaction_Concurrency.pdf",
+      "size_bytes": 1316217,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 4432,
+        "page_count": 23,
+        "image_count": 70,
+        "avg_chars_per_page": 192.7,
+        "images_per_page": 3.043
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/lecture_slides/12_Transaction_Recovery.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "lecture_slides",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "12_Transaction_Recovery.pdf",
+      "size_bytes": 1608771,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 5955,
+        "page_count": 30,
+        "image_count": 87,
+        "avg_chars_per_page": 198.5,
+        "images_per_page": 2.9
+      }
+    },
+    {
+      "path": "data/sample/official/IT3292E/textbook/ullman_the_complete_book.pdf",
+      "tier": "official",
+      "course_code": "IT3292E",
+      "doc_subtype": "textbook",
+      "extension": ".pdf",
+      "format": "pdf",
+      "file_name": "ullman_the_complete_book.pdf",
+      "size_bytes": 29416089,
+      "inferred_expected_type": "mixed_pdf",
+      "type_evidence": {
+        "text_chars": 2656021,
+        "page_count": 1240,
+        "image_count": 1240,
+        "avg_chars_per_page": 2141.95,
+        "images_per_page": 1.0
+      }
+    }
+  ]
+}

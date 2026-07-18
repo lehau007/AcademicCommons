@@ -1,0 +1,82 @@
+{
+  "topic": "NỘI DUNG",
+  "concepts": [
+    "NỘI DUNG",
+    "KHÁI NIỆM CẤU TRÚC",
+    "TRUY NHẬP CẤU TRÚC",
+    "ĐỊNH NGHĨA KIỂU (typedef)",
+    "SO SÁNH CẤU TRÚC",
+    "CẤU TRÚC VÀ HÀM",
+    "BÀI TẬP",
+    "THANK YOU !"
+  ],
+  "language": "vi",
+  "ocr_quality": "low",
+  "section_summaries": [
+    {
+      "heading": "NỘI DUNG",
+      "summary": "- Khái niệm cấu trúc - Khai báo cấu trúc, biến cấu trúc - Truy nhập cấu trúc - Định nghĩa kiểu - So sánh cấu trúc - Mảng cấu trúc - Ví dụ - Cấu trúc và hàm - Ví dụ - Bài tập",
+      "page_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "heading": "KHÁI NIỆM CẤU TRÚC",
+      "summary": "- Thực tế chúng ta thường thao tác với các thực thể/đối tượng bao gồm một số thông tin đi theo nhóm. Ví dụ, số phức bao gồm giá trị phần thực và phần ảo, bản ghi một sinh viên chứa thông tin về họ tên, mã số, ngày sinh, điểm học phần, điểm gpa, điểm cpa, ...",
+      "page_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "heading": "TRUY NHẬP CẤU TRÚC",
+      "summary": "- Để truy nhập vào một trường của biến cấu trúc ta dùng toán tử `'.'` - Để truy nhập vào một trường của biến cấu trúc thông qua con trỏ cấu trúc",
+      "page_range": [
+        3,
+        3
+      ]
+    },
+    {
+      "heading": "ĐỊNH NGHĨA KIỂU (typedef)",
+      "summary": "- Dùng `typedef` để định nghĩa tên một kiểu dữ liệu mới mà có thể dùng trong các khai báo biến",
+      "page_range": [
+        4,
+        4
+      ]
+    },
+    {
+      "heading": "SO SÁNH CẤU TRÚC",
+      "summary": "- Không thể so sánh hai cấu trúc bằng toán tử == - Chỉ có thể so sánh từng trường của cấu trúc",
+      "page_range": [
+        5,
+        5
+      ]
+    },
+    {
+      "heading": "CẤU TRÚC VÀ HÀM",
+      "summary": "- Giống như mọi biến khác, cấu trúc có thể được dùng làm tham số của hàm - Cũng có hai cách truyền tham số cấu trúc cho hàm - Truyền cấu trúc theo dạng sử dụng giá trị của các trường, sẽ không làm thay đổi nội dung của biến cấu trúc gốc. - Truyền địa chỉ của cấu trúc để có thể...",
+      "page_range": [
+        6,
+        6
+      ]
+    },
+    {
+      "heading": "BÀI TẬP",
+      "summary": "- Một phân số được biểu diễn bằng một cấu trúc gồm hai trường tử số và mẫu số - Viết hàm cho phép nhập giá trị cho một phân số - Viết hàm hiển thị một phân số ra màn hình - Xây dựng các hàm để tính một phân số rút gọn, tổng, hiệu, tích, thương của hai phân số - Viết một chương...",
+      "page_range": [
+        7,
+        7
+      ]
+    },
+    {
+      "heading": "THANK YOU !",
+      "summary": "- hust.edu.vn - fb.com/dhbkhn",
+      "page_range": [
+        8,
+        8
+      ]
+    }
+  ],
+  "overall_summary": "NỘI DUNG: - Khái niệm cấu trúc - Khai báo cấu trúc, biến cấu trúc - Truy nhập cấu trúc - Định nghĩa kiểu - So sánh cấu trúc - Mảng cấu trúc - Ví dụ - Cấu trúc và hàm - Ví dụ - Bài tập KHÁI NIỆM CẤU TRÚC: - Thực tế chúng ta thường thao tác với các thực thể/đối tượng bao gồm một số thông tin đi theo nhóm. Ví dụ, số phức bao gồm giá trị phần thực và phần ảo, bản ghi một sinh viên chứa thông tin về họ tên, mã số, ngày sinh, điểm học phần, điểm gpa, điểm cpa, ... TRUY NHẬP CẤU TRÚC: - Để truy nhập vào một trường của biến cấu trúc ta dùng toán tử `'.'` - Để truy nhập vào một trường của biến cấu trúc thông qua con trỏ cấu trúc ĐỊNH NGHĨA KIỂU (typedef): - Dùng `typedef` để định nghĩa tên một kiểu dữ liệu mới mà có thể dùng trong các khai báo biến SO SÁNH CẤU TRÚC: - Không thể so sánh hai cấu trúc bằng toán tử == - Chỉ có thể so sánh từng trường của cấu trúc CẤU TRÚC VÀ HÀM: - Giống như mọi biến khác, cấu trúc có thể được dùng làm tham số của hàm -..."
+}

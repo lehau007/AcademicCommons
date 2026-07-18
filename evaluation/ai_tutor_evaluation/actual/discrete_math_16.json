@@ -1,0 +1,39 @@
+{
+  "qid": "discrete_math_16",
+  "course_code": "IT3020E",
+  "question": "What defines a spanning subgraph in graph theory?",
+  "session_id": "aed48a6b-0bee-4c65-aced-ad9f3bcc7223",
+  "answer": "A **spanning subgraph** of a graph \\(G\\) is a subgraph that:\n\n- has **the same vertex set** as \\(G\\), and\n- uses only **some of the edges** of \\(G\\).\n\nIn other words, it “spans” all vertices of the original graph, but it does **not** have to include all edges.\n\nIf the spanning subgraph is also:\n- **connected** and\n- has **no cycles**,\n\nthen it is called a **spanning tree**.\n\nIn the retrieved course material, this idea is illustrated through the spanning tree concept as a minimal connected subgraph including all vertices without cycles.",
+  "citations": [
+    {
+      "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Co"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "definition of spanning subgraph in graph theory",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 13,
+          "cosine_sim": 0.4889,
+          "final_score": 0.5063,
+          "content": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Complete graph $K_3$ | Spanning trees of $K_3$ |\n|---|---|\n| ```text\n\nb\n  / \\\n a---c\n\n``` | ```text\n a---b---c\n\n b---c---a\n\n c---a---b\n``` |\n\n[Diagram: The figure illustrates the idea of a spanning tree as a minimal connected subgraph that includes all vertices without cycles. For the complete graph $K_3$, it shows that there are exactly 3 different spanning trees, motivating Cayley’s formula for complete graphs.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.0
+}

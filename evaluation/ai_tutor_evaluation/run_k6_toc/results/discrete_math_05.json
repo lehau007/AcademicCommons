@@ -1,0 +1,56 @@
+{
+  "qid": "discrete_math_05",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The definition of the incidence matrix, its dimensions, the formula for entries, and the notes about multiple edges and loops all match the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how an incidence matrix is constructed for an undirected graph, explaining the n×m dimensions, the meaning of rows and columns, and the rule for populating entries with 1s and 0s.",
+      "evidence": [
+        "The incidence matrix M=[m_ij] is an n × m matrix",
+        "m_ij = 1, if edge e_j is incident with vertex v_i; 0, otherwise",
+        "Rows correspond to vertices. Columns correspond to edges."
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: n×m matrix dimensions, notation M=[m_ij], and the definition that m_ij = 1 when edge e_j is incident with vertex v_i and 0 otherwise. The additional explanatory details and special cases do not contradict the ground truth.",
+      "evidence": [
+        "Ground truth: 'n×m matrix denoted as M=[m_ij]' vs Tutor: 'n × m matrix, where: M=[m_{ij}]'",
+        "Ground truth: 'm_ij = 1 when edge e_j is incident with vertex v_i, and 0 otherwise' vs Tutor: 'm_{ij} = 1, if edge e_j is incident with vertex v_i; 0, otherwise'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Two of four chunks directly address incidence matrix construction for undirected graphs (c39258bf and 4c1a9c2f). One chunk lists graph representations including incidence matrix (58612d91). However, cd7e7d21 focuses on adjacency lists/matrices with no incidence matrix content, ea17385f defines undirected graphs generally, and aed60543 discusses graph connectivity—neither of the last three help answer how to construct an incidence matrix.",
+      "evidence": [
+        "cd7e7d21: 'Adjacency List (Undirected)... Adjacency Matrix (Undirected)'",
+        "ea17385f: 'Definition. Undirected simple (*multi*) graph'",
+        "aed60543: 'An undirected graph is connected if there exists is a simple path'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk c39258bf explicitly states the incidence matrix is n×m for n vertices and m edges, denoted M=[mᵢⱼ], with mᵢⱼ=1 when edge eⱼ is incident with vertex vᵢ and 0 otherwise.",
+      "evidence": [
+        "the incidence matrix with respect to this ordering of V and E is the n × m matrix M = [mᵢⱼ]",
+        "m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The primary chunks (c39258bf and 4c1a9c2f) explicitly define the incidence matrix construction for undirected graphs with the exact formula and dimensions stated in the answer, and the notes about multiple edges and loops are verbatim from these chunks.",
+      "evidence": [
+        "Answer states 'n × m matrix M = [m_ij]' — chunk c39258bf: 'n × m matrix M = [mᵢⱼ]'",
+        "Answer states 'm_ij = 1 if edge e_j is incident with vertex v_i' — chunk 4c1a9c2f: 'm_ij equals 1 when edge e_j is incident with v_i, 0 otherwise'",
+        "Answer states 'For multiple edges, you can have different columns with the same pattern of 1s' — chunk 4c1a9c2f: 'Multiple edges: by using columns with identical entries'",
+        "Answer states 'For a loop, the column has exactly one entry equal to 1' — chunk c39258bf: 'Loops: by using a column with exactly one entry equal to 1'"
+      ]
+    }
+  }
+}

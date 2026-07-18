@@ -1,0 +1,16 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY src/backend/pyproject.toml ./
+RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir .
+
+COPY src/backend/app ./app
+COPY src/backend/alembic.ini ./alembic.ini
+COPY src/backend/alembic ./alembic
+COPY data/seed ./data/seed
+
+EXPOSE 8000
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

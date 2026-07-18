@@ -1,0 +1,31 @@
+{
+  "qid": "hard_db_table_08",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "HYBRID RESCUES: defining~/constructing~/manipulating~ mapping grounded (DBMS content retrieved)"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "correct GT mapping (vs dense wrong INSERT/UPDATE/DELETE)"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "db-environment chunk tangential"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "mapping present in retrieved DBMS chunks"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  }
+}

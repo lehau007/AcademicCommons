@@ -1,0 +1,28 @@
+{
+  "qid": "discrete_math_12",
+  "course_code": "IT3020E",
+  "question": "How is the Dirichlet (or Pigeonhole) principle formally stated?",
+  "session_id": "44474897-7cd7-4fcc-81f7-1a7b4af62ff9",
+  "answer": "The **Dirichlet principle** (also called the **Pigeonhole principle**) is formally stated as:\n\n> If \\(n+1\\) objects are placed into \\(n\\) boxes, then at least one box contains **at least 2** objects.\n\nMore generally:\n\n> If \\(N\\) objects are distributed among \\(k\\) boxes, then at least one box contains at least  \n> \\[\n> \\left\\lceil \\frac{N}{k} \\right\\rceil\n> \\]\n> objects.\n\nA common equivalent form is:\n\n> If more than \\(n\\) objects are assigned to \\(n\\) categories, then some category must contain at least two objects.\n\nThis is a standard combinatorial principle. The retrieved course excerpt did not include the formal statement directly, so I provided the formal statement from the standard definition.",
+  "citations": [],
+  "retrieval_calls": [
+    {
+      "query": "Dirichlet principle pigeonhole principle formal statement",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ccaba2e3-c003-461f-b4bc-e5944a2efab7",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 37,
+          "cosine_sim": 0.3665,
+          "final_score": 0.3586,
+          "content": "A = set of all integers from 1 to 1000 that are multiples of 3 ➔ $|A| = ?$\n\nFrom 1 to 1000, every third integer is a multiple of 3, each multiple of 3 is of the form $3p$, for any integer $p$ from 1 through $[1000/3]=333$, Hence $|A| = 333$.\n\nB = set of all integers from 1 to 1000 that are multiples of 5 ➔ $|B| = ?$\n\nSimilarly for multiples of 5, each multiple of 5 is of the form $5q$ for some integer $q$ from 1 through $[1000/5]=200$. Hence, we have $|B| = 200$.\n\nA ∩ B: set of all integers from 1 to 1000 that are multiples of 15 ➔ $|A \\cap B| = ?$\n\nTo determine the number of multiples of 15 from 1 through 1000, each multiple of 15 is of the form $15r$ for some integer $r$ from 1 through $[1000/15]=66$. ➔ $|A \\cap B| = 66$.\n\nFrom the principle, we have the number of integers either multiples of 3 or multiples of 5 from 1 to 1000 given by"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.6
+}

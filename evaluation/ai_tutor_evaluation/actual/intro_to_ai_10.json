@@ -1,0 +1,18 @@
+{
+  "qid": "intro_to_ai_10",
+  "course_code": "IT3160E",
+  "question": "What is the termination condition for the training loop of a neural network?",
+  "session_id": "79fd2f6f-c5d8-40fe-8450-c4c2b4986ec0",
+  "answer": "The **termination condition** for a neural network training loop is the condition that tells the algorithm **when to stop training**.\n\nCommon stopping criteria include:\n\n- **Maximum number of epochs/iterations reached**\n- **Loss falls below a threshold**\n- **Validation performance stops improving** for a certain number of epochs (*early stopping*)\n- **Gradient/update becomes very small** and training has effectively converged\n\nIn practice, training often stops when **either**:\n1. the model has learned enough according to a metric, **or**\n2. a preset limit on training time/epochs is reached.\n\nI did not find a matching course document chunk for this question, so this answer is the standard general explanation rather than a course-specific citation.",
+  "citations": [],
+  "retrieval_calls": [
+    {
+      "query": "termination condition training loop neural network stopping criteria epoch loss convergence early stopping",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": []
+    }
+  ],
+  "elapsed_s": 7.6
+}

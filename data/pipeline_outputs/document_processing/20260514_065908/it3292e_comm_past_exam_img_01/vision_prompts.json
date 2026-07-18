@@ -1,0 +1,7 @@
+[
+  {
+    "kind": "vision_ocr",
+    "instruction": "Describe this visual element, focusing only on content that contributes to learning value. Avoid filler commentary about style. Also perform OCR on any text.",
+    "image_path": "Database - giữa kì cô Trinh.jpg"
+  }
+]

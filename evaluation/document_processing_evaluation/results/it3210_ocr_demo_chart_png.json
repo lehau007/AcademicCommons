@@ -1,0 +1,53 @@
+{
+  "file_id": "it3210_ocr_demo_chart_png",
+  "scores": {
+    "classification_routing": {
+      "score": 5,
+      "justification": "processing_meta.json logs no explicit route/inferred_type, but every recoverable signal is consistent with the expected image / vision_only route: file_format png, chunk_count 0, language 'en', ocr_quality 'low' (a near-textless chart), and an output that is a genuine visual chart description rather than a raw text-OCR dump.",
+      "evidence": []
+    },
+    "text_coverage": {
+      "score": 5,
+      "justification": "The only real text rendered in the source is the title and the x-axis tick labels, and both are fully captured in output.md; no textual content is missing.",
+      "evidence": []
+    },
+    "extraction_fidelity": {
+      "score": 5,
+      "justification": "Both strings 'Demo KPI Trend' and 'Q1 Q2 Q3 Q4' are transcribed exactly with correct casing/spacing; no garbling or mojibake (diacritics not applicable, English).",
+      "evidence": []
+    },
+    "structure_preservation": {
+      "score": 5,
+      "justification": "The source is a single chart image with minimal text; the output is cleanly organized into logical sections (title, axes, series, trend) and preserves the title/axis reading order with no scrambling.",
+      "evidence": []
+    },
+    "faithfulness_no_hallucination": {
+      "score": 4,
+      "justification": "No fabricated numeric values, legend, or y-axis scale (all correctly reported as absent), and the described line shape matches the source. The one overreach: the pipeline maps the four clustered lower-left labels onto specific polyline vertices and invents a fifth 'after Q4' x-position, a spatial correspondence the source does not support since Q1-Q4 are bunched together and not aligned under the points.",
+      "evidence": [
+        "| 5 | after Q4 | declines slightly from the peak |",
+        "| 3 | Q3 | declines to a mid-level trough |"
+      ]
+    },
+    "formula_table_code": {
+      "score": 5,
+      "justification": "Chart labels (title and quarter ticks) are captured correctly and legibly; the synthesized 'Approximate values by quarter' markdown table is well-formed and explicitly hedged as having no numeric scale.",
+      "evidence": []
+    }
+  },
+  "classification": {
+    "expected_type": "image",
+    "expected_route": "vision_only",
+    "actual_type": "image (chart)",
+    "actual_route": "vision_only (inferred; not logged in processing_meta)",
+    "pass": true
+  },
+  "hallucinations": [
+    "after Q4 (invented fifth x-axis position; source shows only Q1-Q4 clustered at the lower-left)",
+    "| 2 | Q2 | rises sharply to first peak | (quarter-to-vertex assignment unsupported: the four labels are bunched together, not aligned to individual polyline points)",
+    "| 3 | Q3 | declines to a mid-level trough | (same unsupported quarter-to-vertex mapping)",
+    "| 4 | Q4 | rises to highest peak | (same unsupported quarter-to-vertex mapping)"
+  ],
+  "normalization_note": "Markdown reads coherently and drops no source text; because the image is near-textless, most of output.md is generated visual interpretation rather than extracted content. The polyline shape described (low start, early peak, mid dip, highest peak near the end, slight final decline, ending higher than it started) matches the source image and the expected reference.",
+  "overall_comment": "Strong vision-only result: both real text strings extracted verbatim, no fabricated numbers/legend/axis scale, and route/type signals consistent with the vision_only expectation (routing pass=true). The only weakness is faithfulness (4): the pipeline over-interprets the four clustered quarter labels into a per-point, five-position mapping including a non-existent 'after Q4'. All other metrics score 5."
+}

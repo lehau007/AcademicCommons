@@ -1,0 +1,107 @@
+[
+  {
+    "qid": "hard_ai_graph_01",
+    "course_code": "IT3160E",
+    "question": "Trong sơ đồ minh họa nhược điểm của thuật toán leo đồi (hill climbing) trên không gian trạng thái, có những dạng địa hình nào khiến thuật toán ngừng cải thiện dù chưa đạt lời giải tốt nhất? Giải thích ngắn gọn vì sao.",
+    "ground_truth": "Sơ đồ vẽ hàm mục tiêu theo không gian trạng thái và chỉ ra bốn dạng địa hình gây khó cho hill climbing: global maximum (đỉnh toàn cục), shoulder (vai/bậc thềm), local maximum (đỉnh cục bộ) và flat local maximum (đỉnh cục bộ phẳng/cao nguyên). Vì hill climbing là tìm kiếm tham lam chỉ đi theo hướng tăng, nó dừng lại tại local maximum hoặc trên vùng phẳng dù còn lời giải tốt hơn ở nơi khác trong không gian trạng thái.",
+    "difficulty_type": "graph"
+  },
+  {
+    "qid": "hard_ai_graph_02",
+    "course_code": "IT3160E",
+    "question": "Trong sơ đồ planning graph cho bài toán thay lốp dự phòng (spare tire), trạng thái mức S2 có tính chất gì khiến ta có thể trích xuất lời giải, và có thể trích xuất bằng những cách nào?",
+    "ground_truth": "Ở mức S2 planning graph đã chứa tất cả các goal (ví dụ at(spare,axle)) và không có mutex giữa chúng, nên có thể thử trích xuất lời giải. Có thể trích xuất bằng thuật toán CSP với các action làm biến, hoặc bằng tìm kiếm lùi (search backwards) từ goal.",
+    "difficulty_type": "graph"
+  },
+  {
+    "qid": "hard_ai_multi_03",
+    "course_code": "IT3160E",
+    "question": "Cho tôi hai điều: (1) agent function ánh xạ từ cái gì sang cái gì, và (2) sự khác nhau giữa agent và environment. Trả lời cả hai ý.",
+    "ground_truth": "(1) Agent function ánh xạ từ chuỗi lịch sử tri giác (percept histories) sang hành động, ký hiệu P* → A. (2) Agent là thực thể tri giác (perceive) và hành động (act); environment là môi trường mà agent tri giác qua percepts và tác động vào bằng actions. Agent tương tác với environment qua vòng percept–action.",
+    "difficulty_type": "multi_intent"
+  },
+  {
+    "qid": "hard_ai_multi_04",
+    "course_code": "IT3160E",
+    "question": "Trả lời hai ý về tìm kiếm trong AI: (1) A* có đầy đủ (complete) không và độ phức tạp thời gian của nó ra sao; (2) tìm kiếm giới hạn độ sâu (depth-limited search) khắc phục nhược điểm gì của tìm kiếm theo chiều sâu (DFS)?",
+    "ground_truth": "(1) A* là đầy đủ (Completeness: YES); về độ phức tạp thời gian, số node được mở rộng vẫn tăng theo cấp số mũ theo độ dài của lời giải. (2) DFS có thể mắc kẹt trên một đường đi vô hạn trong khi một lựa chọn khác lại dẫn tới lời giải; depth-limited search chính là DFS có thêm giới hạn độ sâu, nhờ đó tránh đi theo nhánh vô hạn.",
+    "difficulty_type": "multi_intent"
+  },
+  {
+    "qid": "hard_db_table_05",
+    "course_code": "IT3292E",
+    "question": "Bảng student trong slide gồm những cột (thuộc tính) nào, và cột nào đóng vai trò liên kết sinh viên với lớp?",
+    "ground_truth": "Bảng student gồm các cột: student_id, first_name, last_name, dob (ngày sinh), gender, và clazz_id. Cột clazz_id là khóa liên kết sinh viên tới lớp (class).",
+    "difficulty_type": "table"
+  },
+  {
+    "qid": "hard_db_table_06",
+    "course_code": "IT3292E",
+    "question": "Theo bảng định nghĩa DBMS trong slide, Wikipedia và Techtarget định nghĩa DBMS như thế nào, và slide liệt kê những ví dụ DBMS nào?",
+    "ground_truth": "Wikipedia định nghĩa DBMS là phần mềm hỗ trợ tạo và bảo trì cơ sở dữ liệu. Techtarget định nghĩa DBMS cung cấp cho người dùng và lập trình viên một cách có hệ thống để tạo, truy xuất, cập nhật và quản lý dữ liệu. Các ví dụ DBMS được liệt kê gồm MySQL, Microsoft Access, Microsoft SQL Server, ORACLE DATABASE, IBM DB2 và PostgreSQL.",
+    "difficulty_type": "table"
+  },
+  {
+    "qid": "hard_db_multi_07",
+    "course_code": "IT3292E",
+    "question": "Trả lời hai ý: (1) ba nhóm chức năng chính mà một DBMS cho phép (defining, constructing, manipulating) nghĩa là gì; (2) bảng student minh họa có những cột nào.",
+    "ground_truth": "(1) Defining là đặc tả kiểu/loại dữ liệu; constructing là lưu trữ và nạp dữ liệu (storing & populating); manipulating là truy vấn, cập nhật và báo cáo (querying, updating, reporting). (2) Bảng student có các cột student_id, first_name, last_name, dob, gender, clazz_id.",
+    "difficulty_type": "multi_intent"
+  },
+  {
+    "qid": "hard_db_table_08",
+    "course_code": "IT3292E",
+    "question": "Trong bảng ba thao tác cơ bản với dữ liệu của DBMS, hãy nêu mỗi thao tác đi kèm ý nghĩa tương ứng của nó.",
+    "ground_truth": "Defining ~ specifying types of data (đặc tả các kiểu dữ liệu); Constructing ~ storing & populating (lưu trữ và nạp dữ liệu vào CSDL); Manipulating ~ querying, updating, reporting (truy vấn, cập nhật, báo cáo).",
+    "difficulty_type": "table"
+  },
+  {
+    "qid": "hard_dm_graph_09",
+    "course_code": "IT3020E",
+    "question": "Trong sơ đồ liệt kê các tập con 3 phần tử của X = {1,2,3,4,5} theo thứ tự từ điển, phần tử đầu tiên và cuối cùng của danh sách là gì, và nguyên tắc sắp thứ tự là gì?",
+    "ground_truth": "Danh sách liệt kê các tập con 3 phần tử theo thứ tự từ điển (lexicographic): bắt đầu là {1,2,3} và kết thúc là {3,4,5}. Nguyên tắc là duyệt tăng dần theo thứ tự từ điển — phần tử nhỏ nhất thay đổi trước, tạo ra tiến trình có thứ tự của các tổ hợp mà không lặp lại (1,2,3 → 1,2,4 → 1,2,5 → 1,3,4 → ... → 3,4,5).",
+    "difficulty_type": "graph"
+  },
+  {
+    "qid": "hard_dm_long_10",
+    "course_code": "IT3020E",
+    "question": "Trình bày đầy đủ cách liệt kê tất cả tập con m phần tử của X = {1,...,n} theo thứ tự từ điển: (a) mỗi tập con được biểu diễn bằng bộ nào và thỏa điều kiện gì; (b) định nghĩa quan hệ 'đứng trước' theo thứ tự từ điển; (c) cho ví dụ với m=3, X={1,2,3,4,5}.",
+    "ground_truth": "(a) Mỗi tập con m phần tử biểu diễn bằng bộ a = (a1, a2, ..., am) thỏa 1 ≤ a1 < a2 < ... < am ≤ n. (b) Tập con a đứng trước a' theo thứ tự từ điển (a ≺ a') nếu tồn tại chỉ số k (1 ≤ k ≤ m) sao cho a1=a'1, a2=a'2, ..., a(k-1)=a'(k-1) và a_k < a'_k. (c) Với m=3, X={1,2,3,4,5}, liệt kê theo thứ tự từ điển: {1,2,3},{1,2,4},{1,2,5},{1,3,4},{1,3,5},{1,4,5},{2,3,4},{2,3,5},{2,4,5},{3,4,5}.",
+    "difficulty_type": "long_context"
+  },
+  {
+    "qid": "hard_dm_graph_11",
+    "course_code": "IT3020E",
+    "question": "Trong thủ tục DFS(s) trình bày dưới dạng mã giả, các bước cập nhật mảng nào để đánh dấu đã thăm và ghi thời điểm khám phá d[s], và khi nào một đỉnh v được gọi đệ quy?",
+    "ground_truth": "DFS(s) đặt visited[s] = true để đánh dấu đã thăm s, tăng time (time = time + 1) rồi ghi thời điểm khám phá d[s] = time. Sau đó với mỗi v thuộc Adj[s], nếu visited[v] == false thì đặt pred[v] ← s và gọi đệ quy DFS(v). Cuối cùng time được tăng thêm một lần nữa (cho thời điểm kết thúc).",
+    "difficulty_type": "graph"
+  },
+  {
+    "qid": "hard_dm_multi_12",
+    "course_code": "IT3020E",
+    "question": "Hai câu hỏi: (1) trong DFS(s), mảng pred[v] lưu gì; (2) điều kiện để DFS gọi đệ quy sang đỉnh kề v là gì?",
+    "ground_truth": "(1) pred[v] lưu đỉnh cha (predecessor) của v trong cây DFS, được gán pred[v] ← s khi DFS đi từ s sang v. (2) DFS chỉ gọi đệ quy DFS(v) với v thuộc Adj[s] khi visited[v] == false (đỉnh v chưa được thăm).",
+    "difficulty_type": "multi_intent"
+  },
+  {
+    "qid": "hard_dm_table_13",
+    "course_code": "IT3020E",
+    "question": "Liệt kê theo thứ tự từ điển tất cả các tập con 3 phần tử của {1,2,3,4,5}; có tất cả bao nhiêu tập con như vậy?",
+    "ground_truth": "Có C(5,3) = 10 tập con 3 phần tử. Theo thứ tự từ điển: {1,2,3},{1,2,4},{1,2,5},{1,3,4},{1,3,5},{1,4,5},{2,3,4},{2,3,5},{2,4,5},{3,4,5}.",
+    "difficulty_type": "table"
+  },
+  {
+    "qid": "hard_ai_long_14",
+    "course_code": "IT3160E",
+    "question": "Giải thích đầy đủ về hiện tượng khiến hill climbing thất bại: (a) sơ đồ hàm mục tiêu minh họa những dạng địa hình nào; (b) vì sao thuật toán tham lam lại dừng ở đó; (c) shoulder khác local maximum phẳng ('flat local maximum') như thế nào.",
+    "ground_truth": "(a) Sơ đồ hàm mục tiêu theo không gian trạng thái chỉ ra global maximum, shoulder, local maximum và flat local maximum (cao nguyên). (b) Hill climbing là tìm kiếm tham lam chỉ di chuyển sang trạng thái lân cận có giá trị cao hơn; khi tới local maximum hoặc vùng phẳng, không có lân cận nào tốt hơn nên nó dừng dù còn lời giải tốt hơn ở nơi khác. (c) Shoulder là một 'vai' phẳng nhưng vẫn có lối đi lên tiếp phía sau (có thể vượt qua để tiếp tục leo), còn flat local maximum là cao nguyên phẳng không có lối đi lên nào — thuật toán mắc kẹt hẳn ở đó.",
+    "difficulty_type": "long_context"
+  },
+  {
+    "qid": "hard_db_long_15",
+    "course_code": "IT3292E",
+    "question": "Tổng hợp về DBMS từ slide: (a) định nghĩa DBMS theo Wikipedia và Techtarget; (b) ba nhóm chức năng defining/constructing/manipulating nghĩa là gì; (c) kể vài hệ DBMS được liệt kê làm ví dụ.",
+    "ground_truth": "(a) Wikipedia: DBMS là phần mềm hỗ trợ tạo và bảo trì cơ sở dữ liệu; Techtarget: DBMS cung cấp cách có hệ thống để tạo, truy xuất, cập nhật và quản lý dữ liệu. (b) Defining = đặc tả kiểu dữ liệu; Constructing = lưu trữ và nạp dữ liệu; Manipulating = truy vấn, cập nhật, báo cáo. (c) Ví dụ các DBMS: MySQL, Microsoft Access, Microsoft SQL Server, ORACLE DATABASE, IBM DB2, PostgreSQL.",
+    "difficulty_type": "long_context"
+  }
+]

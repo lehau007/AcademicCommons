@@ -1,0 +1,58 @@
+{
+  "qid": "intro_to_ai_08",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunk. The answer accurately distinguishes search problems (no adversary, finds solution/goal, uses heuristics for optimal solutions, evaluates cost) from games (has adversary, requires strategy for all opponent replies, time-limited approximate solutions, evaluates position goodness), and the examples provided match those in the source.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by clearly distinguishing standard search problems from games based on the presence of an adversary, solution type, evaluation functions, and examples. All content is on-topic and relevant to the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The answer covers all key facts from the ground truth: no adversary vs. adversary, solution/goal-finding vs. strategy for opponent replies, cost estimation vs. position goodness evaluation. No contradictions are present.",
+      "evidence": [
+        "Ground truth: 'no adversary' → Answer: 'Không có đối thủ' (no adversary)",
+        "Ground truth: 'strategy that specifies a move for every possible opponent reply' → Answer: 'strategy: kế hoạch cho mọi phản ứng có thể của đối thủ'",
+        "Ground truth: 'evaluates the estimated cost from the start to the goal' → Answer: 'chi phí từ trạng thái hiện tại đến mục tiêu'",
+        "Ground truth: 'evaluate the goodness of a game position' → Answer: 'độ tốt của một trạng thái trò chơi'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "The first chunk is highly relevant and directly addresses the distinction between search problems and games. The second chunk about CSP is tangentially related to search problems but does not help distinguish search from games, making it somewhat irrelevant to the specific question.",
+      "evidence": [
+        "chunk 67acdf6b: 'Standard search problems... CSPs... State is composed of variables'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. The first chunk explicitly covers: no adversary vs. adversary, finding optimal solution vs. strategy for opponent replies, evaluation of cost from start to goal vs. goodness of position.",
+      "evidence": [
+        "Search – no adversary",
+        "Solution is (heuristic) method for finding goal",
+        "Evaluation function: estimate of cost from start to goal",
+        "Games – adversary",
+        "Solution is strategy (strategy specifies move for every possible opponent reply)",
+        "Evaluation function: evaluate \"goodness\" of game position"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "The single citation points to a chunk that directly supports all the key distinctions made in the answer: no adversary vs. adversary, solution vs. strategy, optimal vs. approximate solutions, cost estimation vs. position evaluation, and the examples provided.",
+      "evidence": [
+        "Answer states 'Không có đối thủ' (no adversary) for search; chunk states 'Search – no adversary'",
+        "Answer states games have 'đối thủ cạnh tranh' (competing adversary); chunk states 'Games – adversary'",
+        "Answer states search aims to find 'solution' and games require 'strategy'; chunk states 'Solution is (heuristic) method' vs 'Solution is strategy'",
+        "Answer states search evaluation estimates 'chi phí từ trạng thái hiện tại đến mục tiêu' (cost to goal); chunk states 'estimate of cost from start to goal'",
+        "Answer states game evaluation measures 'độ tốt của một trạng thái trò chơi' (goodness of game position); chunk states 'evaluate \"goodness\" of game position'",
+        "Answer examples match chunk: 'path planning, scheduling' for search and 'chess, checkers, Othello, backgammon' for games"
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "qid": "intro_to_ai_11",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunks, including the definition of Information Gain, the formula, its role in attribute selection, the interpretation as bits saved, and the specific Wind example with Gain(S, Wind) = 0.048.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses both parts of the question: it defines Information Gain as the expected reduction in entropy from partitioning by an attribute, and explains its use in Decision Tree Learning to select the attribute with highest gain at each node.",
+      "evidence": [
+        "Information Gain là một thước đo thống kê dùng trong Decision Tree Learning",
+        "mức giảm entropy kỳ vọng khi tập mẫu được phân hoạch theo một thuộc tính",
+        "tại mỗi nút, ta phải chọn một test attribute để tách dữ liệu... chọn thuộc tính có Information Gain lớn nhất"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: it defines information gain as the expected reduction in entropy caused by partitioning instances according to an attribute, and explains that it is used to select the attribute with the highest information gain at each node in decision tree learning. The answer provides additional correct detail (formula, examples, intuition) which is not a defect.",
+      "evidence": [
+        "Ground truth: 'expected reduction in entropy caused by partitioning instances according to a specific attribute'",
+        "Tutor: 'mức giảm entropy kỳ vọng khi tập mẫu được phân hoạch theo một thuộc tính'",
+        "Ground truth: 'used to determine which attribute is most useful for classifying training instances at each node'",
+        "Tutor: 'chọn thuộc tính có Information Gain lớn nhất'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to explaining Information Gain and its use in Decision Tree Learning. Each chunk contributes meaningfully to answering the question, covering definition, formula, selection criteria, examples, and practical application.",
+      "evidence": [
+        "All chunks discuss Information Gain, entropy reduction, attribute selection in decision trees, or concrete examples of the concept"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks: the definition of information gain as expected reduction in entropy (chunk f38cf2ef), partitioning by attribute (same chunk), and its use to select the most useful attribute for classification at each node (chunk 9e649ef6).",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made. The definition of Information Gain as 'expected reduction in entropy' is directly from chunk f38cf2ef, the formula matches exactly, the role in selecting test attributes is confirmed by chunk 9e649ef6, and the Wind example with Gain=0.048 is precisely from chunk 5f427356.",
+      "evidence": [
+        "Statement: 'mức giảm entropy kỳ vọng' → Chunk f38cf2ef: 'the expected reduction in entropy'",
+        "Statement: 'chọn thuộc tính có Information Gain lớn nhất' → Chunk 9e649ef6: 'select the attribute that is most useful for classifying'",
+        "Statement: 'Gain(S, Wind) = 0.048' → Chunk 5f427356: '= 0.94 - (8/14).(0.81) - (6/14).(1) = 0.048'"
+      ]
+    }
+  }
+}

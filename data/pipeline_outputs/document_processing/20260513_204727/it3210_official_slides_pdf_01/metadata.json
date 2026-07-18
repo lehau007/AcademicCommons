@@ -1,0 +1,21 @@
+{
+  "sample_id": "it3210_official_slides_pdf_01",
+  "course_code": "IT3210",
+  "tier": "official",
+  "input_path": "data/sample/official/IT3210/lecture_slides/CLang-Lect01-vi-v2_1.9m.pdf",
+  "expected_type": "mixed_pdf",
+  "expected_route": "hybrid",
+  "actual_route": "hybrid",
+  "route_evidence": {
+    "reason": "pdf_probe",
+    "inferred_type": "mixed_pdf",
+    "text_chars": 7177,
+    "page_count": 31,
+    "image_count": 42,
+    "avg_chars_per_page": 231.52,
+    "images_per_page": 1.355
+  },
+  "file_sha256": "9b46b0cf120ff8d78830096529be9c0a262d09e10c16cdee37218f64024d4dca",
+  "model": "local_placeholder",
+  "duration_ms": 593215
+}

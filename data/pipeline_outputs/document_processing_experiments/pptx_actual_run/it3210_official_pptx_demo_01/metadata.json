@@ -1,0 +1,15 @@
+{
+  "sample_id": "it3210_official_pptx_demo_01",
+  "course_code": "IT3210",
+  "tier": "official",
+  "input_path": "data/sample/official/IT3210/lecture_slides/IT3210_OCR_Demo_Slides.pptx",
+  "expected_type": "pptx",
+  "expected_route": "hybrid",
+  "actual_route": "hybrid",
+  "route_evidence": {
+    "reason": "pptx_text_plus_embedded_images"
+  },
+  "file_sha256": "863592abd021286f1c877a808c7354cd68d277991f8d089030e6d4d7d6071cf6",
+  "model": "local_placeholder",
+  "duration_ms": 281
+}

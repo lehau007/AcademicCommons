@@ -1,0 +1,11 @@
+[
+  {"user_id": "admin-001", "full_name": "System Admin", "role": "admin"},
+  {"user_id": "reviewer-001", "full_name": "Nguyen Thi Linh", "role": "reviewer"},
+  {"user_id": "reviewer-002", "full_name": "Pham Van Duc", "role": "reviewer"},
+  {"user_id": "reviewer-003", "full_name": "Tran Minh Quang", "role": "reviewer"},
+  {"user_id": "student-001", "full_name": "Nguyen Van Anh", "role": "student"},
+  {"user_id": "student-002", "full_name": "Le Trung Huy", "role": "student"},
+  {"user_id": "student-003", "full_name": "Pham Thi Thu Mai", "role": "student"},
+  {"user_id": "student-004", "full_name": "Do Khac Long", "role": "student"},
+  {"user_id": "student-005", "full_name": "Vu Thi Hoa", "role": "student"}
+]

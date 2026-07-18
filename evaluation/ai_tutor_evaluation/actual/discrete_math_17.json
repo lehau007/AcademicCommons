@@ -1,0 +1,58 @@
+{
+  "qid": "discrete_math_17",
+  "course_code": "IT3020E",
+  "question": "According to the properties of trees, what happens when an edge is added to an undirected graph that currently has no cycles?",
+  "session_id": "38ed3066-636b-4870-9647-29eae55be9b7",
+  "answer": "Theo tính chất của cây, **nếu thêm một cạnh vào một đồ thị vô hướng không có chu trình thì đồ thị sẽ xuất hiện đúng một chu trình**.\n\nNói cách khác, một đồ thị **vô chu trình** là **maximal acyclic graph**:  \n- nó **không có chu trình**,\n- nhưng **thêm bất kỳ cạnh nào** vào thì **sẽ tạo ra một chu trình**.",
+  "citations": [
+    {
+      "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Tree and its properties",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two"
+    },
+    {
+      "chunk_id": "79f69592-d6cb-4ebd-98c5-ab0fb9621493",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "**Theorem.** Every undirected connected graph contains a spanning tree.\n\n**Proof.** Let $G$ be an undirected connected graph.\n\n- If $G$ contains no cycle then $G$ is its own spanning tree.\n- If $G$ co"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "properties of trees and what happens when adding an edge to an undirected acyclic graph",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 8,
+          "cosine_sim": 0.5925,
+          "final_score": 0.8069,
+          "content": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two vertices $u, v \\in V$, there exists exactly one simple path from $u$ to $v$.\n3. $G$ is connected, and removing any edge from $G$ disconnects it (each edge of $G$ is a bridge).\n4. $G$ has no cycles, and adding any edge to $G$ gives rise to a cycle. (Thus $G$ is a maximal acyclic graph).\n5. $G$ is connected and $|E| = |V| - 1$."
+        },
+        {
+          "chunk_id": "79f69592-d6cb-4ebd-98c5-ab0fb9621493",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 12,
+          "cosine_sim": 0.5356,
+          "final_score": 0.4169,
+          "content": "**Theorem.** Every undirected connected graph contains a spanning tree.\n\n**Proof.** Let $G$ be an undirected connected graph.\n\n- If $G$ contains no cycle then $G$ is its own spanning tree.\n- If $G$ contains a cycle: Removing any edge from the cycle gives a graph which is still connected. If the new graph contains a cycle then again remove one edge of the cycle. Continue this process until the resulting graph $T$ contains no cycles. We have not removed any vertices so $T$ has the same vertex set as $G$, and at each step of the above process we obtain a connected graph. Therefore $T$ is connected and it is a spanning tree for $G$.\n\n[Diagram: The proof describes an iterative pruning process: repeatedly delete one edge from any cycle while preserving connectivity. This guarantees that the graph eventually becomes acyclic without losing any vertices, yielding a spanning tree.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.3
+}

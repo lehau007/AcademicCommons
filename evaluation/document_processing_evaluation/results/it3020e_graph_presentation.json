@@ -1,0 +1,78 @@
+{
+  "file_id": "it3020e_graph_presentation",
+  "scores": {
+    "classification_routing": {
+      "score": 4,
+      "justification": "processing_meta.json does not persist route/inferred_type, but the ACTUAL output characteristics (clean native-text LaTeX with \\begin{cases}, correct markdown matrix tables, PLUS vision-generated figure captions on every graph slide) are exactly what a hybrid native-text + OCR/vision route on a diagram-heavy slide PDF produces, consistent with expected_route=hybrid and expected_type=slide_pdf. Minor: summary.language='mixed' vs manifest 'en' (defensible given the Vietnamese translations) and ocr_quality='low'.",
+      "evidence": [
+        "processing_meta.json has no \"route\" or \"inferred_type\" field",
+        "\"language\": \"mixed\"",
+        "\"ocr_quality\": \"low\""
+      ]
+    },
+    "text_coverage": {
+      "score": 3,
+      "justification": "Almost all conceptual text, formulas, lists and most matrices are present, but a core data block is missing: the entire undirected weight-matrix table (slide 13) is absent from output.md, and the author-attribution footer on slide 5 is dropped.",
+      "evidence": [
+        "Slide 13 undirected weight matrix (e.g. row \"| 1 | 0 | 3 | 0 | 5 | 0 | 0 |\") present in source/expected but absent from output.md",
+        "Missing author footer \"NGUYỄN KHÁNH PHƯƠNG\" / \"Bộ môn KHMT – ĐHBK HN\" (slide 5)"
+      ]
+    },
+    "extraction_fidelity": {
+      "score": 4,
+      "justification": "Text extraction is accurate: Vietnamese diacritics intact ('Lý thuyết tổ hợp', 'Danh sách kề', 'đỉnh'), no mojibake, all matrix cell values correct, LaTeX well-formed, and source OCR typos were normalized ('undictected'→'undirected'). Deduction only for garbled ASCII graph reconstructions that contain malformed character sequences.",
+      "evidence": [
+        "Garbled ASCII on the undirected weight graph: \"[4]---7---[5]         [ ]\" with a duplicated \"[3]\" node",
+        "Garbled ASCII on the directed weight graph: \"(4) --9--> (5)         (4) (5)\" (duplicated vertices)"
+      ]
+    },
+    "structure_preservation": {
+      "score": 4,
+      "justification": "Headings, reading order, adjacency lists and most matrices are faithfully preserved as proper markdown tables, but the source's numbered 'Graph Representation' lists are flattened to bullets, per-slide boundary markers are dropped, and the directed weight matrix is rendered as an ASCII code block rather than a table.",
+      "evidence": [
+        "Numbered list '1. Incidence matrix / 2. Adjacency matrix ...' flattened to bullets '- Incidence matrix ...'",
+        "Directed weight matrix emitted as ASCII code block: \"   1  [0, 3, 0, 7, 0, 0]\" instead of a markdown table"
+      ]
+    },
+    "faithfulness_no_hallucination": {
+      "score": 3,
+      "justification": "Re-verified against the source slides (pages 8/10/13/14): every figure the pipeline captions describes is genuinely present on a slide (triangle u-v-w, the two adjacency triangles, both 6-vertex weighted graphs), so no figure is fabricated. The only invented text is the added editorial rationale inside the '[Diagram: ...]' captions (EN + VI 'This matters because...' / interpretive prose) that is not on the slides, plus one caption referencing the weight-adjacency matrix that was dropped from the output. Core academic content (matrices, definitions, lists) is fully faithful and usable, so this is bounded caption embellishment (score 3), not the partial-unusability of a 2.",
+      "evidence": [
+        "Invented editorializing: \"This matters because it lets graph structure be analyzed and manipulated using matrix methods.\"",
+        "Caption referencing an un-rendered table: \"the right side shows its corresponding weight (adjacency) matrix\""
+      ]
+    },
+    "formula_table_code": {
+      "score": 3,
+      "justification": "Formulas are excellent (piecewise m_ij/a_ij, weight definition c[i,j] with θ and 0,+∞,-∞, n×m all in clean LaTeX) and the incidence, both adjacency, and both slide-17 matrices carry correct values. But in this matrix-critical deck one full matrix is lost (undirected weight matrix omitted) and another is downgraded to an ASCII code block instead of a table.",
+      "evidence": [
+        "Undirected weight matrix table (slide 13) missing while the directed one is only an ASCII block \"   3  [0, 0, 0, 2, 3, 0]\"",
+        "Malformed graph code block with duplicate nodes: \"(4) --9--> (5)         (4) (5)\""
+      ]
+    }
+  },
+  "classification": {
+    "expected_type": "slide_pdf",
+    "expected_route": "hybrid",
+    "actual_type": "slide_pdf",
+    "actual_route": "hybrid (inferred from output; not persisted in processing_meta.json)",
+    "pass": true
+  },
+  "hallucinations": [
+    "[Diagram: The graph shows how edges connect pairs of vertices, and the incidence matrix records these connections in a compact algebraic form. This matters because it lets graph structure be analyzed and manipulated using matrix methods.]",
+    "[Diagram: The slide contrasts how adjacency matrices encode connections for undirected versus directed graphs. This matters because the matrix form makes graph relationships easy to inspect, manipulate, and algorithmically process.]",
+    "[Diagram: The left side shows an undirected weighted graph, and the right side shows its corresponding weight (adjacency) matrix. This illustrates how edge weights are encoded symmetrically for an undirected graph, with zeros indicating no direct connection and an isolated vertex producing an all-zero row and column.]",
+    "[Diagram: The figure shows how a directed weighted graph is encoded as a matrix, where each row and column represent vertices and each nonzero entry stores the weight of an outgoing edge. This matters because the matrix form is compact and enables efficient graph algorithms and computations.]",
+    "[Diagram: The undirected example shows how each vertex stores all of its neighbors, so every edge appears in both endpoints’ lists. This representation makes it easy to enumerate the neighbors of a vertex efficiently.]",
+    "[Diagram: The directed example stores only outgoing neighbors for each vertex, so the lists reflect edge direction rather than mutual adjacency. This is important because traversal and reachability depend on direction in directed graphs.]",
+    "[Diagram: Đây là một đồ thị vô hướng với các đỉnh được nối bằng cạnh để biểu diễn quan hệ liên kết giữa các nút. Cách biểu diễn này trực quan nhưng không hiệu quả khi cần lưu trữ hoặc truy vấn trên máy tính, vì vậy slide so sánh nó với các cấu trúc dữ liệu khác.]",
+    "[Diagram: Danh sách kề lưu mỗi đỉnh cùng các đỉnh láng giềng của nó, giúp tiết kiệm bộ nhớ khi đồ thị thưa. Nó phù hợp cho các thuật toán duyệt cạnh và truy cập danh sách hàng xóm nhanh chóng.]",
+    "[Diagram: Ma trận kề biểu diễn quan hệ giữa mọi cặp đỉnh bằng các ô 0/1, cho phép kiểm tra nhanh xem hai đỉnh có nối với nhau hay không. Cách này thuận tiện cho truy vấn cạnh nhưng tốn bộ nhớ hơn, đặc biệt với đồ thị có ít cạnh.]",
+    "[Diagram: Đây là một đồ thị có hướng, trong đó mũi tên thể hiện hướng đi của cạnh và có cả khuyên (self-loop) tại đỉnh 6. Biểu diễn có hướng rất quan trọng khi mô hình hóa luồng, phụ thuộc, hoặc các quan hệ không đối xứng.]",
+    "[Diagram: Danh sách kề cho đồ thị có hướng chỉ liệt kê các cạnh đi ra từ mỗi đỉnh, nên một cạnh u->v chỉ xuất hiện ở hàng của u. Điều này giúp biểu diễn rõ hướng của quan hệ và hỗ trợ tốt các thuật toán trên đồ thị có hướng.]",
+    "[Diagram: Ma trận kề của đồ thị có hướng mã hóa các cạnh theo chiều đi từ hàng sang cột, nên mỗi ô cho biết có hay không có cạnh xuất phát từ một đỉnh đến đỉnh khác. Nó cho phép kiểm tra cạnh rất nhanh và còn biểu diễn được khuyên tại một đỉnh.]",
+    "Garbled/invented ASCII graph reconstruction with duplicated vertices on the directed weight-matrix slide: \"(4) --9--> (5)         (4) (5)\""
+  ],
+  "normalization_note": "Output reads coherently and preserves reading order across all 17 slides; formulas render cleanly in LaTeX and the incidence, both adjacency, and both slide-17 matrices carry correct values. The one large dropped span is the undirected weight-matrix table (slide 13), replaced by a garbled ASCII graph plus an invented caption referencing a matrix that was never rendered.",
+  "overall_comment": "Solid capture of a math/diagram-heavy slide deck: LaTeX formulas and the incidence, adjacency, and slide-17 matrices are correct, adjacency lists are faithful, and the output signature (native-text LaTeX + vision captions) is consistent with the expected hybrid route, so the objective route check passes. Two problems dominate: (1) the entire undirected weight-matrix table is omitted and the directed one is downgraded to an ASCII block (the real content loss), and (2) twelve '[Diagram: ...]' captions that accurately describe REAL source figures but add non-source 'This matters because...' editorializing (EN + VI). After re-verifying against the source slides, the captions are grounded figure descriptions with added commentary rather than fabricated content, so faithfulness is 3, not 2."
+}

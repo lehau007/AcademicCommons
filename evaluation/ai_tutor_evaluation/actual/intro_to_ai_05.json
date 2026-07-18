@@ -1,0 +1,134 @@
+{
+  "qid": "intro_to_ai_05",
+  "course_code": "IT3160E",
+  "question": "What defines a Constraint Satisfaction Problem (CSP)?",
+  "session_id": "412a4695-a9d4-44a5-8195-768fe0e5b598",
+  "answer": "A **Constraint Satisfaction Problem (CSP)** là một loại bài toán trong đó:\n\n- **Trạng thái** được biểu diễn bởi một tập biến cố định \\(X_i\\)\n- Mỗi biến \\(X_i\\) nhận giá trị từ một **miền giá trị** \\(D_i\\)\n- **Mục tiêu** là tìm một gán giá trị cho các biến sao cho **mọi ràng buộc (constraints)** đều được thỏa mãn\n\nNói ngắn gọn: **CSP = variables + domains + constraints**.\n\nVí dụ điển hình là bài toán tô màu bản đồ: mỗi vùng là một biến, màu sắc là miền giá trị, và các vùng kề nhau không được cùng màu là ràng buộc.",
+  "citations": [
+    {
+      "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one vari"
+    },
+    {
+      "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "CSP",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with valu"
+    },
+    {
+      "chunk_id": "4b70b8aa-674d-4b10-b3e7-41eb2604e8dd",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraint Graph",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "[Diagram: The graph shows how a binary CSP can be represented as a network of variables connected by constraints. This matters because it turns constraint satisfaction into a graph structure, making r"
+    },
+    {
+      "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative Algorithms for CSPs",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables"
+    },
+    {
+      "chunk_id": "de00e937-cfc7-46b0-8b7d-cbf26a210122",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: Map Coloring",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "[Diagram: The map illustrates a constraint satisfaction problem where each region must be assigned one of several colors. Adjacent regions cannot share the same color, which is why the shared borders "
+    },
+    {
+      "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraint Graph",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "What defines a Constraint Satisfaction Problem (CSP)? definition variables domains constraints",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Summary",
+          "chunk_order": 28,
+          "cosine_sim": 0.6606,
+          "final_score": 0.7272,
+          "content": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one variable assigned per node\n- Variable ordering and value selection heuristics help significantly\n- Forward checking prevents assignments that guarantee later failure\n- Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistencies\n- The CSPs representation allows analysis of problem structure\n- Tree-structured CSPs can be solved in linear time\n- Iterative min-conflicts is usually effective in practice"
+        },
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.5764,
+          "final_score": 0.7196,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "4b70b8aa-674d-4b10-b3e7-41eb2604e8dd",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 8,
+          "cosine_sim": 0.655,
+          "final_score": 0.5349,
+          "content": "[Diagram: The graph shows how a binary CSP can be represented as a network of variables connected by constraints. This matters because it turns constraint satisfaction into a graph structure, making relationships between variables easier to analyze and solve.]"
+        },
+        {
+          "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Iterative Algorithms for CSPs",
+          "chunk_order": 26,
+          "cosine_sim": 0.5385,
+          "final_score": 0.4604,
+          "content": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables\n- Variable selection\n  - Random\n- Value selection by min-conflicts heuristic\n  - Choose value that violates the fewest constraints\n    - i.e., hill climbing with $h(n) =$ total number of violated constraints"
+        },
+        {
+          "chunk_id": "de00e937-cfc7-46b0-8b7d-cbf26a210122",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Example: Map Coloring",
+          "chunk_order": 4,
+          "cosine_sim": 0.4428,
+          "final_score": 0.4438,
+          "content": "[Diagram: The map illustrates a constraint satisfaction problem where each region must be assigned one of several colors. Adjacent regions cannot share the same color, which is why the shared borders define the key constraints and make the coloring nontrivial.]"
+        },
+        {
+          "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 7,
+          "cosine_sim": 0.6361,
+          "final_score": 0.4143,
+          "content": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n        \\        /   \\      /\n         \\      /     \\    /\n          \\    /       \\  /\n           \\  /         \\/\n            SA -------- NSW\n             \\           /\n              \\         /\n               \\       /\n                \\     /\n                  V\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.5
+}

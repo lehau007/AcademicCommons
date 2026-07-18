@@ -1,0 +1,173 @@
+{
+  "qid": "discrete_math_15",
+  "course_code": "IT3020E",
+  "question": "How is a solution represented in the 0/1 Knapsack Problem?",
+  "session_id": "41e16d10-00eb-4489-b119-2267cb6120f6",
+  "answer": "A solution in the **0/1 Knapsack Problem** is represented as a **binary vector**:\n\n\\[\nx = (x_1, x_2, \\ldots, x_n)\n\\]\n\nwhere:\n\n- \\(x_i = 1\\) means item \\(i\\) is **selected**\n- \\(x_i = 0\\) means item \\(i\\) is **not selected**\n\nSo, each solution corresponds to a subset of items, with each item either taken **whole** or **not taken at all**.",
+  "citations": [
+    {
+      "chunk_id": "72218925-ab32-43f3-8707-bda6734ac6e6",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "0/1 Knapsack Problem",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- John assigns a profit $p_i$ to item $i$\n  - All weights and profits are positive numbers\n- John wants to select a subset of the $n$ items to take\n  - The weight of the subset should not exceed the c"
+    },
+    {
+      "chunk_id": "74bdc739-1f51-4c7a-b570-8d82a128363b",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "0/1 Knapsack Problem",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "0/1 Knapsack problem could be stated in the form of the following combinatorial optimization problem:\n\nAmong binary vectors of length $n$ that satisfy the condition $g(x) \\le b$, determine the vector "
+    },
+    {
+      "chunk_id": "afe048c7-f356-4ef8-8911-5c71f5b545a6",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "0/1 Knapsack Problem",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "[Diagram: The slide introduces the 0/1 knapsack decision problem: each item is either taken or left behind, and the knapsack’s limited capacity forces a selection strategy. This matters because it tur"
+    },
+    {
+      "chunk_id": "70e6e16b-3378-42e8-8386-60418c652210",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "0/1 Knapsack Problem",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "- A subset of items that John can carry with him can be represented by a binary vector of length $n$: $x = (x_1, x_2, ..., x_n)$, where $x_j = 1$ when item $j$ is selected and $x_j = 0$ when item $j$ "
+    },
+    {
+      "chunk_id": "b86170ee-d7fa-4a24-b177-6916c21429df",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Root, $f^*=-\\infty$",
+      "page_number": null,
+      "chunk_order": 57,
+      "excerpt": "[Diagram: This is a branch-and-bound search tree for a 0-1 knapsack problem. It shows how item selections are explored, upper bounds are computed to prune unpromising branches, and the best feasible s"
+    },
+    {
+      "chunk_id": "c705c8d2-71cc-4a57-97ea-312b38cd2f3e",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.3. Knapsack Problem",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "- Three Types:\n  - 0/1 Knapsack Problem\n    - restricts the number of each kind of item to zero or one\n  - Bounded Knapsack Problem\n    - restricts the number of each item to a specific value\n  - Unbo"
+    },
+    {
+      "chunk_id": "85ce02f3-e1ff-4a9e-9599-887516edc021",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "0/1 Knapsack Problem",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- Problem: John wishes to take $n$ items on a trip\n  - The weight of item $i$ is $w_i$ and items are all different (0/1 Knapsack Problem)\n  - The items are to be carried in a knapsack whose weight cap"
+    },
+    {
+      "chunk_id": "0d70fa52-48f8-43e7-ae21-a44c8ed9c569",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: 0/1 knapsack problem",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Consider 0/1 knapsack problem\n\n$$\\max \\{ f(x) = \\sum_{j=1}^{n} v_j x_j \\; : \\; x \\in D \\},$$\n\n$$\\text{where } D = \\{ x = (x_1, x_2, \\ldots, x_n) \\in A^n : \\sum_{j=1}^{n} w_j x_j \\le b \\}$$\n\n- $v_j, "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "0/1 Knapsack Problem solution represented as binary vector or subset of items",
+      "namespaces": [
+        "knowledge",
+        "exercise"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "72218925-ab32-43f3-8707-bda6734ac6e6",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "0/1 Knapsack Problem",
+          "chunk_order": 17,
+          "cosine_sim": 0.5392,
+          "final_score": 0.6201,
+          "content": "- John assigns a profit $p_i$ to item $i$\n  - All weights and profits are positive numbers\n- John wants to select a subset of the $n$ items to take\n  - The weight of the subset should not exceed the capacity of the knapsack (constraint)\n  - Cannot select a fraction of an item (constraint)\n  - The profit of the subset is the sum of the profits of the selected items (optimization function)\n  - The profit of the selected subset should be maximum (optimization criterion)\n\n- Let $x_i = 1$ when item $i$ is selected and $x_i = 0$ when item $i$ is not selected\n  - Because this is a 0/1 Knapsack Problem, you can choose the item or not choose it.\n\n[Diagram: The slide defines the 0/1 knapsack as a binary selection problem under a capacity constraint. The key idea is that each item is either taken whole or not taken at all, and the goal is to maximize total profit without exceeding the knapsack’s limit.]"
+        },
+        {
+          "chunk_id": "74bdc739-1f51-4c7a-b570-8d82a128363b",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "0/1 Knapsack Problem",
+          "chunk_order": 20,
+          "cosine_sim": 0.5388,
+          "final_score": 0.6196,
+          "content": "0/1 Knapsack problem could be stated in the form of the following combinatorial optimization problem:\n\nAmong binary vectors of length $n$ that satisfy the condition $g(x) \\le b$, determine the vector $x^*$ giving the maximum value of objective function $f(x)$:\n\n$$\\max \\{ f(x): x \\in A^n,\\, g(x) \\le b \\}.$$\n\n$$A^n = \\{(a_1, \\ldots, a_n): a_i \\in \\{0,1\\},\\, i=1,2,\\ldots,n\\}.$$"
+        },
+        {
+          "chunk_id": "afe048c7-f356-4ef8-8911-5c71f5b545a6",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "0/1 Knapsack Problem",
+          "chunk_order": 16,
+          "cosine_sim": 0.518,
+          "final_score": 0.5957,
+          "content": "[Diagram: The slide introduces the 0/1 knapsack decision problem: each item is either taken or left behind, and the knapsack’s limited capacity forces a selection strategy. This matters because it turns a simple packing task into a combinatorial optimization problem where the goal is to choose the best subset under a constraint.]"
+        },
+        {
+          "chunk_id": "70e6e16b-3378-42e8-8386-60418c652210",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "0/1 Knapsack Problem",
+          "chunk_order": 18,
+          "cosine_sim": 0.4974,
+          "final_score": 0.572,
+          "content": "- A subset of items that John can carry with him can be represented by a binary vector of length $n$: $x = (x_1, x_2, ..., x_n)$, where $x_j = 1$ when item $j$ is selected and $x_j = 0$ when item $j$ is not selected, $j = 1,..,n$\n- For each solution $x$, the profit of carried items is\n\n$$\nf(x) = \\sum_{j=1}^{n} c_j x_j\n$$\n\nThe weight of carried items is"
+        },
+        {
+          "chunk_id": "b86170ee-d7fa-4a24-b177-6916c21429df",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Root, $f^*=-\\infty$",
+          "chunk_order": 57,
+          "cosine_sim": 0.4836,
+          "final_score": 0.5561,
+          "content": "[Diagram: This is a branch-and-bound search tree for a 0-1 knapsack problem. It shows how item selections are explored, upper bounds are computed to prune unpromising branches, and the best feasible solution is updated when a complete assignment is found.]\n\n$f(x)=10x_1+5x_2+3x_3+6x_4 \\rightarrow \\max,$  \n$5x_1+3x_2+2x_3+4x_4 \\le 8,$  \n$x_j\\in Z_+,\\, j=1,2,3,4.$\n\nEliminate because upper bound $g < f^*=15$"
+        },
+        {
+          "chunk_id": "c705c8d2-71cc-4a57-97ea-312b38cd2f3e",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "1.3. Knapsack Problem",
+          "chunk_order": 13,
+          "cosine_sim": 0.4702,
+          "final_score": 0.5408,
+          "content": "- Three Types:\n  - 0/1 Knapsack Problem\n    - restricts the number of each kind of item to zero or one\n  - Bounded Knapsack Problem\n    - restricts the number of each item to a specific value\n  - Unbounded Knapsack Problem\n    - places no bounds on the number of each item\n\n- Complexity Analysis\n  - The general knapsack problem is known to be NP-hard\n  - No polynomial-time algorithm is known for this problem"
+        },
+        {
+          "chunk_id": "85ce02f3-e1ff-4a9e-9599-887516edc021",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "0/1 Knapsack Problem",
+          "chunk_order": 14,
+          "cosine_sim": 0.4698,
+          "final_score": 0.5403,
+          "content": "- Problem: John wishes to take $n$ items on a trip\n  - The weight of item $i$ is $w_i$ and items are all different (0/1 Knapsack Problem)\n  - The items are to be carried in a knapsack whose weight capacity is $c$\n    - When sum of item weights $\\leq c$, all $n$ items can be carried in the knapsack\n    - When sum of item weights $> c$, some items must be left behind\n- Which items should be taken/left?"
+        },
+        {
+          "chunk_id": "0d70fa52-48f8-43e7-ae21-a44c8ed9c569",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Example: 0/1 knapsack problem",
+          "chunk_order": 26,
+          "cosine_sim": 0.4314,
+          "final_score": 0.4961,
+          "content": "- Consider 0/1 knapsack problem\n\n$$\\max \\{ f(x) = \\sum_{j=1}^{n} v_j x_j \\; : \\; x \\in D \\},$$\n\n$$\\text{where } D = \\{ x = (x_1, x_2, \\ldots, x_n) \\in A^n : \\sum_{j=1}^{n} w_j x_j \\le b \\}$$\n\n- $v_j, w_j, b$ are positive integers, $j=1,2,\\ldots,n$.\n- Need algorithm to enumerate all elements of set $D$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.2
+}

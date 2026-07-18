@@ -1,0 +1,134 @@
+{
+  "qid": "intro_to_ai_13",
+  "course_code": "IT3160E",
+  "question": "In Reinforcement Learning, what is the purpose of the discount rate in the discounted return model?",
+  "session_id": "f2e57834-2d76-47e7-9d6d-635008c114a5",
+  "answer": "Trong mô hình **discounted return**, mục đích của **discount rate** \\(\\gamma\\) là:\n\n- **Giới hạn tổng vô hạn** của phần thưởng tương lai, giúp bài toán ổn định hơn.\n- **Ưu tiên phần thưởng sớm hơn** so với phần thưởng đến muộn, tức là khuyến khích những đường đi/nghiệm có thời gian ngắn hơn.\n\nNói ngắn gọn: \\(\\gamma\\) làm cho phần thưởng trong tương lai “ít giá trị hơn” phần thưởng hiện tại, để tác tử ra quyết định thực tế hơn.",
+  "citations": [
+    {
+      "chunk_id": "4749a60f-0207-4a2f-8b16-da4bd232c199",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Discounted Return",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- The geometrically discounted model of return\n\n$$\nR_t = r_{t+1} + \\gamma r_{t+2} + \\cdots + \\gamma^T r_T\n$$\n\n$$\n0 \\le \\gamma \\le 1\n$$\n\n- $\\gamma$ is called discount rate, used to\n  - Bound the infini"
+    },
+    {
+      "chunk_id": "15a52b76-2ffb-4689-a3a5-d54d0c538e01",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "[Diagram: The slide shows two grid-world value layouts comparing state/action outcomes under a discounted setting with $\\gamma = 0,9$. It illustrates how a rightward move from the start state leads to"
+    },
+    {
+      "chunk_id": "c1c65690-ce15-4210-b5ce-51ca58f39d4c",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Reinforcement Learning (RL)",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- RL is ML method that optimize the reward\n  - A class of tasks\n  - A process of trial-and-error learning\n    - Good actions are “rewarded”\n    - Bad actions are “punished”"
+    },
+    {
+      "chunk_id": "d8d97955-aee2-41a3-b548-501a91755923",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Result",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "[Diagram: This graph shows states and weighted transitions used to compute values iteratively from rewards, with one state highlighted as the target. It matters because it visualizes how discounted re"
+    },
+    {
+      "chunk_id": "c5476576-a52e-48ec-8d8c-057bfec9551f",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Optimal Policies",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- An RL agent adapts its policy in order to increase return\n- A policy $p_1$ is at least as good as a policy $p_2$ if its expected return is at least as great in each possible initial state\n- An optim"
+    },
+    {
+      "chunk_id": "54833ea9-1da5-4953-b4e5-dc8c0a87bfca",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Policy, Reward and Goal",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- Policy\n  - defines the agent’s behaviour at a given time\n  - maps from perceptions to actions\n  - can be defined by: look-up table, neural net, search algorithm...\n  - may be stochastic\n\n- Reward Fu"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "discount rate in discounted return model purpose in reinforcement learning",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "4749a60f-0207-4a2f-8b16-da4bd232c199",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Discounted Return",
+          "chunk_order": 10,
+          "cosine_sim": 0.6055,
+          "final_score": 0.8125,
+          "content": "- The geometrically discounted model of return\n\n$$\nR_t = r_{t+1} + \\gamma r_{t+2} + \\cdots + \\gamma^T r_T\n$$\n\n$$\n0 \\le \\gamma \\le 1\n$$\n\n- $\\gamma$ is called discount rate, used to\n  - Bound the infinite sum\n  - Favor earlier rewards, in other words to give preference to shorter paths"
+        },
+        {
+          "chunk_id": "15a52b76-2ffb-4689-a3a5-d54d0c538e01",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Example",
+          "chunk_order": 18,
+          "cosine_sim": 0.4446,
+          "final_score": 0.2958,
+          "content": "[Diagram: The slide shows two grid-world value layouts comparing state/action outcomes under a discounted setting with $\\gamma = 0,9$. It illustrates how a rightward move from the start state leads toward the goal while most other transitions have zero reward, emphasizing the structure of the example and the role of discounting in evaluating future returns.]"
+        },
+        {
+          "chunk_id": "c1c65690-ce15-4210-b5ce-51ca58f39d4c",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Reinforcement Learning (RL)",
+          "chunk_order": 2,
+          "cosine_sim": 0.4973,
+          "final_score": 0.1252,
+          "content": "- RL is ML method that optimize the reward\n  - A class of tasks\n  - A process of trial-and-error learning\n    - Good actions are “rewarded”\n    - Bad actions are “punished”"
+        },
+        {
+          "chunk_id": "d8d97955-aee2-41a3-b548-501a91755923",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Result",
+          "chunk_order": 30,
+          "cosine_sim": 0.3791,
+          "final_score": 0.1106,
+          "content": "[Diagram: This graph shows states and weighted transitions used to compute values iteratively from rewards, with one state highlighted as the target. It matters because it visualizes how discounted rewards propagate through the network to determine the best routes.]\n\n- Divide all rewards by 5\n\n|   | A | B | C | D | E | F |\n|---|---|---|---|---|---|---|\n| A |  |  |  |  | 400 |  |\n| B |  |  |  | 320 |  | 500 |\n| C |  |  |  | 320 |  |  |\n| D |  | 400 | 255 |  | 400 |  |\n| E | 320 |  |  | 320 |  | 500 |\n| F |  | 400 |  |  | 400 | 500 |\n\nResult: C => D => B => F\n\nC => D => E => F"
+        },
+        {
+          "chunk_id": "c5476576-a52e-48ec-8d8c-057bfec9551f",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Optimal Policies",
+          "chunk_order": 11,
+          "cosine_sim": 0.3844,
+          "final_score": 0.1103,
+          "content": "- An RL agent adapts its policy in order to increase return\n- A policy $p_1$ is at least as good as a policy $p_2$ if its expected return is at least as great in each possible initial state\n- An optimal policy $p$ is at least as good as any other policy"
+        },
+        {
+          "chunk_id": "54833ea9-1da5-4953-b4e5-dc8c0a87bfca",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Policy, Reward and Goal",
+          "chunk_order": 8,
+          "cosine_sim": 0.373,
+          "final_score": 0.097,
+          "content": "- Policy\n  - defines the agent’s behaviour at a given time\n  - maps from perceptions to actions\n  - can be defined by: look-up table, neural net, search algorithm...\n  - may be stochastic\n\n- Reward Function\n  - defines the goal(s) in an RL problem\n  - maps from states, state-action pairs, or state-action-successor state, triplets to a numerical reward\n  - goal of the agent is to maximise the total reward in the long run\n  - the policy is altered to achieve this goal"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.3
+}

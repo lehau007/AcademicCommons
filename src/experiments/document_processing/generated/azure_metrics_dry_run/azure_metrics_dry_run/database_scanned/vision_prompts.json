@@ -1,0 +1,12 @@
+[
+  {
+    "kind": "vision_prompt",
+    "page": 1,
+    "instruction": "Perform OCR on this scanned page."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 2,
+    "instruction": "Perform OCR on this scanned page."
+  }
+]

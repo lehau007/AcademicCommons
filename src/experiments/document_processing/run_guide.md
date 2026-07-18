@@ -1,0 +1,3 @@
+Lệnh chạy: python src/experiments/document_processing/document_processing_pipeline.py run --manifest src/experiments/document_processing/test_manifest.json --run-id real_vlm_test_02
+Kết quả: {"mode": "run", "run_id": "placeholder_test_01", "status": "success", "success_count": 4, "failed_count": 0}
+Phân loại: File Database-giữa kì cô Oanh.pdf đã được nhận diện chính xác là scanned_pdf và định tuyến qua đường vision_only.

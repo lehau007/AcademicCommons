@@ -1,0 +1,59 @@
+{
+  "qid": "discrete_math_07",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The explanation of safe edges, the d[v] and near[v] arrays, the selection criterion, and the greedy strategy all match the pseudocode and descriptions in the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses how Prim's algorithm determines which edge to add during each iteration: it selects the minimum-weight edge connecting a vertex in the tree to a vertex outside the tree. The technical details about d[v] and near[v] provide implementation-level explanation of the same core concept.",
+      "evidence": [
+        "Prim luôn chọn cạnh nhẹ nhất nối cây hiện tại với một đỉnh mới chưa có trong cây",
+        "d[v] = min { d[i] : i ∈ V \\ V(T) }",
+        "thuật toán thêm cạnh (v, near[v]) vào cây"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly explains that Prim's algorithm adds the minimum-weight edge connecting a vertex in the tree to a vertex not yet in the tree at each iteration, fully consistent with the ground truth. The additional technical detail (d[v], near[v], formalization) enriches but does not contradict the ground truth.",
+      "evidence": [
+        "Ground truth: 'adds the minimum-weight edge that connects a vertex already in the tree to a vertex not yet in the tree'",
+        "Tutor: 'chọn cạnh nhẹ nhất nối cây hiện tại với một đỉnh mới chưa có trong cây'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to explaining how Prim's algorithm selects edges. They provide the pseudocode, conceptual description of safe edge selection, visual examples, and implementation details that all address the question.",
+      "evidence": [
+        "chunk 73844cf8: pseudocode showing 'd[v] = min' selection criterion",
+        "chunk c8ffa216: 'safe edge...smallest weight among edges connecting a vertex of T to other vertex not in T'",
+        "chunks 86bda5b7, f5138f6d, 6d761f5c: examples of choosing lightest edge",
+        "chunk 678546a0: implementation detail on maintaining cheapest connections"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks: starting from an arbitrary vertex, adding minimum-weight edges connecting tree to non-tree vertices, avoiding cycles, and continuing until all vertices are included.",
+      "evidence": [
+        "V(T) = { r }; E(T) = ∅",
+        "Find v ∈ V \\ V(T) satisfying: d[v] = min { d[i] : i ∈ V \\ V(T) }",
+        "E(T) = E(T) ∪ { (v, near[v]) }",
+        "The \"safe\" edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$",
+        "choosing the lightest edge that connects the current tree to a new vertex"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the corresponding statement. The pseudocode chunk supports the technical details about d[v] and near[v], the 'safe edge' chunk supports the greedy selection rule, and the example/implementation chunks support the overall explanation of choosing the lightest edge connecting the tree to a new vertex.",
+      "evidence": [
+        "Statement: 'd[v]: trọng số nhỏ nhất của một cạnh nối v với một đỉnh trong T' → Chunk 73844cf8: 'd[v]: the edge with minimum weight connecting vertex v (not yet in the spanning tree T) to other vertex of T'",
+        "Statement: 'Prim chọn đỉnh v ngoài T sao cho d[v] = min { d[i] : i ∈ V \\ V(T) }' → Chunk 73844cf8: 'Find v ∈ V \\ V(T) satisfying: d[v] = min { d[i] : i ∈ V \\ V(T) }'",
+        "Statement: 'cạnh an toàn (safe edge)' and 'cạnh nhẹ nhất nối cây hiện tại với một đỉnh mới' → Chunk c8ffa216: 'The \"safe\" edge included in T at each iteration is the edge with smallest weight among edges connecting a vertex of T to other vertex not in T'"
+      ]
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "qid": "intro_to_ai_18",
+  "course_code": "IT3160E",
+  "question": "How does Local Beam Search differ from Random-Restart Search?",
+  "session_id": "bff55852-f0db-4a6a-b450-72f80ad339c2",
+  "answer": "Local Beam Search và Random-Restart Search khác nhau chủ yếu ở **cách quản lý các trạng thái đang xét**:\n\n- **Random-Restart Search**: chạy một tìm kiếm cục bộ từ **một trạng thái khởi đầu ngẫu nhiên**. Nếu bị kẹt ở cực trị cục bộ, nó **khởi động lại** từ một trạng thái ngẫu nhiên khác. Mỗi lần thử là **độc lập** với nhau.\n- **Local Beam Search**: giữ **k trạng thái cùng lúc**. Ở mỗi bước, nó mở rộng tất cả k trạng thái, rồi chọn ra **k trạng thái tốt nhất** trong các hậu duệ để tiếp tục. Vì vậy, các “luồng” tìm kiếm **chia sẻ thông tin** với nhau.\n\n### Tóm tắt ngắn\n- **Random-Restart** = nhiều lần tìm kiếm đơn lẻ, chạy lại từ đầu.\n- **Local Beam** = một quá trình tìm kiếm đồng thời trên nhiều trạng thái.\n\n### Điểm đáng chú ý trong bài giảng\n- Local Beam Search có lợi thế là nếu một trạng thái sinh ra hậu duệ tốt, các trạng thái khác cũng có thể “hưởng lợi” từ thông tin đó.\n- Tuy nhiên, nó có thể bị **thiếu đa dạng**.\n- Random-Restart không chia sẻ thông tin; nó chỉ **thử lại từ đầu** nhiều lần.",
+  "citations": [
+    {
+      "chunk_id": "267f5e6d-587d-4294-ac6e-197aeac294ed",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local beam search",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Major difference with random-restart search\n  - Information is shared among k search threads: If one state generated good successor, but others did not → “come here, the grass is greener!”\n- Can suf"
+    },
+    {
+      "chunk_id": "f140b8d1-d2de-436c-bd9b-109bed1b0259",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local beam search",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "[Diagram: Greedy search commits to a single best path at each step, which can quickly lose alternative possibilities. Beam search keeps multiple promising states in parallel, improving the chance of r"
+    },
+    {
+      "chunk_id": "dab795c0-eba1-4517-92c3-dfa850f7665c",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Drawbacks of hill climbing",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- Problems:\n  - **Local Maxima**: depending on initial state, can get stuck in local maxima\n  - **Plateaus**: the space has a broad flat region that gives the search algorithm no direction (random wal"
+    },
+    {
+      "chunk_id": "927c0e46-0fda-4820-bbab-7c984442d7ff",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local beam search",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- Like greedy search, but keep K states at all times:\n  - Initially: $k$ random states\n  - Next: determine all successors of $k$ states\n  - If any of successors is goal → finished\n  - Else select $k$ "
+    },
+    {
+      "chunk_id": "e10e33e0-0ae4-41ff-b484-9cc16de19c8b",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Local search and optimization",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "[Diagram: The graph illustrates an optimization landscape with multiple peaks and plateaus, showing that a local search method can become guided by nearby improvements rather than finding the overall "
+    },
+    {
+      "chunk_id": "d74d562d-2801-4058-b1e4-d2a07e60f322",
+      "document_title": "lecture5-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Hill-climbing variations",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Stochastic hill-climbing\n  - Random selection among the uphill moves.\n  - The selection probability can vary with the steepness of the uphill move.\n- First-choice hill-climbing\n  - Stochastic hill c"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Local Beam Search Random-Restart Search difference local search methods",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "267f5e6d-587d-4294-ac6e-197aeac294ed",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 5,
+          "cosine_sim": 0.557,
+          "final_score": 0.6405,
+          "content": "- Major difference with random-restart search\n  - Information is shared among k search threads: If one state generated good successor, but others did not → “come here, the grass is greener!”\n- Can suffer from lack of diversity.\n  - Stochastic variant: choose k successors at proportionally to state success.\n- The best choice in MANY practical settings"
+        },
+        {
+          "chunk_id": "f140b8d1-d2de-436c-bd9b-109bed1b0259",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 4,
+          "cosine_sim": 0.5283,
+          "final_score": 0.6075,
+          "content": "[Diagram: Greedy search commits to a single best path at each step, which can quickly lose alternative possibilities. Beam search keeps multiple promising states in parallel, improving the chance of reaching a goal by preserving breadth while still limiting search cost.]"
+        },
+        {
+          "chunk_id": "dab795c0-eba1-4517-92c3-dfa850f7665c",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Drawbacks of hill climbing",
+          "chunk_order": 23,
+          "cosine_sim": 0.4608,
+          "final_score": 0.5299,
+          "content": "- Problems:\n  - **Local Maxima**: depending on initial state, can get stuck in local maxima\n  - **Plateaus**: the space has a broad flat region that gives the search algorithm no direction (random walk)\n  - **Ridges**: flat like a plateau, but with dropoffs to the sides; steps to the North, East, South and West may go down, but a combination of two steps (e.g. N, W) may go up\n- Introduce randomness"
+        },
+        {
+          "chunk_id": "927c0e46-0fda-4820-bbab-7c984442d7ff",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Local beam search",
+          "chunk_order": 3,
+          "cosine_sim": 0.4558,
+          "final_score": 0.5242,
+          "content": "- Like greedy search, but keep K states at all times:\n  - Initially: $k$ random states\n  - Next: determine all successors of $k$ states\n  - If any of successors is goal → finished\n  - Else select $k$ best from successors and repeat.\n\n```text\nGreedy Search\n\n+-----+      +-----+      +-----+      +-----+\n|  o  | ---> |  o  | ---> |  o  | ---> |  o  |\n+-----+      +-----+      +-----+      +-----+\n   \\            \\            \\\n    \\            \\            \\\n     v            v            v\n    (o)          (o)          (o)\n     \\            \\            \\\n      \\            \\            \\\n       v            v            v\n      (o)          (o)          (o)\n\nBeam Search\n\n+-----+      +-----+      +-----+      (o)\n|  o  | ---> |  o  | ---> |  o  | ....>\n+-----+       /   \\         /   \\\n   \\         v     v       v     v\n    v      +-----+ (o)   (o)   +-----+\n   (o)     |  o  |   \\     \\    |  o  |\n    \\      +-----+    \\     v   +-----+\n     v        \\        v    (o)    \\\n    (o)       (o)     +-----+       v\n                       |  o  |      +-----+\n                       +-----+      |  o  |\n                                     +-----+\n```"
+        },
+        {
+          "chunk_id": "e10e33e0-0ae4-41ff-b484-9cc16de19c8b",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Local search and optimization",
+          "chunk_order": 16,
+          "cosine_sim": 0.3939,
+          "final_score": 0.4529,
+          "content": "[Diagram: The graph illustrates an optimization landscape with multiple peaks and plateaus, showing that a local search method can become guided by nearby improvements rather than finding the overall best solution. This matters because it explains why algorithms may stop at local maxima or flat regions instead of reaching the global maximum.]"
+        },
+        {
+          "chunk_id": "d74d562d-2801-4058-b1e4-d2a07e60f322",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Hill-climbing variations",
+          "chunk_order": 26,
+          "cosine_sim": 0.3917,
+          "final_score": 0.4505,
+          "content": "- Stochastic hill-climbing\n  - Random selection among the uphill moves.\n  - The selection probability can vary with the steepness of the uphill move.\n- First-choice hill-climbing\n  - Stochastic hill climbing by generating successors randomly until a better one is found.\n- Random-restart hill-climbing\n  - Tries to avoid getting stuck in local maxima.\n  - If at first you don’t succeed, try, try again…"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 13.2
+}

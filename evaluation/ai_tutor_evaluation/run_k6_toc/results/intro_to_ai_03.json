@@ -1,0 +1,53 @@
+{
+  "qid": "intro_to_ai_03",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunks. The answer correctly states that A* selects the node with the lowest evaluation value, uses f(n) = g(n) + h(n), and accurately defines each component of the evaluation function.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how A* determines which node to expand next: by selecting the node with the lowest f(n) value, where f(n) = g(n) + h(n). All content is on-topic and explains the evaluation function components.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: A* expands the node with the lowest evaluation value, uses f(n) = g(n) + h(n), correctly defines g(n) as cost so far to reach n, and h(n) as estimated cost from n to goal. No contradictions present.",
+      "evidence": [
+        "Ground truth: 'expands the unexpanded node with the lowest evaluation value' → Tutor: 'chọn nút có giá trị đánh giá nhỏ nhất để mở rộng'",
+        "Ground truth: 'f(n) = g(n) + h(n)' → Tutor: 'f(n) = g(n) + h(n)'",
+        "Ground truth: 'g(n) represents the cost so far to reach node n' → Tutor: 'g(n): chi phí đã đi từ trạng thái đầu đến nút n'",
+        "Ground truth: 'h(n) represents the estimated cost from node n to the goal' → Tutor: 'h(n): ước lượng chi phí còn lại từ n đến đích'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to how A* determines node expansion. Each chunk discusses the f(n)=g(n)+h(n) evaluation function, the selection of lowest-cost nodes, or provides examples of A* expansion behavior.",
+      "evidence": [
+        "All chunks contain relevant information about A* node selection criteria, evaluation functions, or expansion order"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk d556b3ac contains the complete definition: A* expands the unexpanded node with lowest evaluation value, uses f(n) = g(n) + h(n), where g(n) is cost so far to reach n and h(n) is estimated cost from n to goal.",
+      "evidence": [
+        "Expand unexpanded node with lowest evaluation value",
+        "Evaluation function $f(n) = g(n) + h(n)$",
+        "$g(n)$ = cost so far to reach $n$",
+        "$h(n)$ = estimated cost from $n$ to goal"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The answer explains that A* expands the node with lowest f(n) value, and all cited chunks explicitly confirm this mechanism and the f(n)=g(n)+h(n) formula.",
+      "evidence": [
+        "Statement: 'A* chọn nút có giá trị đánh giá nhỏ nhất' → Chunk d556b3ac: 'Expand unexpanded node with lowest evaluation value'",
+        "Statement: 'f(n) = g(n) + h(n)' definitions → Chunk d556b3ac: 'g(n) = cost so far to reach n', 'h(n) = estimated cost from n to goal'",
+        "Statement: 'A* luôn ưu tiên nút trên frontier có f(n) nhỏ nhất' → Chunk fa65614b: 'A* expands nodes in order of increasing f value'"
+      ]
+    }
+  }
+}

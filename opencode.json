@@ -1,0 +1,40 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "superpowers@git+https://github.com/obra/superpowers.git#v6.1.0"
+  ],
+  "permission": {
+    "external_directory": "ask",
+    "read": {
+      "**/.env": "deny",
+      "**/.env.*": "deny",
+      "**/secrets/**": "deny"
+    },
+    "grep": {
+      "**/.env": "deny",
+      "**/.env.*": "deny"
+    },
+    "glob": {
+      "**/.env": "deny",
+      "**/.env.*": "deny"
+    }
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless",
+        "--isolated",
+        "--browser=chromium"
+      ],
+      "enabled": true
+    }
+  }
+}

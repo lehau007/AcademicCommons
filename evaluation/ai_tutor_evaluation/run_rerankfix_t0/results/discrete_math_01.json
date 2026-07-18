@@ -1,0 +1,53 @@
+{
+  "qid": "discrete_math_01",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The definitions of articulation point and bridge, including the explanation about increasing connected components, match the source material exactly.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by defining both Articulation Point and Bridge in the context of undirected graphs, explaining that their removal increases the number of connected components.",
+      "evidence": [
+        "Articulation Point (đỉnh khớp / cut vertex): là một đỉnh mà khi xóa đỉnh đó (và các cạnh kề với nó), số thành phần liên thông của đồ thị tăng lên so với ban đầu",
+        "Bridge (cạnh cầu): là một cạnh mà khi xóa cạnh đó, số thành phần liên thông của đồ thị tăng lên so với ban đầu"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly defines both Articulation Point and Bridge as elements whose removal increases the number of connected components, which is factually consistent with the ground truth. The additional explanation about connected graphs becoming disconnected is a correct elaboration, not a contradiction.",
+      "evidence": [
+        "Ground truth: 'a vertex whose removal produces a subgraph with more connected components'",
+        "Tutor: 'khi xóa đỉnh đó... số thành phần liên thông của đồ thị tăng lên'",
+        "Ground truth: 'an edge whose removal produces a subgraph with more connected components'",
+        "Tutor: 'khi xóa cạnh đó, số thành phần liên thông của đồ thị tăng lên'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six retrieved chunks are relevant to the question. Only chunk cd7e7d21-fba2-4d9d-8712-a247ab9ed15e about graph representation (adjacency lists/matrices) is irrelevant noise.",
+      "evidence": [
+        "chunk_id=cd7e7d21-fba2-4d9d-8712-a247ab9ed15e: 'Graph representation', 'Adjacency List', 'Adjacency Matrix'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The first retrieved chunk contains complete definitions for both Articulation Point and Bridge, explicitly stating that removal of each produces a subgraph with more connected components than the original graph.",
+      "evidence": [
+        "removal of a vertex produces a subgraph with more connected components than in the original graph",
+        "An edge whose removal produces a subgraph with more connected components than in the original graph"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation points to a chunk that directly supports the statements made. The definitions of Articulation Point and Bridge are accurately sourced from the primary chunk, which contains the exact definitions used in the answer.",
+      "evidence": [
+        "Tutor states 'Articulation Point... là một đỉnh mà khi xóa đỉnh đó... số thành phần liên thông của đồ thị tăng lên' — Chunk 367c4728 states 'removal of a vertex produces a subgraph with more connected components'",
+        "Tutor states 'Bridge... là một cạnh mà khi xóa cạnh đó, số thành phần liên thông của đồ thị tăng lên' — Chunk 367c4728 states 'An edge whose removal produces a subgraph with more connected components'"
+      ]
+    }
+  }
+}

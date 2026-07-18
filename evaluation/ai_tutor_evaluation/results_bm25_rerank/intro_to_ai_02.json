@@ -1,0 +1,55 @@
+{
+  "qid": "intro_to_ai_02",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The descriptions of progression planners (forward search from initial state considering applicable actions) and regression planners (backward search from goal determining what must have been true in previous state) are all grounded in chunk 6f25b02f.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by clearly explaining the difference between progression and regression planners in state-space search, covering their search directions, starting points, and operational logic.",
+      "evidence": [
+        "Progression planners use forward search: Start from the initial state",
+        "Regression planners use backward search: Start from the goal condition",
+        "Determine what must have been true in the previous state"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: progression planners use forward search considering effects of actions from a given state, and regression planners use backward search determining what must have been true in the previous state to achieve the goal. No contradictions present.",
+      "evidence": [
+        "Ground truth: 'Progression planners use forward state-space search by considering the effect of all possible actions from a given state'",
+        "Tutor: 'Progression planners use forward search... Consider the effects of all applicable actions in the current state'",
+        "Ground truth: 'Regression planners use backward state-space search, determining what must have been true in the previous state'",
+        "Tutor: 'Regression planners use backward search... Determine what must have been true in the previous state'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "The first chunk is highly relevant and directly answers the question. Chunks 2, 3, 4, and 5 provide supporting context about state-space search and planning methods. Only chunk 6 about local search algorithms is clearly irrelevant to the specific question about progression vs. regression planners.",
+      "evidence": [
+        "chunk_id=fd0709cd-7676-47c7-9021-029afd938407: 'Local search algorithms', 'use single current state and move to neighboring states'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. The first chunk explicitly covers progression planners using forward search considering effects of actions, and regression planners using backward search determining what must have been true in the previous state.",
+      "evidence": [
+        "Progression planners - forward state-space search - consider the effect of all possible actions in a given state",
+        "Regression planners - backward state-space search - Determine what must have been true in the previous state in order to achieve the current state"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The primary chunk (6f25b02f) explicitly defines both progression and regression planners with the exact characteristics described in the answer, and the supporting chunks provide relevant context about progression algorithms and regression reasoning.",
+      "evidence": [
+        "Answer: 'Progression planners use forward search' — Chunk 6f25b02f: 'Progression planners - forward state-space search - consider the effect of all possible actions in a given state'",
+        "Answer: 'Regression planners use backward search... Determine what must have been true in the previous state' — Chunk 6f25b02f: 'Regression planners - backward state-space search - Determine what must have been true in the previous state in order to achieve the current state'",
+        "Answer: 'Start from the initial state... applicable actions' — Chunk 19ce7cd1: 'Initial state and goal test: obvious - Successor function: generate from applicable actions'"
+      ]
+    }
+  }
+}

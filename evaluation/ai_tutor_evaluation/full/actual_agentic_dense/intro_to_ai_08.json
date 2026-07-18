@@ -1,0 +1,155 @@
+{
+  "qid": "intro_to_ai_08",
+  "course_code": "IT3160E",
+  "question": "What distinguishes a standard search problem from a game?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "96cebb85-c4e7-45b8-bb2d-1f81e67bfabd",
+  "answer": "# What Distinguishes a Standard Search Problem from a Game?\n\nAccording to the course material (the slide titled *\"Relation of Games to Search\"*), the two are distinguished along several key axes:\n\n## 1. Presence of an Adversary\n- **Standard search** — *no adversary*. The agent is the only actor changing the world; the world is **deterministic and accessible** to it.\n- **Games** — there is an **adversary**. A *competitive multi-agent environment* gives rise to **adversarial search**, because what the other agent does directly affects your success.\n\n## 2. Form of the Solution\n- **Search** — the solution is a *(heuristic) method* (a sequence of actions) for reaching a goal state.\n- **Games** — the solution is a **strategy**: it must specify a move for *every possible opponent reply*. The agent has to commit to a plan before knowing how the opponent will respond.\n\n## 3. Optimality vs. Approximation\n- **Search** — heuristics and CSP techniques can yield an **optimal solution**.\n- **Games** — time limits force an **approximate solution**. (Ignoring computational complexity, games would be a perfect application for *complete* search — but since we cannot ignore complexity, they are the natural place to study *resource-bounded* search.)\n\n## 4. Purpose of the Evaluation Function\n- **Search** — the evaluation function estimates the **cost from the start to the goal through a given node**.\n- **Games** — the evaluation function judges the **\"goodness\" of a game position** (how favorable it is for the player), since there is no fixed start-to-goal cost to estimate.\n\n## 5. Examples\n- **Search** — path planning, scheduling activities.\n- **Games** — chess, checkers, Othello, backgammon.\n\n## 6. Formal Components (for the game side, using *Minimax* framing)\nA game is described by:\n- **Initial state** — e.g. the board configuration in chess.\n- **Successor function** — the legal `(move, state)` pairs.\n- **Terminal test** — is the game finished?\n- **Utility (payoff) function** — a numerical value of terminal states (e.g. *win = +1*, *loss = −1*, *draw = 0* in tic-tac-toe).\n\nTwo players (**MAX** and **MIN**) alternate turns, and MAX uses a search tree (with techniques like **α–β pruning**) to choose the next move under the assumption of perfect, deterministic play.\n\n### Summary\nIn short: a **standard search problem** has *one agent, one goal, and a path to find*; a **game** has *two (or more) opposing agents, a strategy to specify, time pressure that forces approximation, and an evaluation that judges positions rather than costs*.",
+  "citations": [
+    {
+      "chunk_id": "a0987283-c423-4f4c-8151-3144edea7054",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Relation of Games to Search",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Search – no adversary\n  - Solution is (heuristic) method for finding goal\n  - Heuristics and CSP techniques can find *optimal* solution\n  - Evaluation function: estimate of cost from start to goal t"
+    },
+    {
+      "chunk_id": "32690667-bdac-41d9-b6f2-8045d24755db",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The α-β algorithm",
+      "page_number": null,
+      "chunk_order": 31,
+      "excerpt": "[Diagram: This pseudocode describes alpha-beta pruning for adversarial search, where MAX and MIN propagate bounds to avoid exploring branches that cannot affect the final decision. It matters because "
+    },
+    {
+      "chunk_id": "fea36428-21e8-40af-b062-6c51e8c26d96",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Minimax",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- Two players: MAX and MIN\n- MAX moves first and they take turns until the game is over. Winner gets award, looser gets penalty.\n- Games as search:\n  - Initial state: e.g. board configuration of chess"
+    },
+    {
+      "chunk_id": "d1fea5ae-b4db-42bd-a737-b76c8d0476ec",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Why study games?",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- Games are a form of *multi-agent environment*\n  - What do other agents do and how do they affect our success?\n  - Cooperative vs. competitive multi-agent environments.\n  - Competitive multi-agent en"
+    },
+    {
+      "chunk_id": "dbbf4495-9f1c-4c90-bdea-7ca5f834b931",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Games and search",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "- Why study games?\n- Why is search a good idea?\n\n- Majors assumptions about games:\n  - Only an agent’s actions change the world\n  - World is deterministic and accessible"
+    },
+    {
+      "chunk_id": "91f2b4f4-cf0b-4658-b810-6e20ab43763b",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Minimax",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "[Diagram: This diagram shows the alternating decision levels in a game tree, where each player assumes the other will also choose optimally. Minimax evaluates terminal outcomes to back up a best move "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "distinction between standard search problem and game in artificial intelligence, adversarial search, min-max",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "a0987283-c423-4f4c-8151-3144edea7054",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Relation of Games to Search",
+          "chunk_order": 9,
+          "cosine_sim": 0.5105,
+          "final_score": 0.587,
+          "content": "- Search – no adversary\n  - Solution is (heuristic) method for finding goal\n  - Heuristics and CSP techniques can find *optimal* solution\n  - Evaluation function: estimate of cost from start to goal through given node\n  - Examples: path planning, scheduling activities\n\n- Games – adversary\n  - Solution is strategy (strategy specifies move for every possible opponent reply).\n  - Time limits force an *approximate* solution\n  - Evaluation function: evaluate “goodness” of game position\n  - Examples: chess, checkers, Othello, backgammon\n\n- Ignoring computational complexity, games are a perfect application for a complete search.\n- Of course, ignoring complexity is a bad idea, so games are a good place to study resource bounded searches."
+        },
+        {
+          "chunk_id": "32690667-bdac-41d9-b6f2-8045d24755db",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "The α-β algorithm",
+          "chunk_order": 31,
+          "cosine_sim": 0.4923,
+          "final_score": 0.5661,
+          "content": "[Diagram: This pseudocode describes alpha-beta pruning for adversarial search, where MAX and MIN propagate bounds to avoid exploring branches that cannot affect the final decision. It matters because it preserves the optimal minimax result while dramatically reducing the number of game states that must be evaluated.]"
+        },
+        {
+          "chunk_id": "fea36428-21e8-40af-b062-6c51e8c26d96",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Minimax",
+          "chunk_order": 11,
+          "cosine_sim": 0.4905,
+          "final_score": 0.5641,
+          "content": "- Two players: MAX and MIN\n- MAX moves first and they take turns until the game is over. Winner gets award, looser gets penalty.\n- Games as search:\n  - Initial state: e.g. board configuration of chess\n  - Successor function: list of (move,state) pairs specifying legal moves.\n  - Terminal test: Is the game finished?\n  - Utility function: Gives numerical value of terminal states.\n  - E.g. win (+1), loose (-1) and draw (0) in tic-tac-toe\n- MAX uses search tree to determine next move.\n- Perfect play for deterministic games"
+        },
+        {
+          "chunk_id": "d1fea5ae-b4db-42bd-a737-b76c8d0476ec",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Why study games?",
+          "chunk_order": 8,
+          "cosine_sim": 0.4779,
+          "final_score": 0.5496,
+          "content": "- Games are a form of *multi-agent environment*\n  - What do other agents do and how do they affect our success?\n  - Cooperative vs. competitive multi-agent environments.\n  - Competitive multi-agent environments give rise to adversarial search a.k.a. *games*\n\n- Why study games?\n  - Fun, historically entertaining\n  - Interesting subject of study because they are hard\n  - Easy to represent and agents restricted to small number of actions"
+        },
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.474,
+          "final_score": 0.5451,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "dbbf4495-9f1c-4c90-bdea-7ca5f834b931",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Games and search",
+          "chunk_order": 6,
+          "cosine_sim": 0.4661,
+          "final_score": 0.536,
+          "content": "- Why study games?\n- Why is search a good idea?\n\n- Majors assumptions about games:\n  - Only an agent’s actions change the world\n  - World is deterministic and accessible"
+        },
+        {
+          "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem types",
+          "chunk_order": 10,
+          "cosine_sim": 0.4377,
+          "final_score": 0.5033,
+          "content": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent may have no idea where it is; solution is a sequence\n- Nondeterministic and/or partially observable → contingency problem\n  - percepts provide new information about current state\n  - often interleave → search, execution\n- Unknown state space → exploration problem"
+        },
+        {
+          "chunk_id": "91f2b4f4-cf0b-4658-b810-6e20ab43763b",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Minimax",
+          "chunk_order": 13,
+          "cosine_sim": 0.4175,
+          "final_score": 0.4801,
+          "content": "[Diagram: This diagram shows the alternating decision levels in a game tree, where each player assumes the other will also choose optimally. Minimax evaluates terminal outcomes to back up a best move at the root, which is essential for making strong decisions in adversarial games.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 43.0
+}

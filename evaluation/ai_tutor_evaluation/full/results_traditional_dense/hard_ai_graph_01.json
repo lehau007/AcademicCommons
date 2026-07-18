@@ -1,0 +1,31 @@
+{
+  "qid": "hard_ai_graph_01",
+  "course_code": "IT3160E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "3 types grounded in Problems chunk"
+    },
+    "answer_relevancy": {
+      "score": 4,
+      "justification": "general-problems framing, not the diagram terrains asked"
+    },
+    "answer_correctness": {
+      "score": 3,
+      "justification": "TRADITIONAL MIS-RETRIEVE: raw query pulled minimax/8-puzzle; misses diagram's global/shoulder/flat-local-max (GT), gives only local-max/plateau/ridge"
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "minimax/8-puzzle noise dominate"
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "terrain diagram not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  }
+}

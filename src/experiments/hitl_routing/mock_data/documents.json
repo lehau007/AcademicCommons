@@ -1,0 +1,11 @@
+[
+  {"document_id": "doc-001", "course_code": "IT3210", "uploader_id": "student-001", "contribution_type": "summary_note", "title": "C Pointers Summary", "needs_review_at": "2026-05-20T08:00:00+07:00"},
+  {"document_id": "doc-002", "course_code": "IT3210", "uploader_id": "student-002", "contribution_type": "past_exam", "title": "C Midterm 2025", "needs_review_at": "2026-05-20T09:00:00+07:00"},
+  {"document_id": "doc-003", "course_code": "IT3210", "uploader_id": "student-003", "contribution_type": "review_note", "title": "C Loops Review", "needs_review_at": "2026-05-20T10:00:00+07:00"},
+  {"document_id": "doc-004", "course_code": "IT3160E", "uploader_id": "student-004", "contribution_type": "summary_note", "title": "AI Search Strategies", "needs_review_at": "2026-05-20T11:00:00+07:00"},
+  {"document_id": "doc-005", "course_code": "IT3160E", "uploader_id": "student-005", "contribution_type": "solved_exercise", "title": "AI Logic Exercises", "needs_review_at": "2026-05-20T12:00:00+07:00"},
+  {"document_id": "doc-006", "course_code": "IT3292E", "uploader_id": "student-001", "contribution_type": "summary_note", "title": "DB Normalization", "needs_review_at": "2026-05-20T13:00:00+07:00"},
+  {"document_id": "doc-007", "course_code": "IT3292E", "uploader_id": "student-002", "contribution_type": "past_exam", "title": "DB Final 2025", "needs_review_at": "2026-05-20T14:00:00+07:00"},
+  {"document_id": "doc-008", "course_code": "IT3220", "uploader_id": "student-003", "contribution_type": "review_note", "title": "Intro C Notes", "needs_review_at": "2026-05-20T15:00:00+07:00"},
+  {"document_id": "doc-009", "course_code": "IT3210", "uploader_id": "student-004", "contribution_type": "summary_note", "title": "C Arrays Deep Dive", "needs_review_at": "2026-05-20T16:00:00+07:00"}
+]

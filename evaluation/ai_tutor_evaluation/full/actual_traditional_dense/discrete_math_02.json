@@ -1,0 +1,105 @@
+{
+  "qid": "discrete_math_02",
+  "course_code": "IT3020E",
+  "question": "According to Cayley's theorem, how many spanning trees does a complete graph have?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "9eee1955-e7cb-4bb1-b4f6-7f87043155eb",
+  "answer": "According to Cayley's theorem, a complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\nFor example, the complete graph $K_3$ has $3^{3-2} = 3^1 = 3$ spanning trees, which matches the three trees shown in the example from the context (each tree being a path of length 2 connecting the three vertices a, b, and c).",
+  "citations": [
+    {
+      "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Co"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "According to Cayley's theorem, how many spanning trees does a complete graph have?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 13,
+          "cosine_sim": 0.5508,
+          "final_score": 0.6334,
+          "content": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Complete graph $K_3$ | Spanning trees of $K_3$ |\n|---|---|\n| ```text\n\nb\n  / \\\n a---c\n\n``` | ```text\n a---b---c\n\n b---c---a\n\n c---a---b\n``` |\n\n[Diagram: The figure illustrates the idea of a spanning tree as a minimal connected subgraph that includes all vertices without cycles. For the complete graph $K_3$, it shows that there are exactly 3 different spanning trees, motivating Cayley’s formula for complete graphs.]"
+        },
+        {
+          "chunk_id": "84c6bb46-e520-457e-bcd2-5610bdf5ab2f",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "16 spanning trees of $K_4$",
+          "chunk_order": 16,
+          "cosine_sim": 0.4673,
+          "final_score": 0.5374,
+          "content": "[Diagram: The slide enumerates all spanning trees of the complete graph on four labeled vertices. This illustrates how a connected graph can be reduced to tree structures while still including every vertex exactly once, a key idea in graph theory and combinatorics.]"
+        },
+        {
+          "chunk_id": "6dc9f9e3-297f-4018-8059-bb33731a711d",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Weighted Graphs and Minimum Spanning Trees",
+          "chunk_order": 21,
+          "cosine_sim": 0.4627,
+          "final_score": 0.5321,
+          "content": "[Diagram: The two highlighted spanning trees show that the same weighted graph can have multiple optimal solutions with equal total weight. This matters because minimum spanning tree algorithms may return any one of several correct trees, not necessarily a unique structure.]\n\nAs the number of spanning trees of $G$ is very large (see Cayley's theorem), we could not solve this problem by brute force."
+        },
+        {
+          "chunk_id": "79f69592-d6cb-4ebd-98c5-ab0fb9621493",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 12,
+          "cosine_sim": 0.4133,
+          "final_score": 0.4753,
+          "content": "**Theorem.** Every undirected connected graph contains a spanning tree.\n\n**Proof.** Let $G$ be an undirected connected graph.\n\n- If $G$ contains no cycle then $G$ is its own spanning tree.\n- If $G$ contains a cycle: Removing any edge from the cycle gives a graph which is still connected. If the new graph contains a cycle then again remove one edge of the cycle. Continue this process until the resulting graph $T$ contains no cycles. We have not removed any vertices so $T$ has the same vertex set as $G$, and at each step of the above process we obtain a connected graph. Therefore $T$ is connected and it is a spanning tree for $G$.\n\n[Diagram: The proof describes an iterative pruning process: repeatedly delete one edge from any cycle while preserving connectivity. This guarantees that the graph eventually becomes acyclic without losing any vertices, yielding a spanning tree.]"
+        },
+        {
+          "chunk_id": "e792e8fc-5d3b-4d2a-96f7-c78c5469b08b",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 10,
+          "cosine_sim": 0.3642,
+          "final_score": 0.4189,
+          "content": "Let $G=(V,E)$ be an undirected connected graph with vertex set $V$.\n\nTree $T=(V,F)$ where $F\\subseteq E$ is called spanning tree of $G$\n\nUndirected Connected graph without cycle\n\n```text\nG:\n    a --- b --- c\n     \\   / \\     \\\n      \\ /   \\     \\\n       e --- d ----/\n        \\__________/\n```\n\n```text\nSpanning tree T1:\n    a --- b --- c\n          |       \\\n          |        \\\n          e -------- d\n```\n\n```text\nSpanning tree T2:\n        b\n        |\na -------e------- d\n                 /\n                c\n```"
+        },
+        {
+          "chunk_id": "1294fc4e-f48f-431a-9a2a-745d132f7ea6",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 14,
+          "cosine_sim": 0.3549,
+          "final_score": 0.4081,
+          "content": "Arthur Cayley $(1821 - 1895)$"
+        },
+        {
+          "chunk_id": "89005382-f85c-4c56-a264-f414a6544ac9",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.3315,
+          "final_score": 0.3813,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "7bab2c98-dbdb-4919-96b4-cf960a8c7051",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.3315,
+          "final_score": 0.3813,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 4.5
+}

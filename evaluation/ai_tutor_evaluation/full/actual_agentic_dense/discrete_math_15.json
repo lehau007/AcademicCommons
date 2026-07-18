@@ -1,0 +1,175 @@
+{
+  "qid": "discrete_math_15",
+  "course_code": "IT3020E",
+  "question": "How is a solution represented in the 0/1 Knapsack Problem?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "308417e7-0fb3-479e-a13a-87395f5ba9ca",
+  "answer": "# Solution Representation in the 0/1 Knapsack Problem\n\nAccording to the course material, a solution in the 0/1 Knapsack Problem is represented as a **binary vector** of length $n$ (where $n$ is the number of items).\n\n## Formal Representation\n\nA solution belongs to the set:\n\n$$A^n = \\{(a_1, a_2, \\ldots, a_n) : a_i \\in \\{0, 1\\},\\ i = 1, 2, \\ldots, n\\}$$\n\nEach component $x_i$ of the vector represents the decision for item $i$:\n\n- $x_i = 1$ → item $i$ **is selected** (taken into the knapsack)\n- $x_i = 0$ → item $i$ **is not selected** (left behind)\n\nThis is why it is called the \"0/1\" Knapsack Problem — every item is either taken whole or not taken at all; you cannot take a fractional amount of an item.\n\n## The Optimization Formulation\n\nAmong all such binary vectors that satisfy the capacity constraint $g(x) \\le b$, we seek the vector $x^*$ that maximizes the objective function $f(x)$:\n\n$$\\max \\{ f(x) : x \\in A^n,\\ g(x) \\le b \\}$$\n\nWhere:\n- $f(x)$ is the **total profit** of the selected items\n- $g(x)$ is the **total weight** of the selected items\n- $b$ is the **capacity** of the knapsack\n\n## Example\n\nFor $n = 4$ items, a solution could look like:\n\n$$x = (1, 0, 1, 0)$$\n\nThis means: **take** item 1, **skip** item 2, **take** item 3, **skip** item 4.\n\nThe solution space therefore contains $2^n$ possible binary vectors in total (although not all are feasible — only those satisfying the weight constraint are considered).",
+  "citations": [
+    {
+      "chunk_id": "afe048c7-f356-4ef8-8911-5c71f5b545a6",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "0/1 Knapsack Problem",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "[Diagram: The slide introduces the 0/1 knapsack decision problem: each item is either taken or left behind, and the knapsack’s limited capacity forces a selection strategy. This matters because it tur"
+    },
+    {
+      "chunk_id": "74bdc739-1f51-4c7a-b570-8d82a128363b",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "0/1 Knapsack Problem",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "0/1 Knapsack problem could be stated in the form of the following combinatorial optimization problem:\n\nAmong binary vectors of length $n$ that satisfy the condition $g(x) \\le b$, determine the vector "
+    },
+    {
+      "chunk_id": "72218925-ab32-43f3-8707-bda6734ac6e6",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "0/1 Knapsack Problem",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- John assigns a profit $p_i$ to item $i$\n  - All weights and profits are positive numbers\n- John wants to select a subset of the $n$ items to take\n  - The weight of the subset should not exceed the c"
+    },
+    {
+      "chunk_id": "c705c8d2-71cc-4a57-97ea-312b38cd2f3e",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.3. Knapsack Problem",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "- Three Types:\n  - 0/1 Knapsack Problem\n    - restricts the number of each kind of item to zero or one\n  - Bounded Knapsack Problem\n    - restricts the number of each item to a specific value\n  - Unbo"
+    },
+    {
+      "chunk_id": "b86170ee-d7fa-4a24-b177-6916c21429df",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Root, $f^*=-\\infty$",
+      "page_number": null,
+      "chunk_order": 57,
+      "excerpt": "[Diagram: This is a branch-and-bound search tree for a 0-1 knapsack problem. It shows how item selections are explored, upper bounds are computed to prune unpromising branches, and the best feasible s"
+    },
+    {
+      "chunk_id": "cb64a6a2-11eb-44db-83b8-484e26ebf8f4",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example",
+      "page_number": null,
+      "chunk_order": 54,
+      "excerpt": "- The process executing the algorithm is described by the solution search tree.\n- Information written in each box is the following in order:\n  - elements of partial solution,\n  - $\\sigma$ is the cost "
+    },
+    {
+      "chunk_id": "f0131e9c-5de7-4978-8d75-704babf56ecd",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "void BackTrack(int k)",
+      "page_number": null,
+      "chunk_order": 29,
+      "excerpt": "```text\n{\n    int j, t;\n    if (bk>=w[k])  t=1  else t=0;\n    for (j=t; j--; j>=0)\n    {\n        x[k] = j;\n        bk = bk-w[k]*x[k];\n        fk = fk + v[k]*x[k];\n        if (k == n)\n        {\n       "
+    },
+    {
+      "chunk_id": "24f890ac-77af-4e5a-8fb6-31ef974fed42",
+      "document_title": "1-4-Optimization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Backtracking: enumerate all possible solutions",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "- Construct set $S_k$:\n  - $S_1 = \\{0, t_1\\}$, where $t_1 = 1$ if $b \\ge w_1$, $t_1 = 0$, otherwise\n  - Assume the current partial solution is $(x_1, \\dots, x_{k-1})$. Then:\n    - The remaining capaci"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "0/1 Knapsack Problem solution representation",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "afe048c7-f356-4ef8-8911-5c71f5b545a6",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "0/1 Knapsack Problem",
+          "chunk_order": 16,
+          "cosine_sim": 0.5397,
+          "final_score": 0.6207,
+          "content": "[Diagram: The slide introduces the 0/1 knapsack decision problem: each item is either taken or left behind, and the knapsack’s limited capacity forces a selection strategy. This matters because it turns a simple packing task into a combinatorial optimization problem where the goal is to choose the best subset under a constraint.]"
+        },
+        {
+          "chunk_id": "74bdc739-1f51-4c7a-b570-8d82a128363b",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "0/1 Knapsack Problem",
+          "chunk_order": 20,
+          "cosine_sim": 0.5137,
+          "final_score": 0.5908,
+          "content": "0/1 Knapsack problem could be stated in the form of the following combinatorial optimization problem:\n\nAmong binary vectors of length $n$ that satisfy the condition $g(x) \\le b$, determine the vector $x^*$ giving the maximum value of objective function $f(x)$:\n\n$$\\max \\{ f(x): x \\in A^n,\\, g(x) \\le b \\}.$$\n\n$$A^n = \\{(a_1, \\ldots, a_n): a_i \\in \\{0,1\\},\\, i=1,2,\\ldots,n\\}.$$"
+        },
+        {
+          "chunk_id": "72218925-ab32-43f3-8707-bda6734ac6e6",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "0/1 Knapsack Problem",
+          "chunk_order": 17,
+          "cosine_sim": 0.4826,
+          "final_score": 0.555,
+          "content": "- John assigns a profit $p_i$ to item $i$\n  - All weights and profits are positive numbers\n- John wants to select a subset of the $n$ items to take\n  - The weight of the subset should not exceed the capacity of the knapsack (constraint)\n  - Cannot select a fraction of an item (constraint)\n  - The profit of the subset is the sum of the profits of the selected items (optimization function)\n  - The profit of the selected subset should be maximum (optimization criterion)\n\n- Let $x_i = 1$ when item $i$ is selected and $x_i = 0$ when item $i$ is not selected\n  - Because this is a 0/1 Knapsack Problem, you can choose the item or not choose it.\n\n[Diagram: The slide defines the 0/1 knapsack as a binary selection problem under a capacity constraint. The key idea is that each item is either taken whole or not taken at all, and the goal is to maximize total profit without exceeding the knapsack’s limit.]"
+        },
+        {
+          "chunk_id": "c705c8d2-71cc-4a57-97ea-312b38cd2f3e",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "1.3. Knapsack Problem",
+          "chunk_order": 13,
+          "cosine_sim": 0.4675,
+          "final_score": 0.5376,
+          "content": "- Three Types:\n  - 0/1 Knapsack Problem\n    - restricts the number of each kind of item to zero or one\n  - Bounded Knapsack Problem\n    - restricts the number of each item to a specific value\n  - Unbounded Knapsack Problem\n    - places no bounds on the number of each item\n\n- Complexity Analysis\n  - The general knapsack problem is known to be NP-hard\n  - No polynomial-time algorithm is known for this problem"
+        },
+        {
+          "chunk_id": "b86170ee-d7fa-4a24-b177-6916c21429df",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Root, $f^*=-\\infty$",
+          "chunk_order": 57,
+          "cosine_sim": 0.4489,
+          "final_score": 0.5163,
+          "content": "[Diagram: This is a branch-and-bound search tree for a 0-1 knapsack problem. It shows how item selections are explored, upper bounds are computed to prune unpromising branches, and the best feasible solution is updated when a complete assignment is found.]\n\n$f(x)=10x_1+5x_2+3x_3+6x_4 \\rightarrow \\max,$  \n$5x_1+3x_2+2x_3+4x_4 \\le 8,$  \n$x_j\\in Z_+,\\, j=1,2,3,4.$\n\nEliminate because upper bound $g < f^*=15$"
+        },
+        {
+          "chunk_id": "cb64a6a2-11eb-44db-83b8-484e26ebf8f4",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Example",
+          "chunk_order": 54,
+          "cosine_sim": 0.4374,
+          "final_score": 0.503,
+          "content": "- The process executing the algorithm is described by the solution search tree.\n- Information written in each box is the following in order:\n  - elements of partial solution,\n  - $\\sigma$ is the cost of partial solution (profit of items currently loaded in the bag),\n  - $w$ : remaining capacity of the bag,\n  - $g$ : upper bound of partial solution."
+        },
+        {
+          "chunk_id": "f0131e9c-5de7-4978-8d75-704babf56ecd",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "void BackTrack(int k)",
+          "chunk_order": 29,
+          "cosine_sim": 0.4008,
+          "final_score": 0.4609,
+          "content": "```text\n{\n    int j, t;\n    if (bk>=w[k])  t=1  else t=0;\n    for (j=t; j--; j>=0)\n    {\n        x[k] = j;\n        bk = bk-w[k]*x[k];\n        fk = fk + v[k]*x[k];\n        if (k == n)\n        {\n            if (fk>fopt) {\n                xopt:=x; fopt:=fk;\n            }\n        }\n        else BackTrack(k+1);\n        bk = bk+w[k]*x[k];\n        fk = fk - v[k]*x[k];\n    }\n}\n```\n\n[Diagram: This is a backtracking routine for a 0/1 optimization problem, where each decision level assigns $x[k]$ and updates the remaining capacity/value. It explores feasible combinations recursively and keeps the best solution found when the last item is reached.]"
+        },
+        {
+          "chunk_id": "24f890ac-77af-4e5a-8fb6-31ef974fed42",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Backtracking: enumerate all possible solutions",
+          "chunk_order": 27,
+          "cosine_sim": 0.3836,
+          "final_score": 0.4412,
+          "content": "- Construct set $S_k$:\n  - $S_1 = \\{0, t_1\\}$, where $t_1 = 1$ if $b \\ge w_1$, $t_1 = 0$, otherwise\n  - Assume the current partial solution is $(x_1, \\dots, x_{k-1})$. Then:\n    - The remaining capacity of the bag is: $b_{k-1} = b - w_1x_1 - \\dots - w_{k-1}x_{k-1}$\n    - The value of items already in the bag is: $f_{k-1} = v_1x_1 + \\dots + v_{k-1}x_{k-1}$\n  - Therefore: $S_k = \\{0, t_k\\}$, where $t_k = 1$ if $b_{k-1} \\ge w_k$, $t_k = 0$, otherwise\n\n- Implement $S_k$?\n  - `for (y = 0; y++; y <= t_k)`"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 16.2
+}

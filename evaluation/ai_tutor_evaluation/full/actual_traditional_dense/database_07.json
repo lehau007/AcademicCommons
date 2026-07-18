@@ -1,0 +1,125 @@
+{
+  "qid": "database_07",
+  "course_code": "IT3292E",
+  "question": "What is an update anomaly in the context of database normalization?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "2752ceef-245b-4484-a7a5-965c6f498ebf",
+  "answer": "## Update Anomaly in Database Normalization\n\nAccording to the course material, an **update anomaly** is defined as:\n\n> \"An instance where the same information must be updated in several different places.\"\n\n### Example from the Course\n\nConsider a table where a subject like \"Databases\" is offered to multiple students. In the example table provided in the course, \"Databases\" appears for both student 1234 (David Beckham) and student 1497 (Tony Blair). If we need to change the name of the subject **\"Databases\"** (e.g., to \"Database Systems\"), we would have to update it in **two different places** in the table — once for each student enrolled in it.\n\n### Why This Is a Problem\n\nThis is problematic because:\n\n- It is **inefficient** — requiring multiple updates for a single logical change.\n- It risks **data inconsistency** — if one row is updated but another is missed, the database will contain conflicting information about the same subject (e.g., one row says \"Databases\" and another says \"Database Systems\").\n\nThis is one of the key motivations for **normalization**, which is the process of removing such anomalies and redundancies from a database by restructuring it (typically through decomposition into multiple related tables).\n\n---\n\n**Used chunk IDs:**\n```json",
+  "citations": [
+    {
+      "chunk_id": "818fb190-ed8e-4851-984c-4a9476981dad",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Motivation: Update anomalies",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- An instance where the same information must be updated in several different places\n- If you update the name of subject **\"Databases\"**, you need to update in two different places (not efficient)\n\n| "
+    },
+    {
+      "chunk_id": "a647a8d6-d7bd-4caf-93ee-8a4df4898d08",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Motivation",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Normalization is the process of removing **anomalies** and **redundancies** from DB"
+    },
+    {
+      "chunk_id": "b5516614-9433-4911-81b2-b5d7d558c400",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Motivation",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "- Designing DB: one of the most difficult tasks\n- One simplest design approach is to use a big table and store all data\n- But what's the problem with this?\n  - Anomalies\n  - Redundancies"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "What is an update anomaly in the context of database normalization?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "a647a8d6-d7bd-4caf-93ee-8a4df4898d08",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "1.1. Motivation",
+          "chunk_order": 10,
+          "cosine_sim": 0.4877,
+          "final_score": 0.8413,
+          "content": "- Normalization is the process of removing **anomalies** and **redundancies** from DB"
+        },
+        {
+          "chunk_id": "20a03c19-d212-4f2d-82ab-66ddd141b27e",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "Summary",
+          "chunk_order": 27,
+          "cosine_sim": 0.4393,
+          "final_score": 0.7579,
+          "content": "1. **Introduction**\n   - Normalization is the process of removing anomalies and redundancies from DB\n   - Full & Partial Dependency\n   - Transitive dependency\n\n2. **Normal Forms**\n   - 1NF, 2NF, 3NF\n\n3. **Normalization**\n   - Properties of relational decompositions\n   - An algorithm decomposes a universal relation into 3NF\n   - Some examples"
+        },
+        {
+          "chunk_id": "25484654-db80-4024-9195-1b37c28f33a7",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "2.1. Introduction",
+          "chunk_order": 14,
+          "cosine_sim": 0.4316,
+          "final_score": 0.7446,
+          "content": "- Each form was designed to eliminate one or more of the anomalies: First NF; Second NF; Third NF\n- Unnormalized Form (UNF)\n  - A table that contains one or more repeating groups. I.e., its cell may contain multiple values\n\n| student_id | full_name | dob | subject_id | name | result |\n|:----------:|:-----------:|:---:|:----------:|:---------------------:|:------:|\n| 1234 | David Beckham | 12/21/1997 | IT3090, IT4868 | Databases, Web mining | A, C |\n| 1238 | Theresa May | 08/06/1998 | IT4843, IT4868 | Data integration, Web mining | B, B |\n| 1497 | Tony Blair | 03/01/1999 | IT3090 | Databases | A |\n| 1542 | Margaret Thatcher | 05/08/1997 | IT2000 | Introduction to ICT | C |"
+        },
+        {
+          "chunk_id": "818fb190-ed8e-4851-984c-4a9476981dad",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "1.1. Motivation: Update anomalies",
+          "chunk_order": 8,
+          "cosine_sim": 0.4168,
+          "final_score": 0.719,
+          "content": "- An instance where the same information must be updated in several different places\n- If you update the name of subject **\"Databases\"**, you need to update in two different places (not efficient)\n\n| student_id | full_name | dob | subject_id | name | result |\n|:---|:---|:---|:---|:---|:---|\n| 1234 | David Beckham | 12/21/1997 | IT3090 | Databases | A |\n| 1238 | Theresa May | 08/06/1998 | IT4843 | Data integration | B |\n| 1234 | David Beckham | 12/21/1997 | IT4868 | Web mining | C |\n| 1497 | Tony Blair | 03/01/1999 | IT3090 | Databases | A |\n| 1238 | Theresa May | 08/06/1998 | IT4868 | Web mining | B |\n| 1542 | Margaret Thatcher | 05/08/1997 | IT2000 | Introduction to ICT | C |"
+        },
+        {
+          "chunk_id": "b5516614-9433-4911-81b2-b5d7d558c400",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "1.1. Motivation",
+          "chunk_order": 6,
+          "cosine_sim": 0.3842,
+          "final_score": 0.6627,
+          "content": "- Designing DB: one of the most difficult tasks\n- One simplest design approach is to use a big table and store all data\n- But what's the problem with this?\n  - Anomalies\n  - Redundancies"
+        },
+        {
+          "chunk_id": "d0174b5a-e489-4bfb-9e16-38cb2f1e6080",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "1.1. Motivation: Deletion Anomalies",
+          "chunk_order": 9,
+          "cosine_sim": 0.3333,
+          "final_score": 0.5749,
+          "content": "- Where deleting one piece of data inadvertently causes other data to be lost\n- If we delete student **Margaret Thatcher**, then we will lose information about subject **\"Introduction to ICT\"**\n\n| student_id | full_name | dob | subject_id | name | result |\n|:---|:---|:---|:---|:---|:---|\n| 1234 | David Beckham | 12/21/1997 | IT3090 | Databases | A |\n| 1238 | Theresa May | 08/06/1998 | IT4843 | Data integration | B |\n| 1234 | David Beckham | 12/21/1997 | IT4868 | Web mining | C |\n| 1497 | Tony Blair | 03/01/1999 | IT3090 | Databases | A |\n| 1238 | Theresa May | 08/06/1998 | IT4868 | Web mining | B |\n| 1542 | Margaret Thatcher | 05/08/1997 | IT2000 | Introduction to ICT | C |"
+        },
+        {
+          "chunk_id": "fc08b879-d6ad-43e4-8ce5-dbfb9f781841",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.3.1. Introduction",
+          "chunk_order": 51,
+          "cosine_sim": 0.3713,
+          "final_score": 0.427,
+          "content": "- Every relation has some conditions that must hold for it to be a valid relation.\n- These conditions are called Relational Integrity Constraints.\n- Provide a way of ensuring that changes made to the database by authorized users do not result in a loss of data consistency."
+        },
+        {
+          "chunk_id": "cf8ba490-2060-44eb-b4e0-1dd07c017098",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "1.1. Introduction",
+          "chunk_order": 6,
+          "cosine_sim": 0.3686,
+          "final_score": 0.4239,
+          "content": "- We have to deal with the problem of database design\n  - anomalies, redundancies\n- The most important concepts in relational schema design theory"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.2
+}

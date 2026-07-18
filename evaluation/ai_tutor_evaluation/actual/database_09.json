@@ -1,0 +1,77 @@
+{
+  "qid": "database_09",
+  "course_code": "IT3292E",
+  "question": "What is the primary goal of a query optimizer?",
+  "session_id": "feeb4def-41ab-45d9-a4a1-77c6938d6a99",
+  "answer": "The primary goal of a **query optimizer** is to **find the most efficient execution plan for a query**, so the database can **minimize cost/resources** and improve performance.\n\nFrom the course material, this includes:\n- **equivalence transformation**\n- **annotating relational algebra with algorithms**\n- **cost estimation** to compare different query execution plans\n\nIn short: **the optimizer chooses the lowest-cost way to execute the query**.",
+  "citations": [
+    {
+      "chunk_id": "89e0e540-25e8-4b89-821c-84e4a645da64",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. What is query processing",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- The entire process or activities involved in retrieving data from the database\n  - SQL query translation into low level instructions (usually relational algebra)\n  - Query optimization to save resou"
+    },
+    {
+      "chunk_id": "b47df70f-ce06-4146-a657-69347163ed02",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.4. Optimizer",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "[Diagram: The figure illustrates how a relational algebra expression can be turned into an executable plan by selecting specific algorithms, such as using an index for selection. This matters because "
+    },
+    {
+      "chunk_id": "f8f39aa7-041d-4622-b3a1-d533f23e318f",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 38,
+      "excerpt": "- Query processing is the entire process or activities involved in retrieving data from the database\n  - Parser\n  - Optimizer\n  - Code generator\n- Query optimizer\n  - Step 1: Equivalence transformatio"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "primary goal of a query optimizer",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "89e0e540-25e8-4b89-821c-84e4a645da64",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.1. What is query processing",
+          "chunk_order": 7,
+          "cosine_sim": 0.4136,
+          "final_score": 0.4085,
+          "content": "- The entire process or activities involved in retrieving data from the database\n  - SQL query translation into low level instructions (usually relational algebra)\n  - Query optimization to save resources, cost estimation or evaluation of query\n  - Query execution for the extraction of data from the database."
+        },
+        {
+          "chunk_id": "b47df70f-ce06-4146-a657-69347163ed02",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.4. Optimizer",
+          "chunk_order": 13,
+          "cosine_sim": 0.501,
+          "final_score": 0.4036,
+          "content": "[Diagram: The figure illustrates how a relational algebra expression can be turned into an executable plan by selecting specific algorithms, such as using an index for selection. This matters because the optimizer lowers query cost by choosing a more efficient physical execution strategy.]"
+        },
+        {
+          "chunk_id": "f8f39aa7-041d-4622-b3a1-d533f23e318f",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Remark",
+          "chunk_order": 38,
+          "cosine_sim": 0.4818,
+          "final_score": 0.3559,
+          "content": "- Query processing is the entire process or activities involved in retrieving data from the database\n  - Parser\n  - Optimizer\n  - Code generator\n- Query optimizer\n  - Step 1: Equivalence transformation\n  - Step 2: Annotation for the algorithm of the RA expression\n  - Step 3: Cost estimation for different query execution plans"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 6.5
+}

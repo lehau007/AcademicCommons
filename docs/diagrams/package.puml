@@ -1,0 +1,121 @@
+@startuml package
+' UML Package Diagram - Academic Commons System (backend + frontend)
+' Render: java -jar plantuml.jar docs/diagrams/package.puml -o ../../thesis_book/figures
+' Requires Graphviz (dot). For a no-Graphviz fallback add: !pragma layout smetana
+'
+' Notation:
+'   - Folder-shaped boxes are UML packages.
+'   - Dashed dependency arrows carry a UML stereotype:
+'       <<access>> : private import (used internally, not re-exported)
+'   - database / cloud nodes are external systems, reached only through adapters.
+
+top to bottom direction
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam packageStyle folder
+skinparam linetype ortho
+skinparam ArrowColor #5B6470
+skinparam ArrowFontColor #5B6470
+skinparam package {
+  BackgroundColor #FBFCFD
+  BorderColor #6B7480
+  FontColor #1F2730
+  FontStyle bold
+}
+skinparam database {
+  BackgroundColor #F4F6F8
+  BorderColor #2B3440
+}
+skinparam cloud {
+  BackgroundColor #F4F6F8
+  BorderColor #2B3440
+}
+
+' ===================== Presentation layer (frontend) =====================
+package "Presentation\n(Next.js frontend)" as PRES {
+  package "app\n(route segments)" as FE_app
+  package "components" as FE_comp
+  package "lib\n(api client / types)" as FE_lib
+  FE_app ..> FE_comp : <<access>>
+  FE_app ..> FE_lib : <<access>>
+}
+
+' ===================== API layer =====================
+package "app.api.v1\n(REST routers)" as API {
+  package "auth" as R_auth
+  package "courses /\nreviewers" as R_courses
+  package "documents /\nreview" as R_docs
+  package "tutor / rag /\nmindmap / mock_test" as R_learn
+  package "admin / vote /\nnotifications" as R_admin
+}
+
+package "app.schemas\n(Pydantic DTOs)" as SCHEMAS
+
+' ===================== Service layer =====================
+package "app.services\n(business logic)" as SVC {
+  package "document /\nreview / course" as S_doc
+  package "retrieval / tutor /\nmindmap / mock_test" as S_learn
+  package "vote / admin /\nreviewer / seed" as S_misc
+  package "document_processing\n(extractors / VLM / normalizer)" as S_proc
+}
+
+' ===================== Worker layer =====================
+package "app.workers\n(arq async jobs)" as WORK {
+  package "ocr_worker" as W_ocr
+  package "eval_worker" as W_eval
+  package "index_worker" as W_index
+  package "recovery_worker /\nqueue" as W_rec
+}
+
+' ===================== Core / cross-cutting =====================
+package "app.core" as CORE {
+  package "auth / RBAC" as C_auth
+  package "state_machine" as C_state
+  package "logging" as C_log
+}
+
+package "app.llm\n(router / providers /\nembeddings / optimizer_adapter)" as LLM
+package "app.storage\n(S3 client)" as STORAGE
+package "app.models\n(ORM entities + enums)" as MODELS
+package "app.db\n(session / base)" as DB
+package "app.config\n(Settings)" as CONFIG
+
+' ===================== External systems =====================
+database "PostgreSQL\n+ pgvector" as EXT_DB
+database "Redis" as EXT_REDIS
+cloud "S3 / MinIO" as EXT_S3
+cloud "AWS Bedrock / Gemini /\nGroq APIs" as EXT_LLM
+
+' ===================== Dependencies =====================
+PRES ..> API : <<access>>\nHTTPS REST
+
+API ..> SCHEMAS : <<access>>
+API ..> SVC : <<access>>
+API ..> CORE : <<access>>
+
+SVC ..> MODELS : <<access>>
+SVC ..> LLM : <<access>>
+SVC ..> STORAGE : <<access>>
+SVC ..> CORE : <<access>>
+S_proc ..> LLM : <<access>>
+
+WORK ..> SVC : <<access>>
+WORK ..> LLM : <<access>>
+WORK ..> STORAGE : <<access>>
+WORK ..> MODELS : <<access>>
+
+CORE ..> MODELS : <<access>>
+MODELS ..> DB : <<access>>
+
+API ..> CONFIG : <<access>>
+SVC ..> CONFIG : <<access>>
+WORK ..> CONFIG : <<access>>
+
+' ----- adapter packages reach external systems -----
+DB --> EXT_DB
+STORAGE --> EXT_S3
+LLM --> EXT_LLM
+WORK --> EXT_REDIS
+
+@enduml

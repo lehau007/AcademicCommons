@@ -1,0 +1,11 @@
+[
+    {
+        "id": "graph_presentation",
+        "course_code": "TEST01",
+        "tier": "community",
+        "input_path": "src/experiments/document_processing/smaller_test_data/2_2-GraphPresentation.pdf",
+        "expected_type": "text_pdf",
+        "expected_route": "direct_text",
+        "notes": "Text-based PDF presentation"
+    }
+]

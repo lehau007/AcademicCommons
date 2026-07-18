@@ -1,0 +1,91 @@
+{
+  "qid": "intro_to_ai_14",
+  "course_code": "IT3160E",
+  "question": "What defines a feed-forward neural network compared to a recurrent neural network?",
+  "session_id": "92164b46-e686-4d7f-a53e-2c633179c463",
+  "answer": "{\n  \"answer\": \"A **feed-forward neural network** is defined by its one-way flow of information: outputs from a node are **not** fed back into the same layer or any earlier layer. In other words, there are **no cycles** in the signal path.\\n\\nA **recurrent neural network (RNN)** is a network with **feedback connections**—node outputs can be directed back as inputs to the same layer or a previous layer. This creates **closed loops** (recurrence), which lets the network retain information over time.\\n\\nSo the key distinction is:\\n- **Feed-forward:** acyclic, information moves only forward.\\n- **Recurrent:** has feedback/loops, allowing previous outputs to influence later computation.\\n\\n{\\\"used_doc_ids\\\":[\\\"0cca685b-b94d-42e9-a82b-f3eed54d3583\\\"]}\"\n}",
+  "citations": [],
+  "retrieval_calls": [
+    {
+      "query": "feed-forward neural network compared to recurrent neural network definition differences",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "946597e6-ac6a-4cc0-95bb-54f2cdb03b14",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Network structure – Example",
+          "chunk_order": 22,
+          "cosine_sim": 0.5199,
+          "final_score": 0.5979,
+          "content": "- single layer feed-forward network\n- single node with feedback to itself\n- multilayer feed-forward network\n- single layer recurrent network\n- multilayer recurrent network"
+        },
+        {
+          "chunk_id": "3650b8da-e54b-4d06-84a1-b44ff3b0fb2e",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Network structure",
+          "chunk_order": 21,
+          "cosine_sim": 0.4288,
+          "final_score": 0.4931,
+          "content": "- A layer is a group of neurons\n- A hidden layer is any layer between the input and the output layers\n- Hidden nodes do not directly interact with the external environment\n- An ANN is said to be *fully connected* if every output from one layer is connected to every node in the next layer\n- An ANN is called *feed-forward network* if no node output is an input to a node in the same layer or in a preceding layer\n- When node outputs can be directed back as inputs to a node in the same (or a preceding) layer, it is a *feedback network*\n  - If the feedback is directed back as input to the nodes in the same layer, then it is called *lateral feedback*\n- Feedback networks that have closed loops are called *recurrent networks*"
+        },
+        {
+          "chunk_id": "fd02aa69-3fdc-49ef-bd15-7aec956406c3",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Artificial neural networks",
+          "chunk_order": 2,
+          "cosine_sim": 0.3966,
+          "final_score": 0.456,
+          "content": "- Artificial neural network (ANN)\n  - Inspired by biological neural systems, i.e., human brains\n  - ANN is a network composed of a number of artificial neurons\n- Neuron\n  - Has an input/output (I/O) characteristic\n  - Implements a local computation\n- The output of a unit is determined by\n  - Its I/O characteristic\n  - Its interconnections to other units\n  - Possibly external inputs"
+        },
+        {
+          "chunk_id": "a5a8f96e-4002-4707-b103-4ca3cefeb9c7",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Artificial neural networks",
+          "chunk_order": 3,
+          "cosine_sim": 0.3678,
+          "final_score": 0.4229,
+          "content": "- ANN can be seen as a parallel distributed information processing structure\n- ANN has the ability to learn, recall, and generalize from training data by assigning and adjusting the interconnection weights\n- The overall function is determined by\n  - The network topology\n  - The individual neuron characteristic\n  - The learning/training strategy\n  - The training data"
+        },
+        {
+          "chunk_id": "0eb9fe51-e583-4541-88d1-67fc1fa0bd71",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Network structure",
+          "chunk_order": 20,
+          "cosine_sim": 0.3665,
+          "final_score": 0.4215,
+          "content": "[Diagram: The figure shows the structure of a feedforward artificial neural network with one hidden layer. It highlights how inputs, hidden units, outputs, and a bias term are organized to determine the network’s topology.]\n\n- An ANN with one hidden layer\n- Input space: 3-dimensional\n- Output space: 2-dimensional\n- In total, there are 6 neurons\n  - 4 in the hidden layer\n  - 2 in the output layer"
+        },
+        {
+          "chunk_id": "a6de2824-c3e7-4534-87b5-cc0db496c913",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Back_propagation_incremental($D,\\eta$)",
+          "chunk_order": 46,
+          "cosine_sim": 0.3617,
+          "final_score": 0.416,
+          "content": "A network with $Q$ feed-forward layers, $q=1,2,\\ldots,Q$\n\n$qNet_i$ and $qOut_i$ are the net input and output of the $i^{th}$ neuron in the $q^{th}$ layer\n\nThe network has $m$ input signals and $n$ output neurons\n\n${}^q w_{ij}$ is the weight of the connection from the $j^{th}$ neuron in the $(q-1)^{th}$ layer to the $i^{th}$ neuron in the $q^{th}$ layer"
+        },
+        {
+          "chunk_id": "bb78f7dc-39fe-4290-8d13-b71e8997ed36",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "When using ANNs?",
+          "chunk_order": 64,
+          "cosine_sim": 0.3336,
+          "final_score": 0.3837,
+          "content": "- Input is high-dimensional discrete or real-valued\n- The target function is real-valued, discrete-valued or vector-valued\n- Possibly noisy data\n- The form of the target function is unknown\n- Human readability of result is not (very) important\n- Long training time is accepted\n- Short classification/prediction time is required"
+        },
+        {
+          "chunk_id": "c203c17e-d401-439a-b1cb-c7bee0a4c0b5",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP algorithm – Forward phase (1)",
+          "chunk_order": 38,
+          "cosine_sim": 0.3193,
+          "final_score": 0.3672,
+          "content": "- For each training instance $x$\n  - The input vector $x$ is propagated from the input layer to the output layer\n  - The network produces an actual output $Out$ (i.e., a vector of $Out_i$, $i=1..n$)\n- Given an input vector $x$, a neuron $z_q$ in the hidden layer receives a net input of\n- ...and produces a (local) output of\n\n$Net_q = \\sum_{j=1}^{m} w_{qj} x_j$\n\nwhere $f(.)$ is the activation (transfer) function of neuron $z_q$\n\n$Out_q = f(Net_q) = f\\left(\\sum_{j=1}^{m} w_{qj} x_j\\right)$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.8
+}

@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_01",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "articulation/bridge defs verbatim"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "articulation/bridge defs verbatim"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "articulation/bridge defs verbatim"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "articulation/bridge defs verbatim"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "articulation/bridge defs verbatim"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "articulation/bridge defs verbatim"
+    }
+  }
+}

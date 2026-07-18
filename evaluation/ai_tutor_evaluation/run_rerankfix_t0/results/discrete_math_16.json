@@ -1,0 +1,51 @@
+{
+  "qid": "discrete_math_16",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The definition of spanning subgraph (same vertex set, subset of edges) and the explanation of spanning trees (connected, no cycles) are all grounded in the provided materials.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses what defines a spanning subgraph: it contains all vertices of the original graph (V(H)=V(G)) with a subset of edges (E(H)⊆E(G)). The additional context about spanning trees is relevant enrichment, not off-topic material.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: it states that a spanning subgraph contains all vertices of G and that V(H) = V(G). The additional correct details about the edge set being a subset and the example of spanning trees do not contradict the ground truth.",
+      "evidence": [
+        "Ground truth: 'the vertex set of H is the same as the vertex set of G (V(H) = V(G))'",
+        "Tutor: 'contains **all vertices** of \\(G\\)' and 'It has the **same vertex set** as \\(G\\): \\(V(H)=V(G)\\)'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Roughly half the chunks are relevant. Chunks about spanning trees (69ed, 79f6, 84c6, a6cf) provide context but don't define spanning *subgraph* itself. Chunk d8f5 on weighted graphs and ef17 on strongly connected components are tangential or irrelevant to the definition.",
+      "evidence": [
+        "d8f53766: 'Weighted Graphs and Minimum Spanning Trees'",
+        "ef17b5b1: 'Strongly connected Components'"
+      ]
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "The retrieved chunks focus heavily on spanning trees (a special case) but do not explicitly define a spanning subgraph in general. The ground-truth definition that a spanning subgraph has V(H) = V(G) is only partially inferable from context about spanning trees.",
+      "evidence": [
+        "A subgraph H of a graph G is called a spanning subgraph if the vertex set of H is the same as the vertex set of G (V(H) = V(G))",
+        "No chunk explicitly states the general definition of spanning subgraph; only spanning tree properties are given"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 2,
+      "justification": "The tutor's answer defines spanning subgraph correctly but provides no citations for the core definition. The five citations all discuss spanning trees (a special case) rather than the general concept of spanning subgraphs, making them loosely related but not directly supporting the main claims.",
+      "evidence": [
+        "Tutor claims: 'A spanning subgraph of a graph G=(V,E) is a subgraph that contains all vertices of G' with 'V(H)=V(G)' and 'E(H)⊆E(G)' — no citation attached to these core definitional statements",
+        "All five cited chunks (69ed, 79f6, 84c6, d8f5, a6cf) discuss 'spanning tree' not 'spanning subgraph'",
+        "Chunk 79f69592: 'Every undirected connected graph contains a spanning tree' — discusses trees, not the general subgraph definition",
+        "Chunk a6cf7664: 'spanning tree keeps all vertices... while removing enough edges to eliminate cycles' — again specific to trees, not subgraphs in general"
+      ]
+    }
+  }
+}

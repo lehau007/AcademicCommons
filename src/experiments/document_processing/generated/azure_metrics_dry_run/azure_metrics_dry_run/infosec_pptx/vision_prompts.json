@@ -1,0 +1,152 @@
+[
+  {
+    "kind": "vision_prompt",
+    "slide": 35,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 45,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 54,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 55,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 56,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 57,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 69,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 70,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 73,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 74,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 75,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 77,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 78,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 80,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 91,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 91,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 91,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 96,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 96,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 96,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 98,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 100,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 100,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 100,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  },
+  {
+    "kind": "vision_prompt",
+    "slide": 104,
+    "instruction": "Describe embedded image and convert to markdown notes."
+  }
+]

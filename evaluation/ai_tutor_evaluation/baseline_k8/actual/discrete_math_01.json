@@ -1,0 +1,162 @@
+{
+  "qid": "discrete_math_01",
+  "course_code": "IT3020E",
+  "question": "What are the definitions of an Articulation Point and a Bridge in an undirected graph?",
+  "session_id": "1832a015-d28c-4506-a6ba-6854cad02aad",
+  "answer": "In an **undirected graph**:\n\n- **Articulation Point (cut vertex):** a vertex whose removal increases the number of connected components of the graph.  \n  - If the graph is connected, removing an articulation point makes it disconnected.\n\n- **Bridge:** an edge whose removal increases the number of connected components of the graph.\n\nThese are exactly the definitions given in the course material.",
+  "citations": [
+    {
+      "chunk_id": "367c4728-ce7e-4aa8-beac-8aaf0b715f16",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Connectedness",
+      "page_number": null,
+      "chunk_order": 46,
+      "excerpt": "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components than in the original graph. The removal of a cut vertex from a connected graph produces a gr"
+    },
+    {
+      "chunk_id": "56164bf2-d83f-450c-8d33-619ba88f3396",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Adjacency",
+      "page_number": null,
+      "chunk_order": 29,
+      "excerpt": "Given $G$ the undirected graph with edge set $E$. Assume $e \\in E$ is pair $(u,v)$.\n\nThen we say:\n\n- $u, v$ are adjacent / neighbors / connected\n- Edge $e$ connects $u$ and $v$.\n- Vertices $u$ and $v$"
+    },
+    {
+      "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graphs",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs"
+    },
+    {
+      "chunk_id": "31c5ea6b-62b9-4d6f-bf64-c4613f981dd2",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Connectedness",
+      "page_number": null,
+      "chunk_order": 47,
+      "excerpt": "[Diagram: The graph shows how certain vertices and edges are critical for maintaining connectivity. Removing the marked cut vertex separates the graph into more parts, while removing the marked bridge"
+    },
+    {
+      "chunk_id": "a452591c-f7a8-4ea7-9e04-9c13119aac7e",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Hamilton graph",
+      "page_number": null,
+      "chunk_order": 89,
+      "excerpt": "- Definition\n- Recognize Hamilton graph"
+    },
+    {
+      "chunk_id": "85142cec-d5a8-4294-9eeb-7544db5777a6",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Degree of a vertex in undirected graph",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "Assume $G$ is undirected graph, $v \\in V$ is a vertex.\n\n- Degree of vertex $v$, $\\mathrm{deg}(v)$, the number of edges incident on a vertex.\n- Vertex with degree 0 is called isolated.\n- Vertex with"
+    },
+    {
+      "chunk_id": "2be344c5-49d3-47a4-803a-96b9a0a00dab",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graph",
+      "page_number": null,
+      "chunk_order": 45,
+      "excerpt": "[Diagram: The figure illustrates a connected undirected graph, meaning every vertex can be reached from every other vertex through some path. This property is fundamental because it ensures the graph "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "definitions of articulation point and bridge in an undirected graph",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "367c4728-ce7e-4aa8-beac-8aaf0b715f16",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Connectedness",
+          "chunk_order": 46,
+          "cosine_sim": 0.582,
+          "final_score": 0.6692,
+          "content": "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components than in the original graph. The removal of a cut vertex from a connected graph produces a graph that is not connected\n\n**Bridge**: An edge whose removal produces a subgraph with more connected components than in the original graph.\n\n```text\n        +---+       +---+           +---+\n        | b |-------| c |-----------| e |\n        +---+       +---+           +---+\n          |           |               |\n          |           |               |\n        +---+       +---+             |\n        | a |-------| d |-------------+\n        +---+                         |\n                                      |\n                                    +---+\n                                    | g |\n                                    +---+\n```"
+        },
+        {
+          "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 8,
+          "cosine_sim": 0.4447,
+          "final_score": 0.5114,
+          "content": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two vertices $u, v \\in V$, there exists exactly one simple path from $u$ to $v$.\n3. $G$ is connected, and removing any edge from $G$ disconnects it (each edge of $G$ is a bridge).\n4. $G$ has no cycles, and adding any edge to $G$ gives rise to a cycle. (Thus $G$ is a maximal acyclic graph).\n5. $G$ is connected and $|E| = |V| - 1$."
+        },
+        {
+          "chunk_id": "56164bf2-d83f-450c-8d33-619ba88f3396",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Adjacency",
+          "chunk_order": 29,
+          "cosine_sim": 0.4413,
+          "final_score": 0.5075,
+          "content": "Given $G$ the undirected graph with edge set $E$. Assume $e \\in E$ is pair $(u,v)$.\n\nThen we say:\n\n- $u, v$ are adjacent / neighbors / connected\n- Edge $e$ connects $u$ and $v$.\n- Vertices $u$ and $v$ are endpoints (đầu mút) of $e$.\n\n```text\n   (u)\n    \\\n     \\  e\n      \\\n       (v)\n```\n\n[Diagram: The figure shows an undirected edge joining two vertices, illustrating the basic meaning of adjacency in a graph. This matters because many graph concepts and algorithms are built on identifying when two vertices are directly connected by an edge.]"
+        },
+        {
+          "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graphs",
+          "chunk_order": 19,
+          "cosine_sim": 0.4358,
+          "final_score": 0.5011,
+          "content": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs $(u,v)$, where $u, v \\in V$, $u \\ne v$\n\n```text\n            (a, b)\n        +------------+\n        |            |\n   a ---+------------+--- b\n         \\          /\n          \\        /\n           \\      /\n            \\    /\n             \\  /\n              c\n\n            (b, c)\n```"
+        },
+        {
+          "chunk_id": "31c5ea6b-62b9-4d6f-bf64-c4613f981dd2",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Connectedness",
+          "chunk_order": 47,
+          "cosine_sim": 0.4151,
+          "final_score": 0.4774,
+          "content": "[Diagram: The graph shows how certain vertices and edges are critical for maintaining connectivity. Removing the marked cut vertex separates the graph into more parts, while removing the marked bridge disconnects the leaf-like node from the rest of the graph.]"
+        },
+        {
+          "chunk_id": "a452591c-f7a8-4ea7-9e04-9c13119aac7e",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Hamilton graph",
+          "chunk_order": 89,
+          "cosine_sim": 0.4088,
+          "final_score": 0.4701,
+          "content": "- Definition\n- Recognize Hamilton graph"
+        },
+        {
+          "chunk_id": "85142cec-d5a8-4294-9eeb-7544db5777a6",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Degree of a vertex in undirected graph",
+          "chunk_order": 33,
+          "cosine_sim": 0.4063,
+          "final_score": 0.4672,
+          "content": "Assume $G$ is undirected graph, $v \\in V$ is a vertex.\n\n- Degree of vertex $v$, $\\mathrm{deg}(v)$, the number of edges incident on a vertex.\n- Vertex with degree 0 is called isolated.\n- Vertex with"
+        },
+        {
+          "chunk_id": "2be344c5-49d3-47a4-803a-96b9a0a00dab",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graph",
+          "chunk_order": 45,
+          "cosine_sim": 0.3999,
+          "final_score": 0.4599,
+          "content": "[Diagram: The figure illustrates a connected undirected graph, meaning every vertex can be reached from every other vertex through some path. This property is fundamental because it ensures the graph forms one cohesive component rather than separate isolated parts.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 6.7
+}

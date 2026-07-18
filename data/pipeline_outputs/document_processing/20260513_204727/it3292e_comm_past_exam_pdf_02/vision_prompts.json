@@ -1,0 +1,194 @@
+[
+  {
+    "kind": "vision_ocr",
+    "page": 1,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 2,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 3,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 4,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 5,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 6,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 7,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 8,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 9,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 10,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 11,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 12,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 13,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 14,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 15,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 16,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 17,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 18,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 19,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 20,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 21,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 22,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 23,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 24,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 25,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 26,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 27,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 28,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 29,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 30,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 31,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 32,
+    "instruction": "This is a scanned mixed-layout page. Perform region-based OCR: 1. Detect table-like regions and extract as structured JSON. 2. Detect graph/diagram regions and extract as structured JSON. 3. Detect handwritten annotations and extract separately. 4. Extract body text. Merge them back in approximate reading order.",
+    "ocr_strategy": "region_based"
+  }
+]

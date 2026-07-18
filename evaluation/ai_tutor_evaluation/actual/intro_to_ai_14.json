@@ -1,0 +1,96 @@
+{
+  "qid": "intro_to_ai_14",
+  "course_code": "IT3160E",
+  "question": "What defines a feed-forward neural network compared to a recurrent neural network?",
+  "session_id": "e7ed9cdb-3222-4975-845b-2a43675bdbb1",
+  "answer": "A **feed-forward neural network** is one where the output of a node **does not feed back** into the same layer or any previous layer. In other words, information flows **one way only**: từ input → hidden layer(s) → output.\n\nA **recurrent neural network** is a type of **feedback network** where there are **closed loops**: outputs can be fed back as inputs to the same layer or an earlier layer. This creates a form of memory or dependence on previous states.\n\n### Short comparison\n- **Feed-forward network:** no cycles, information moves forward only.\n- **Recurrent network:** has feedback loops/cycles, information can circulate back.",
+  "citations": [
+    {
+      "chunk_id": "3650b8da-e54b-4d06-84a1-b44ff3b0fb2e",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Network structure",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- A layer is a group of neurons\n- A hidden layer is any layer between the input and the output layers\n- Hidden nodes do not directly interact with the external environment\n- An ANN is said to be *full"
+    },
+    {
+      "chunk_id": "946597e6-ac6a-4cc0-95bb-54f2cdb03b14",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Network structure – Example",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "- single layer feed-forward network\n- single node with feedback to itself\n- multilayer feed-forward network\n- single layer recurrent network\n- multilayer recurrent network"
+    },
+    {
+      "chunk_id": "3586d54e-8082-441d-8e58-661fc8e3abd1",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "BP illustration — Forward phase (2)",
+      "page_number": null,
+      "chunk_order": 55,
+      "excerpt": "```text\nx1 ──▶ f(Net1) ──▶ f(Net4) ──▶ f(Net6) ──▶ Out6\n │       │            │           ▲\n │       ├────▶ f(Net5) ──────────┘\n │       │\n ├──▶ f(Net2) ──▶ f(Net4)\n │       │        └──▶ f(Net5)\n │  "
+    },
+    {
+      "chunk_id": "c9db536b-023e-4fef-a7ad-56675a28df02",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "BP illustration – Forward phase (3)",
+      "page_number": null,
+      "chunk_order": 57,
+      "excerpt": "```text\nx1 ─────▶ f(Net1) ─────▶ f(Net4) ─────▶ f(Net6) ─────▶ Out6\n │          │  ╲          ▲   ╲\n │          │   ╲         │    ╲\n ├─▶ f(Net2) ├───▶ f(Net5) ─────▶\n │   ▲  ╲    │\n │   │   ╲   │\n └─"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "feed-forward neural network compared to recurrent neural network definition differences",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "3650b8da-e54b-4d06-84a1-b44ff3b0fb2e",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Network structure",
+          "chunk_order": 21,
+          "cosine_sim": 0.4702,
+          "final_score": 0.8651,
+          "content": "- A layer is a group of neurons\n- A hidden layer is any layer between the input and the output layers\n- Hidden nodes do not directly interact with the external environment\n- An ANN is said to be *fully connected* if every output from one layer is connected to every node in the next layer\n- An ANN is called *feed-forward network* if no node output is an input to a node in the same layer or in a preceding layer\n- When node outputs can be directed back as inputs to a node in the same (or a preceding) layer, it is a *feedback network*\n  - If the feedback is directed back as input to the nodes in the same layer, then it is called *lateral feedback*\n- Feedback networks that have closed loops are called *recurrent networks*"
+        },
+        {
+          "chunk_id": "946597e6-ac6a-4cc0-95bb-54f2cdb03b14",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Network structure – Example",
+          "chunk_order": 22,
+          "cosine_sim": 0.6079,
+          "final_score": 0.7848,
+          "content": "- single layer feed-forward network\n- single node with feedback to itself\n- multilayer feed-forward network\n- single layer recurrent network\n- multilayer recurrent network"
+        },
+        {
+          "chunk_id": "3586d54e-8082-441d-8e58-661fc8e3abd1",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP illustration — Forward phase (2)",
+          "chunk_order": 55,
+          "cosine_sim": 0.4195,
+          "final_score": 0.3722,
+          "content": "```text\nx1 ──▶ f(Net1) ──▶ f(Net4) ──▶ f(Net6) ──▶ Out6\n │       │            │           ▲\n │       ├────▶ f(Net5) ──────────┘\n │       │\n ├──▶ f(Net2) ──▶ f(Net4)\n │       │        └──▶ f(Net5)\n │       └──▶ f(Net5)\n │\n └──▶ f(Net3) ──▶ f(Net4)\n\nx2 ──▶ f(Net1)\n ├──▶ f(Net2)\n └──▶ f(Net3)\n```\n\n[Diagram: The slide shows a feedforward neural network where inputs are combined through weighted connections, passed through activation functions, and propagated layer by layer toward the final output. It illustrates how each neuron computes a nonlinear transformation of its incoming signals during the forward phase.]"
+        },
+        {
+          "chunk_id": "c9db536b-023e-4fef-a7ad-56675a28df02",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP illustration – Forward phase (3)",
+          "chunk_order": 57,
+          "cosine_sim": 0.4215,
+          "final_score": 0.3477,
+          "content": "```text\nx1 ─────▶ f(Net1) ─────▶ f(Net4) ─────▶ f(Net6) ─────▶ Out6\n │          │  ╲          ▲   ╲\n │          │   ╲         │    ╲\n ├─▶ f(Net2) ├───▶ f(Net5) ─────▶\n │   ▲  ╲    │\n │   │   ╲   │\n └─▶ f(Net3) ─┘\n\nx2 ─────▶ f(Net2)\n │        ▲\n └──────▶ f(Net3)\n```\n\n[Diagram: This shows a feedforward neural-network computation where inputs are combined through weighted connections and activated layer by layer until producing the final output. It matters because it illustrates how information propagates forward in a multilayer network, with intermediate hidden units transforming the input before the output is generated.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.8
+}

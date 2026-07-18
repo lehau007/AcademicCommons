@@ -1,0 +1,126 @@
+{
+  "qid": "intro_to_ai_01",
+  "course_code": "IT3160E",
+  "question": "What are the four factors (PEAS) that should be considered when designing an automated agent?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "9804654e-2cda-41b7-85ec-40ba59e44785",
+  "answer": "The four factors in **PEAS** are:\n\n- **P**erformance measure: tiêu chí đánh giá hiệu quả của agent  \n- **E**nvironment: môi trường mà agent hoạt động  \n- **A**ctuators: bộ phận giúp agent tác động lên môi trường  \n- **S**ensors: bộ phận giúp agent cảm nhận môi trường",
+  "citations": [
+    {
+      "chunk_id": "847fc99d-65cd-4f7c-8cbd-e6937b3a31d2",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PEAS",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- 4 factors should be considered when design an automated agent:\n  - **P**erformance measure\n  - **E**nvironment\n  - **A**ctuators\n  - **S**ensors"
+    },
+    {
+      "chunk_id": "5c77da5d-307b-4f18-8f7f-eb096b74cb01",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PEAS - Spam Filtering Agent",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- **Performance measure**: spam block, false positives, false negatives\n- **Environment**: email client or server\n- **Actuators**: mark as spam, transfer messages\n- **Sensors**: emails (possibly acros"
+    },
+    {
+      "chunk_id": "f6cefdf6-804d-48b8-a6b2-76ee6f3b905b",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PEAS - Medical diagnosis system",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- **Performance measure**: Healthy patient, minimize costs, lawsuits, ...\n- **Environment**: Patient, hospital, staff\n- **Actuators**: Screen display (questions, tests, diagnoses, treatments, referral"
+    },
+    {
+      "chunk_id": "63a01df0-e3e5-4875-a02f-43bd12ac56a1",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Agents and environments",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- An **agent** is anything that can be viewed as **perceiving** its **environment** through **sensors** and **acting** upon that environment through **actuators**\n- Example 1: human agent\n  - Sensors:"
+    },
+    {
+      "chunk_id": "666c4fc1-bf91-4659-a6a6-9383e6b66b5e",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PEAS - automated taxi driver",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- **Performance measure**: Safe, fast, legal, comfortable trip, maximize profits, …\n- **Environment**: Roads, other traffic, pedestrians, weather, …\n- **Actuators**: Steering wheel, accelerator, brake"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "PEAS four factors performance environment actuators sensors automated agent design",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "847fc99d-65cd-4f7c-8cbd-e6937b3a31d2",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "PEAS",
+          "chunk_order": 9,
+          "cosine_sim": 0.772,
+          "final_score": 1.0252,
+          "content": "- 4 factors should be considered when design an automated agent:\n  - **P**erformance measure\n  - **E**nvironment\n  - **A**ctuators\n  - **S**ensors"
+        },
+        {
+          "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Rational agents",
+          "chunk_order": 14,
+          "cosine_sim": 0.4739,
+          "final_score": 0.7687,
+          "content": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|       |--------------|\n|  Percepts    |\n|  <---------- \n|  Actions     |\n|  ----------> \n|               |\n|               |\n|  Sensors|       | Actuators|\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "5c77da5d-307b-4f18-8f7f-eb096b74cb01",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "PEAS - Spam Filtering Agent",
+          "chunk_order": 12,
+          "cosine_sim": 0.4123,
+          "final_score": 0.519,
+          "content": "- **Performance measure**: spam block, false positives, false negatives\n- **Environment**: email client or server\n- **Actuators**: mark as spam, transfer messages\n- **Sensors**: emails (possibly across users), traffic, etc."
+        },
+        {
+          "chunk_id": "f6cefdf6-804d-48b8-a6b2-76ee6f3b905b",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "PEAS - Medical diagnosis system",
+          "chunk_order": 11,
+          "cosine_sim": 0.4639,
+          "final_score": 0.4836,
+          "content": "- **Performance measure**: Healthy patient, minimize costs, lawsuits, ...\n- **Environment**: Patient, hospital, staff\n- **Actuators**: Screen display (questions, tests, diagnoses, treatments, referrals)\n- **Sensors**: Keyboard (entry of symptoms, findings, patient's answers)"
+        },
+        {
+          "chunk_id": "63a01df0-e3e5-4875-a02f-43bd12ac56a1",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agents and environments",
+          "chunk_order": 2,
+          "cosine_sim": 0.4947,
+          "final_score": 0.4584,
+          "content": "- An **agent** is anything that can be viewed as **perceiving** its **environment** through **sensors** and **acting** upon that environment through **actuators**\n- Example 1: human agent\n  - Sensors: eyes, ears, ...\n  - Actuators: hands, legs, mouth, ...\n- Example 2: robotic agent (e.g., Aishimo)\n  - Sensors: camera, infrared range finders\n  - Actuators: various motors"
+        },
+        {
+          "chunk_id": "666c4fc1-bf91-4659-a6a6-9383e6b66b5e",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "PEAS - automated taxi driver",
+          "chunk_order": 10,
+          "cosine_sim": 0.5134,
+          "final_score": 0.4127,
+          "content": "- **Performance measure**: Safe, fast, legal, comfortable trip, maximize profits, …\n- **Environment**: Roads, other traffic, pedestrians, weather, …\n- **Actuators**: Steering wheel, accelerator, brake, signal, horn, …\n- **Sensors**: Cameras, sonar, speedometer, GPS, odometer, engine sensors, keyboard, …"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.2
+}

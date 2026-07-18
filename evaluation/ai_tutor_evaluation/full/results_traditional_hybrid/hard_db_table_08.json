@@ -1,0 +1,31 @@
+{
+  "qid": "hard_db_table_08",
+  "course_code": "IT3292E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "INSERT/UPDATE/DELETE grounded but wrong framing"
+    },
+    "answer_relevancy": {
+      "score": 3,
+      "justification": "answers DML ops, not the GT defining/constructing/manipulating"
+    },
+    "answer_correctness": {
+      "score": 2,
+      "justification": "TRADITIONAL MIS-ANSWER (spec case): gives INSERT/UPDATE/DELETE; raw query didn't fetch the define/construct/manipulate mapping"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "student-table + DBMS-keyword; mapping chunk absent"
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "define/construct/manipulate mapping not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "-"
+    }
+  }
+}

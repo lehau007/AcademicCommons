@@ -1,0 +1,182 @@
+[
+  {
+    "timestamp": "2026-05-20T08:00:00+07:00",
+    "event": "route_on_needs_review",
+    "document_id": "doc-001",
+    "course_code": "IT3210",
+    "target_queues": [
+      "reviewer-001",
+      "reviewer-003"
+    ],
+    "flags": []
+  },
+  {
+    "timestamp": "2026-05-20T09:00:00+07:00",
+    "event": "route_on_needs_review",
+    "document_id": "doc-002",
+    "course_code": "IT3210",
+    "target_queues": [
+      "reviewer-001",
+      "reviewer-003"
+    ],
+    "flags": []
+  },
+  {
+    "timestamp": "2026-05-20T10:00:00+07:00",
+    "event": "route_on_needs_review",
+    "document_id": "doc-003",
+    "course_code": "IT3210",
+    "target_queues": [
+      "reviewer-001",
+      "reviewer-003"
+    ],
+    "flags": []
+  },
+  {
+    "timestamp": "2026-05-20T11:00:00+07:00",
+    "event": "route_on_needs_review",
+    "document_id": "doc-004",
+    "course_code": "IT3160E",
+    "target_queues": [
+      "reviewer-002"
+    ],
+    "flags": []
+  },
+  {
+    "timestamp": "2026-05-20T12:00:00+07:00",
+    "event": "route_on_needs_review",
+    "document_id": "doc-005",
+    "course_code": "IT3160E",
+    "target_queues": [
+      "reviewer-002"
+    ],
+    "flags": []
+  },
+  {
+    "timestamp": "2026-05-20T13:00:00+07:00",
+    "event": "route_on_needs_review",
+    "document_id": "doc-006",
+    "course_code": "IT3292E",
+    "target_queues": [
+      "ADMIN_QUEUE"
+    ],
+    "flags": [
+      "no_reviewer"
+    ]
+  },
+  {
+    "timestamp": "2026-05-20T14:00:00+07:00",
+    "event": "route_on_needs_review",
+    "document_id": "doc-007",
+    "course_code": "IT3292E",
+    "target_queues": [
+      "ADMIN_QUEUE"
+    ],
+    "flags": [
+      "no_reviewer"
+    ]
+  },
+  {
+    "timestamp": "2026-05-20T15:00:00+07:00",
+    "event": "route_on_needs_review",
+    "document_id": "doc-008",
+    "course_code": "IT3220",
+    "target_queues": [
+      "ADMIN_QUEUE"
+    ],
+    "flags": [
+      "no_reviewer"
+    ]
+  },
+  {
+    "timestamp": "2026-05-20T16:00:00+07:00",
+    "event": "route_on_needs_review",
+    "document_id": "doc-009",
+    "course_code": "IT3210",
+    "target_queues": [
+      "reviewer-001",
+      "reviewer-003"
+    ],
+    "flags": []
+  },
+  {
+    "timestamp": "2026-05-20T10:00:00+07:00",
+    "event": "reviewer_action",
+    "document_id": "doc-001",
+    "reviewer_id": "reviewer-001",
+    "decision": "APPROVE",
+    "removed_from": [
+      "reviewer-001",
+      "reviewer-003"
+    ],
+    "note": null
+  },
+  {
+    "timestamp": "2026-05-20T11:00:00+07:00",
+    "event": "reviewer_action",
+    "document_id": "doc-002",
+    "reviewer_id": "reviewer-003",
+    "decision": "REJECT",
+    "removed_from": [
+      "reviewer-001",
+      "reviewer-003"
+    ],
+    "note": null
+  },
+  {
+    "timestamp": "2026-05-20T11:05:00+07:00",
+    "event": "reviewer_action_rejected",
+    "document_id": "doc-002",
+    "reviewer_id": "reviewer-001",
+    "reason": "already_rejected"
+  },
+  {
+    "timestamp": "2026-05-22T10:00:00+07:00",
+    "event": "sla_escalation",
+    "document_id": "doc-003",
+    "course_code": "IT3210",
+    "sla_hours": 48,
+    "deadline": "2026-05-22T10:00:00+07:00"
+  },
+  {
+    "timestamp": "2026-05-22T10:15:00+07:00",
+    "event": "admin_reassign",
+    "document_id": "doc-009",
+    "target_reviewer": "reviewer-001"
+  },
+  {
+    "timestamp": "2026-05-22T10:30:00+07:00",
+    "event": "reviewer_action",
+    "document_id": "doc-006",
+    "reviewer_id": "admin-001",
+    "decision": "APPROVE",
+    "removed_from": [
+      "ADMIN_QUEUE"
+    ],
+    "note": "Admin direct approval for orphan course IT3292E"
+  },
+  {
+    "timestamp": "2026-05-23T16:00:00+07:00",
+    "event": "sla_escalation",
+    "document_id": "doc-004",
+    "course_code": "IT3160E",
+    "sla_hours": 72,
+    "deadline": "2026-05-23T11:00:00+07:00"
+  },
+  {
+    "timestamp": "2026-05-23T16:00:00+07:00",
+    "event": "sla_escalation",
+    "document_id": "doc-005",
+    "course_code": "IT3160E",
+    "sla_hours": 72,
+    "deadline": "2026-05-23T12:00:00+07:00"
+  },
+  {
+    "timestamp": "2026-05-23T16:00:00+07:00",
+    "event": "sla_escalation",
+    "document_id": "doc-009",
+    "course_code": "IT3210",
+    "sla_hours": 48,
+    "deadline": "2026-05-22T16:00:00+07:00"
+  }
+]

@@ -1,0 +1,115 @@
+{
+  "qid": "discrete_math_17",
+  "course_code": "IT3020E",
+  "question": "According to the properties of trees, what happens when an edge is added to an undirected graph that currently has no cycles?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "657ced91-5d16-4efd-9157-c975f338d8d6",
+  "answer": "## Adding an Edge to a Cycle-Free Undirected Graph\n\nAccording to the tree properties covered in the course material, an undirected graph $G = (V, E)$ that has **no cycles** and is **connected** is a **tree**. One of the key equivalent characterizations of a tree (Property 4 in the theorem) states:\n\n> **\"$G$ has no cycles, and adding *any* edge to $G$ gives rise to a cycle.\"**\n\n### What this means in practice\n\nSuppose you have an undirected graph $G$ with no cycles. When you add a new edge $\\{u, v\\}$ to $G$:\n\n1. **If $u$ and $v$ are already in the same connected component** of $G$:\n   - Since $G$ is cycle-free, there is already a **unique** simple path between $u$ and $v$ (Property 2 of trees).\n   - Adding the new edge $\\{u, v\\}$ closes that path into a **cycle**. The number of edges becomes $|E| + 1$, so the new graph has exactly **one cycle**.\n\n2. **If $u$ and $v$ are in different connected components** (i.e., $G$ is a forest, not necessarily a single tree):\n   - The new edge merges the two components and, if $G$ was acyclic, the resulting graph **still has no cycles** — it just becomes a tree on a larger set of vertices.\n\n### Why this property matters\n\nThis is the reason a tree is called a **maximal acyclic graph**: you cannot add any edge to it without creating a cycle. In other words, a tree sits right at the boundary — it has the fewest edges possible to keep the graph connected, and any additional edge necessarily produces a cycle.\n\n### Related context in the theorem\n\nFor completeness, the full set of equivalent properties of a tree given in the course is:\n\n1. $G$ is a connected graph with no cycles (the definition of a tree).\n2. For every two vertices $u, v$, there is **exactly one** simple path between them.\n3. $G$ is connected, and **removing any edge** disconnects it (every edge is a bridge).\n4. $G$ has no cycles, and **adding any edge** creates a cycle *(this is the property you asked about)*.\n5. $G$ is connected and $|E| = |V| - 1$.\n\nNote that properties 3 and 4 are \"duals\" of each other: removing an edge breaks connectivity, while adding an edge creates a cycle.\n\n---",
+  "citations": [
+    {
+      "chunk_id": "8d2308ca-8945-4d28-ae2b-2c19818231cd",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "GRAPH THEORY",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "(Lý thuyết đồ thị)"
+    },
+    {
+      "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Tree and its properties",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "tính chất của cây (tree) khi thêm một cạnh vào đồ thị vô hướng không có chu trình",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "e612287f-649c-4715-86b9-1198b1349845",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3505,
+          "final_score": 0.6047,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "48217b0a-aa00-4801-8671-315a4d678263",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3511,
+          "final_score": 0.4037,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "9a7f52f3-54b6-4e47-acc9-30881170427a",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3505,
+          "final_score": 0.4031,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "d4ba262d-b46f-43d8-9aa5-85ef7adf3c86",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3505,
+          "final_score": 0.4031,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "f8845059-e289-4482-ad10-e410c803ea09",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3505,
+          "final_score": 0.4031,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "8d2308ca-8945-4d28-ae2b-2c19818231cd",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3505,
+          "final_score": 0.4031,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "7bab2c98-dbdb-4919-96b4-cf960a8c7051",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.3384,
+          "final_score": 0.3891,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "6e826e2c-af10-4406-8bc4-bbe670115d30",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "1. Tree and its properties",
+          "chunk_order": 8,
+          "cosine_sim": 0.2334,
+          "final_score": 0.2684,
+          "content": "**Theorem.** Given an undirected graph $G = (V,E)$, the following conditions are equivalent:\n\n1. $G$ is a connected graph with no cycles. (Thus $G$ is a tree by the above definition).\n2. For every two vertices $u, v \\in V$, there exists exactly one simple path from $u$ to $v$.\n3. $G$ is connected, and removing any edge from $G$ disconnects it (each edge of $G$ is a bridge).\n4. $G$ has no cycles, and adding any edge to $G$ gives rise to a cycle. (Thus $G$ is a maximal acyclic graph).\n5. $G$ is connected and $|E| = |V| - 1$."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 19.2
+}

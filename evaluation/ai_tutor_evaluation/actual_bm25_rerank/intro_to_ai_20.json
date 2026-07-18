@@ -1,0 +1,106 @@
+{
+  "qid": "intro_to_ai_20",
+  "course_code": "IT3160E",
+  "question": "What three formal components make up a logic?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "9bd1a071-5da7-41b5-b4ec-45a86623fe7d",
+  "answer": "Ba thành phần hình thức của một logic là:\n\n1. **Ngôn ngữ** \\(L\\) — tập các câu được mô tả bằng cú pháp chính xác.\n2. **Ngữ nghĩa** \\(S\\) — mô tả ý nghĩa của các phần tử trong ngôn ngữ \\(L\\).\n3. **Hệ suy diễn** \\(R\\) — gồm các quy tắc suy diễn trên \\(L\\).\n\nNói ngắn gọn, một logic có dạng **\\(\\langle L, S, R \\rangle\\)**.",
+  "citations": [
+    {
+      "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "What is Logic ?",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of e"
+    },
+    {
+      "chunk_id": "b5cdd545-1d59-4f39-a146-c68b4edfeb17",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Propositional Logic",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "- Propositional Logic is about facts in the world that are either true or false, nothing else\n- Propositional variables stand for basic facts\n- Sentences are made of\n  - propositional variables (A,B,…"
+    },
+    {
+      "chunk_id": "3576bbb5-4962-4f5e-be53-8c02579e43b0",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Knowledge-based Agents",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Know about the world\n  - They maintain a collection of facts (sentences) about the world, their Knowledge Base, expressed in some formal language.\n- Reason about the world\n  - They are able to deriv"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "What three formal components make up a logic? formal components of logic",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "What is Logic ?",
+          "chunk_order": 3,
+          "cosine_sim": 0.6651,
+          "final_score": 0.817,
+          "content": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of elements in L\n  - R, the logic’s inference system, consisting of derivation rules over L\n- Examples of logics:\n  - Propositional, First Order, Higher Order, Temporal, Fuzzy, Modal, Linear, . . ."
+        },
+        {
+          "chunk_id": "b5cdd545-1d59-4f39-a146-c68b4edfeb17",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Propositional Logic",
+          "chunk_order": 4,
+          "cosine_sim": 0.5055,
+          "final_score": 0.4298,
+          "content": "- Propositional Logic is about facts in the world that are either true or false, nothing else\n- Propositional variables stand for basic facts\n- Sentences are made of\n  - propositional variables (A,B,…),\n  - logical constants (TRUE, FALSE), and\n  - logical connectives (not,and,or,..)\n- The meaning of sentences ranges over the Boolean values {True, False}\n  - Examples: It’s sunny, John is married"
+        },
+        {
+          "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Rational agents",
+          "chunk_order": 14,
+          "cosine_sim": 0.2297,
+          "final_score": 0.3016,
+          "content": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|       |--------------|\n|  Percepts    |\n|  <---------- \n|  Actions     |\n|  ----------> \n|               |\n|               |\n|  Sensors|       | Actuators|\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "6f25b02f-6274-487f-b7f8-597e6d8857c5",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning with state-space search",
+          "chunk_order": 14,
+          "cosine_sim": 0.2013,
+          "final_score": 0.2973,
+          "content": "- Both forward and backward search possible\n- Progression planners\n  - forward state-space search\n  - consider the effect of all possible actions in a given state\n- Regression planners\n  - backward state-space search\n  - Determine what must have been true in the previous state in order to achieve the current state"
+        },
+        {
+          "chunk_id": "61c26cd2-386f-45c1-9e04-7d4e333b6bda",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Foundations of AI",
+          "chunk_order": 15,
+          "cosine_sim": 0.4311,
+          "final_score": 0.2925,
+          "content": "| Field        | Description                                                                 |\n|--------------|-----------------------------------------------------------------------------|\n| Philosophy   | logic, methods of reasoning, mind as physical system foundations of learning, language, rationality |\n| Mathematics  | formal representation and proof algorithms, computation, (un)decidability, (in)tractability, probability |\n| Economics    | utility, decision theory                                                    |\n| Neuroscience | physical substrate for mental activity                                      |\n| Psychology   | phenomena of perception and motor control, experimental techniques           |\n| Computer engineering | building fast computers                                                   |\n| Control theory | design systems that maximize an objective function over time                |\n| Linguistics  | knowledge representation, grammar                                           |"
+        },
+        {
+          "chunk_id": "3576bbb5-4962-4f5e-be53-8c02579e43b0",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Knowledge-based Agents",
+          "chunk_order": 2,
+          "cosine_sim": 0.3428,
+          "final_score": 0.2827,
+          "content": "- Know about the world\n  - They maintain a collection of facts (sentences) about the world, their Knowledge Base, expressed in some formal language.\n- Reason about the world\n  - They are able to derive new facts from those in the KB using some inference mechanism.\n- Act upon the world\n  - They map percepts to actions by querying and updating the KB."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 11.7
+}

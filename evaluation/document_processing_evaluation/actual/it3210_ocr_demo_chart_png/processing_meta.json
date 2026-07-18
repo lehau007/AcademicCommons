@@ -1,0 +1,15 @@
+{
+  "file_id": "it3210_ocr_demo_chart_png",
+  "document_id": "698f892c-b74f-4bcf-b985-87fb0fb152be",
+  "file_format": "png",
+  "document_status": "NEEDS_REVIEW",
+  "storage_md_path": "documents/759183e5-bf2c-426b-b3eb-fd098b93200b/698f892c-b74f-4bcf-b985-87fb0fb152be/markdown/output.md",
+  "markdown_chars": 1287,
+  "chunk_count": 0,
+  "ocr_job": {
+    "status": "COMPLETED",
+    "failure_reason": null,
+    "started_at": "2026-07-05T03:03:24.057324+00:00",
+    "completed_at": "2026-07-05T03:03:30.931456+00:00"
+  }
+}

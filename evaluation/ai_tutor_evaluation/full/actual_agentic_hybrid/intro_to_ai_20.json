@@ -1,0 +1,175 @@
+{
+  "qid": "intro_to_ai_20",
+  "course_code": "IT3160E",
+  "question": "What three formal components make up a logic?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "73ff5ac2-ad20-49b4-b413-96d94a6859ee",
+  "answer": "According to the course material, a **logic** is formally defined as a triplet **⟨L, S, R⟩**, consisting of three components:\n\n1. **L — The Language (Syntax)**\n   A class of sentences described by a precise syntax, usually given as a formal grammar. It specifies which strings of symbols are well-formed sentences.\n   - *Example:* In Propositional Logic, L includes propositional variables (A, B, P, Q, …), logical constants (TRUE, FALSE), and connectives (¬, ∧, ∨, ⇒, ⇔) combined according to syntactic rules.\n\n2. **S — The Semantics**\n   Describes the meaning of the elements in L. It assigns interpretations (truth values, denotations of symbols, universes of discourse, etc.) to the syntactic expressions.\n   - *Example:* In First-Order Logic, S specifies a universe of discourse and the meaning of constants, function symbols, and relation symbols.\n\n3. **R — The Inference System**\n   A set of derivation rules defined over L, used to reason about and derive new sentences from existing ones.\n   - *Example:* Resolution in First-Order Logic is a commonly used inference rule.\n\nThese three components — **syntax, semantics, and inference** — are the formal backbone of any logic, whether it is Propositional Logic, First-Order Logic, or others (Temporal, Modal, Fuzzy, Linear, etc.).",
+  "citations": [
+    {
+      "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "What is Logic ?",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of e"
+    },
+    {
+      "chunk_id": "9a3ca08b-2245-4783-862a-e3b8fd67bb91",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Language of Propositional Logic",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Symbols\n  - Propositional variables: A,B,...,P,Q,...\n  - Logical constants: TRUE, FALSE\n  - Logical connectives:\n\n```text\n¬, ∧, ∨, ⇒, ⇔\n```\n\n- Sentences\n  - Each propositional variable is a sentence"
+    },
+    {
+      "chunk_id": "71ca0a1b-17de-41e9-947a-39d6466c0eb1",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Syntax",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Symbols\n  - Variables: x, y, z,…\n  - Constants: a, b, c,…\n  - Function symbols (with arities): f, g, h, …\n  - Relation symbols (with arities): p, r, r\n  - Logical connectives: $¬, \\land, \\lor, \\Righ"
+    },
+    {
+      "chunk_id": "cbd69d92-9c6c-4b13-9f0b-52fd71da4b57",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Syntax",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "- Variables, constants and function symbols are used to build terms\n  - X, Bill, FatherOf(X), ...\n- Relations and terms are used to build predicates\n  - Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry"
+    },
+    {
+      "chunk_id": "65040f6f-d00f-4429-9c1d-63bcd642be7c",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+    },
+    {
+      "chunk_id": "445fad8f-9d0f-41dd-a04e-07112429a5e2",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "First Order Logic",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+    },
+    {
+      "chunk_id": "6cc71333-6e7a-4da7-a400-de6ab3b19efc",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+    },
+    {
+      "chunk_id": "ca99387d-55e8-4e48-b14f-d3e924f36a7c",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "- Symbols\n  - Variables: x,y,z, …\n  - Constants: 0,1,2, …\n  - Function symbols: +, *\n  - Relation symbols: >, =\n- Semantic\n  - Universe: N (natural numbers)\n  - The meaning of symbols\n    - Constants:"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "three components of a logic: syntax semantics proof system",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "What is Logic ?",
+          "chunk_order": 3,
+          "cosine_sim": 0.519,
+          "final_score": 0.5969,
+          "content": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of elements in L\n  - R, the logic’s inference system, consisting of derivation rules over L\n- Examples of logics:\n  - Propositional, First Order, Higher Order, Temporal, Fuzzy, Modal, Linear, . . ."
+        },
+        {
+          "chunk_id": "9a3ca08b-2245-4783-862a-e3b8fd67bb91",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Language of Propositional Logic",
+          "chunk_order": 5,
+          "cosine_sim": 0.421,
+          "final_score": 0.4842,
+          "content": "- Symbols\n  - Propositional variables: A,B,...,P,Q,...\n  - Logical constants: TRUE, FALSE\n  - Logical connectives:\n\n```text\n¬, ∧, ∨, ⇒, ⇔\n```\n\n- Sentences\n  - Each propositional variable is a sentence\n  - Each logical constant is a sentence\n  - If $α$ and $β$ are sentences then the following are sentences\n\n$$(α),\\neg α, α \\wedge β, α \\vee β, α \\Rightarrow β, α \\Leftrightarrow β$$"
+        },
+        {
+          "chunk_id": "71ca0a1b-17de-41e9-947a-39d6466c0eb1",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 5,
+          "cosine_sim": 0.3911,
+          "final_score": 0.4497,
+          "content": "- Symbols\n  - Variables: x, y, z,…\n  - Constants: a, b, c,…\n  - Function symbols (with arities): f, g, h, …\n  - Relation symbols (with arities): p, r, r\n  - Logical connectives: $¬, \\land, \\lor, \\Rightarrow, \\Leftrightarrow$\n  - Quantifiers: $∃, ∀$"
+        },
+        {
+          "chunk_id": "cbd69d92-9c6c-4b13-9f0b-52fd71da4b57",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 6,
+          "cosine_sim": 0.3904,
+          "final_score": 0.449,
+          "content": "- Variables, constants and function symbols are used to build terms\n  - X, Bill, FatherOf(X), ...\n- Relations and terms are used to build predicates\n  - Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry), Loves(Y,MotherOf(Y)), ...\n- Predicates and logical connective are used to build sentences\n  - Even(4), $\\forall X.\\ Even(X)\\ \\Rightarrow\\ Odd(X+1),\\ \\exists X.\\ X > 0$"
+        },
+        {
+          "chunk_id": "65040f6f-d00f-4429-9c1d-63bcd642be7c",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL",
+          "chunk_order": 4,
+          "cosine_sim": 0.3847,
+          "final_score": 0.4424,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "445fad8f-9d0f-41dd-a04e-07112429a5e2",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "First Order Logic",
+          "chunk_order": 2,
+          "cosine_sim": 0.3847,
+          "final_score": 0.4424,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "6cc71333-6e7a-4da7-a400-de6ab3b19efc",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL",
+          "chunk_order": 11,
+          "cosine_sim": 0.3847,
+          "final_score": 0.4424,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "ca99387d-55e8-4e48-b14f-d3e924f36a7c",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "Example",
+          "chunk_order": 16,
+          "cosine_sim": 0.373,
+          "final_score": 0.429,
+          "content": "- Symbols\n  - Variables: x,y,z, …\n  - Constants: 0,1,2, …\n  - Function symbols: +, *\n  - Relation symbols: >, =\n- Semantic\n  - Universe: N (natural numbers)\n  - The meaning of symbols\n    - Constants: the meaning of 0 is *the number zero*, …\n    - Function symbols: the meaning of + is *the natural number addition*, …\n    - Relation symbols: the meaning of > is *the relation greater than*, …"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 18.3
+}

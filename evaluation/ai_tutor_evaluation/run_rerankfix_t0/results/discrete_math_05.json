@@ -1,0 +1,49 @@
+{
+  "qid": "discrete_math_05",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "The tutor's answer contains no factual claims about incidence matrices or graph theory. It is simply a polite refusal in Vietnamese stating they don't know the answer and asking the student to rephrase the question. Since there are no claims to evaluate, there are no unsupported claims.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 1,
+      "justification": "The tutor's answer does not address the question at all. It is a Vietnamese apology stating they don't know the answer and asking the student to rephrase, rather than explaining how an incidence matrix is constructed.",
+      "evidence": [
+        "Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?"
+      ]
+    },
+    "answer_correctness": {
+      "score": 1,
+      "justification": "The tutor's answer provides no information about incidence matrix construction, instead apologizing and asking the student to rephrase. This completely fails to address the question despite relevant information being available in the retrieved chunks.",
+      "evidence": [
+        "Ground truth states: 'For an undirected graph with n vertices and m edges, the incidence matrix is an n×m matrix denoted as M=[m_ij]. In this matrix, m_ij = 1 when edge e_j is incident with vertex v_i, and 0 otherwise.' Tutor answer: 'Xin lỗi, mình chưa rõ câu trả lời — bạn hỏi lại giúp mình nhé?' (provides no factual content)"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "The first two chunks directly explain incidence matrix construction for undirected graphs and are highly relevant. The third chunk shows adjacency lists/matrices (not incidence matrices), and the last three chunks are merely bullet-point lists of graph representation types without explanatory content. Roughly half the chunks are noise.",
+      "evidence": [
+        "cd7e7d21: Adjacency List/Matrix examples, not incidence matrix",
+        "58612d91, 5fdb71d0, 0f0a8e67: bare bullet lists with no explanation"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunks explicitly state the n×m matrix structure, the notation M=[m_ij], and the definition that m_ij = 1 when edge e_j is incident with vertex v_i, and 0 otherwise.",
+      "evidence": [
+        "n × m matrix M = [mᵢⱼ]",
+        "m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise",
+        "V = {v₁, v₂, v₃, ..., vₙ}",
+        "E = {e₁, e₂, ..., eₘ}"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "N/A — no citations needed. The tutor's answer is a refusal in Vietnamese ('Sorry, I'm not sure of the answer — please ask me again') and makes no factual claims requiring citation support.",
+      "evidence": []
+    }
+  }
+}

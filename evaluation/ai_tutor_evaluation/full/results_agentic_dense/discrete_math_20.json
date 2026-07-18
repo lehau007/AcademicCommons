@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_20",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "near[v] role from Prim pseudocode; matches GT"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "near[v] role from Prim pseudocode; matches GT"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "near[v] role from Prim pseudocode; matches GT"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "near[v] role from Prim pseudocode; matches GT"
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "near[v] role from Prim pseudocode; matches GT"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "near[v] role from Prim pseudocode; matches GT"
+    }
+  }
+}

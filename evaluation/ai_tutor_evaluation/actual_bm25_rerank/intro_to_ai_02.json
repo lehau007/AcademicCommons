@@ -1,0 +1,116 @@
+{
+  "qid": "intro_to_ai_02",
+  "course_code": "IT3160E",
+  "question": "What is the difference between progression planners and regression planners in state-space search?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "d961c7b1-5470-48dd-b503-52029114d602",
+  "answer": "In **state-space search for planning**, the difference is:\n\n- **Progression planners** use **forward search**:\n  - Start from the **initial state**\n  - Consider the effects of all **applicable actions** in the current state\n  - Move step by step toward the goal\n\n- **Regression planners** use **backward search**:\n  - Start from the **goal condition**\n  - Determine what must have been true in the **previous state** for the current goal to be achieved\n  - Move backward until reaching the initial state\n\n### In short\n- **Progression = “What can I do next from here?”**\n- **Regression = “What must have been true before this goal could happen?”**\n\nBoth are valid planning methods in state-space search; they just search in opposite directions.",
+  "citations": [
+    {
+      "chunk_id": "6f25b02f-6274-487f-b7f8-597e6d8857c5",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning with state-space search",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- Both forward and backward search possible\n- Progression planners\n  - forward state-space search\n  - consider the effect of all possible actions in a given state\n- Regression planners\n  - backward st"
+    },
+    {
+      "chunk_id": "19ce7cd1-6107-43e5-85c2-b0ca65810675",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Progression algorithm",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "- Formulation as state-space search problem:\n  - Initial state and goal test: obvious\n  - Successor function: generate from applicable actions\n  - Step cost = each action costs 1\n- Any complete graph "
+    },
+    {
+      "chunk_id": "369751a0-845f-48cd-8fd5-d0f9f1c3080a",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Search Methods:",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "[Diagram: This slide illustrates a forward-search state-space representation for a blocks-world planning problem, where states are evaluated and expanded using action costs and heuristic guidance. It "
+    },
+    {
+      "chunk_id": "a90c4e92-5939-412a-88b3-4862ec370d04",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "b) regression",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "[Diagram: The figure contrasts forward state expansion with regression-based reasoning in a simple travel domain. It shows how applying an action changes which facts hold, and how reasoning backward f"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "difference between progression planners and regression planners in state-space search",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "6f25b02f-6274-487f-b7f8-597e6d8857c5",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning with state-space search",
+          "chunk_order": 14,
+          "cosine_sim": 0.7461,
+          "final_score": 0.9956,
+          "content": "- Both forward and backward search possible\n- Progression planners\n  - forward state-space search\n  - consider the effect of all possible actions in a given state\n- Regression planners\n  - backward state-space search\n  - Determine what must have been true in the previous state in order to achieve the current state"
+        },
+        {
+          "chunk_id": "7b29c8aa-6966-4bc1-a230-e2edd01e97d2",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Can we Prove Anything?",
+          "chunk_order": 30,
+          "cosine_sim": 0.5123,
+          "final_score": 0.236,
+          "content": "- If the state space is finite and we avoid repeated states, the search is complete\n- If the state space is finite and we do not avoid repeated states, the search is in general not complete\n- If the state space is infinite, the search is in general not complete"
+        },
+        {
+          "chunk_id": "19ce7cd1-6107-43e5-85c2-b0ca65810675",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Progression algorithm",
+          "chunk_order": 18,
+          "cosine_sim": 0.5363,
+          "final_score": 0.2338,
+          "content": "- Formulation as state-space search problem:\n  - Initial state and goal test: obvious\n  - Successor function: generate from applicable actions\n  - Step cost = each action costs 1\n- Any complete graph search algorithm is a complete planning algorithm.\n  - E.g. A*\n- Inherently inefficient:\n  - (1) irrelevant actions lead to very broad search tree\n  - (2) good heuristic required for efficient search"
+        },
+        {
+          "chunk_id": "369751a0-845f-48cd-8fd5-d0f9f1c3080a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Forward Search Methods:",
+          "chunk_order": 21,
+          "cosine_sim": 0.5744,
+          "final_score": 0.2129,
+          "content": "[Diagram: This slide illustrates a forward-search state-space representation for a blocks-world planning problem, where states are evaluated and expanded using action costs and heuristic guidance. It matters because A* can efficiently search for a valid plan by combining progress toward the goal with the cost already accumulated.]"
+        },
+        {
+          "chunk_id": "a90c4e92-5939-412a-88b3-4862ec370d04",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "b) regression",
+          "chunk_order": 17,
+          "cosine_sim": 0.4545,
+          "final_score": 0.1509,
+          "content": "[Diagram: The figure contrasts forward state expansion with regression-based reasoning in a simple travel domain. It shows how applying an action changes which facts hold, and how reasoning backward from a goal can identify which earlier state is needed to achieve it.]"
+        },
+        {
+          "chunk_id": "fd0709cd-7676-47c7-9021-029afd938407",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Local search algorithms",
+          "chunk_order": 14,
+          "cosine_sim": 0.4976,
+          "final_score": 0.1353,
+          "content": "- In many optimization problems, the $path$ to the goal is irrelevant; the goal state itself is the solution\n- State space = set of \"complete\" configurations\n- Find configuration satisfying constraints, e.g., n-queens\n- In such cases, we can use local search algorithms\n\n- Local search= use single current state and move to neighboring states.\n- Advantages:\n  - Use very little memory\n  - Find often reasonable solutions in large or infinite state spaces.\n- Are also useful for pure optimization problems.\n  - Find best state according to some objective function."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.9
+}

@@ -1,0 +1,175 @@
+{
+  "qid": "hard_ai_multi_03",
+  "course_code": "IT3160E",
+  "question": "Cho tôi hai điều: (1) agent function ánh xạ từ cái gì sang cái gì, và (2) sự khác nhau giữa agent và environment. Trả lời cả hai ý.",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "fddfd157-d913-456a-8e99-36cce17ace6b",
+  "answer": "# Trả lời\n\n## (1) Agent function ánh xạ từ cái gì sang cái gì?\n\n**Agent function** ánh xạ từ **lịch sử nhận thức (percept histories)** sang **hành động (actions)**.\n\n$$f: \\mathcal{P}^* \\rightarrow \\mathcal{A}$$\n\nTrong đó:\n- $\\mathcal{P}^*$ là tập tất cả các chuỗi nhận thức (percept histories) mà agent có thể quan sát được từ thời điểm khởi đầu đến hiện tại.\n- $\\mathcal{A}$ là tập tất cả các hành động (actions) mà agent có thể thực hiện.\n\nNói cách khác, agent function là một quy tắc (có thể hình dung như một bảng tra cứu) mô tả: *với mỗi chuỗi percept đã thấy, agent sẽ phản ứng bằng hành động nào*. Đây chính là **mô tả trừu tượng** về hành vi của agent.\n\n> Lưu ý: **Agent program** chạy trên một **architecture** (phần cứng/cơ sở tính toán) sẽ *hiện thực hóa* agent function đó. Quan hệ: `agent = architecture + program`.\n\n## (2) Sự khác nhau giữa Agent và Environment\n\nHai khái niệm này có vai trò **đối lập và bổ sung cho nhau** trong hệ thống AI:\n\n| Khía cạnh | **Agent** | **Environment** |\n|-----------|-----------|-----------------|\n| **Vai trò** | Thực thể *nhận thức* và *hành động* | Bối cảnh bên ngoài mà agent tương tác |\n| **Dòng thông tin đi vào** | Nhận **percepts** thông qua **sensors** (cảm biến) | Cung cấp percepts cho agent |\n| **Dòng thông tin đi ra** | Gửi **actions** thông qua **actuators** (bộ phận chấp hành) | Nhận actions từ agent |\n| **Thành phần bên trong** | Có cấu trúc nội tại: sensors → bộ xử lý (chương trình) → actuators | Là mọi thứ *bên ngoài* agent |\n| **Bản chất** | Là phần \"thông minh\" cần thiết kế | Là \"bài toán\"/\"thế giới\" mà agent phải giải quyết |\n\n**Quan hệ tương tác** được minh họa trong slide:\n\n```\n+----------- Agent -----------+         +---------------+\n|                             |  Percepts|               |\n|  Sensors ----------+        | <--------|               |\n|                    |        |          |  Environment  |\n|                    v        |          |               |\n|                   [?]       |          |               |\n|                    |        |          |               |\n|                    v        |          |               |\n|  Actuators ---------+------ | Actions  |               |\n+----------- Agent -----------+ -------->|               |\n                                       +---------------+\n```\n\n**Tóm lại:**\n- **Agent** = thực thể chủ động, có cảm biến để nhận thức và bộ chấp hành để hành động (ví dụ: robot, người lái xe, chương trình chơi cờ).\n- **Environment** = tất cả những gì nằm ngoài agent, là nơi cung cấp thông tin (percepts) cho agent và chịu tác động từ các hành động (actions) của agent.\n\nAgent \"sống\" trong environment; mọi hành vi thông minh đều phải được đánh giá dựa trên hiệu năng (performance) mà agent đạt được **trong** environment cụ thể đó.",
+  "citations": [
+    {
+      "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+      "document_title": "lecture1_introduction.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Rational agents",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|      "
+    },
+    {
+      "chunk_id": "796d1cc0-37d9-49ea-9d9e-5c3f0792167b",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Agents and environments (con't)",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- The **agent function** maps from percept histories to actions: \n  - [Formula: agent function mapping]\n- The **agent program** runs on the physical **architecture** to produce the agent function\n  - "
+    },
+    {
+      "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Simple reflex agent",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+    },
+    {
+      "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Model-based reflex agents",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+    },
+    {
+      "chunk_id": "524b2f4b-08ad-426c-893b-278b35469f7b",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Knowledge-based agents",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "**Function** KB-AGENT(percept) **returns** an action\n\n- static: KB, a knowledge base\n\nt, a counter, initially 0, indicating time\n\n- TELL(KB, MAKE-PERCEPT-SENTENCE(percept,t)\n    - action ← ASK(KB, MAK"
+    },
+    {
+      "chunk_id": "e8d0cf8d-ad47-4bea-812a-b31c7a38de13",
+      "document_title": "it3160e_ai_introduction.pdf",
+      "document_tier": "community",
+      "document_subtype": "summary_note",
+      "section_title": "Rational agents",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- An **agent** is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$$\\mathcal{P}^* \\rightarrow \\mathcal{A}$$\n\n```text\n+--------------------------- Agent -"
+    },
+    {
+      "chunk_id": "30300eec-d65c-472b-927a-37480bf0e42b",
+      "document_title": "it3160e_ai_introduction.pdf",
+      "document_tier": "community",
+      "document_subtype": "summary_note",
+      "section_title": "Rational agents",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is t"
+    },
+    {
+      "chunk_id": "803a9519-9652-4953-bcc2-531222ef78d7",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Agent function based on conditional table",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "**Function** TABLE-DRIVEN-AGENT(percept) **returns** an action\n\n- **static:** \n  - *percepts*, a sequence, initially empty\n  - *table*, a table of actions, indexed by percept sequences, initially full"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "agent function ánh xạ từ lịch sử nhận thức (percept history) đến hành động (action), sự khác biệt giữa agent và environment",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Rational agents",
+          "chunk_order": 14,
+          "cosine_sim": 0.4433,
+          "final_score": 0.7647,
+          "content": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|       |--------------|\n|  Percepts    |\n|  <---------- \n|  Actions     |\n|  ----------> \n|               |\n|               |\n|  Sensors|       | Actuators|\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "796d1cc0-37d9-49ea-9d9e-5c3f0792167b",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agents and environments (con't)",
+          "chunk_order": 3,
+          "cosine_sim": 0.4651,
+          "final_score": 0.5348,
+          "content": "- The **agent function** maps from percept histories to actions: \n  - [Formula: agent function mapping]\n- The **agent program** runs on the physical **architecture** to produce the agent function\n  - agent = architecture + program\n\n| Agent        | Environment |\n|--------------|-------------|\n| +-------------+  |             |\n| |   Sensors   |<--+--Percepts            |\n| +------+------+  |             |\n|         |         |             |\n|    +----+----+    |             |\n|    |    ?    |    |             |\n|    +----+----+    |             |\n|         |         |             |\n|  +------+------+  |             |\n|  |  Actuators  |--+--+->Actions            |\n|  +-------------+  |             |"
+        },
+        {
+          "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Simple reflex agent",
+          "chunk_order": 16,
+          "cosine_sim": 0.4566,
+          "final_score": 0.5251,
+          "content": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+        },
+        {
+          "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Model-based reflex agents",
+          "chunk_order": 17,
+          "cosine_sim": 0.3951,
+          "final_score": 0.4544,
+          "content": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+        },
+        {
+          "chunk_id": "524b2f4b-08ad-426c-893b-278b35469f7b",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Knowledge-based agents",
+          "chunk_order": 22,
+          "cosine_sim": 0.3943,
+          "final_score": 0.4535,
+          "content": "**Function** KB-AGENT(percept) **returns** an action\n\n- static: KB, a knowledge base\n\nt, a counter, initially 0, indicating time\n\n- TELL(KB, MAKE-PERCEPT-SENTENCE(percept,t)\n    - action ← ASK(KB, MAKE-ACTION- QUERY(^))\n    - TELL(KB, MAKE-ACTION-SENTENCE(action,t) )\n    - t ← t+1\n    - return action"
+        },
+        {
+          "chunk_id": "e8d0cf8d-ad47-4bea-812a-b31c7a38de13",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 9,
+          "cosine_sim": 0.4532,
+          "final_score": 0.4532,
+          "content": "- An **agent** is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$$\\mathcal{P}^* \\rightarrow \\mathcal{A}$$\n\n```text\n+--------------------------- Agent ---------------------------+      +-------------+\n|                                                             |      |             |\n|  Sensors  <-- Percepts                                      |      | Environment |\n|     |                                                       |      |             |\n|     v                                                       |      |             |\n|    [?]                                                      |      |             |\n|     |                                                       |      |             |\n|     v                                                       |      |             |\n|  Actuators ---- Actions ----------------------------------> |      |             |\n+-------------------------------------------------------------+      +-------------+\n```"
+        },
+        {
+          "chunk_id": "30300eec-d65c-472b-927a-37480bf0e42b",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 10,
+          "cosine_sim": 0.421,
+          "final_score": 0.421,
+          "content": "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is the core design problem in rational agent systems.]\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "803a9519-9652-4953-bcc2-531222ef78d7",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agent function based on conditional table",
+          "chunk_order": 4,
+          "cosine_sim": 0.3591,
+          "final_score": 0.413,
+          "content": "**Function** TABLE-DRIVEN-AGENT(percept) **returns** an action\n\n- **static:** \n  - *percepts*, a sequence, initially empty\n  - *table*, a table of actions, indexed by percept sequences, initially fully specified\n- Append *percept* to the end of *percepts*\n- *action* $\\leftarrow$ LOOKUP(*percepts*, *table*)\n\n**Return** *action*\n\n- <span style=\"color:red\">Drawback: huge table!</span>"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 26.2
+}

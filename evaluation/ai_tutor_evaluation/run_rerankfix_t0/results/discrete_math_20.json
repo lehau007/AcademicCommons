@@ -1,0 +1,55 @@
+{
+  "qid": "discrete_math_20",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The definition of near[v] as the vertex in T nearest to v, the relationship with d[v], and the example explanation all match the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses what near[v] indicates in Prim's Algorithm: it records the vertex in the current tree T that is nearest to vertex v. The explanation is on-topic throughout, providing the core definition plus helpful clarification about the relationship with d[v].",
+      "evidence": [
+        "nhãn `near[v]` cho biết **đỉnh trong cây hiện tại `T` gần đỉnh `v` nhất**",
+        "`near[v]`: **đỉnh của cây `T`** tạo ra cạnh nhỏ nhất đó với `v`"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly identifies that near[v] indicates the vertex in the current tree T that is nearest to vertex v, which fully aligns with the ground truth. The additional explanation about d[v] and the example provide helpful context without contradicting the core fact.",
+      "evidence": [
+        "Ground truth: 'near[v] records the vertex of T that is currently nearest to vertex v'",
+        "Tutor: 'near[v] cho biết đỉnh trong cây hiện tại T gần đỉnh v nhất' (near[v] indicates the vertex in the current tree T nearest to vertex v)"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to understanding near[v] in Prim's algorithm. Chunks 1 and 2 explicitly define near[v], while chunks 3-6 provide essential context about Prim's algorithm mechanics and examples that support understanding the label's role.",
+      "evidence": [
+        "Chunk 1: 'near[v] = r' and 'near[v'] = v' show near[v] usage in pseudocode",
+        "Chunk 2: 'near[v] := z record the vertex of T that is nearest to vertex v' directly defines the concept",
+        "Chunks 3-6: all describe Prim's algorithm structure and examples that contextualize how near[v] functions"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk f8b4bfd3 explicitly states 'near[v] := z record the vertex of T that is nearest to vertex v' and chunk 73844cf8 shows the implementation with near[v] tracking vertices in T.",
+      "evidence": [
+        "near[v] := z record the vertex of T that is nearest to vertex v",
+        "d[v]: the edge with minimum weight connecting vertex v (not yet in the spanning tree T) to other vertex of T"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the tutor's explanation of near[v]. The cited chunks explicitly define near[v] as recording the vertex of T nearest to v, and show its use in the algorithm implementation.",
+      "evidence": [
+        "Tutor states 'near[v] cho biết đỉnh trong cây hiện tại T gần đỉnh v nhất' (near[v] indicates the vertex in current tree T nearest to vertex v)",
+        "Chunk f8b4bfd3 states: 'near[v] := z record the vertex of T that is nearest to vertex v'",
+        "Chunk 73844cf8 shows implementation: 'near[v] = r' in initialization and 'near[v'] = v' in update step",
+        "Tutor's explanation of d[v] vs near[v] distinction matches chunk f8b4bfd3's definitions"
+      ]
+    }
+  }
+}

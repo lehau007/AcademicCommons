@@ -1,0 +1,74 @@
+{
+  "topic": "Artificial Intelligence",
+  "concepts": [
+    "Artificial Intelligence",
+    "General information",
+    "Goals",
+    "Content",
+    "Reference",
+    "Evaluation",
+    "Some educational recommendations",
+    "artificial"
+  ],
+  "language": "mixed",
+  "ocr_quality": "low",
+  "section_summaries": [
+    {
+      "heading": "Artificial Intelligence",
+      "summary": "- Lecture 1 – Course presentation - School of Information and Communication Technology - HUST",
+      "page_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "heading": "General information",
+      "summary": "- Course name - Artificial Intelligence - Volume - 15 x 2h - Lecturer - Lê Thanh Hương - Department of Information Systems, SOICT, HUST - huonglt@soict.hust.edu.vn",
+      "page_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "heading": "Goals",
+      "summary": "- Total image of AI - Basic *concepts* of AI - Major *techniques* of AI - Important *applications* of AI",
+      "page_range": [
+        3,
+        3
+      ]
+    },
+    {
+      "heading": "Content",
+      "summary": "- Introduction - Agents - Problem Solving - Search Algorithms - Constraint Satisfaction Problems - Logic and Inference - Planning - Machine Learning",
+      "page_range": [
+        4,
+        4
+      ]
+    },
+    {
+      "heading": "Reference",
+      "summary": "- Book - *Artificial Intelligence – A Modern Approach.* Stuart Russell and Peter Norvig. Prentice Hall",
+      "page_range": [
+        5,
+        5
+      ]
+    },
+    {
+      "heading": "Evaluation",
+      "summary": "- Final examination - 70% - Achievement test - Continuous assessment - 30% - Class attendance, midterm test, short tests or quizzes",
+      "page_range": [
+        6,
+        6
+      ]
+    },
+    {
+      "heading": "Some educational recommendations",
+      "summary": "- Attend classes - Read the reference book - _Artificial Intelligence – A Modern Approach_. Stuart Russell and Peter Norvig.",
+      "page_range": [
+        7,
+        7
+      ]
+    }
+  ],
+  "overall_summary": "Artificial Intelligence: - Lecture 1 – Course presentation - School of Information and Communication Technology - HUST General information: - Course name - Artificial Intelligence - Volume - 15 x 2h - Lecturer - Lê Thanh Hương - Department of Information Systems, SOICT, HUST - huonglt@soict.hust.edu.vn Goals: - Total image of AI - Basic *concepts* of AI - Major *techniques* of AI - Important *applications* of AI Content: - Introduction - Agents - Problem Solving - Search Algorithms - Constraint Satisfaction Problems - Logic and Inference - Planning - Machine Learning Reference: - Book - *Artificial Intelligence – A Modern Approach.* Stuart Russell and Peter Norvig. Prentice Hall Evaluation: - Final examination - 70% - Achievement test - Continuous assessment - 30% - Class attendance, midterm test, short tests or quizzes"
+}

@@ -1,0 +1,56 @@
+{
+  "qid": "database_01",
+  "course_code": "IT3292E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 3,
+      "justification": "The core properties (uniqueness, minimality/irreducibility, superkey relationship) are well-supported by the retrieved chunks. However, the claim that candidate keys cannot contain NULL values is not found in the retrieved chunks; only a general statement about keys is present, not specifically about candidate keys.",
+      "evidence": [
+        "Candidate key attributes cannot contain `NULL` values, because they must identify tuples uniquely."
+      ]
+    },
+    "answer_relevancy": {
+      "score": 4,
+      "justification": "The answer directly addresses the question by explaining the key properties of a Candidate Key (uniqueness, minimality/irreducibility, and its relationship to superkeys). However, it includes additional information about NULL values and primary key selection that, while related, goes slightly beyond the core properties asked about.",
+      "evidence": [
+        "No NULL values - Candidate key attributes cannot contain `NULL` values",
+        "Can serve as the primary key - One candidate key may be selected as the primary key; the others become alternate keys"
+      ]
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "The answer correctly covers all three key properties from the ground truth: uniqueness, irreducibility/minimality, and that it is a superkey. However, it adds two properties (no NULL values and can serve as primary key) that are not in the ground truth, and the NULL constraint is actually a general key constraint rather than a defining property of candidate keys specifically.",
+      "evidence": [
+        "Ground truth: 'no proper subset of it is a superkey' vs Answer: 'Minimality / Irreducibility... no proper subset that is also a superkey'",
+        "Ground truth: 'values of K uniquely identify each tuple' vs Answer: 'Uniqueness... must uniquely identify each tuple'",
+        "Ground truth: 'no proper subset of K has this uniqueness property' vs Answer: 'every attribute in the candidate key is necessary'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Most chunks are relevant to candidate keys. Chunks d9bf8451 and 71a5aed9 directly define candidate keys and related concepts. Chunks d8619ad5, 6a612033, 6c980653, and ca7f96d9 discuss keys, functional dependencies, and minimal keys—all relevant. Only chunk 736444a5 (a normalization exercise question) provides no conceptual information about candidate key properties.",
+      "evidence": [
+        "chunk_id=736444a5-ecb9-40d1-8135-fd1cffe70dc7: 'Given: R(ABEIJGH)... Part a: Find candidate key(s)'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All three key properties from the ground truth are present in the retrieved chunks. Chunk d9bf8451 explicitly defines Candidate Key with all three properties: superkey status, uniqueness, and irreducibility (no proper subset being a superkey).",
+      "evidence": [
+        "Candidate Key: Superkey (K) such that no proper subset is a superkey within the relation",
+        "In each tuple of the relation, values of K uniquely identify that tuple (uniqueness)",
+        "No proper subset of K has the uniqueness property (irreducibility)"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 1,
+      "justification": "The answer makes multiple specific, sourced-sounding claims about candidate keys (uniqueness, minimality, no NULLs, relation to primary key) but provides zero citations despite highly relevant supporting content being available in the retrieved chunks.",
+      "evidence": [
+        "Answer claims: 'Uniqueness... Minimality... No NULL values... Can serve as the primary key' with no citations",
+        "Chunk d9bf8451 directly defines candidate key properties: 'Superkey (K) such that no proper subset is a superkey... uniqueness... irreducibility'",
+        "Chunk 6c980653 states: 'a key can not have NULL values' — directly supports claim 3 but uncited"
+      ]
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "qid": "discrete_math_03",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The definitions of strongly and weakly connected graphs, their relationship, and the example are all grounded in the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by defining both strongly connected and weakly connected directed graphs, explaining their key differences, and providing a concrete example to illustrate the distinction.",
+      "evidence": [
+        "A **strongly connected** directed graph là đồ thị mà với **mọi cặp đỉnh** \\(u, v\\), luôn có: một đường đi từ \\(u\\) đến \\(v\\), **và** một đường đi từ \\(v\\) đến \\(u\\).",
+        "Một **weakly connected** directed graph là đồ thị mà nếu **bỏ hướng của mọi cạnh** (coi như đồ thị vô hướng tương ứng), thì đồ thị đó trở thành **liên thông**."
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly defines both strongly connected (path from u to v AND from v to u for all vertex pairs) and weakly connected (corresponding undirected graph is connected), matching all key facts in the ground truth with no contradictions.",
+      "evidence": [
+        "Ground truth: 'strongly connected if there is a path from u to v and from v to u whenever u and v are vertices'",
+        "Tutor: 'với mọi cặp đỉnh u, v, luôn có: một đường đi từ u đến v, và một đường đi từ v đến u'",
+        "Ground truth: 'weakly connected if its corresponding undirected graph is connected'",
+        "Tutor: 'nếu bỏ hướng của mọi cạnh (coi như đồ thị vô hướng tương ứng), thì đồ thị đó trở thành liên thông'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "The first three chunks directly define and illustrate strongly vs. weakly connected graphs, making them highly relevant. The last three chunks focus on algorithms for checking strong connectivity, which is tangentially related but not directly answering the definitional question.",
+      "evidence": [
+        "chunk_id=0c9dbb8c-b2fe-4698-a287-542ec6d56fb1: 'Check if the graph G is strongly connected or not?'",
+        "chunk_id=9d3197f2-90b6-4884-938e-fa50f0da8ae4: 'Perform DFS(v) on G'",
+        "chunk_id=7589e55b-9e03-42db-9192-e5300352f02c: 'How to obtain graph GT from matrix A?'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The first retrieved chunk contains both key facts from the ground truth verbatim: the definition of strongly connected (path from u to v and v to u for all vertices) and weakly connected (corresponding undirected graph is connected).",
+      "evidence": [
+        "A directed graph is **strongly connected** if there is a path from $u$ to $v$ and from $v$ to $u$ whenever $u$ and $v$ are vertices in the graph",
+        "A directed graph is **weakly connected** if its corresponding undirected graph is connected"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every cited chunk directly supports the statements in the answer. Chunk 1 provides the exact definitions of strongly and weakly connected graphs that the tutor explains. Chunk 2 reinforces the conceptual distinction between the two types of connectivity. Chunk 3 supports the discussion of strongly connected components, which relates to the broader concept being explained.",
+      "evidence": [
+        "Tutor states strongly connected means path from u to v AND v to u for all pairs; Chunk 1: 'strongly connected if there is a path from $u$ to $v$ and from $v$ to $u$ whenever $u$ and $v$ are vertices'",
+        "Tutor states weakly connected means connected when ignoring edge directions; Chunk 1: 'weakly connected if its corresponding undirected graph is connected'",
+        "Tutor states strongly connected implies weakly connected but not vice versa; Chunk 1: 'A strongly connected Graph can be weakly connected but the vice-versa is not true'"
+      ]
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "qid": "intro_to_ai_10",
+  "course_code": "IT3160E",
+  "question": "What is the termination condition for the training loop of a neural network?",
+  "session_id": "485ef7fd-e5d5-42d4-863d-be6de233c628",
+  "answer": "The training loop terminates when the **current total error is acceptable**, i.e. when:\n\n\\[\nE < E_{\\text{threshold}}\n\\]\n\nIf this condition is met, the algorithm **stops training and outputs the final weights**. Otherwise, it resets \\(E = 0\\) and starts the next epoch.",
+  "citations": [
+    {
+      "chunk_id": "b9b2b22e-ed24-4f91-aee0-dccb99e7a18e",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Step 6 (Total error check)",
+      "page_number": null,
+      "chunk_order": 53,
+      "excerpt": "If the current total error is acceptable $(E < E_{threshold})$ then the training process terminates and output the final weights;\n\nOtherwise, reset E=0, and initiate the new training epoch by going to"
+    },
+    {
+      "chunk_id": "c203c17e-d401-439a-b1cb-c7bee0a4c0b5",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "BP algorithm – Forward phase (1)",
+      "page_number": null,
+      "chunk_order": 38,
+      "excerpt": "- For each training instance $x$\n  - The input vector $x$ is propagated from the input layer to the output layer\n  - The network produces an actual output $Out$ (i.e., a vector of $Out_i$, $i=1..n$)\n-"
+    },
+    {
+      "chunk_id": "76e3a7dc-48f5-433e-b2dd-50908c451f70",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Structure and operation of a neuron",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "- The **input signals** to the neuron $(x_i,\\ i = 1..m)$\n  - Each input $x_i$ associates with a weight $w_i$\n- The **bias** $w_0$ (with the input $x_0=1$)\n- **Net input** is an integration function of"
+    },
+    {
+      "chunk_id": "93f83658-ef84-4d0c-948f-00c0eacd1046",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "General weight learning rule",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "```text\nInputs x = [x0=1, x1, ..., xj, ..., xm]\n   |      |    |       |        |\n   |     w0   w1      wj       wm\n   v      v    v       v        v\n+-------------------------------------------------"
+    },
+    {
+      "chunk_id": "3586d54e-8082-441d-8e58-661fc8e3abd1",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "BP illustration — Forward phase (2)",
+      "page_number": null,
+      "chunk_order": 55,
+      "excerpt": "```text\nx1 ──▶ f(Net1) ──▶ f(Net4) ──▶ f(Net6) ──▶ Out6\n │       │            │           ▲\n │       ├────▶ f(Net5) ──────────┘\n │       │\n ├──▶ f(Net2) ──▶ f(Net4)\n │       │        └──▶ f(Net5)\n │  "
+    },
+    {
+      "chunk_id": "c9db536b-023e-4fef-a7ad-56675a28df02",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "BP illustration – Forward phase (3)",
+      "page_number": null,
+      "chunk_order": 57,
+      "excerpt": "```text\nx1 ─────▶ f(Net1) ─────▶ f(Net4) ─────▶ f(Net6) ─────▶ Out6\n │          │  ╲          ▲   ╲\n │          │   ╲         │    ╲\n ├─▶ f(Net2) ├───▶ f(Net5) ─────▶\n │   ▲  ╲    │\n │   │   ╲   │\n └─"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "termination condition for the training loop of a neural network",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "b9b2b22e-ed24-4f91-aee0-dccb99e7a18e",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Step 6 (Total error check)",
+          "chunk_order": 53,
+          "cosine_sim": 0.5736,
+          "final_score": 0.6596,
+          "content": "If the current total error is acceptable $(E < E_{threshold})$ then the training process terminates and output the final weights;\n\nOtherwise, reset E=0, and initiate the new training epoch by going to step 1"
+        },
+        {
+          "chunk_id": "c203c17e-d401-439a-b1cb-c7bee0a4c0b5",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP algorithm – Forward phase (1)",
+          "chunk_order": 38,
+          "cosine_sim": 0.3978,
+          "final_score": 0.4575,
+          "content": "- For each training instance $x$\n  - The input vector $x$ is propagated from the input layer to the output layer\n  - The network produces an actual output $Out$ (i.e., a vector of $Out_i$, $i=1..n$)\n- Given an input vector $x$, a neuron $z_q$ in the hidden layer receives a net input of\n- ...and produces a (local) output of\n\n$Net_q = \\sum_{j=1}^{m} w_{qj} x_j$\n\nwhere $f(.)$ is the activation (transfer) function of neuron $z_q$\n\n$Out_q = f(Net_q) = f\\left(\\sum_{j=1}^{m} w_{qj} x_j\\right)$"
+        },
+        {
+          "chunk_id": "76e3a7dc-48f5-433e-b2dd-50908c451f70",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Structure and operation of a neuron",
+          "chunk_order": 6,
+          "cosine_sim": 0.3546,
+          "final_score": 0.4078,
+          "content": "- The **input signals** to the neuron $(x_i,\\ i = 1..m)$\n  - Each input $x_i$ associates with a weight $w_i$\n- The **bias** $w_0$ (with the input $x_0=1$)\n- **Net input** is an integration function of the inputs – $Net(\\mathbf{w}, \\mathbf{x})$\n- **Activation (transfer)** function computes the output of the neuron – $f(Net(\\mathbf{w}, \\mathbf{x}))$\n- **Output** of the neuron: $Out=f(Net(\\mathbf{w}, \\mathbf{x}))$\n\n```text\nx0=1   --w0-->\\\nx1     --w1--> \\\nx2     --w2-->  \\\n...              >  +-----+    +-----+    ---> Output of the neuron (Out)\nxm     --wm-->  /   |  Σ  | -> |  f  |\n               /     +-----+    +-----+\n\nInputs to the neuron (x)     Net input (Net)     Activation (transfer) function (f)\n```\n\n[Diagram: The neuron first combines weighted inputs, including a bias term, into a single net input, then passes that value through an activation function to produce the final output. This structure is the basic computational unit behind neural networks, enabling them to model nonlinear relationships.]"
+        },
+        {
+          "chunk_id": "93f83658-ef84-4d0c-948f-00c0eacd1046",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "General weight learning rule",
+          "chunk_order": 25,
+          "cosine_sim": 0.3517,
+          "final_score": 0.4045,
+          "content": "```text\nInputs x = [x0=1, x1, ..., xj, ..., xm]\n   |      |    |       |        |\n   |     w0   w1      wj       wm\n   v      v    v       v        v\n+--------------------------------------------------+\n|                      a neuron                     |\n|                         o                         |-----> Out\n|                        Δw                         |\n+--------------------------------------------------+\n                           ^\n                           |\n                        +--+--+\n                        |  ×   |<------ Learning signal generator <------ d\n                        +--+--+\n                           ^\n                           |\n                           η\n                           ^\n                           |\n                           x\n```"
+        },
+        {
+          "chunk_id": "3586d54e-8082-441d-8e58-661fc8e3abd1",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP illustration — Forward phase (2)",
+          "chunk_order": 55,
+          "cosine_sim": 0.3507,
+          "final_score": 0.4033,
+          "content": "```text\nx1 ──▶ f(Net1) ──▶ f(Net4) ──▶ f(Net6) ──▶ Out6\n │       │            │           ▲\n │       ├────▶ f(Net5) ──────────┘\n │       │\n ├──▶ f(Net2) ──▶ f(Net4)\n │       │        └──▶ f(Net5)\n │       └──▶ f(Net5)\n │\n └──▶ f(Net3) ──▶ f(Net4)\n\nx2 ──▶ f(Net1)\n ├──▶ f(Net2)\n └──▶ f(Net3)\n```\n\n[Diagram: The slide shows a feedforward neural network where inputs are combined through weighted connections, passed through activation functions, and propagated layer by layer toward the final output. It illustrates how each neuron computes a nonlinear transformation of its incoming signals during the forward phase.]"
+        },
+        {
+          "chunk_id": "c9db536b-023e-4fef-a7ad-56675a28df02",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP illustration – Forward phase (3)",
+          "chunk_order": 57,
+          "cosine_sim": 0.3502,
+          "final_score": 0.4027,
+          "content": "```text\nx1 ─────▶ f(Net1) ─────▶ f(Net4) ─────▶ f(Net6) ─────▶ Out6\n │          │  ╲          ▲   ╲\n │          │   ╲         │    ╲\n ├─▶ f(Net2) ├───▶ f(Net5) ─────▶\n │   ▲  ╲    │\n │   │   ╲   │\n └─▶ f(Net3) ─┘\n\nx2 ─────▶ f(Net2)\n │        ▲\n └──────▶ f(Net3)\n```\n\n[Diagram: This shows a feedforward neural-network computation where inputs are combined through weighted connections and activated layer by layer until producing the final output. It matters because it illustrates how information propagates forward in a multilayer network, with intermediate hidden units transforming the input before the output is generated.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.7
+}

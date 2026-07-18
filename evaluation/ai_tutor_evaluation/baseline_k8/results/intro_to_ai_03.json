@@ -1,0 +1,54 @@
+{
+  "qid": "intro_to_ai_03",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunks. The core mechanism (expanding the node with lowest f(n)), the evaluation function formula, and the definitions of g(n), h(n), and f(n) all match chunk d556b3ac exactly.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how A* determines which node to expand next: by selecting the unexpanded node with the lowest f(n) value, where f(n) = g(n) + h(n). All content is on-topic and relevant to the question.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: A* expands the unexpanded node with lowest evaluation value, uses f(n) = g(n) + h(n), correctly defines g(n) as cost to reach n, and h(n) as estimated cost from n to goal. No contradictions present.",
+      "evidence": [
+        "Ground truth: 'expands the unexpanded node with the lowest evaluation value' vs Answer: 'chọn node chưa mở rộng có giá trị đánh giá nhỏ nhất'",
+        "Ground truth: 'f(n) = g(n) + h(n)' vs Answer: 'f(n) = g(n) + h(n)'",
+        "Ground truth: 'g(n) represents the cost so far to reach node n' vs Answer: 'g(n): chi phí từ điểm bắt đầu đến n'",
+        "Ground truth: 'h(n) represents the estimated cost from node n to the goal' vs Answer: 'h(n): chi phí ước lượng từ n đến đích'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Seven of the eight chunks are directly relevant to A* search and its node expansion strategy. Only the Greedy Best-First Search chunk (cccb065b) describes a different algorithm, though it provides useful contrast.",
+      "evidence": [
+        "cccb065b: 'Greedy best-first search expands the node that appears to be closest to goal' - describes greedy search, not A*"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk d556b3ac contains the complete definition: expanding the unexpanded node with lowest evaluation value, the formula f(n)=g(n)+h(n), and the meanings of g(n) and h(n).",
+      "evidence": [
+        "Expand unexpanded node with lowest evaluation value",
+        "Evaluation function $f(n) = g(n) + h(n)$",
+        "$g(n)$ = cost so far to reach $n$",
+        "$h(n)$ = estimated cost from $n$ to goal"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the corresponding statements. The cited chunks explicitly describe A* expanding nodes with lowest f(n), the evaluation function f(n)=g(n)+h(n), and the definitions of g(n) and h(n).",
+      "evidence": [
+        "Statement: 'A* search chọn node chưa mở rộng có giá trị đánh giá nhỏ nhất' → Chunk d556b3ac: 'Expand unexpanded node with lowest evaluation value'",
+        "Statement: 'f(n) = g(n) + h(n)' → Chunk d556b3ac: 'Evaluation function $f(n) = g(n) + h(n)$'",
+        "Statement: 'g(n): chi phí từ điểm bắt đầu đến n' → Chunk d556b3ac: '$g(n)$ = cost so far to reach $n$'",
+        "Statement: 'h(n): chi phí ước lượng từ n đến đích' → Chunk d556b3ac: '$h(n)$ = estimated cost from $n$ to goal'"
+      ]
+    }
+  }
+}

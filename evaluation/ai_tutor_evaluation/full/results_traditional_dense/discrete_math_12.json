@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_12",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "refusal faithful; pigeonhole statement absent"
+    },
+    "answer_relevancy": {
+      "score": 3,
+      "justification": "on-topic but no statement delivered"
+    },
+    "answer_correctness": {
+      "score": 2,
+      "justification": "corpus gap: statement not retrieved (all configs fail)"
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "incl-excl/Theta/induction noise"
+    },
+    "context_recall": {
+      "score": 1,
+      "justification": "needed statement not retrieved"
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "-"
+    }
+  }
+}

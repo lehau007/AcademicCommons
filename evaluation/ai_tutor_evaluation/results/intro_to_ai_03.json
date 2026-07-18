@@ -1,0 +1,55 @@
+{
+  "qid": "intro_to_ai_03",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunks. The answer correctly describes A* selecting the node with the lowest f(n) value, the formula f(n) = g(n) + h(n), the meanings of g(n) and h(n), and the process of evaluating nodes in the frontier.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how A* determines which node to expand next: by selecting the node with the lowest f(n) = g(n) + h(n) value from the frontier. The explanation is entirely on-topic and covers all key aspects of the question.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: A* expands the node with the lowest evaluation value, uses f(n) = g(n) + h(n), correctly defines g(n) as cost to reach n, and h(n) as estimated cost from n to goal. No contradictions or missing key facts.",
+      "evidence": [
+        "Ground truth: 'expands the unexpanded node with the lowest evaluation value' vs Tutor: 'chọn node có giá trị đánh giá nhỏ nhất'",
+        "Ground truth: 'f(n) = g(n) + h(n)' vs Tutor: 'f(n) = g(n) + h(n)'",
+        "Ground truth: 'g(n) represents the cost so far to reach node n' vs Tutor: 'g(n): chi phí từ nút bắt đầu đến n'",
+        "Ground truth: 'h(n) represents the estimated cost from node n to the goal' vs Tutor: 'h(n): ước lượng chi phí từ n đến đích'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to explaining how A* determines which node to expand next. Each chunk discusses the f(n)=g(n)+h(n) evaluation function, node expansion order, or frontier prioritization—all core to answering the question.",
+      "evidence": [
+        "All chunks reference A* evaluation function f=g+h",
+        "Chunks describe node expansion order and frontier prioritization",
+        "No irrelevant chunks detected"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks: the evaluation function f(n)=g(n)+h(n), the meaning of g(n) as cost so far, h(n) as estimated cost to goal, and that A* expands nodes with lowest f value.",
+      "evidence": [
+        "A* expands nodes in order of increasing $f$ value",
+        "estimated total cost $f=g+h$",
+        "path cost so far plus the heuristic estimate",
+        "A* uses this combined score to decide which node to expand next"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the tutor's explanation. The chunks describe A* prioritizing nodes by f=g+h, expanding in order of increasing f value, and balancing path cost with heuristic estimates—all matching the tutor's statements.",
+      "evidence": [
+        "Tutor: 'A* chọn node có giá trị đánh giá nhỏ nhất' → Chunk fa65614b: 'A* expands nodes in order of increasing $f$ value'",
+        "Tutor: 'f(n) = g(n) + h(n)' → Chunk a2de2a96: '366 = 0 + 366' and '3a5f2840: 'estimated total cost $f=g+h$'",
+        "Tutor: 'mở rộng node có f(n) nhỏ nhất' → Chunk 3a5f2840: 'A* prioritizes frontier nodes by the estimated total cost $f=g+h$'"
+      ]
+    }
+  }
+}

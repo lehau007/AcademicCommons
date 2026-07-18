@@ -1,0 +1,15 @@
+{
+  "file_id": "it3160e_machine_learning",
+  "document_id": "93cd4c0a-90d5-430a-afab-640926b0b1f6",
+  "file_format": "pdf",
+  "document_status": "NEEDS_REVIEW",
+  "storage_md_path": "documents/88c62343-af85-4d01-82a2-400649df68ee/93cd4c0a-90d5-430a-afab-640926b0b1f6/markdown/output.md",
+  "markdown_chars": 6368,
+  "chunk_count": 0,
+  "ocr_job": {
+    "status": "COMPLETED",
+    "failure_reason": null,
+    "started_at": "2026-07-05T03:01:34.986712+00:00",
+    "completed_at": "2026-07-05T03:01:51.429445+00:00"
+  }
+}

@@ -1,0 +1,407 @@
+{
+  "qid": "hard_dm_long_10",
+  "course_code": "IT3020E",
+  "question": "Trình bày đầy đủ cách liệt kê tất cả tập con m phần tử của X = {1,...,n} theo thứ tự từ điển: (a) mỗi tập con được biểu diễn bằng bộ nào và thỏa điều kiện gì; (b) định nghĩa quan hệ 'đứng trước' theo thứ tự từ điển; (c) cho ví dụ với m=3, X={1,2,3,4,5}.",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "9db81159-5910-4ecd-884e-26eaccca5f20",
+  "answer": "# Liệt kê tất cả tập con m phần tử của X = {1, 2, ..., n} theo thứ tự từ điển\n\n## (a) Biểu diễn tập con bằng bộ và điều kiện\n\nMỗi tập con **m phần tử** của tập $X = \\{1, 2, \\ldots, n\\}$ được biểu diễn duy nhất bằng một bộ (tuple) gồm m phần tử sắp xếp tăng dần:\n\n$$a = (a_1, a_2, \\ldots, a_m)$$\n\nthỏa mãn điều kiện:\n\n$$1 \\le a_1 < a_2 < \\cdots < a_m \\le n$$\n\nNhờ điều kiện sắp xếp tăng dần này, mỗi tập con ứng với **đúng một** bộ — tức là tập hợp cần liệt kê tương đương với:\n\n$$S(m, n) = \\{(a_1, \\ldots, a_m) \\in \\mathbb{N}^m : 1 \\le a_1 < a_2 < \\cdots < a_m \\le n\\}$$\n\nvà có đúng $\\binom{n}{m}$ phần tử.\n\n## (b) Quan hệ \"đứng trước\" theo thứ tự từ điển\n\nTa nói bộ $a = (a_1, a_2, \\ldots, a_m)$ **đứng trước** bộ $a' = (a'_1, a'_2, \\ldots, a'_m)$ trong thứ tự từ điển, ký hiệu $a \\prec a'$, nếu tồn tại chỉ số $k$ $(1 \\le k \\le m)$ sao cho:\n\n$$a_1 = a'_1,\\ a_2 = a'_2,\\ \\ldots,\\ a_{k-1} = a'_{k-1},\\quad \\text{và}\\quad a_k < a'_k.$$\n\nNói cách khác: so sánh từ trái sang phải, **vị trí đầu tiên** mà hai bộ khác nhau quyết định thứ tự — bộ nào có phần tử nhỏ hơn ở vị trí đó thì đứng trước.\n\n**Tập đầu tiên** (nhỏ nhất): $(1, 2, \\ldots, m)$  \n**Tập cuối cùng** (lớn nhất): $(n-m+1, n-m+2, \\ldots, n)$\n\n**Quy tắc sinh tập kế tiếp** (thuật toán `Next_Combination`): từ bộ hiện tại $a = (a_1, \\ldots, a_m)$ chưa phải bộ cuối:\n\n1. Quét từ phải sang trái, tìm chỉ số $i$ đầu tiên sao cho $a_i \\ne n - m + i$.\n2. Thay $a_i$ bằng $a_i + 1$.\n3. Với mọi $j = i+1, i+2, \\ldots, m$, đặt $a_j = a_i + j - i$.\n\n```\nvoid Next_Combination()\n{\n    i = m\n    while (a[i] == n - m + i):\n        i = i - 1\n    a[i] = a[i] + 1\n    for j in range(i+1, m+1):\n        a[j] = a[i] + j - i\n}\n```\n\n## (c) Ví dụ với m = 3, X = {1, 2, 3, 4, 5}\n\nTổng số tập con: $\\binom{5}{3} = 10$.\n\nLiệt kê theo thứ tự từ điển:\n\n| STT | Bộ | Tập con |\n|-----|----------------|----------------|\n| 1   | (1, 2, 3) | {1, 2, 3} |\n| 2   | (1, 2, 4) | {1, 2, 4} |\n| 3   | (1, 2, 5) | {1, 2, 5} |\n| 4   | (1, 3, 4) | {1, 3, 4} |\n| 5   | (1, 3, 5) | {1, 3, 5} |\n| 6   | (1, 4, 5) | {1, 4, 5} |\n| 7   | (2, 3, 4) | {2, 3, 4} |\n| 8   | (2, 3, 5) | {2, 3, 5} |\n| 9   | (2, 4, 5) | {2, 4, 5} |\n| 10  | (3, 4, 5) | {3, 4, 5} |\n\n**Minh họa một bước sinh:** Giả sử đang ở bộ $(1, 2, 5, ?)$ trong trường hợp tổng quát $n=5, m=3$ — ví dụ từ $(1, 3, 5)$:\n\n- Tính giới hạn trên: $(n-m+1, n-m+2, n-m+3) = (3, 4, 5)$.\n- Quét từ phải sang trái: $a_3 = 5 = n-m+3$ (bằng giới hạn) → lùi; $a_2 = 3 = n-m+2$ (bằng giới hạn) → lùi; $a_1 = 1 \\ne 3$ → dừng tại $i = 1$.\n- Tăng: $a_1 = 1 + 1 = 2$.\n- Đặt lại: $a_2 = a_1 + 2 - 1 = 3$; $a_3 = a_1 + 3 - 1 = 4$.\n- Kết quả: bộ kế tiếp là $(2, 3, 4)$, đúng vị trí thứ 7 trong bảng trên.",
+  "citations": [
+    {
+      "chunk_id": "444a3aad-ba37-4aac-984f-456b4bd00a97",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.2. Generate basic combinatorial configurations",
+      "page_number": null,
+      "chunk_order": 62,
+      "excerpt": "- Generate binary strings of length $n$\n- Generate $m$-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+    },
+    {
+      "chunk_id": "afa7e21c-af8c-4589-a028-45cfd49c18bf",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.2. Generate basic combinatorial configurations",
+      "page_number": null,
+      "chunk_order": 71,
+      "excerpt": "- Generate binary strings of length $n$\n- Generate $m$-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+    },
+    {
+      "chunk_id": "7d1d6759-6bf1-495e-be65-ed4c115881b5",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Generate basic combinatorial configurations",
+      "page_number": null,
+      "chunk_order": 43,
+      "excerpt": "- Generate binary strings of length $n$\n- Generate $m$-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+    },
+    {
+      "chunk_id": "65dc488c-2e87-4b5a-8585-1118104efc0c",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Generate basic combinatorial configurations",
+      "page_number": null,
+      "chunk_order": 37,
+      "excerpt": "- Generate binary strings of length $n$\n- Generate $m$-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+    },
+    {
+      "chunk_id": "b083b19d-ed33-4a5c-bdb0-a9eb83950b06",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Generate basic combinatorial configurations",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "- Generate binary strings of length $n$\n- Generate m-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+    },
+    {
+      "chunk_id": "4e6282ea-086a-4d18-adff-ac1b90f7812c",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate $m$-element subsets of set with $n$ elements",
+      "page_number": null,
+      "chunk_order": 44,
+      "excerpt": "Problem: Let $X = \\{1, 2, \\ldots, n\\}$. Enumerate all $m$-element subsets of $X$.\n\nSolution:\n\n- Lexicographic order:\n\nEach $m$-element subset of $X$ could be represented by tuples of $m$ elements\n\n$$\n"
+    },
+    {
+      "chunk_id": "668ce4b9-cf66-4110-8e6a-8397e1eca0be",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example 2. Generate $m$-element subsets of the set of $n$ elements",
+      "page_number": null,
+      "chunk_order": 72,
+      "excerpt": "**Problem:** Enumerate all $m$-element subsets of the set $n$ elements $N = \\{1,2,\\ldots,n\\}$.\n\n**Example:** Enumerate all 3-element subsets of the set 5 elements $N = \\{1,2,3,4,5\\}$\n\n**Solution:** $("
+    },
+    {
+      "chunk_id": "e4bbd1b6-5d7a-49e1-ae04-0120133f63c1",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate permutations of $n$ elements",
+      "page_number": null,
+      "chunk_order": 51,
+      "excerpt": "**Problem:** Give $X = \\{1, 2, ..., n\\}$, enumerate all permutations of $n$ elements of $X$.\n\nSolution:\n\n- Dictionary order:\n  - Each permutation of $n$ elements of $X$ could be represented by an orde"
+    },
+    {
+      "chunk_id": "d54a561a-dd2f-42ef-9a68-3807271c8e85",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Successive_Generation algorithm",
+      "page_number": null,
+      "chunk_order": 42,
+      "excerpt": "```text\nvoid Next_Bit_String( )\n\n/*Generate the next binary string in the dictionary\n  order\n\nof the current string  b1 b2 ... bn ≠ 1 1 ... 1  */\n\n{\n    i = n\n\n    while  (b[i] == 1):\n        b[i] = 0"
+    },
+    {
+      "chunk_id": "1a501cbe-58d4-4c26-a892-dff8fa60f553",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Successive_Generation algorithm",
+      "page_number": null,
+      "chunk_order": 49,
+      "excerpt": "```text\nvoid Next_Combination()\n\n/*Generate the next subset in dictionary order of the subset (a_1, a_2,...., a_m) ≠ (n-m+1,...,n)*\n\n{\n    i = m\n\n    while (a[i] == n-m+i):\n        i = i-1\n\n    a[i] ="
+    },
+    {
+      "chunk_id": "18ca8444-29c9-4ea9-9e46-cd6dcb6a8c45",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate *m*-element subsets of set with *n* elements",
+      "page_number": null,
+      "chunk_order": 48,
+      "excerpt": "**Example:** $n = 6, m = 4$\n\nAssume the current subset $(1, 2, 5, 6)$, we need to build its next subset in the dictionary order:\n\n- Scan from the right to the left of sequence $a_1, a_2, ..., a_m$ : f"
+    },
+    {
+      "chunk_id": "ff9b7cd2-f8a2-4834-9844-b89f36258ad7",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate binary strings of length $n$",
+      "page_number": null,
+      "chunk_order": 41,
+      "excerpt": "- Find the first $i$ (in the order $i = n, n-1, \\ldots, 1$) such that $b_i = 0$.\n- Reassign $b_i = 1$ and $b_j = 0$ for all $j > i$. The newly obtained sequence will be the string to find.\n\nExample: c"
+    },
+    {
+      "chunk_id": "3202eee7-aaf9-442a-8609-e73658317598",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate *m*-element subsets of set with *n* elements",
+      "page_number": null,
+      "chunk_order": 47,
+      "excerpt": "Successive_Generation algorithm:\n\n- The first subset is $(1, 2, \\dots, m)$\n- The last subset is $(n-m+1, n-m+2, \\dots, n)$.\n- Assume $a=(a_1, a_2, \\dots, a_m)$ is the current subset but not the final "
+    },
+    {
+      "chunk_id": "01f46a29-d146-48c3-812d-56cf6ad1b6d6",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate $m$-element subsets of set with $n$ elements",
+      "page_number": null,
+      "chunk_order": 45,
+      "excerpt": "We say subset $a = (a_1, a_2,\\ldots, a_m)$ is previous subset $a' = (a'_1, a'_2, \\ldots , a'_m)$ in dictionary order and denote as $a \\prec a'$, if one could find the index $k$ $(1 \\leq k \\leq m)$ suc"
+    },
+    {
+      "chunk_id": "ac8ed4a3-5fc7-4e42-8bc1-f6537314fd81",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate permutations of $n$ elements",
+      "page_number": null,
+      "chunk_order": 52,
+      "excerpt": "We say permutation $a = (a_1, a_2, ..., a_n)$ is previous permutation $a' = (a'_1, a'_2, ... , a'_n)$ in dictionary order and denote as $a < a'$, if we could find the index $k$ $(1 \\le k \\le n)$ such "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "liệt kê tập con m phần tử của X={1,...,n} theo thứ tự từ điển, bộ n, quan hệ đứng trước, ví dụ m=3",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "444a3aad-ba37-4aac-984f-456b4bd00a97",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "4.2. Generate basic combinatorial configurations",
+          "chunk_order": 62,
+          "cosine_sim": 0.4039,
+          "final_score": 0.4645,
+          "content": "- Generate binary strings of length $n$\n- Generate $m$-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+        },
+        {
+          "chunk_id": "afa7e21c-af8c-4589-a028-45cfd49c18bf",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "4.2. Generate basic combinatorial configurations",
+          "chunk_order": 71,
+          "cosine_sim": 0.4039,
+          "final_score": 0.4645,
+          "content": "- Generate binary strings of length $n$\n- Generate $m$-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+        },
+        {
+          "chunk_id": "7d1d6759-6bf1-495e-be65-ed4c115881b5",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "3.2. Generate basic combinatorial configurations",
+          "chunk_order": 43,
+          "cosine_sim": 0.4039,
+          "final_score": 0.4645,
+          "content": "- Generate binary strings of length $n$\n- Generate $m$-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+        },
+        {
+          "chunk_id": "65dc488c-2e87-4b5a-8585-1118104efc0c",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "3.2. Generate basic combinatorial configurations",
+          "chunk_order": 37,
+          "cosine_sim": 0.4037,
+          "final_score": 0.4643,
+          "content": "- Generate binary strings of length $n$\n- Generate $m$-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+        },
+        {
+          "chunk_id": "b083b19d-ed33-4a5c-bdb0-a9eb83950b06",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "3.2. Generate basic combinatorial configurations",
+          "chunk_order": 34,
+          "cosine_sim": 0.3995,
+          "final_score": 0.4594,
+          "content": "- Generate binary strings of length $n$\n- Generate m-element subsets of the set of $n$ elements\n- Generate permutations of $n$ elements"
+        },
+        {
+          "chunk_id": "4e6282ea-086a-4d18-adff-ac1b90f7812c",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate $m$-element subsets of set with $n$ elements",
+          "chunk_order": 44,
+          "cosine_sim": 0.3983,
+          "final_score": 0.4581,
+          "content": "Problem: Let $X = \\{1, 2, \\ldots, n\\}$. Enumerate all $m$-element subsets of $X$.\n\nSolution:\n\n- Lexicographic order:\n\nEach $m$-element subset of $X$ could be represented by tuples of $m$ elements\n\n$$\na = (a_1, a_2, \\ldots, a_m)\n$$\n\nsatisfying\n\n$$\n1 \\le a_1 < a_2 < \\cdots < a_m \\le n.\n$$"
+        },
+        {
+          "chunk_id": "668ce4b9-cf66-4110-8e6a-8397e1eca0be",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Example 2. Generate $m$-element subsets of the set of $n$ elements",
+          "chunk_order": 72,
+          "cosine_sim": 0.3871,
+          "final_score": 0.4452,
+          "content": "**Problem:** Enumerate all $m$-element subsets of the set $n$ elements $N = \\{1,2,\\ldots,n\\}$.\n\n**Example:** Enumerate all 3-element subsets of the set 5 elements $N = \\{1,2,3,4,5\\}$\n\n**Solution:** $(1,2,3), (1,2,4), (1,2,5), (1,3,4), (1,3,5), (1,4,5), (2,3,4), (2,3,5), (2,4,5), (3,4,5)$\n\n➔ Equivalent problem: Enumerate all elements of set:\n\n$$S(m,n)=\\{(a_1,\\ldots,a_m)\\in N^m:\\ 1\\le a_1<\\ldots<a_m\\le n\\}$$"
+        },
+        {
+          "chunk_id": "e4bbd1b6-5d7a-49e1-ae04-0120133f63c1",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate permutations of $n$ elements",
+          "chunk_order": 51,
+          "cosine_sim": 0.3753,
+          "final_score": 0.4316,
+          "content": "**Problem:** Give $X = \\{1, 2, ..., n\\}$, enumerate all permutations of $n$ elements of $X$.\n\nSolution:\n\n- Dictionary order:\n  - Each permutation of $n$ elements of $X$ could be represented by an ordered set of $n$ elements:\n\n$a = (a_1, a_2, \\ldots, a_n)$\n\nsatisfy\n\n$a_i \\in X,\\ i = 1, 2, ..., n,\\ a_p \\neq a_q,\\ p \\neq q.$"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "thứ tự từ điển lexicographic bộ a đứng trước b a_i nhỏ hơn b_i đầu tiên thuật toán sinh",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "1e91b322-9b21-4bc8-8857-793d76ce3d9e",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.364,
+          "final_score": 0.4186,
+          "content": "(Lý thuyết đ.ô thi)"
+        },
+        {
+          "chunk_id": "69c897f3-cf84-4477-808b-1496d9753d9b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3465,
+          "final_score": 0.3984,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "d54a561a-dd2f-42ef-9a68-3807271c8e85",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Successive_Generation algorithm",
+          "chunk_order": 42,
+          "cosine_sim": 0.3027,
+          "final_score": 0.3481,
+          "content": "```text\nvoid Next_Bit_String( )\n\n/*Generate the next binary string in the dictionary\n  order\n\nof the current string  b1 b2 ... bn ≠ 1 1 ... 1  */\n\n{\n    i = n\n\n    while  (b[i] == 1):\n        b[i] = 0\n        i = i-1\n\n    b[i] = 1\n}\n```\n\n[Diagram: The procedure generates the next binary string in lexicographic (dictionary) order by scanning from the end, clearing trailing 1s to 0s, and then flipping the first 0 encountered to 1. This is the binary equivalent of incrementing a number and is useful for enumerating all bit strings systematically.]"
+        },
+        {
+          "chunk_id": "7e556dc3-22ff-4ee6-bede-349c85e966e8",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 32,
+          "cosine_sim": 0.2984,
+          "final_score": 0.3432,
+          "content": "```text\n+------------------------------ S ------------------------------+\n|                                                               |\n|                +---------------------------+                  |\n|               /             A             / \\                 |\n|              /                           /   \\                |\n|             /                         __/     \\__             |\n|            /                      .-''             ''-.        |\n|           /                   .-''      A ∩ B         ''-.     |\n|          /                .-''                           ''-.   |\n|         /             .-''                                   ''-.|\n|        /          .-''                                           |\n|       /       .-''                                               |\n|      /    .-''                                                   |\n|     / .-''                                                       |\n|    /''                 B                                         |\n|   +-------------------------------------------------------------+|\n|      A - B                           B - A                      |\n+--------------------------------------------------------------- --+\n```"
+        },
+        {
+          "chunk_id": "1a501cbe-58d4-4c26-a892-dff8fa60f553",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Successive_Generation algorithm",
+          "chunk_order": 49,
+          "cosine_sim": 0.2694,
+          "final_score": 0.3099,
+          "content": "```text\nvoid Next_Combination()\n\n/*Generate the next subset in dictionary order of the subset (a_1, a_2,...., a_m) ≠ (n-m+1,...,n)*\n\n{\n    i = m\n\n    while (a[i] == n-m+i):\n        i = i-1\n\n    a[i] = a[i] + 1\n\n    for j in range (i+1, m+1):\n        a[j] = a[i] + j - i\n}\n```\n\n[Diagram: This is an algorithm for generating the next combination in lexicographic (dictionary) order. It works by finding the rightmost position that can still be increased, then resetting all following positions to the smallest valid increasing values so the result remains a valid subset.]"
+        },
+        {
+          "chunk_id": "18ca8444-29c9-4ea9-9e46-cd6dcb6a8c45",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate *m*-element subsets of set with *n* elements",
+          "chunk_order": 48,
+          "cosine_sim": 0.2693,
+          "final_score": 0.3097,
+          "content": "**Example:** $n = 6, m = 4$\n\nAssume the current subset $(1, 2, 5, 6)$, we need to build its next subset in the dictionary order:\n\n- Scan from the right to the left of sequence $a_1, a_2, ..., a_m$ : find the first element $a_i \\ne n-m+i$\n- Replace $a_i$ by $a_i + 1$\n- Replace $a_j$ by $a_i + j - i$, where $j = i+1, i+2, ..., m$\n\n- We have $i=2$:\n\n| Sequence | Value $n-m+i$ |\n|---|---|\n| $(1, 2, 5, 6)$ | $(3, 4, 5, 6)$ |\n\nreplace $a_2 = a_2+1 = 3$\n\n$a_3 = a_i + j - i = a_2 + 3 - 2 = 4$\n\n$a_4 = a_i + j - i = a_2 + 4 - 2 = 5$\n\nWe then obtain its next subset $(1, 3, 4, 5)$.\n\n[Diagram: The slide shows the step-by-step rule for generating the next combination in lexicographic order. It matters because this provides a systematic way to enumerate all $m$-element subsets without repetition.]"
+        },
+        {
+          "chunk_id": "ff9b7cd2-f8a2-4834-9844-b89f36258ad7",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate binary strings of length $n$",
+          "chunk_order": 41,
+          "cosine_sim": 0.2651,
+          "final_score": 0.3049,
+          "content": "- Find the first $i$ (in the order $i = n, n-1, \\ldots, 1$) such that $b_i = 0$.\n- Reassign $b_i = 1$ and $b_j = 0$ for all $j > i$. The newly obtained sequence will be the string to find.\n\nExample: consider binary string of length 10: $b = 1101011111$.\nFind the next string::\n\n- We have $i = 5$. Thus, set:\n  - $b_5 = 1$,\n  - and $b_i = 0,\\ i = 6, 7, 8, 9, 10$\n\n```text\n1101011111\n+        1\n----------\n1101100000\n```\n\n[Diagram: The visual shows the carry-like update used to generate the next binary string in lexicographic order. It matters because it efficiently advances to the next bit pattern by turning the rightmost available 0 into 1 and resetting all trailing bits.]"
+        },
+        {
+          "chunk_id": "3202eee7-aaf9-442a-8609-e73658317598",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate *m*-element subsets of set with *n* elements",
+          "chunk_order": 47,
+          "cosine_sim": 0.2636,
+          "final_score": 0.3031,
+          "content": "Successive_Generation algorithm:\n\n- The first subset is $(1, 2, \\dots, m)$\n- The last subset is $(n-m+1, n-m+2, \\dots, n)$.\n- Assume $a=(a_1, a_2, \\dots, a_m)$ is the current subset but not the final yet, then its next subset in the dictionary order could be built by using the following rules:\n  - Scan from the right to the left of sequence $a_1, a_2, \\dots, a_m$: find the first element $a_i \\ne n-m+i$\n  - Replace $a_i$ by $a_i + 1$\n  - Replace $a_j$ by $a_i + j - i$, where $j = i+1, i+2, \\dots, m$"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "định nghĩa bộ a đứng trước bộ b theo thứ tự từ điển tồn tại k a_k < b_k và a_i = b_i với i nhỏ hơn k",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "1e08b37c-ec49-45ae-9d25-064325e6ebe5",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3755,
+          "final_score": 0.6477,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.376,
+          "final_score": 0.4324,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "50d11fba-c0c1-4a1c-8305-d2cf75485847",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3758,
+          "final_score": 0.4321,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "a9e1ef20-4640-4464-89e3-25ec3ecdca7f",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3755,
+          "final_score": 0.4318,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "69c897f3-cf84-4477-808b-1496d9753d9b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3755,
+          "final_score": 0.4318,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c4ff42b1-09bb-41fc-a2a7-b77b7e8ce8a9",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3755,
+          "final_score": 0.4318,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "01f46a29-d146-48c3-812d-56cf6ad1b6d6",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate $m$-element subsets of set with $n$ elements",
+          "chunk_order": 45,
+          "cosine_sim": 0.3441,
+          "final_score": 0.3957,
+          "content": "We say subset $a = (a_1, a_2,\\ldots, a_m)$ is previous subset $a' = (a'_1, a'_2, \\ldots , a'_m)$ in dictionary order and denote as $a \\prec a'$, if one could find the index $k$ $(1 \\leq k \\leq m)$ such that:\n\n$$\na_1 = a'_1,\\ a_2 = a'_2,\\ \\ldots,\\ a_{k-1} = a'_{k-1},\n$$\n\n$$\na_k < a'_k.\n$$"
+        },
+        {
+          "chunk_id": "ac8ed4a3-5fc7-4e42-8bc1-f6537314fd81",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate permutations of $n$ elements",
+          "chunk_order": 52,
+          "cosine_sim": 0.3436,
+          "final_score": 0.3951,
+          "content": "We say permutation $a = (a_1, a_2, ..., a_n)$ is previous permutation $a' = (a'_1, a'_2, ... , a'_n)$ in dictionary order and denote as $a < a'$, if we could find the index $k$ $(1 \\le k \\le n)$ such that:\n\n$a_1 = a'_1, a_2 = a'_2, ... , a_{k-1} = a'_{k-1},$\n\n$a_k < a'_k$.\n\n[Diagram: This slide defines lexicographic order for permutations by comparing elements from left to right until the first difference. It matters because this ordering is the basis for generating the next or previous permutation systematically.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 36.1
+}

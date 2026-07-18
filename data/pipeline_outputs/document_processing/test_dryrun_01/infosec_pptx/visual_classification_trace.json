@@ -1,0 +1,459 @@
+{
+  "sample_id": "infosec_pptx",
+  "total_images": 30,
+  "decorative_skipped": 0,
+  "decorative_minimal_tagged": 0,
+  "meaningful_extracted": 30,
+  "entries": [
+    {
+      "source": "slide",
+      "slide": 35,
+      "image_hash_prefix": "7c72106c632253a4",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.5,
+        "reason": "fallback_default"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 45,
+      "image_hash_prefix": "c04769f1e18cbe30",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "The description implies a technical diagram or chart explaining smartcard functionality."
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 54,
+      "image_hash_prefix": "2b62ede38c5830ad",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.5,
+        "reason": "fallback_default"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 55,
+      "image_hash_prefix": "c69d1c6b99d62215",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram explaining biometric system operation"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 56,
+      "image_hash_prefix": "5103b623c5c523e4",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "table_or_matrix",
+        "learning_value": "low",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "structured text related to biometric accuracy"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 57,
+      "image_hash_prefix": "b280891b7a014b61",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram describing a characteristic curve"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 69,
+      "image_hash_prefix": "3b7ffbb6a18b3a0e",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "likely a diagram or chart explaining Kerberos 4"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 70,
+      "image_hash_prefix": "a78cdeea36db0d00",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.7,
+        "reason": "likely illustrates a process or interaction"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 73,
+      "image_hash_prefix": "a3e28d89446cdb75",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.5,
+        "reason": "fallback_default"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 74,
+      "image_hash_prefix": "c7a5dcf79d7259c1",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram showing a protocol with nodes and steps"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 75,
+      "image_hash_prefix": "0fe1a50ef4e54b30",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram of a specific protocol"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 77,
+      "image_hash_prefix": "3ce2eb7d90015970",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "low",
+        "action": "extract",
+        "confidence": 0.5,
+        "reason": "inline image with unclear content"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 78,
+      "image_hash_prefix": "2a790aba1894a2d0",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "likely an illustration related to Identity Federation"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 80,
+      "image_hash_prefix": "1f32ae6f5c6171ec",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "likely an example diagram or chart explaining federated identity concepts"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 91,
+      "image_hash_prefix": "5b5c5390f799545e",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "image illustrates fingerprint patterns and features"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 91,
+      "image_hash_prefix": "c5c2e1b9736d130f",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "illustrative examples of fingerprint patterns"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 91,
+      "image_hash_prefix": "972fb8465c04227d",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "image illustrates fingerprint patterns"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 96,
+      "image_hash_prefix": "e538b8a9db45fe3b",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "image likely illustrates iris patterns for access control concept"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 96,
+      "image_hash_prefix": "c9b1de1dca4f2be3",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "image likely illustrates iris patterns for access control discussion"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 96,
+      "image_hash_prefix": "a74b2895fe3b9b6e",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "image likely illustrates iris patterns for educational purposes"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 98,
+      "image_hash_prefix": "cb186a43cb379ca8",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram explaining a process with steps and technical terms"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 98,
+      "image_hash_prefix": "2436549527c74d6e",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "formula",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "equation-like text with technical terms"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 98,
+      "image_hash_prefix": "06913bc538f7d42f",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram explaining a process with technical steps"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 98,
+      "image_hash_prefix": "89714b22146eaf15",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "formula",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "equation-like notation with technical terms"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 98,
+      "image_hash_prefix": "84550d23f50b02f4",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "formula",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "equation-like notation with technical terms"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 98,
+      "image_hash_prefix": "c2ddec8f64f53e28",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "high",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram explaining a process with technical steps"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 100,
+      "image_hash_prefix": "fd6e030c61c0fad2",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram illustrating a concept with nodes and lines"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 100,
+      "image_hash_prefix": "05c784f2a3cb38ea",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram illustrating a concept with nodes and lines"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 100,
+      "image_hash_prefix": "05c784f2a3cb38ea",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "graph_diagram",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.8,
+        "reason": "diagram illustrating a concept with nodes and lines"
+      },
+      "action_taken": "extract"
+    },
+    {
+      "source": "slide",
+      "slide": 104,
+      "image_hash_prefix": "919ee9d5878a4c1f",
+      "repeat_count": 1,
+      "position_hint": "inline",
+      "classification": {
+        "label": "general_visual",
+        "learning_value": "medium",
+        "action": "extract",
+        "confidence": 0.7,
+        "reason": "likely an informative figure"
+      },
+      "action_taken": "extract"
+    }
+  ]
+}

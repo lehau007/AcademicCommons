@@ -1,0 +1,60 @@
+{
+  "qid": "discrete_math_07",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The explanation of edge selection, the 'safe edge' concept, the implementation details (d[v], near[v]), and the algorithmic steps all match the provided documentation.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how Prim's algorithm determines which edge to add: it selects the minimum-weight edge connecting a vertex in the current tree to a vertex outside the tree. The explanation is on-topic throughout, covering the core mechanism and implementation details.",
+      "evidence": [
+        "một cạnh có trọng số nhỏ nhất",
+        "nối từ cây hiện tại T ra một đỉnh chưa thuộc T",
+        "chọn cạnh nhẹ nhất đang nối giữa tập đỉnh đã có trong cây và tập đỉnh bên ngoài"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: starts from an arbitrary vertex, adds minimum-weight edge connecting tree to outside vertex, does not form a cycle, and continues until all vertices are included. The answer provides additional implementation details that are correct and do not contradict the ground truth.",
+      "evidence": [
+        "Ground truth: 'adds the minimum-weight edge that connects a vertex already in the tree to a vertex not yet in the tree'",
+        "Tutor: 'một cạnh có trọng số nhỏ nhất... nối từ cây hiện tại T ra một đỉnh chưa thuộc T'",
+        "Ground truth: 'provided it does not form a cycle'",
+        "Tutor: 'không tạo chu trình'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks directly address how Prim's algorithm selects edges at each iteration—describing the minimum-weight edge connecting the current tree to an outside vertex. Every chunk is highly relevant to the question.",
+      "evidence": [
+        "chunk c8ffa216: 'The \"safe\" edge included in T at each iteration is the edge with smallest weight among edges connecting a vertex of T to other vertex not in T.'",
+        "chunk 73844cf8: 'Find v ∈ V \\ V(T) satisfying: d[v] = min { d[i] : i ∈ V \\ V(T) }'",
+        "chunk 6447abc1: 'find the edge with minimum weight (u, v) where u ∈ V(T) and v ∈ V(G) − V(T)'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks: starting from an arbitrary vertex, adding minimum-weight edges connecting tree vertices to non-tree vertices, avoiding cycles, and continuing until all vertices are included.",
+      "evidence": [
+        "Select an arbitrary vertex r ∈ V",
+        "The \"safe\" edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$",
+        "while (T has < n vertices)",
+        "find the edge with minimum weight (u, v) is the minimum weight where u ∈ V(T) and v ∈ V(G) − V(T)"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the corresponding statement. The tutor's explanation of Prim's edge selection mechanism is directly backed by the cited chunks describing the algorithm's safe edge selection, implementation details, and examples.",
+      "evidence": [
+        "Statement: 'một cạnh có trọng số nhỏ nhất... nối từ cây hiện tại T ra một đỉnh chưa thuộc T' → Chunk c8ffa216: 'The \"safe\" edge included in T at each iteration is the edge with smallest weight among edges connecting a vertex of T to other vertex not in T'",
+        "Statement: 'd[v]: trọng số nhỏ nhất của cạnh nối v vào cây' → Chunk 73844cf8: 'd[v]: the edge with minimum weight connecting vertex v (not yet in the spanning tree T) to other vertex of T'",
+        "Statement: 'chọn đỉnh v chưa thuộc cây sao cho d[v] là nhỏ nhất' → Chunk 73844cf8: 'Find v ∈ V \\ V(T) satisfying: d[v] = min { d[i] : i ∈ V \\ V(T) }'",
+        "Statement: 'Thêm cạnh (v, near[v]) vào cây' → Chunk 73844cf8: 'E(T) = E(T) ∪ { (v, near[v]) }'"
+      ]
+    }
+  }
+}

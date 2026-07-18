@@ -1,0 +1,135 @@
+{
+  "qid": "intro_to_ai_04",
+  "course_code": "IT3160E",
+  "question": "How does a model-based reflex agent differ from a simple reflex agent?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "2c9866a9-1aca-4a75-8806-9bec444f1140",
+  "answer": "## Difference Between a Model-Based Reflex Agent and a Simple Reflex Agent\n\nAccording to the course materials (Section: *Agent types*), both of these are among the four basic types of agents in AI, but they differ in how much of the **percept history** they use when deciding what to do.\n\n### Simple Reflex Agent\n- Selects actions **on the basis of the current percept only**.\n- **Ignores the rest of the percept history**.\n- In effect, it follows a direct rule of the form: *\"if current percept looks like X, do Y.\"*\n\n### Model-Based Reflex Agent\n- Maintains an **internal state** that depends on the **percept history**.\n- This internal state reflects at least some of the **unobserved aspects of the current state** of the environment.\n- In other words, the agent keeps a kind of model of how the world evolves, so it can make sensible decisions even when key information is not directly visible in the current percept.\n\n### Key Difference at a Glance\n\n| Aspect | Simple Reflex Agent | Model-Based Reflex Agent |\n|---|---|---|\n| Input used | Current percept only | Current percept + history |\n| Internal state? | No | Yes |\n| Handles partially observable environments? | Poorly — only if the current percept tells it everything it needs | Better — infers unobserved aspects from past percepts |\n\nIn short, a **simple reflex agent** reacts directly to what it perceives *right now*, while a **model-based reflex agent** also remembers what has happened before and uses an internal model of the world to reason about the parts of the state it cannot currently see.\n\n> ⚠️ Note: The retrieved course material only gives a brief definition of each agent type. A deeper treatment (e.g., detailed diagrams, condition–action rules, examples) is not present in the chunks I retrieved, so the comparison above stays at the level described in your course materials.",
+  "citations": [
+    {
+      "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Agent types",
+      "page_number": null,
+      "chunk_order": 15,
+      "excerpt": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+    },
+    {
+      "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Simple reflex agent",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+    },
+    {
+      "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Model-based reflex agents",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+    },
+    {
+      "chunk_id": "fcbd419e-67d2-41a5-ad08-017147bd1fcd",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Multi-agent planning",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- Environment: **cooperative** or **competitive**\n- Issue: the environment is not **static** → **synchronization**\n- Require a model of the other agent's plans\n- **Cooperation**: joint goals and plans"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "difference between model-based reflex agent and simple reflex agent, types of AI agents",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Rational agents",
+          "chunk_order": 14,
+          "cosine_sim": 0.3702,
+          "final_score": 0.6386,
+          "content": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|       |--------------|\n|  Percepts    |\n|  <---------- \n|  Actions     |\n|  ----------> \n|               |\n|               |\n|  Sensors|       | Actuators|\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agent types",
+          "chunk_order": 15,
+          "cosine_sim": 0.5484,
+          "final_score": 0.6307,
+          "content": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+        },
+        {
+          "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Simple reflex agent",
+          "chunk_order": 16,
+          "cosine_sim": 0.3854,
+          "final_score": 0.4432,
+          "content": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+        },
+        {
+          "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Model-based reflex agents",
+          "chunk_order": 17,
+          "cosine_sim": 0.3733,
+          "final_score": 0.4293,
+          "content": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+        },
+        {
+          "chunk_id": "fcbd419e-67d2-41a5-ad08-017147bd1fcd",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Multi-agent planning",
+          "chunk_order": 23,
+          "cosine_sim": 0.3327,
+          "final_score": 0.3826,
+          "content": "- Environment: **cooperative** or **competitive**\n- Issue: the environment is not **static** → **synchronization**\n- Require a model of the other agent's plans\n- **Cooperation**: joint goals and plans, e.g., team planning in doubles tennis.\n  - Joint goal: returning the ball that has been hit to them and ensuring that at least one of them is covering the net\n  - Joint plan: multibody planning\n  - Coordination mechanisms: decompose and distribute tasks\n- **Competition**: e.g., chess-playing\n  - An agent in a competitive environment must\n    - recognize that there are other agents\n    - compute some of the other agent's possible plans\n    - compute how the other agent's plans interact with its own plans\n    - decide on the best action in view of these interactions."
+        },
+        {
+          "chunk_id": "e8d0cf8d-ad47-4bea-812a-b31c7a38de13",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 9,
+          "cosine_sim": 0.3726,
+          "final_score": 0.3726,
+          "content": "- An **agent** is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$$\\mathcal{P}^* \\rightarrow \\mathcal{A}$$\n\n```text\n+--------------------------- Agent ---------------------------+      +-------------+\n|                                                             |      |             |\n|  Sensors  <-- Percepts                                      |      | Environment |\n|     |                                                       |      |             |\n|     v                                                       |      |             |\n|    [?]                                                      |      |             |\n|     |                                                       |      |             |\n|     v                                                       |      |             |\n|  Actuators ---- Actions ----------------------------------> |      |             |\n+-------------------------------------------------------------+      +-------------+\n```"
+        },
+        {
+          "chunk_id": "3a354a9d-e332-4eb0-9a4b-94dc9ac8b4a1",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "AI Planning background",
+          "chunk_order": 7,
+          "cosine_sim": 0.3176,
+          "final_score": 0.3653,
+          "content": "- Focus on classical planning; assume none of the above\n- Deterministic, static, fully observable\n  - “Basic”\n  - Most of the recent progress\n  - Ideas often also useful for more complex problems"
+        },
+        {
+          "chunk_id": "30300eec-d65c-472b-927a-37480bf0e42b",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 10,
+          "cosine_sim": 0.3432,
+          "final_score": 0.3432,
+          "content": "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is the core design problem in rational agent systems.]\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 23.0
+}

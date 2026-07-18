@@ -1,0 +1,125 @@
+{
+  "qid": "hard_db_table_05",
+  "course_code": "IT3292E",
+  "question": "Bảng student trong slide gồm những cột (thuộc tính) nào, và cột nào đóng vai trò liên kết sinh viên với lớp?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "17d8316a-86dc-4338-842e-ee64362ab831",
+  "answer": "# Bảng `student` trong slide\n\nDựa vào các slide được cung cấp, bảng `student` gồm các cột (thuộc tính) sau:\n\n| # | Cột | Ý nghĩa |\n|---|---|---|\n| 1 | **student_id** | Mã sinh viên (khóa chính) |\n| 2 | **first_name** | Tên (tên gọi) |\n| 3 | **last_name** | Họ và tên đệm |\n| 4 | **dob** | Ngày sinh (date of birth) |\n| 5 | **gender** | Giới tính (M / F) |\n| 6 | **address** | Địa chỉ |\n| 7 | **note** | Ghi chú |\n| 8 | **clazz_id** | Mã lớp |\n\n## Cột liên kết sinh viên với lớp\n\nCột đóng vai trò **liên kết sinh viên với lớp** là `clazz_id`. Đây là **khóa ngoại** (foreign key) tham chiếu đến cột `clazz_id` của bảng `clazz`, cho phép mỗi sinh viên được gán về một lớp học cụ thể.\n\n**Ví dụ minh họa từ dữ liệu mẫu:**\n- Sinh viên `20160003` – Trần Thu Hồng → `clazz_id = 20162101` (lớp CNTT1.01-K61)\n- Sinh viên `20170001` – Nguyễn Nhật Ánh → `clazz_id = 20172201` (lớp CNTT2.01-K62)\n\nNhờ cột `clazz_id` này, ta có thể thực hiện các thao tác như: tìm danh sách sinh viên của một lớp, tìm lớp trưởng (qua `monitor_id` ở bảng `clazz`), v.v.\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "bf71f64e-fa33-4bf2-9e66-b67c0b1d3616",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.2. Basic concepts",
+      "page_number": null,
+      "chunk_order": 47,
+      "excerpt": "- An example\n  - student(student_id, first_name, last_name, dob, gender, address, note, clazz_id)"
+    },
+    {
+      "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3. Data Manipulation",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa,"
+    },
+    {
+      "chunk_id": "a9b6e256-e2ef-4425-bbe2-4742c27af351",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "student",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| student_id | first_name | last_name | dob | ... | clazz_id |\n|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | ... |  |\n| 20160002 | Anh | Hoàng | 5/20/1987 | ... | 20162101 |\n| 201"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "Bảng student trong slide gồm những cột (thuộc tính) nào, và cột nào đóng vai trò liên kết sinh viên với lớp?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "153a3a63-0d3f-4a0c-9c75-dc85d2a27d71",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.2. Example",
+          "chunk_order": 29,
+          "cosine_sim": 0.298,
+          "final_score": 0.5141,
+          "content": "- student(**student_id**, name, gender, dob, address)\n- subject(**subject_id**, name, credit)\n- lecturer(**lecturer_id**, name, phone, email)\n- learn(**student_id**, **subject_id**, semester, result)\n- teach(**lecturer_id**, **subject_id**)"
+        },
+        {
+          "chunk_id": "97890d20-076a-4905-ae64-319342e12b87",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "3. Data Manipulation",
+          "chunk_order": 28,
+          "cosine_sim": 0.3648,
+          "final_score": 0.4195,
+          "content": "**student**\n\n| student_id | first_name | last_name | dob | gender | address | note | clazz_id |\n|---|---|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | 15 Lương Định Của, Đ. Đa, HN |  | 20162101 |\n| 20160002 | Anh | Hoàng | 5/20/1987 | M | 513 B5 KTX BKHN |  | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | F | 15 Trần Đại Nghĩa, HBT, Hà nội |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | 5/20/1987 | F | 513 TT Phương Mai, Đ. Đa, HN |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | F | 214 B6 KTX BKHN |  | 20172201 |\n| 20170002 | Nhật Cường | Nguyễn | 10/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170003 | Nhật Cường | Nguyễn | 1/24/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n| 20170004 | Minh Đức | Bùi | 1/25/1988 | M | 214 B5 KTX BKHN |  | 20172201 |\n\n**clazz**\n\n| clazz_id | name | lecturer_id | monitor_id |\n|---|---|---|---|\n| 20162101 | CNTT1.01-K61 | 02001 | 20160003 |\n| 20162102 | CNTT1.02-K61 |  |  |\n| 20172201 | CNTT2.01-K62 | 02002 | 20170001 |\n| 20172202 | CNTT2.02-K62 |  |  |\n\n- Modifying address?\n- Adding new student / new class?\n- Deleting student data?\n- Retrieving list of all students?"
+        },
+        {
+          "chunk_id": "4dbba64d-22f2-4d67-a776-28562d2aa163",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "student",
+          "chunk_order": 26,
+          "cosine_sim": 0.3258,
+          "final_score": 0.3747,
+          "content": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160003 | Thu Hồng | Trần | ... | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | ... | 20162101 |\n| ... | ... | ... | ... | ... |"
+        },
+        {
+          "chunk_id": "a9b6e256-e2ef-4425-bbe2-4742c27af351",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "student",
+          "chunk_order": 5,
+          "cosine_sim": 0.3189,
+          "final_score": 0.3668,
+          "content": "| student_id | first_name | last_name | dob | ... | clazz_id |\n|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | ... |  |\n| 20160002 | Anh | Hoàng | 5/20/1987 | ... | 20162101 |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | ... | 20162101 |\n| 20160004 | Minh Anh | Nguyễn | 5/20/1987 | ... | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn | 5/15/1988 | ... | 20172201 |\n\n[Table: Sample rows of the student relation. Columns: student_id, first_name, last_name, dob (date of birth), gender, clazz_id (foreign key linking each student to a class).]"
+        },
+        {
+          "chunk_id": "c966cb75-ac1a-4497-9754-f83f923e20fe",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "student",
+          "chunk_order": 21,
+          "cosine_sim": 0.3147,
+          "final_score": 0.3619,
+          "content": "| student_id | first_name | last_name | ... | clazz_id |\n|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi |  |  |\n| 20160002 | Anh | Hoàng |  | 20162101 |\n| 20160003 | Thu Hồng | Trần |  | 20162101 |\n| 20160004 | Minh Anh | Nguyễn |  | 20162101 |\n| 20170001 | Nhật Ánh | Nguyễn |  | 20172201 |\n\n[Table: Sample rows of the student relation showing student_id, first_name, last_name and the clazz_id that links each student to a class.]"
+        },
+        {
+          "chunk_id": "bf71f64e-fa33-4bf2-9e66-b67c0b1d3616",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.2. Basic concepts",
+          "chunk_order": 47,
+          "cosine_sim": 0.3121,
+          "final_score": 0.359,
+          "content": "- An example\n  - student(student_id, first_name, last_name, dob, gender, address, note, clazz_id)"
+        },
+        {
+          "chunk_id": "66996430-eb4f-4c56-b575-a244768f3be2",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.3. Model vs. Schema vs. Instance",
+          "chunk_order": 22,
+          "cosine_sim": 0.3004,
+          "final_score": 0.3455,
+          "content": "|  |  |\n|---|---|\n| Data Model | `type <type_name> = record`<br>`    <field_name> : <data_type>;`<br>`    <field_name> : <data_type>;`<br>`    ...`<br>`end;` |\n| Schema | `type student = record`<br>`    ID : string;`<br>`    fullName: string;`<br>`    Birthday: date;`<br>`    Address: string ;`<br>`    Class: string;`<br>`end;` |\n| Instance | `( « Stud001 », « Nguyen », 1/4/1983, «1 Dai Co Viet », « 1F VN K50 » )` |\n\n[Diagram: The slide contrasts three levels of data description. A data model defines the general structure, a schema specifies the fields for a particular record type, and an instance is one actual stored record that conforms to that schema.]"
+        },
+        {
+          "chunk_id": "b48aa1a6-c13e-4824-ac5b-47daaaabe515",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "student",
+          "chunk_order": 10,
+          "cosine_sim": 0.2989,
+          "final_score": 0.3437,
+          "content": "| student_id | first_name | last_name | dob | gender | ... |\n|---|---|---|---|---|---|\n| 20160001 | Ngọc An | Bùi | 3/18/1987 | M | ... |\n| ... | ... | ... | ... | ... | ... |\n| 20160003 | Thu Hồng | Trần | 6/6/1987 | F | ... |\n| 20160004 | Minh Anh | Nguyễn | 5/20/1987 | F | ... |\n\n[Table: Sample rows of the student relation, including the gender column (M/F). Columns: student_id, first_name, last_name, dob, gender, clazz_id.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.6
+}

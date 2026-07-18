@@ -1,0 +1,54 @@
+{
+  "qid": "intro_to_ai_02",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The answer accurately describes progression planners as forward search from initial state to goal, and regression planners as backward search from goal to initial state, with all details grounded in chunk 6f25b02f.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by explaining the core difference between progression and regression planners: their search direction (forward vs. backward) and what each considers (effects of actions vs. preconditions needed).",
+      "evidence": [
+        "Progression planners - Là forward state-space search",
+        "Regression planners - Là backward state-space search",
+        "Progression xét tác động của mọi hành động khả thi trong một trạng thái",
+        "Regression xét điều kiện cần có ở trạng thái trước đó"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: progression planners use forward search considering effects of all possible actions, and regression planners use backward search determining what must have been true in the previous state. No contradictions present.",
+      "evidence": [
+        "Ground truth: 'Progression planners use forward state-space search by considering the effect of all possible actions'",
+        "Tutor: 'Progression planners... xem xét các hành động có thể áp dụng... Progression xét tác động của mọi hành động khả thi'",
+        "Ground truth: 'Regression planners use backward state-space search, determining what must have been true in the previous state'",
+        "Tutor: 'Regression planners... xác định trước khi thực hiện một hành động thì trạng thái nào phải đúng... Regression xét điều kiện cần có ở trạng thái trước đó'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of six chunks are directly relevant to progression vs. regression planners. Only chunk 7b29c8aa (about state space completeness) is unrelated to the question.",
+      "evidence": [
+        "7b29c8aa-6966-4bc1-a230-e2edd01e97d2: 'If the state space is finite and we avoid repeated states'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 6f25b02f explicitly states progression planners use forward search and 'consider the effect of all possible actions in a given state,' and regression planners use backward search to 'Determine what must have been true in the previous state in order to achieve the current state.'",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation points to chunks that directly support the statements made. The primary chunk (6f25b02f) explicitly defines both progression and regression planners with their key characteristics, and the supporting chunks provide relevant details about forward search, backward search, and regression mechanics.",
+      "evidence": [
+        "Chunk 6f25b02f: 'Progression planners - forward state-space search - consider the effect of all possible actions in a given state' supports the progression definition",
+        "Chunk 6f25b02f: 'Regression planners - backward state-space search - Determine what must have been true in the previous state' supports the regression definition",
+        "Chunk 1d0d4fce: 'starting from a goal, a possible action is worked backward to determine the conditions that must have held before it' supports the backward reasoning explanation",
+        "Chunk 040cefcf: 'Continue until a subgoal is produced that is satisfied by current world state' supports the statement about regressing back to initial state"
+      ]
+    }
+  }
+}

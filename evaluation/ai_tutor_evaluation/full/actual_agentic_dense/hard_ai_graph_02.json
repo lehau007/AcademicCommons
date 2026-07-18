@@ -1,0 +1,155 @@
+{
+  "qid": "hard_ai_graph_02",
+  "course_code": "IT3160E",
+  "question": "Trong sơ đồ planning graph cho bài toán thay lốp dự phòng (spare tire), trạng thái mức S2 có tính chất gì khiến ta có thể trích xuất lời giải, và có thể trích xuất bằng những cách nào?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "af6802a9-1fc0-4e21-b064-411bee8f988a",
+  "answer": "# Trạng thái mức S₂ trong planning graph – Bài toán thay lốp dự phòng\n\n## 1. Tính chất của mức S₂ cho phép trích xuất lời giải\n\nTrong sơ đồ planning graph của bài toán **spare tire**, mức S₂ có hai tính chất quan trọng để có thể trích xuất lời giải:\n\n- **Chứa đầy đủ tất cả các literal của goal**  \n  Goal của bài toán là `at(spare, axle)`, và literal này đã xuất hiện ở mức S₂ (được tạo ra bởi action `PutOn(Spare, Axle)` ở mức A₁).\n\n- **Các goal literal không ở trong quan hệ mutex với nhau**  \n  Tại S₂, các literal mục tiêu **không có liên kết mutex** (gray lines) giữa chúng. Đây chính là điều kiện kiểm tra trong vòng lặp của GRAPHPLAN:\n  > *\"if goals all non-mutex in last level of graph then do solution ← EXTRACT-SOLUTION(...)\"*\n\nChỉ khi **cả hai điều kiện** trên thỏa mãn thì thuật toán mới chuyển sang bước `EXTRACT-SOLUTION`. Nếu trích xuất thất bại và đồ thị vẫn có thể mở rộng, GRAPHPLAN sẽ tiếp tục `EXPAND-GRAPH` sang mức tiếp theo.\n\n## 2. Các cách trích xuất lời giải từ S₂\n\nTheo tài liệu, có **hai phương pháp** chính:\n\n### a) Thuật toán CSP (Constraint Satisfaction Problem) với actions là biến\n- Coi mỗi action ở mỗi mức như một **biến** của bài toán CSP.\n- **Ràng buộc** giữa các biến: các action được chọn phải\n  - Có **preconditions** thỏa mãn ở mức trạng thái trước,\n  - Không **mutex** với nhau,\n  - **Effects** của chúng (ở mức sau) phải chứa/duy trì được các goal.\n- Dùng giải thuật CSP (như backtracking với forward checking, AC-3, …) để tìm tổ hợp action thỏa mãn tất cả ràng buộc.\n\n### b) Tìm kiếm ngược (search backwards)\n- Bắt đầu từ **goal literals ở S₂**, tìm một tập action ở A₁ có thể đạt được các goal này **mà không mutex với nhau**.\n- Sau đó, các preconditions của các action đã chọn trở thành **sub-goals** ở S₁, và lại lặp lại quá trình chọn action ở A₀.\n- Tiếp tục cho đến khi quay về **S₀** (trạng thái ban đầu) — nếu đạt được thì lời giải được tìm thấy, ngược lại quay lui và thử lựa chọn khác.\n- Hàm `EXTRACT-SOLUTION(graph, goals, LENGTH(graph))` trong GRAPHPLAN chính là thực hiện kiểu tìm kiếm ngược này.\n\n## 3. Tổng kết luồng hoạt động\n\n```\nKhởi tạo S₀, A₀ → kiểm tra goal ở S₀\n        ↓\nMở rộng S₁, A₁ → kiểm tra goal ở S₁\n        ↓\nMở rộng S₂, A₂ → S₂ có goal VÀ không có mutex\n        ↓\nEXTRACT-SOLUTION (CSP hoặc backward search) → tìm được plan\n```\n\nNhư vậy, **điều kiện cần** để trích xuất lời giải tại S₂ là goal xuất hiện đầy đủ và không mutex, và **cách trích xuất** là dùng CSP với actions làm biến hoặc tìm kiếm ngược qua các mức S₂ → A₁ → S₁ → A₀ → S₀.",
+  "citations": [
+    {
+      "chunk_id": "9e35dead-7fd9-4935-a575-6dba4efd2a76",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning graph for spare tire a S2",
+      "page_number": null,
+      "chunk_order": 57,
+      "excerpt": "Figure 11.14 The planning graph for the spare tire problem after expansion to level $S_2$. Mutex links are shown as gray lines. Only some representative mutexes are shown, because the graph would be t"
+    },
+    {
+      "chunk_id": "3ee13f47-a21d-4661-bcc7-def43f301313",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning graph for spare tire a S2",
+      "page_number": null,
+      "chunk_order": 56,
+      "excerpt": "goal: at(spare,axle)\n\n- S2 has all goals and no mutex so we can try to extract solutions\n- Use either CSP algorithm with actions as variables\n- Or search backwards\n\n```text\nS0                     A0  "
+    },
+    {
+      "chunk_id": "2052fe08-76bc-4555-8dbe-a9692ac4577a",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The graphplan algorithm",
+      "page_number": null,
+      "chunk_order": 55,
+      "excerpt": "**Figure 11.13** The GRAPHPLAN algorithm. GRAPHPLAN alternates between a solution extraction step and a graph expansion step. EXTRACT-SOLUTION looks for whether a plan can be found, starting at the en"
+    },
+    {
+      "chunk_id": "c2267876-167a-4c0b-8ffc-58ff737795c2",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The graphplan algorithm",
+      "page_number": null,
+      "chunk_order": 54,
+      "excerpt": "```text\n+--------------------------------------------------------------+\n| function GRAPHPLAN(problem) returns solution or failure      |\n|                                                             "
+    },
+    {
+      "chunk_id": "8d6df43e-a917-44fb-8e23-3c8af51b7ebb",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning graphs for heuristic estimation",
+      "page_number": null,
+      "chunk_order": 53,
+      "excerpt": "- Estimate the cost of achieving a goal by the level in the planning graph where it appears.\n- To estimate the cost of a conjunction of goals use one of the following:\n  - Max-level: take the maximum "
+    },
+    {
+      "chunk_id": "2ef50526-63b8-46a3-81a7-389fa3cf99e6",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "SATplan algorithm",
+      "page_number": null,
+      "chunk_order": 62,
+      "excerpt": "```text\nfunction SATPLAN(problem, T_max) returns solution or failure\n  inputs: problem, a planning problem\n          T_max, an upper limit for plan length\n\n  for T = 0 to T_max do\n    cnf_mapping ← TR"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "planning graph spare tire S2 level solution extraction Graphplan",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "9e35dead-7fd9-4935-a575-6dba4efd2a76",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning graph for spare tire a S2",
+          "chunk_order": 57,
+          "cosine_sim": 0.6114,
+          "final_score": 0.7031,
+          "content": "Figure 11.14 The planning graph for the spare tire problem after expansion to level $S_2$. Mutex links are shown as gray lines. Only some representative mutexes are shown, because the graph would be too cluttered if we showed them all. The solution is indicated by bold lines and outlines."
+        },
+        {
+          "chunk_id": "3ee13f47-a21d-4661-bcc7-def43f301313",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning graph for spare tire a S2",
+          "chunk_order": 56,
+          "cosine_sim": 0.5148,
+          "final_score": 0.592,
+          "content": "goal: at(spare,axle)\n\n- S2 has all goals and no mutex so we can try to extract solutions\n- Use either CSP algorithm with actions as variables\n- Or search backwards\n\n```text\nS0                     A0                     S1                     A1                     S2\n|                      |                      |                      |                      |\nat(spare,trunk)   ---> [RemoveSpare,Trunk] --> ¬at(spare,trunk)  ---> [RemoveSpare,Trunk] --> ¬at(spare,trunk)\nat(flat,axle)     ---> [RemoveFlat,Axle]     --> ¬at(flat,axle)    ---> [RemoveFlat,Axle]     --> ¬at(flat,axle)\n¬at(spare,axle)                                 [LeaveOvernight]    ---> ¬at(spare,axle)      ---> ¬at(spare,axle)\n¬at(flat,ground)                                                                              [PutOn,Spare,Axle]\n¬at(spare,ground)\n\n[Diagram: This is a planning graph showing how actions are layered between successive state levels to achieve the goal of having the spare tire on the axle. It matters because it illustrates how goal satisfaction and mutex relationships can be used to extract a valid plan or reason backward from the goal state.]\n```"
+        },
+        {
+          "chunk_id": "2052fe08-76bc-4555-8dbe-a9692ac4577a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "The graphplan algorithm",
+          "chunk_order": 55,
+          "cosine_sim": 0.5067,
+          "final_score": 0.5827,
+          "content": "**Figure 11.13** The GRAPHPLAN algorithm. GRAPHPLAN alternates between a solution extraction step and a graph expansion step. EXTRACT-SOLUTION looks for whether a plan can be found, starting at the end and searching backwards. EXPAND-GRAPH adds the actions for the current level and the state literals for the next level."
+        },
+        {
+          "chunk_id": "c2267876-167a-4c0b-8ffc-58ff737795c2",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "The graphplan algorithm",
+          "chunk_order": 54,
+          "cosine_sim": 0.4623,
+          "final_score": 0.5317,
+          "content": "```text\n+--------------------------------------------------------------+\n| function GRAPHPLAN(problem) returns solution or failure      |\n|                                                              |\n|   graph ← INITIAL-PLANNING-GRAPH(problem)                    |\n|   goals ← GOALS[problem]                                    |\n|   loop do                                                    |\n|     if goals all non-mutex in last level of graph then do    |\n|       solution ← EXTRACT-SOLUTION(graph, goals, LENGTH(graph))|\n|       if solution ≠ failure then return solution             |\n|       else if NO-SOLUTION-POSSIBLE(graph) then return failure|\n|     graph ← EXPAND-GRAPH(graph, problem)                     |\n+--------------------------------------------------------------+\n```\n\n[Diagram: This pseudocode describes the GRAPHPLAN planning procedure, which alternates between building a layered planning graph and trying to extract a valid plan from it. The key idea is that the graph grows until either a solution is found by backward search or the algorithm proves no plan is possible.]"
+        },
+        {
+          "chunk_id": "8d6df43e-a917-44fb-8e23-3c8af51b7ebb",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning graphs for heuristic estimation",
+          "chunk_order": 53,
+          "cosine_sim": 0.4419,
+          "final_score": 0.5082,
+          "content": "- Estimate the cost of achieving a goal by the level in the planning graph where it appears.\n- To estimate the cost of a conjunction of goals use one of the following:\n  - Max-level: take the maximum level of any goal (admissible)\n  - Sum-cost: Take the sum of levels (inadmissible)\n  - Set-level: find the level where they all appear without Mutex\n- Graph plans are relaxation of the problem.\n- Representing more than pair-wise mutex is not cost-effective"
+        },
+        {
+          "chunk_id": "2ef50526-63b8-46a3-81a7-389fa3cf99e6",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "SATplan algorithm",
+          "chunk_order": 62,
+          "cosine_sim": 0.4372,
+          "final_score": 0.5027,
+          "content": "```text\nfunction SATPLAN(problem, T_max) returns solution or failure\n  inputs: problem, a planning problem\n          T_max, an upper limit for plan length\n\n  for T = 0 to T_max do\n    cnf_mapping ← TRANSLATE-TO-SAT(problem, T)\n    assignment ← SAT-SOLVER(cnf)\n    if assignment is not null then\n      return EXTRACT-SOLUTION(assignment, mapping)\n  return failure\n```\n\n[Diagram: The algorithm incrementally searches for a valid plan by encoding the planning problem as a SAT instance for each time step. If a satisfiable model is found, the plan is extracted from the true action variables; otherwise, the time horizon is extended until the limit is reached.]"
+        },
+        {
+          "chunk_id": "ff84716d-53a3-41f7-aff6-d0a27e010b75",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Iterative Deepening A* Search Algorithm ( for tree search)",
+          "chunk_order": 5,
+          "cosine_sim": 0.3886,
+          "final_score": 0.4469,
+          "content": "```text\n+-------+      +----------------------+\n| start | ---> | set threshold as h(s) |\n+-------+      +----------------------+\n                      |\n                      v\n             +--------------------------+\n             | put s in OPEN, compute f(s) |\n             +--------------------------+\n                      |\n                      v\n                 /----------------\\\n                |   OPEN empty ?   |\n                 \\----------------/\n                   |            |\n                 yes|            | no\n                   v            v\n      +-------------------------------+\n      | threshold = min( f(.) )       |\n      +-------------------------------+\n                      |\n                      └───────────────> back to \"put s in OPEN, compute f(s)\"\n\n             +-----------------------------------------------------------+\n             | Remove the node of OPEN whose f(.) value is smallest       |\n             | and put it in CLOSE (call it n)                           |\n             +-----------------------------------------------------------+\n                      |\n                      v\n                 /---------------\\\n                |   n = goal ?    |\n                 \\---------------/\n                   |          |\n                 yes|          | no\n                   v          v\n              +----------+   +------------------------------------------------------+\n              | Success  |   | Expand n. calculate f(.) of successor                 |\n              +----------+   | if f(suc) < threshold then                           |\n                             |   Put successors to OPEN if                           |\n                             |   pointers back to n                                 |\n                             +------------------------------------------------------+\n                                      |\n                                      └───────────────> back to \"Remove the node of OPEN...\"\n```"
+        },
+        {
+          "chunk_id": "7712a10e-fdca-45ad-a30d-d0c1499d31ee",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Graph search",
+          "chunk_order": 7,
+          "cosine_sim": 0.3881,
+          "final_score": 0.4464,
+          "content": "```text\n+--------------------------------------------------------------+\n| function Graph-Search(problem, fringe) returns a solution,   |\n| or failure                                                   |\n| fringe ← Insert(Make-Node(Initial-State(problem)), fringe);  |\n| closed ← an empty set                                        |\n| while (fringe not empty)                                     |\n|   node ← RemoveFirst(fringe);                                |\n|   if (Goal-Test(problem, State(node))) then return Solution(node); |\n|   if (State(node) is not in closed) then                     |\n|     add State(node) to closed                                |\n|     fringe ← InsertAll(Expand(node, problem), fringe);       |\n|   end if                                                     |\n| end                                                         |\n| return failure;                                              |\n+--------------------------------------------------------------+\n```\n\n- Never expand a node twice!"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 42.1
+}

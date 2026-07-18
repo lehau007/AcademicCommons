@@ -1,0 +1,51 @@
+{
+  "qid": "database_01",
+  "course_code": "IT3292E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The properties of uniqueness, minimality/irreducibility, and the definition as a minimal superkey are all explicitly stated in chunk d9bf8451-1bf7-4e5f-ba83-d76a7366b192.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by identifying the two key properties of a candidate key: uniqueness and minimality/irreducibility. The explanation is entirely on-topic and accurately describes what was asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly covers all three key properties from the ground truth: uniqueness (values uniquely identify each tuple), irreducibility/minimality (no proper subset has uniqueness), and that it is a superkey. The presentation is clear and accurate.",
+      "evidence": [
+        "Ground truth: 'no proper subset of it is a superkey' / Tutor: 'No proper subset of that candidate key can still uniquely identify tuples'",
+        "Ground truth: 'values of K uniquely identify each tuple' / Tutor: 'Its attribute value(s) must uniquely identify each tuple'",
+        "Ground truth: 'no proper subset of K has this uniqueness property (irreducibility)' / Tutor: 'Minimality / Irreducibility'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of six chunks are relevant to candidate keys. Only chunk 15ab4a7d (about ER diagram keys) is tangential, discussing entity keys rather than relational candidate keys specifically.",
+      "evidence": [
+        "chunk_id=15ab4a7d-230a-4f68-8b37-41b87a95d171: 'One or more attributes whose values are distinct for each individual entity in the entity set'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All three key facts from the ground truth are present in the retrieved chunks. Chunk d9bf8451 explicitly states all three properties: that a candidate key is a superkey where no proper subset is a superkey, values uniquely identify tuples (uniqueness), and no proper subset has the uniqueness property (irreducibility).",
+      "evidence": [
+        "Superkey (K) such that no proper subset is a superkey within the relation",
+        "values of K uniquely identify that tuple (uniqueness)",
+        "No proper subset of K has the uniqueness property (irreducibility)"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The first chunk explicitly defines candidate key with uniqueness and irreducibility properties, the second chunk reinforces the minimal key concept, and the third provides general context on key constraints.",
+      "evidence": [
+        "Tutor states 'uniqueness' and 'minimal superkey'; chunk d9bf8451 states 'Superkey (K) such that no proper subset is a superkey' and 'values of K uniquely identify that tuple (uniqueness)' and 'No proper subset of K has the uniqueness property (irreducibility)'",
+        "Tutor states 'Minimality / Irreducibility'; chunk 71a5aed9 states 'Minimal key: a minimal set of attributes that can be used to identify a single tuple'",
+        "Chunk b87b24ad provides summary context listing 'Key constraints' under Constraints"
+      ]
+    }
+  }
+}

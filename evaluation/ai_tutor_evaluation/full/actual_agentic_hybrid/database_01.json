@@ -1,0 +1,155 @@
+{
+  "qid": "database_01",
+  "course_code": "IT3292E",
+  "question": "What are the key properties of a Candidate Key in a relational database?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "649c6975-54e5-4041-ad6b-6e2d4499fccf",
+  "answer": "## Key Properties of a Candidate Key\n\nBased on the course materials, a **Candidate Key** in a relational database has the following key properties:\n\n### 1. Uniqueness\nThe values of the candidate key attribute(s) must **uniquely identify** each tuple within the relation. No two tuples can have the same value for the candidate key.\n\n### 2. Irreducibility (Minimality)\nA candidate key **K** is a superkey such that **no proper subset** of K is a superkey. In other words, you cannot remove any attribute from K and still have uniqueness. This is the property that distinguishes a *candidate key* from an ordinary *superkey*.\n\n> *Formally:* A set **K** is a candidate key of R if:\n> - **K** ⊆ R\n> - **K → R** ∈ F⁺ (K functionally determines all attributes of R)\n> - For every **K' ⊂ K**, then **K' → R** ∉ F⁺ (no proper subset of K functionally determines R)\n\n### 3. Cannot Contain Null Values\nAlthough stated implicitly in key constraints, every attribute of a candidate key must have a non-null value, since a NULL would make unique identification impossible.\n\n### 4. Functional Dependency on the Entire Relation\nIf **K** is a candidate key of R, then **K → R** holds (i.e., K functionally determines every attribute in the relation).\n\n---\n\n### Relationship to Other Key Types\n\n| Key Type | Definition |\n|---|---|\n| **Superkey** | An attribute (or set of attributes) that uniquely identifies a tuple. |\n| **Candidate Key** | A *minimal* superkey — irreducible, but still uniquely identifies tuples. |\n| **Primary Key** | The candidate key *selected* to uniquely identify tuples in a relation (its attribute names are **underlined**). |\n| **Alternate Key** | A candidate key that is *not* chosen as the primary key. |\n| **Foreign Key** | An attribute in one relation that matches the candidate key of another relation, used to model relationships. |\n\n### Key Takeaway\nA relation may have **multiple candidate keys**, but only one of them is chosen as the **primary key**. The remaining candidate keys are called **alternate keys**. The minimality property is what makes a candidate key special — it is the *smallest* set of attributes that can still uniquely identify a tuple.\n\n---",
+  "citations": [
+    {
+      "chunk_id": "d9bf8451-1bf7-4e5f-ba83-d76a7366b192",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.3.2. Types of constraints",
+      "page_number": null,
+      "chunk_order": 54,
+      "excerpt": "- Some types of key\n  - Superkey: An attribute, or a set of attributes, that uniquely identifies a tuple within a relation.\n  - Candidate Key:\n    - Superkey (K) such that no proper subset is a superk"
+    },
+    {
+      "chunk_id": "71a5aed9-21f3-4519-8589-1b5d6db86eb9",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.3.2. Types of constraints",
+      "page_number": null,
+      "chunk_order": 55,
+      "excerpt": "- Some types of key\n  - Alternate Keys: Candidate keys that are not selected to be the primary key.\n  - Minimal key: a minimal set of attributes that can be used to identify a single tuple.\n  - Foreig"
+    },
+    {
+      "chunk_id": "6a612033-dd75-48e1-a8b5-973f13151db8",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.2. Definition",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- This means that the values of the X component of a tuple uniquely\n  - (or functionally) determine the values of the Y component.\n- A FD X → Y is trivial if X ⊇ Y\n- If X is a candidate key of R, then"
+    },
+    {
+      "chunk_id": "ca7f96d9-a7de-436e-982a-a03897ba216c",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.1. Definition",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "- Minimal key\n  - Given R = {A$_1$, A$_2$, ... , A$_n$}, a set of FDs F\n  - K is considered as a minimal key of R if:\n    - K⊆R\n    - K→R ∈ F$^+$\n    - Với ∀K’⊂K, thì K’→R ∉ F$^+$\n  - K$^+$ = R and K\\"
+    },
+    {
+      "chunk_id": "9d6bd2b5-522f-4ca6-9fb9-573d33a4778e",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Learning objective",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- Upon completion of this lesson, students will be able to:\n  1. Recall the concept of functional dependency, Armstrong's axioms and secondary rules\n  2. Identify closure of a FD set, closure of a set"
+    },
+    {
+      "chunk_id": "3767da4f-9f11-4b2f-9022-57489f5057eb",
+      "document_title": "05_Functional_Dependency.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 32,
+      "excerpt": "- Functional dependencies\n- Armstrong axioms and their secondary rules\n- Closure of a set of FDs\n- Closure of a set of attributes under a set of FDs\n- An algorithm to find a minimal key\n- Equivalence "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "Candidate Key properties: uniqueness, minimality, superkey, primary key, relational database",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "d9bf8451-1bf7-4e5f-ba83-d76a7366b192",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.3.2. Types of constraints",
+          "chunk_order": 54,
+          "cosine_sim": 0.6234,
+          "final_score": 0.7169,
+          "content": "- Some types of key\n  - Superkey: An attribute, or a set of attributes, that uniquely identifies a tuple within a relation.\n  - Candidate Key:\n    - Superkey (K) such that no proper subset is a superkey within the relation\n    - In each tuple of the relation, values of K uniquely identify that tuple (uniqueness)\n    - No proper subset of K has the uniqueness property (irreducibility)\n  - Primary Key: Candidate key selected to identify tuples uniquely within a relation. Each key attribute of primary key has its name underlined."
+        },
+        {
+          "chunk_id": "d8619ad5-572a-461e-b182-08c0cf892643",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "2.3. Second Normal Form (2NF)",
+          "chunk_order": 16,
+          "cosine_sim": 0.3933,
+          "final_score": 0.6785,
+          "content": "- Based on the concept of full functional dependency\n- A prime attribute\n  - It is an attribute that is member of some candidate key\n- 2NF relation is\n  - in 1NF and every non-prime attribute is fully functionally dependent on the primary key"
+        },
+        {
+          "chunk_id": "71a5aed9-21f3-4519-8589-1b5d6db86eb9",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.3.2. Types of constraints",
+          "chunk_order": 55,
+          "cosine_sim": 0.5428,
+          "final_score": 0.6242,
+          "content": "- Some types of key\n  - Alternate Keys: Candidate keys that are not selected to be the primary key.\n  - Minimal key: a minimal set of attributes that can be used to identify a single tuple.\n  - Foreign Key:\n    - Attribute, or set of attributes, within one relation that matches candidate key of some relation\n    - Used to model relationships between relations\n    - Each key attribute of foreign key has its name italic"
+        },
+        {
+          "chunk_id": "736444a5-ecb9-40d1-8135-fd1cffe70dc7",
+          "document_id": "ffa2105f-b635-4990-9a02-dbf38c9c965e",
+          "section_title": "QUESTION 3: Normalization",
+          "chunk_order": 9,
+          "cosine_sim": 0.4086,
+          "final_score": 0.613,
+          "content": "**Given:** R(ABEIJGH) with F = {AB→E; AG→J; BE→I; E→G; GI→H}\n\n**Part a:** Find candidate key(s)\n\n**Part b:** Normalize to 3NF\n\n---"
+        },
+        {
+          "chunk_id": "6a612033-dd75-48e1-a8b5-973f13151db8",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "1.2. Definition",
+          "chunk_order": 8,
+          "cosine_sim": 0.4621,
+          "final_score": 0.5314,
+          "content": "- This means that the values of the X component of a tuple uniquely\n  - (or functionally) determine the values of the Y component.\n- A FD X → Y is trivial if X ⊇ Y\n- If X is a candidate key of R, then X → R"
+        },
+        {
+          "chunk_id": "ca7f96d9-a7de-436e-982a-a03897ba216c",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "4.1. Definition",
+          "chunk_order": 22,
+          "cosine_sim": 0.415,
+          "final_score": 0.4772,
+          "content": "- Minimal key\n  - Given R = {A$_1$, A$_2$, ... , A$_n$}, a set of FDs F\n  - K is considered as a minimal key of R if:\n    - K⊆R\n    - K→R ∈ F$^+$\n    - Với ∀K’⊂K, thì K’→R ∉ F$^+$\n  - K$^+$ = R and K\\{A$_i$} → R ∉ F$^+$"
+        },
+        {
+          "chunk_id": "9d6bd2b5-522f-4ca6-9fb9-573d33a4778e",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "Learning objective",
+          "chunk_order": 3,
+          "cosine_sim": 0.3914,
+          "final_score": 0.4501,
+          "content": "- Upon completion of this lesson, students will be able to:\n  1. Recall the concept of functional dependency, Armstrong's axioms and secondary rules\n  2. Identify closure of a FD set, closure of a set of attributes\n  3. Find a minimal key of a relation under a set of FDs\n  4. Identify the equivalence of sets of FDs and find the minimal cover of a set of FDs"
+        },
+        {
+          "chunk_id": "3767da4f-9f11-4b2f-9022-57489f5057eb",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "Remark",
+          "chunk_order": 32,
+          "cosine_sim": 0.3705,
+          "final_score": 0.426,
+          "content": "- Functional dependencies\n- Armstrong axioms and their secondary rules\n- Closure of a set of FDs\n- Closure of a set of attributes under a set of FDs\n- An algorithm to find a minimal key\n- Equivalence of sets of FDs\n- Finding a minimal set of a set of FDs"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 21.4
+}

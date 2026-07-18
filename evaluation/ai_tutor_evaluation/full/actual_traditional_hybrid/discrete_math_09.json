@@ -1,0 +1,125 @@
+{
+  "qid": "discrete_math_09",
+  "course_code": "IT3020E",
+  "question": "What are the four types of edges classified during a Depth-First Search (DFS) traversal?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "5f929866-1f7c-4e10-82e7-e90f5e2622fd",
+  "answer": "# Four Types of Edges in DFS Classification\n\nDuring a Depth-First Search (DFS) traversal, edges are classified into **four types** based on the relationship between vertices and their discovery/finishing times:\n\n## 1. **Tree Edge** 🌳\n- The edge by which a vertex visits a **new (unvisited)** vertex.\n- This is the edge that builds the DFS tree.\n- In code: detected when `visited[v] == 0` (or `false`) when traversing edge $(u, v)$.\n\n## 2. **Back Edge** ⬆️\n- An edge going **from a descendant to an ancestor** in the DFS tree.\n- In code: detected when `visited[v] == 1` (already discovered but not yet finished).\n\n## 3. **Forward Edge** ⬇️\n- An edge going **from an ancestor to a descendant** in the DFS tree (but not a tree edge).\n- These connect two vertices where one interval is **strictly nested** inside the other.\n\n## 4. **Cross Edge** ↔️\n- An edge connecting **two unrelated vertices** (neither is an ancestor of the other).\n- Their discovery/finishing intervals do **not intersect**.\n\n## Summary Table\n\n| Edge Type | Relationship | Interval Property | `visited[v]` |\n|-----------|--------------|-------------------|--------------|\n| **Tree** | Ancestor → Descendant (new vertex) | $[d[v], f[v]] \\subseteq [d[u], f[u]]$ | `0` (unvisited) |\n| **Back** | Descendant → Ancestor | $[d[u], f[u]] \\subseteq [d[v], f[v]]$ | `1` (in progress) |\n| **Forward** | Ancestor → Descendant (non-tree) | $[d[v], f[v]] \\subset [d[u], f[u]]$ | `2` (finished) |\n| **Cross** | Unrelated vertices | Intervals do not intersect | `2` (finished) |\n\n> 💡 **Key insight:** The forward edge and cross edge share the same `visited[v] == 2` state — to distinguish them, we compare the discovery times $d[u]$ and $d[v]$:\n> - If $d[u] < d[v]$ → **Forward edge**\n> - Otherwise → **Cross edge**\n\nThis classification is fundamental to many graph algorithms, including **cycle detection** (a back edge implies a cycle), **topological sorting**, and **strongly connected components**.\n\n---\n\n**Used chunk IDs:**\n```json",
+  "citations": [
+    {
+      "chunk_id": "adcffc8e-3a82-4663-8d36-d2611c962efd",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Lemma of nested intervals",
+      "page_number": null,
+      "chunk_order": 50,
+      "excerpt": "Given directed graph $G = (V, E)$, and arbitrary DFS tree, 2 arbitrary vertices $u, v$ of $G$. Then\n\n- $u$ is a descendant of $v$ iff $[d[u], f[u]] \\subseteq [d[v], f[v]]$\n- $u$ is ancestor of $v$ iff"
+    },
+    {
+      "chunk_id": "83bab7ae-8723-4b8b-9b30-8c80dbe3714b",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "DFS: Edges classification",
+      "page_number": null,
+      "chunk_order": 58,
+      "excerpt": "DFS yields edges classification of the graph:\n\n- When we traverse edge $e = (u, v)$ from vertex $u$, based on the value of `visited[v]`, we could know the type of edge e:\n  1. `visited[v] = 0`: so e i"
+    },
+    {
+      "chunk_id": "451a7c12-581e-40b3-8cb0-f4623780339f",
+      "document_title": "2_3-GraphTraversal.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "DFS: Edges classification",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "[Diagram: The two code blocks show the outer DFS driver and the recursive DFS routine. Together they illustrate how a depth-first traversal initializes graph state, explores unvisited vertices, and as"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "What are the four types of edges classified during a Depth-First Search (DFS) traversal?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "dffc9761-b861-4d4c-b994-ea46baeb067a",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS($s$)",
+          "chunk_order": 49,
+          "cosine_sim": 0.5488,
+          "final_score": 0.6311,
+          "content": "[Diagram: This shows a depth-first search traversal on a directed graph, with each vertex labeled by its discovery and finishing times d|f. The timestamps capture the nesting structure of DFS and are useful for understanding traversal order, reachability, and edge classification.]"
+        },
+        {
+          "chunk_id": "42d0fbf7-021c-4e03-84e8-9084e400769e",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS(s)",
+          "chunk_order": 31,
+          "cosine_sim": 0.544,
+          "final_score": 0.6256,
+          "content": "[Diagram: This is a depth-first search traversal on a directed graph, where each vertex is annotated with discovery and finishing times. The numbering helps show the recursion order and is useful for understanding DFS-based algorithms such as topological sorting, cycle detection, and classification of edges.]"
+        },
+        {
+          "chunk_id": "91dacb21-2a2d-470d-b4db-87677ddfcebe",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Example: DFS",
+          "chunk_order": 41,
+          "cosine_sim": 0.5319,
+          "final_score": 0.6117,
+          "content": "[Diagram: This is a depth-first search traversal of a directed graph, showing the discovery and finishing times assigned to each vertex. It matters because these timestamps reveal the DFS tree structure and help determine ancestry, reachability, and edge classification.]"
+        },
+        {
+          "chunk_id": "451a7c12-581e-40b3-8cb0-f4623780339f",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS: Edges classification",
+          "chunk_order": 23,
+          "cosine_sim": 0.5305,
+          "final_score": 0.61,
+          "content": "[Diagram: The two code blocks show the outer DFS driver and the recursive DFS routine. Together they illustrate how a depth-first traversal initializes graph state, explores unvisited vertices, and assigns discovery/finishing timestamps used for edge classification.]\n\n- Also records timestamps for each vertex\n  - d[v] when the vertex v is first discovered\n  - f[v] when the vertex v is finished"
+        },
+        {
+          "chunk_id": "adcffc8e-3a82-4663-8d36-d2611c962efd",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Lemma of nested intervals",
+          "chunk_order": 50,
+          "cosine_sim": 0.4433,
+          "final_score": 0.5098,
+          "content": "Given directed graph $G = (V, E)$, and arbitrary DFS tree, 2 arbitrary vertices $u, v$ of $G$. Then\n\n- $u$ is a descendant of $v$ iff $[d[u], f[u]] \\subseteq [d[v], f[v]]$\n- $u$ is ancestor of $v$ iff $[d[u], f[u]] \\supseteq [d[v], f[v]]$\n- $u$ and $v$ are not related iff $[d[u], f[u]]$ and $[d[v], f[v]]$ are not intersecting.\n\n```text\nDirected graph / DFS relation example\n\n    [d] -----> [a] -----> [f]\n     |          | \\         |\n     |          |  \\        v\n     v          v   v      [e]\n    [e]        [b]  [c]\n     |          |     ^\n     v          v     |\n    [f]        [c] <--[g] <-- [f]\n                 ^\n                 |\n                 [a]\n\nLegend of edge types:\n- Tree edge: the edge whereby from a vertex visits a new vertex\n- Back edge: going from descendants to ancestors\n- Forward edge: going from ancestor to descendant\n- Cross edge: edge connecting 2 non-related vertices\n```\n\n[Diagram: The graph illustrates how DFS discovery and finishing intervals capture ancestry relationships in a directed graph. Nested intervals correspond to ancestor/descendant pairs, while disjoint intervals indicate vertices that are unrelated.]"
+        },
+        {
+          "chunk_id": "83bab7ae-8723-4b8b-9b30-8c80dbe3714b",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "DFS: Edges classification",
+          "chunk_order": 58,
+          "cosine_sim": 0.4389,
+          "final_score": 0.5047,
+          "content": "DFS yields edges classification of the graph:\n\n- When we traverse edge $e = (u, v)$ from vertex $u$, based on the value of `visited[v]`, we could know the type of edge e:\n  1. `visited[v] = 0`: so e is tree edge\n  2. `visited[v] = 1`: so e is back edge\n  3. `visited[v] = 2`: so e is either forward edge or cross edge\n\n```text\n+----------------------+\n|        DFS(u)        |\n+----------------------+\n| 1. visited[u] ← true |\n|    // visit u        |\n| 2. for each v ∈ Adj[u]|\n| 3.   if (visited[v] == false) |\n| 4.     DFS(v)        |\n+----------------------+\n```\n\n[Diagram: Đây là quy trình duyệt DFS và cách nó gán thời điểm khám phá/kết thúc cho các đỉnh. Các giá trị `visited[v]` cho phép phân loại cạnh theo quan hệ của đỉnh kề với trạng thái duyệt hiện tại, điều này rất quan trọng để nhận biết cấu trúc của đồ thị.]"
+        },
+        {
+          "chunk_id": "d59c7553-59a3-41d2-9eb4-f155acc5b807",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Lemma of nested intervals",
+          "chunk_order": 51,
+          "cosine_sim": 0.4094,
+          "final_score": 0.4708,
+          "content": "Given directed graph $G = (V, E)$, and arbitrary DFS tree, 2 arbitrary vertices $u, v$ of $G$. Then\n\n- $u$ is a descendant of $v$ iff $[d[u], f[u]] \\subseteq [d[v], f[v]]$\n- $u$ is ancestor of $v$ iff $[d[u], f[u]] \\supseteq [d[v], f[v]]$\n- $u$ and $v$ are not related iff $[d[u], f[u]]$ and $[d[v], f[v]]$ are not intersecting.\n\n```text\nDFS interval illustration\n\nLeft: directed graph / DFS tree with discovery and finish times\na (1/10)\n├── b (2/5)\n│   └── c (3/4)\n└── f (6/9)\n    └── g (7/8)\n\nd (11/14)\n└── e (12/13)\n\nDashed cross-links indicate non-tree edges:\na -> c, a -> g, f -> e, d -> a\n```\n\n[Diagram: The slide shows how DFS discovery/finish intervals encode ancestry in a"
+        },
+        {
+          "chunk_id": "a0f819b6-7cd9-4311-9605-7a758691e8a8",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "Graph orientation",
+          "chunk_order": 73,
+          "cosine_sim": 0.3233,
+          "final_score": 0.3718,
+          "content": "- **Problem:** Given undirected connected graph $G=(V,E)$. Find the way to orient its edges such that the obtained directed graph is strongly connected or answer that $G$ is non-directional (G là không định hướng được).\n- **Orientation algorithm $\\delta$:** During the execution of DFS$(G)$, we orient:\n  1. tree edges of DFS direct from the ancestor to the descendant,\n  2. back edges of DFS direct from descendant to ancestor. Denote the obtained graph by $G(\\delta)$\n- **Lemma.** $G$ is directional if and only if $G(\\delta)$ is strongly connected."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.2
+}

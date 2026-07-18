@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_12",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "DENSE RETRIEVAL FAIL: pigeonhole statement not retrieved (noise: opt/induction/incl-excl); answer refuses, faithful but no GT delivered"
+    },
+    "answer_relevancy": {
+      "score": 3,
+      "justification": "DENSE RETRIEVAL FAIL: pigeonhole statement not retrieved (noise: opt/induction/incl-excl); answer refuses, faithful but no GT delivered"
+    },
+    "answer_correctness": {
+      "score": 2,
+      "justification": "DENSE RETRIEVAL FAIL: pigeonhole statement not retrieved (noise: opt/induction/incl-excl); answer refuses, faithful but no GT delivered"
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "DENSE RETRIEVAL FAIL: pigeonhole statement not retrieved (noise: opt/induction/incl-excl); answer refuses, faithful but no GT delivered"
+    },
+    "context_recall": {
+      "score": 1,
+      "justification": "DENSE RETRIEVAL FAIL: pigeonhole statement not retrieved (noise: opt/induction/incl-excl); answer refuses, faithful but no GT delivered"
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "DENSE RETRIEVAL FAIL: pigeonhole statement not retrieved (noise: opt/induction/incl-excl); answer refuses, faithful but no GT delivered"
+    }
+  }
+}

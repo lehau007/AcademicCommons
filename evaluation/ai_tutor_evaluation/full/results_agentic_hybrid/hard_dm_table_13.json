@@ -1,0 +1,31 @@
+{
+  "qid": "hard_dm_table_13",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "enumeration is derivable math; retrieved ctx only headers"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "C(5,3)=10 + list correct"
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "HYBRID WORSE HERE: only Ly-thuyet-to-hop headers retrieved, enumerated table absent"
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "the GT list not in retrieved chunks (dense had it)"
+    },
+    "citation_accuracy": {
+      "score": 3,
+      "justification": "-"
+    }
+  }
+}

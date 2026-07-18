@@ -1,0 +1,96 @@
+{
+  "qid": "intro_to_ai_08",
+  "course_code": "IT3160E",
+  "question": "What distinguishes a standard search problem from a game?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "f23c4e16-ddf1-4f71-a224-686be80d851c",
+  "answer": "A **standard search problem** and a **game** differ mainly in how the environment and outcome are modeled:\n\n### Standard search problem\n- The world is usually **deterministic**: an action leads to a predictable next state.\n- Often treated as a **single-agent** problem.\n- The goal is to find a **sequence of actions** from the initial state to a goal state.\n- In course material, standard search problems are described as having a state that is essentially a **“black-box”** with:\n  - an initial state\n  - goal states\n  - a successor function\n\n### Game\n- A game involves **multiple agents/players** with **competing objectives**.\n- The outcome depends not only on your actions but also on the **opponent’s actions**.\n- So instead of just searching for a path to a goal, the agent must choose actions while assuming the other player also acts strategically.\n- This is why game search uses methods like **minimax** and **alpha-beta pruning**.\n\n### In short\n- **Search problem:** “How do I get from start to goal?”\n- **Game:** “What move should I choose, knowing an opponent will respond?”\n\nThe retrieved course text explicitly describes standard search problems as black-box states and separately presents game-specific algorithms like **alpha-beta**, which reflects this distinction.",
+  "citations": [
+    {
+      "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "CSP",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with valu"
+    },
+    {
+      "chunk_id": "5b2f0195-12ec-4826-98d8-0c8676393f91",
+      "document_title": "lecture6-Advanced search methods.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The α-β algorithm",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "```text\n+--------------------------------------------------------------------------------------+\n| function ALPHA-BETA-SEARCH(state) returns an action                                  |\n|     inputs: "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "standard search problem versus game in artificial intelligence",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.5484,
+          "final_score": 0.4071,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "0b538699-9f0f-49c0-8107-f5bde8e6fa34",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Search vs. planning",
+          "chunk_order": 3,
+          "cosine_sim": 0.4634,
+          "final_score": 0.2843,
+          "content": "- Consider the task *get milk, bananas, and a cordless drill*\n- Standard search algorithms seem to fail miserably:\n\n```text\nStart\n  ├── Go To Pet Store ──> [ ] ──> Talk to Parrot ──> [ ]\n  │                      └──────> Buy a Dog ───────> [ ]\n  ├── Go To School ─────> [ ] ──> Go To Class ─────> [ ]\n  ├── Go To Supermarket ─> [ ] ──> Buy Tuna Fish ──> [ ]\n  │                      ├──────> Buy Arugula ─────> [ ]\n  │                      └──────> Buy Milk ────────> [ ] ──> ... ──> Finish\n  ├── Go To Sleep ───────> [ ]\n  ├── Read A Book ───────> [ ]\n  ├── Sit in Chair ──────> [ ] ──> Sit Some More ───> [ ]\n  │                      └──────> Read A Book ─────> [ ]\n  └── Etc. Etc. ... ─────> ...\n```"
+        },
+        {
+          "chunk_id": "5b2f0195-12ec-4826-98d8-0c8676393f91",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "The α-β algorithm",
+          "chunk_order": 30,
+          "cosine_sim": 0.4459,
+          "final_score": 0.1434,
+          "content": "```text\n+--------------------------------------------------------------------------------------+\n| function ALPHA-BETA-SEARCH(state) returns an action                                  |\n|     inputs: state, current state in game                                             |\n|                                                                                      |\n|     v ← MAX-VALUE(state, -∞, +∞)                                                     |\n|     return the action in SUCCESSORS(state) with value v                               |\n|                                                                                      |\n|--------------------------------------------------------------------------------------|\n| function MAX-VALUE(state, α, β) returns a utility value                               |\n|     inputs: state, current state in game                                              |\n|             α, the value of the best alternative for MAX along the path to state     |\n|             β, the value of the best alternative for MIN along the path to state     |\n|                                                                                      |\n|     if TERMINAL-TEST(state) then return UTILITY(state)                                |\n|     v ← -∞                                                                              |\n|     for a, s in SUCCESSORS(state) do                                                  |\n|         v ← MAX(v, MIN-VALUE(s, α, β))                                                |\n|         if v ≥ β then return v                                                        |\n|         α ← MAX(α, v)                                                                  |\n|     return v                                                                           |\n+--------------------------------------------------------------------------------------+\n```"
+        },
+        {
+          "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem types",
+          "chunk_order": 10,
+          "cosine_sim": 0.4212,
+          "final_score": 0.1293,
+          "content": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent may have no idea where it is; solution is a sequence\n- Nondeterministic and/or partially observable → contingency problem\n  - percepts provide new information about current state\n  - often interleave → search, execution\n- Unknown state space → exploration problem"
+        },
+        {
+          "chunk_id": "b7119f3c-3e4f-49f6-ae7b-cf57915b5d2a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Regression algorithm",
+          "chunk_order": 23,
+          "cosine_sim": 0.4124,
+          "final_score": 0.1169,
+          "content": "- General process for predecessor construction\n  - Give a goal description G\n  - Let A be an action that is relevant and consistent\n  - The predecessors are as follows:\n    - Any positive effects of A that appear in G are deleted.\n    - Each precondition literal of A is added, unless it already appears.\n- Any standard search algorithm can be added to perform the search.\n- Termination when predecessor satisfied by initial state.\n  - In FO case, satisfaction might require a substitution."
+        },
+        {
+          "chunk_id": "19ce7cd1-6107-43e5-85c2-b0ca65810675",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Progression algorithm",
+          "chunk_order": 18,
+          "cosine_sim": 0.4792,
+          "final_score": 0.0973,
+          "content": "- Formulation as state-space search problem:\n  - Initial state and goal test: obvious\n  - Successor function: generate from applicable actions\n  - Step cost = each action costs 1\n- Any complete graph search algorithm is a complete planning algorithm.\n  - E.g. A*\n- Inherently inefficient:\n  - (1) irrelevant actions lead to very broad search tree\n  - (2) good heuristic required for efficient search"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.7
+}

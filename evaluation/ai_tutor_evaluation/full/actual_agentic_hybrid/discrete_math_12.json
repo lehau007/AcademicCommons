@@ -1,0 +1,317 @@
+{
+  "qid": "discrete_math_12",
+  "course_code": "IT3020E",
+  "question": "How is the Dirichlet (or Pigeonhole) principle formally stated?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "33329fbc-ce9b-4b3f-9d35-e28397d2f89c",
+  "answer": "I'm sorry, but based on the materials I was able to retrieve from the course, I could not find a chunk that contains the **formal statement** of the Dirichlet (Pigeonhole) principle. The lecture slide `1-2-Existence.pdf` (which is the most likely place for it, since the Pigeonhole principle is a classic *existence* result) only appeared in the retrieved chunks through the exercises listed at the end (e.g., problems about 10 people with ages divisible by 16, 151 computers numbered up to 300, and the Erdős–Szekeres monotone subsequence theorem), but the actual **theorem statement** itself was not included in the retrieved context.\n\nAccording to the rules I'm given, I must not fill this gap with outside or general knowledge, so I will not write out the standard textbook formulation on my own.\n\n**What I can tell you from the course context:**\n- The Pigeonhole principle is covered in the chapter on **Existence problems** (Chapter 2 of Part 1 — Combinatorial Theory), in the lecture file `1-2-Existence.pdf`.\n- The chapter also covers: direct proofs, proofs by contradiction, and proofs by mathematical induction as techniques used for existence problems.\n- The course lists exercises that are typical *applications* of the Pigeonhole principle (e.g., the \"10 people / age divisible by 16\" exercise and the \"151 computers numbered 1–300\" exercise), confirming that the theorem is taught in that chapter — but the formal statement text was not returned in the chunks I retrieved.\n\nIf you can share the relevant slide or tell me the section number, I can give you a precise citation. Otherwise, please re-check the file `1-2-Existence.pdf` (the \"Nguyên lý Dirichlet / Pigeonhole\" section) directly.",
+  "citations": [
+    {
+      "chunk_id": "383a0b35-45e5-4e1b-a5dd-35cf63d613da",
+      "document_title": "1-2-Existence.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Proof by Mathematical Induction",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "- This is a very useful proof technique when we have to prove that the proposition $P(n)$ is true for all natural numbers $n \\ge n_0$.\n- Similar to the \"domino effect\" principle.\n\n**Outline of proof b"
+    },
+    {
+      "chunk_id": "5ba384c7-f7db-44c0-98f2-888c45bdbf95",
+      "document_title": "1-2-Existence.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "If P, Then Q",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- In most theorems, exercises or tests, you need to prove the form \"If P, Then Q\".\n- In this example: “if a divides b and b divides c, then a divides c”\n  - \"P\" is \"If a divides b and b divides c\" and"
+    },
+    {
+      "chunk_id": "72c15b46-83a8-4320-848d-619915db3942",
+      "document_title": "1-2-Existence.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Exercises",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "1. CMR trong số 10 người bất kỳ luôn tìm được hoặc là hai người có tổng số tuổi chia hết cho 16, hoặc là hai người mà hiệu số tuổi của họ chia hết cho 16.\n\n2. Một trung tâm máy tính có 151 máy vi tính"
+    },
+    {
+      "chunk_id": "821d0a90-7e19-4133-a41e-540601076d3a",
+      "document_title": "1-2-Existence.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PART 1",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+    },
+    {
+      "chunk_id": "9d31dff5-7db0-4fdb-8370-828e0ff8e0ea",
+      "document_title": "1-2-Existence.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The 36 officers problem",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "- This problem is proposed by Euler, it is described as following:\n\n“You're in command of an army that consists of six regiments, each containing six officers of six different ranks. Can you arrange t"
+    },
+    {
+      "chunk_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+      "document_title": "1-2-Existence.pdf",
+      "document_tier": "official",
+      "document_subtype": "summary",
+      "section_title": "Document Summary",
+      "page_number": 1,
+      "chunk_order": 0,
+      "excerpt": "PART 1: COMBINATORIAL THEORY (Lý thuyết tổ hợp) PART 2: GRAPH THEORY (Lý thuyết đồ thị) Contents of Part 1: - Chapter 0: Sets, Relations - Chapter 1: Counting problem - Chapter 2: Existence problem - "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "Dirichlet principle Pigeonhole principle formal statement",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "24374a8f-b359-4a31-9d40-ba203c6c4141",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "3.1. General diagram",
+          "chunk_order": 36,
+          "cosine_sim": 0.3388,
+          "final_score": 0.3896,
+          "content": "- We will describe the idea of algorithm on the model of the following general combinatorial optimization problem:\n\n$\\min \\{ f(x) : x \\in D \\},$\n\nwhere $D$ is the finite set.\n\n- Assume set $D$ is described as following:\n\n$D = \\{x = (x_1, x_2, \\ldots, x_n) \\in A_1 \\times A_2 \\times \\ldots \\times A_n:$\n\n$x$ satisfies property $P\\},$\n\nwhere $A_1, A_2, \\ldots, A_n$ are finite set, and $P$ is property on the Descartes product $A_1 \\times A_2 \\times \\ldots \\times A_n$."
+        },
+        {
+          "chunk_id": "383a0b35-45e5-4e1b-a5dd-35cf63d613da",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "2.4. Proof by Mathematical Induction",
+          "chunk_order": 30,
+          "cosine_sim": 0.3383,
+          "final_score": 0.3891,
+          "content": "- This is a very useful proof technique when we have to prove that the proposition $P(n)$ is true for all natural numbers $n \\ge n_0$.\n- Similar to the \"domino effect\" principle.\n\n**Outline of proof by Induction:**\n\n- Basic step: Prove the first statement $P(n_0)$ is true\n- Inductive step: Given any integer $n \\ge n_0$, prove that $P(n) \\rightarrow P(n+1)$\n\n(Assuming $P(n)$ is true and showing it forces $P(n+1)$ is true)\n\n- Conclusion: $P(n)$ is true $\\forall n \\ge n_0$\n\n(The assumption that $P(n)$ is true is called the inductive hypothesis)"
+        },
+        {
+          "chunk_id": "c50f469c-cd67-4b46-a33d-105b7df0825d",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 34,
+          "cosine_sim": 0.3364,
+          "final_score": 0.3869,
+          "content": "More generally, for finite sets $A_1, A_2, \\ldots, A_m$\n\n$|A_1 \\cup A_2 \\cup \\cdots \\cup A_m| = N_1 - N_2 + \\cdots + (-1)^{m+1} N_m$\n\nwhere:\n\n$N_k = \\sum_{1\\le i_1 < i_2 < \\cdots < i_k \\le m} \\left|A_{i_1} \\cap A_{i_2} \\cap \\cdots \\cap A_{i_k}\\right|,\\quad k=1,2,\\ldots,m$\n\nNote: $N_k$ is the sum of the cardinalities of all intersections of $k$ from $m$ given sets. For example:\n\n$N_1 = |A_1| + \\cdots + |A_m|$\n\n$N_m = |A_1 \\cap A_2 \\cap \\cdots \\cap A_m|$"
+        },
+        {
+          "chunk_id": "ccaba2e3-c003-461f-b4bc-e5944a2efab7",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 37,
+          "cosine_sim": 0.3349,
+          "final_score": 0.3851,
+          "content": "A = set of all integers from 1 to 1000 that are multiples of 3 ➔ $|A| = ?$\n\nFrom 1 to 1000, every third integer is a multiple of 3, each multiple of 3 is of the form $3p$, for any integer $p$ from 1 through $[1000/3]=333$, Hence $|A| = 333$.\n\nB = set of all integers from 1 to 1000 that are multiples of 5 ➔ $|B| = ?$\n\nSimilarly for multiples of 5, each multiple of 5 is of the form $5q$ for some integer $q$ from 1 through $[1000/5]=200$. Hence, we have $|B| = 200$.\n\nA ∩ B: set of all integers from 1 to 1000 that are multiples of 15 ➔ $|A \\cap B| = ?$\n\nTo determine the number of multiples of 15 from 1 through 1000, each multiple of 15 is of the form $15r$ for some integer $r$ from 1 through $[1000/15]=66$. ➔ $|A \\cap B| = 66$.\n\nFrom the principle, we have the number of integers either multiples of 3 or multiples of 5 from 1 to 1000 given by"
+        },
+        {
+          "chunk_id": "5ba384c7-f7db-44c0-98f2-888c45bdbf95",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "If P, Then Q",
+          "chunk_order": 17,
+          "cosine_sim": 0.3348,
+          "final_score": 0.385,
+          "content": "- In most theorems, exercises or tests, you need to prove the form \"If P, Then Q\".\n- In this example: “if a divides b and b divides c, then a divides c”\n  - \"P\" is \"If a divides b and b divides c\" and \"Q\" is \"a divides c\".\n- This is the standard state of many theorems.\n- The direct proof can be conceived as a series of inferences beginning with \"P\" and ending with \"Q\":\n\n```text\nP ⇒ ... ⇒ Q\n```"
+        },
+        {
+          "chunk_id": "2f51892f-c0ca-407d-9b40-8b1f3d2e1f36",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "The case: one characteristic root with multiplicities 2",
+          "chunk_order": 56,
+          "cosine_sim": 0.3341,
+          "final_score": 0.3842,
+          "content": "But what happens if the characteristic equation has only one root?\n\n**Theorem 2:** Let $c_1$ and $c_2$ be real numbers with $c_2 \\ne 0$. Suppose that $r^2 - c_1 r - c_2 = 0$ has only one root $r_0$. Then a sequence $\\{a_n\\}$ is a solution of the recurrence relation $a_n = c_1 a_{n-1} + c_2 a_{n-2}$\n\nif and only if\n\n$a_n = \\alpha_1 r_0^n + \\alpha_2 n r_0^n$\n\n$n = 0, 1, \\ldots$, where $\\alpha_1, \\alpha_2$ are constants."
+        },
+        {
+          "chunk_id": "854d6df4-d915-4c62-a5a2-1bc3e5fc2317",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "Solving Linear nonhomogeneous recurrence relation",
+          "chunk_order": 68,
+          "cosine_sim": 0.3321,
+          "final_score": 0.3819,
+          "content": "- If $s$ is not equal to characteristic root, then particular solution $p(n)$ is of the form $F(n)$\n- If $s$ is equal to characteristic root with multiplicities $m$, then particular solution $p(n)$ is of the form $n^m \\times Q(n) \\times s^n$ where $Q(n)$ is of the form $G(n)$"
+        },
+        {
+          "chunk_id": "ef9eef10-aca2-4c36-8066-6f0e1e088ed4",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.2. Derangement",
+          "chunk_order": 40,
+          "cosine_sim": 0.3283,
+          "final_score": 0.3775,
+          "content": "- Denote $D_n$ the number of derangements of $\\{1,2,\\dots,n\\}$ $\\Rightarrow D_n = ??$\n- Let $S$ = set of all permutations of $\\{1,2,\\dots,n\\}$ $\\Rightarrow |S| = n!$\n- Let $A_i$ = subset of permutations of $\\{1,2,\\dots,n\\}$ such that the $i$th element = $i$ in the permutation.\n- $|A_1 \\cup A_2 \\cup \\cdots \\cup A_n|$ counts the number of permutations in which at least one object $i$ of the $n$ objects appears in the $i$th position (its original position).\n- $D_n$: number of permutations such that none of the $n$ objects appears in their original positions. Therefore:\n\n$$\nD_n = n! - |A_1 \\cup A_2 \\cup \\cdots \\cup A_n|\n$$\n\n- Remember the inclusion-exclusion principle:\n\n$$\n|A_1 \\cup A_2 \\cup \\cdots \\cup A_n|\n=\n\\sum_{i=1}^{n} |A_i|\n-\n\\sum_{i<j} |A_i \\cap A_j|\n+\n\\sum_{i<j<k} |A_i \\cap A_j \\cap A_k|\n-\n\\sum_{i<j<k<\\ell} |A_i \\cap A_j \\cap A_k \\cap A_\\ell|\n+\\cdots+(-1)^{n+1}|A_1 \\cap A_2 \\cap \\cdots \\cap A_n|\n$$"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "nguyên lý Dirichlet nguyên lý chuồng bồ câu phát biểu",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "1e08b37c-ec49-45ae-9d25-064325e6ebe5",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3619,
+          "final_score": 0.6242,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "5345a0b6-484d-4ad1-a500-87062a3c0b0e",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3621,
+          "final_score": 0.4164,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3619,
+          "final_score": 0.4162,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c4ff42b1-09bb-41fc-a2a7-b77b7e8ce8a9",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3619,
+          "final_score": 0.4161,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "69c897f3-cf84-4477-808b-1496d9753d9b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3619,
+          "final_score": 0.4161,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "72c15b46-83a8-4320-848d-619915db3942",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "Exercises",
+          "chunk_order": 33,
+          "cosine_sim": 0.348,
+          "final_score": 0.4002,
+          "content": "1. CMR trong số 10 người bất kỳ luôn tìm được hoặc là hai người có tổng số tuổi chia hết cho 16, hoặc là hai người mà hiệu số tuổi của họ chia hết cho 16.\n\n2. Một trung tâm máy tính có 151 máy vi tính. Các máy của trung tâm được đánh số từ 1 đến 300 sao cho không có hai máy nào được đánh cùng số. CMR luôn tìm được hai máy được đánh số bởi các số nguyên liên tiếp.\n\n3. Mỗi dãy gồm $n^2+1$ số phân biệt (nghĩa là các phần tử là khác nhau từng đôi) luôn chứa hoặc dãy con tăng ngặt độ dài $n+1$ hoặc dãy con giảm ngặt độ dài $n+1$."
+        },
+        {
+          "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.2966,
+          "final_score": 0.3411,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "821d0a90-7e19-4133-a41e-540601076d3a",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.2966,
+          "final_score": 0.3411,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "pigeonhole principle if n+1 objects placed into n boxes then at least one box contains at least two objects",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ef9eef10-aca2-4c36-8066-6f0e1e088ed4",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.2. Derangement",
+          "chunk_order": 40,
+          "cosine_sim": 0.3863,
+          "final_score": 0.4442,
+          "content": "- Denote $D_n$ the number of derangements of $\\{1,2,\\dots,n\\}$ $\\Rightarrow D_n = ??$\n- Let $S$ = set of all permutations of $\\{1,2,\\dots,n\\}$ $\\Rightarrow |S| = n!$\n- Let $A_i$ = subset of permutations of $\\{1,2,\\dots,n\\}$ such that the $i$th element = $i$ in the permutation.\n- $|A_1 \\cup A_2 \\cup \\cdots \\cup A_n|$ counts the number of permutations in which at least one object $i$ of the $n$ objects appears in the $i$th position (its original position).\n- $D_n$: number of permutations such that none of the $n$ objects appears in their original positions. Therefore:\n\n$$\nD_n = n! - |A_1 \\cup A_2 \\cup \\cdots \\cup A_n|\n$$\n\n- Remember the inclusion-exclusion principle:\n\n$$\n|A_1 \\cup A_2 \\cup \\cdots \\cup A_n|\n=\n\\sum_{i=1}^{n} |A_i|\n-\n\\sum_{i<j} |A_i \\cap A_j|\n+\n\\sum_{i<j<k} |A_i \\cap A_j \\cap A_k|\n-\n\\sum_{i<j<k<\\ell} |A_i \\cap A_j \\cap A_k \\cap A_\\ell|\n+\\cdots+(-1)^{n+1}|A_1 \\cap A_2 \\cap \\cdots \\cap A_n|\n$$"
+        },
+        {
+          "chunk_id": "74501670-56d0-42af-a7dd-27e7b984c603",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 38,
+          "cosine_sim": 0.3788,
+          "final_score": 0.4357,
+          "content": "$|A \\cup B| = |A| + |B| - |A \\cap B|$\n\n$= 333 + 200 - 66 = 467$"
+        },
+        {
+          "chunk_id": "8f99ee60-9cf9-40c7-a655-f0d37e287719",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "1.4. Bin packing",
+          "chunk_order": 22,
+          "cosine_sim": 0.3762,
+          "final_score": 0.4327,
+          "content": "- Given $n$ items: the weight of items are $w_1, w_2, ..., w_n$. Need to find a way to place these $n$ items into bins of same size $b$ such that the number of bins used is minimal.\n- We have the assumption:\n\n$w_i \\le b, \\ i = 1, 2, ..., n.$\n\n- Therefore, the number of bins needed to hold all these $n$ items is not more than $n$. The problem is to find the minimum possible number of bins:\n  - We will give user $n$ bins. The problem is to help user to determine: each of the $n$ item will be placed in which of the $n$ bins, so that the number of bins having items in them is minimum."
+        },
+        {
+          "chunk_id": "9d31dff5-7db0-4fdb-8370-828e0ff8e0ea",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "The 36 officers problem",
+          "chunk_order": 6,
+          "cosine_sim": 0.3736,
+          "final_score": 0.4297,
+          "content": "- This problem is proposed by Euler, it is described as following:\n\n“You're in command of an army that consists of six regiments, each containing six officers of six different ranks. Can you arrange the officers in a 6x6 square so that each row and also each column of the square holds officers of all 6 ranks and all 6 regiments?”"
+        },
+        {
+          "chunk_id": "c86d759a-6ee6-449e-81bb-1d9d64887b40",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Calculate the upper bound",
+          "chunk_order": 52,
+          "cosine_sim": 0.3719,
+          "final_score": 0.4277,
+          "content": "- **Note:** When continuing build the $(k+1)$th element of solution, candidates for $x_{k+1}$ are $0, 1, \\ldots, \\left\\lfloor c_k / w_{k+1} \\right\\rfloor$\n- Using the result of the proposition, when selecting value for $x_{k+1}$, we browse candidates for $x_{k+1}$ in the descending order: $\\left\\lfloor c_k / w_{k+1} \\right\\rfloor, \\left\\lfloor c_k / w_{k+1} \\right\\rfloor - 1, \\ldots, 1, 0$"
+        },
+        {
+          "chunk_id": "383a0b35-45e5-4e1b-a5dd-35cf63d613da",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "2.4. Proof by Mathematical Induction",
+          "chunk_order": 30,
+          "cosine_sim": 0.3544,
+          "final_score": 0.4075,
+          "content": "- This is a very useful proof technique when we have to prove that the proposition $P(n)$ is true for all natural numbers $n \\ge n_0$.\n- Similar to the \"domino effect\" principle.\n\n**Outline of proof by Induction:**\n\n- Basic step: Prove the first statement $P(n_0)$ is true\n- Inductive step: Given any integer $n \\ge n_0$, prove that $P(n) \\rightarrow P(n+1)$\n\n(Assuming $P(n)$ is true and showing it forces $P(n+1)$ is true)\n\n- Conclusion: $P(n)$ is true $\\forall n \\ge n_0$\n\n(The assumption that $P(n)$ is true is called the inductive hypothesis)"
+        },
+        {
+          "chunk_id": "5ccf9ff3-2245-49a9-adcd-4b4ec770751c",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "1.4. Bin packing",
+          "chunk_order": 23,
+          "cosine_sim": 0.3417,
+          "final_score": 0.3929,
+          "content": "- We have the boolean variable\n\n$x_{ij} = 1$, if item $i$ is placed in bin $j$,  \n  $0$, otherwise.\n\nThen, bin backing problem is stated in the form:\n\n$$\n\\sum_{j=1}^{n} \\operatorname{sgn}\\left(\\sum_{i=1}^{n} x_{ij}\\right) \\to \\min\n$$\n\n$$\n\\sum_{j=1}^{n} x_{ij} = 1,\\quad i=1,2,\\ldots,n\n$$\n\n$$\n\\sum_{i=1}^{n} w_i x_{ij} \\le b,\\quad j=1,2,\\ldots,n;\n$$\n\n$$\nx_{ij} = 0,1,\\quad i,j = 1,2,\\ldots,n.\n$$\n\nNote: The signum function of a real number $x$ is defined as follows:\n\n$$\n\\operatorname{sgn}(x) :=\n\\begin{cases}\n-1 & \\text{if } x < 0,\\\\\n0 & \\text{if } x = 0,\\\\\n1 & \\text{if } x > 0.\n\\end{cases}\n$$"
+        },
+        {
+          "chunk_id": "5f1335e3-bc8f-40f4-b9ce-1d8bcdca4522",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Backtracking algorithm (recursive)",
+          "chunk_order": 58,
+          "cosine_sim": 0.3308,
+          "final_score": 0.3804,
+          "content": "```text\nvoid Try(int k)\n{\n    <Build S_k as the set to consist of candidates\n    for the k^th component of solution>;\n    for y ∈ S_k   // Each candidate y of S_k\n    {\n        a_k = y;\n        if (k == n) then <Record (a_1, a_2, ..., a_k)\n        as a complete solution >;\n        else Try(k+1);\n             Return the variables to their old states;\n    }\n}\n```\n\nThe call to execute backtracking algorithm: $Try(1)$;\n\n- If only one solution need to be found, then it is necessary to find a way to terminate the nested recursive calls generated by the call to $Try(1)$ once the first solution has just been recorded.\n- If at the end of the algorithm, we obtain no solution, it means that the problem does not have any solution."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 25.1
+}

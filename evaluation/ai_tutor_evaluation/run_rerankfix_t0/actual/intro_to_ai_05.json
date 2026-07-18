@@ -1,0 +1,134 @@
+{
+  "qid": "intro_to_ai_05",
+  "course_code": "IT3160E",
+  "question": "What defines a Constraint Satisfaction Problem (CSP)?",
+  "session_id": "04c44b0a-7d9e-49f0-a7ed-0827ab915ed2",
+  "answer": "A **Constraint Satisfaction Problem (CSP)** là một bài toán trong đó:\n\n- **Trạng thái** được tạo bởi một tập biến cố định \\(X_i\\)\n- Mỗi biến \\(X_i\\) nhận giá trị từ **miền** \\(D_i\\)\n- **Mục tiêu** là tìm một gán giá trị thỏa mãn **tập các ràng buộc** trên các biến\n\nNói ngắn gọn: **CSP = biến + miền giá trị + ràng buộc**.\n\nVí dụ điển hình là bài toán **tô màu bản đồ**: mỗi vùng là một biến, miền là các màu có thể chọn, và ràng buộc là các vùng kề nhau không được cùng màu.",
+  "citations": [
+    {
+      "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "CSP",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with valu"
+    },
+    {
+      "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one vari"
+    },
+    {
+      "chunk_id": "de00e937-cfc7-46b0-8b7d-cbf26a210122",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: Map Coloring",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "[Diagram: The map illustrates a constraint satisfaction problem where each region must be assigned one of several colors. Adjacent regions cannot share the same color, which is why the shared borders "
+    },
+    {
+      "chunk_id": "4b70b8aa-674d-4b10-b3e7-41eb2604e8dd",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraint Graph",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "[Diagram: The graph shows how a binary CSP can be represented as a network of variables connected by constraints. This matters because it turns constraint satisfaction into a graph structure, making r"
+    },
+    {
+      "chunk_id": "3044886f-75c5-472b-bf5b-d0306f02df35",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: Map Coloring",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "[Diagram: This map-coloring assignment is an example of a constraint satisfaction problem, where each region must be given a color that does not conflict with neighboring regions. The point is to show"
+    },
+    {
+      "chunk_id": "b88a513e-255c-454e-84ee-c56e0d32c146",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Backtracking Search Algorithm",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "[Diagram: This is a search tree showing how backtracking explores assignments one variable at a time. It matters because each partial assignment can be extended, pruned, or abandoned, which is the cor"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Constraint Satisfaction Problem definition variables domains constraints",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.5473,
+          "final_score": 0.6283,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Summary",
+          "chunk_order": 28,
+          "cosine_sim": 0.5485,
+          "final_score": 0.5993,
+          "content": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one variable assigned per node\n- Variable ordering and value selection heuristics help significantly\n- Forward checking prevents assignments that guarantee later failure\n- Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistencies\n- The CSPs representation allows analysis of problem structure\n- Tree-structured CSPs can be solved in linear time\n- Iterative min-conflicts is usually effective in practice"
+        },
+        {
+          "chunk_id": "de00e937-cfc7-46b0-8b7d-cbf26a210122",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Example: Map Coloring",
+          "chunk_order": 4,
+          "cosine_sim": 0.5122,
+          "final_score": 0.5322,
+          "content": "[Diagram: The map illustrates a constraint satisfaction problem where each region must be assigned one of several colors. Adjacent regions cannot share the same color, which is why the shared borders define the key constraints and make the coloring nontrivial.]"
+        },
+        {
+          "chunk_id": "4b70b8aa-674d-4b10-b3e7-41eb2604e8dd",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 8,
+          "cosine_sim": 0.5658,
+          "final_score": 0.5087,
+          "content": "[Diagram: The graph shows how a binary CSP can be represented as a network of variables connected by constraints. This matters because it turns constraint satisfaction into a graph structure, making relationships between variables easier to analyze and solve.]"
+        },
+        {
+          "chunk_id": "3044886f-75c5-472b-bf5b-d0306f02df35",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Example: Map Coloring",
+          "chunk_order": 6,
+          "cosine_sim": 0.5242,
+          "final_score": 0.4749,
+          "content": "[Diagram: This map-coloring assignment is an example of a constraint satisfaction problem, where each region must be given a color that does not conflict with neighboring regions. The point is to show that a valid solution is not just any coloring, but one that satisfies all adjacency constraints simultaneously.]"
+        },
+        {
+          "chunk_id": "b88a513e-255c-454e-84ee-c56e0d32c146",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Backtracking Search Algorithm",
+          "chunk_order": 20,
+          "cosine_sim": 0.444,
+          "final_score": 0.3881,
+          "content": "[Diagram: This is a search tree showing how backtracking explores assignments one variable at a time. It matters because each partial assignment can be extended, pruned, or abandoned, which is the core mechanism for efficiently searching constraint satisfaction problems.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.1
+}

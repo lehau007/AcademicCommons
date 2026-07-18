@@ -1,0 +1,31 @@
+{
+  "qid": "discrete_math_16",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "derived from spanning-tree T=(V,F),F⊆E; honest"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "HYBRID commits correct V(H)=V(G) (vs traditional_dense hedged corr 3)"
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "spanning-tree/components, no standalone def"
+    },
+    "context_recall": {
+      "score": 3,
+      "justification": "standalone def not retrieved; spanning-tree pattern present"
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "-"
+    }
+  }
+}

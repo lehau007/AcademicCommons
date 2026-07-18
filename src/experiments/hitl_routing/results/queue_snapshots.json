@@ -1,0 +1,346 @@
+[
+  {
+    "label": "after_initial_routing",
+    "timestamp": "2026-05-20T16:00:00+07:00",
+    "queues": {
+      "reviewer-001": [
+        "doc-001",
+        "doc-002",
+        "doc-003",
+        "doc-009"
+      ],
+      "reviewer-003": [
+        "doc-001",
+        "doc-002",
+        "doc-003",
+        "doc-009"
+      ],
+      "reviewer-002": [
+        "doc-004",
+        "doc-005"
+      ],
+      "ADMIN_QUEUE": [
+        "doc-006",
+        "doc-007",
+        "doc-008"
+      ]
+    },
+    "documents": {
+      "doc-001": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-002": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-003": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-004": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-005": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-006": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-007": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-008": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-009": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      }
+    }
+  },
+  {
+    "label": "after_normal_and_race",
+    "timestamp": "2026-05-20T11:10:00+07:00",
+    "queues": {
+      "reviewer-001": [
+        "doc-003",
+        "doc-009"
+      ],
+      "reviewer-003": [
+        "doc-003",
+        "doc-009"
+      ],
+      "reviewer-002": [
+        "doc-004",
+        "doc-005"
+      ],
+      "ADMIN_QUEUE": [
+        "doc-006",
+        "doc-007",
+        "doc-008"
+      ]
+    },
+    "documents": {
+      "doc-001": {
+        "state": "APPROVED",
+        "flags": [],
+        "decision": "APPROVE",
+        "decided_by": "reviewer-001"
+      },
+      "doc-002": {
+        "state": "REJECTED",
+        "flags": [],
+        "decision": "REJECT",
+        "decided_by": "reviewer-003"
+      },
+      "doc-003": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-004": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-005": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-006": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-007": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-008": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-009": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      }
+    }
+  },
+  {
+    "label": "after_sla_breach_t+50h",
+    "timestamp": "2026-05-22T10:00:00+07:00",
+    "queues": {
+      "reviewer-001": [
+        "doc-009"
+      ],
+      "reviewer-003": [
+        "doc-009"
+      ],
+      "reviewer-002": [
+        "doc-004",
+        "doc-005"
+      ],
+      "ADMIN_QUEUE": [
+        "doc-006",
+        "doc-007",
+        "doc-008",
+        "doc-003"
+      ]
+    },
+    "documents": {
+      "doc-001": {
+        "state": "APPROVED",
+        "flags": [],
+        "decision": "APPROVE",
+        "decided_by": "reviewer-001"
+      },
+      "doc-002": {
+        "state": "REJECTED",
+        "flags": [],
+        "decision": "REJECT",
+        "decided_by": "reviewer-003"
+      },
+      "doc-003": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "sla_breached"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-004": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-005": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-006": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-007": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-008": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-009": {
+        "state": "NEEDS_REVIEW",
+        "flags": [],
+        "decision": null,
+        "decided_by": null
+      }
+    }
+  },
+  {
+    "label": "final_state",
+    "timestamp": "2026-05-23T16:00:00+07:00",
+    "queues": {
+      "ADMIN_QUEUE": [
+        "doc-007",
+        "doc-008",
+        "doc-003",
+        "doc-004",
+        "doc-005",
+        "doc-009"
+      ]
+    },
+    "documents": {
+      "doc-001": {
+        "state": "APPROVED",
+        "flags": [],
+        "decision": "APPROVE",
+        "decided_by": "reviewer-001"
+      },
+      "doc-002": {
+        "state": "REJECTED",
+        "flags": [],
+        "decision": "REJECT",
+        "decided_by": "reviewer-003"
+      },
+      "doc-003": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "sla_breached"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-004": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "sla_breached"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-005": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "sla_breached"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-006": {
+        "state": "APPROVED",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": "APPROVE",
+        "decided_by": "admin-001"
+      },
+      "doc-007": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-008": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "no_reviewer"
+        ],
+        "decision": null,
+        "decided_by": null
+      },
+      "doc-009": {
+        "state": "NEEDS_REVIEW",
+        "flags": [
+          "sla_breached"
+        ],
+        "decision": null,
+        "decided_by": null
+      }
+    }
+  }
+]

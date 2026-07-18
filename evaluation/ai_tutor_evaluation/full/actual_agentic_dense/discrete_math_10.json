@@ -1,0 +1,175 @@
+{
+  "qid": "discrete_math_10",
+  "course_code": "IT3020E",
+  "question": "How are non-existent edges represented in a Weight Matrix for a weighted graph?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "4609cb9c-844e-4573-9ce5-31fc6b954414",
+  "answer": "# Non-Existent Edges in a Weight Matrix\n\nAccording to the course materials, the representation of non-existent edges in a weight matrix depends on the **type of weighted graph**:\n\n## Formal Definition\n\nFor a weighted graph with weight matrix $C = c[i,j]$ where $i, j = 1, 2, \\ldots, n$:\n\n$$c[i,j] = \\begin{cases} c(i,j) & \\text{if } (i,j) \\in E \\\\ \\theta & \\text{otherwise} \\end{cases}$$\n\nwhere $\\theta$ is a special value used to indicate that edge $(i, j)$ does not exist. The value of $\\theta$ **depends on the context**:\n\n- **$\\theta = 0$** → for **undirected** weighted graphs\n- **$\\theta = +\\infty$** → for **directed** weighted graphs\n- **$\\theta = -\\infty$** → also possible, depending on the scenario\n\n## Example 1: Undirected Weighted Graph\n\nIn the undirected case, **zero (0)** is used for non-existent edges. The matrix is symmetric: $W[i][j] = W[j][i]$.\n\n| | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| **1** | 0 | 3 | 0 | 5 | 0 | 0 |\n| **2** | 3 | 0 | 2 | 0 | 0 | 0 |\n| **3** | 0 | 2 | 0 | 3 | 6 | 0 |\n| **4** | 5 | 0 | 3 | 0 | 7 | 0 |\n| **5** | 0 | 0 | 6 | 7 | 0 | 0 |\n| **6** | 0 | 0 | 0 | 0 | 0 | 0 |\n\nNote that vertex 6 is **isolated** (all zeros in row 6 and column 6), and the diagonal entries are 0 since there are no self-loops.\n\n## Example 2: Directed Weighted Graph\n\nIn the directed case, **$\\infty$ (infinity)** is used for non-existent edges:\n\n$$w_{ij} = \\begin{cases} 0 & \\text{if } i = j \\\\ w(i,j) & \\text{if } i \\neq j \\text{ \\& } (i,j) \\in E \\\\ \\infty & \\text{otherwise} \\end{cases}$$\n\n$$W_{5 \\times 5} = \\begin{pmatrix} 0 & 3 & 8 & \\infty & -4 \\\\ \\infty & 0 & \\infty & 1 & 7 \\\\ \\infty & 4 & 0 & \\infty & \\infty \\\\ 2 & \\infty & -5 & 0 & \\infty \\\\ \\infty & \\infty & \\infty & 6 & 0 \\end{pmatrix}$$\n\n## Why the Different Choices?\n\n- **$0$ for undirected graphs**: Since edges have positive weights, using 0 safely marks \"no edge\" without ambiguity.\n- **$\\infty$ for directed graphs**: This is especially important for algorithms like **Dijkstra** and **All-Pairs Shortest-Paths**, where $\\infty$ ensures that paths through non-existent edges are never chosen (they would be longer than any real path).\n- The diagonal is always **0** (or sometimes $\\infty$ depending on convention) since there are no self-loops.",
+  "citations": [
+    {
+      "chunk_id": "52f037bf-2ecb-45d0-8ad4-e3eef219bc16",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3. Weight matrix",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- **Weighted** graphs have values associated with edges.\n- In the case weighted graphs, instead of adjacency matrix, we use weight matrix to represent the graph\n\n[Formula: C = c[i, j], i, j = 1, 2, .."
+    },
+    {
+      "chunk_id": "ecbe0028-0641-4bd0-b75a-37839d4703bd",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Weight matrix of undirected graph",
+      "page_number": null,
+      "chunk_order": 15,
+      "excerpt": "```\n    [1]---3---[2]\n    |         |\n    5         2\n    |         |\n   [4]---3---[3]\n    |         |\n    7         6\n    |         |\n   [5]       [6] (isolated)\n```\n\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n|-"
+    },
+    {
+      "chunk_id": "58612d91-80f8-4287-8a5f-95cc04006ace",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Graph Representation",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Incidence matrix\n- **Adjacency matrix**\n- Weight matrix\n- Adjacency list"
+    },
+    {
+      "chunk_id": "1b439c92-6e3f-4305-945a-fe2108ff7ee1",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Graph Representation",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- Incidence matrix\n- Adjacency matrix\n- Weight matrix\n- **Adjacency list**"
+    },
+    {
+      "chunk_id": "2a235341-87f6-4f78-b457-52a7392b2121",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "[Diagram: A directed weighted graph with 5 nodes (labeled 1-5) showing various weighted edges between them. The weight matrix W₅ₓ₅ represents the edge weights where entry wᵢⱼ is the weight from node i"
+    },
+    {
+      "chunk_id": "2161fa9f-bd8a-437b-a5e6-69eabd863aa9",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "**Input**\n\nWeight matrix $W_{n \\times n} = (w)_{ij}$ where\n\n$$w_{ij} = \\begin{cases} 0 & \\text{if } i = j \\\\ w(i,j) & \\text{if } i \\neq j \\text{ \\& } (i,j) \\in E \\\\ \\infty & \\text{otherwise} \\end{case"
+    },
+    {
+      "chunk_id": "845fb5c5-a477-48ba-b51f-a6b8001a45a5",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Dijkstra algorithm",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "- **Input:** A directed graph $G=(V,E)$ and weight matrix $w[u,v] \\geq 0$ where $u,v \\in V$, source vertex $s \\in V$;\n  - $G$ does not have negative-weight cycle\n- **Output:** Each $v \\in V$\n  - $d[v]"
+    },
+    {
+      "chunk_id": "03cca887-4eec-4ca8-99e1-e6f71064f403",
+      "document_title": "2_5-ShortestPath.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "All pairs shortest-paths",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "**Problem** Given directed graph $G = (V, E)$, with weight on each edge $e$ is $w(e)$,\nfor each pair of vertices $u, v$ of $V$, find the shortest path from $u$ to $v$.\n\n- Input: *weight matrix*\n- Outp"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "weight matrix representation weighted graph non-existent edges",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "52f037bf-2ecb-45d0-8ad4-e3eef219bc16",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "3. Weight matrix",
+          "chunk_order": 14,
+          "cosine_sim": 0.4389,
+          "final_score": 0.757,
+          "content": "- **Weighted** graphs have values associated with edges.\n- In the case weighted graphs, instead of adjacency matrix, we use weight matrix to represent the graph\n\n[Formula: C = c[i, j], i, j = 1, 2, ..., n]\n\nwhere\n\n[Formula: c[i,j] equals c(i,j) if (i,j) in E, theta otherwise]\n\n- θ: special value to identify (i, j) is not an edge; depends on the case, the value of θ could be: 0, +∞, −∞."
+        },
+        {
+          "chunk_id": "ecbe0028-0641-4bd0-b75a-37839d4703bd",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Weight matrix of undirected graph",
+          "chunk_order": 15,
+          "cosine_sim": 0.4202,
+          "final_score": 0.7249,
+          "content": "```\n    [1]---3---[2]\n    |         |\n    5         2\n    |         |\n   [4]---3---[3]\n    |         |\n    7         6\n    |         |\n   [5]       [6] (isolated)\n```\n\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| 1 | 0 | 3 | 0 | 5 | 0 | 0 |\n| 2 | 3 | 0 | 2 | 0 | 0 | 0 |\n| 3 | 0 | 2 | 0 | 3 | 6 | 0 |\n| 4 | 5 | 0 | 3 | 0 | 7 | 0 |\n| 5 | 0 | 0 | 6 | 7 | 0 | 0 |\n| 6 | 0 | 0 | 0 | 0 | 0 | 0 |\n\n- The weight matrix is symmetric: W[i][j] = W[j][i]\n- Zero entries indicate no edge between vertices\n- Vertex 6 is isolated (all zeros in row 6 and column 6)"
+        },
+        {
+          "chunk_id": "58612d91-80f8-4287-8a5f-95cc04006ace",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph Representation",
+          "chunk_order": 9,
+          "cosine_sim": 0.3939,
+          "final_score": 0.6795,
+          "content": "- Incidence matrix\n- **Adjacency matrix**\n- Weight matrix\n- Adjacency list"
+        },
+        {
+          "chunk_id": "1b439c92-6e3f-4305-945a-fe2108ff7ee1",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph Representation",
+          "chunk_order": 17,
+          "cosine_sim": 0.3808,
+          "final_score": 0.6568,
+          "content": "- Incidence matrix\n- Adjacency matrix\n- Weight matrix\n- **Adjacency list**"
+        },
+        {
+          "chunk_id": "2a235341-87f6-4f78-b457-52a7392b2121",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Example",
+          "chunk_order": 35,
+          "cosine_sim": 0.5137,
+          "final_score": 0.5907,
+          "content": "[Diagram: A directed weighted graph with 5 nodes (labeled 1-5) showing various weighted edges between them. The weight matrix W₅ₓ₅ represents the edge weights where entry wᵢⱼ is the weight from node i to node j, with 0 on the diagonal, ∞ for non-existent edges, and the actual weight value for existing edges.]"
+        },
+        {
+          "chunk_id": "2161fa9f-bd8a-437b-a5e6-69eabd863aa9",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Example",
+          "chunk_order": 34,
+          "cosine_sim": 0.4187,
+          "final_score": 0.4815,
+          "content": "**Input**\n\nWeight matrix $W_{n \\times n} = (w)_{ij}$ where\n\n$$w_{ij} = \\begin{cases} 0 & \\text{if } i = j \\\\ w(i,j) & \\text{if } i \\neq j \\text{ \\& } (i,j) \\in E \\\\ \\infty & \\text{otherwise} \\end{cases}$$\n\n$$W_{5 \\times 5} = \\begin{pmatrix} 0 & 3 & 8 & \\infty & -4 \\\\ \\infty & 0 & \\infty & 1 & 7 \\\\ \\infty & 4 & 0 & \\infty & \\infty \\\\ 2 & \\infty & -5 & 0 & \\infty \\\\ \\infty & \\infty & \\infty & 6 & 0 \\end{pmatrix}$$\n\n[Diagram: Directed weighted graph with 5 nodes]\n\n(3)        (4)\n      1 ----> 2 <---- 3\n\n|    / | \\    / ^\n      |   /  |  \\  /  |\n    (8) /  (7) (1)/   |\n      | /    |   /    | (-5)\n\nv/     v  /      \\\n      3 ----> 4 <------ 3\n      (-4)   (6)  (2)\n       \\    /      /\n        \\  /      /\n         v/      /\n          5 <----/\n\nNode 1: edges to 2 (3), 3 (8), 5 (-4)\nNode 2: edges to 4 (1), 5 (7)\nNode 3: edges to 2 (4)\nNode 4: edges to 1 (2), 3 (-5)\nNode 5: edges to 1 (2), 4 (6)\n\n[ASCII representation]\n\n3       4\n    1 ---> 2 <--- 3\n\n| \\    | \\   ^\n    |  \\   |  \\  | -5\n   8|   \\ 7|1  \\ |\n    |    \\ |    \\|\n\nv     vv     \\\n    3      4      3\n    ^     / \\\n\n|    /   \\\n\n-4  2      6\n\n|  /       \\  \n    | /         \\\n\nvv           v\n    5 ---------> 4\n         6"
+        },
+        {
+          "chunk_id": "845fb5c5-a477-48ba-b51f-a6b8001a45a5",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "Dijkstra algorithm",
+          "chunk_order": 18,
+          "cosine_sim": 0.4112,
+          "final_score": 0.4728,
+          "content": "- **Input:** A directed graph $G=(V,E)$ and weight matrix $w[u,v] \\geq 0$ where $u,v \\in V$, source vertex $s \\in V$;\n  - $G$ does not have negative-weight cycle\n- **Output:** Each $v \\in V$\n  - $d[v] = \\delta(s, v)$; Length of the shortest path from $s$ to $v$\n  - $p[v]$ - the predecessor of $v$ in this shortest path from $s$ to $v$."
+        },
+        {
+          "chunk_id": "03cca887-4eec-4ca8-99e1-e6f71064f403",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "All pairs shortest-paths",
+          "chunk_order": 33,
+          "cosine_sim": 0.3764,
+          "final_score": 0.4329,
+          "content": "**Problem** Given directed graph $G = (V, E)$, with weight on each edge $e$ is $w(e)$,\nfor each pair of vertices $u, v$ of $V$, find the shortest path from $u$ to $v$.\n\n- Input: *weight matrix*\n- Output *matrix*: element at row $u$ column $v$ is the length of the shortest path from $u$ to $v$.\n- Allow negative-weight edge\n- **Assumption: None negative-length cycle**"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 25.1
+}

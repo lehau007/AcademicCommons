@@ -1,0 +1,276 @@
+{
+  "qid": "database_05",
+  "course_code": "IT3292E",
+  "question": "How is a many-to-many (n-m) relationship mapped from an ERD to a relational schema?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "13ebefc5-70a0-4da4-a809-52383091e1ad",
+  "answer": "# Mapping a Many-to-Many (n–m) Relationship from ERD to Relational Schema\n\nAccording to the course materials, a many-to-many (n–m) relationship **cannot** be represented by simply adding a foreign key to one of the participating entity sets (as we do for 1–n relationships). Instead, a **new (separate) relation** must be created.\n\n## The Mapping Rule\n\n**For each n–m relationship:**\n\n1. **Create a new relation** (table) to represent the relationship.\n2. **Include all the prime (key) attributes of both participating entity sets** in this new relation. These attributes act as **foreign keys** referencing the original entity relations.\n3. **The primary key of this new relation is the combination of the prime attributes of both entity sets** (a composite key). This is necessary because the same pair of entities can only be linked once.\n4. If the n–m relationship has its own **descriptive attributes** (also called relationship attributes), include them as non-key attributes in the new relation.\n\n## Example 1: Simple n–m relationship\n\nConsider the ERD with two entities:\n- **subject** (`subject_id` PK, name, credit)\n- **student** (`student_id` PK, name, dob, address)\n\n…connected by a many-to-many relationship `learn` (n on subject side, m on student side).\n\nAfter mapping, the relations are:\n\n```\nsubject(subject_id, name, credit)\nstudent(student_id, name, dob, address)\nlearn(subject_id, student_id)\n```\n\nHere, `learn` is the new relation created from the relationship. Its attributes `subject_id` and `student_id` are foreign keys, and together they form the composite primary key of `learn`.\n\n## Example 2: n–m relationship with descriptive attributes\n\nIf the `learn` relationship has additional attributes such as `midterm_score`, `final_score`, and `semester`, the mapping becomes:\n\n```\nenrollment(student_id, subject_id, semester, midterm_score, final_score)\n```\n\n- `student_id` → foreign key to **student**\n- `subject_id` → foreign key to **subject**\n- `semester`, `midterm_score`, `final_score` → descriptive attributes of the relationship\n- **PRIMARY KEY = {student_id, subject_id, semester}**\n\nThis composite key correctly enforces the rule that a given student can only have one enrollment record for a given subject in a given semester.\n\n## Why a New Relation is Required\n\nIn an n–m relationship:\n- One student can take **many** subjects.\n- One subject can have **many** students.\n\nThis means neither side can hold a single foreign key for the other (we would need multiple values, which violates 1NF). The only correct way to represent this in a relational schema is through a **junction/bridge relation** that pairs instances of both entity sets.\n\n## Summary of Mapping Steps for n–m\n\n| Step | Action |\n|------|--------|\n| 1 | Identify the two participating entity sets and their primary keys. |\n| 2 | Create a new relation named after the relationship. |\n| 3 | Add the primary keys of both entity sets as foreign keys to the new relation. |\n| 4 | The combination of these foreign keys forms the **composite primary key** of the new relation (optionally extended with extra relationship attributes if a single pair can be linked more than once, e.g., by semester). |\n| 5 | Add any descriptive attributes of the relationship as non-key attributes. |\n\n---",
+  "citations": [
+    {
+      "chunk_id": "5dd8419d-5d38-4e00-ac5d-406d74c3ba51",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "- Introduction\n  - ERD in DB designing, and its components\n- How to create an ERD\n  - discover entity sets, attributes and relationships among entity sets\n- Mapping from ERD to relational schema\n  - t"
+    },
+    {
+      "chunk_id": "7f790225-c759-45bd-8f5e-20bf7a0fb665",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "- ERD: an approach to DB designing\n- Entity sets, attributes, key, relationships\n- How to create an ERD\n- Mapping from ERD to relational schema"
+    },
+    {
+      "chunk_id": "5fe44724-5857-46f3-9829-449552810995",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Mapping process",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "- Mapping of n - m relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `learn(subject_id, student_id)`\n\n[Diagram: ER diagram showing a many-to-many (n:m) r"
+    },
+    {
+      "chunk_id": "c47a1b9a-ef5c-4694-9308-32b9f3708358",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Mapping process",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "## 3.1. Mapping process\n\n- Mapping of multivalued attributes\n  - For each multivalued attribute A, create a new relation R including an attribute corresponding to A, plus the primary key attribute K ("
+    },
+    {
+      "chunk_id": "0ae5c624-b88d-4d40-bcf2-6bbfb5729bf2",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Mapping process",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- Mapping of strong entity sets\n  - For each entity set, create a relation that includes all the simple attributes of that entity set.\n  - PK of entity set becomes PK of the relation\n\n```\nclass(class_"
+    },
+    {
+      "chunk_id": "06e46a59-7fe0-40b5-abe5-ba1d7bd0c832",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Mapping process",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Mapping of 1 - n relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `join(class_id, student_id)`\n  - Use foreign key\n    - `student(student_id, name, do"
+    },
+    {
+      "chunk_id": "7703a121-286e-48f3-a462-6cdf439d5222",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Mapping process",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "- Mapping of 1 - 1 relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `manage(class_id, teacher_id)`\n  - Use foreign key\n    - `class(class_id, name, facu"
+    },
+    {
+      "chunk_id": "99443dc8-ad1e-4feb-8d5d-deb510cf976a",
+      "document_title": "03_structured_query_language.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. Definition a Relation Schema",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "**PRIMARY KEY = {student_id, subject_id, semester}**\n\n[Diagram: The slide presents an example database schema for an education system, showing several relations and how key attributes are emphasized. "
+    },
+    {
+      "chunk_id": "cd9860b1-d072-4523-a0ba-df78a47a7280",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Diagram",
+      "page_number": null,
+      "chunk_order": 48,
+      "excerpt": "```text\n                         Relation name\n                              |\n                              v\n                           student\n\n                                     Attributes\n     "
+    },
+    {
+      "chunk_id": "add5c4bd-523b-421c-9a7a-72607bc1ef6a",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "enrollment",
+      "page_number": null,
+      "chunk_order": 63,
+      "excerpt": "```text\n+-------------------+        Foreign key        +-------------------+\n|      student      |-------------------------->|      subject      |\n+-------------------+                           +---"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "mapping many-to-many n-m relationship from ERD to relational schema, transformation rules",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "5dd8419d-5d38-4e00-ac5d-406d74c3ba51",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "Summary",
+          "chunk_order": 33,
+          "cosine_sim": 0.5286,
+          "final_score": 0.9118,
+          "content": "- Introduction\n  - ERD in DB designing, and its components\n- How to create an ERD\n  - discover entity sets, attributes and relationships among entity sets\n- Mapping from ERD to relational schema\n  - transform from ERD into a set of tables"
+        },
+        {
+          "chunk_id": "7f790225-c759-45bd-8f5e-20bf7a0fb665",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "Remark",
+          "chunk_order": 30,
+          "cosine_sim": 0.5237,
+          "final_score": 0.9034,
+          "content": "- ERD: an approach to DB designing\n- Entity sets, attributes, key, relationships\n- How to create an ERD\n- Mapping from ERD to relational schema"
+        },
+        {
+          "chunk_id": "5fe44724-5857-46f3-9829-449552810995",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 27,
+          "cosine_sim": 0.521,
+          "final_score": 0.8987,
+          "content": "- Mapping of n - m relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `learn(subject_id, student_id)`\n\n[Diagram: ER diagram showing a many-to-many (n:m) relationship between \"subject\" and \"student\" entities connected by a \"learn\" relationship diamond. The \"subject\" entity has attributes subject_id (primary key), name, and credit. The \"student\" entity has attributes student_id (primary key), name, dob, and address. The relationship is labeled with \"n\" on the subject side and \"m\" on the student side, indicating a many-to-many cardinality.]"
+        },
+        {
+          "chunk_id": "c47a1b9a-ef5c-4694-9308-32b9f3708358",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 28,
+          "cosine_sim": 0.4984,
+          "final_score": 0.8598,
+          "content": "## 3.1. Mapping process\n\n- Mapping of multivalued attributes\n  - For each multivalued attribute A, create a new relation R including an attribute corresponding to A, plus the primary key attribute K (as a foreign key in R) of the corresponding entity set\n  - The primary key of R is the combination of A and K.\n    - subject_lecturer(subject_id, lecturer)\n\n[Diagram: ER diagram showing a \"subject\" entity (rectangle) with attributes subject_id, name (single ellipses), credit (single ellipse), and lecturer (double ellipse indicating multivalued attribute). The double ellipse around \"lecturer\" indicates it is a multivalued attribute, which requires creating a separate relation table subject_lecturer(subject_id, lecturer) with composite primary key.]"
+        },
+        {
+          "chunk_id": "0ae5c624-b88d-4d40-bcf2-6bbfb5729bf2",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 23,
+          "cosine_sim": 0.4908,
+          "final_score": 0.8466,
+          "content": "- Mapping of strong entity sets\n  - For each entity set, create a relation that includes all the simple attributes of that entity set.\n  - PK of entity set becomes PK of the relation\n\n```\nclass(class_id, name, faculty)\nteacher(teacher_id, name, dob, phone)\n```\n\n[Diagram: ER diagram showing two entity sets \"class\" and \"teacher\" connected by a 1:1 relationship \"manage\". The \"class\" entity has attributes class_id (underlined/primary key), name, and faculty. The \"teacher\" entity has attributes teacher_id (underlined/primary key), name, dob, and phone. Both ends of the relationship are marked with cardinality \"1\", indicating a one-to-one relationship.]"
+        },
+        {
+          "chunk_id": "06e46a59-7fe0-40b5-abe5-ba1d7bd0c832",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 26,
+          "cosine_sim": 0.4741,
+          "final_score": 0.8178,
+          "content": "- Mapping of 1 - n relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `join(class_id, student_id)`\n  - Use foreign key\n    - `student(student_id, name, dob, address, class_id)`\n\n[Diagram: ER diagram showing a 1-to-n relationship between \"class\" and \"student\" entities connected by a \"join\" relationship. The \"class\" entity has attributes: class_id (primary key), name, and faculty. The \"student\" entity has attributes: student_id (primary key), name, dob, and address. The relationship cardinality is marked as \"1\" on the class side and \"n\" on the student side.]"
+        },
+        {
+          "chunk_id": "5cf7ffde-8c82-4e8a-8743-4b1a5301f356",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "3.2. An algorithm decomposes a universal relation into 3NF",
+          "chunk_order": 23,
+          "cosine_sim": 0.458,
+          "final_score": 0.79,
+          "content": "- If none of the relation schemas in D contains a key of R, then create one more relation schema in D that contains attributes that form a key of R.\n\n- Eliminate redundant relations from the resulting set of relations in the relational database schema.\n\n- A relation R is considered redundant if R is a projection of another relation S in the schema; alternately, R is subsumed by S"
+        },
+        {
+          "chunk_id": "e4ed7e43-7870-4daa-a330-b2762ed15dfc",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.1. Step 1: Equivalence transformation",
+          "chunk_order": 19,
+          "cosine_sim": 0.4464,
+          "final_score": 0.5133,
+          "content": "- Equivalence tranformation rules\n- (8) Projection distributes over join as follows\n  - $\\Pi_{L_1 \\cup L_2}(E_1 \\bowtie_{\\theta} E_2) = \\Pi_{L_1}(E_1) \\bowtie_{\\theta} \\Pi_{L_2}(E_2)$\n  - If $\\theta$ involves attributes in $L_1 \\cup L_2$ only and $L_i$ contains attributes of $E_i$\n- (9) The set operations union and intersection are commutative\n  - $E_1 \\cup E_2 = E_2 \\cup E_1$\n  - $E_1 \\cap E_2 = E_2 \\cap E_1$\n- (10) The union and intersection are associative\n  - $(E_1 \\cup E_2) \\cup E_3 = E_1 \\cup (E_2 \\cup E_3)$"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "many-to-many relationship with descriptive attributes mapping, composite primary key foreign key",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c47a1b9a-ef5c-4694-9308-32b9f3708358",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 28,
+          "cosine_sim": 0.4924,
+          "final_score": 0.8493,
+          "content": "## 3.1. Mapping process\n\n- Mapping of multivalued attributes\n  - For each multivalued attribute A, create a new relation R including an attribute corresponding to A, plus the primary key attribute K (as a foreign key in R) of the corresponding entity set\n  - The primary key of R is the combination of A and K.\n    - subject_lecturer(subject_id, lecturer)\n\n[Diagram: ER diagram showing a \"subject\" entity (rectangle) with attributes subject_id, name (single ellipses), credit (single ellipse), and lecturer (double ellipse indicating multivalued attribute). The double ellipse around \"lecturer\" indicates it is a multivalued attribute, which requires creating a separate relation table subject_lecturer(subject_id, lecturer) with composite primary key.]"
+        },
+        {
+          "chunk_id": "7703a121-286e-48f3-a462-6cdf439d5222",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 25,
+          "cosine_sim": 0.4352,
+          "final_score": 0.7508,
+          "content": "- Mapping of 1 - 1 relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `manage(class_id, teacher_id)`\n  - Use foreign key\n    - `class(class_id, name, faculty, teacher_id)`\n\n[Diagram: An ER diagram showing a one-to-one relationship between \"class\" and \"teacher\" entities connected by a \"manage\" relationship. The class entity has attributes class_id (primary key), name, and faculty. The teacher entity has attributes teacher_id (primary key), name, dob, and phone. The relationship has cardinality 1 on both sides, indicating each class is managed by exactly one teacher and each teacher manages exactly one class.]"
+        },
+        {
+          "chunk_id": "0ae5c624-b88d-4d40-bcf2-6bbfb5729bf2",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 23,
+          "cosine_sim": 0.4314,
+          "final_score": 0.7442,
+          "content": "- Mapping of strong entity sets\n  - For each entity set, create a relation that includes all the simple attributes of that entity set.\n  - PK of entity set becomes PK of the relation\n\n```\nclass(class_id, name, faculty)\nteacher(teacher_id, name, dob, phone)\n```\n\n[Diagram: ER diagram showing two entity sets \"class\" and \"teacher\" connected by a 1:1 relationship \"manage\". The \"class\" entity has attributes class_id (underlined/primary key), name, and faculty. The \"teacher\" entity has attributes teacher_id (underlined/primary key), name, dob, and phone. Both ends of the relationship are marked with cardinality \"1\", indicating a one-to-one relationship.]"
+        },
+        {
+          "chunk_id": "06e46a59-7fe0-40b5-abe5-ba1d7bd0c832",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 26,
+          "cosine_sim": 0.4295,
+          "final_score": 0.7408,
+          "content": "- Mapping of 1 - n relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `join(class_id, student_id)`\n  - Use foreign key\n    - `student(student_id, name, dob, address, class_id)`\n\n[Diagram: ER diagram showing a 1-to-n relationship between \"class\" and \"student\" entities connected by a \"join\" relationship. The \"class\" entity has attributes: class_id (primary key), name, and faculty. The \"student\" entity has attributes: student_id (primary key), name, dob, and address. The relationship cardinality is marked as \"1\" on the class side and \"n\" on the student side.]"
+        },
+        {
+          "chunk_id": "5fe44724-5857-46f3-9829-449552810995",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 27,
+          "cosine_sim": 0.4246,
+          "final_score": 0.7325,
+          "content": "- Mapping of n - m relationships\n  - Create a new relation which has all prime-attributes of both entity sets\n    - `learn(subject_id, student_id)`\n\n[Diagram: ER diagram showing a many-to-many (n:m) relationship between \"subject\" and \"student\" entities connected by a \"learn\" relationship diamond. The \"subject\" entity has attributes subject_id (primary key), name, and credit. The \"student\" entity has attributes student_id (primary key), name, dob, and address. The relationship is labeled with \"n\" on the subject side and \"m\" on the student side, indicating a many-to-many cardinality.]"
+        },
+        {
+          "chunk_id": "99443dc8-ad1e-4feb-8d5d-deb510cf976a",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "2. Definition a Relation Schema",
+          "chunk_order": 11,
+          "cosine_sim": 0.436,
+          "final_score": 0.5014,
+          "content": "**PRIMARY KEY = {student_id, subject_id, semester}**\n\n[Diagram: The slide presents an example database schema for an education system, showing several relations and how key attributes are emphasized. The detailed table focuses on the `enrollment` relation, explaining its fields, constraints, and composite primary key, which is important for modeling a student’s subject registrations over time.]"
+        },
+        {
+          "chunk_id": "cd9860b1-d072-4523-a0ba-df78a47a7280",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "Diagram",
+          "chunk_order": 48,
+          "cosine_sim": 0.4267,
+          "final_score": 0.4907,
+          "content": "```text\n                         Relation name\n                              |\n                              v\n                           student\n\n                                     Attributes\n                         /    /    /    /    /    /    \\\n                        v    v    v    v    v    v    v\n+-----------------------------------------------------------------------------------+\n| student_id | first_name | last_name | dob       | gender | address    | note | clazz_id |\n+-----------------------------------------------------------------------------------+\n| 1234       | David      | Beckham   | 12/21/1997| Male    | London, UK |      | 1        |\n| 1238       | Theresa    | May       | 08/06/1998| Female  | London, UK |      | 1        |\n| 1452       | David      | Cameron   | 07/06/1997| Male    | Bangor, UK |      | 1        |\n| 1497       | Tony       | Blair     | 03/01/1999| Male    | Bath, UK   |      | 2        |\n| 1516       | John       | Major     | 03/01/1998| Male    | Bradford   |      | 2        |\n| 1542       | Margaret   | Thatcher  | 05/08/1997| Female  | Cambridge  |      | 2        |\n+-----------------------------------------------------------------------------------+\n\nTuples\n\nCardinality = 6\n\nDegree = 8\n```"
+        },
+        {
+          "chunk_id": "add5c4bd-523b-421c-9a7a-72607bc1ef6a",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "enrollment",
+          "chunk_order": 63,
+          "cosine_sim": 0.4207,
+          "final_score": 0.4838,
+          "content": "```text\n+-------------------+        Foreign key        +-------------------+\n|      student      |-------------------------->|      subject      |\n+-------------------+                           +-------------------+\n| student_id (PK)   |                           | subject_id (PK)   |\n| ...               |                           | ...               |\n+-------------------+                           +-------------------+\n           \\                                          ^\n            \\                                         |\n             \\                                        |\n              \\                                       |\n               \\                                      |\n                \\                                     |\n                 \\                                    |\n                  \\                                   |\n                   \\                                  |\n                    \\                                 |\n                     \\                                |\n                      v                               |\n                 +-------------------+               |\n                 |    enrollment     |---------------+\n                 +-------------------+\n                 | student_id (FK)    |\n                 | subject_id (FK)    |\n                 | semester           |\n                 | midterm_score      |\n                 | final_score        |\n                 +-------------------+\n\nPrimary key\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 23.9
+}

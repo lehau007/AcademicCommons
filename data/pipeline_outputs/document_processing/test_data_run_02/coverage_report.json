@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-01T14:35:21.277383+00:00",
+  "expected_type_counts": {
+    "text_pdf": 0,
+    "scanned_pdf": 1,
+    "slide_pdf": 1,
+    "mixed_pdf": 0,
+    "pptx": 1,
+    "image": 1
+  },
+  "covered_categories": [
+    "scanned_pdf",
+    "slide_pdf",
+    "pptx",
+    "image"
+  ],
+  "missing_categories": [
+    "text_pdf",
+    "mixed_pdf"
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "qid": "intro_to_ai_12",
+  "course_code": "IT3160E",
+  "question": "According to Mitchell (1997), what are the three core elements that define a machine learning problem?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "6b77682a-ed41-4843-a3c3-ef5cec4cd966",
+  "answer": "Based strictly on the provided context documents, I cannot give a complete answer to your question. The context references Mitchell (1997) twice:\n\n1. In his definition of machine learning: *\"Any computer program that improves its performance at some task through experience\"* (chunk e8e13d75)\n2. As a source for *\"Representation of the learning problem\"* (chunk e8e13d75) — but the content under this heading is not provided in the context.\n\nThe specific three core elements of Mitchell's (1997) framework (typically formulated as **Task T**, **Experience E**, and **Performance measure P**) are **not explicitly enumerated** in the provided chunks.\n\nWhat the context *does* describe — under the headings \"Key elements of a ML problem (1)\" and \"(2)\" — are the following components of an ML problem (chunks 5b9a4ab2 and 02d82e69):\n\n1. **Selection of the training examples** (direct/indirect feedback, with or without teacher, representativeness of the test set)\n2. **Choosing the target function** (a.k.a. hypothesis or concept), e.g., *F: X → {0,1}*, *F: X → labels*, *F: X → ℝ⁺*\n3. **Choosing a representation of the target function** (e.g., polynomial, set of rules, decision tree, neural network)\n4. **Choosing a learning algorithm** that approximates the target function (e.g., regression-based, rule induction, ID3/C4.5, back-propagation)\n\nNote: These are presented in the context as general elements of a ML problem, not specifically as Mitchell's three-element definition.\n\nIf you need the precise Mitchell (1997) formulation, you would need to consult the textbook itself, as it is not contained in the provided context.\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "e8e13d75-dbc3-448c-90bb-4a217b293d54",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Introduction of Machine learning",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Definitions of Machine learning...\n  - A process by which a system improves its performance [Simon, 1983]\n  - Any computer program that improves its performance at some task through experience [Mitc"
+    },
+    {
+      "chunk_id": "5b9a4ab2-5bfb-4ba1-a019-8926378aba4d",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Key elements of a ML problem (1)",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Selection of the training examples\n  - Direct or indirect training feedback\n  - With teacher (i.e., with labels) or without\n  - The training examples set should be representative of the future test "
+    },
+    {
+      "chunk_id": "02d82e69-9f03-44a2-8481-718f6816e570",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Key elements of a ML problem (2)",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Choosing a representation of the target function\n  - A polynomial function\n  - A set of rules\n  - A decision tree\n  - A neural network\n  - ...\n\n- Choosing a learning algorithm that learns (approxima"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "According to Mitchell (1997), what are the three core elements that define a machine learning problem?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "183cd87b-37cd-4c5d-9a07-bdaa6287f021",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Foundations of AI",
+          "chunk_order": 7,
+          "cosine_sim": 0.3845,
+          "final_score": 0.6633,
+          "content": "While no specific content was provided for this section, common foundations include:\n\n- Machine Learning\n- Deep Learning\n- Neural Networks\n- [Formula: Mathematical and statistical models]"
+        },
+        {
+          "chunk_id": "bb78f7dc-39fe-4290-8d13-b71e8997ed36",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "When using ANNs?",
+          "chunk_order": 64,
+          "cosine_sim": 0.3765,
+          "final_score": 0.4329,
+          "content": "- Input is high-dimensional discrete or real-valued\n- The target function is real-valued, discrete-valued or vector-valued\n- Possibly noisy data\n- The form of the target function is unknown\n- Human readability of result is not (very) important\n- Long training time is accepted\n- Short classification/prediction time is required"
+        },
+        {
+          "chunk_id": "ae50e9e8-47d8-4721-9de7-0b2d63d378dc",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Features of RL",
+          "chunk_order": 3,
+          "cosine_sim": 0.3687,
+          "final_score": 0.4239,
+          "content": "- Learning from numerical rewards\n- Interaction with the task; sequences of states, actions and rewards\n- Uncertainty and non-deterministic worlds\n- Delayed consequences\n- The explore/exploit dilemma\n- The whole problem of goal-directed learning"
+        },
+        {
+          "chunk_id": "e8e13d75-dbc3-448c-90bb-4a217b293d54",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Introduction of Machine learning",
+          "chunk_order": 2,
+          "cosine_sim": 0.4649,
+          "final_score": 0.2673,
+          "content": "- Definitions of Machine learning...\n  - A process by which a system improves its performance [Simon, 1983]\n  - Any computer program that improves its performance at some task through experience [Mitchell, 1997]\n  - Programming computers to optimize a performance criterion using example data or past experience [Alpaydin, 2004]\n\n- Representation of the learning problem [Mitchell, 1997]"
+        },
+        {
+          "chunk_id": "02d82e69-9f03-44a2-8481-718f6816e570",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Key elements of a ML problem (2)",
+          "chunk_order": 10,
+          "cosine_sim": 0.4218,
+          "final_score": 0.2425,
+          "content": "- Choosing a representation of the target function\n  - A polynomial function\n  - A set of rules\n  - A decision tree\n  - A neural network\n  - ...\n\n- Choosing a learning algorithm that learns (approximately) the target function\n  - Regression-based\n  - Rule induction\n  - ID3 or C4.5\n  - Back-propagation\n  - ..."
+        },
+        {
+          "chunk_id": "4d943037-e2fc-4a76-8773-e568681c7165",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Issues in Machine Learning (2)",
+          "chunk_order": 12,
+          "cosine_sim": 0.4104,
+          "final_score": 0.236,
+          "content": "- Learning process\n  - What is the best strategy for selecting a next training example? How do selection strategies alter the complexity of the learning problem?\n  - How can prior knowledge (held by the system) help?\n\n- Learning capability\n  - What target function should the system learn?\n    - Representation of the target function: expressiveness vs. complexity\n  - What are the theoretical limits of learnability?\n  - How can the system generalize from the training examples?\n    - To avoid the overfitting problem\n  - How can the system automatically alter its representation?\n    - To improve its ability to represent and learn the target function"
+        },
+        {
+          "chunk_id": "c2c1e177-178e-4d68-b558-85165d2e58fa",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Types of learning problems",
+          "chunk_order": 13,
+          "cosine_sim": 0.405,
+          "final_score": 0.2329,
+          "content": "- A rough (and somewhat outdated) classification of learning problems:\n  - Supervised learning, where we get a set of training inputs and outputs\n    - classification, regression\n  - Unsupervised learning, where we are interested in capturing inherent organization in the data\n    - clustering, density estimation\n  - Reinforcement learning, where we only get feedback in the form of how well we are doing (not what we should be doing)\n    - Planning"
+        },
+        {
+          "chunk_id": "5b9a4ab2-5bfb-4ba1-a019-8926378aba4d",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Key elements of a ML problem (1)",
+          "chunk_order": 9,
+          "cosine_sim": 0.3775,
+          "final_score": 0.2171,
+          "content": "- Selection of the training examples\n  - Direct or indirect training feedback\n  - With teacher (i.e., with labels) or without\n  - The training examples set should be representative of the future test examples\n\n- Choosing the target function (a.k.a. hypothesis, concept, etc.)\n  - [Formula: F: X → {0,1}]\n  - [Formula: F: X → a set of labels]\n  - [Formula: F: X → ℝ⁺] (i.e., the positive real numbers domain)\n  - ..."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 24.8
+}

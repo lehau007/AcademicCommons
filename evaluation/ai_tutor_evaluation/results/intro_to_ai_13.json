@@ -1,0 +1,50 @@
+{
+  "qid": "intro_to_ai_13",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunk. The answer correctly states that the discount rate bounds infinite sums and favors earlier rewards/shorter paths, matching the source material exactly.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by explaining both purposes of the discount rate: bounding infinite sums and prioritizing earlier rewards/shorter paths. The content is completely on-topic despite being partially in Vietnamese.",
+      "evidence": [
+        "Làm cho tổng phần thưởng vô hạn trở nên hữu hạn",
+        "Ưu tiên phần thưởng đến sớm hơn",
+        "discount rate dùng để giới hạn tổng return và giảm trọng số của phần thưởng xa trong tương lai"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly covers both key facts from the ground truth: that the discount rate bounds the infinite sum of rewards and favors earlier rewards/shorter paths. The explanation is factually consistent with no contradictions.",
+      "evidence": [
+        "Ground truth: 'bound the infinite sum of rewards' vs Answer: 'Làm cho tổng phần thưởng vô hạn trở nên hữu hạn'",
+        "Ground truth: 'favors earlier rewards...preference for shorter paths' vs Answer: 'Ưu tiên phần thưởng đến sớm hơn...chọn các đường đi ngắn hơn'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "The single retrieved chunk directly addresses the question, defining the discount rate and explicitly listing both purposes: bounding the infinite sum and favoring earlier rewards/shorter paths. No irrelevant content is present.",
+      "evidence": []
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The retrieved chunk explicitly contains both key facts from the ground truth: that the discount rate bounds the infinite sum and favors earlier rewards/shorter paths.",
+      "evidence": [
+        "Bound the infinite sum",
+        "Favor earlier rewards, in other words to give preference to shorter paths"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "The cited chunk directly supports both main claims in the answer: that the discount rate bounds the infinite sum and favors earlier rewards/shorter paths. The tutor's statements align precisely with the source material.",
+      "evidence": [
+        "Tutor claim: 'Làm cho tổng phần thưởng vô hạn trở nên hữu hạn' → Chunk: 'Bound the infinite sum'",
+        "Tutor claim: 'Ưu tiên phần thưởng đến sớm hơn... chọn các đường đi ngắn hơn' → Chunk: 'Favor earlier rewards, in other words to give preference to shorter paths'"
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "qid": "discrete_math_07",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The explanation of the greedy rule, selecting the minimum-weight edge connecting the current tree to an outside vertex, the d[v] and near[v] tracking variables, and the process of adding edges without creating cycles are all explicitly present in the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses how Prim's algorithm determines which edge to add during each iteration: by selecting the minimum-weight edge connecting the current tree to a vertex not yet in the tree. The explanation is on-topic throughout, covering both the conceptual greedy approach and the implementation details with d[v] and near[v].",
+      "evidence": [
+        "Chọn **cạnh có trọng số nhỏ nhất** trong số đó",
+        "mỗi vòng lặp, Prim luôn chọn \"cạnh an toàn\" nhẹ nhất nối cây đang có với một đỉnh bên ngoài",
+        "Prim chọn đỉnh v có d[v] nhỏ nhất, và thêm cạnh (v, near[v])"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: starting from an arbitrary vertex, adding the minimum-weight edge connecting a vertex in the tree to one outside, and continuing until all vertices are included. The answer correctly explains the greedy selection process and provides additional implementation details (d[v], near[v]) that are consistent with the algorithm.",
+      "evidence": [
+        "Ground truth: 'adds the minimum-weight edge that connects a vertex already in the tree to a vertex not yet in the tree'",
+        "Tutor: 'Chọn cạnh có trọng số nhỏ nhất... nối từ cây hiện tại T ra một đỉnh chưa thuộc T'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks directly address how Prim's algorithm selects edges: they describe the greedy choice of the minimum-weight edge connecting the current tree to a new vertex, provide pseudocode implementations, and show worked examples. Every chunk is relevant to the question.",
+      "evidence": []
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks: starting from an arbitrary vertex, adding minimum-weight edges connecting tree vertices to non-tree vertices, avoiding cycles, and continuing until all vertices are included.",
+      "evidence": [
+        "Select an arbitrary vertex r ∈ V",
+        "The \"safe\" edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$",
+        "while (T has < n vertices)",
+        "repeatedly choosing the lightest edge that connects a new vertex without creating a cycle"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the corresponding statement. The answer describes Prim's greedy selection of the minimum-weight edge connecting the tree to an outside vertex, and all cited chunks confirm this mechanism, including the pseudocode and d[v]/near[v] tracking details.",
+      "evidence": [
+        "Tutor: 'Chọn cạnh có trọng số nhỏ nhất' → Chunk c8ffa216: 'The \"safe\" edge included in $T$ at each iteration is the edge with smallest weight among edges connecting a vertex of $T$ to other vertex not in $T$'",
+        "Tutor: 'd[v]: trọng số nhỏ nhất để nối đỉnh v... near[v]: đỉnh trong T nối tốt nhất với v' → Chunk 73844cf8: 'd[v] = c[r,v]; near[v] = r' and 'Find v ∈ V \\ V(T) satisfying: d[v] = min'",
+        "Tutor: 'chọn đỉnh v có d[v] nhỏ nhất, và thêm cạnh (v, near[v])' → Chunk 73844cf8: 'Find v... d[v] = min... E(T) = E(T) ∪ { (v, near[v]) }'"
+      ]
+    }
+  }
+}

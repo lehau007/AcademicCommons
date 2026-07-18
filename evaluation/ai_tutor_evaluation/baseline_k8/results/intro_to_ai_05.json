@@ -1,0 +1,54 @@
+{
+  "qid": "intro_to_ai_05",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "All factual claims in the tutor's answer are directly supported by the retrieved chunks. The definition of CSP (state composed of variables Xi with domains Di, goal test as constraints) matches chunks 67acdf6b and cb0570c6. The three main components and the map-coloring example are consistent with the retrieved material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses what defines a CSP, covering all three essential components: variables with domains, constraints, and the goal of satisfying those constraints. The example provided reinforces the definition rather than diverting from it.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: states composed of variables Xi with domains Di, and goal test defined by constraints. The additional structure (3 main components) and example enhance understanding without contradicting the ground truth.",
+      "evidence": [
+        "Ground truth: 'state is composed of variables Xi that take values from a specific domain Di'",
+        "Tutor: 'Trạng thái được tạo bởi các biến X_i, mỗi biến có một miền giá trị D_i'",
+        "Ground truth: 'goal test...defined by a set of constraints'",
+        "Tutor: 'Mục tiêu là tìm một gán giá trị...sao cho tất cả các ràng buộc (constraints) đều được thỏa mãn'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Most chunks are relevant to defining CSPs. Chunks 67acdf6b and cb0570c6 directly define CSPs with variables, domains, and constraints. Chunks 94828c18, 2f1e8c6a, 4b70b8aa, and 74b8dba6 provide useful context about CSP varieties, structure, and examples. However, chunk 37877718-577f-4666-b2df-18d3d8aa430c about FOL semantics is unrelated to CSPs, and chunk 83e54421 is just a table of contents with no substantive content.",
+      "evidence": [
+        "37877718-577f-4666-b2df-18d3d8aa430c: 'Interpretation $(D,\\sigma)$... FOL Semantic'",
+        "83e54421: 'CSPs example - Backtracking search - Problem structure - Local search for CSPs'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 67acdf6b explicitly states that CSP state is composed of variables Xi with values from domain Di, and that the goal test is a set of constraints. Chunk cb0570c6 reinforces this definition.",
+      "evidence": [
+        "State is composed of variables $X_i$ with value in domain $D_i$",
+        "Goal test is a set of constraints over variables",
+        "states defined by values of a fixed set of variables",
+        "goal test defined by constraints on variable values"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "All citations accurately support the statements made. The core definition statements about variables, domains, and constraints are directly supported by chunks 67acdf6b and cb0570c6, which explicitly define CSPs in those terms.",
+      "evidence": [
+        "Statement: 'Trạng thái được tạo bởi các biến Xi, mỗi biến có một miền giá trị Di' → Chunk 67acdf6b: 'State is composed of variables $X_i$ with value in domain $D_i$'",
+        "Statement: 'Mục tiêu là tìm một gán giá trị... tất cả các ràng buộc đều được thỏa mãn' → Chunk 67acdf6b: 'Goal test is a set of constraints over variables'",
+        "Statement: '3 phần chính: Variables, Domains, Constraints' → Chunk cb0570c6: 'states defined by values of a fixed set of variables... goal test defined by constraints on variable values'"
+      ]
+    }
+  }
+}

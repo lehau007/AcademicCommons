@@ -1,0 +1,63 @@
+{
+  "file_id": "it3292e_exam_cuoiki_2022_pdf",
+  "scores": {
+    "classification_routing": {
+      "score": 5,
+      "justification": "No explicit route in processing_meta, but supporting signals are fully consistent with the manifest: summary.language='vi', summary.ocr_quality='low' (correct for a blurry scan with no text layer), markdown was produced via OCR and the doc was flagged NEEDS_REVIEW. This matches scanned_pdf / vision_only.",
+      "evidence": ["\"ocr_quality\": \"low\"", "\"language\": \"vi\"", "\"document_status\": \"NEEDS_REVIEW\""]
+    },
+    "text_coverage": {
+      "score": 4,
+      "justification": "All three parts, all 16 numbered questions, the header grade table, and the Phần III essay (SQL a-d and the ER-diagram item) are present. The one genuine textual gap is Câu 9, which retains only option (A) and drops (B),(C),(D); most other content is present but corrupted (a fidelity issue, not a coverage gap).",
+      "evidence": ["Câu 9 keeps only \"(A) Hiển thị người dùng cơ sở dữ liệu không bao giờ xem sơ đồ trong\" and omits expected \"(B) Người quản trị... (C) Người dùng cuối... (D) Người thiết kế\""]
+    },
+    "extraction_fidelity": {
+      "score": 2,
+      "justification": "OCR on this blurry scan is badly degraded: the course code is misread, and the functional-dependency notation and many option strings are wrong or garbled. Vietnamese diacritics are mostly intact (no mojibake), but a large share of the actual character/word content does not match the source, making much of the technical content unusable.",
+      "evidence": ["CƠ SỞ DỮ LIỆU - IT3092 (source reads \"IT3292\")", "Câu 1 F = {A→C, B→D, C→A, B→C, C→D, CD→B, BD→E}. Hãy tìm [CD]+? (source: F = {AB→C, D→EG, C→A, BE→C, CE→AG, CG→BD}. Hãy tính (BE)⁺)", "(A) Tần nguyên tỉ / (B) Tính chất gian / (C) Thế chấp lẻ / (D) Tính liên vùng (source: Tính nguyên tố / nhất quán / cách ly / bền vững)"]
+    },
+    "structure_preservation": {
+      "score": 4,
+      "justification": "Document structure is well preserved: the three '## Phần' headings, the grade table, sequential numbering of Câu 1-16, the (A)/(B)/(C)/(D) option lists, and the Phần III relation list with a-d SQL items all appear in correct reading order. Minor loss is the missing options under Câu 9, not structural scrambling.",
+      "evidence": ["## Phần I – Điền câu trả lời đúng vào chỗ trống (3 điểm)", "| Điểm | Chữ ký của giảng viên | Chữ ký của giám thị |"]
+    },
+    "faithfulness_no_hallucination": {
+      "score": 2,
+      "justification": "Beyond OCR misreads, the output contains substantial fabricated content: an entirely invented Câu 10 question and options, invented Câu 12 options, and an added non-existent Câu 11 option (D) 4NF. These are confidently-stated strings absent from the source.",
+      "evidence": ["**Câu 10.** Tìm biểu thức chính xác nhất về hệ quản trị M (ELO/ID?)", "(A) MIDDLEAGE / (B) CONVERT / (D) SHORT (Câu 12)", "(D) 4NF added to Câu 11 (source has only A/B/C)"]
+    },
+    "formula_table_code": {
+      "score": 3,
+      "justification": "The grade table is rendered correctly and the Phần III relation schemas and SQL requirement structure survive. But the functional-dependency 'formulas' are largely wrong/garbled and one FD set is fabricated, degrading the math-notation content that is central to this exam.",
+      "evidence": ["Câu 6 F = {A→B, CD→E}. Hãy tính số lượng chỉnh 3 (source: F = {A→BC, CD→E}. Hãy tách về dạng chuẩn 3)", "Câu 4 F = {AB→C, D→B, C→A, BD} (source: C→ABD)"]
+    }
+  },
+  "classification": {
+    "expected_type": "scanned_pdf",
+    "expected_route": "vision_only",
+    "actual_type": "scanned_pdf",
+    "actual_route": "vision_only",
+    "pass": true
+  },
+  "hallucinations": [
+    "**Câu 10.** Tìm biểu thức chính xác nhất về hệ quản trị M (ELO/ID?)",
+    "(A) Hệ quản trị hướng quan hệ",
+    "(B) Hệ cơ sở dữ liệu quan hệ",
+    "(C) Một cơ sở dữ liệu trang trữ các bản ghi quan hệ",
+    "(D) Hệ quản trị tích hợp",
+    "(A) MIDDLEAGE",
+    "(B) CONVERT",
+    "(D) SHORT",
+    "(D) 4NF",
+    "(A) Tần nguyên tỉ",
+    "(B) Tính chất gian",
+    "(C) Thế chấp lẻ",
+    "(D) Tính liên vùng",
+    "Câu 1 F = {A→C, B→D, C→A, B→C, C→D, CD→B, BD→E}. Hãy tìm [CD]+?",
+    "**Câu 9.** Trong mô hình quan hệ dữ liệu, 3 dạng (tên trường, hóa đơn, phiếu thu)",
+    "**Câu 14.** ... Giả sử trên trường dữ liệu *value* trong R where A1 >= 3 và A3 <= 15 được xem là không nguyên tắc",
+    "Câu 6 Hãy tính số lượng chỉnh 3 không làm mất mát thông tin và bảo toàn phụ thuộc trong quan hệ con"
+  ],
+  "normalization_note": "The normalized markdown reads coherently as a structured exam (headings, table, numbered questions, options, essay part) and no large spans were dropped wholesale; the failure mode is content corruption/fabrication within blocks rather than missing sections. Handwritten name/MSSV are best-effort misreads on both sides and not penalized.",
+  "overall_comment": "Routing/classification is correct (scanned -> vision_only, ocr_quality 'low', NEEDS_REVIEW) and the macro-structure (3 parts, 16 questions, Phần III) is well preserved. The dominant problem is OCR fidelity on this blurry Vietnamese scan: the course code is misread (IT3092 vs IT3292), most functional-dependency notation is wrong or fabricated, and several multiple-choice option sets are entirely hallucinated (Câu 10, 12) or invented (Câu 11 (D) 4NF), leaving the technical content largely unreliable despite intact diacritics."
+}

@@ -1,0 +1,133 @@
+{
+  "qid": "discrete_math_12",
+  "course_code": "IT3020E",
+  "question": "How is the Dirichlet (or Pigeonhole) principle formally stated?",
+  "session_id": "5295cfe9-4fde-4fb7-87e8-095783f244b8",
+  "answer": "The **Dirichlet principle** (also called the **Pigeonhole principle**) is formally stated as:\n\n> If \\(n\\) objects are placed into \\(m\\) boxes and \\(n > m\\), then at least one box contains at least two objects.\n\nA more general form is:\n\n> If \\(N\\) objects are distributed among \\(k\\) boxes, then some box contains at least  \n> \\[\n> \\left\\lceil \\frac{N}{k} \\right\\rceil\n> \\]\n> objects.\n\nEquivalently, if each box can contain at most \\(r-1\\) objects, then to place \\(N\\) objects into \\(k\\) boxes with \\(N > k(r-1)\\) is impossible; therefore at least one box must contain \\(r\\) or more objects.\n\nThis principle is used mainly in **existence proofs** to show that certain configurations must exist.",
+  "citations": [
+    {
+      "chunk_id": "982193c3-fe2f-4135-85b5-ff6247d16ee0",
+      "document_title": "1-2-Existence.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Content",
+      "page_number": null,
+      "chunk_order": 15,
+      "excerpt": "- 1. Introduction to existence problems\n- 2. Basic proof methods\n- 3. Dirichlet principle (pigeonhole principle)"
+    },
+    {
+      "chunk_id": "36f23fdc-2f22-4562-96f0-a84f7872dd81",
+      "document_title": "1-2-Existence.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Content",
+      "page_number": null,
+      "chunk_order": 4,
+      "excerpt": "- 1. Introduction to existence problems\n- 2. Basic proof methods\n- 3. Dirichlet principle (pigeonhole principle)"
+    },
+    {
+      "chunk_id": "383a0b35-45e5-4e1b-a5dd-35cf63d613da",
+      "document_title": "1-2-Existence.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Proof by Mathematical Induction",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "- This is a very useful proof technique when we have to prove that the proposition $P(n)$ is true for all natural numbers $n \\ge n_0$.\n- Similar to the \"domino effect\" principle.\n\n**Outline of proof b"
+    },
+    {
+      "chunk_id": "5ba384c7-f7db-44c0-98f2-888c45bdbf95",
+      "document_title": "1-2-Existence.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "If P, Then Q",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- In most theorems, exercises or tests, you need to prove the form \"If P, Then Q\".\n- In this example: “if a divides b and b divides c, then a divides c”\n  - \"P\" is \"If a divides b and b divides c\" and"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Dirichlet principle Pigeonhole principle formal statement",
+      "namespaces": [
+        "knowledge",
+        "exercise"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "982193c3-fe2f-4135-85b5-ff6247d16ee0",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "Content",
+          "chunk_order": 15,
+          "cosine_sim": 0.4742,
+          "final_score": 0.5453,
+          "content": "- 1. Introduction to existence problems\n- 2. Basic proof methods\n- 3. Dirichlet principle (pigeonhole principle)"
+        },
+        {
+          "chunk_id": "36f23fdc-2f22-4562-96f0-a84f7872dd81",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "Content",
+          "chunk_order": 4,
+          "cosine_sim": 0.4742,
+          "final_score": 0.5453,
+          "content": "- 1. Introduction to existence problems\n- 2. Basic proof methods\n- 3. Dirichlet principle (pigeonhole principle)"
+        },
+        {
+          "chunk_id": "24374a8f-b359-4a31-9d40-ba203c6c4141",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "3.1. General diagram",
+          "chunk_order": 36,
+          "cosine_sim": 0.3388,
+          "final_score": 0.3896,
+          "content": "- We will describe the idea of algorithm on the model of the following general combinatorial optimization problem:\n\n$\\min \\{ f(x) : x \\in D \\},$\n\nwhere $D$ is the finite set.\n\n- Assume set $D$ is described as following:\n\n$D = \\{x = (x_1, x_2, \\ldots, x_n) \\in A_1 \\times A_2 \\times \\ldots \\times A_n:$\n\n$x$ satisfies property $P\\},$\n\nwhere $A_1, A_2, \\ldots, A_n$ are finite set, and $P$ is property on the Descartes product $A_1 \\times A_2 \\times \\ldots \\times A_n$."
+        },
+        {
+          "chunk_id": "383a0b35-45e5-4e1b-a5dd-35cf63d613da",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "2.4. Proof by Mathematical Induction",
+          "chunk_order": 30,
+          "cosine_sim": 0.3383,
+          "final_score": 0.3891,
+          "content": "- This is a very useful proof technique when we have to prove that the proposition $P(n)$ is true for all natural numbers $n \\ge n_0$.\n- Similar to the \"domino effect\" principle.\n\n**Outline of proof by Induction:**\n\n- Basic step: Prove the first statement $P(n_0)$ is true\n- Inductive step: Given any integer $n \\ge n_0$, prove that $P(n) \\rightarrow P(n+1)$\n\n(Assuming $P(n)$ is true and showing it forces $P(n+1)$ is true)\n\n- Conclusion: $P(n)$ is true $\\forall n \\ge n_0$\n\n(The assumption that $P(n)$ is true is called the inductive hypothesis)"
+        },
+        {
+          "chunk_id": "c50f469c-cd67-4b46-a33d-105b7df0825d",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 34,
+          "cosine_sim": 0.3364,
+          "final_score": 0.3869,
+          "content": "More generally, for finite sets $A_1, A_2, \\ldots, A_m$\n\n$|A_1 \\cup A_2 \\cup \\cdots \\cup A_m| = N_1 - N_2 + \\cdots + (-1)^{m+1} N_m$\n\nwhere:\n\n$N_k = \\sum_{1\\le i_1 < i_2 < \\cdots < i_k \\le m} \\left|A_{i_1} \\cap A_{i_2} \\cap \\cdots \\cap A_{i_k}\\right|,\\quad k=1,2,\\ldots,m$\n\nNote: $N_k$ is the sum of the cardinalities of all intersections of $k$ from $m$ given sets. For example:\n\n$N_1 = |A_1| + \\cdots + |A_m|$\n\n$N_m = |A_1 \\cap A_2 \\cap \\cdots \\cap A_m|$"
+        },
+        {
+          "chunk_id": "ccaba2e3-c003-461f-b4bc-e5944a2efab7",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "3.1. Inclusion-exclusion principle",
+          "chunk_order": 37,
+          "cosine_sim": 0.3349,
+          "final_score": 0.3851,
+          "content": "A = set of all integers from 1 to 1000 that are multiples of 3 ➔ $|A| = ?$\n\nFrom 1 to 1000, every third integer is a multiple of 3, each multiple of 3 is of the form $3p$, for any integer $p$ from 1 through $[1000/3]=333$, Hence $|A| = 333$.\n\nB = set of all integers from 1 to 1000 that are multiples of 5 ➔ $|B| = ?$\n\nSimilarly for multiples of 5, each multiple of 5 is of the form $5q$ for some integer $q$ from 1 through $[1000/5]=200$. Hence, we have $|B| = 200$.\n\nA ∩ B: set of all integers from 1 to 1000 that are multiples of 15 ➔ $|A \\cap B| = ?$\n\nTo determine the number of multiples of 15 from 1 through 1000, each multiple of 15 is of the form $15r$ for some integer $r$ from 1 through $[1000/15]=66$. ➔ $|A \\cap B| = 66$.\n\nFrom the principle, we have the number of integers either multiples of 3 or multiples of 5 from 1 to 1000 given by"
+        },
+        {
+          "chunk_id": "5ba384c7-f7db-44c0-98f2-888c45bdbf95",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "If P, Then Q",
+          "chunk_order": 17,
+          "cosine_sim": 0.3348,
+          "final_score": 0.385,
+          "content": "- In most theorems, exercises or tests, you need to prove the form \"If P, Then Q\".\n- In this example: “if a divides b and b divides c, then a divides c”\n  - \"P\" is \"If a divides b and b divides c\" and \"Q\" is \"a divides c\".\n- This is the standard state of many theorems.\n- The direct proof can be conceived as a series of inferences beginning with \"P\" and ending with \"Q\":\n\n```text\nP ⇒ ... ⇒ Q\n```"
+        },
+        {
+          "chunk_id": "c86d759a-6ee6-449e-81bb-1d9d64887b40",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "Calculate the upper bound",
+          "chunk_order": 52,
+          "cosine_sim": 0.329,
+          "final_score": 0.3784,
+          "content": "- **Note:** When continuing build the $(k+1)$th element of solution, candidates for $x_{k+1}$ are $0, 1, \\ldots, \\left\\lfloor c_k / w_{k+1} \\right\\rfloor$\n- Using the result of the proposition, when selecting value for $x_{k+1}$, we browse candidates for $x_{k+1}$ in the descending order: $\\left\\lfloor c_k / w_{k+1} \\right\\rfloor, \\left\\lfloor c_k / w_{k+1} \\right\\rfloor - 1, \\ldots, 1, 0$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 11.6
+}

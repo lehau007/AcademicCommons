@@ -1,0 +1,55 @@
+{
+  "qid": "database_05",
+  "course_code": "IT3292E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "All core claims about creating a new relation with primary keys from both entity sets are directly supported by chunk 5fe44724. However, the claim that these keys form a 'composite primary key' of the new relation is not explicitly stated in the retrieved chunks, though it is a reasonable inference from standard database practice.",
+      "evidence": [
+        "Using the combination of those key attributes as the **primary key** of the new relation",
+        "Together, they form the composite primary key of `learn`"
+      ]
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how to map a many-to-many relationship from ERD to relational schema, covering all key steps: creating a new relation, including primary keys from both entities, and forming a composite primary key.",
+      "evidence": [
+        "Creating a new relation (table) for the relationship",
+        "Including the primary keys of both participating entity sets",
+        "Using the combination of those key attributes as the primary key"
+      ]
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "The tutor's answer covers all key facts from the ground truth: creating a new relation and including primary keys of both entity sets. However, it omits the explicit mention that these keys are used as 'foreign keys' in the new relation, which the ground truth specifies.",
+      "evidence": [
+        "Ground truth: 'These prime attributes are used as foreign keys in the new relation'",
+        "Tutor answer: mentions 'primary keys' and 'composite primary key' but does not explicitly state they function as foreign keys"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six chunks are relevant to mapping ERD relationships to relational schemas. Only chunk 51ad005f (about general DB design approaches) provides no specific information about n-m relationship mapping.",
+      "evidence": [
+        "51ad005f: 'Two approaches to DB designing... ER model is used in DB design'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 5fe44724 explicitly states that n-m mapping creates a new relation with all prime-attributes of both entity sets, and that these serve as foreign keys.",
+      "evidence": [
+        "Create a new relation which has all prime-attributes of both entity sets"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. Chunk 5fe44724 explicitly describes n-m relationship mapping with the exact example used, and the other chunks provide appropriate context about ERD mapping processes.",
+      "evidence": [
+        "Statement: 'Creating a new relation (table) for the relationship' and 'Including the primary keys of both participating entity sets' → Chunk 5fe44724: 'Mapping of n - m relationships - Create a new relation which has all prime-attributes of both entity sets'",
+        "Statement: Example 'learn(subject_id, student_id)' → Chunk 5fe44724: '`learn(subject_id, student_id)`' with matching ER diagram",
+        "General context citations (chunks 5dd8419d, 7f790225) appropriately support the overall topic of 'Mapping from ERD to relational schema'"
+      ]
+    }
+  }
+}

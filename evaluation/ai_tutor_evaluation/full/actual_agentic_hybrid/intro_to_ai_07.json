@@ -1,0 +1,266 @@
+{
+  "qid": "intro_to_ai_07",
+  "course_code": "IT3160E",
+  "question": "How does forward chaining work in propositional logic inference?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "bc307aca-2139-4ef6-8ac9-09b5e205c66b",
+  "answer": "# Forward Chaining in Propositional Logic Inference\n\nBased on the course materials (Lecturer 9 – Propositional Logic), here is how forward chaining works:\n\n## Core Idea\n\nForward chaining is a **data-driven** inference method for propositional logic. It starts from the **known facts** stored in the knowledge base and repeatedly applies inference rules whose premises are satisfied, deriving **new facts** until the goal is reached (or no more rules can fire).\n\nIn the course diagrams, this is depicted as inference **propagating upward** — from facts at the bottom, through intermediate conclusions, toward the goal at the top of the rule network.\n\n## The Algorithm (from the slides)\n\nThe course provides this pseudocode for the forward-chaining loop:\n\n```\nTemp = Fact;\nSat = FindRules(Temp, R);\nwhile Sat ≠ ∅ and Goal ∉ Temp do\n    r ← get(Sat);          // r has the form: left → q\n    R = R \\ {r};\n    Trace = Trace ∪ {r};\n    Temp = Temp ∪ {q};\n    Sat = FindRules(Temp, R)\nif Goal ⊆ Temp then exit(\"Success\")\nelse exit(\"Not success\")\n```\n\nStep by step:\n1. Initialize `Temp` with the set of known facts.\n2. `FindRules(Temp, R)` returns the rules whose left-hand sides are currently satisfied by `Temp`.\n3. While there is some applicable rule and the goal has not yet been derived:\n   - Pick one applicable rule `r` of the form `left → q`.\n   - Remove `r` from the rule set `R` (avoid re-firing).\n   - Record `r` in the derivation `Trace`.\n   - Add the conclusion `q` to `Temp`.\n   - Re-check which rules are now applicable.\n4. If the goal is a subset of `Temp`, succeed; otherwise fail.\n\n## Worked Example (from the lecture)\n\nKnowledge base:\n\n- $P \\Rightarrow Q$\n- $L \\land M \\Rightarrow P$\n- $B \\land L \\Rightarrow M$\n- $A \\land P \\Rightarrow L$\n- $A \\land B \\Rightarrow L$\n- $A$\n- $B$\n\nForward-chaining trace starting from facts `{A, B}`:\n\n1. **Step 1** — From facts $A$ and $B$, the rule $A \\land B \\Rightarrow L$ fires ⇒ derive $L$.  \n   `Temp = {A, B, L}`\n2. **Step 2** — Now $B$ and $L$ are known, so $B \\land L \\Rightarrow M$ fires ⇒ derive $M$.  \n   `Temp = {A, B, L, M}`\n3. **Step 3** — $L$ and $M$ are known, so $L \\land M \\Rightarrow P$ fires ⇒ derive $P$.  \n   `Temp = {A, B, L, M, P}`\n4. **Step 4** — $P$ is known, so $P \\Rightarrow Q$ fires ⇒ derive $Q$.  \n   `Temp = {A, B, L, M, P, Q}`\n\nThe goal $Q$ is now in `Temp`, so the algorithm exits with **\"Success\"**. The course diagram visualizes this propagation:\n\n```\nA ──► L ──► P ──► Q\n│     ▲     ▲\n│     │     │\n└──► M ◄────┘\n      ▲\n      │\n      B\n```\n\n## Key Properties (as covered in the lecture)\n\n- **Direction**: data-driven — moves *from facts toward conclusions*, in contrast to backward chaining, which moves from the goal back toward supporting facts.\n- **Trigger condition**: a rule fires as soon as **all of its premise literals** are present in `Temp`.\n- **Termination**: guaranteed when the rule set `R` is exhausted (each rule is used at most once because of `R = R \\ {r}`) and the goal check fails.\n- **Output**: on success, a `Trace` of fired rules records *how* the goal was derived, not just that it was derived.\n\nThe course materials present forward chaining as one of the two main inference strategies in propositional logic, alongside **backward chaining**.\n\n---",
+  "citations": [
+    {
+      "chunk_id": "fac75206-7568-4e93-8e11-365e2367c8ad",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Example\n\n$$\nP \\Rightarrow Q\n$$\n\n$$\nL \\land M \\Rightarrow P\n$$\n\n$$\nB \\land L \\Rightarrow M\n$$\n\n$$\nA \\land P \\Rightarrow L\n$$\n\n$$\nA \\land B \\Rightarrow L\n$$\n\n$$\nA\n$$\n\n$$\nB\n$$\n\n```text\nA ──► L ──► P ──"
+    },
+    {
+      "chunk_id": "ad72dbb6-7b19-4c18-98b4-d55cb645b1f6",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "```text\n      Q\n      ^\n      |\n      P\n      ^\n      |\n      o-----> M\n     / \\      ^\n    /   \\     |\n   /     \\    |\n  o-----> L   o\n   \\      / \\  \\\n    \\    /   \\  \\\n     \\  /     \\  \\\n      A   "
+    },
+    {
+      "chunk_id": "89edf918-cbdf-467b-b9cf-2f9e52f40d37",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "```text\n      Q\n      ↑\n      P\n      ↑\n      ●\n     / \\\n    /   \\\n   L     M\n   ↑     ↑\n   ●     ●\n  / \\   / \\\n A   ● ●   B\n```\n\n[Diagram: This shows inference progressing from known facts at the bot"
+    },
+    {
+      "chunk_id": "c0adbaae-a676-4778-86b3-66ffaa5b1450",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "```text\n{1  Temp = Fact;\n    Sat = FindRules(Temp,R);\n    while Sat<>0 and Goal∉Temp do\n    {2    r ← get(Sat); /* r: left → q */\n         R = R \\ {r}; Trace = Trace ∪ {r};\n         Temp = Temp ∪ {q};"
+    },
+    {
+      "chunk_id": "db8bde85-ca42-4f40-9f85-37c90468a3ae",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 15,
+      "excerpt": "```text\n        Q\n        ↑\n        P\n        ↑\n        ●\n       / \\\n      /   \\\n     L     M\n     ○     ●\n    / \\   / \\\n   ●   \\ /   ●\n    \\    X    /\n     \\  / \\  /\n      A     B\n```\n\n[Diagram: This"
+    },
+    {
+      "chunk_id": "324ac71a-8af3-4677-a125-8bc75b5f3fbc",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Inference in Propositional Logic",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Forward Chaining\n- Backward Chaining"
+    },
+    {
+      "chunk_id": "7b3af5ef-2f86-4d10-9b51-f95d9dda0bd1",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "```text\n        Q\n        ↑\n        P\n        ↑\n        ●───────M\n       ╱ \\      ↑\n      ╱   \\     ●\n     L─────●────╱\n     ↑     ╱   ╱\n     ●    ╱   ╱\n    ╱ \\  ╱   ╱\n   A   ●────B\n```\n\n[Diagram: Mô "
+    },
+    {
+      "chunk_id": "bf220dcc-e400-4688-bcbd-a8ca8835396f",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Forward Chaining",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "```text\n      Q\n      ↑\n      P\n      ↑\n      ●\n     / \\\n    /   \\\n   L     M\n  / \\   / \\\n ●   ● ●   ●\n  \\  /   \\ /\n   A       B\n```\n\n[Diagram: Hình minh họa suy diễn tiến (forward chaining) trong một"
+    },
+    {
+      "chunk_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "summary",
+      "section_title": "Document Summary",
+      "page_number": 1,
+      "chunk_order": 0,
+      "excerpt": "Lecturer 9 – Propositional Logic: School of Information and Communication Technology - HUST Knowledge-based Agents: - Know about the world - They maintain a collection of facts (sentences) about the w"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "forward chaining propositional logic inference rules",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "fac75206-7568-4e93-8e11-365e2367c8ad",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 12,
+          "cosine_sim": 0.54,
+          "final_score": 0.621,
+          "content": "- Example\n\n$$\nP \\Rightarrow Q\n$$\n\n$$\nL \\land M \\Rightarrow P\n$$\n\n$$\nB \\land L \\Rightarrow M\n$$\n\n$$\nA \\land P \\Rightarrow L\n$$\n\n$$\nA \\land B \\Rightarrow L\n$$\n\n$$\nA\n$$\n\n$$\nB\n$$\n\n```text\nA ──► L ──► P ──► Q\n│     ▲     ▲\n│     │     │\n└──► M ◄────┘\n      ▲\n      │\n      B ─────────►\n```\n\n[Diagram: The figure shows a forward-chaining inference network where facts and rules propagate implications to derive new conclusions. It matters because it illustrates how a system can start from known facts (A, B) and repeatedly apply rules to infer higher-level facts until reaching a goal such as Q.]"
+        },
+        {
+          "chunk_id": "ad72dbb6-7b19-4c18-98b4-d55cb645b1f6",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 16,
+          "cosine_sim": 0.5202,
+          "final_score": 0.5982,
+          "content": "```text\n      Q\n      ^\n      |\n      P\n      ^\n      |\n      o-----> M\n     / \\      ^\n    /   \\     |\n   /     \\    |\n  o-----> L   o\n   \\      / \\  \\\n    \\    /   \\  \\\n     \\  /     \\  \\\n      A         B\n```\n\n[Diagram: The figure illustrates forward chaining in a rule-based knowledge system, where facts and inferred propositions propagate upward through rules until a goal is reached. This matters because it shows how new conclusions are derived automatically from known facts by repeatedly applying inference rules.]"
+        },
+        {
+          "chunk_id": "89edf918-cbdf-467b-b9cf-2f9e52f40d37",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 13,
+          "cosine_sim": 0.5168,
+          "final_score": 0.5943,
+          "content": "```text\n      Q\n      ↑\n      P\n      ↑\n      ●\n     / \\\n    /   \\\n   L     M\n   ↑     ↑\n   ●     ●\n  / \\   / \\\n A   ● ●   B\n```\n\n[Diagram: This shows inference progressing from known facts at the bottom toward higher-level conclusions at the top. Forward chaining is important because it derives new facts step by step until a target conclusion is reached.]"
+        },
+        {
+          "chunk_id": "c0adbaae-a676-4778-86b3-66ffaa5b1450",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 23,
+          "cosine_sim": 0.4967,
+          "final_score": 0.5712,
+          "content": "```text\n{1  Temp = Fact;\n    Sat = FindRules(Temp,R);\n    while Sat<>0 and Goal∉Temp do\n    {2    r ← get(Sat); /* r: left → q */\n         R = R \\ {r}; Trace = Trace ∪ {r};\n         Temp = Temp ∪ {q};\n         Sat = FindRules(Temp,R)\n    }2\n    if Goal ⊆ Temp then exit(\"Success\")\n    else  exit(\"Not success\")\n}1\n```\n\n[Diagram: This is a forward-chaining inference loop: starting from known facts, it repeatedly selects applicable rules, adds newly inferred conclusions, and checks whether the goal has been derived. The process matters because it shows how rule-based systems can automatically reach conclusions from facts without backward searching from the goal.]"
+        },
+        {
+          "chunk_id": "db8bde85-ca42-4f40-9f85-37c90468a3ae",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 15,
+          "cosine_sim": 0.4934,
+          "final_score": 0.5674,
+          "content": "```text\n        Q\n        ↑\n        P\n        ↑\n        ●\n       / \\\n      /   \\\n     L     M\n     ○     ●\n    / \\   / \\\n   ●   \\ /   ●\n    \\    X    /\n     \\  / \\  /\n      A     B\n```\n\n[Diagram: This is a forward-chaining inference network where facts at the bottom support intermediate conclusions that propagate upward toward higher-level goals. It illustrates how deriving new facts from known ones can eventually enable the system to reach a target conclusion efficiently.]"
+        },
+        {
+          "chunk_id": "324ac71a-8af3-4677-a125-8bc75b5f3fbc",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Inference in Propositional Logic",
+          "chunk_order": 10,
+          "cosine_sim": 0.4796,
+          "final_score": 0.5515,
+          "content": "- Forward Chaining\n- Backward Chaining"
+        },
+        {
+          "chunk_id": "7b3af5ef-2f86-4d10-9b51-f95d9dda0bd1",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 17,
+          "cosine_sim": 0.4376,
+          "final_score": 0.5033,
+          "content": "```text\n        Q\n        ↑\n        P\n        ↑\n        ●───────M\n       ╱ \\      ↑\n      ╱   \\     ●\n     L─────●────╱\n     ↑     ╱   ╱\n     ●    ╱   ╱\n    ╱ \\  ╱   ╱\n   A   ●────B\n```\n\n[Diagram: Mô hình này minh họa suy diễn tiến (forward chaining) trong hệ luật: từ các факт ban đầu, các luật được kích hoạt để suy ra факт mới cho đến khi đạt được kết luận. Nó quan trọng vì cho thấy cách tri thức được lan truyền theo hướng từ dữ kiện đến mục tiêu trong hệ chuyên gia và suy luận logic.]"
+        },
+        {
+          "chunk_id": "bf220dcc-e400-4688-bcbd-a8ca8835396f",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 14,
+          "cosine_sim": 0.4273,
+          "final_score": 0.4914,
+          "content": "```text\n      Q\n      ↑\n      P\n      ↑\n      ●\n     / \\\n    /   \\\n   L     M\n  / \\   / \\\n ●   ● ●   ●\n  \\  /   \\ /\n   A       B\n```\n\n[Diagram: Hình minh họa suy diễn tiến (forward chaining) trong một mạng luật/tri thức. Các ký hiệu và mũi tên cho thấy cách các факт/điều kiện ban đầu dẫn dần đến các kết luận cao hơn, nhấn mạnh cơ chế suy luận từ dữ kiện đến mục tiêu.]"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid_rerank",
+      "query": "forward chaining algorithm definition properties completeness data-driven",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "324ac71a-8af3-4677-a125-8bc75b5f3fbc",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Inference in Propositional Logic",
+          "chunk_order": 10,
+          "cosine_sim": 0.4301,
+          "final_score": 0.4946,
+          "content": "- Forward Chaining\n- Backward Chaining"
+        },
+        {
+          "chunk_id": "b598fd6e-b8fd-4e29-8006-35b2a584947b",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "STRIPS operators",
+          "chunk_order": 10,
+          "cosine_sim": 0.4015,
+          "final_score": 0.4617,
+          "content": "- [Note: this abstracts away many important details!]\n\n- Restricted language $⇒$ efficient algorithm\n  - Precondition: conjunction of positive literals\n  - Effect: conjunction of literals\n\n- A complete set of STRIPS operators can be translated into a set of successor-state axioms"
+        },
+        {
+          "chunk_id": "bf3f647a-f779-4072-8ce4-dd41c6ed7dce",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "A* search, evaluation",
+          "chunk_order": 36,
+          "cosine_sim": 0.3841,
+          "final_score": 0.4418,
+          "content": "- Completeness: YES\n- Time complexity: (exponential with path length)\n- Space complexity:\n  - It keeps all generated nodes in memory\n  - Hence space is the major problem not time"
+        },
+        {
+          "chunk_id": "c0adbaae-a676-4778-86b3-66ffaa5b1450",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 23,
+          "cosine_sim": 0.3636,
+          "final_score": 0.4182,
+          "content": "```text\n{1  Temp = Fact;\n    Sat = FindRules(Temp,R);\n    while Sat<>0 and Goal∉Temp do\n    {2    r ← get(Sat); /* r: left → q */\n         R = R \\ {r}; Trace = Trace ∪ {r};\n         Temp = Temp ∪ {q};\n         Sat = FindRules(Temp,R)\n    }2\n    if Goal ⊆ Temp then exit(\"Success\")\n    else  exit(\"Not success\")\n}1\n```\n\n[Diagram: This is a forward-chaining inference loop: starting from known facts, it repeatedly selects applicable rules, adds newly inferred conclusions, and checks whether the goal has been derived. The process matters because it shows how rule-based systems can automatically reach conclusions from facts without backward searching from the goal.]"
+        },
+        {
+          "chunk_id": "89edf918-cbdf-467b-b9cf-2f9e52f40d37",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 13,
+          "cosine_sim": 0.3626,
+          "final_score": 0.417,
+          "content": "```text\n      Q\n      ↑\n      P\n      ↑\n      ●\n     / \\\n    /   \\\n   L     M\n   ↑     ↑\n   ●     ●\n  / \\   / \\\n A   ● ●   B\n```\n\n[Diagram: This shows inference progressing from known facts at the bottom toward higher-level conclusions at the top. Forward chaining is important because it derives new facts step by step until a target conclusion is reached.]"
+        },
+        {
+          "chunk_id": "ad72dbb6-7b19-4c18-98b4-d55cb645b1f6",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 16,
+          "cosine_sim": 0.332,
+          "final_score": 0.3818,
+          "content": "```text\n      Q\n      ^\n      |\n      P\n      ^\n      |\n      o-----> M\n     / \\      ^\n    /   \\     |\n   /     \\    |\n  o-----> L   o\n   \\      / \\  \\\n    \\    /   \\  \\\n     \\  /     \\  \\\n      A         B\n```\n\n[Diagram: The figure illustrates forward chaining in a rule-based knowledge system, where facts and inferred propositions propagate upward through rules until a goal is reached. This matters because it shows how new conclusions are derived automatically from known facts by repeatedly applying inference rules.]"
+        },
+        {
+          "chunk_id": "7b3af5ef-2f86-4d10-9b51-f95d9dda0bd1",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 17,
+          "cosine_sim": 0.3028,
+          "final_score": 0.3482,
+          "content": "```text\n        Q\n        ↑\n        P\n        ↑\n        ●───────M\n       ╱ \\      ↑\n      ╱   \\     ●\n     L─────●────╱\n     ↑     ╱   ╱\n     ●    ╱   ╱\n    ╱ \\  ╱   ╱\n   A   ●────B\n```\n\n[Diagram: Mô hình này minh họa suy diễn tiến (forward chaining) trong hệ luật: từ các факт ban đầu, các luật được kích hoạt để suy ra факт mới cho đến khi đạt được kết luận. Nó quan trọng vì cho thấy cách tri thức được lan truyền theo hướng từ dữ kiện đến mục tiêu trong hệ chuyên gia và suy luận logic.]"
+        },
+        {
+          "chunk_id": "bf220dcc-e400-4688-bcbd-a8ca8835396f",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Forward Chaining",
+          "chunk_order": 14,
+          "cosine_sim": 0.3011,
+          "final_score": 0.3463,
+          "content": "```text\n      Q\n      ↑\n      P\n      ↑\n      ●\n     / \\\n    /   \\\n   L     M\n  / \\   / \\\n ●   ● ●   ●\n  \\  /   \\ /\n   A       B\n```\n\n[Diagram: Hình minh họa suy diễn tiến (forward chaining) trong một mạng luật/tri thức. Các ký hiệu và mũi tên cho thấy cách các факт/điều kiện ban đầu dẫn dần đến các kết luận cao hơn, nhấn mạnh cơ chế suy luận từ dữ kiện đến mục tiêu.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 35.2
+}

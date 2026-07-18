@@ -1,0 +1,51 @@
+{
+  "qid": "discrete_math_05",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The construction method, matrix dimensions, entry definitions, and notes about multiple edges and loops all match the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how an incidence matrix is constructed for an undirected graph, explaining the n×m dimensions, the vertex-edge relationship, and the entry values (1 when incident, 0 otherwise). The additional notes about columns, rows, multiple edges, and loops provide relevant clarification without deviating from the question.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: n×m matrix dimensions, notation M=[m_ij], and the definition that m_ij=1 when edge e_j is incident with vertex v_i and 0 otherwise. The additional details about loops, multiple edges, and matrix structure are correct supplementary information.",
+      "evidence": [
+        "n×m matrix",
+        "M=[m_ij]",
+        "m_ij = 1 when edge e_j is incident with vertex v_i, and 0 otherwise"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "Both retrieved chunks are directly relevant to constructing an incidence matrix for an undirected graph. They provide the exact definition, matrix dimensions, and entry conditions needed to answer the question.",
+      "evidence": [
+        "c39258bf-8827-4abb-8cb7-a247ce1a5dcd: 'n × m matrix M = [mᵢⱼ], where m_ij equals 1 when edge e_j is incident with v_i'",
+        "4c1a9c2f-fec3-49cd-aaac-c26ccdd6a36f: 'Matrix M_{|V| × |E|} = [mᵢⱼ], where m_ij equals 1 when edge e_j is incident with v_i'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks: the n×m matrix structure, the notation M=[m_ij], and the definition that m_ij = 1 when edge e_j is incident with vertex v_i and 0 otherwise.",
+      "evidence": [
+        "the n × m matrix M = [mᵢⱼ]",
+        "m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every statement in the tutor's answer is directly supported by the cited chunks. The construction formula, dimensions, and special cases (multiple edges, loops) all match the source material exactly.",
+      "evidence": [
+        "Tutor: 'n × m matrix M=[m_ij], where m_ij = 1 if edge e_j is incident with vertex v_i' — Chunk c39258bf: 'n × m matrix M = [mᵢⱼ], where [Formula: m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise]'",
+        "Tutor: 'Multiple edges can be represented by identical columns' — Chunk c39258bf: 'Multiple edges: by using columns with identical entries'",
+        "Tutor: 'Loops are represented by a column with exactly one entry equal to 1' — Chunk c39258bf: 'Loops: by using a column with exactly one entry equal to 1'"
+      ]
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "qid": "intro_to_ai_11",
+  "course_code": "IT3160E",
+  "question": "What is Information Gain and how is it used in Decision Tree Learning?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "5714beaa-9bd9-4cb5-b51b-28408510a993",
+  "answer": "# Information Gain in Decision Tree Learning\n\n## 1. Background: Entropy\n\nBefore understanding Information Gain, we need **entropy**, a measure borrowed from Information Theory that quantifies the **impurity (inhomogeneity)** of a set of instances.\n\nFor a set $S$ with a $c$-class classification:\n\n$$\\text{Entropy}(S) = \\sum_{i=1}^{c} -p_i \\cdot \\log_2 p_i$$\n\nwhere $p_i$ is the proportion of instances in $S$ belonging to class $i$ (with the convention $0 \\cdot \\log_2 0 = 0$).\n\n**Interpretation:** Entropy specifies the expected number of bits needed to encode the class of a member randomly drawn from $S$. It is highest when classes are equally likely and drops to 0 when one class dominates completely.\n\n---\n\n## 2. Information Gain — Definition\n\n**Information Gain** of an attribute $A$ relative to a set of instances $S$ is the **expected reduction in entropy** caused by partitioning the instances according to $A$:\n\n$$\\text{Gain}(S, A) = \\text{Entropy}(S) - \\sum_{v \\in \\text{Values}(A)} \\frac{|S_v|}{|S|} \\cdot \\text{Entropy}(S_v)$$\n\nwhere:\n- $\\text{Values}(A)$ is the set of possible values of attribute $A$\n- $S_v = \\{x \\mid x \\in S, \\, x_A = v\\}$\n\n**Interpretation:** $\\text{Gain}(S, A)$ is the number of bits **saved** (reduced) when encoding the class of a randomly drawn member of $S$, simply by knowing the value of attribute $A$.\n\n---\n\n## 3. How It Is Used in Decision Tree Learning\n\nA central task in DT learning is: **at each node, which attribute should be chosen as the test attribute?**\n\nThe course material states:\n> *\"To select the attribute that is most useful for classifying the training instances associated with the node.\"*\n\nInformation Gain provides a **statistical measure** of an attribute's ability to separate training instances according to their target class. The strategy is:\n\n1. Compute $\\text{Gain}(S, A)$ for every candidate attribute $A$.\n2. **Select the attribute with the highest information gain** as the test attribute at the current node.\n3. Recurse on each child subset (partitioned by the chosen value).\n\nThe chosen split most effectively separates the classes and improves the purity of the resulting child nodes — which is exactly what good decision trees aim for.\n\n---\n\n## 4. Worked Example (from the course)\n\nCompute $\\text{Gain}(S, \\text{Wind})$ for a training set $S$ with 9 positive and 5 negative instances:\n\n- $S_{\\text{Weak}} = \\{6 \\text{ pos}, 2 \\text{ neg}\\}$\n- $S_{\\text{Strong}} = \\{3 \\text{ pos}, 3 \\text{ neg}\\}$\n\n$$\n\\text{Gain}(S, \\text{Wind}) = \\text{Entropy}(S) - \\frac{8}{14}\\text{Entropy}(S_{\\text{Weak}}) - \\frac{6}{14}\\text{Entropy}(S_{\\text{Strong}})\n$$\n\n$$\n= 0.94 - \\frac{8}{14}(0.81) - \\frac{6}{14}(1) = 0.048\n$$\n\nThis small positive gain tells us that knowing `Wind` reduces uncertainty only slightly — likely making it a weak split compared to other attributes whose gain would be computed and compared.\n\n---\n\n## Summary\n\n| Concept | Role |\n|---|---|\n| **Entropy** | Measures impurity of a set |\n| **Information Gain** | Measures how much an attribute reduces that impurity |\n| **Usage in DT** | At each node, pick the attribute with the **highest** Gain as the splitting test |\n\nIn short, Information Gain is the statistical criterion that drives attribute selection in decision tree learning, greedily maximizing the reduction of class uncertainty at every split.",
+  "citations": [
+    {
+      "chunk_id": "eeeec84e-fdfa-47f6-8df8-478016d2cb8d",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree learning – Example (1)",
+      "page_number": null,
+      "chunk_order": 24,
+      "excerpt": "[Diagram: The tree shows how information gain is used to choose the best root split in decision tree learning. Selecting the attribute with the highest gain reduces uncertainty the most, which makes t"
+    },
+    {
+      "chunk_id": "7e90cf4d-e0f8-44db-b01d-99edaa6847d6",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Entropy – Two-class example",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "[Diagram: The curve shows how uncertainty changes with class balance in a two-class set. Entropy is highest when the classes are equally likely and drops to zero when one class dominates completely, w"
+    },
+    {
+      "chunk_id": "285a53b7-1edf-4756-b0e6-148ae90935ad",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree learning – Example (2)",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "[Diagram: The tree shows how a decision-tree learner evaluates possible split attributes at a node and picks the one with the highest information gain. This matters because the chosen split most effec"
+    },
+    {
+      "chunk_id": "f38cf2ef-7679-40b3-9473-1f379e3b247f",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Information gain",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "- Information gain of an attribute relative to a set of instances is\n  - the expected reduction in entropy\n  - caused by partitioning the instances according to the attribute\n- Information gain of att"
+    },
+    {
+      "chunk_id": "5f427356-a15a-4f8c-a8e1-496537e3d004",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Information gain – Example",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "- What is the information gain of attribute `Wind` relative to the training set $S$ – $Gain(S, Wind)$?\n- Attribute `Wind` have two possible values: `Weak` and `Strong`\n- $S = \\{9$ positive and $5$ neg"
+    },
+    {
+      "chunk_id": "9e649ef6-da2f-42a5-8c42-801fe4e8e6a0",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Selection of the test attribute",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- A very important task in DT learning: at each node, how to choose the test attribute?\n- To select the attribute that is most useful for classifying the training instances associated with the node\n- "
+    },
+    {
+      "chunk_id": "d364e05e-4e7c-482d-aa1a-2dc8c7963bd1",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Decision tree – Introduction",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "- Decision tree (DT) learning\n  - To approximate a discrete-valued target function\n  - The target function is represented by a decision tree\n- A DT can be represented (interpreted) as a set of IF-THEN"
+    },
+    {
+      "chunk_id": "a755f2d7-eeee-431e-8c11-e5c8c6bb96a5",
+      "document_title": "lecture13-DecisionTreeLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Entropy",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- A commonly used measure in the Information Theory field\n- To measure the impurity (inhomogeneity) of a set of instances\n- The entropy of a set $S$ relative to a $c$-class classification\n\n$$\nEntropy("
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "Information Gain Decision Tree Learning entropy",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "eeeec84e-fdfa-47f6-8df8-478016d2cb8d",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree learning – Example (1)",
+          "chunk_order": 24,
+          "cosine_sim": 0.4669,
+          "final_score": 0.5369,
+          "content": "[Diagram: The tree shows how information gain is used to choose the best root split in decision tree learning. Selecting the attribute with the highest gain reduces uncertainty the most, which makes the first partition of the data more informative for building the classifier.]"
+        },
+        {
+          "chunk_id": "7e90cf4d-e0f8-44db-b01d-99edaa6847d6",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Entropy – Two-class example",
+          "chunk_order": 19,
+          "cosine_sim": 0.4414,
+          "final_score": 0.5076,
+          "content": "[Diagram: The curve shows how uncertainty changes with class balance in a two-class set. Entropy is highest when the classes are equally likely and drops to zero when one class dominates completely, which is why it measures the average information needed to identify the class.]"
+        },
+        {
+          "chunk_id": "285a53b7-1edf-4756-b0e6-148ae90935ad",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree learning – Example (2)",
+          "chunk_order": 26,
+          "cosine_sim": 0.4361,
+          "final_score": 0.5015,
+          "content": "[Diagram: The tree shows how a decision-tree learner evaluates possible split attributes at a node and picks the one with the highest information gain. This matters because the chosen split most effectively separates the classes and improves the purity of the resulting child nodes.]"
+        },
+        {
+          "chunk_id": "f38cf2ef-7679-40b3-9473-1f379e3b247f",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Information gain",
+          "chunk_order": 20,
+          "cosine_sim": 0.4355,
+          "final_score": 0.5009,
+          "content": "- Information gain of an attribute relative to a set of instances is\n  - the expected reduction in entropy\n  - caused by partitioning the instances according to the attribute\n- Information gain of attribute $A$ relative to set $S$\n\n$$\nGain(S,A)=Entropy(S)-\\sum_{v\\in Values(A)} \\frac{|S_v|}{|S|} Entropy(S_v)\n$$\n\nwhere $Values(A)$ is the set of possible values of attribute $A$, and\n\n$$\nS_v=\\{x \\mid x\\in S, x_A=v\\}\n$$\n\n- In the above formula, the second term is the expected value of the entropy after $S$ is partitioned by the values of attribute $A$\n- Interpretation of $Gain(S,A)$: The number of bits saved (reduced) for encoding class of a randomly drawn member of $S$, by knowing the value of attribute $A$"
+        },
+        {
+          "chunk_id": "5f427356-a15a-4f8c-a8e1-496537e3d004",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Information gain – Example",
+          "chunk_order": 22,
+          "cosine_sim": 0.41,
+          "final_score": 0.4715,
+          "content": "- What is the information gain of attribute `Wind` relative to the training set $S$ – $Gain(S, Wind)$?\n- Attribute `Wind` have two possible values: `Weak` and `Strong`\n- $S = \\{9$ positive and $5$ negative instances$\\}$\n- $S_{weak} = \\{6$ pos. and $2$ neg. instances having `Wind=Weak`$\\}$\n- $S_{strong} = \\{$ $3$ pos. and $3$ neg. instances having `Wind=Strong`$\\}$\n\n$$\nGain(S, Wind) = Entropy(S) - \\sum_{v \\in \\{Weak, Strong\\}} \\frac{|S_v|}{|S|} Entropy(S_v)\n$$\n\n$$\n= Entropy(S) - (8/14).Entropy(S_{Weak}) - (6/14).Entropy(S_{Strong})\n$$\n\n$$\n= 0.94 - (8/14).(0.81) - (6/14).(1) = 0.048\n$$"
+        },
+        {
+          "chunk_id": "9e649ef6-da2f-42a5-8c42-801fe4e8e6a0",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Selection of the test attribute",
+          "chunk_order": 14,
+          "cosine_sim": 0.3981,
+          "final_score": 0.4579,
+          "content": "- A very important task in DT learning: at each node, how to choose the test attribute?\n- To select the attribute that is most useful for classifying the training instances associated with the node\n- How to measure an attribute’s capability of separating the training instances according to their target classification\n  - Use a statistical measure – *Information Gain*\n- Example: A two-class $(C_1, C_2)$ classification problem\n  - Which attribute, $A_1$ or $A_2$, should be chosen to be the test attribute?"
+        },
+        {
+          "chunk_id": "d364e05e-4e7c-482d-aa1a-2dc8c7963bd1",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Decision tree – Introduction",
+          "chunk_order": 1,
+          "cosine_sim": 0.3849,
+          "final_score": 0.4426,
+          "content": "- Decision tree (DT) learning\n  - To approximate a discrete-valued target function\n  - The target function is represented by a decision tree\n- A DT can be represented (interpreted) as a set of IF-THEN rules\n  - (i.e., easy to read and understand)\n- Capable of learning disjunctive expressions\n- DT learning is robust to noisy data\n- One of the most widely used methods for inductive inference\n- Successfully applied to a range of real-world applications"
+        },
+        {
+          "chunk_id": "a755f2d7-eeee-431e-8c11-e5c8c6bb96a5",
+          "document_id": "281fac15-c0ea-428b-b5cf-f5ee036a2cd5",
+          "section_title": "Entropy",
+          "chunk_order": 17,
+          "cosine_sim": 0.3731,
+          "final_score": 0.4291,
+          "content": "- A commonly used measure in the Information Theory field\n- To measure the impurity (inhomogeneity) of a set of instances\n- The entropy of a set $S$ relative to a $c$-class classification\n\n$$\nEntropy(S) = \\sum_{i=1}^{c} -p_i \\cdot \\log_2 p_i\n$$\n\nwhere $p_i$ is the proportion of instances in $S$ belonging to class $i$, and\n\n$$\n0 \\cdot \\log_2 0 = 0\n$$\n\n- The entropy of a set $S$ relative to a two-class classification\n\n$$\nEntropy(S) = -p_1 \\cdot \\log_2 p_1 - p_2 \\cdot \\log_2 p_2\n$$\n\n- Interpretation of entropy (in the Information Theory field)\n  - The entropy of $S$ specifies the expected number of bits needed to encode class of a member randomly drawn out of $S$\n    - Optical length code assigns $-\\log_2 p$ bits to message having probability $p$\n    - The expected number of bits needed to encode a class: $p \\cdot \\log_2 p$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 31.6
+}

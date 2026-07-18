@@ -1,0 +1,360 @@
+{
+  "input_path": "src/experiments/semantic_chunking/example_pipeline_output/semantic_chunking_example/graph_presentation/normalized_result.md",
+  "sample_id": "graph_presentation",
+  "course_code": "TEST01",
+  "tier": "community",
+  "subtype": "summary_note",
+  "rag_namespace": "knowledge",
+  "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "collection_name": "document_chunks",
+  "chroma_dir": "/Users/admin/Desktop/graduation-thesis/GraduationThesis/src/experiments/semantic_chunking/chroma_db",
+  "deleted_existing_chunks": 0,
+  "chunk_count": 43,
+  "avg_chunk_chars": 440.02,
+  "chunks": [
+    {
+      "chunk_id": "graph_presentation-chunk-001",
+      "section_title": "Document Start",
+      "chunk_order": 1,
+      "paragraph_count": 1,
+      "char_count": 460,
+      "preview": "[NORMALIZATION_ERROR] Normalization failed twice (Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-120b` in organization `or"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-002",
+      "section_title": "Document Start",
+      "chunk_order": 2,
+      "paragraph_count": 1,
+      "char_count": 20,
+      "preview": "Discrete Mathematics"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-003",
+      "section_title": "Visual Element (Page 1, Image 0)",
+      "chunk_order": 3,
+      "paragraph_count": 2,
+      "char_count": 384,
+      "preview": "The image is a promotional graphic for the 25th anniversary of the School of Information and Communication Technology at Hanoi University of Science and Technol"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-004",
+      "section_title": "Visual Element (Page 2, Image 0)",
+      "chunk_order": 4,
+      "paragraph_count": 2,
+      "char_count": 434,
+      "preview": "A white background features a red horizontal stripe at the top and a red line at the bottom, accompanied by a 25th-anniversary logo for the School of Informatio"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-005",
+      "section_title": "Visual Element (Page 3, Image 0)",
+      "chunk_order": 5,
+      "paragraph_count": 2,
+      "char_count": 160,
+      "preview": "A logo and branding banner for the 25th anniversary of SOICT.\n\nGraph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n4"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-006",
+      "section_title": "Visual Element (Page 4, Image 0)",
+      "chunk_order": 6,
+      "paragraph_count": 2,
+      "char_count": 395,
+      "preview": "The image displays a 25th-anniversary logo for the School of Information and Communication Technology (SOICT) at Bach Khoa University, positioned in the bottom "
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-007",
+      "section_title": "Visual Element (Page 5, Image 0)",
+      "chunk_order": 7,
+      "paragraph_count": 2,
+      "char_count": 629,
+      "preview": "A white background features a red and yellow header stripe and a lower section with the \"SOICT\" 25th-anniversary logo and text.\n\n1. Incidence Matrix\nG = (V, E) "
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-008",
+      "section_title": "Visual Element (Page 5, Image 0)",
+      "chunk_order": 8,
+      "paragraph_count": 3,
+      "char_count": 53,
+      "preview": "0\nith v\nincident w\n\nis\n e \nedge\n  when \n1\n\nm\ni\nj\nij\n6"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-009",
+      "section_title": "Visual Element (Page 6, Image 0)",
+      "chunk_order": 9,
+      "paragraph_count": 2,
+      "char_count": 548,
+      "preview": "This image features a logo for a 25th-anniversary celebration of the School of Information and Communication Technology (SOICT), positioned at the bottom agains"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-010",
+      "section_title": "Visual Element (Page 6, Image 0)",
+      "chunk_order": 10,
+      "paragraph_count": 3,
+      "char_count": 53,
+      "preview": "0\nith v\nincident w\n\nis\n e \nedge\n  when \n1\n\nm\ni\nj\nij\n7"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-011",
+      "section_title": "Visual Element (Page 7, Image 0)",
+      "chunk_order": 11,
+      "paragraph_count": 2,
+      "char_count": 216,
+      "preview": "A promotional graphic featuring the SOICT 25th anniversary logo and Vietnamese text, with a horizontal red line at the bottom.\n\n1.Incidence Matrix\nExample: G = "
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-012",
+      "section_title": "Visual Element (Page 8, Image 0)",
+      "chunk_order": 12,
+      "paragraph_count": 1,
+      "char_count": 355,
+      "preview": "The image presents a white background with a red and yellow border at the top, accompanied by a logo and text in the bottom-left corner. The logo features a red"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-013",
+      "section_title": "Visual Element (Page 8, Image 0)",
+      "chunk_order": 13,
+      "paragraph_count": 4,
+      "char_count": 599,
+      "preview": "**Key Features:**\n\n* **Background:** White\n* **Border:** Red and yellow at the top\n* **Logo:**\n\t+ Red rectangle\n\t+ Gold design on the left side\n\t+ Text: \"25 SOI"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-014",
+      "section_title": "Visual Element (Page 8, Image 0)",
+      "chunk_order": 14,
+      "paragraph_count": 1,
+      "char_count": 97,
+      "preview": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n9"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-015",
+      "section_title": "Visual Element (Page 9, Image 0)",
+      "chunk_order": 15,
+      "paragraph_count": 2,
+      "char_count": 554,
+      "preview": "The image presents a white background with a red and yellow stripe running across the top. At the bottom of the image, there are several lines of text in Vietna"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-016",
+      "section_title": "Visual Element (Page 9, Image 0)",
+      "chunk_order": 16,
+      "paragraph_count": 2,
+      "char_count": 355,
+      "preview": "The overall design of the image suggests that it may be a cover page or title slide for a presentation, possibly related to technology or communication.\n\n2. Adj"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-017",
+      "section_title": "Visual Element (Page 9, Image 0)",
+      "chunk_order": 17,
+      "paragraph_count": 14,
+      "char_count": 170,
+      "preview": "0\nG\n\nof\n\nedge\nan\n\nis\n )\n v\n,\n(v\n\nif\n\n1\n\na\nj\ni\nij\nî\ní\nì\n=\notherwise\n\n0\nG\n\nof\n\nedge\nan\n\nis\n }\n v\n,\n{v\n\nif\n\n1\n\na\nj\ni\nij\n2\n1\n3\nA=\n0 1 1\n1 0 1\n1 1 0\n2\n1\n3\nA=\n0 1 0\n0"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-018",
+      "section_title": "Visual Element (Page 10, Image 0)",
+      "chunk_order": 18,
+      "paragraph_count": 2,
+      "char_count": 744,
+      "preview": "The image presents a white background with a red and yellow border at the top, accompanied by a logo and text in the bottom-left corner. The logo features a red"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-019",
+      "section_title": "Visual Element (Page 10, Image 0)",
+      "chunk_order": 19,
+      "paragraph_count": 2,
+      "char_count": 371,
+      "preview": "The image appears to be a decorative element, likely used as a header or footer for a document or presentation. The logo and text suggest that it may be related"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-020",
+      "section_title": "Visual Element (Page 11, Image 0)",
+      "chunk_order": 20,
+      "paragraph_count": 2,
+      "char_count": 695,
+      "preview": "The image presents a white background with a red and yellow border at the top, accompanied by a logo and text in the bottom-left corner.\n\n*   The top border fea"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-021",
+      "section_title": "Visual Element (Page 11, Image 0)",
+      "chunk_order": 21,
+      "paragraph_count": 2,
+      "char_count": 531,
+      "preview": "The image appears to be a decorative slide or presentation page, likely used for a professional or academic setting.\n\n3. Weight matrix\n• Weighted graphs have va"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-022",
+      "section_title": "Visual Element (Page 12, Image 0)",
+      "chunk_order": 22,
+      "paragraph_count": 2,
+      "char_count": 547,
+      "preview": "This image shows a white background with a decorative red and yellow stripe across the top and a corporate logo and text for the School of Information and Commu"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-023",
+      "section_title": "Visual Element (Page 13, Image 0)",
+      "chunk_order": 23,
+      "paragraph_count": 2,
+      "char_count": 525,
+      "preview": "A white graphic featuring a red and yellow header stripe and a logo for the School of Information and Communication Technology (SOICT) with its 25th-anniversary"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-024",
+      "section_title": "Visual Element (Page 14, Image 0)",
+      "chunk_order": 24,
+      "paragraph_count": 2,
+      "char_count": 266,
+      "preview": "The image shows the logo for the 25th anniversary of SOICT, along with its name in Vietnamese, positioned against a plain white background with a horizontal red"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-025",
+      "section_title": "Visual Element (Page 15, Image 0)",
+      "chunk_order": 25,
+      "paragraph_count": 2,
+      "char_count": 456,
+      "preview": "A logo for the 25th anniversary of SOICT, featuring a stylized number 25, the SOICT acronym, and Vietnamese text.\n\n3. Adjacency List\nAdjacency list: each vertex"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-026",
+      "section_title": "Visual Element (Page 16, Image 0)",
+      "chunk_order": 26,
+      "paragraph_count": 2,
+      "char_count": 669,
+      "preview": "This visual element functions as a formal institutional identifier. It conveys the following information:\n\n*   **Institutional Identity:** It identifies the \"VI"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-027",
+      "section_title": "Visual Element (Page 16, Image 1)",
+      "chunk_order": 27,
+      "paragraph_count": 1,
+      "char_count": 168,
+      "preview": "{\n  \"nodes\": [\"u\", \"v\", \"w\", \"y\", \"x\", \"z\", \"t\"],\n  \"directed\": false,\n  \"edges\": [\n    [\"u\", \"v\"],\n    [\"u\", \"w\"],\n    [\"v\", \"w\"],\n    [\"v\", \"y\"],\n    [\"x\", \"z"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-028",
+      "section_title": "Visual Element (Page 16, Image 2)",
+      "chunk_order": 28,
+      "paragraph_count": 1,
+      "char_count": 530,
+      "preview": "{\n  \"nodes\": [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"],\n  \"edges\": [\n    {\n      \"source\": \"a\",\n      \"target\": \"b\",\n      \"directed\": true\n    },\n    {\n      \"source\": \"a"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-029",
+      "section_title": "Visual Element (Page 16, Image 2)",
+      "chunk_order": 29,
+      "paragraph_count": 1,
+      "char_count": 61,
+      "preview": "Graph representation\n17\ngraph\nAdjacency list\nAdjacency matrix"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-030",
+      "section_title": "Visual Element (Page 17, Image 0)",
+      "chunk_order": 30,
+      "paragraph_count": 1,
+      "char_count": 134,
+      "preview": "A banner featuring a 25th-anniversary logo for the School of Information and Communication Technology (SOICT) at Bach Khoa University."
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-031",
+      "section_title": "Visual Element (Page 17, Image 1)",
+      "chunk_order": 31,
+      "paragraph_count": 4,
+      "char_count": 849,
+      "preview": "To extract the node labels, edge list, and directionality from the given graph and return a structured graph representation in JSON, let's first analyze the gra"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-032",
+      "section_title": "Visual Element (Page 17, Image 1)",
+      "chunk_order": 32,
+      "paragraph_count": 4,
+      "char_count": 972,
+      "preview": "3. **Directionality**: The graph does not have arrowheads on its edges, which typically indicates that it is an undirected graph. In an undirected graph, edges "
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-033",
+      "section_title": "Visual Element (Page 17, Image 1)",
+      "chunk_order": 33,
+      "paragraph_count": 2,
+      "char_count": 364,
+      "preview": "|  |  |  |  |  |\n| --- | --- | --- | --- | --- |\n| 1 | 2 | 5 | 3 | 4 |\n| 2 | 1 | 5 | 3 | 4 |\n| 3 | 2 | 4 | None | None |\n| 4 | 2 | 5 | 3 | None |\n| 5 | 4 | 1 | "
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-034",
+      "section_title": "Visual Element (Page 17, Image 1)",
+      "chunk_order": 34,
+      "paragraph_count": 1,
+      "char_count": 479,
+      "preview": "**Note:** E\n**Note:** x\n**Note:** t\n**Note:** r\n**Note:** a\n**Note:** c\n**Note:** t\n**Note:** e\n**Note:** d\n**Note:**  \n**Note:** f\n**Note:** r\n**Note:** o\n**No"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-035",
+      "section_title": "Visual Element (Page 17, Image 4)",
+      "chunk_order": 35,
+      "paragraph_count": 1,
+      "char_count": 174,
+      "preview": "To extract the node labels, edge list, and directionality from the given diagram and return a structured graph representation in JSON, let's analyze the diagram"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-036",
+      "section_title": "Node Labels:",
+      "chunk_order": 36,
+      "paragraph_count": 1,
+      "char_count": 73,
+      "preview": "The node labels are the numbers within the circles: 1, 2, 3, 4, 5, and 6."
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-037",
+      "section_title": "Edge List and Directionality:",
+      "chunk_order": 37,
+      "paragraph_count": 1,
+      "char_count": 226,
+      "preview": "The edges and their directions are as follows:\n- From node 1 to node 4\n- From node 1 to node 2\n- From node 2 to node 5\n- From node 4 to node 5\n- From node 5 to "
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-038",
+      "section_title": "Structured Graph Representation in JSON:",
+      "chunk_order": 38,
+      "paragraph_count": 1,
+      "char_count": 517,
+      "preview": "{\n  \"nodes\": [\n    {\"id\": 1},\n    {\"id\": 2},\n    {\"id\": 3},\n    {\"id\": 4},\n    {\"id\": 5},\n    {\"id\": 6}\n  ],\n  \"edges\": [\n    {\"source\": 1, \"target\": 4, \"direct"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-039",
+      "section_title": "Structured Graph Representation in JSON:",
+      "chunk_order": 39,
+      "paragraph_count": 1,
+      "char_count": 267,
+      "preview": "However, a more common and detailed way to represent a graph, especially in the context of graph theory and network analysis, might include additional informati"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-040",
+      "section_title": "Alternative Representation with Directionality Indicated by Arrow:",
+      "chunk_order": 40,
+      "paragraph_count": 2,
+      "char_count": 508,
+      "preview": "If you want to emphasize directionality explicitly with arrows (→) in a textual form:\n\n{\n  \"nodes\": [1, 2, 3, 4, 5, 6],\n  \"edges\": [\n    {\"source\": 1, \"target\":"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-041",
+      "section_title": "Alternative Representation with Directionality Indicated by Arrow:",
+      "chunk_order": 41,
+      "paragraph_count": 2,
+      "char_count": 529,
+      "preview": "Both representations convey the structure of the graph. The first JSON structure is more aligned with common graph database and network analysis representations"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-042",
+      "section_title": "Alternative Representation with Directionality Indicated by Arrow:",
+      "chunk_order": 42,
+      "paragraph_count": 1,
+      "char_count": 1811,
+      "preview": "**Note:** T\n**Note:** h\n**Note:** e\n**Note:**  \n**Note:** t\n**Note:** a\n**Note:** b\n**Note:** l\n**Note:** e\n**Note:**  \n**Note:** a\n**Note:** p\n**Note:** p\n**No"
+    },
+    {
+      "chunk_id": "graph_presentation-chunk-043",
+      "section_title": "Alternative Representation with Directionality Indicated by Arrow:",
+      "chunk_order": 43,
+      "paragraph_count": 2,
+      "char_count": 973,
+      "preview": "|  | 1 | 2 | 3 | 4 | 5 | 6 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 1 | 0 | 1 | 0 | 0 |\n| 2 | 0 | 0 | 0 | 0 | 1 | 0 |\n| 3 | 0 | 0 | 0 | 0 | 1 | 1"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "qid": "intro_to_ai_09",
+  "course_code": "IT3160E",
+  "question": "In First Order Logic (FOL), how are terms and predicates constructed?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "bb1e6631-7ecc-48a1-ac2d-6653bd91e2fd",
+  "answer": "# Term and Predicate Construction in First Order Logic (FOL)\n\nBased on the course material, here is how terms and predicates are constructed in FOL:\n\n## 1. Building Blocks (Symbols)\n\nBefore constructing terms and predicates, FOL uses these basic symbols:\n\n- **Variables**: $x, y, z, \\ldots$ — range over objects\n- **Constants**: $a, b, c, \\ldots$ (e.g., `Bill`, `John`, `0`, `1`) — refer to specific entities\n- **Function symbols** (with arities): $f, g, h, \\ldots$ (e.g., `FatherOf`, `MotherOf`, `+`, `Cosine`)\n- **Relation symbols** (with arities): $p, q, r, \\ldots$ (e.g., `Tall`, `Married`, `Odd`, `>`)\n- **Logical connectives**: $\\neg, \\wedge, \\vee, \\Rightarrow, \\Leftrightarrow$\n- **Quantifiers**: $\\forall, \\exists$\n\n## 2. Term Construction\n\nA **term** denotes an object. According to the formal grammar:\n\n```\nTerm ::= FunctionSymb(Term, ...) | ConstantSymb | Variable\n```\n\nSo a term can be:\n- A **variable** (e.g., $x$, $y$)\n- A **constant symbol** (e.g., `Bill`, `0`)\n- A **function symbol applied to terms** (e.g., `FatherOf(Bill)`, `MotherOf(y)`, `x + 1`)\n\n**Examples:** $X$, `Bill`, `FatherOf(X)`, `MotherOf(Y)`\n\n## 3. Predicate Construction\n\nA **predicate** asserts a relation among objects. The rule is:\n\n> If $t_1, t_2, \\ldots, t_n$ are **terms** and $p$ is a **relation symbol** with arity $n$, then $p(t_1, t_2, \\ldots, t_n)$ is a predicate.\n\nSo a predicate is built by applying a relation symbol to $n$ terms.\n\n**Examples:**\n- `Tall(FatherOf(Bill))` — unary relation\n- `Odd(X)` — unary relation\n- `Married(Tom, Mary)` — binary relation\n- `Loves(Y, MotherOf(Y))` — binary relation\n\n## 4. From Predicates to Sentences\n\nOnce you have predicates, they combine with logical connectives and quantifiers to form **sentences**:\n\n```\nSentence ::= AtomicS | ComplexS\nAtomicS   ::= True | False | RelationSymb(Term, ...) | Term = Term\nComplexS  ::= (Sentence) | Sentence Connective Sentence\n           | ¬Sentence | Quantifier Sentence\n```\n\n**Examples of sentences:**\n- `Even(4)` — a predicate used as an atomic sentence\n- $\\forall X.\\ \\text{Even}(X) \\Rightarrow \\text{Odd}(X+1)$ — quantifier + implication\n- $\\exists X.\\ X > 0$ — existential quantification\n\n## Summary\n\n| Construct | Built from | Example |\n|-----------|------------|---------|\n| **Term** | Variable, Constant, or Function applied to Terms | `FatherOf(Bill)`, `x + 1` |\n| **Predicate** | Relation symbol applied to $n$ Terms | `Married(Tom, Mary)`, `Odd(X)` |\n| **Sentence** | Predicates + Connectives + Quantifiers | $\\forall x.\\ \\text{Tall}(x)$ |",
+  "citations": [
+    {
+      "chunk_id": "cbd69d92-9c6c-4b13-9f0b-52fd71da4b57",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Syntax",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "- Variables, constants and function symbols are used to build terms\n  - X, Bill, FatherOf(X), ...\n- Relations and terms are used to build predicates\n  - Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry"
+    },
+    {
+      "chunk_id": "dca8ed08-87dc-4cdf-bda1-d9b9a3e27a9a",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Syntax",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- Predicates\n  - If $t_1,\\ldots,t_n$ are terms and p is a relation symbol with arity $n$ then $p(t_1,\\ldots,t_n)$ is a predicate"
+    },
+    {
+      "chunk_id": "aa3745f1-792d-44e4-a2da-499e696e6a0b",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "First Order Logic (FOL)",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- First Order Logic is about\n  - Objects\n  - Relations\n  - Facts\n- The world is made of objects\n  - Objects are things with individual identities and properties to distinguish them\n  - Various relatio"
+    },
+    {
+      "chunk_id": "4f3c4a18-ab7c-4b88-b72e-e5f402d4909f",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Semantic",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Variables\n  - Objects\n- Constants\n  - Entities\n- Function symbol\n  - Function from objects to objects\n- Relation symbol\n  - Relation between objects\n- Quantifiers\n  - $\\exists x.P$ true if P is true"
+    },
+    {
+      "chunk_id": "7ad52521-150c-4154-8ca6-a23ecdefa90c",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Formal grammar",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "| Nonterminal | Definition |\n|---|---|\n| Sentence | ::= AtomicS \\| ComplexS |\n| AtomicS | ::= True \\| False \\| RelationSymb(Term, . . .) \\| Term = Term |\n| ComplexS | ::= (Sentence) \\| Sentence Connec"
+    },
+    {
+      "chunk_id": "bcab110a-d86d-4e6c-97e4-aa89f66435e8",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Syntax",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Sentences\n  - True, False are sentences\n  - Predicates are sentences\n  - If $ \\alpha, \\beta $ are sentences then the followings are sentences\n\n$$\n\\exists x.\\alpha, \\forall x.\\alpha, (\\alpha), \\neg \\"
+    },
+    {
+      "chunk_id": "71ca0a1b-17de-41e9-947a-39d6466c0eb1",
+      "document_title": "lecture10-FirstOrderLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "FOL Syntax",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "- Symbols\n  - Variables: x, y, z,…\n  - Constants: a, b, c,…\n  - Function symbols (with arities): f, g, h, …\n  - Relation symbols (with arities): p, r, r\n  - Logical connectives: $¬, \\land, \\lor, \\Righ"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "First Order Logic FOL syntax terms predicates construction",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "cbd69d92-9c6c-4b13-9f0b-52fd71da4b57",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 6,
+          "cosine_sim": 0.5013,
+          "final_score": 0.5765,
+          "content": "- Variables, constants and function symbols are used to build terms\n  - X, Bill, FatherOf(X), ...\n- Relations and terms are used to build predicates\n  - Tall(FatherOf(Bill)), Odd(X), Married(Tom,Marry), Loves(Y,MotherOf(Y)), ...\n- Predicates and logical connective are used to build sentences\n  - Even(4), $\\forall X.\\ Even(X)\\ \\Rightarrow\\ Odd(X+1),\\ \\exists X.\\ X > 0$"
+        },
+        {
+          "chunk_id": "dca8ed08-87dc-4cdf-bda1-d9b9a3e27a9a",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 8,
+          "cosine_sim": 0.4461,
+          "final_score": 0.513,
+          "content": "- Predicates\n  - If $t_1,\\ldots,t_n$ are terms and p is a relation symbol with arity $n$ then $p(t_1,\\ldots,t_n)$ is a predicate"
+        },
+        {
+          "chunk_id": "aa3745f1-792d-44e4-a2da-499e696e6a0b",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "First Order Logic (FOL)",
+          "chunk_order": 3,
+          "cosine_sim": 0.4429,
+          "final_score": 0.5093,
+          "content": "- First Order Logic is about\n  - Objects\n  - Relations\n  - Facts\n- The world is made of objects\n  - Objects are things with individual identities and properties to distinguish them\n  - Various relations hold among objects. Some of these relations are functional\n  - Every fact involving objects and their relations are either true or false"
+        },
+        {
+          "chunk_id": "4f3c4a18-ab7c-4b88-b72e-e5f402d4909f",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Semantic",
+          "chunk_order": 12,
+          "cosine_sim": 0.4229,
+          "final_score": 0.4864,
+          "content": "- Variables\n  - Objects\n- Constants\n  - Entities\n- Function symbol\n  - Function from objects to objects\n- Relation symbol\n  - Relation between objects\n- Quantifiers\n  - $\\exists x.P$ true if P is true under some value of x\n  - $\\forall x.P$ true if P is true under every value of x\n- Logical connectives\n  - Similar to Propositional Logic"
+        },
+        {
+          "chunk_id": "7ad52521-150c-4154-8ca6-a23ecdefa90c",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Formal grammar",
+          "chunk_order": 10,
+          "cosine_sim": 0.3954,
+          "final_score": 0.4547,
+          "content": "| Nonterminal | Definition |\n|---|---|\n| Sentence | ::= AtomicS \\| ComplexS |\n| AtomicS | ::= True \\| False \\| RelationSymb(Term, . . .) \\| Term = Term |\n| ComplexS | ::= (Sentence) \\| Sentence Connective Sentence \\| ¬Sentence<br>\\| Quantifier Sentence |\n| Term | ::= FunctionSymb(Term, . . .) \\| ConstantSymb \\| Variable |\n| Connective | ::= $\\wedge$ \\| $\\vee$ \\| $\\to$ \\| $\\leftrightarrow$ |\n| Quantifier | ::= $\\forall$ Variable \\| $\\exists$ Variable |\n| Variable | ::= $a$ \\| $b$ \\| $\\cdots$ \\| $x$ \\| $y$ \\| $\\cdots$ |\n| ConstantSymb | ::= $A$ \\| $B$ \\| $\\cdots$ \\| $John$ \\| $0$ \\| $1$ \\| $\\cdots$ \\| $\\pi$ \\| $\\cdots$ |\n| FunctionSymb | ::= $F$ \\| $G$ \\| $\\cdots$ \\| $Cosine$ \\| $Height$ \\| $FatherOf$ \\| $+$ \\| $\\cdots$ |\n| RelationSymb | ::= $P$ \\| $Q$ \\| $\\cdots$ \\| $Red$ \\| $Brother$ \\| $Apple$ \\| $>$ \\| $\\cdots$ |"
+        },
+        {
+          "chunk_id": "bcab110a-d86d-4e6c-97e4-aa89f66435e8",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 9,
+          "cosine_sim": 0.3817,
+          "final_score": 0.439,
+          "content": "- Sentences\n  - True, False are sentences\n  - Predicates are sentences\n  - If $ \\alpha, \\beta $ are sentences then the followings are sentences\n\n$$\n\\exists x.\\alpha, \\forall x.\\alpha, (\\alpha), \\neg \\alpha, \\alpha \\wedge \\beta, \\alpha \\vee \\beta, \\alpha \\Rightarrow \\beta, \\alpha \\Leftrightarrow \\beta\n$$"
+        },
+        {
+          "chunk_id": "9f071793-d9f0-405a-b1af-75dad979d5a9",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "Input:",
+          "chunk_order": 20,
+          "cosine_sim": 0.371,
+          "final_score": 0.4266,
+          "content": "- Sentences/clauses in Horn format (Fact)\n- A rule set R $p_1 \\wedge p_2 \\wedge \\ldots \\wedge p_n \\Rightarrow q$\n- Goal"
+        },
+        {
+          "chunk_id": "71ca0a1b-17de-41e9-947a-39d6466c0eb1",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Syntax",
+          "chunk_order": 5,
+          "cosine_sim": 0.3499,
+          "final_score": 0.4024,
+          "content": "- Symbols\n  - Variables: x, y, z,…\n  - Constants: a, b, c,…\n  - Function symbols (with arities): f, g, h, …\n  - Relation symbols (with arities): p, r, r\n  - Logical connectives: $¬, \\land, \\lor, \\Rightarrow, \\Leftrightarrow$\n  - Quantifiers: $∃, ∀$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 27.6
+}

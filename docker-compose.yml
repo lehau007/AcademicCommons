@@ -1,0 +1,211 @@
+# Root-level docker-compose for the full stack.
+# Usage:
+#   cp .env.example .env          # fill in secrets
+#   make up                        # build + start all services
+#   make migrate                   # run DB migrations
+#   make seed                      # load seed data
+#
+# Infra connection vars (host/port) are hardcoded below because they are
+# always the service names inside the Docker network.
+# Secret / LLM keys are loaded from src/backend/.env via `env_file`.
+
+services:
+
+  # ── Infrastructure ────────────────────────────────────────────────────────
+
+  postgres:
+    image: pgvector/pgvector:pg15
+    environment:
+      POSTGRES_DB: academic_kb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: changeme
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d academic_kb"]
+      interval: 5s
+      timeout: 5s
+      retries: 6
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 6
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9000:9000"   # S3-compatible API
+      - "9001:9001"   # MinIO console UI
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 5s
+      timeout: 5s
+      retries: 6
+
+  # ── Backend ───────────────────────────────────────────────────────────────
+
+  api:
+    build:
+      context: .
+      dockerfile: src/backend/docker/Dockerfile.api
+    env_file: src/backend/.env
+    environment:
+      # Infra connection — always the Docker service names
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: academic_kb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: changeme
+      REDIS_URL: redis://redis:6379/0
+      STORAGE_ENDPOINT: http://minio:9000
+      STORAGE_ACCESS_KEY: minioadmin
+      STORAGE_SECRET_KEY: minioadmin
+      STORAGE_BUCKET: documents
+      STORAGE_PUBLIC_HOST: http://localhost:9000
+      # Override env_file values that get polluted by inline comments
+      # (Compose's env_file parser does not strip trailing `# ...` comments).
+      # NOTE: AWS_PROFILE is intentionally NOT set here — botocore reads it
+      # directly from the process env and treats "" as a literal (invalid)
+      # profile name, crashing boto3.Session(). Leave it unset so the
+      # provider falls back to no-profile credential resolution.
+      BEDROCK_BASE_URL: ""
+      RATE_LIMIT_ENABLED: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      - ~/.aws:/root/.aws:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=5).read()"]
+      interval: 5s
+      timeout: 5s
+      retries: 6
+ 
+  worker-ocr:
+    build:
+      context: .
+      dockerfile: src/backend/docker/Dockerfile.worker
+    env_file: src/backend/.env
+    environment: &worker_environment
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: academic_kb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: changeme
+      REDIS_URL: redis://redis:6379/0
+      STORAGE_ENDPOINT: http://minio:9000
+      STORAGE_ACCESS_KEY: minioadmin
+      STORAGE_SECRET_KEY: minioadmin
+      STORAGE_BUCKET: documents
+      STORAGE_PUBLIC_HOST: http://localhost:9000
+      BEDROCK_BASE_URL: ""
+      WORKER_OCR_CONCURRENCY: "2"
+      WORKER_OCR_JOB_TIMEOUT_SECONDS: "1800"
+    command: ["arq", "app.workers.queue.OcrWorkerSettings"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    volumes:
+      - ~/.aws:/root/.aws:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os; from redis import Redis; assert Redis.from_url(os.environ['REDIS_URL']).ping()"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+ 
+  worker-eval:
+    build:
+      context: .
+      dockerfile: src/backend/docker/Dockerfile.worker
+    env_file: src/backend/.env
+    environment:
+      <<: *worker_environment
+    command: ["arq", "app.workers.queue.EvalWorkerSettings"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    volumes:
+      - ~/.aws:/root/.aws:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os; from redis import Redis; assert Redis.from_url(os.environ['REDIS_URL']).ping()"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+ 
+  worker-index:
+    build:
+      context: .
+      dockerfile: src/backend/docker/Dockerfile.worker
+    env_file: src/backend/.env
+    environment:
+      <<: *worker_environment
+    command: ["arq", "app.workers.queue.IndexWorkerSettings"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    volumes:
+      - ~/.aws:/root/.aws:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os; from redis import Redis; assert Redis.from_url(os.environ['REDIS_URL']).ping()"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  # ── Frontend ──────────────────────────────────────────────────────────────
+
+  frontend:
+    build:
+      context: src/frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000/api/v1
+    environment:
+      BACKEND_URL: http://api:8000
+      NEXT_PUBLIC_APP_NAME: Academic Knowledge
+      NEXT_PUBLIC_API_URL: http://localhost:8000/api/v1
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+volumes:
+  postgres_data:
+  minio_data:

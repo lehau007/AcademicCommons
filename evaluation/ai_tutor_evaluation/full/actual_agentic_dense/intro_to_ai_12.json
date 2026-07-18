@@ -1,0 +1,125 @@
+{
+  "qid": "intro_to_ai_12",
+  "course_code": "IT3160E",
+  "question": "According to Mitchell (1997), what are the three core elements that define a machine learning problem?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "48926cd6-2326-4628-afee-7fd7ee03c2a5",
+  "answer": "According to Mitchell (1997), as covered in the course materials, a machine learning problem is defined by three core elements:\n\n- **Task (T)** — the specific task or problem that the system is trying to improve at.\n- **Performance measure (P)** — the criterion used to evaluate how well the system is performing the task.\n- **Experience (E)** — the data or past interactions from which the system learns.\n\nMitchell's famous definition summarizes it as: **\"A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.\"**\n\nIn other words, learning = improving with experience at some task, where improvement is measured with respect to a performance measure and is driven by the experience available to the learner.",
+  "citations": [
+    {
+      "chunk_id": "e8e13d75-dbc3-448c-90bb-4a217b293d54",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Introduction of Machine learning",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Definitions of Machine learning...\n  - A process by which a system improves its performance [Simon, 1983]\n  - Any computer program that improves its performance at some task through experience [Mitc"
+    },
+    {
+      "chunk_id": "700be3f7-94d4-45ac-8291-73bb21cc5724",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Introduction of Machine learning",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "Learning = Improving with experience at some task\n\n- Improve over task **T**\n  - With respect to performance measure **P**\n  - Based on experience **E**"
+    },
+    {
+      "chunk_id": "c2c1e177-178e-4d68-b558-85165d2e58fa",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Types of learning problems",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "- A rough (and somewhat outdated) classification of learning problems:\n  - Supervised learning, where we get a set of training inputs and outputs\n    - classification, regression\n  - Unsupervised lear"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "Mitchell 1997 definition of machine learning problem three elements task experience performance measure",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Rational agents",
+          "chunk_order": 14,
+          "cosine_sim": 0.3808,
+          "final_score": 0.6569,
+          "content": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|       |--------------|\n|  Percepts    |\n|  <---------- \n|  Actions     |\n|  ----------> \n|               |\n|               |\n|  Sensors|       | Actuators|\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "ae50e9e8-47d8-4721-9de7-0b2d63d378dc",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Features of RL",
+          "chunk_order": 3,
+          "cosine_sim": 0.4039,
+          "final_score": 0.4644,
+          "content": "- Learning from numerical rewards\n- Interaction with the task; sequences of states, actions and rewards\n- Uncertainty and non-deterministic worlds\n- Delayed consequences\n- The explore/exploit dilemma\n- The whole problem of goal-directed learning"
+        },
+        {
+          "chunk_id": "00d7b922-e2e8-4311-922a-651df539f47a",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Rational agent",
+          "chunk_order": 8,
+          "cosine_sim": 0.3699,
+          "final_score": 0.4254,
+          "content": "- For each possible percept sequence, a rational agent should select an **action** that is expected to maximize its **performance measure**, given the evidence provided by the **percept sequence** and whatever **built-in knowledge** the agent has.\n- An agent is **autonomous** if its behavior is determined by its own experience (with ability to learn and adapt)"
+        },
+        {
+          "chunk_id": "30300eec-d65c-472b-927a-37480bf0e42b",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 10,
+          "cosine_sim": 0.4196,
+          "final_score": 0.4196,
+          "content": "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is the core design problem in rational agent systems.]\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "847fc99d-65cd-4f7c-8cbd-e6937b3a31d2",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "PEAS",
+          "chunk_order": 9,
+          "cosine_sim": 0.3537,
+          "final_score": 0.4067,
+          "content": "- 4 factors should be considered when design an automated agent:\n  - **P**erformance measure\n  - **E**nvironment\n  - **A**ctuators\n  - **S**ensors"
+        },
+        {
+          "chunk_id": "e8e13d75-dbc3-448c-90bb-4a217b293d54",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Introduction of Machine learning",
+          "chunk_order": 2,
+          "cosine_sim": 0.5034,
+          "final_score": 0.2895,
+          "content": "- Definitions of Machine learning...\n  - A process by which a system improves its performance [Simon, 1983]\n  - Any computer program that improves its performance at some task through experience [Mitchell, 1997]\n  - Programming computers to optimize a performance criterion using example data or past experience [Alpaydin, 2004]\n\n- Representation of the learning problem [Mitchell, 1997]"
+        },
+        {
+          "chunk_id": "700be3f7-94d4-45ac-8291-73bb21cc5724",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Introduction of Machine learning",
+          "chunk_order": 3,
+          "cosine_sim": 0.4103,
+          "final_score": 0.2359,
+          "content": "Learning = Improving with experience at some task\n\n- Improve over task **T**\n  - With respect to performance measure **P**\n  - Based on experience **E**"
+        },
+        {
+          "chunk_id": "c2c1e177-178e-4d68-b558-85165d2e58fa",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Types of learning problems",
+          "chunk_order": 13,
+          "cosine_sim": 0.3765,
+          "final_score": 0.2165,
+          "content": "- A rough (and somewhat outdated) classification of learning problems:\n  - Supervised learning, where we get a set of training inputs and outputs\n    - classification, regression\n  - Unsupervised learning, where we are interested in capturing inherent organization in the data\n    - clustering, density estimation\n  - Reinforcement learning, where we only get feedback in the form of how well we are doing (not what we should be doing)\n    - Planning"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 21.6
+}

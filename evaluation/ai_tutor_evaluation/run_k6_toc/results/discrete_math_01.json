@@ -1,0 +1,55 @@
+{
+  "qid": "discrete_math_01",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The definitions of articulation point and bridge match the source material exactly, and the elaborations about connected graphs becoming disconnected are also grounded in the chunks.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by providing clear definitions of both Articulation Point and Bridge in undirected graphs, exactly as asked.",
+      "evidence": [
+        "Articulation Point (Cut vertex): a vertex whose removal makes the graph have more connected components than before",
+        "Bridge: an edge whose removal makes the graph have more connected components than before"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: both definitions correctly state that removal produces more connected components than the original graph. The additional clarification about connected graphs becoming disconnected is correct supplementary detail.",
+      "evidence": [
+        "Ground truth: 'Articulation Point (or Cut vertex) is a vertex whose removal produces a subgraph with more connected components'",
+        "Tutor: 'a vertex whose removal makes the graph have more connected components than before'",
+        "Ground truth: 'Bridge is an edge whose removal produces a subgraph with more connected components'",
+        "Tutor: 'an edge whose removal makes the graph have more connected components than before'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "The first two chunks directly define articulation points and bridges, which is exactly what the question asks. Chunks 3-5 provide general context about undirected graphs and connectivity that is somewhat relevant but not essential to answering the specific definitions requested.",
+      "evidence": [
+        "chunk_id=2be344c5-49d3-47a4-803a-96b9a0a00dab: general connected graph property",
+        "chunk_id=ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a: basic undirected graph definition",
+        "chunk_id=aed60543-b7c9-4c89-a0bc-72006005fc30: general connectivity definition"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "The first retrieved chunk contains complete definitions for both Articulation Point and Bridge, matching all key facts from the ground truth: vertex/edge removal producing more connected components.",
+      "evidence": [
+        "removal of a vertex produces a subgraph with more connected components than in the original graph",
+        "An edge whose removal produces a subgraph with more connected components than in the original graph"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports its corresponding statement. The first chunk provides the exact definitions of Articulation Point and Bridge that match the tutor's answer, while the other chunks appropriately support the context of undirected graphs and connectivity.",
+      "evidence": [
+        "Statement: 'Articulation Point (Cut vertex): a vertex whose removal makes the graph have more connected components' → Chunk 367c4728: 'Articulation Point (Cut vertex): removal of a vertex produces a subgraph with more connected components than in the original graph'",
+        "Statement: 'Bridge: an edge whose removal makes the graph have more connected components' → Chunk 367c4728: 'Bridge: An edge whose removal produces a subgraph with more connected components than in the original graph'"
+      ]
+    }
+  }
+}

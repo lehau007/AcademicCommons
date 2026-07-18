@@ -1,0 +1,10 @@
+[
+  {
+    "sample_id": "test_image",
+    "stage": "run",
+    "error_type": "UnboundLocalError",
+    "message": "local variable 'prompt_text' referenced before assignment",
+    "retry_count": 0,
+    "timestamp": "2026-05-13T02:59:20.395026+00:00"
+  }
+]

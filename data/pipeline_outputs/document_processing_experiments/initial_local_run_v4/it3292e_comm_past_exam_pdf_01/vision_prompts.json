@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "vision_prompt",
+    "page": 1,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  },
+  {
+    "kind": "vision_prompt",
+    "page": 2,
+    "image_index": 0,
+    "instruction": "Describe diagram/table/formula and convert to markdown text."
+  }
+]

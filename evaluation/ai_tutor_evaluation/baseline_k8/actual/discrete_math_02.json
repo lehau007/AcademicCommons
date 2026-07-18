@@ -1,0 +1,153 @@
+{
+  "qid": "discrete_math_02",
+  "course_code": "IT3020E",
+  "question": "According to Cayley's theorem, how many spanning trees does a complete graph have?",
+  "session_id": "71e3c32a-b451-4213-b192-f3c411cd43d1",
+  "answer": "According to **Cayley’s theorem**, the number of spanning trees of the complete graph \\(K_n\\) is\n\n\\[\nn^{\\,n-2}\n\\]\n\nSo a complete graph on \\(n\\) vertices has **\\(n^{n-2}\\)** spanning trees.",
+  "citations": [
+    {
+      "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Co"
+    },
+    {
+      "chunk_id": "84c6bb46-e520-457e-bcd2-5610bdf5ab2f",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "16 spanning trees of $K_4$",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "[Diagram: The slide enumerates all spanning trees of the complete graph on four labeled vertices. This illustrates how a connected graph can be reduced to tree structures while still including every v"
+    },
+    {
+      "chunk_id": "6dc9f9e3-297f-4018-8059-bb33731a711d",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Weighted Graphs and Minimum Spanning Trees",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "[Diagram: The two highlighted spanning trees show that the same weighted graph can have multiple optimal solutions with equal total weight. This matters because minimum spanning tree algorithms may re"
+    },
+    {
+      "chunk_id": "42d4cc9c-fa3e-4559-89d0-efea658b0e55",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Contents",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- 1. Tree and its properties\n- 2. Spanning tree\n- 3. The minimal spanning tree"
+    },
+    {
+      "chunk_id": "5786e44c-4b0b-4b90-86db-cd0386170c81",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Contents",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- 1. Tree and its properties\n- 2. Spanning tree\n- 3. The minimal spanning tree"
+    },
+    {
+      "chunk_id": "1294fc4e-f48f-431a-9a2a-745d132f7ea6",
+      "document_title": "2_4-GraphSpanningTree.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2. The spanning tree",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "Arthur Cayley $(1821 - 1895)$"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Cayley's theorem number of spanning trees complete graph K_n",
+      "namespaces": [
+        "knowledge",
+        "exercise"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "69ed7168-b826-480e-9862-cff20e081181",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 13,
+          "cosine_sim": 0.5292,
+          "final_score": 0.6086,
+          "content": "**Theorem (Cayley).** A complete graph $K_n$ has $n^{n-2}$ spanning trees.\n\n(A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge)\n\n| Complete graph $K_3$ | Spanning trees of $K_3$ |\n|---|---|\n| ```text\n\nb\n  / \\\n a---c\n\n``` | ```text\n a---b---c\n\n b---c---a\n\n c---a---b\n``` |\n\n[Diagram: The figure illustrates the idea of a spanning tree as a minimal connected subgraph that includes all vertices without cycles. For the complete graph $K_3$, it shows that there are exactly 3 different spanning trees, motivating Cayley’s formula for complete graphs.]"
+        },
+        {
+          "chunk_id": "84c6bb46-e520-457e-bcd2-5610bdf5ab2f",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "16 spanning trees of $K_4$",
+          "chunk_order": 16,
+          "cosine_sim": 0.4159,
+          "final_score": 0.4783,
+          "content": "[Diagram: The slide enumerates all spanning trees of the complete graph on four labeled vertices. This illustrates how a connected graph can be reduced to tree structures while still including every vertex exactly once, a key idea in graph theory and combinatorics.]"
+        },
+        {
+          "chunk_id": "6dc9f9e3-297f-4018-8059-bb33731a711d",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Weighted Graphs and Minimum Spanning Trees",
+          "chunk_order": 21,
+          "cosine_sim": 0.4156,
+          "final_score": 0.478,
+          "content": "[Diagram: The two highlighted spanning trees show that the same weighted graph can have multiple optimal solutions with equal total weight. This matters because minimum spanning tree algorithms may return any one of several correct trees, not necessarily a unique structure.]\n\nAs the number of spanning trees of $G$ is very large (see Cayley's theorem), we could not solve this problem by brute force."
+        },
+        {
+          "chunk_id": "42d4cc9c-fa3e-4559-89d0-efea658b0e55",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Contents",
+          "chunk_order": 17,
+          "cosine_sim": 0.3883,
+          "final_score": 0.4466,
+          "content": "- 1. Tree and its properties\n- 2. Spanning tree\n- 3. The minimal spanning tree"
+        },
+        {
+          "chunk_id": "5786e44c-4b0b-4b90-86db-cd0386170c81",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "Contents",
+          "chunk_order": 9,
+          "cosine_sim": 0.3883,
+          "final_score": 0.4466,
+          "content": "- 1. Tree and its properties\n- 2. Spanning tree\n- 3. The minimal spanning tree"
+        },
+        {
+          "chunk_id": "7bab2c98-dbdb-4919-96b4-cf960a8c7051",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.3547,
+          "final_score": 0.4079,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "89005382-f85c-4c56-a264-f414a6544ac9",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.3547,
+          "final_score": 0.4079,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "1294fc4e-f48f-431a-9a2a-745d132f7ea6",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "2. The spanning tree",
+          "chunk_order": 14,
+          "cosine_sim": 0.3525,
+          "final_score": 0.4054,
+          "content": "Arthur Cayley $(1821 - 1895)$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.6
+}

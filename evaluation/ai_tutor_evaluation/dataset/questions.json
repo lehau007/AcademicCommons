@@ -1,0 +1,302 @@
+[
+  {
+    "qid": "intro_to_ai_01",
+    "course_code": "IT3160E",
+    "question": "What are the four factors (PEAS) that should be considered when designing an automated agent?",
+    "ground_truth": "When designing an automated agent, the four factors to consider are the Performance measure, Environment, Actuators, and Sensors. For example, an automated taxi driver's performance measure might be a safe and fast trip, its environment includes roads and traffic, its actuators are the steering wheel and brakes, and its sensors include cameras and GPS."
+  },
+  {
+    "qid": "intro_to_ai_02",
+    "course_code": "IT3160E",
+    "question": "What is the difference between progression planners and regression planners in state-space search?",
+    "ground_truth": "Progression planners use forward state-space search by considering the effect of all possible actions from a given state. Regression planners use backward state-space search, determining what must have been true in the previous state in order to achieve the current state or goal."
+  },
+  {
+    "qid": "intro_to_ai_03",
+    "course_code": "IT3160E",
+    "question": "How does A* search determine which node to expand next?",
+    "ground_truth": "A* search expands the unexpanded node with the lowest evaluation value. It uses the evaluation function f(n) = g(n) + h(n), where g(n) represents the cost so far to reach node n, and h(n) represents the estimated cost from node n to the goal."
+  },
+  {
+    "qid": "intro_to_ai_04",
+    "course_code": "IT3160E",
+    "question": "How does a model-based reflex agent differ from a simple reflex agent?",
+    "ground_truth": "A simple reflex agent selects actions based solely on the current percept, completely ignoring the rest of its percept history. In contrast, a model-based reflex agent maintains internal states that depend on the percept history, which helps reflect unobserved aspects of the current state."
+  },
+  {
+    "qid": "intro_to_ai_05",
+    "course_code": "IT3160E",
+    "question": "What defines a Constraint Satisfaction Problem (CSP)?",
+    "ground_truth": "A CSP is a type of search problem where the state is composed of variables Xi that take values from a specific domain Di. The goal test for a CSP is defined by a set of constraints that these variables must satisfy."
+  },
+  {
+    "qid": "intro_to_ai_06",
+    "course_code": "IT3160E",
+    "question": "What is the min-conflicts heuristic used in Iterative Algorithms for CSPs?",
+    "ground_truth": "The min-conflicts heuristic is a value selection strategy where the algorithm chooses the value that violates the fewest constraints. It functions like hill-climbing where the evaluation function h(n) equals the total number of violated constraints."
+  },
+  {
+    "qid": "intro_to_ai_07",
+    "course_code": "IT3160E",
+    "question": "How does forward chaining work in propositional logic inference?",
+    "ground_truth": "In forward chaining, when a new fact is added, the system finds all rules that have that fact as a premise. If the other premises of those rules are already known to hold, the consequent is added to the set of known facts, which can then trigger further inferences."
+  },
+  {
+    "qid": "intro_to_ai_08",
+    "course_code": "IT3160E",
+    "question": "What distinguishes a standard search problem from a game?",
+    "ground_truth": "A standard search problem has no adversary, aims to find an optimal solution or goal using heuristics, and evaluates the estimated cost from the start to the goal. A game involves an adversary, requires a strategy that specifies a move for every possible opponent reply, and evaluates the goodness of a game position rather than the cost to a goal."
+  },
+  {
+    "qid": "intro_to_ai_09",
+    "course_code": "IT3160E",
+    "question": "In First Order Logic (FOL), how are terms and predicates constructed?",
+    "ground_truth": "Terms are built using variables, constants, and function symbols (e.g., FatherOf(X)). Predicates are then built by applying relations to these terms (e.g., Tall(FatherOf(Bill)))."
+  },
+  {
+    "qid": "intro_to_ai_10",
+    "course_code": "IT3160E",
+    "question": "What is the termination condition for the training loop of a neural network?",
+    "ground_truth": "After the entire training set has been exploited (completing one epoch), the system checks the total error. If the current total error E is less than the tolerable error (E_threshold), training terminates and outputs the final weights; otherwise, the error is reset to 0 and a new epoch begins."
+  },
+  {
+    "qid": "intro_to_ai_11",
+    "course_code": "IT3160E",
+    "question": "What is Information Gain and how is it used in Decision Tree Learning?",
+    "ground_truth": "Information gain is a statistical measure that calculates the expected reduction in entropy caused by partitioning instances according to a specific attribute. In Decision Tree learning, it is used to determine which attribute is most useful for classifying training instances at each node, with the algorithm selecting the attribute that yields the highest information gain."
+  },
+  {
+    "qid": "intro_to_ai_12",
+    "course_code": "IT3160E",
+    "question": "According to Mitchell (1997), what are the three core elements that define a machine learning problem?",
+    "ground_truth": "A machine learning problem is defined as improving with experience at some task. Specifically, it requires improving over a task T, with respect to a performance measure P, based on experience E."
+  },
+  {
+    "qid": "intro_to_ai_13",
+    "course_code": "IT3160E",
+    "question": "In Reinforcement Learning, what is the purpose of the discount rate in the discounted return model?",
+    "ground_truth": "The discount rate (a value between 0 and 1) is used to bound the infinite sum of rewards over time. It also favors earlier rewards over later ones, giving the agent a preference for finding shorter paths to its goal."
+  },
+  {
+    "qid": "intro_to_ai_14",
+    "course_code": "IT3160E",
+    "question": "What defines a feed-forward neural network compared to a recurrent neural network?",
+    "ground_truth": "A feed-forward network is structured so that no node output is used as an input to a node in the same layer or in a preceding layer. In contrast, a recurrent network features closed loops, allowing node outputs to be directed back as inputs to nodes in the same or preceding layers."
+  },
+  {
+    "qid": "intro_to_ai_15",
+    "course_code": "IT3160E",
+    "question": "How does the 'Acting rationally' approach define rational behavior for an AI agent?",
+    "ground_truth": "Rational behavior is defined as doing the right thing, which means selecting an action that is expected to maximize goal achievement given the available information, evidences, and constraints. Rationality is entirely dependent on the agent's goals and does not necessarily require thinking, as seen in reflexes like blinking."
+  },
+  {
+    "qid": "intro_to_ai_16",
+    "course_code": "IT3160E",
+    "question": "What characterizes a 'fully observable' environment in AI?",
+    "ground_truth": "A fully observable environment is one where an agent's sensors give it complete access to the entire state of the environment at each point in time. This is in contrast to a partially observable environment where some states are hidden."
+  },
+  {
+    "qid": "intro_to_ai_17",
+    "course_code": "IT3160E",
+    "question": "What are the four items required to formally define a Search Problem?",
+    "ground_truth": "A search problem is defined by four items: the initial state (where the search begins), the actions or successor function (a set of action-state pairs), the goal test (which can be explicit or implicit), and the path cost (an additive measure such as the sum of distances or actions)."
+  },
+  {
+    "qid": "intro_to_ai_18",
+    "course_code": "IT3160E",
+    "question": "How does Local Beam Search differ from Random-Restart Search?",
+    "ground_truth": "The major difference is that in Local Beam Search, information is shared among the k search threads. If one state generates a good successor, the other threads are drawn to it, whereas random-restart threads operate completely independently of one another."
+  },
+  {
+    "qid": "intro_to_ai_19",
+    "course_code": "IT3160E",
+    "question": "What is the primary purpose of Alpha-Beta pruning in minimax game search trees?",
+    "ground_truth": "Alpha-beta pruning removes branches of the search tree that do not influence the final decision, addressing the exponential number of game states in minimax search. With perfect move ordering, this technique can double the depth of the search, allowing the agent to look twice as far in the same amount of time."
+  },
+  {
+    "qid": "intro_to_ai_20",
+    "course_code": "IT3160E",
+    "question": "What three formal components make up a logic?",
+    "ground_truth": "A logic is defined as a triplet consisting of a language, a semantic, and an inference system. The language is a class of sentences described by a precise syntax, the semantic describes the meaning of elements in the language, and the inference system consists of derivation rules used over the language."
+  },
+  {
+    "qid": "discrete_math_01",
+    "course_code": "IT3020E",
+    "question": "What are the definitions of an Articulation Point and a Bridge in an undirected graph?",
+    "ground_truth": "An Articulation Point (or Cut vertex) is a vertex whose removal produces a subgraph with more connected components than the original graph. Similarly, a Bridge is an edge whose removal produces a subgraph with more connected components than the original graph."
+  },
+  {
+    "qid": "discrete_math_02",
+    "course_code": "IT3020E",
+    "question": "According to Cayley's theorem, how many spanning trees does a complete graph have?",
+    "ground_truth": "According to Cayley's theorem, a complete graph K_n has n^(n-2) spanning trees."
+  },
+  {
+    "qid": "discrete_math_03",
+    "course_code": "IT3020E",
+    "question": "What is the difference between a strongly connected and a weakly connected directed graph?",
+    "ground_truth": "A directed graph is strongly connected if there is a path from u to v and from v to u whenever u and v are vertices in the graph. It is weakly connected if its corresponding undirected graph is connected."
+  },
+  {
+    "qid": "discrete_math_04",
+    "course_code": "IT3020E",
+    "question": "What is the overall computational time complexity of the Breadth-First Search (BFS) algorithm?",
+    "ground_truth": "The total computation time of the BFS algorithm is O(|V| + |E|), which is linear relative to the size of the adjacency list that represents the graph."
+  },
+  {
+    "qid": "discrete_math_05",
+    "course_code": "IT3020E",
+    "question": "How is an incidence matrix constructed for an undirected graph?",
+    "ground_truth": "For an undirected graph with n vertices and m edges, the incidence matrix is an n×m matrix denoted as M=[m_ij]. In this matrix, m_ij = 1 when edge e_j is incident with vertex v_i, and 0 otherwise."
+  },
+  {
+    "qid": "discrete_math_06",
+    "course_code": "IT3020E",
+    "question": "In the general algorithm for finding a Minimum Spanning Tree (MST), what defines a 'safe' edge?",
+    "ground_truth": "An edge is considered a safe edge if adding it to the current set of edges T does not destroy the invariant property, meaning T remains a subset of some minimum spanning tree and still forms a tree without creating any cycles."
+  },
+  {
+    "qid": "discrete_math_07",
+    "course_code": "IT3020E",
+    "question": "How does Prim's algorithm determine which edge to add during each iteration?",
+    "ground_truth": "Prim's algorithm builds a single spanning tree starting from an arbitrary vertex. At each iteration it adds the minimum-weight edge that connects a vertex already in the tree to a vertex not yet in the tree, provided it does not form a cycle, until every vertex has been included in the tree."
+  },
+  {
+    "qid": "discrete_math_08",
+    "course_code": "IT3020E",
+    "question": "What is the running time of the Floyd-Warshall algorithm?",
+    "ground_truth": "The recursive Floyd-Warshall algorithm has a running time of Θ(n^3)."
+  },
+  {
+    "qid": "discrete_math_09",
+    "course_code": "IT3020E",
+    "question": "What are the four types of edges classified during a Depth-First Search (DFS) traversal?",
+    "ground_truth": "DFS classifies edges into four categories: Tree edges (visiting a new vertex), Back edges (going from descendants to ancestors), Forward edges (going from an ancestor to a descendant), and Cross edges (connecting two non-related vertices)."
+  },
+  {
+    "qid": "discrete_math_10",
+    "course_code": "IT3020E",
+    "question": "How are non-existent edges represented in a Weight Matrix for a weighted graph?",
+    "ground_truth": "In a weight matrix, a special value θ is used to identify that (i,j) is not an edge. Depending on the application, θ could be assigned a value of 0, +∞, or -∞."
+  },
+  {
+    "qid": "discrete_math_11",
+    "course_code": "IT3020E",
+    "question": "What is the generalized product rule in combinatorial counting?",
+    "ground_truth": "The generalized product rule states that if a procedure consists of sequential tasks T1, T2, …, Tk that can be done in m1, m2, …, mk ways respectively, then there are m1 × m2 × ⋯ × mk ways to carry out the procedure."
+  },
+  {
+    "qid": "discrete_math_12",
+    "course_code": "IT3020E",
+    "question": "How is the Dirichlet (or Pigeonhole) principle formally stated?",
+    "ground_truth": "The Dirichlet principle states that if more than n objects are put into n boxes, then at least one box has at least 2 objects."
+  },
+  {
+    "qid": "discrete_math_13",
+    "course_code": "IT3020E",
+    "question": "What does the Big Oh (O) notation intuitively represent for a given function g(n)?",
+    "ground_truth": "Intuitively, the Big Oh notation O(g(n)) represents the set of all functions whose rate of growth is the same as or lower than that of g(n)."
+  },
+  {
+    "qid": "discrete_math_14",
+    "course_code": "IT3020E",
+    "question": "What are the two core procedures involved in the Branch and Bound algorithm?",
+    "ground_truth": "The Branch and Bound algorithm consists of a Branching procedure, which partitions the set of solutions into subsets of gradually decreasing size, and a Bounding procedure, which calculates the bound for the objective function's value on each subset."
+  },
+  {
+    "qid": "discrete_math_15",
+    "course_code": "IT3020E",
+    "question": "How is a solution represented in the 0/1 Knapsack Problem?",
+    "ground_truth": "A subset of items (the solution) is represented by a binary vector of length n: x = (x1, x2, …, xn), where xj = 1 when item j is selected and xj = 0 when item j is not selected."
+  },
+  {
+    "qid": "discrete_math_16",
+    "course_code": "IT3020E",
+    "question": "What defines a spanning subgraph in graph theory?",
+    "ground_truth": "A subgraph H of a graph G is called a spanning subgraph if the vertex set of H is the same as the vertex set of G (V(H) = V(G))."
+  },
+  {
+    "qid": "discrete_math_17",
+    "course_code": "IT3020E",
+    "question": "According to the properties of trees, what happens when an edge is added to an undirected graph that currently has no cycles?",
+    "ground_truth": "If an undirected graph has no cycles, adding any edge to it will give rise to a cycle, meaning the graph is a maximal acyclic graph."
+  },
+  {
+    "qid": "discrete_math_18",
+    "course_code": "IT3020E",
+    "question": "In an Adjacency List representation of a graph, how is the list structured?",
+    "ground_truth": "An adjacency list is an array consisting of |V| lists, where each vertex has one list, and for each vertex u ∈ V, its list contains the nodes that are adjacent to u."
+  },
+  {
+    "qid": "discrete_math_19",
+    "course_code": "IT3020E",
+    "question": "When are two simple graphs considered isomorphic?",
+    "ground_truth": "Two simple graphs G1 and G2 are isomorphic if there is a one-to-one and onto function f from the vertices of G1 to the vertices of G2 such that vertices a and b are adjacent in G1 if and only if f(a) and f(b) are adjacent in G2."
+  },
+  {
+    "qid": "discrete_math_20",
+    "course_code": "IT3020E",
+    "question": "In Prim's Algorithm for finding a Minimum Spanning Tree, what does the label near[v] indicate?",
+    "ground_truth": "For a vertex v that is not yet in the spanning tree T, the label near[v] records the vertex of T that is currently nearest to vertex v."
+  },
+  {
+    "qid": "database_01",
+    "course_code": "IT3292E",
+    "question": "What are the key properties of a Candidate Key in a relational database?",
+    "ground_truth": "A Candidate Key is a superkey (K) with three main properties: no proper subset of it is a superkey within the relation, the values of K uniquely identify each tuple in the relation (uniqueness), and no proper subset of K has this uniqueness property (irreducibility)."
+  },
+  {
+    "qid": "database_02",
+    "course_code": "IT3292E",
+    "question": "What is the difference between the Intersection and Difference operators in relational algebra?",
+    "ground_truth": "The Intersection operator outputs a relation by keeping only the common tuples from two union-compatible input relations. In contrast, the Difference operator results in a relation containing tuples that occurred in the first relation but not in the second."
+  },
+  {
+    "qid": "database_03",
+    "course_code": "IT3292E",
+    "question": "How did the SQL standard evolve between 1986 and 1999?",
+    "ground_truth": "The first standard, SQL1, was defined in 1986 and adopted by ISO in 1987. In 1992, SQL2 was adopted as the formal standard language for defining and manipulating relational databases. Later, in 1999, SQL3 extended the standard with Object-Oriented features, user-defined data types, triggers, and user-defined functions."
+  },
+  {
+    "qid": "database_04",
+    "course_code": "IT3292E",
+    "question": "How do the HAVING and WHERE clauses differ in SQL?",
+    "ground_truth": "Conditions in a HAVING clause apply to groups as a whole, whereas conditions in a WHERE clause apply to individual tuples."
+  },
+  {
+    "qid": "database_05",
+    "course_code": "IT3292E",
+    "question": "How is a many-to-many (n-m) relationship mapped from an ERD to a relational schema?",
+    "ground_truth": "To map an n-m relationship, you create a new relation that includes all the prime-attributes (primary keys) of both participating entity sets. These prime attributes are used as foreign keys in the new relation."
+  },
+  {
+    "qid": "database_06",
+    "course_code": "IT3292E",
+    "question": "What is the mapping process for a multivalued attribute in an ERD?",
+    "ground_truth": "For each multivalued attribute A, you create a new relation R that includes an attribute corresponding to A, plus the primary key attribute K of the corresponding entity set, which serves as a foreign key in R. The primary key of the new relation R is the combination of A and K."
+  },
+  {
+    "qid": "database_07",
+    "course_code": "IT3292E",
+    "question": "What is an update anomaly in the context of database normalization?",
+    "ground_truth": "An update anomaly is an instance where the same information must be updated in several different places, which is not efficient. For example, if the name of a subject needs to be changed, it has to be updated in every row where that subject appears."
+  },
+  {
+    "qid": "database_08",
+    "course_code": "IT3292E",
+    "question": "What does the closure of a functional dependency set (F+) represent?",
+    "ground_truth": "The closure of a functional dependency set, denoted as F+, represents all the dependencies that can be inferred from the set F, including the dependencies in F itself."
+  },
+  {
+    "qid": "database_09",
+    "course_code": "IT3292E",
+    "question": "What is the primary goal of a query optimizer?",
+    "ground_truth": "The primary goal of a query optimizer is to choose the cheapest execution plan out of all the possible query execution plans."
+  },
+  {
+    "qid": "database_10",
+    "course_code": "IT3292E",
+    "question": "What are two algorithms mentioned for executing Join operations in query processing?",
+    "ground_truth": "Two algorithms used for executing Join operations are the Sort-merge JOIN, which requires data to be physically sorted by join attributes, and the Partition-hash JOIN, which hashes two relations on join attributes and joins the buckets accordingly."
+  }
+]

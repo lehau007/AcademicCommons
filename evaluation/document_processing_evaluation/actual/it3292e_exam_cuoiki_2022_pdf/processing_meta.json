@@ -1,0 +1,15 @@
+{
+  "file_id": "it3292e_exam_cuoiki_2022_pdf",
+  "document_id": "fb49ea21-e6e9-4290-8453-50ae37b96fd1",
+  "file_format": "pdf",
+  "document_status": "NEEDS_REVIEW",
+  "storage_md_path": "documents/afaeed24-0be8-4627-b6b2-1d5fcf0877fe/fb49ea21-e6e9-4290-8453-50ae37b96fd1/markdown/output.md",
+  "markdown_chars": 4475,
+  "chunk_count": 0,
+  "ocr_job": {
+    "status": "COMPLETED",
+    "failure_reason": null,
+    "started_at": "2026-07-05T03:04:07.953479+00:00",
+    "completed_at": "2026-07-05T03:04:22.486577+00:00"
+  }
+}

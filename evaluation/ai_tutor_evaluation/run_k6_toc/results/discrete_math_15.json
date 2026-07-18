@@ -1,0 +1,61 @@
+{
+  "qid": "discrete_math_15",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "All core claims about the binary vector representation are fully supported by the retrieved chunks. The tutor adds the capacity constraint formula and objective function formula, which are present in the chunks but go slightly beyond what the question specifically asks (how a solution is represented).",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how a solution is represented in the 0/1 Knapsack Problem: as a binary vector of length n where each element indicates whether an item is selected (1) or not (0). The additional information about constraints and objectives, while beyond the minimal answer, remains on-topic and enhances understanding of the representation's context.",
+      "evidence": [
+        "x = (x_1, x_2, …, x_n), x_i ∈ {0,1}",
+        "x_i = 1: item i is selected",
+        "x_i = 0: item i is not selected"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: binary vector of length n, x = (x₁, x₂, …, xₙ), xⱼ = 1 when selected, xⱼ = 0 when not selected. The additional information about constraints and objective function is correct supplementary detail.",
+      "evidence": [
+        "Ground truth: 'binary vector of length n: x = (x1, x2, …, xn)'",
+        "Tutor: 'binary vector: x = (x_1, x_2, \\ldots, x_n)'",
+        "Ground truth: 'xj = 1 when item j is selected and xj = 0 when item j is not selected'",
+        "Tutor: 'x_i = 1: item i is selected; x_i = 0: item i is not selected'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are relevant to explaining how solutions are represented in the 0/1 Knapsack Problem. Each chunk contributes information about binary vectors, item selection, or the problem formulation.",
+      "evidence": [
+        "Chunk 74bdc739: 'binary vectors of length $n$' - directly defines solution representation",
+        "Chunk 72218925: 'Let $x_i = 1$ when item $i$ is selected and $x_i = 0$ when item $i$ is not selected' - explicitly explains binary encoding",
+        "Chunk 0d70fa52: '$x = (x_1, x_2, \\ldots, x_n) \\in A^n$' - shows vector notation for solutions",
+        "Chunk 85ce02f3: describes the problem context for which solutions are represented",
+        "Chunk c705c8d2: clarifies 0/1 constraint relevant to representation",
+        "Chunk b86170ee: shows concrete example of solution representation in practice"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 72218925 explicitly states 'Let xi = 1 when item i is selected and xi = 0 when item i is not selected,' and chunk 0d70fa52 shows the binary vector representation x = (x1, x2, …, xn).",
+      "evidence": [
+        "Let $x_i = 1$ when item $i$ is selected and $x_i = 0$ when item $i$ is not selected",
+        "x = (x_1, x_2, \\ldots, x_n)",
+        "binary vectors of length $n$"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The binary vector representation, the meaning of x_i values, the capacity constraint, and the objective function are all explicitly present in the cited chunks.",
+      "evidence": [
+        "Chunk 74bdc739: 'Among binary vectors of length $n$' supports the binary vector representation claim",
+        "Chunk 72218925: 'Let $x_i = 1$ when item $i$ is selected and $x_i = 0$ when item $i$ is not selected' directly supports the x_i interpretation",
+        "Chunk 0d70fa52: '$\\sum_{j=1}^{n} w_j x_j \\le b$' and '$\\sum_{j=1}^{n} v_j x_j$' support the capacity constraint and objective function formulas"
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "file_id": "it3160e_ai_introduction",
+  "scores": {
+    "classification_routing": {
+      "score": 4,
+      "justification": "The concrete route/inferred_type were not persisted in processing_meta.json (it carries only status/paths), so the expected 'hybrid' route cannot be directly confirmed from logs; however all supporting signals are consistent with the manifest (summary.language 'en' matches, file_format 'pdf', content is clearly a 14-slide deck), so the objective pass holds. Docked one point because the route is only inferred, not recoverable.",
+      "evidence": [
+        "processing_meta.json has no 'route'/'inferred_type' key (only \"document_status\": \"NEEDS_REVIEW\")",
+        "\"language\": \"en\"",
+        "\"ocr_quality\": \"low\""
+      ]
+    },
+    "text_coverage": {
+      "score": 5,
+      "justification": "All substantive text from every one of the 14 slides is present in output.md, including the outline, the four-views table, the full 'Short history of AI' timeline, 'State of the art', and both closing slides. No section or bullet of ground-truth textual content is missing.",
+      "evidence": []
+    },
+    "extraction_fidelity": {
+      "score": 5,
+      "justification": "The deck is English with no Vietnamese diacritics to preserve; characters, digits and symbols are accurate (e.g. '200 million board positions per second!', '50,000 vehicles', '≠', '→'), and the pipeline even faithfully reproduces the source's own quirks (percent-less '99.9 of Deep Blue's moves', run-together Foundations lines). No garbling or mojibake.",
+      "evidence": []
+    },
+    "structure_preservation": {
+      "score": 5,
+      "justification": "Headings, nested bullet lists, the 2x2 'What is AI' table, and reading/slide order are all faithfully reflected, with one heading per slide and content in source top-to-bottom order (including the Expert-system slide, where 'Some examples' correctly appears last, matching the source). Slide boundaries are conveyed via headings rather than the reference's HTML comments, which is a permitted formatting choice.",
+      "evidence": []
+    },
+    "faithfulness_no_hallucination": {
+      "score": 4,
+      "justification": "No fabricated facts about AI and no dropped/altered source claims; the core text is faithful. The only non-source text is the interpretive '[Diagram: ...]' caption prose added for the three figure slides (5, 8, 11), which asserts analytical commentary not literally in the source. This is a designed figure-description behavior also present in the human-verified expected reference and adds no false factual content, so it is a minor deduction rather than a major one.",
+      "evidence": [
+        "[Diagram: The Imitation Game frames intelligence as observable behavior in a conversational setting rather than internal machinery. It matters because it shifts the question from whether a machine \"thinks\" to whether it can act indistinguishably from a human.]"
+      ]
+    },
+    "formula_table_code": {
+      "score": 5,
+      "justification": "The 2x2 four-categories table is rendered correctly as markdown, and both real formulas are captured cleanly and legibly (the agent function and the expert-system equation); the two source figures are represented as coherent ASCII code blocks.",
+      "evidence": []
+    }
+  },
+  "classification": {
+    "expected_type": "slide_pdf",
+    "expected_route": "hybrid",
+    "actual_type": "slide_pdf (from signals; not persisted in logs)",
+    "actual_route": "not persisted in logs (inferred hybrid from OCR+text signals)",
+    "pass": true
+  },
+  "hallucinations": [
+    "[Diagram: The Imitation Game frames intelligence as observable behavior in a conversational setting rather than internal machinery. It matters because it shifts the question from whether a machine \"thinks\" to whether it can act indistinguishably from a human.]",
+    "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is the core design problem in rational agent systems.]",
+    "[Diagram: The slide contrasts a conventional computer system with an expert system. The key idea is that expert systems combine human expertise with inference/reasoning, and that knowledge engineering is the process of capturing that expertise so the system can produce useful outputs.]"
+  ],
+  "normalization_note": "The normalized markdown reads coherently end-to-end and drops no large spans of ground-truth text; all 14 slides are present and in order. The only additions beyond source text are the interpretive '[Diagram: ...]' caption paragraphs (also present in the expected reference) and neutral ASCII renderings standing in for the three real source figures.",
+  "overall_comment": "A high-coverage, high-fidelity extraction of an English 14-slide AI-introduction deck: complete text, an accurate 2x2 table, both formulas, and faithful structure and reading order. Classification/route signals are consistent with the expected slide_pdf/hybrid (pass=true), though the actual route was not persisted in logs. The only real weakness is the added interpretive '[Diagram: ...]' figure captions, which introduce analytical prose not literally in the source; because the same behavior appears in the human reference and contains no false facts, it is a minor faithfulness deduction rather than a serious hallucination."
+}

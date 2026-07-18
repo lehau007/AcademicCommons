@@ -1,0 +1,59 @@
+{
+  "qid": "discrete_math_05",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "All core claims about incidence matrix construction are directly supported by the retrieved chunks. However, the claim about loops having 'exactly one entry equal to 1' is slightly imprecise—the chunk states this corresponds to 'the vertex that is incident with the loop,' which in standard graph theory means a loop should have a single 1 (at the vertex with the loop), but the tutor's phrasing could be clearer about this being the defining characteristic.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how an incidence matrix is constructed for an undirected graph, explaining the n×m dimensions, the vertex-edge relationship, and the 0/1 entry rules. The additional notes about multiple edges and loops are still on-topic extensions of the construction method.",
+      "evidence": [
+        "Build an n × m matrix M=[m_{ij}], where: m_{ij}=1 if vertex v_i is incident with edge e_j, m_{ij}=0 otherwise"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: n×m matrix for n vertices and m edges, notation M=[m_ij], m_ij=1 when edge e_j is incident with vertex v_i, and 0 otherwise. The additional notes about multiple edges and loops are correct supplementary information.",
+      "evidence": [
+        "n×m matrix M=[m_ij]",
+        "m_ij=1 if vertex v_i is incident with edge e_j",
+        "m_ij=0 otherwise"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Roughly half the chunks are relevant. Chunks c39258bf and 4c1a9c2f directly explain incidence matrix construction. However, chunks 5fdb71d0, 0f0a8e67, 58612d91, 1b439c92, and 289b20a1 are merely lists of graph representation types without substantive content, and chunk 6be5f140 describes adjacency matrices, not incidence matrices.",
+      "evidence": [
+        "5fdb71d0: '- Incidence matrix - Adjacency matrix - Weight matrix - Adjacency list'",
+        "0f0a8e67: same list",
+        "58612d91: same list",
+        "1b439c92: same list",
+        "289b20a1: same list",
+        "6be5f140: 'a_ij equals 1 if {v_i, v_j} is an edge' (adjacency matrix)"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. The first chunk explicitly states the n×m matrix structure, the notation M=[m_ij], and the definition that m_ij=1 when edge e_j is incident with vertex v_i and 0 otherwise.",
+      "evidence": [
+        "the n × m matrix M = [mᵢⱼ]",
+        "m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise",
+        "V = {v₁, v₂, v₃, ..., vₙ}",
+        "E = {e₁, e₂, ..., eₘ}"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports its corresponding statement. The primary chunk (c39258bf) directly defines the incidence matrix construction for undirected graphs, and the notes about multiple edges and loops are explicitly supported by chunks c39258bf and 4c1a9c2f.",
+      "evidence": [
+        "Main construction: 'n × m matrix M = [mᵢⱼ], where m_ij equals 1 when edge e_j is incident with v_i, 0 otherwise' (chunk c39258bf)",
+        "Multiple edges: 'by using columns with identical entries, since these edges are incident with the same pair of vertices' (chunk c39258bf)",
+        "Loops: 'by using a column with exactly one entry equal to 1, corresponding to the vertex that is incident with the loop' (chunk c39258bf)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "course_code": "IT3160",
+  "name": "Introduction to Artificial Intelligence",
+  "description": "Undergraduate introductory course on Artificial Intelligence at SoICT, covering intelligent agents, problem solving by search, constraint satisfaction, logical reasoning, planning and games, and an introduction to machine learning and reinforcement learning.",
+  "topic_summary": "This course introduces the core ideas of Artificial Intelligence. It begins with intelligent agents and the PEAS framework, then formalizes problem solving as search, covering uninformed strategies, informed search with A* and heuristic functions, local search, and constraint satisfaction problems with backtracking and the min-conflicts heuristic. The logic block covers propositional logic and First Order Logic, with forward chaining, backward chaining and resolution over a knowledge base. Planning is studied through progression and regression planners over state-space, and adversarial search is treated through minimax and alpha-beta pruning on games. The final block introduces machine learning: decision tree learning with information gain, feed-forward and recurrent neural networks and their epoch-based training loop, and reinforcement learning with Markov decision processes, discounted return, value functions and Q-learning."
+}

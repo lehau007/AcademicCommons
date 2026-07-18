@@ -1,0 +1,120 @@
+{
+  "char_budget": 24000,
+  "batches": [
+    {
+      "batch_index": 0,
+      "block_count": 17,
+      "input_chars": 4752,
+      "page_or_slide_range": [
+        1,
+        17
+      ],
+      "mode": "llm",
+      "output_chars": 4228
+    }
+  ],
+  "cleaned_blocks": [
+    {
+      "kind": "text",
+      "page": 1,
+      "content": "## Discrete Mathematics",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 2,
+      "content": "## PART 1\n- COMBINATORIAL THEORY (Lý thuyết tổ hợp)\n\n## PART 2\n- GRAPH THEORY (Lý thuyết đồ thị)",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 3,
+      "content": "## Content of Part 2\n\n- Chapter 1. Fundamental concepts\n- Chapter 2. Graph representation\n- Chapter 3. Graph Traversal\n- Chapter 4. Tree and Spanning tree\n- Chapter 5. Shortest path problem\n- Chapter 6. Maximum flow problem",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 4,
+      "content": "## Graph Representation\n\n- Incidence matrix\n- Adjacency matrix\n- Weight matrix\n- Adjacency list",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 5,
+      "content": "## Graph Representation\n\n- **Incidence matrix**\n- Adjacency matrix\n- Weight matrix\n- Adjacency list",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 6,
+      "content": "## 1. Incidence Matrix\n\nG = (V, E) is an undirected graph:\n- V = {v₁, v₂, v₃, ..., vₙ}\n- E = {e₁, e₂, ..., eₘ}\n\nThen the incidence matrix with respect to this ordering of V and E is the n x m matrix M = [mᵢⱼ], where\n\n$$\nm_{ij} = \\begin{cases}\n1 & \\text{when edge } e_j \\text{ is incident with } v_i \\\\\n0 & \\text{otherwise}\n\\end{cases}\n$$\n\nCan also be used to represent:\n- **Multiple edges:** by using columns with identical entries, since these edges are incident with the same pair of vertices\n- **Loops:** by using a column with exactly one entry equal to 1, corresponding to the vertex that is incident with the loop",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 7,
+      "content": "## Incidence Matrix\n\nMatrix $M_{|V| \\times |E|} = [m_{ij}]$, where\n\n$$\nm_{ij} = \n\\begin{cases}\n1 & \\text{when edge } e_j \\text{ is incident with } v_i \\\\\n0 & \\text{otherwise}\n\\end{cases}\n$$\n\nCan also be used to represent:\n\n- **Multiple edges:** by using columns with identical entries, since these edges are incident with the same pair of vertices\n- **Loops:** by using a column with exactly one entry equal to 1, corresponding to the vertex that is incident with the loop",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 8,
+      "content": "## 1. Incidence Matrix\n\nExample: $G = (V, E)$\n\n[Diagram: Graph with vertices u, v, w and edges e1, e2, e3]\n\n|   | e₁ | e₂ | e₃ |\n|---|----|----|----|\n| v |  1 |  0 |  1 |\n| u |  1 |  1 |  0 |\n| w |  0 |  1 |  1 |",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 9,
+      "content": "## Graph Representation\n\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 10,
+      "content": "## 2. Adjacency Matrix\n\nThe Adjacency Matrix (NxN) A = [a_ij] where |V| = N\n\n- **For undirected graph**\n  $$\n  a_{ij} = \n  \\begin{cases} \n  1 & \\text{if } \\{v_i, v_j\\} \\text{ is an edge of G} \\\\\n  0 & \\text{otherwise}\n  \\end{cases}\n  $$\n  $$\n  A = \\begin{bmatrix}\n  0 & 1 & 1 \\\\\n  1 & 0 & 1 \\\\\n  1 & 1 & 0\n  \\end{bmatrix}\n  $$\n  [Diagram: undirected triangle graph with vertices 1, 2, 3]\n\n- **For directed graph**\n  $$\n  a_{ij} = \n  \\begin{cases} \n  1 & \\text{if } (v_i, v_j) \\text{ is an edge of G} \\\\\n  0 & \\text{otherwise}\n  \\end{cases}\n  $$\n  $$\n  A = \\begin{bmatrix}\n  0 & 1 & 0 \\\\\n  0 & 0 & 0 \\\\\n  1 & 1 & 0\n  \\end{bmatrix}\n  $$\n  [Diagram: directed triangle graph with vertices 1, 2, 3]\n\nThis makes it easier to find subgraphs, and to reverse graphs if needed.",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 11,
+      "content": "## Graph Representation\n\n1. Incidence matrix\n2. Adjacency matrix\n3. **Weight matrix**\n4. Adjacency list",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 12,
+      "content": "## 3. Weight matrix\n\n- **Weighted** graphs have values associated with edges.\n- In the case weighted graphs, instead of adjacency matrix, we use weight matrix to represent the graph\n  $$\n  C = c[i, j], \\quad i, j = 1, 2, ..., n,\n  $$\n  where\n  $$\n  c[i, j] = \\begin{cases}\n    c(i, j), & \\text{if } (i, j) \\in E \\\\\n    \\theta, & \\text{if } (i, j) \\notin E\n  \\end{cases}\n  $$\n- $\\theta$: special value to identify $(i, j)$ is not an edge; depends on the case, the value of $\\theta$ could be: $0, +\\infty, -\\infty$.",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 13,
+      "content": "## Weight matrix of undirected graph\n\n[Diagram: Undirected graph with 6 vertices and weighted edges]\n\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| 1 | 0 | 3 | 0 | 5 | 0 | 0 |\n| 2 | 3 | 0 | 2 | 0 | 0 | 0 |\n| 3 | 0 | 2 | 0 | 3 | 6 | 0 |\n| 4 | 5 | 0 | 3 | 0 | 7 | 0 |\n| 5 | 0 | 0 | 6 | 7 | 0 | 0 |\n| 6 | 0 | 0 | 0 | 0 | 0 | 0 |",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 14,
+      "content": "## Weight matrix of directed graph\n\n[Diagram: Directed graph with 6 nodes, weighted edges]\n\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| 1 | 0 | 3 | 0 | 7 | 0 | 0 |\n| 2 | 0 | 0 | 1 | 0 | 0 | 0 |\n| 3 | 0 | 0 | 0 | 2 | 3 | 0 |\n| 4 | 0 | 0 | 0 | 0 | 9 | 0 |\n| 5 | 0 | 0 | 0 | 0 | 0 | 0 |\n| 6 | 0 | 0 | 0 | 0 | 0 | 0 |",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 15,
+      "content": "## Graph Representation\n\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. **Adjacency list**",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 16,
+      "content": "## 3. Adjacency List\n\nAdjacency list: each vertex has a list of which vertices it is adjacent\n- Is an array Adjacency consiststing of $|V|$ list\n- Each vertex has 1 list\n- Each vertex $u \\in V$: Adjacency[$u$] consists of nodes that are adjacent to $u$.\n\nExample:\nUndirected graph | Directed graph\n-----------------|---------------\n[Diagram: undirected graph and adjacency list] | [Diagram: directed graph and adjacency list]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "content": "## Graph representation\n\n- graph\n- Adjacency list\n- Adjacency matrix\n\n[Diagram: Undirected graph, adjacency list, and adjacency matrix]\n[Diagram: Directed graph, adjacency list, and adjacency matrix]",
+      "ocr_strategy": "region_based"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "file_id": "it3160e_ai_introduction",
+  "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+  "file_format": "pdf",
+  "document_status": "NEEDS_REVIEW",
+  "storage_md_path": "documents/88c62343-af85-4d01-82a2-400649df68ee/49891ecf-e4bc-4d96-8550-3f2d1f3e6be9/markdown/output.md",
+  "markdown_chars": 8660,
+  "chunk_count": 0,
+  "ocr_job": {
+    "status": "COMPLETED",
+    "failure_reason": null,
+    "started_at": "2026-07-05T03:04:22.647142+00:00",
+    "completed_at": "2026-07-05T03:04:39.288520+00:00"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "qid": "intro_to_ai_05",
+  "course_code": "IT3160E",
+  "question": "What defines a Constraint Satisfaction Problem (CSP)?",
+  "session_id": "2a3537d9-ccba-4ab7-8d73-546dbf2729a0",
+  "answer": "A **Constraint Satisfaction Problem (CSP)** là một loại bài toán trong đó:\n\n- **Trạng thái** được tạo bởi các **biến** \\(X_i\\), mỗi biến có một **miền giá trị** \\(D_i\\).\n- **Mục tiêu** là tìm một gán giá trị cho các biến sao cho **tất cả các ràng buộc (constraints)** đều được thỏa mãn.\n\nNói ngắn gọn, một CSP gồm 3 phần chính:\n\n1. **Variables** – các biến cần gán giá trị  \n2. **Domains** – tập giá trị có thể gán cho từng biến  \n3. **Constraints** – các điều kiện/ràng buộc giữa các biến\n\nVí dụ trong bài toán tô màu bản đồ, mỗi vùng là một biến, miền là các màu có thể chọn, và ràng buộc là hai vùng kề nhau không được cùng màu.",
+  "citations": [
+    {
+      "chunk_id": "94828c18-b26d-400c-bb09-3b1f61c975bc",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Varieties of CSPs",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Discrete variables\n  - Finite domain, e.g, SAT Solving\n  - Infinite domain, e.g., work scheduling\n    - Variables is start/end of working day\n    - Constraint language, e.g., $StartJob_1 + 5 \\leq St"
+    },
+    {
+      "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "CSP",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with valu"
+    },
+    {
+      "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one vari"
+    },
+    {
+      "chunk_id": "4b70b8aa-674d-4b10-b3e7-41eb2604e8dd",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraint Graph",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "[Diagram: The graph shows how a binary CSP can be represented as a network of variables connected by constraints. This matters because it turns constraint satisfaction into a graph structure, making r"
+    },
+    {
+      "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraint Graph",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n "
+    },
+    {
+      "chunk_id": "83e54421-60e1-4c3d-ab15-dd085ef21ff8",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraints Satisfaction Problems (CSPs)",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "- CSPs example\n- Backtracking search\n- Problem structure\n- Local search for CSPs"
+    },
+    {
+      "chunk_id": "74b8dba6-bfb6-4f3c-b333-810c92314229",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: Cryptarimetetic",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- Variables\n  - F,T,O,U,R,W, X$_1$, X$_2$, X$_3$\n- Domain\n  - {0,1,2,3,4,5,6,7, 8,9}\n- Constraints\n  - Alldiff(F,T,O,U,R,W)\n  - O+O = R+10*X$_1$\n  - X$_1$+W+W = U+10*X$_2$\n  - X$_2$+T+T = O+10*X$_3$\n "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "What defines a Constraint Satisfaction Problem (CSP)? definition variables domain constraints",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "94828c18-b26d-400c-bb09-3b1f61c975bc",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Varieties of CSPs",
+          "chunk_order": 9,
+          "cosine_sim": 0.525,
+          "final_score": 0.6037,
+          "content": "- Discrete variables\n  - Finite domain, e.g, SAT Solving\n  - Infinite domain, e.g., work scheduling\n    - Variables is start/end of working day\n    - Constraint language, e.g., $StartJob_1 + 5 \\leq StartJob_3$\n    - Linear constraints are decidable, non-linear constraints are undecidable\n- Continuous variables\n  - e.g., start/end time of observing the universe using Hubble telescope\n  - Linear constraints are solvable using Linear Programming"
+        },
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.5034,
+          "final_score": 0.5789,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Summary",
+          "chunk_order": 28,
+          "cosine_sim": 0.4795,
+          "final_score": 0.5514,
+          "content": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one variable assigned per node\n- Variable ordering and value selection heuristics help significantly\n- Forward checking prevents assignments that guarantee later failure\n- Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistencies\n- The CSPs representation allows analysis of problem structure\n- Tree-structured CSPs can be solved in linear time\n- Iterative min-conflicts is usually effective in practice"
+        },
+        {
+          "chunk_id": "4b70b8aa-674d-4b10-b3e7-41eb2604e8dd",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 8,
+          "cosine_sim": 0.4386,
+          "final_score": 0.5044,
+          "content": "[Diagram: The graph shows how a binary CSP can be represented as a network of variables connected by constraints. This matters because it turns constraint satisfaction into a graph structure, making relationships between variables easier to analyze and solve.]"
+        },
+        {
+          "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 7,
+          "cosine_sim": 0.398,
+          "final_score": 0.4576,
+          "content": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n        \\        /   \\      /\n         \\      /     \\    /\n          \\    /       \\  /\n           \\  /         \\/\n            SA -------- NSW\n             \\           /\n              \\         /\n               \\       /\n                \\     /\n                  V\n```"
+        },
+        {
+          "chunk_id": "83e54421-60e1-4c3d-ab15-dd085ef21ff8",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraints Satisfaction Problems (CSPs)",
+          "chunk_order": 1,
+          "cosine_sim": 0.3865,
+          "final_score": 0.4444,
+          "content": "- CSPs example\n- Backtracking search\n- Problem structure\n- Local search for CSPs"
+        },
+        {
+          "chunk_id": "37877718-577f-4666-b2df-18d3d8aa430c",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Semantic",
+          "chunk_order": 13,
+          "cosine_sim": 0.3721,
+          "final_score": 0.4279,
+          "content": "- Interpretation $(D,\\sigma)$\n  - D is a set of objects, called *domain* or *universe*\n  - $\\sigma$ is a mapping from variables to D\n  - $C^D$ is a member of D for each constant C\n  - $F^D$ is a mapping form $D^n$ to D for each function symbol F with arity n\n  - $R^D$ is a relation over $D^n$ for each relation symbol R with arity n"
+        },
+        {
+          "chunk_id": "74b8dba6-bfb6-4f3c-b333-810c92314229",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Example: Cryptarimetetic",
+          "chunk_order": 11,
+          "cosine_sim": 0.3577,
+          "final_score": 0.4114,
+          "content": "- Variables\n  - F,T,O,U,R,W, X$_1$, X$_2$, X$_3$\n- Domain\n  - {0,1,2,3,4,5,6,7, 8,9}\n- Constraints\n  - Alldiff(F,T,O,U,R,W)\n  - O+O = R+10*X$_1$\n  - X$_1$+W+W = U+10*X$_2$\n  - X$_2$+T+T = O+10*X$_3$\n  - X$_3$=F\n\n```text\n      TWO\n    + TWO\n    ------\n      FOUR\n\n      F   T   U   W   R   O\n      |   |   |   |   |   |\n     [ ] [ ] [ ] [ ] [ ] [ ]\n       \\   \\         /   /\n        \\   \\       /   /\n         X$_3$   X$_2$   X$_1$\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.2
+}

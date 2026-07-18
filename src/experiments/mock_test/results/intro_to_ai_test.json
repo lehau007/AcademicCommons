@@ -1,0 +1,418 @@
+{
+  "course": "intro_to_ai",
+  "config": {
+    "total_questions_requested": 10,
+    "dedup_threshold": 0.85,
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "seed": 42,
+    "generator": "deterministic_template_stub_v1"
+  },
+  "test_plan": {
+    "total_questions": 10,
+    "plan": [
+      {
+        "topic": "CSP",
+        "question_count": 1,
+        "difficulty": "easy",
+        "question_types": [
+          "multiple_choice"
+        ],
+        "source_document_ids": [
+          "intro_ai_csp_01",
+          "intro_ai_csp_02"
+        ]
+      },
+      {
+        "topic": "Logic",
+        "question_count": 1,
+        "difficulty": "easy",
+        "question_types": [
+          "short_answer"
+        ],
+        "source_document_ids": [
+          "intro_ai_logic_01",
+          "intro_ai_logic_02"
+        ]
+      },
+      {
+        "topic": "Logic",
+        "question_count": 1,
+        "difficulty": "medium",
+        "question_types": [
+          "true_false"
+        ],
+        "source_document_ids": [
+          "intro_ai_logic_01",
+          "intro_ai_logic_02"
+        ]
+      },
+      {
+        "topic": "ML",
+        "question_count": 1,
+        "difficulty": "easy",
+        "question_types": [
+          "true_false"
+        ],
+        "source_document_ids": [
+          "intro_ai_ml_01",
+          "intro_ai_ml_02"
+        ]
+      },
+      {
+        "topic": "ML",
+        "question_count": 1,
+        "difficulty": "medium",
+        "question_types": [
+          "multiple_choice"
+        ],
+        "source_document_ids": [
+          "intro_ai_ml_01",
+          "intro_ai_ml_02"
+        ]
+      },
+      {
+        "topic": "Planning",
+        "question_count": 1,
+        "difficulty": "easy",
+        "question_types": [
+          "multiple_choice"
+        ],
+        "source_document_ids": [
+          "intro_ai_planning_01",
+          "intro_ai_planning_02"
+        ]
+      },
+      {
+        "topic": "Planning",
+        "question_count": 1,
+        "difficulty": "medium",
+        "question_types": [
+          "short_answer"
+        ],
+        "source_document_ids": [
+          "intro_ai_planning_01",
+          "intro_ai_planning_02"
+        ]
+      },
+      {
+        "topic": "RL",
+        "question_count": 1,
+        "difficulty": "easy",
+        "question_types": [
+          "short_answer"
+        ],
+        "source_document_ids": [
+          "intro_ai_rl_01"
+        ]
+      },
+      {
+        "topic": "Search",
+        "question_count": 1,
+        "difficulty": "easy",
+        "question_types": [
+          "true_false"
+        ],
+        "source_document_ids": [
+          "intro_ai_search_01",
+          "intro_ai_search_02"
+        ]
+      },
+      {
+        "topic": "Search",
+        "question_count": 1,
+        "difficulty": "medium",
+        "question_types": [
+          "multiple_choice"
+        ],
+        "source_document_ids": [
+          "intro_ai_search_01",
+          "intro_ai_search_02"
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_text": "Which of the following best describes 'The min-conflicts heuristic'?",
+      "question_type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "CSP",
+      "options": [
+        "A. the starting point for agent design",
+        "B. a value selection strategy where the algorithm chooses the value that violates the fewest constraints",
+        "C. then built by applying relations to these terms, for example Tall(FatherOf(Bill))",
+        "D. a value between 0 and 1 used to bound the infinite sum of rewards over time in the discounted return model"
+      ],
+      "correct_answer": "B. a value selection strategy where the algorithm chooses the value that violates the fewest constraints",
+      "explanation": "Source chunk 'intro_ai_csp_02' defines The min-conflicts heuristic as: a value selection strategy where the algorithm chooses the value that violates the fewest constraints",
+      "citations": [
+        {
+          "document_id": "intro_ai_csp_02",
+          "document_title": "Iterative CSP Algorithms",
+          "document_tier": "official",
+          "document_subtype": "lecture_slides",
+          "section_title": "Iterative CSP Algorithms",
+          "page_number": null,
+          "chunk_id": "intro_ai_csp_02",
+          "chunk_order": 4,
+          "relevance_score": 0.92,
+          "excerpt": "# Iterative CSP Algorithms  The min-conflicts heuristic is a value selection strategy where the algorithm chooses the value that violates the fewest constraints. It functions like hill-climbing whe..."
+        }
+      ]
+    },
+    {
+      "question_text": "What is If the other premises of those rules?",
+      "question_type": "short_answer",
+      "difficulty": "easy",
+      "topic": "Logic",
+      "options": null,
+      "correct_answer": "already known to hold, the consequent is added to the set of known facts, which can then trigger further inferences",
+      "explanation": "Derived by templating an X-is-Y sentence from chunk 'intro_ai_logic_02'.",
+      "citations": [
+        {
+          "document_id": "intro_ai_logic_02",
+          "document_title": "Forward Chaining Inference",
+          "document_tier": "official",
+          "document_subtype": "lecture_slides",
+          "section_title": "Forward Chaining Inference",
+          "page_number": null,
+          "chunk_id": "intro_ai_logic_02",
+          "chunk_order": 6,
+          "relevance_score": 0.9,
+          "excerpt": "# Forward Chaining Inference  Forward chaining is a data-driven inference procedure used in propositional logic. In forward chaining, when a new fact is added, the system finds all rules that have ..."
+        }
+      ]
+    },
+    {
+      "question_text": "True or False: A logic is defined as a triplet consisting of a language, a semantic, and an inference system.",
+      "question_type": "true_false",
+      "difficulty": "medium",
+      "topic": "Logic",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Statement is taken verbatim from chunk 'intro_ai_logic_01'.",
+      "citations": [
+        {
+          "document_id": "intro_ai_logic_01",
+          "document_title": "Components of a Logic",
+          "document_tier": "official",
+          "document_subtype": "lecture_slides",
+          "section_title": "Components of a Logic",
+          "page_number": null,
+          "chunk_id": "intro_ai_logic_01",
+          "chunk_order": 5,
+          "relevance_score": 0.95,
+          "excerpt": "# Components of a Logic  A logic is defined as a triplet consisting of a language, a semantic, and an inference system. The language is a class of sentences described by a precise syntax, the seman..."
+        }
+      ]
+    },
+    {
+      "question_text": "True or False: Recurrent topologies enable processing of sequential data.",
+      "question_type": "true_false",
+      "difficulty": "easy",
+      "topic": "ML",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Statement is taken verbatim from chunk 'intro_ai_ml_02'.",
+      "citations": [
+        {
+          "document_id": "intro_ai_ml_02",
+          "document_title": "Neural Network Training and Topology",
+          "document_tier": "official",
+          "document_subtype": "lecture_slides",
+          "section_title": "Neural Network Training and Topology",
+          "page_number": null,
+          "chunk_id": "intro_ai_ml_02",
+          "chunk_order": 8,
+          "relevance_score": 0.95,
+          "excerpt": "# Neural Network Training and Topology  A feed-forward neural network is structured so that no node output is used as an input to a node in the same layer or in a preceding layer. In contrast, a re..."
+        }
+      ]
+    },
+    {
+      "question_text": "Which of the following best describes 'This TPE framing'?",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "ML",
+      "options": [
+        "A. a type of search problem where the state is composed of variables Xi that take values from a specific domain Di",
+        "B. sound and complete for definite-clause knowledge bases and runs in time linear in the size of the knowledge base",
+        "C. broad enough to cover supervised, unsupervised, and reinforcement learning settings",
+        "D. already known to hold, the consequent is added to the set of known facts, which can then trigger further inferences"
+      ],
+      "correct_answer": "C. broad enough to cover supervised, unsupervised, and reinforcement learning settings",
+      "explanation": "Source chunk 'intro_ai_ml_01' defines This TPE framing as: broad enough to cover supervised, unsupervised, and reinforcement learning settings",
+      "citations": [
+        {
+          "document_id": "intro_ai_ml_01",
+          "document_title": "Defining a Machine Learning Problem",
+          "document_tier": "official",
+          "document_subtype": "lecture_slides",
+          "section_title": "Defining a Machine Learning Problem",
+          "page_number": null,
+          "chunk_id": "intro_ai_ml_01",
+          "chunk_order": 7,
+          "relevance_score": 0.92,
+          "excerpt": "# Defining a Machine Learning Problem  According to Mitchell (1997), a machine learning problem is defined as improving with experience at some task. Specifically, it requires improving over a task..."
+        }
+      ]
+    },
+    {
+      "question_text": "Which of the following best describes 'Rational behavior'?",
+      "question_type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "Planning",
+      "options": [
+        "A. an informed search method that expands the unexpanded node with the lowest evaluation value",
+        "B. already known to hold, the consequent is added to the set of known facts, which can then trigger further inferences",
+        "C. defined as doing the right thing, which means selecting an action that is expected to maximize goal achievement given the available information, evidences, and constraints",
+        "D. a class of sentences described by a precise syntax, the semantic describes the meaning of elements in the language, and the inference system consists of derivation rules used over the language"
+      ],
+      "correct_answer": "C. defined as doing the right thing, which means selecting an action that is expected to maximize goal achievement given the available information, evidences, and constraints",
+      "explanation": "Source chunk 'intro_ai_planning_02' defines Rational behavior as: defined as doing the right thing, which means selecting an action that is expected to maximize goal achievement given the available information, evidences, and constraints",
+      "citations": [
+        {
+          "document_id": "intro_ai_planning_02",
+          "document_title": "Agents, PEAS, and Environments",
+          "document_tier": "official",
+          "document_subtype": "lecture_slides",
+          "section_title": "Agents, PEAS, and Environments",
+          "page_number": null,
+          "chunk_id": "intro_ai_planning_02",
+          "chunk_order": 11,
+          "relevance_score": 0.92,
+          "excerpt": "# Agents, PEAS, and Environments  When designing an automated agent, the four factors to consider are the Performance measure, Environment, Actuators, and Sensors. For example, an automated taxi dr..."
+        }
+      ]
+    },
+    {
+      "question_text": "What is The discount rate?",
+      "question_type": "short_answer",
+      "difficulty": "easy",
+      "topic": "RL",
+      "options": null,
+      "correct_answer": "a value between 0 and 1 used to bound the infinite sum of rewards over time in the discounted return model",
+      "explanation": "Derived by templating an X-is-Y sentence from chunk 'intro_ai_rl_01'.",
+      "citations": [
+        {
+          "document_id": "intro_ai_rl_01",
+          "document_title": "Discounted Return in Reinforcement Learning",
+          "document_tier": "official",
+          "document_subtype": "lecture_slides",
+          "section_title": "Discounted Return in Reinforcement Learning",
+          "page_number": null,
+          "chunk_id": "intro_ai_rl_01",
+          "chunk_order": 9,
+          "relevance_score": 0.9,
+          "excerpt": "# Discounted Return in Reinforcement Learning  The discount rate is a value between 0 and 1 used to bound the infinite sum of rewards over time in the discounted return model. It also favors earlie..."
+        }
+      ]
+    },
+    {
+      "question_text": "True or False: The admissibility of h(n) determines whether A* returns optimal solutions.",
+      "question_type": "true_false",
+      "difficulty": "easy",
+      "topic": "Search",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correct_answer": "True",
+      "explanation": "Statement is taken verbatim from chunk 'intro_ai_search_02'.",
+      "citations": [
+        {
+          "document_id": "intro_ai_search_02",
+          "document_title": "Informed and Local Search",
+          "document_tier": "official",
+          "document_subtype": "lecture_slides",
+          "section_title": "Informed and Local Search",
+          "page_number": null,
+          "chunk_id": "intro_ai_search_02",
+          "chunk_order": 2,
+          "relevance_score": 0.95,
+          "excerpt": "# Informed and Local Search  A* search is an informed search method that expands the unexpanded node with the lowest evaluation value. A* uses the evaluation function f(n) = g(n) + h(n), where g(n)..."
+        }
+      ]
+    },
+    {
+      "question_text": "Which of the following best describes 'Alpha-Beta pruning'?",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "Search",
+      "options": [
+        "A. a type of search problem where the state is composed of variables Xi that take values from a specific domain Di",
+        "B. a key optimization in adversarial search; alpha-beta pruning removes branches of the search tree that do not influence the final decision and with perfect move ordering this technique can double the depth of the search",
+        "C. explicit, these methods often outperform generic state-space search on combinatorial problems",
+        "D. defined as doing the right thing, which means selecting an action that is expected to maximize goal achievement given the available information, evidences, and constraints"
+      ],
+      "correct_answer": "B. a key optimization in adversarial search; alpha-beta pruning removes branches of the search tree that do not influence the final decision and with perfect move ordering this technique can double the depth of the search",
+      "explanation": "Source chunk 'intro_ai_search_02' defines Alpha-Beta pruning as: a key optimization in adversarial search; alpha-beta pruning removes branches of the search tree that do not influence the final decision and with perfect move ordering this technique can double the depth of the search",
+      "citations": [
+        {
+          "document_id": "intro_ai_search_02",
+          "document_title": "Informed and Local Search",
+          "document_tier": "official",
+          "document_subtype": "lecture_slides",
+          "section_title": "Informed and Local Search",
+          "page_number": null,
+          "chunk_id": "intro_ai_search_02",
+          "chunk_order": 2,
+          "relevance_score": 0.92,
+          "excerpt": "# Informed and Local Search  A* search is an informed search method that expands the unexpanded node with the lowest evaluation value. A* uses the evaluation function f(n) = g(n) + h(n), where g(n)..."
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "counts": {
+      "generated_pre_dedup": 10,
+      "final": 9,
+      "by_topic": {
+        "CSP": 1,
+        "Logic": 2,
+        "ML": 2,
+        "Planning": 1,
+        "RL": 1,
+        "Search": 2
+      },
+      "by_difficulty": {
+        "easy": 6,
+        "medium": 3
+      },
+      "by_type": {
+        "multiple_choice": 4,
+        "short_answer": 2,
+        "true_false": 3
+      }
+    },
+    "coverage": {
+      "topics_total": 6,
+      "topics_covered": 6,
+      "coverage_pct": 100.0,
+      "missing_topics": []
+    },
+    "dedup": {
+      "threshold": 0.85,
+      "removed_count": 1,
+      "removed": [
+        {
+          "question_text": "What is Rational behavior?",
+          "similarity": 0.8626
+        }
+      ],
+      "dedup_rate_pct": 10.0
+    },
+    "citations": {
+      "total_citations": 9,
+      "valid_citations": 9,
+      "valid_pct": 100.0,
+      "invalid": []
+    }
+  }
+}

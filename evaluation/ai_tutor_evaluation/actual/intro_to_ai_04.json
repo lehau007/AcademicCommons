@@ -1,0 +1,28 @@
+{
+  "qid": "intro_to_ai_04",
+  "course_code": "IT3160E",
+  "question": "How does a model-based reflex agent differ from a simple reflex agent?",
+  "session_id": "2aea2232-7ad0-40b9-b483-f3efa83b2e0b",
+  "answer": "A **model-based reflex agent** khác với **simple reflex agent** ở chỗ:\n\n- **Simple reflex agent** chỉ chọn hành động dựa trên **trạng thái hiện tại** của môi trường, theo các **luật điều kiện–hành động** kiểu “nếu thấy X thì làm Y”.\n  - Nó **không nhớ** lịch sử các trạng thái trước đó.\n  - Hoạt động tốt khi môi trường **đơn giản, quan sát đầy đủ**.\n\n- **Model-based reflex agent** có thêm một **mô hình nội bộ** về môi trường.\n  - Nó **ghi nhớ** một phần lịch sử và dùng mô hình đó để suy ra **trạng thái hiện tại thật sự** của môi trường, հատկապես khi không quan sát được toàn bộ.\n  - Vì vậy, nó xử lý tốt hơn trong môi trường **bị che khuất một phần** hoặc **không hoàn toàn quan sát được**.\n\n### Tóm lại\n- **Simple reflex agent**: phản ứng trực tiếp theo cảm nhận hiện tại.\n- **Model-based reflex agent**: phản ứng dựa trên cảm nhận hiện tại **kết hợp với bộ nhớ / mô hình nội bộ**.\n\nNếu bạn muốn, mình có thể vẽ một **bảng so sánh ngắn** giữa hai loại agent này.",
+  "citations": [],
+  "retrieval_calls": [
+    {
+      "query": "model-based reflex agent vs simple reflex agent",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agent types",
+          "chunk_order": 15,
+          "cosine_sim": 0.7153,
+          "final_score": 0.8777,
+          "content": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.4
+}

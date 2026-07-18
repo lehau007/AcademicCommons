@@ -1,0 +1,13 @@
+{
+  "route_match": false,
+  "non_empty_output": true,
+  "warnings": [
+    "route_mismatch"
+  ],
+  "validators": {
+    "parseable": null,
+    "matrix_shape": null,
+    "binary_values": null,
+    "table_consistency": null
+  }
+}

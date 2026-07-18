@@ -1,0 +1,62 @@
+{
+  "qid": "intro_to_ai_11",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunks. The definition of information gain, the formula, the interpretation, the selection process in decision trees, and the example calculation are all grounded in the provided materials.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses both parts of the question: it defines Information Gain as the expected reduction in entropy from partitioning by an attribute, and explains how it is used in Decision Tree Learning to select the best test attribute at each node by choosing the one with highest gain.",
+      "evidence": [
+        "Information Gain (độ lợi thông tin) là một thước đo dùng trong Decision Tree Learning để đánh giá mức độ 'hữu ích' của một thuộc tính khi tách dữ liệu",
+        "mức giảm entropy kỳ vọng",
+        "Trong xây dựng cây quyết định, tại mỗi nút, ta cần chọn thuộc tính kiểm tra nào để tách dữ liệu",
+        "Chọn thuộc tính có Gain lớn nhất"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: it defines information gain as the expected reduction in entropy caused by partitioning instances according to an attribute, and explains that it is used to select the most useful attribute for classification at each node by choosing the one with highest information gain.",
+      "evidence": [
+        "Ground truth: 'expected reduction in entropy caused by partitioning instances according to a specific attribute' vs Tutor: 'mức giảm entropy kỳ vọng xảy ra khi ta phân hoạch tập dữ liệu theo các giá trị của thuộc tính đó'",
+        "Ground truth: 'used to determine which attribute is most useful for classifying training instances at each node' vs Tutor: 'Chọn thuộc tính có Gain lớn nhất... Dùng thuộc tính đó để chia tập dữ liệu ở nút hiện tại'",
+        "Ground truth: 'selecting the attribute that yields the highest information gain' vs Tutor: 'Thuộc tính có Information Gain cao nhất thường được chọn làm test attribute'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to explaining information gain and its use in decision tree learning. Each chunk contributes meaningfully to answering the question, covering the definition, formula, selection process, examples, and practical application.",
+      "evidence": [
+        "chunk eeeec84e: 'how information gain is used to choose the best root split'",
+        "chunk 285a53b7: 'picks the one with the highest information gain'",
+        "chunk 9e649ef6: 'how to choose the test attribute... Use a statistical measure – Information Gain'",
+        "chunk f38cf2ef: 'Information gain of an attribute... expected reduction in entropy'",
+        "chunk 5f427356: 'information gain of attribute Wind... example calculation'",
+        "chunk d364e05e: 'Decision tree learning... Introduction' (provides context for DT learning)"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk f38cf2ef defines information gain as 'expected reduction in entropy' caused by 'partitioning the instances according to the attribute,' and chunk 9e649ef6 states it is used 'to select the attribute that is most useful for classifying the training instances' at each node.",
+      "evidence": [
+        "the expected reduction in entropy",
+        "caused by partitioning the instances according to the attribute",
+        "To select the attribute that is most useful for classifying the training instances associated with the node"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made. The definition of information gain, its formula, its use in selecting test attributes, and the example calculation all directly correspond to the cited chunks.",
+      "evidence": [
+        "Statement: 'Information Gain của thuộc tính A đối với tập mẫu S là: mức giảm entropy kỳ vọng' → Chunk f38cf2ef: 'the expected reduction in entropy caused by partitioning the instances according to the attribute'",
+        "Statement: 'Công thức: Gain(S,A)=Entropy(S)-∑...' → Chunk f38cf2ef: exact formula match",
+        "Statement: 'tại mỗi nút, ta cần chọn thuộc tính kiểm tra... Chọn thuộc tính có Gain lớn nhất' → Chunk 9e649ef6: 'at each node, how to choose the test attribute... Use a statistical measure – Information Gain'",
+        "Statement: 'Gain(S, Wind) = 0.048' → Chunk 5f427356: '= 0.048' in the example calculation"
+      ]
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "qid": "hard_dm_graph_09",
+  "course_code": "IT3020E",
+  "question": "Trong sơ đồ liệt kê các tập con 3 phần tử của X = {1,2,3,4,5} theo thứ tự từ điển, phần tử đầu tiên và cuối cùng của danh sách là gì, và nguyên tắc sắp thứ tự là gì?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "a4b52947-b0f8-4238-92e9-aa409404ddc3",
+  "answer": "# Sơ đồ liệt kê các tập con 3 phần tử của $X = \\{1, 2, 3, 4, 5\\}$ theo thứ tự từ điển\n\n## 1. Danh sách đầy đủ\n\n| # | Tập con |\n|---|---------|\n| 1 | {1, 2, 3} |\n| 2 | {1, 2, 4} |\n| 3 | {1, 2, 5} |\n| 4 | {1, 3, 4} |\n| 5 | {1, 3, 5} |\n| 6 | {1, 4, 5} |\n| 7 | {2, 3, 4} |\n| 8 | {2, 3, 5} |\n| 9 | {2, 4, 5} |\n| 10 | {3, 4, 5} |\n\nTổng cộng có $\\binom{5}{3} = 10$ tập con, khớp với số dòng trong bảng.\n\n## 2. Phần tử đầu tiên và cuối cùng\n\n- **Phần tử đầu tiên:** $\\{1, 2, 3\\}$ — tập con gồm 3 số nhỏ nhất của $X$.\n- **Phần tử cuối cùng:** $\\{3, 4, 5\\}$ — tập con gồm 3 số lớn nhất của $X$.\n\n## 3. Nguyên tắc sắp xếp thứ tự từ điển\n\nCó thể phát biểu nguyên tắc như sau:\n\n1. **Trụ cột so sánh từ trái sang phải:** Hai tập con $A = \\{a_1 < a_2 < a_3\\}$ và $B = \\{b_1 < b_2 < b_3\\}$ được so sánh theo thành phần nhỏ nhất mà tại đó chúng khác nhau. Nếu tại vị trí $k$ đầu tiên mà $a_k \\neq b_k$ mà $a_k < b_k$, thì $A$ đứng trước $B$.\n\n2. **Quy luật sinh mục** (nhìn từ trên xuống dưới của bảng):\n   - Vị trí **ngoài cùng bên phải** thay đổi **nhanh nhất** (chạy hết các giá trị khả dĩ trước).\n   - Vị trí **ngoài cùng bên trái** thay đổi **chậm nhất** (chỉ tăng khi không còn cách nào tăng các vị trí bên phải).\n\n   Ví dụ minh họa trong bảng:\n   - Cột thứ 3 chạy: 3 → 4 → 5, khi hết 5 thì tăng cột thứ 2.\n   - Cột thứ 2 chạy: 2 → 3 → 4, khi hết 4 thì tăng cột thứ 1.\n   - Cột thứ 1 chạy: 1 → 2 → 3.\n\n3. **Điều kiện hợp lệ:** Mỗi tập con phải là tập **tăng nghiêm ngặt** $a_1 < a_2 < a_3$ và tất cả phần tử đều nằm trong $X$ — chính điều này giải thích vì sao sau $\\{1, 2, 5\\}$ ta nhảy thẳng lên $\\{1, 3, 4\\}$ (vì $\\{1, 2, 6\\}$ không hợp lệ).\n\nĐây chính là nguyên lý **\"thay đổi từ phải sang trái\"** — quy luậc phổ biến khi sinh tổ hợp theo thứ tự từ điển.\n\n---\n\n**Tài liệu tham khảo từ bài giảng:**",
+  "citations": [
+    {
+      "chunk_id": "2e91d694-4dcf-4bf8-8846-e1d665bc5843",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate $m$-element subsets of set with $n$ elements",
+      "page_number": null,
+      "chunk_order": 46,
+      "excerpt": "Example: Enumerate all 3-element subset of $X = \\{1, 2, 3, 4, 5\\}$ in dictionary order\n\n| 1 | 2 | 3 |\n|---|---|---|\n| 1 | 2 | 4 |\n| 1 | 2 | 5 |\n| 1 | 3 | 4 |\n| 1 | 3 | 5 |\n| 1 | 4 | 5 |\n| 2 | 3 | 4 |\n"
+    },
+    {
+      "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "PART 1",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+    },
+    {
+      "chunk_id": "361d5564-98d2-4dde-87c6-4b5ddc2566d1",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate permutations of n elements",
+      "page_number": null,
+      "chunk_order": 53,
+      "excerpt": "- Example: All permutation of 3 elements of $X = \\{1, 2, 3\\}$ could by enumerated in dictionary order as following:\n\n```text\n1  2  3\n1  3  2\n2  1  3\n2  3  1\n3  1  2\n3  2  1\n```\n\n[Diagram: The list sho"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "sắp xếp thứ tự từ điển liệt kê tập con tổ hợp combinatorial generation lexicographic order",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.397,
+          "final_score": 0.4565,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "a9e1ef20-4640-4464-89e3-25ec3ecdca7f",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3966,
+          "final_score": 0.4561,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c4ff42b1-09bb-41fc-a2a7-b77b7e8ce8a9",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3966,
+          "final_score": 0.4561,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "69c897f3-cf84-4477-808b-1496d9753d9b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3966,
+          "final_score": 0.4561,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "2e91d694-4dcf-4bf8-8846-e1d665bc5843",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate $m$-element subsets of set with $n$ elements",
+          "chunk_order": 46,
+          "cosine_sim": 0.3603,
+          "final_score": 0.4144,
+          "content": "Example: Enumerate all 3-element subset of $X = \\{1, 2, 3, 4, 5\\}$ in dictionary order\n\n| 1 | 2 | 3 |\n|---|---|---|\n| 1 | 2 | 4 |\n| 1 | 2 | 5 |\n| 1 | 3 | 4 |\n| 1 | 3 | 5 |\n| 1 | 4 | 5 |\n| 2 | 3 | 4 |\n| 2 | 3 | 5 |\n| 2 | 4 | 5 |\n| 3 | 4 | 5 |\n\n[Diagram: This is a lexicographic listing of all 3-element subsets chosen from a 5-element set. It shows the ordered progression of combinations as the smallest possible element changes first, which is important for systematically generating combinations without repetition.]"
+        },
+        {
+          "chunk_id": "821d0a90-7e19-4133-a41e-540601076d3a",
+          "document_id": "3683d354-ff8d-49b9-bc4d-d9d6000e51e7",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.353,
+          "final_score": 0.406,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "c04e23d7-c03b-4a48-aaaf-4708ca02fed5",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 1",
+          "chunk_order": 1,
+          "cosine_sim": 0.353,
+          "final_score": 0.406,
+          "content": "COMBINATORIAL THEORY\n\n(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "361d5564-98d2-4dde-87c6-4b5ddc2566d1",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate permutations of n elements",
+          "chunk_order": 53,
+          "cosine_sim": 0.3479,
+          "final_score": 0.4001,
+          "content": "- Example: All permutation of 3 elements of $X = \\{1, 2, 3\\}$ could by enumerated in dictionary order as following:\n\n```text\n1  2  3\n1  3  2\n2  1  3\n2  3  1\n3  1  2\n3  2  1\n```\n\n[Diagram: The list shows all possible orderings of a 3-element set arranged in lexicographic (dictionary) order. This illustrates how permutations can be systematically enumerated rather than generated randomly.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 38.9
+}

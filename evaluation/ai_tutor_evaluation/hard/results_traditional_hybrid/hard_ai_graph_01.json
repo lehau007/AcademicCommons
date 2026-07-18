@@ -1,0 +1,37 @@
+{
+  "qid": "hard_ai_graph_01",
+  "course_code": "IT3160E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "All claims traceable to the retrieved chunks; no invented content.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "Directly and completely answers the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "Names only 3 terrains; misses the 4th.",
+      "evidence": []
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Raw query still pulled a minimax MAX/MIN tree; hybrid added the Local-Maxima problems chunk but the landscape figure is under-represented.",
+      "evidence": []
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "Every key ground-truth fact appears in some retrieved chunk.",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "Citations point to chunks that support the statements.",
+      "evidence": []
+    }
+  }
+}

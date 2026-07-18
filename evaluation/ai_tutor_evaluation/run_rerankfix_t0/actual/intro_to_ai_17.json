@@ -1,0 +1,114 @@
+{
+  "qid": "intro_to_ai_17",
+  "course_code": "IT3160E",
+  "question": "What are the four items required to formally define a Search Problem?",
+  "session_id": "9e05f45e-9543-42e8-b518-ecf1e14b1a8a",
+  "answer": "The four items required to formally define a **search problem** are:\n\n1. **Initial state**  \n   - The starting point of the problem.\n\n2. **Actions / Successor function**  \n   - Defines what actions are possible from each state and what states they lead to.\n\n3. **Goal test**  \n   - A way to check whether a given state is a goal state.\n\n4. **Path cost**  \n   - A function that assigns a cost to a solution path, usually by summing step costs.\n\nThese are the standard ingredients used to formulate a problem for search in AI.",
+  "citations": [
+    {
+      "chunk_id": "d24868af-9916-46a2-a249-4335ac624367",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: The 8-puzzle",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "[Diagram: The slide introduces the 8-puzzle as a search problem by defining its state space, allowed actions, goal condition, and step cost. This matters because these four ingredients fully specify h"
+    },
+    {
+      "chunk_id": "3d8f7320-9702-4965-868b-c8b835361eba",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Search Problem Definition",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- A problem is defined by four items:\n  1. initial state: e.g., Arad\n  2. actions or successor function $S(x)$ = set of action-state pairs\n     - e.g., $S(Arad)$ = {<Arad → Zerind, Zerind>, ... }\n  3."
+    },
+    {
+      "chunk_id": "510f0071-bb3f-4556-a2bd-e64ce8eedd02",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Problem-solving agents",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "```text\nfunction SIMPLE-PROBLEM-SOLVING-AGENT(percept) returns an action\n    static: seq, an action sequence, initially empty\n            state, some description of the current world state\n           "
+    },
+    {
+      "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Problem types",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "four items required to formally define a search problem",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "d24868af-9916-46a2-a249-4335ac624367",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Example: The 8-puzzle",
+          "chunk_order": 13,
+          "cosine_sim": 0.4477,
+          "final_score": 0.8323,
+          "content": "[Diagram: The slide introduces the 8-puzzle as a search problem by defining its state space, allowed actions, goal condition, and step cost. This matters because these four ingredients fully specify how an algorithm can evaluate and solve the puzzle.]"
+        },
+        {
+          "chunk_id": "3d8f7320-9702-4965-868b-c8b835361eba",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Search Problem Definition",
+          "chunk_order": 11,
+          "cosine_sim": 0.4422,
+          "final_score": 0.6671,
+          "content": "- A problem is defined by four items:\n  1. initial state: e.g., Arad\n  2. actions or successor function $S(x)$ = set of action-state pairs\n     - e.g., $S(Arad)$ = {<Arad → Zerind, Zerind>, ... }\n  3. goal test, can be\n     - explicit, e.g., $x$ = Bucharest\n     - implicit, e.g., $Checkmate(x)$\n  4. path cost (additive)\n     - e.g., sum of distances, number of actions executed, etc.\n     - $c(x,a,y)$ is the step cost, assumed to be $\\ge 0$\n- A solution is a sequence of actions leading from the initial state to a goal state"
+        },
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.5131,
+          "final_score": 0.4662,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "19ce7cd1-6107-43e5-85c2-b0ca65810675",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Progression algorithm",
+          "chunk_order": 18,
+          "cosine_sim": 0.4489,
+          "final_score": 0.4203,
+          "content": "- Formulation as state-space search problem:\n  - Initial state and goal test: obvious\n  - Successor function: generate from applicable actions\n  - Step cost = each action costs 1\n- Any complete graph search algorithm is a complete planning algorithm.\n  - E.g. A*\n- Inherently inefficient:\n  - (1) irrelevant actions lead to very broad search tree\n  - (2) good heuristic required for efficient search"
+        },
+        {
+          "chunk_id": "510f0071-bb3f-4556-a2bd-e64ce8eedd02",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem-solving agents",
+          "chunk_order": 3,
+          "cosine_sim": 0.3751,
+          "final_score": 0.2405,
+          "content": "```text\nfunction SIMPLE-PROBLEM-SOLVING-AGENT(percept) returns an action\n    static: seq, an action sequence, initially empty\n            state, some description of the current world state\n            goal, a goal, initially null\n            problem, a problem formulation\n\n    state ← UPDATE-STATE(state, percept)\n    if seq is empty then do\n        goal ← FORMULATE-GOAL(state)\n        problem ← FORMULATE-PROBLEM(state, goal)\n        seq ← SEARCH(problem)\n    action ← FIRST(seq)\n    seq ← REST(seq)\n    return action\n```\n\n[Diagram: This pseudocode shows a simple agent loop that maintains internal state, formulates a goal and problem when it has no planned actions, and then uses search to produce an action sequence. It matters because it illustrates how an agent can act deliberately rather than reacting only to the current percept.]"
+        },
+        {
+          "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem types",
+          "chunk_order": 10,
+          "cosine_sim": 0.428,
+          "final_score": 0.2322,
+          "content": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent may have no idea where it is; solution is a sequence\n- Nondeterministic and/or partially observable → contingency problem\n  - percepts provide new information about current state\n  - often interleave → search, execution\n- Unknown state space → exploration problem"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.3
+}

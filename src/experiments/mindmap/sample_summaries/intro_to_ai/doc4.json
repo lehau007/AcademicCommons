@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "topic": "Planning and Games",
+  "concepts": [
+    "Planning",
+    "Progression Planner",
+    "Regression Planner",
+    "State-Space Search",
+    "Search Problem",
+    "Game",
+    "Minimax",
+    "Alpha-Beta Pruning",
+    "Adversarial Search",
+    "Heuristic Function"
+  ],
+  "language": "en",
+  "ocr_quality": "high",
+  "section_summaries": [
+    {
+      "heading": "Classical Planning",
+      "summary": "Distinguishes progression planners (forward state-space search) from regression planners (backward state-space search that determines what must have been true to reach the goal).",
+      "page_range": [1, 10]
+    },
+    {
+      "heading": "Search vs Games",
+      "summary": "Contrasts a standard search problem, with no adversary and a cost-to-goal objective, against a game which has an adversary and requires a strategy specifying a move for every opponent reply.",
+      "page_range": [11, 18]
+    },
+    {
+      "heading": "Adversarial Search",
+      "summary": "Presents minimax over game trees and alpha-beta pruning, which removes branches that do not influence the final decision and, with good move ordering, can effectively double search depth.",
+      "page_range": [19, 30]
+    }
+  ],
+  "overall_summary": "This document covers automated planning and adversarial search. Planning is approached as a search problem in state-space, with progression planners moving forward from the initial state by applying actions and regression planners working backward from the goal by determining what must have been true in the previous state. The document then contrasts standard search, which seeks a path of minimum cost to a goal without an adversary, with games, where two agents act in turn and a strategy must specify a move for every possible opponent reply. Minimax search is introduced as the canonical algorithm for adversarial games, evaluating the goodness of a position rather than a cost-to-goal. Alpha-beta pruning is then shown to prune branches that cannot affect the minimax decision, doubling the feasible search depth under good move ordering and connecting back to the heuristic functions introduced in the search chapter."
+}

@@ -1,0 +1,226 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "question": "When are two simple graphs considered isomorphic?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "f75f3e0f-8bc5-460f-aaf0-db10e6f19ed6",
+  "answer": "## When are two simple graphs considered isomorphic?\n\nAccording to the course materials, two simple graphs **G = (V, E)** and **H = (V', E')** are considered **isomorphic** if there exists a **one-to-one correspondence (bijection)** *f : V → V'* between their vertex sets such that the adjacency relationship is preserved.\n\nThe key requirements are:\n\n1. **Same number of vertices**: |V(G)| = |V(H)|\n2. **Same number of edges**: |E(G)| = |E(H)|\n3. **Same degree sequence**: the multiset of vertex degrees must match (the number of vertices of each degree is the same in both graphs)\n4. **Edge-preserving bijection**: the mapping *f* must satisfy that *{u, v}* is an edge of G **if and only if** *{f(u), f(v)}* is an edge of H\n\n### Example from the course\n\nFor two graphs G and H both drawn as 4-vertex cycles (squares), the function:\n- f(u₁) = v₁\n- f(u₂) = v₄\n- f(u₃) = v₃\n- f(u₄) = v₂\n\nis a one-to-one correspondence between V(G) and V(H), and the three conditions above are satisfied — therefore G and H are isomorphic.\n\n> **Intuition**: Two graphs are isomorphic if they have exactly the same structure; only the *labels* of the vertices differ.",
+  "citations": [
+    {
+      "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  "
+    },
+    {
+      "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Solution.",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number "
+    },
+    {
+      "chunk_id": "a452591c-f7a8-4ea7-9e04-9c13119aac7e",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Hamilton graph",
+      "page_number": null,
+      "chunk_order": 89,
+      "excerpt": "- Definition\n- Recognize Hamilton graph"
+    },
+    {
+      "chunk_id": "85142cec-d5a8-4294-9eeb-7544db5777a6",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Degree of a vertex in undirected graph",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "Assume $G$ is undirected graph, $v \\in V$ is a vertex.\n\n- Degree of vertex $v$, $\\mathrm{deg}(v)$, the number of edges incident on a vertex.\n- Vertex with degree 0 is called isolated.\n- Vertex with"
+    },
+    {
+      "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graphs",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "định nghĩa hai đồ thị đẳng cấu (isomorphic graphs) điều kiện",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "e612287f-649c-4715-86b9-1198b1349845",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3727,
+          "final_score": 0.643,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "7bab2c98-dbdb-4919-96b4-cf960a8c7051",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "PART 2",
+          "chunk_order": 2,
+          "cosine_sim": 0.4738,
+          "final_score": 0.5449,
+          "content": "GRAPH THEORY\n\n(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+          "chunk_order": 34,
+          "cosine_sim": 0.4312,
+          "final_score": 0.4959,
+          "content": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\n[Diagram: The two drawings illustrate two graphs that have the same structure even though their edges are arranged differently. The point is to show that a relabeling of vertices can preserve adjacency, which is exactly what graph isomorphism means.]"
+        },
+        {
+          "chunk_id": "48217b0a-aa00-4801-8671-315a4d678263",
+          "document_id": "a96faff6-84fd-41f9-b4fe-ce016cbd3625",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.373,
+          "final_score": 0.429,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "d4ba262d-b46f-43d8-9aa5-85ef7adf3c86",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3727,
+          "final_score": 0.4286,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "f8845059-e289-4482-ad10-e410c803ea09",
+          "document_id": "e0a01f46-df4d-49f8-a3b2-ece16ce0b5fd",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3727,
+          "final_score": 0.4286,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "8d2308ca-8945-4d28-ae2b-2c19818231cd",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3727,
+          "final_score": 0.4286,
+          "content": "(Lý thuyết đồ thị)"
+        },
+        {
+          "chunk_id": "9a7f52f3-54b6-4e47-acc9-30881170427a",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "GRAPH THEORY",
+          "chunk_order": 2,
+          "cosine_sim": 0.3727,
+          "final_score": 0.4286,
+          "content": "(Lý thuyết đồ thị)"
+        }
+      ]
+    },
+    {
+      "mode": "dense_rerank",
+      "query": "graph isomorphism definition bijection edge-preserving vertex relabeling",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+          "chunk_order": 34,
+          "cosine_sim": 0.5124,
+          "final_score": 0.5893,
+          "content": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\n[Diagram: The two drawings illustrate two graphs that have the same structure even though their edges are arranged differently. The point is to show that a relabeling of vertices can preserve adjacency, which is exactly what graph isomorphism means.]"
+        },
+        {
+          "chunk_id": "6be5f140-5d86-4276-9dfd-132cd72a5186",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "For undirected graph",
+          "chunk_order": 11,
+          "cosine_sim": 0.3328,
+          "final_score": 0.5741,
+          "content": "[Formula: a_ij equals 1 if {v_i, v_j} is an edge of G, 0 otherwise]\n\n```\n    [2]\n   /   \\\n  /     \\\n[1]-----[3]\n```\n\n[Formula: 3x3 symmetric adjacency matrix with 0s on diagonal and 1s elsewhere]"
+        },
+        {
+          "chunk_id": "2f53508c-e40a-4ac6-9394-e1cfe5d4085e",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "1. Incidence Matrix",
+          "chunk_order": 8,
+          "cosine_sim": 0.3281,
+          "final_score": 0.5659,
+          "content": "Example: G = (V, E)\n\n```\n    [u]\n   /   \\\n e1     e2\n /       \\\n[v]-------[w]\n     e3\n```\n\n|     | e₁ | e₂ | e₃ |\n|-----|----|----|----|\n| v   | 1  | 0  | 1  |\n| u   | 1  | 1  | 0  |\n| w   | 0  | 1  | 1  |"
+        },
+        {
+          "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Solution.",
+          "chunk_order": 35,
+          "cosine_sim": 0.4348,
+          "final_score": 0.5,
+          "content": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number of vertices\n  - (2) The same number of edges\n  - (3) The same number of degree"
+        },
+        {
+          "chunk_id": "84c6bb46-e520-457e-bcd2-5610bdf5ab2f",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "16 spanning trees of $K_4$",
+          "chunk_order": 16,
+          "cosine_sim": 0.3874,
+          "final_score": 0.4455,
+          "content": "[Diagram: The slide enumerates all spanning trees of the complete graph on four labeled vertices. This illustrates how a connected graph can be reduced to tree structures while still including every vertex exactly once, a key idea in graph theory and combinatorics.]"
+        },
+        {
+          "chunk_id": "a452591c-f7a8-4ea7-9e04-9c13119aac7e",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Hamilton graph",
+          "chunk_order": 89,
+          "cosine_sim": 0.3502,
+          "final_score": 0.4028,
+          "content": "- Definition\n- Recognize Hamilton graph"
+        },
+        {
+          "chunk_id": "85142cec-d5a8-4294-9eeb-7544db5777a6",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Degree of a vertex in undirected graph",
+          "chunk_order": 33,
+          "cosine_sim": 0.3466,
+          "final_score": 0.3986,
+          "content": "Assume $G$ is undirected graph, $v \\in V$ is a vertex.\n\n- Degree of vertex $v$, $\\mathrm{deg}(v)$, the number of edges incident on a vertex.\n- Vertex with degree 0 is called isolated.\n- Vertex with"
+        },
+        {
+          "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graphs",
+          "chunk_order": 19,
+          "cosine_sim": 0.3303,
+          "final_score": 0.3799,
+          "content": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs $(u,v)$, where $u, v \\in V$, $u \\ne v$\n\n```text\n            (a, b)\n        +------------+\n        |            |\n   a ---+------------+--- b\n         \\          /\n          \\        /\n           \\      /\n            \\    /\n             \\  /\n              c\n\n            (b, c)\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 26.6
+}

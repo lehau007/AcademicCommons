@@ -1,0 +1,61 @@
+{
+  "qid": "intro_to_ai_11",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The definition of information gain, the formula, the usage in decision tree learning, and the Wind example are all grounded in the provided materials.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses both parts of the question: it defines Information Gain as a measure of expected entropy reduction and explains how it is used in Decision Tree Learning to select the best attribute at each node by choosing the one with highest gain.",
+      "evidence": [
+        "Information Gain là một thước đo thống kê dùng trong Decision Tree Learning để đánh giá mức độ 'hữu ích' của một thuộc tính",
+        "mức giảm entropy kỳ vọng khi ta phân hoạch tập S theo các giá trị của thuộc tính A",
+        "tại mỗi nút, ta cần chọn thuộc tính kiểm tra tốt nhất để tách dữ liệu",
+        "chọn thuộc tính có gain lớn nhất"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: information gain is a statistical measure, it calculates expected reduction in entropy from partitioning by an attribute, and it's used to select the most useful attribute for classification at each node. No contradictions are present.",
+      "evidence": [
+        "Ground truth: 'expected reduction in entropy caused by partitioning instances according to a specific attribute' vs Tutor: 'mức giảm entropy kỳ vọng khi ta phân hoạch tập S theo các giá trị của thuộc tính A'",
+        "Ground truth: 'used to determine which attribute is most useful for classifying training instances at each node' vs Tutor: 'chọn thuộc tính kiểm tra tốt nhất để tách dữ liệu... chọn thuộc tính có gain lớn nhất'",
+        "Ground truth: 'selecting the attribute that yields the highest information gain' vs Tutor: 'thuộc tính có information gain lớn nhất thường được chọn làm test attribute'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All six retrieved chunks are directly relevant to explaining information gain and its use in decision tree learning. Each chunk contributes meaningfully to answering the question, covering the definition, formula, selection process, and examples.",
+      "evidence": [
+        "All chunks relevant: chunks eeeec84e and 285a53b7 show application in tree construction",
+        "chunk 9e649ef6 explains attribute selection",
+        "chunk f38cf2ef provides the definition and formula",
+        "chunk 5f427356 gives a worked example",
+        "chunk d364e05e provides context on decision tree learning"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks: the definition of information gain as expected reduction in entropy caused by partitioning (chunk f38cf2ef), and its use in Decision Tree learning to select the most useful attribute for classification at each node (chunk 9e649ef6).",
+      "evidence": [
+        "the expected reduction in entropy",
+        "caused by partitioning the instances according to the attribute",
+        "To select the attribute that is most useful for classifying the training instances associated with the node"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made. The definition of information gain, its formula, its use in selecting test attributes, and the Wind example all directly correspond to the cited chunks.",
+      "evidence": [
+        "Definition 'mức giảm entropy kỳ vọng' matches chunk f38cf2ef: 'the expected reduction in entropy'",
+        "Formula Gain(S,A)=Entropy(S)-∑... matches chunk f38cf2ef exactly",
+        "Selection rule 'chọn thuộc tính có gain lớn nhất' matches chunk 9e649ef6: 'select the attribute that is most useful for classifying'",
+        "Wind example 'Gain(S, Wind)=0.048' matches chunk 5f427356: '= 0.048'"
+      ]
+    }
+  }
+}

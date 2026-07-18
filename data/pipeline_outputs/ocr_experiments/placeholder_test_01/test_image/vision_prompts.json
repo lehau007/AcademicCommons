@@ -1,0 +1,7 @@
+[
+  {
+    "kind": "vision_ocr",
+    "instruction": "Perform OCR and describe any table/formula/diagram in markdown format.",
+    "image_path": "image.png"
+  }
+]

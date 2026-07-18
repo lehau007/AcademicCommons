@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "topic": "Logic and Inference",
+  "concepts": [
+    "Logic",
+    "Propositional Logic",
+    "First Order Logic",
+    "FOL",
+    "Term",
+    "Predicate",
+    "Inference System",
+    "Forward Chaining",
+    "Backward Chaining",
+    "Resolution",
+    "Knowledge Base",
+    "Syntax",
+    "Semantic"
+  ],
+  "language": "en",
+  "ocr_quality": "high",
+  "section_summaries": [
+    {
+      "heading": "Foundations of Logic",
+      "summary": "A logic is a triplet of language, semantic, and inference system. The language defines syntax, the semantic gives meaning, and the inference system provides derivation rules.",
+      "page_range": [1, 8]
+    },
+    {
+      "heading": "Propositional Logic",
+      "summary": "Reviews propositional syntax and semantics and motivates the need for richer representations.",
+      "page_range": [9, 16]
+    },
+    {
+      "heading": "First Order Logic",
+      "summary": "Introduces FOL: terms are built from variables, constants and function symbols; predicates apply relations to terms. Discusses quantifiers.",
+      "page_range": [17, 26]
+    },
+    {
+      "heading": "Inference",
+      "summary": "Covers forward chaining (data-driven) and backward chaining (goal-driven) over Horn clauses, and resolution as a general inference rule over a knowledge base.",
+      "page_range": [27, 38]
+    }
+  ],
+  "overall_summary": "This document develops the logical foundations used by knowledge-based AI agents. It begins by defining a logic formally as a triplet of language, semantic and inference system, and then surveys propositional logic and First Order Logic. In FOL, terms are constructed from variables, constants and function symbols, while predicates apply relations to terms; quantifiers extend the expressive power beyond propositional logic. The inference chapter contrasts forward chaining, where new facts trigger rules whose other premises are already known and the consequent is added to the knowledge base, with backward chaining which works goal-first. Resolution is introduced as a general-purpose inference rule. The document positions logic-based agents as an alternative paradigm to search-based and learning-based agents, providing the representation layer for planning systems covered later in the course."
+}

@@ -1,0 +1,45 @@
+{
+  "qid": "intro_to_ai_02",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the answer is directly supported by the retrieved chunk. The answer accurately describes progression planners as using forward search from the initial state and regression planners as using backward search from the goal state.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by explaining the key difference between progression and regression planners in state-space search. It covers forward vs. backward search, starting points, and the direction of reasoning for both approaches.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The answer covers all key facts from the ground truth: progression planners use forward search considering effects of all possible actions, and regression planners use backward search determining what must have been true in the previous state. No contradictions present.",
+      "evidence": [
+        "Progression planners use forward state-space search by considering the effect of all possible actions",
+        "Regression planners use backward state-space search, determining what must have been true in the previous state"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "The single retrieved chunk is highly relevant and directly addresses the question. It explicitly defines both progression planners (forward state-space search) and regression planners (backward state-space search) with their key characteristics.",
+      "evidence": [
+        "The chunk contains 'Progression planners - forward state-space search - consider the effect of all possible actions' and 'Regression planners - backward state-space search - Determine what must have been true in the previous state'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunk: progression planners use forward search considering effects of all possible actions, and regression planners use backward search determining what must have been true in the previous state.",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every key statement in the answer is directly supported by the cited chunk, which explicitly defines progression planners as using forward state-space search considering effects of actions, and regression planners as using backward search determining what must have been true in the previous state.",
+      "evidence": [
+        "Answer: 'Progression planners use forward search... consider the effects of all possible actions' — Chunk: 'Progression planners - forward state-space search - consider the effect of all possible actions in a given state'",
+        "Answer: 'Regression planners use backward search... Determine what must have been true in the previous state' — Chunk: 'Regression planners - backward state-space search - Determine what must have been true in the previous state in order to achieve the current state'"
+      ]
+    }
+  }
+}

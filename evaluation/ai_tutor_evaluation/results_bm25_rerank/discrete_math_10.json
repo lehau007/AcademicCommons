@@ -1,0 +1,52 @@
+{
+  "qid": "discrete_math_10",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The answer correctly states that non-existent edges are represented by a special value θ which can be 0, +∞, or -∞, and that ∞ is commonly used in shortest path problems—all grounded in the provided materials.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question about how non-existent edges are represented in a weight matrix. It correctly identifies the special value θ and lists the possible values (0, +∞, -∞), with additional context about common usage.",
+      "evidence": [
+        "Trong **Weight Matrix** của đồ thị có trọng số, các **cạnh không tồn tại** thường được biểu diễn bằng một **giá trị đặc biệt** \\( \\theta \\)",
+        "\\( \\theta \\) có thể là: **0**, **+\\infty**, **-\\infty**"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly identifies that non-existent edges are represented by a special value θ, which can be 0, +∞, or -∞ depending on the application. This fully covers all key facts from the ground truth with no contradictions.",
+      "evidence": [
+        "Ground truth: 'a special value θ is used to identify that (i,j) is not an edge. Depending on the application, θ could be assigned a value of 0, +∞, or -∞'",
+        "Tutor: 'các cạnh không tồn tại thường được biểu diễn bằng một giá trị đặc biệt θ, tùy theo ngữ cảnh... θ có thể là: 0, +�infty, -∞'"
+      ]
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "All five retrieved chunks are directly relevant to the question about representing non-existent edges in weight matrices. The first chunk explicitly defines θ and its possible values (0, +∞, −∞), the second and fourth show concrete examples using ∞, the third demonstrates a weight matrix with 0 for non-edges, and the fifth provides context about weight matrix usage in algorithms.",
+      "evidence": [
+        "chunk 52f037bf: 'θ: special value to identify (i, j) is not an edge; depends on the case, the value of θ could be: 0, +∞, −∞'",
+        "chunk 2a235341: '∞ for non-existent edges'",
+        "chunk 2161fa9f: '∞ otherwise'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 52f037bf explicitly states that θ is a special value to identify non-edges and can be 0, +∞, or −∞, matching the ground truth perfectly.",
+      "evidence": [
+        "θ: special value to identify (i, j) is not an edge; depends on the case, the value of θ could be: 0, +∞, −∞."
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made. The first chunk explicitly defines θ as the special value for non-existent edges with possible values 0, +∞, -∞. The fourth chunk demonstrates ∞ used for non-existent edges in practice.",
+      "evidence": [
+        "Chunk 52f037bf: 'θ: special value to identify (i, j) is not an edge; depends on the case, the value of θ could be: 0, +∞, −∞' supports the claim about θ being 0, +∞, or -∞",
+        "Chunk 2161fa9f: 'w_{ij} = ... \\infty & \\text{otherwise}' supports the statement that ∞ is commonly used for non-existent edges"
+      ]
+    }
+  }
+}

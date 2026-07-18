@@ -1,0 +1,125 @@
+{
+  "qid": "database_01",
+  "course_code": "IT3292E",
+  "question": "What are the key properties of a Candidate Key in a relational database?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "64f3a2b1-46c8-4314-8767-7422eafc81ae",
+  "answer": "# Key Properties of a Candidate Key in a Relational Database\n\nBased on the provided course materials, a **Candidate Key** is a special type of superkey with two essential properties. According to Section 4.3.2 (Types of constraints), a candidate key (K) within a relation must satisfy the following:\n\n## Core Properties\n\n### 1. **Uniqueness**\nThe values of the candidate key must uniquely identify each tuple in the relation. In every tuple, the values of K uniquely identify that tuple — meaning no two tuples can have identical values for all the attributes of K.\n\n### 2. **Irreducibility (Minimality)**\nNo proper subset of K has the uniqueness property. In other words, K is a **superkey** such that if you remove any attribute from it, the remaining set of attributes can no longer uniquely identify tuples in the relation.\n\n## Summary Definition\n\nA Candidate Key can be formally defined as a **superkey K** for which:\n- K is itself a superkey of the relation (it uniquely identifies tuples), **AND**\n- No proper subset of K is a superkey (you cannot remove any attribute and still have uniqueness)\n\n## Related Key Constraint Properties\n\nAccording to the key constraints definition in Section 4.3.2, any key (including a candidate key) in a relation must also satisfy:\n- **No duplicate values**: No two tuples in the relation can have identical values for the key attributes.\n- **No NULL values**: A key cannot have NULL values.\n- These key constraints are also referred to as **Entity Constraints**.\n\n## Relationship to Other Keys\n\nSince a relation may have multiple candidate keys that all satisfy the uniqueness and irreducibility properties, the database designer must choose one of them to serve as the **Primary Key**. The remaining candidate keys that are not selected become **Alternate Keys** (as defined in Section 4.3.2).\n\n---\n\n**Used chunk IDs:**\n```json",
+  "citations": [
+    {
+      "chunk_id": "d9bf8451-1bf7-4e5f-ba83-d76a7366b192",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.3.2. Types of constraints",
+      "page_number": null,
+      "chunk_order": 54,
+      "excerpt": "- Some types of key\n  - Superkey: An attribute, or a set of attributes, that uniquely identifies a tuple within a relation.\n  - Candidate Key:\n    - Superkey (K) such that no proper subset is a superk"
+    },
+    {
+      "chunk_id": "71a5aed9-21f3-4519-8589-1b5d6db86eb9",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.3.2. Types of constraints",
+      "page_number": null,
+      "chunk_order": 55,
+      "excerpt": "- Some types of key\n  - Alternate Keys: Candidate keys that are not selected to be the primary key.\n  - Minimal key: a minimal set of attributes that can be used to identify a single tuple.\n  - Foreig"
+    },
+    {
+      "chunk_id": "6c980653-d600-4507-a9bc-163d7d3df0d6",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4.3.2. Types of constraints",
+      "page_number": null,
+      "chunk_order": 53,
+      "excerpt": "- Key constraints\n  - A key is an attribute or a set of attributes in the relation, which can identify a tuple uniquely.\n  - Key constraints force that:\n    - in a relation with a key, no two tuples c"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "What are the key properties of a Candidate Key in a relational database?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "d9bf8451-1bf7-4e5f-ba83-d76a7366b192",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.3.2. Types of constraints",
+          "chunk_order": 54,
+          "cosine_sim": 0.5633,
+          "final_score": 0.6478,
+          "content": "- Some types of key\n  - Superkey: An attribute, or a set of attributes, that uniquely identifies a tuple within a relation.\n  - Candidate Key:\n    - Superkey (K) such that no proper subset is a superkey within the relation\n    - In each tuple of the relation, values of K uniquely identify that tuple (uniqueness)\n    - No proper subset of K has the uniqueness property (irreducibility)\n  - Primary Key: Candidate key selected to identify tuples uniquely within a relation. Each key attribute of primary key has its name underlined."
+        },
+        {
+          "chunk_id": "d8619ad5-572a-461e-b182-08c0cf892643",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "2.3. Second Normal Form (2NF)",
+          "chunk_order": 16,
+          "cosine_sim": 0.3715,
+          "final_score": 0.6408,
+          "content": "- Based on the concept of full functional dependency\n- A prime attribute\n  - It is an attribute that is member of some candidate key\n- 2NF relation is\n  - in 1NF and every non-prime attribute is fully functionally dependent on the primary key"
+        },
+        {
+          "chunk_id": "71a5aed9-21f3-4519-8589-1b5d6db86eb9",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.3.2. Types of constraints",
+          "chunk_order": 55,
+          "cosine_sim": 0.5297,
+          "final_score": 0.6091,
+          "content": "- Some types of key\n  - Alternate Keys: Candidate keys that are not selected to be the primary key.\n  - Minimal key: a minimal set of attributes that can be used to identify a single tuple.\n  - Foreign Key:\n    - Attribute, or set of attributes, within one relation that matches candidate key of some relation\n    - Used to model relationships between relations\n    - Each key attribute of foreign key has its name italic"
+        },
+        {
+          "chunk_id": "db5a6d06-5b13-410b-a15d-275aa2a011e4",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "3.2. An algorithm decomposes a universal relation into 3NF",
+          "chunk_order": 22,
+          "cosine_sim": 0.3308,
+          "final_score": 0.5706,
+          "content": "- **Input**: A universal relation R and a set of FDs F on the attributes of R.\n  - Find a minimal cover G for F\n  - For each left-hand-side X of a FD that appears in G, create a relation schema in D with attributes [Formula: {X ∪ {A_1} ∪ {A_2} … ∪ {A_k}}], where [Formula: X → A_1], [Formula: X → A_2], ..., [Formula: X → A_k] are the only dependencies in G with X as the left-hand-side (X is the key of this relation);\n  - Place any remaining attributes (that have not been placed in any relation) in a single relation schema to ensure the attribute preservation property."
+        },
+        {
+          "chunk_id": "6a612033-dd75-48e1-a8b5-973f13151db8",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "1.2. Definition",
+          "chunk_order": 8,
+          "cosine_sim": 0.4663,
+          "final_score": 0.5362,
+          "content": "- This means that the values of the X component of a tuple uniquely\n  - (or functionally) determine the values of the Y component.\n- A FD X → Y is trivial if X ⊇ Y\n- If X is a candidate key of R, then X → R"
+        },
+        {
+          "chunk_id": "6c980653-d600-4507-a9bc-163d7d3df0d6",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "4.3.2. Types of constraints",
+          "chunk_order": 53,
+          "cosine_sim": 0.4095,
+          "final_score": 0.4709,
+          "content": "- Key constraints\n  - A key is an attribute or a set of attributes in the relation, which can identify a tuple uniquely.\n  - Key constraints force that:\n    - in a relation with a key, no two tuples can have identical values for key attributes.\n    - a key can not have NULL values.\n    - Key constraints are also referred to as Entity Constraints."
+        },
+        {
+          "chunk_id": "b87b24ad-13fb-498f-a892-daa96f07fa58",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "Summary",
+          "chunk_order": 65,
+          "cosine_sim": 0.393,
+          "final_score": 0.4519,
+          "content": "- Relational data model\n  - Relations, relation instance/state, relation schema\n  - Database, tuple\n  - Cardinality, degree\n- Constraints\n  - Key constraints\n  - Domain constraints\n  - Referential integrity constraints"
+        },
+        {
+          "chunk_id": "6d3318ae-4fec-4115-82db-cfd30c9180f2",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "Summary",
+          "chunk_order": 33,
+          "cosine_sim": 0.2951,
+          "final_score": 0.3394,
+          "content": "1. **Functional Dependency**\n   - A FD $X \\rightarrow Y$: the values of the X component of a tuple uniquely (or functionally) determine the values of the Y component\n\n2. **Armstrong 's Axioms and secondary rules**\n   - Reflexivity, Augmentation, Transitivity\n   - Union, Pseudo-transitivity, Decomposition\n\n3. **Closure of a FD set, closure of a set of attributes**\n   - All dependencies that can be inferred from F, include F, is called the closure of F, denoted by $F^+$\n   - A set of attributes are functionally determined by X based on F\n\n4. **A minimal key**\n   - A minimal set of attributes can determine R\n\n5. **Equivalence of sets of functional dependencies**\n   - F is equivalent to G if every dependency in G can be inferred from F, and every dependency in F can be inferred from G\n\n6. **A minimal cover of a set of FDs**\n   - A set of dependencies in a standard or canonical form and with no redundancies"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 11.1
+}

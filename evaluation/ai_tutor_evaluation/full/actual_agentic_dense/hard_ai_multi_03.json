@@ -1,0 +1,165 @@
+{
+  "qid": "hard_ai_multi_03",
+  "course_code": "IT3160E",
+  "question": "Cho tôi hai điều: (1) agent function ánh xạ từ cái gì sang cái gì, và (2) sự khác nhau giữa agent và environment. Trả lời cả hai ý.",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "8b7b6c10-5b3d-478b-9dd6-410844429f92",
+  "answer": "# Trả lời\n\n## (1) Agent function ánh xạ từ cái gì sang cái gì?\n\n**Agent function ánh xạ từ *lịch sử tri giác* (percept histories) sang *hành động* (actions):**\n\n$$\\mathcal{P}^* \\rightarrow \\mathcal{A}$$\n\nTrong đó:\n- **$\\mathcal{P}^*$** = tập tất cả các chuỗi (lịch sử) tri giác mà agent có thể nhận được từ môi trường. Mỗi tri giác (percept) là thông tin agent thu nhận được tại một thời điểm qua các cảm biến (sensors), và lịch sử tri giác là toàn bộ chuỗi tri giác mà agent đã thu nhận cho đến hiện tại.\n- **$\\mathcal{A}$** = tập các hành động mà agent có thể thực hiện thông qua các bộ truyền động (actuators).\n\nNói cách khác, với **bất kỳ lịch sử tri giác nào** mà agent đã thấy, agent function sẽ quy định **hành động cần làm**.\n\n> Lưu ý: Agent **function** là một khái niệm toán học trừu tượng (ánh xạ lý thuyết). Khi cài đặt thực tế, agent **program** chạy trên một physical **architecture** mới thực sự tạo ra được agent function đó. Mối quan hệ: **agent = architecture + program**.\n\n## (2) Sự khác nhau giữa Agent và Environment\n\nTheo định nghĩa trong bài giảng: **\"An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators.\"**\n\n| Tiêu chí | **Agent** | **Environment** |\n|----------|-----------|-----------------|\n| **Vai trò** | Thực thể (entity) nhận tri giác và ra hành động | Tất cả những gì nằm **ngoài** agent |\n| **Tương tác** | Nhận **percepts** từ environment qua **sensors**, gửi **actions** đến environment qua **actuators** | Cung cấp percepts cho agent; nhận actions từ agent và thay đổi trạng thái |\n| **Ví dụ (human agent)** | Sensors: mắt, tai,… / Actuators: tay, chân, miệng,… | Thế giới xung quanh con người |\n| **Ví dụ (robotic agent – Aishimo)** | Sensors: camera, cảm biến hồng ngoại / Actuators: các motor | Mặt sàn, vật cản, bản đồ,… |\n| **Đặc tính mô tả environment** | — | Có thể là static/dynamic, discrete/continuous, single-agent/multi-agent, cooperative/competitive,… |\n\n**Tóm lại sự khác nhau cốt lõi:**\n\n- **Agent** = phía **chủ động** – là thực thể có sensors để *nhận thức* và actuators để *hành động*. Nó là đối tượng được thiết kế/xây dựng.\n- **Environment** = phía **bị động** – là toàn bộ thế giới bên ngoài mà agent tương tác; nó tạo ra percepts cho agent, bị thay đổi bởi các actions của agent, và có thể mang nhiều đặc tính khác nhau (tĩnh/động, rời rạc/liên tục, đơn agent/đa agent…).\n\nAgent và environment có **ranh giới** được xác định bởi sensors và actuators: phía nào nằm bên trong cặp sensors–actuators là agent, phía còn lại là environment.\n\n---",
+  "citations": [
+    {
+      "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+      "document_title": "lecture1_introduction.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Rational agents",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|      "
+    },
+    {
+      "chunk_id": "796d1cc0-37d9-49ea-9d9e-5c3f0792167b",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Agents and environments (con't)",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- The **agent function** maps from percept histories to actions: \n  - [Formula: agent function mapping]\n- The **agent program** runs on the physical **architecture** to produce the agent function\n  - "
+    },
+    {
+      "chunk_id": "63a01df0-e3e5-4875-a02f-43bd12ac56a1",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Agents and environments",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- An **agent** is anything that can be viewed as **perceiving** its **environment** through **sensors** and **acting** upon that environment through **actuators**\n- Example 1: human agent\n  - Sensors:"
+    },
+    {
+      "chunk_id": "17b10140-d5bc-42c2-b508-6673c005a7c6",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Environment types",
+      "page_number": null,
+      "chunk_order": 14,
+      "excerpt": "- **Static** (vs. dynamic): The environment is unchanged while an agent is deliberating.\n- **Discrete** (vs. continuous): A limited number of distinct, clearly defined percepts and actions.\n- **Single"
+    },
+    {
+      "chunk_id": "e8d0cf8d-ad47-4bea-812a-b31c7a38de13",
+      "document_title": "it3160e_ai_introduction.pdf",
+      "document_tier": "community",
+      "document_subtype": "summary_note",
+      "section_title": "Rational agents",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- An **agent** is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$$\\mathcal{P}^* \\rightarrow \\mathcal{A}$$\n\n```text\n+--------------------------- Agent -"
+    },
+    {
+      "chunk_id": "fcbd419e-67d2-41a5-ad08-017147bd1fcd",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Multi-agent planning",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- Environment: **cooperative** or **competitive**\n- Issue: the environment is not **static** → **synchronization**\n- Require a model of the other agent's plans\n- **Cooperation**: joint goals and plans"
+    },
+    {
+      "chunk_id": "30300eec-d65c-472b-927a-37480bf0e42b",
+      "document_title": "it3160e_ai_introduction.pdf",
+      "document_tier": "community",
+      "document_subtype": "summary_note",
+      "section_title": "Rational agents",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is t"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "agent function ánh xạ từ đâu sang đâu, sự khác nhau giữa agent và environment",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "34cb54f9-0fba-48a9-8d08-0adc7c35d235",
+          "document_id": "19334ea5-7035-4f3e-8e64-18b4fa937f34",
+          "section_title": "Rational agents",
+          "chunk_order": 14,
+          "cosine_sim": 0.4115,
+          "final_score": 0.7098,
+          "content": "- An agent is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$\\mathcal{P}^* \\rightarrow \\mathcal{A}$\n\n|  Agent |       | Environment  |\n|  ------|       |--------------|\n|  Percepts    |\n|  <---------- \n|  Actions     |\n|  ----------> \n|               |\n|               |\n|  Sensors|       | Actuators|\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        },
+        {
+          "chunk_id": "796d1cc0-37d9-49ea-9d9e-5c3f0792167b",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agents and environments (con't)",
+          "chunk_order": 3,
+          "cosine_sim": 0.4528,
+          "final_score": 0.5207,
+          "content": "- The **agent function** maps from percept histories to actions: \n  - [Formula: agent function mapping]\n- The **agent program** runs on the physical **architecture** to produce the agent function\n  - agent = architecture + program\n\n| Agent        | Environment |\n|--------------|-------------|\n| +-------------+  |             |\n| |   Sensors   |<--+--Percepts            |\n| +------+------+  |             |\n|         |         |             |\n|    +----+----+    |             |\n|    |    ?    |    |             |\n|    +----+----+    |             |\n|         |         |             |\n|  +------+------+  |             |\n|  |  Actuators  |--+--+->Actions            |\n|  +-------------+  |             |"
+        },
+        {
+          "chunk_id": "63a01df0-e3e5-4875-a02f-43bd12ac56a1",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agents and environments",
+          "chunk_order": 2,
+          "cosine_sim": 0.3852,
+          "final_score": 0.443,
+          "content": "- An **agent** is anything that can be viewed as **perceiving** its **environment** through **sensors** and **acting** upon that environment through **actuators**\n- Example 1: human agent\n  - Sensors: eyes, ears, ...\n  - Actuators: hands, legs, mouth, ...\n- Example 2: robotic agent (e.g., Aishimo)\n  - Sensors: camera, infrared range finders\n  - Actuators: various motors"
+        },
+        {
+          "chunk_id": "17b10140-d5bc-42c2-b508-6673c005a7c6",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Environment types",
+          "chunk_order": 14,
+          "cosine_sim": 0.3754,
+          "final_score": 0.4317,
+          "content": "- **Static** (vs. dynamic): The environment is unchanged while an agent is deliberating.\n- **Discrete** (vs. continuous): A limited number of distinct, clearly defined percepts and actions.\n- **Single agent** (vs. multiagent): An agent operating by itself in an environment."
+        },
+        {
+          "chunk_id": "54833ea9-1da5-4953-b4e5-dc8c0a87bfca",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Policy, Reward and Goal",
+          "chunk_order": 8,
+          "cosine_sim": 0.3712,
+          "final_score": 0.4269,
+          "content": "- Policy\n  - defines the agent’s behaviour at a given time\n  - maps from perceptions to actions\n  - can be defined by: look-up table, neural net, search algorithm...\n  - may be stochastic\n\n- Reward Function\n  - defines the goal(s) in an RL problem\n  - maps from states, state-action pairs, or state-action-successor state, triplets to a numerical reward\n  - goal of the agent is to maximise the total reward in the long run\n  - the policy is altered to achieve this goal"
+        },
+        {
+          "chunk_id": "e8d0cf8d-ad47-4bea-812a-b31c7a38de13",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 9,
+          "cosine_sim": 0.4232,
+          "final_score": 0.4232,
+          "content": "- An **agent** is an entity that perceives and acts\n- An agent function maps from percept histories to actions:\n\n$$\\mathcal{P}^* \\rightarrow \\mathcal{A}$$\n\n```text\n+--------------------------- Agent ---------------------------+      +-------------+\n|                                                             |      |             |\n|  Sensors  <-- Percepts                                      |      | Environment |\n|     |                                                       |      |             |\n|     v                                                       |      |             |\n|    [?]                                                      |      |             |\n|     |                                                       |      |             |\n|     v                                                       |      |             |\n|  Actuators ---- Actions ----------------------------------> |      |             |\n+-------------------------------------------------------------+      +-------------+\n```"
+        },
+        {
+          "chunk_id": "fcbd419e-67d2-41a5-ad08-017147bd1fcd",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Multi-agent planning",
+          "chunk_order": 23,
+          "cosine_sim": 0.3529,
+          "final_score": 0.4059,
+          "content": "- Environment: **cooperative** or **competitive**\n- Issue: the environment is not **static** → **synchronization**\n- Require a model of the other agent's plans\n- **Cooperation**: joint goals and plans, e.g., team planning in doubles tennis.\n  - Joint goal: returning the ball that has been hit to them and ensuring that at least one of them is covering the net\n  - Joint plan: multibody planning\n  - Coordination mechanisms: decompose and distribute tasks\n- **Competition**: e.g., chess-playing\n  - An agent in a competitive environment must\n    - recognize that there are other agents\n    - compute some of the other agent's possible plans\n    - compute how the other agent's plans interact with its own plans\n    - decide on the best action in view of these interactions."
+        },
+        {
+          "chunk_id": "30300eec-d65c-472b-927a-37480bf0e42b",
+          "document_id": "49891ecf-e4bc-4d96-8550-3f2d1f3e6be9",
+          "section_title": "Rational agents",
+          "chunk_order": 10,
+          "cosine_sim": 0.391,
+          "final_score": 0.391,
+          "content": "[Diagram: The figure shows an agent as an interface between sensing and acting in an environment. It emphasizes that intelligent behavior depends on converting percept history into actions, which is the core design problem in rational agent systems.]\n\n- For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance\n- Computational limitations make perfect rationality unachievable\n- So we want the best program for given machine resources"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 33.3
+}

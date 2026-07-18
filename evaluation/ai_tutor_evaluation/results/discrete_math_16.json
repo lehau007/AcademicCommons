@@ -1,0 +1,56 @@
+{
+  "qid": "discrete_math_16",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 3,
+      "justification": "The core definition (same vertex set, subset of edges) is supported by the retrieved chunk's description of spanning trees as 'minimal connected subgraph that includes all vertices.' However, the specific claims about spanning trees requiring connectivity and no cycles, while true, go beyond what is explicitly stated in the retrieved material.",
+      "evidence": [
+        "connected",
+        "has no cycles",
+        "then it is called a spanning tree"
+      ]
+    },
+    "answer_relevancy": {
+      "score": 3,
+      "justification": "The answer correctly defines a spanning subgraph (same vertex set, subset of edges) but then shifts focus to spanning trees, which is a specific type of spanning subgraph. The question asks only about spanning subgraphs in general, not spanning trees.",
+      "evidence": [
+        "If the spanning subgraph is also: - **connected** and - has **no cycles**, then it is called a **spanning tree**.",
+        "In the retrieved course material, this idea is illustrated through the spanning tree concept as a minimal connected subgraph including all vertices without cycles."
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer correctly states that a spanning subgraph has the same vertex set as G and uses only some of the edges, which is factually consistent with the ground truth (V(H) = V(G)). The additional information about spanning trees is correct supplementary detail.",
+      "evidence": [
+        "Ground truth: 'the vertex set of H is the same as the vertex set of G (V(H) = V(G))'",
+        "Tutor: 'has the same vertex set as G, and uses only some of the edges of G'"
+      ]
+    },
+    "context_precision": {
+      "score": 2,
+      "justification": "The single retrieved chunk focuses exclusively on spanning trees (a specific type of spanning subgraph with connectivity and acyclicity constraints) and Cayley's theorem about counting them. It does not define or explain the general concept of a spanning subgraph, which only requires matching vertex sets regardless of edge selection, connectivity, or cycles.",
+      "evidence": [
+        "69ed7168-b826-480e-9862-cff20e081181: 'Theorem (Cayley). A complete graph $K_n$ has $n^{n-2}$ spanning trees'",
+        "focuses on 'spanning tree as a minimal connected subgraph that includes all vertices without cycles'"
+      ]
+    },
+    "context_recall": {
+      "score": 2,
+      "justification": "The retrieved chunk discusses spanning trees (a special case) but does not contain the core definition of a spanning subgraph: that V(H) = V(G). The chunk only illustrates spanning trees as minimal connected subgraphs without cycles, missing the general definition needed.",
+      "evidence": [
+        "V(H) = V(G)",
+        "subgraph H of a graph G is called a spanning subgraph if the vertex set of H is the same as the vertex set of G"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 2,
+      "justification": "The citation points to content about spanning trees (a specific type of spanning subgraph), not the general definition of spanning subgraphs. The tutor's core definition is correct but unsupported by citation, while the cited chunk only validates the secondary discussion about spanning trees.",
+      "evidence": [
+        "Tutor claims: 'has the same vertex set as G, and uses only some of the edges of G' — no citation provided for this foundational definition",
+        "Citation points to: 'Theorem (Cayley)... spanning trees' and 'minimal connected subgraph that includes all vertices without cycles' — supports only the spanning tree discussion, not the spanning subgraph definition"
+      ]
+    }
+  }
+}

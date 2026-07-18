@@ -1,0 +1,58 @@
+{
+  "qid": "intro_to_ai_06",
+  "course_code": "IT3160E",
+  "question": "What is the min-conflicts heuristic used in Iterative Algorithms for CSPs?",
+  "session_id": "67b10ab0-86bb-4ef7-9f2d-7145b371b771",
+  "answer": "The **min-conflicts heuristic** in **Iterative Algorithms for CSPs** is a **value-selection strategy** used when repairing a complete assignment in a CSP.\n\n### Idea\n- Start from a state where **all variables are assigned**.\n- If some constraints are violated, repeatedly:\n  1. choose a variable to reassign,\n  2. assign it the value that **minimizes the number of violated constraints**.\n\n### In short\n- It is **hill climbing** for CSPs.\n- The heuristic picks the value that **violates the fewest constraints**.\n- Equivalently, it tries to minimize  \n  \\[\n  h(n) = \\text{total number of violated constraints}\n  \\]\n\n### Why it is useful\n- It can work very well in practice for CSPs, especially large ones.\n- It allows the search to move through states that are not fully consistent and gradually reduce conflicts.",
+  "citations": [
+    {
+      "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one vari"
+    },
+    {
+      "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative Algorithms for CSPs",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "min-conflicts heuristic in iterative algorithms for CSPs",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Summary",
+          "chunk_order": 28,
+          "cosine_sim": 0.604,
+          "final_score": 0.8974,
+          "content": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one variable assigned per node\n- Variable ordering and value selection heuristics help significantly\n- Forward checking prevents assignments that guarantee later failure\n- Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistencies\n- The CSPs representation allows analysis of problem structure\n- Tree-structured CSPs can be solved in linear time\n- Iterative min-conflicts is usually effective in practice"
+        },
+        {
+          "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Iterative Algorithms for CSPs",
+          "chunk_order": 26,
+          "cosine_sim": 0.5358,
+          "final_score": 0.8623,
+          "content": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables\n- Variable selection\n  - Random\n- Value selection by min-conflicts heuristic\n  - Choose value that violates the fewest constraints\n    - i.e., hill climbing with $h(n) =$ total number of violated constraints"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 11.6
+}

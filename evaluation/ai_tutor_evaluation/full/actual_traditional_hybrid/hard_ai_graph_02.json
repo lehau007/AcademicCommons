@@ -1,0 +1,135 @@
+{
+  "qid": "hard_ai_graph_02",
+  "course_code": "IT3160E",
+  "question": "Trong sơ đồ planning graph cho bài toán thay lốp dự phòng (spare tire), trạng thái mức S2 có tính chất gì khiến ta có thể trích xuất lời giải, và có thể trích xuất bằng những cách nào?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "f9f99807-e651-4941-8727-82d1a0c19033",
+  "answer": "# Trích xuất lời giải từ S2 trong bài toán thay lốp dự phòng\n\n## Tính chất của S2 cho phép trích xuất lời giải\n\nTheo tài liệu, ở mức trạng thái **S2** trong sơ đồ planning graph cho bài toán thay lốp dự phòng, có **hai điều kiện quan trọng** được thỏa mãn đồng thời:\n\n1. **Tất cả các literal mục tiêu đều xuất hiện** ở S2 — cụ thể là `at(spare, axle)`. Điều này đảm bảo rằng mục tiêu của bài toán về mặt khả năng đạt được (reachable) đã xuất hiện trong tầng trạng thái này.\n\n2. **Không có quan hệ mutex nào giữa các literal mục tiêu** — nghĩa là các mục tiêu không mâu thuẫn với nhau, nên chúng có thể cùng đúng trong cùng một trạng thái.\n\nKhi cả hai điều kiện này đều thỏa mãn, ta có thể tiến hành trích xuất lời giải. Đây cũng chính là bước kiểm tra trong thuật toán **GRAPHPLAN**: nếu *\"goals all non-mutex in last level of graph\"* thì mới gọi `EXTRACT-SOLUTION` (xem chunk về thuật toán GRAPHPLAN).\n\n## Các phương pháp trích xuất lời giải\n\nTài liệu nêu rõ có **hai cách** để trích xuất lời giải từ S2:\n\n### 1. Thuật toán CSP (Constraint Satisfaction Problem)\n- Xem mỗi **action ở mỗi tầng** như một **biến** (variable)\n- Ràng buộc giữa các biến chính là:\n  - Các **precondition** phải được thỏa mãn bởi action tầng trước\n  - **Không có mutex** giữa các action được chọn\n- Giải bài toán CSP này để tìm tập action hợp lệ tạo thành plan\n\n### 2. Tìm kiếm lùi (Backward search / Search backwards)\n- Bắt đầu từ tập mục tiêu ở S2\n- Đi ngược về các tầng trước, ở mỗi bước chọn một action ở tầng tương ứng có **hiệu ứng (effect)** khớp với mục tiêu hiện tại\n- Đệ quy tiếp tục với **precondition** của action đó làm mục tiêu mới cho tầng trước\n- Lời giải chính là tập action thu được khi đi ngược về tận S0\n\n## Minh họa trong ngữ cảnh bài toán thay lốp\n\nTrong sơ đồ bài toán spare tire:\n- Ở **S1**, action `[LeaveOvernight]` xuất hiện nhưng nó duy trì `¬at(spare, axle)` — không giúp ích cho mục tiêu\n- Ở **S2**, action `[PutOnSpare, Axle]` xuất hiện với tiền điều kiện đã thỏa mãn và tạo ra hiệu ứng `at(spare, axle)` — đây chính là action then chốt để hoàn thành mục tiêu\n- Đường đi in đậm trong hình 11.14 chính là plan được trích xuất ra\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "3ee13f47-a21d-4661-bcc7-def43f301313",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning graph for spare tire a S2",
+      "page_number": null,
+      "chunk_order": 56,
+      "excerpt": "goal: at(spare,axle)\n\n- S2 has all goals and no mutex so we can try to extract solutions\n- Use either CSP algorithm with actions as variables\n- Or search backwards\n\n```text\nS0                     A0  "
+    },
+    {
+      "chunk_id": "9e35dead-7fd9-4935-a575-6dba4efd2a76",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning graph for spare tire a S2",
+      "page_number": null,
+      "chunk_order": 57,
+      "excerpt": "Figure 11.14 The planning graph for the spare tire problem after expansion to level $S_2$. Mutex links are shown as gray lines. Only some representative mutexes are shown, because the graph would be t"
+    },
+    {
+      "chunk_id": "c2267876-167a-4c0b-8ffc-58ff737795c2",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "The graphplan algorithm",
+      "page_number": null,
+      "chunk_order": 54,
+      "excerpt": "```text\n+--------------------------------------------------------------+\n| function GRAPHPLAN(problem) returns solution or failure      |\n|                                                             "
+    },
+    {
+      "chunk_id": "891991f8-bac0-496d-a9d1-db47f94880e3",
+      "document_title": "lecture12-Planning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Planning Graphs",
+      "page_number": null,
+      "chunk_order": 47,
+      "excerpt": "- A planning graph consists of a sequence of levels that correspond to time-steps in the plan\n- Level 0 is the initial state.\n- Each level contains a set of literals and a set of actions\n- Literals ar"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "Trong sơ đồ planning graph cho bài toán thay lốp dự phòng (spare tire), trạng thái mức S2 có tính chất gì khiến ta có thể trích xuất lời giải, và có thể trích xuất bằng những cách nào?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "9e35dead-7fd9-4935-a575-6dba4efd2a76",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning graph for spare tire a S2",
+          "chunk_order": 57,
+          "cosine_sim": 0.4757,
+          "final_score": 0.5471,
+          "content": "Figure 11.14 The planning graph for the spare tire problem after expansion to level $S_2$. Mutex links are shown as gray lines. Only some representative mutexes are shown, because the graph would be too cluttered if we showed them all. The solution is indicated by bold lines and outlines."
+        },
+        {
+          "chunk_id": "3ee13f47-a21d-4661-bcc7-def43f301313",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning graph for spare tire a S2",
+          "chunk_order": 56,
+          "cosine_sim": 0.4252,
+          "final_score": 0.489,
+          "content": "goal: at(spare,axle)\n\n- S2 has all goals and no mutex so we can try to extract solutions\n- Use either CSP algorithm with actions as variables\n- Or search backwards\n\n```text\nS0                     A0                     S1                     A1                     S2\n|                      |                      |                      |                      |\nat(spare,trunk)   ---> [RemoveSpare,Trunk] --> ¬at(spare,trunk)  ---> [RemoveSpare,Trunk] --> ¬at(spare,trunk)\nat(flat,axle)     ---> [RemoveFlat,Axle]     --> ¬at(flat,axle)    ---> [RemoveFlat,Axle]     --> ¬at(flat,axle)\n¬at(spare,axle)                                 [LeaveOvernight]    ---> ¬at(spare,axle)      ---> ¬at(spare,axle)\n¬at(flat,ground)                                                                              [PutOn,Spare,Axle]\n¬at(spare,ground)\n\n[Diagram: This is a planning graph showing how actions are layered between successive state levels to achieve the goal of having the spare tire on the axle. It matters because it illustrates how goal satisfaction and mutex relationships can be used to extract a valid plan or reason backward from the goal state.]\n```"
+        },
+        {
+          "chunk_id": "90bdd731-1cd9-40c2-bf7a-fbec32711413",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "A partial order plan for putting shoes and socks",
+          "chunk_order": 31,
+          "cosine_sim": 0.3913,
+          "final_score": 0.45,
+          "content": "```text\nPartial-Order Plan\n\n+--------+                     +-----------+\n| Start  |                     |           |\n+--------+                     |           |\n   /   \\                       |           |\n  v     v                      |           |\n+----------+   +-----------+   |           |\n| Left     |   | Right     |   |           |\n| Sock     |   | Sock      |   |           |\n+----------+   +-----------+   |           |\n    |             |            |           |\n    v             v            |           |\nLeftSockOn     RightSockOn     |           |\n    |             |            |           |\n+----------+   +-----------+   |           |\n| Left     |   | Right     |   |           |\n| Shoe     |   | Shoe      |   |           |\n+----------+   +-----------+   |           |\n    \\             /            |           |\n     v           v             |           |\n   LeftShoeOn, RightShoeOn     |           |\n               |               |           |\n               v               |           |\n+--------+                     +-----------+\n| Finish |                     +-----------+\n\nTotal-Order Plans\n\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n| Start  |-->| Right    |-->| Left     |-->| Right    |-->| Left     |-->| Finish |\n|        |   | Sock     |   | Sock     |   | Shoe     |   | Shoe     |   |        |\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n| Start  |-->| Right    |-->| Left     |-->| Right    |-->| Left     |-->| Finish |\n|        |   | Sock     |   | Sock     |   | Shoe     |   | Shoe     |   |        |\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n| Start  |-->| Left     |-->| Right    |-->| Left     |-->| Right    |-->| Finish |\n|        |   | Sock     |   | Sock     |   | Shoe     |   | Shoe     |   |        |\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n\n+--------+   +----------+   +----------+   +----------+   +----------+   +--------+\n| Start  |-->| Left     |-->| Right    |-->| Left     |-->| Right    |-->| Finish |\n|        |   | Sock     |   | Sock     |   | Shoe     |   | Shoe     |   |        |\n+--------+   +----------+   +----------+   +----------+   +"
+        },
+        {
+          "chunk_id": "c2267876-167a-4c0b-8ffc-58ff737795c2",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "The graphplan algorithm",
+          "chunk_order": 54,
+          "cosine_sim": 0.3786,
+          "final_score": 0.4354,
+          "content": "```text\n+--------------------------------------------------------------+\n| function GRAPHPLAN(problem) returns solution or failure      |\n|                                                              |\n|   graph ← INITIAL-PLANNING-GRAPH(problem)                    |\n|   goals ← GOALS[problem]                                    |\n|   loop do                                                    |\n|     if goals all non-mutex in last level of graph then do    |\n|       solution ← EXTRACT-SOLUTION(graph, goals, LENGTH(graph))|\n|       if solution ≠ failure then return solution             |\n|       else if NO-SOLUTION-POSSIBLE(graph) then return failure|\n|     graph ← EXPAND-GRAPH(graph, problem)                     |\n+--------------------------------------------------------------+\n```\n\n[Diagram: This pseudocode describes the GRAPHPLAN planning procedure, which alternates between building a layered planning graph and trying to extract a valid plan from it. The key idea is that the graph grows until either a solution is found by backward search or the algorithm proves no plan is possible.]"
+        },
+        {
+          "chunk_id": "580e831d-afb9-4920-b782-3158db92ce58",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "The Planning graphs for “have cake”,",
+          "chunk_order": 49,
+          "cosine_sim": 0.3092,
+          "final_score": 0.3555,
+          "content": "- Persistence actions: Represent “inactions” by boxes: frame axiom\n- Mutual exclusions (mutex) are represented between literals and actions.\n- S1 represents multiple states\n- Continue until two levels are identical. The graph levels off.\n- The graph records the impossibility of certain choices using mutex links.\n- Complexity of graph generation: polynomial in number of literals."
+        },
+        {
+          "chunk_id": "dbd562ea-0e6b-4c31-8ccc-ec3451358da0",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "The Planning graphs for “have cake”,",
+          "chunk_order": 51,
+          "cosine_sim": 0.3055,
+          "final_score": 0.3513,
+          "content": "[Diagram: The figure illustrates a planning graph that expands alternating layers of states and actions while preserving “no-op” actions for persistence. Mutex links encode which choices cannot coexist, allowing the graph to capture constraints and eventually level off when no new information is added.]"
+        },
+        {
+          "chunk_id": "a9547294-cd6a-4271-83a6-0f06a48b95a9",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "The Planning graphs for “have cake”,",
+          "chunk_order": 50,
+          "cosine_sim": 0.2968,
+          "final_score": 0.3413,
+          "content": "```text\n+------+      +------+      +------+      +------+      +------+\n| S0   | ---> | A0   | ---> | S1   | ---> | A1   | ---> | S2   |\n+------+      +------+      +------+      +------+      +------+\n\nS0:\n  Have(Cake) --------------------\\\n                                   > [Eat(Cake)] -----> effects to S1\n  ¬Eaten(Cake) ------------------/\n\nS1:\n  Have(Cake) --------------------\\ \n                                   > [Bake(Cake)] -----> effects to S2\n  ¬Have(Cake) -------------------/\n  Eaten(Cake) -------------------\\\n                                   > [Eat(Cake)]  -----> effects to S2\n  ¬Eaten(Cake) ------------------/\n\nMutex links (gray curved lines) connect incompatible literals/actions within each level.\n```"
+        },
+        {
+          "chunk_id": "891991f8-bac0-496d-a9d1-db47f94880e3",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Planning Graphs",
+          "chunk_order": 47,
+          "cosine_sim": 0.2865,
+          "final_score": 0.3294,
+          "content": "- A planning graph consists of a sequence of levels that correspond to time-steps in the plan\n- Level 0 is the initial state.\n- Each level contains a set of literals and a set of actions\n- Literals are those that could be true at the time step.\n- Actions are those that their preconditions could be satisfied at the time step.\n- Works only for propositional planning."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 16.4
+}

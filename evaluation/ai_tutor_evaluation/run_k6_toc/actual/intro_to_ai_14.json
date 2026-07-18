@@ -1,0 +1,134 @@
+{
+  "qid": "intro_to_ai_14",
+  "course_code": "IT3160E",
+  "question": "What defines a feed-forward neural network compared to a recurrent neural network?",
+  "session_id": "2b195c06-a909-4ce0-8703-bf961615b7d8",
+  "answer": "A **feed-forward neural network** differs from a **recurrent neural network** mainly in how information flows through the network:\n\n- **Feed-forward network**: signals go **one way only**, from input to hidden layers to output.  \n  - No neuron output is fed back into the **same layer** or a **previous layer**.\n- **Recurrent network**: has **feedback connections** that create **closed loops**.  \n  - A neuron’s output can be sent back as input to itself, the same layer, or an earlier layer.\n\nSo, in short:\n\n- **Feed-forward** = no loops, one-directional flow\n- **Recurrent** = has loops/feedback, allows internal state or memory over time\n\nThis matches the course definition: a network is feed-forward if no node output is an input to the same or a preceding layer; if outputs are fed back and form closed loops, it is a recurrent network.",
+  "citations": [
+    {
+      "chunk_id": "946597e6-ac6a-4cc0-95bb-54f2cdb03b14",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Network structure – Example",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "- single layer feed-forward network\n- single node with feedback to itself\n- multilayer feed-forward network\n- single layer recurrent network\n- multilayer recurrent network"
+    },
+    {
+      "chunk_id": "0eb9fe51-e583-4541-88d1-67fc1fa0bd71",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Network structure",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "[Diagram: The figure shows the structure of a feedforward artificial neural network with one hidden layer. It highlights how inputs, hidden units, outputs, and a bias term are organized to determine t"
+    },
+    {
+      "chunk_id": "3650b8da-e54b-4d06-84a1-b44ff3b0fb2e",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Network structure",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- A layer is a group of neurons\n- A hidden layer is any layer between the input and the output layers\n- Hidden nodes do not directly interact with the external environment\n- An ANN is said to be *full"
+    },
+    {
+      "chunk_id": "3586d54e-8082-441d-8e58-661fc8e3abd1",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "BP illustration — Forward phase (2)",
+      "page_number": null,
+      "chunk_order": 55,
+      "excerpt": "```text\nx1 ──▶ f(Net1) ──▶ f(Net4) ──▶ f(Net6) ──▶ Out6\n │       │            │           ▲\n │       ├────▶ f(Net5) ──────────┘\n │       │\n ├──▶ f(Net2) ──▶ f(Net4)\n │       │        └──▶ f(Net5)\n │  "
+    },
+    {
+      "chunk_id": "c9db536b-023e-4fef-a7ad-56675a28df02",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "BP illustration – Forward phase (3)",
+      "page_number": null,
+      "chunk_order": 57,
+      "excerpt": "```text\nx1 ─────▶ f(Net1) ─────▶ f(Net4) ─────▶ f(Net6) ─────▶ Out6\n │          │  ╲          ▲   ╲\n │          │   ╲         │    ╲\n ├─▶ f(Net2) ├───▶ f(Net5) ─────▶\n │   ▲  ╲    │\n │   │   ╲   │\n └─"
+    },
+    {
+      "chunk_id": "a5a8f96e-4002-4707-b103-4ca3cefeb9c7",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Artificial neural networks",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- ANN can be seen as a parallel distributed information processing structure\n- ANN has the ability to learn, recall, and generalize from training data by assigning and adjusting the interconnection we"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "difference between feed-forward neural network and recurrent neural network",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "946597e6-ac6a-4cc0-95bb-54f2cdb03b14",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Network structure – Example",
+          "chunk_order": 22,
+          "cosine_sim": 0.6172,
+          "final_score": 0.7098,
+          "content": "- single layer feed-forward network\n- single node with feedback to itself\n- multilayer feed-forward network\n- single layer recurrent network\n- multilayer recurrent network"
+        },
+        {
+          "chunk_id": "0eb9fe51-e583-4541-88d1-67fc1fa0bd71",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Network structure",
+          "chunk_order": 20,
+          "cosine_sim": 0.4421,
+          "final_score": 0.5084,
+          "content": "[Diagram: The figure shows the structure of a feedforward artificial neural network with one hidden layer. It highlights how inputs, hidden units, outputs, and a bias term are organized to determine the network’s topology.]\n\n- An ANN with one hidden layer\n- Input space: 3-dimensional\n- Output space: 2-dimensional\n- In total, there are 6 neurons\n  - 4 in the hidden layer\n  - 2 in the output layer"
+        },
+        {
+          "chunk_id": "3650b8da-e54b-4d06-84a1-b44ff3b0fb2e",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Network structure",
+          "chunk_order": 21,
+          "cosine_sim": 0.439,
+          "final_score": 0.5048,
+          "content": "- A layer is a group of neurons\n- A hidden layer is any layer between the input and the output layers\n- Hidden nodes do not directly interact with the external environment\n- An ANN is said to be *fully connected* if every output from one layer is connected to every node in the next layer\n- An ANN is called *feed-forward network* if no node output is an input to a node in the same layer or in a preceding layer\n- When node outputs can be directed back as inputs to a node in the same (or a preceding) layer, it is a *feedback network*\n  - If the feedback is directed back as input to the nodes in the same layer, then it is called *lateral feedback*\n- Feedback networks that have closed loops are called *recurrent networks*"
+        },
+        {
+          "chunk_id": "3586d54e-8082-441d-8e58-661fc8e3abd1",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP illustration — Forward phase (2)",
+          "chunk_order": 55,
+          "cosine_sim": 0.4095,
+          "final_score": 0.4709,
+          "content": "```text\nx1 ──▶ f(Net1) ──▶ f(Net4) ──▶ f(Net6) ──▶ Out6\n │       │            │           ▲\n │       ├────▶ f(Net5) ──────────┘\n │       │\n ├──▶ f(Net2) ──▶ f(Net4)\n │       │        └──▶ f(Net5)\n │       └──▶ f(Net5)\n │\n └──▶ f(Net3) ──▶ f(Net4)\n\nx2 ──▶ f(Net1)\n ├──▶ f(Net2)\n └──▶ f(Net3)\n```\n\n[Diagram: The slide shows a feedforward neural network where inputs are combined through weighted connections, passed through activation functions, and propagated layer by layer toward the final output. It illustrates how each neuron computes a nonlinear transformation of its incoming signals during the forward phase.]"
+        },
+        {
+          "chunk_id": "c9db536b-023e-4fef-a7ad-56675a28df02",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP illustration – Forward phase (3)",
+          "chunk_order": 57,
+          "cosine_sim": 0.4058,
+          "final_score": 0.4666,
+          "content": "```text\nx1 ─────▶ f(Net1) ─────▶ f(Net4) ─────▶ f(Net6) ─────▶ Out6\n │          │  ╲          ▲   ╲\n │          │   ╲         │    ╲\n ├─▶ f(Net2) ├───▶ f(Net5) ─────▶\n │   ▲  ╲    │\n │   │   ╲   │\n └─▶ f(Net3) ─┘\n\nx2 ─────▶ f(Net2)\n │        ▲\n └──────▶ f(Net3)\n```\n\n[Diagram: This shows a feedforward neural-network computation where inputs are combined through weighted connections and activated layer by layer until producing the final output. It matters because it illustrates how information propagates forward in a multilayer network, with intermediate hidden units transforming the input before the output is generated.]"
+        },
+        {
+          "chunk_id": "a5a8f96e-4002-4707-b103-4ca3cefeb9c7",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Artificial neural networks",
+          "chunk_order": 3,
+          "cosine_sim": 0.3559,
+          "final_score": 0.4093,
+          "content": "- ANN can be seen as a parallel distributed information processing structure\n- ANN has the ability to learn, recall, and generalize from training data by assigning and adjusting the interconnection weights\n- The overall function is determined by\n  - The network topology\n  - The individual neuron characteristic\n  - The learning/training strategy\n  - The training data"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.8
+}

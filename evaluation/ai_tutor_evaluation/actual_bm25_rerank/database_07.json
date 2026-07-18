@@ -1,0 +1,96 @@
+{
+  "qid": "database_07",
+  "course_code": "IT3292E",
+  "question": "What is an update anomaly in the context of database normalization?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "f1fb8499-f429-41a3-8932-de23fd659aa6",
+  "answer": "An **update anomaly** trong chuẩn hóa cơ sở dữ liệu là tình huống mà **cùng một thông tin phải được cập nhật ở nhiều vị trí khác nhau** trong bảng hoặc trong nhiều bản ghi.\n\n### Ý nghĩa\nNếu dữ liệu bị lặp lại, khi một giá trị thay đổi, bạn phải sửa ở tất cả các nơi chứa nó. Nếu sửa sót một chỗ, dữ liệu sẽ **không nhất quán**.\n\n### Ví dụ\nTrong bảng minh họa của tài liệu, tên môn học **\"Databases\"** xuất hiện ở nhiều dòng. Nếu đổi tên môn này, bạn phải cập nhật ở **2 nơi khác nhau**. Đây chính là một update anomaly.\n\n### Vì sao đây là vấn đề?\n- Tốn công cập nhật\n- Dễ bỏ sót\n- Dẫn đến dữ liệu không đồng bộ\n- Cho thấy bảng thiết kế chưa tốt, thường do **dư thừa dữ liệu** và chưa được chuẩn hóa đầy đủ\n\n### Liên hệ với chuẩn hóa\nChuẩn hóa giúp tách dữ liệu hợp lý hơn để giảm dư thừa, từ đó giảm hoặc loại bỏ các bất thường như **update anomaly**.",
+  "citations": [
+    {
+      "chunk_id": "818fb190-ed8e-4851-984c-4a9476981dad",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Motivation: Update anomalies",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "- An instance where the same information must be updated in several different places\n- If you update the name of subject **\"Databases\"**, you need to update in two different places (not efficient)\n\n| "
+    },
+    {
+      "chunk_id": "5cf7ffde-8c82-4e8a-8743-4b1a5301f356",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. An algorithm decomposes a universal relation into 3NF",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- If none of the relation schemas in D contains a key of R, then create one more relation schema in D that contains attributes that form a key of R.\n\n- Eliminate redundant relations from the resulting"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "update anomaly in database normalization",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "cf8ba490-2060-44eb-b4e0-1dd07c017098",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "1.1. Introduction",
+          "chunk_order": 6,
+          "cosine_sim": 0.5112,
+          "final_score": 0.1731,
+          "content": "- We have to deal with the problem of database design\n  - anomalies, redundancies\n- The most important concepts in relational schema design theory"
+        },
+        {
+          "chunk_id": "51ad005f-cbb3-4519-9822-20f05a2298e6",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "1.1. Introduction",
+          "chunk_order": 7,
+          "cosine_sim": 0.3404,
+          "final_score": 0.1169,
+          "content": "- Two approaches to DB designing\n  - Top - down: Entity Relationship model (ER)\n  - Bottom – up: Functional Dependencies and Normalization\n- ER model is used in DB design\n\n[Diagram: A flowchart showing the database design process starting from Ideas, proceeding to ER design, then to Relational Schema, and finally to Relational DBMS]"
+        },
+        {
+          "chunk_id": "818fb190-ed8e-4851-984c-4a9476981dad",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "1.1. Motivation: Update anomalies",
+          "chunk_order": 8,
+          "cosine_sim": 0.4429,
+          "final_score": 0.0958,
+          "content": "- An instance where the same information must be updated in several different places\n- If you update the name of subject **\"Databases\"**, you need to update in two different places (not efficient)\n\n| student_id | full_name | dob | subject_id | name | result |\n|:---|:---|:---|:---|:---|:---|\n| 1234 | David Beckham | 12/21/1997 | IT3090 | Databases | A |\n| 1238 | Theresa May | 08/06/1998 | IT4843 | Data integration | B |\n| 1234 | David Beckham | 12/21/1997 | IT4868 | Web mining | C |\n| 1497 | Tony Blair | 03/01/1999 | IT3090 | Databases | A |\n| 1238 | Theresa May | 08/06/1998 | IT4868 | Web mining | B |\n| 1542 | Margaret Thatcher | 05/08/1997 | IT2000 | Introduction to ICT | C |"
+        },
+        {
+          "chunk_id": "d071f197-fce1-4e4e-8d20-c09b6b2dda78",
+          "document_id": "f48f1491-09e0-4dbd-8aab-6ce2022696d9",
+          "section_title": "1.2. Definition",
+          "chunk_order": 10,
+          "cosine_sim": 0.3643,
+          "final_score": 0.0915,
+          "content": "[Diagram: The tables illustrate functional dependencies in relational data, showing how certain attributes determine others. This matters because identifying dependencies is a key step in understanding database structure and normalization.]"
+        },
+        {
+          "chunk_id": "5cf7ffde-8c82-4e8a-8743-4b1a5301f356",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "3.2. An algorithm decomposes a universal relation into 3NF",
+          "chunk_order": 23,
+          "cosine_sim": 0.2928,
+          "final_score": 0.0884,
+          "content": "- If none of the relation schemas in D contains a key of R, then create one more relation schema in D that contains attributes that form a key of R.\n\n- Eliminate redundant relations from the resulting set of relations in the relational database schema.\n\n- A relation R is considered redundant if R is a projection of another relation S in the schema; alternately, R is subsumed by S"
+        },
+        {
+          "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.2881,
+          "final_score": 0.0715,
+          "content": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n| CREATE TABLE | SQL statement to define a table into a database |\n| ALTER TABLE | SQL statement to modify table structure if needed (add /delete/modify column(s), add/remove constraint(s)) |\n| INSERT/UPDATE/DELETE | SQL statements to add new record to a table; to change the data of one or more records in a table; to remove single record or multiple records from a table |\n| SELECT | SQL statement to retrieve data from a database |"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.2
+}

@@ -1,0 +1,134 @@
+{
+  "qid": "discrete_math_19",
+  "course_code": "IT3020E",
+  "question": "When are two simple graphs considered isomorphic?",
+  "session_id": "01ea0653-bc29-4f4b-aad0-7b540cd5583e",
+  "answer": "Hai **đồ thị đơn** \\(G\\) và \\(H\\) được gọi là **đẳng cấu** nếu tồn tại một **song ánh** \\(f: V(G) \\to V(H)\\) sao cho với mọi cặp đỉnh \\(u, v \\in V(G)\\):\n\n\\[\n(u,v) \\in E(G) \\iff (f(u), f(v)) \\in E(H).\n\\]\n\nNói đơn giản, đẳng cấu nghĩa là hai đồ thị có **cùng cấu trúc**, chỉ khác tên đỉnh.\n\nMột vài dấu hiệu cần có:\n- cùng số đỉnh,\n- cùng số cạnh,\n- cùng phân bố bậc của các đỉnh,\n- và quan trọng nhất: quan hệ kề nhau phải được bảo toàn bởi ánh xạ \\(f\\).",
+  "citations": [
+    {
+      "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  "
+    },
+    {
+      "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Solution.",
+      "page_number": null,
+      "chunk_order": 35,
+      "excerpt": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number "
+    },
+    {
+      "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Simple Graph",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /"
+    },
+    {
+      "chunk_id": "d9033feb-a231-4376-b67b-f2b54fe8b181",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graphs",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "[Diagram: The drawing compares a multigraph and a simple graph using the same vertex set. It emphasizes that multiple edges can exist between the same pair of vertices in an undirected multigraph, whi"
+    },
+    {
+      "chunk_id": "5b6e92b8-dd38-436d-9349-d58a8ccee03b",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Directed Graph",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "**Definition.** Directed simple *(multi)* graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is finite element, each element is called vertex\n- Edge set $E$ is set (*family*) of ordered pairs\n\n$(u,"
+    },
+    {
+      "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected Graphs",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "two simple graphs are considered isomorphic definition",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "4c4fe286-d5ea-4c40-aa80-3f7b19380695",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Example. Show that $G$ and $H$ are isomorphic.",
+          "chunk_order": 34,
+          "cosine_sim": 0.601,
+          "final_score": 0.7501,
+          "content": "```text\nG:                          H:\n\n   u1 —— u2                   v1      v2\n   |      |                    | \\    / |\n   |      |                    |  \\  /  |\n   u3 —— u4                    v3  \\/   v4\n```\n\n[Diagram: The two drawings illustrate two graphs that have the same structure even though their edges are arranged differently. The point is to show that a relabeling of vertices can preserve adjacency, which is exactly what graph isomorphism means.]"
+        },
+        {
+          "chunk_id": "8107ab14-5213-4ecf-85dd-34ad5945d208",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Solution.",
+          "chunk_order": 35,
+          "cosine_sim": 0.5434,
+          "final_score": 0.6759,
+          "content": "The function $f$ with $f(u_1)=v_1$, $f(u_2)=v_4$, $f(u_3)=v_3$, and $f(u_4)=v_2$ is a one-to-one correspondence between $V(G)$ and $V(H)$.\n\n- Isomorphism graphs there will be:\n  - (1) The same number of vertices\n  - (2) The same number of edges\n  - (3) The same number of degree"
+        },
+        {
+          "chunk_id": "3d626aaf-3b79-4f39-8b9b-254a9aa852c9",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Simple Graph",
+          "chunk_order": 21,
+          "cosine_sim": 0.5329,
+          "final_score": 0.3884,
+          "content": "- **Example:** Simple graph $G_1 = (V_1, E_1)$, where\n\n$V_1 = \\{a, b, c, d, e, f, g, h\\},$  \n  $E_1 = \\{(a,b), (b,c), (c,d), (a,d), (d,e), (a,e), (d,b), (f,g)\\}$.\n\n```text\n        a —— b —— c\n       /|    /     /\n      e |   /     /\n       \\ |  /    /\n         d —— ——\n\n        f\n        |\n        g\n\n        h\n```\n\n[Diagram: The figure shows an undirected graph split into two connected components plus one isolated vertex. It illustrates how a simple graph is defined by its vertex set and edge set, and that not all vertices need to be part of the same connected structure.]"
+        },
+        {
+          "chunk_id": "d9033feb-a231-4376-b67b-f2b54fe8b181",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graphs",
+          "chunk_order": 20,
+          "cosine_sim": 0.5252,
+          "final_score": 0.3293,
+          "content": "[Diagram: The drawing compares a multigraph and a simple graph using the same vertex set. It emphasizes that multiple edges can exist between the same pair of vertices in an undirected multigraph, while an undirected simple graph forbids parallel edges.]\n\n- (a, b): multiple edges (parallel edges)\n\nUndirected Multigraph\n\nUndirected (simple) graph"
+        },
+        {
+          "chunk_id": "5b6e92b8-dd38-436d-9349-d58a8ccee03b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Directed Graph",
+          "chunk_order": 23,
+          "cosine_sim": 0.5237,
+          "final_score": 0.2584,
+          "content": "**Definition.** Directed simple *(multi)* graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is finite element, each element is called vertex\n- Edge set $E$ is set (*family*) of ordered pairs\n\n$(u,v)$, where $u, v \\in V, u \\ne v$\n\n```text\n      (v, u)\n   u ---------> v\n    \\--------->\n      (u, v)\n\n      w ---------> v\n          (w, v)\n```\n\n[Diagram: The figure illustrates that directed edges have an order, so $(u,v)$ and $(v,u)$ are different relationships. It also shows how a directed multigraph may allow multiple directed edges between the same two vertices, which distinguishes it from a simple directed graph.]\n\n- Directed multigraph\n- (Simple) Directed graph\n- $\\sim$ Digraph"
+        },
+        {
+          "chunk_id": "ea17385f-0a18-4f9c-af47-cf6ae1a9ce3a",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Undirected Graphs",
+          "chunk_order": 19,
+          "cosine_sim": 0.5342,
+          "final_score": 0.2558,
+          "content": "**Definition.** Undirected simple (*multi*) graph $G=(V,E)$ consists of 2 sets:\n\n- Vertex set $V$ is a finite set, each element is called vertex\n- Edge set $E$ is the set (*family*) of unordered pairs $(u,v)$, where $u, v \\in V$, $u \\ne v$\n\n```text\n            (a, b)\n        +------------+\n        |            |\n   a ---+------------+--- b\n         \\          /\n          \\        /\n           \\      /\n            \\    /\n             \\  /\n              c\n\n            (b, c)\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 11.2
+}

@@ -1,0 +1,125 @@
+{
+  "qid": "database_10",
+  "course_code": "IT3292E",
+  "question": "What are two algorithms mentioned for executing Join operations in query processing?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "traditional",
+  "session_id": "07292d62-d0de-4580-a2f0-fa8fd97b8d0f",
+  "answer": "Based on the provided context documents, two algorithms mentioned for executing Join operations in query processing are:\n\n1. **Sort-merge JOIN** — This algorithm requires data to be physically sorted by join attributes. It works by merging sorted files, reading sequentially a block at a time, and maintaining two file pointers. It advances the pointer for the relation with the smaller tuple and outputs all possible pairings when tuples match. It is very efficient for presorted data but may require an additional sort step otherwise.\n\n2. **Partition-hash JOIN** — This algorithm hashes both relations on their join attributes and then joins the corresponding buckets accordingly.\n\nThese are explicitly mentioned in the context as different join algorithms that the query optimizer may choose between (for example, \"sort-merge vs. hash join\") when generating a query execution plan from a relational algebra expression.\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "60e2d3b0-073a-4e95-8da3-87129e9fcf9e",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Sort-merge JOIN\n  - Requires data physically sorted by join attributes: Merge and join sorted files, reading sequentially a block at a time\n  - Maintain two file pointers\n    - While tuple at R < tu"
+    },
+    {
+      "chunk_id": "37d26169-1f4a-4855-8f6b-e8d148c5ed7c",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "- Partition-hash JOIN\n  - Hash two relations on join attributes\n  - Join buckets accordingly"
+    },
+    {
+      "chunk_id": "767043fa-1a26-4e37-9ef5-ef2336fcd295",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- Algebra expression is not a query execution plan.\n- Additional decisions required:\n  - which indexes to use, for example, for joins and selects?\n  - which algorithms to use, for example, sort-merge "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "What are two algorithms mentioned for executing Join operations in query processing?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ee5dab53-472e-45b7-b155-ad9876d81237",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 22,
+          "cosine_sim": 0.5138,
+          "final_score": 0.5909,
+          "content": "- Basic Operators\n- One-pass operators:\n  - Scan\n  - Select\n  - Project\n- Multi-pass operators:\n  - Join\n    - Various implementations\n    - Handling of larger-than-memory sources\n  - Aggregation, union, etc."
+        },
+        {
+          "chunk_id": "767043fa-1a26-4e37-9ef5-ef2336fcd295",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 21,
+          "cosine_sim": 0.494,
+          "final_score": 0.5681,
+          "content": "- Algebra expression is not a query execution plan.\n- Additional decisions required:\n  - which indexes to use, for example, for joins and selects?\n  - which algorithms to use, for example, sort-merge vs. hash join?\n  - materialize intermediate results or pipeline them?"
+        },
+        {
+          "chunk_id": "4ee91914-f3bf-411c-b1cf-8fed396b3113",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 30,
+          "cosine_sim": 0.481,
+          "final_score": 0.5532,
+          "content": "- Execution Strategy: Materialization vs. Pipelining\n  - Execution strategy defines how to walk the query execution plan\n    - Materialization\n    - Pipelining\n\n```text\n                        Join\n                         ↑\n\n              PressRel.Symbol = EastCoast.CoSymbol\n                           ↖   ↗\n                         Join   Project\n                          ↖     ↗\n           PressRel.Symbol = Clients.Symbol   CoSymbol\n                     ↖              ↗          ↑\n                   Scan            Select       |\n                 PressRel           Client = “Atkins”  Scan\n                                    ↑                Clients\n                                   Scan\n                                 EastCoast\n```"
+        },
+        {
+          "chunk_id": "60f1ab19-18a1-48bf-8ec3-2c36c17362d8",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.4. Optimizer",
+          "chunk_order": 11,
+          "cosine_sim": 0.4661,
+          "final_score": 0.536,
+          "content": "- Input: RA expression\n- Output: Query execution plan\n- Query execution plan = query plan + the algorithms for the executions of RA operations\n- Aims to choose the cheapest execution plan out of the possible ones\n  - Step 1: Equivalence transformation\n  - Step 2: Annotation for the algorithm of the RA expression\n  - Step 3: Cost estimation for different query execution plans"
+        },
+        {
+          "chunk_id": "60e2d3b0-073a-4e95-8da3-87129e9fcf9e",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 26,
+          "cosine_sim": 0.4617,
+          "final_score": 0.531,
+          "content": "- Sort-merge JOIN\n  - Requires data physically sorted by join attributes: Merge and join sorted files, reading sequentially a block at a time\n  - Maintain two file pointers\n    - While tuple at R < tuple at S, advance R (and vice versa)\n    - While tuples match, output all possible pairings\n  - Very efficient for presorted data. Otherwise, may require a sort (adds cost + delay)"
+        },
+        {
+          "chunk_id": "d2ecb434-97b6-4c35-a580-09367ee35fdf",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.3. Step 3: Cost estimation",
+          "chunk_order": 37,
+          "cosine_sim": 0.4178,
+          "final_score": 0.4804,
+          "content": "- Heuristic rules\n  - Break apart conjunctive selections into a sequence of simple selections\n  - Move $\\sigma$ down the query tree as soon as possible\n  - Replace $\\sigma$-x pairs by ⋈\n  - Break apart and move $\\Pi$ down the tree as soon as possible\n  - Perform the joins with the smallest expected result first"
+        },
+        {
+          "chunk_id": "37d26169-1f4a-4855-8f6b-e8d148c5ed7c",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 27,
+          "cosine_sim": 0.3977,
+          "final_score": 0.4574,
+          "content": "- Partition-hash JOIN\n  - Hash two relations on join attributes\n  - Join buckets accordingly"
+        },
+        {
+          "chunk_id": "b47df70f-ce06-4146-a657-69347163ed02",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.4. Optimizer",
+          "chunk_order": 13,
+          "cosine_sim": 0.3918,
+          "final_score": 0.4506,
+          "content": "[Diagram: The figure illustrates how a relational algebra expression can be turned into an executable plan by selecting specific algorithms, such as using an index for selection. This matters because the optimizer lowers query cost by choosing a more efficient physical execution strategy.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 5.6
+}

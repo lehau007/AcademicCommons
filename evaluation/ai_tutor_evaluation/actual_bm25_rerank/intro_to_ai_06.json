@@ -1,0 +1,106 @@
+{
+  "qid": "intro_to_ai_06",
+  "course_code": "IT3160E",
+  "question": "What is the min-conflicts heuristic used in Iterative Algorithms for CSPs?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "2c0ffb0d-0e7e-4703-ae42-39a73402204b",
+  "answer": "The **min-conflicts heuristic** is a **value-selection heuristic** used in iterative algorithms for CSPs.\n\n### Idea\nWhen you need to assign a value to a variable, **choose the value that violates the fewest constraints**.  \nIn other words, pick the value that causes the **minimum number of conflicts** with the current assignments.\n\n### In the course material\nIt is described as:\n\n- **Value selection by min-conflicts heuristic**\n  - Choose value that violates the fewest constraints\n- This can be viewed as **hill climbing**, where  \n  \\( h(n) = \\) total number of violated constraints\n\n### Why it is useful\n- It guides the search toward states with fewer conflicts.\n- It is often **effective in practice** for CSPs, especially in large problems like scheduling or N-Queens.",
+  "citations": [
+    {
+      "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative Algorithms for CSPs",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables"
+    },
+    {
+      "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one vari"
+    },
+    {
+      "chunk_id": "d7c48c9c-75c8-431d-8999-45016d99d47e",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: 4-Queens",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "- State: 4 queens in four columns ($4*4 = 256$ states)\n- Operators: move queen in column\n- Goal test: no attacks\n- Evaluation: $h(n) =$ number of attacks\n\n```text\n+-------------------+      +---------"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "What is the min-conflicts heuristic used in iterative algorithms for CSPs?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Iterative Algorithms for CSPs",
+          "chunk_order": 26,
+          "cosine_sim": 0.5346,
+          "final_score": 0.907,
+          "content": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables\n- Variable selection\n  - Random\n- Value selection by min-conflicts heuristic\n  - Choose value that violates the fewest constraints\n    - i.e., hill climbing with $h(n) =$ total number of violated constraints"
+        },
+        {
+          "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Summary",
+          "chunk_order": 28,
+          "cosine_sim": 0.5849,
+          "final_score": 0.8845,
+          "content": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one variable assigned per node\n- Variable ordering and value selection heuristics help significantly\n- Forward checking prevents assignments that guarantee later failure\n- Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistencies\n- The CSPs representation allows analysis of problem structure\n- Tree-structured CSPs can be solved in linear time\n- Iterative min-conflicts is usually effective in practice"
+        },
+        {
+          "chunk_id": "d7c48c9c-75c8-431d-8999-45016d99d47e",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Example: 4-Queens",
+          "chunk_order": 27,
+          "cosine_sim": 0.3211,
+          "final_score": 0.1436,
+          "content": "- State: 4 queens in four columns ($4*4 = 256$ states)\n- Operators: move queen in column\n- Goal test: no attacks\n- Evaluation: $h(n) =$ number of attacks\n\n```text\n+-------------------+      +-------------------+      +-------------------+\n|      h = 5       | ---> |      h = 2       | ---> |      h = 0       |\n|  4 queens in     |      |  fewer attacks   |      |   no attacks     |\n|  four columns    |      |  after moving    |      |  solved board    |\n+-------------------+      +-------------------+      +-------------------+\n```\n\n[Diagram: The sequence shows a search process for the 4-Queens problem where each move changes a queen’s position to reduce conflicts. The heuristic value $h(n)$ measures how far a state is from a solution, guiding the search toward a conflict-free arrangement.]"
+        },
+        {
+          "chunk_id": "901710bc-4e4c-49fb-abca-9d74f76b1319",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "Minimax algorithm",
+          "chunk_order": 16,
+          "cosine_sim": 0.3047,
+          "final_score": 0.0437,
+          "content": "```text\n+--------------------------------------------------------------------------------------+\n| function MINIMAX-DECISION(state) returns an action                                   |\n|     v ← MAX-VALUE(state)                                                             |\n|     return the action in SUCCESSORS(state) with value v                              |\n|                                                                                      |\n|--------------------------------------------------------------------------------------|\n| function MAX-VALUE(state) returns a utility value                                    |\n|     if TERMINAL-TEST(state) then return UTILITY(state)                               |\n|     v ← -∞                                                                           |\n|     for a, s in SUCCESSORS(state) do                                                  |\n|         v ← MAX(v, MIN-VALUE(s))                                                     |\n|     return v                                                                          |\n|                                                                                      |\n|--------------------------------------------------------------------------------------|\n| function MIN-VALUE(state) returns a utility value                                    |\n|     if TERMINAL-TEST(state) then return UTILITY(state)                               |\n|     v ← ∞                                                                            |\n|     for a, s in SUCCESSORS(state) do                                                  |\n|         v ← MIN(v, MAX-VALUE(s))                                                     |\n|     return v                                                                          |\n+--------------------------------------------------------------------------------------+\n```"
+        },
+        {
+          "chunk_id": "22feb3bf-6191-4f2f-b6fb-2d75f7129843",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "The α-β algorithm",
+          "chunk_order": 32,
+          "cosine_sim": 0.2837,
+          "final_score": 0.0428,
+          "content": "```text\n+----------------------------------------------------------------------------------------------+\n| function MIN-VALUE(state, α, β) returns a utility value                                     |\n| inputs: state, current state in game                                                         |\n|         α, the value of the best alternative for MAX along the path to state                 |\n|         β, the value of the best alternative for MIN along the path to state                 |\n|                                                                                              |\n| if TERMINAL-TEST(state) then return UTILITY(state)                                           |\n| v ← +∞                                                                                        |\n| for a, s in SUCCESSORS(state) do                                                             |\n|     v ← MIN(v, MAX-VALUE(s, α, β))                                                            |\n|     if v ≤ α then return v                                                                   |\n|     β ← MIN(β, v)                                                                              |\n| return v                                                                                      |\n+----------------------------------------------------------------------------------------------+\n```"
+        },
+        {
+          "chunk_id": "483e247e-a55b-44e4-989f-495d91b2d69d",
+          "document_id": "513219bb-cd7b-4584-8074-4ad0931142c1",
+          "section_title": "The α-β algorithm",
+          "chunk_order": 33,
+          "cosine_sim": 0.4163,
+          "final_score": 0.0404,
+          "content": "[Diagram: This pseudocode describes the MIN-VALUE step of the alpha-beta pruning algorithm used in game-tree search. It shows how the algorithm tracks best-known bounds for MAX and MIN to avoid exploring branches that cannot affect the final decision, improving efficiency.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.1
+}

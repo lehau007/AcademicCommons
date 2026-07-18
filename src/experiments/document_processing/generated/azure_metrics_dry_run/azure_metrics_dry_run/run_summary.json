@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-06-01T03:03:03.418194+00:00",
+  "run_id": "azure_metrics_dry_run",
+  "status": "success",
+  "manifest_path": "src/experiments/document_processing/test_manifest.json",
+  "total_valid_entries": 4,
+  "total_invalid_entries": 0,
+  "success_count": 4,
+  "failed_count": 0,
+  "route_match_count": 3,
+  "duration_ms": 342
+}

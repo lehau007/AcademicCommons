@@ -1,0 +1,126 @@
+{
+  "qid": "database_02",
+  "course_code": "IT3292E",
+  "question": "What is the difference between the Intersection and Difference operators in relational algebra?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "646def70-305a-4f40-aa8d-017c270327fc",
+  "answer": "In **relational algebra**, both **Intersection** and **Difference** are **set operations** on relations, but they behave differently:\n\n## 1) Intersection \\((E_1 \\cap E_2)\\)\n- Returns the tuples that appear in **both** relations.\n- Think of it as: **common records**.\n\n### Example\nIf:\n- \\(R = \\{1,2,3\\}\\)\n- \\(S = \\{2,3,4\\}\\)\n\nThen:\n- \\(R \\cap S = \\{2,3\\}\\)\n\n---\n\n## 2) Difference \\((E_1 - E_2)\\)\n- Returns the tuples that appear in the **first** relation but **not** in the second.\n- Think of it as: **records in A excluding those also in B**.\n\n### Example\nUsing the same sets:\n- \\(R - S = \\{1\\}\\)\n- \\(S - R = \\{4\\}\\)\n\n---\n\n## Key difference\n- **Intersection** keeps tuples **present in both** relations.\n- **Difference** keeps tuples **present only in the first relation**.\n\n---\n\n## Important note\nFor both operators, the two relations must be **union-compatible**:\n- same number of attributes\n- corresponding attributes have compatible domains/types\n\nThe course material also notes that **intersection is commutative** \\((E_1 \\cap E_2 = E_2 \\cap E_1)\\), while **difference is not**.",
+  "citations": [
+    {
+      "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+      "document_title": "02_Relational_Algebra.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1. Introduction to relational algebra",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several r"
+    },
+    {
+      "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Rel"
+    },
+    {
+      "chunk_id": "3cc5ea28-d621-4270-96a5-ea87b4aa21c1",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Step 1: Equivalence transformation",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "- Equivalence tranformation rules\n- (11) The selection operation distributes over union, intersection, and set-difference\n  - $σ_θ(E_1 ∪ E_2) = σ_θ(E_1) ∪ σ_θ(E_2)$\n  - $σ_θ(E_1 ∩ E_2) = σ_θ(E_1) ∩ σ_"
+    },
+    {
+      "chunk_id": "fe8d6b5f-8c26-476e-a33c-1f031f398e42",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 31,
+      "excerpt": "[Diagram: The figure illustrates a query execution plan for relational algebra operations, showing scans, selection, projection, and joins. It highlights how execution strategy affects whether interme"
+    },
+    {
+      "chunk_id": "e4ed7e43-7870-4daa-a330-b2762ed15dfc",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.1. Step 1: Equivalence transformation",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "- Equivalence tranformation rules\n- (8) Projection distributes over join as follows\n  - $\\Pi_{L_1 \\cup L_2}(E_1 \\bowtie_{\\theta} E_2) = \\Pi_{L_1}(E_1) \\bowtie_{\\theta} \\Pi_{L_2}(E_2)$\n  - If $\\theta$ "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "difference between intersection and difference operators in relational algebra",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "d590a2d7-3978-45c6-b061-fe21e82cce46",
+          "document_id": "09ce7186-0502-435e-b34b-41ff8d18a4b3",
+          "section_title": "1. Introduction to relational algebra",
+          "chunk_order": 9,
+          "cosine_sim": 0.607,
+          "final_score": 0.4708,
+          "content": "- Relational algebra providing a theoretical foundation for relational databases, particularly query languages for relational databases.\n- Relational algebra expression is composed of one or several relational algebraic operators:\n  - Operator: represent computations\n    - Input: one or two relation\n    - Output: a relation\n  - Unary operator (one input) vs. binary operator (two inputs)"
+        },
+        {
+          "chunk_id": "a98c89b1-edf6-469d-a0ff-42bce19213ab",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "SQL Retrieval statement (Part 2)",
+          "chunk_order": 7,
+          "cosine_sim": 0.5267,
+          "final_score": 0.2421,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Union, Intersection and Difference of Queries\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        },
+        {
+          "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.4516,
+          "final_score": 0.2396,
+          "content": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Relational algebra | An algebra whose operands are relations or variables that represent Relations |"
+        },
+        {
+          "chunk_id": "3cc5ea28-d621-4270-96a5-ea87b4aa21c1",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.1. Step 1: Equivalence transformation",
+          "chunk_order": 20,
+          "cosine_sim": 0.4848,
+          "final_score": 0.2335,
+          "content": "- Equivalence tranformation rules\n- (11) The selection operation distributes over union, intersection, and set-difference\n  - $σ_θ(E_1 ∪ E_2) = σ_θ(E_1) ∪ σ_θ(E_2)$\n  - $σ_θ(E_1 ∩ E_2) = σ_θ(E_1) ∩ σ_θ(E_2)$\n  - $σ_θ(E_1 − E_2) = σ_θ(E_1) − σ_θ(E_2)$\n- (12) The project operation distributes over the union\n  - $Π_L(E_1 ∪ E_2) = Π_L(E_1) ∪ Π_L(E_2)$"
+        },
+        {
+          "chunk_id": "fe8d6b5f-8c26-476e-a33c-1f031f398e42",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 31,
+          "cosine_sim": 0.5034,
+          "final_score": 0.1978,
+          "content": "[Diagram: The figure illustrates a query execution plan for relational algebra operations, showing scans, selection, projection, and joins. It highlights how execution strategy affects whether intermediate results are materialized or pipelined through the plan.]"
+        },
+        {
+          "chunk_id": "e4ed7e43-7870-4daa-a330-b2762ed15dfc",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.1. Step 1: Equivalence transformation",
+          "chunk_order": 19,
+          "cosine_sim": 0.4527,
+          "final_score": 0.1904,
+          "content": "- Equivalence tranformation rules\n- (8) Projection distributes over join as follows\n  - $\\Pi_{L_1 \\cup L_2}(E_1 \\bowtie_{\\theta} E_2) = \\Pi_{L_1}(E_1) \\bowtie_{\\theta} \\Pi_{L_2}(E_2)$\n  - If $\\theta$ involves attributes in $L_1 \\cup L_2$ only and $L_i$ contains attributes of $E_i$\n- (9) The set operations union and intersection are commutative\n  - $E_1 \\cup E_2 = E_2 \\cup E_1$\n  - $E_1 \\cap E_2 = E_2 \\cap E_1$\n- (10) The union and intersection are associative\n  - $(E_1 \\cup E_2) \\cup E_3 = E_1 \\cup (E_2 \\cup E_3)$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.7
+}

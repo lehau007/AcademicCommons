@@ -1,0 +1,45 @@
+{
+  "file_id": "it3160e_intro_ai_presentation",
+  "scores": {
+    "classification_routing": {
+      "score": 4,
+      "justification": "processing_meta.json persists no `route` or `inferred_type`, so the route is unrecoverable from logs; however output.md carries per-slide markers (7 slides, one section each) strongly consistent with expected_type=slide_pdf. Supporting metadata is slightly off: summary.language='mixed' vs manifest 'en', and ocr_quality='low' contradicts the actually clean extraction.",
+      "evidence": ["processing_meta.json has no route/inferred_type field", "\"language\": \"mixed\"", "\"ocr_quality\": \"low\""]
+    },
+    "text_coverage": {
+      "score": 5,
+      "justification": "Every substantive text block from all 7 source slides is present in output.md, including the lecturer contact 'huonglt@soict.hust.edu.vn', the 70%/30% evaluation split, and the full reference citation ending 'Prentice Hall'.",
+      "evidence": []
+    },
+    "extraction_fidelity": {
+      "score": 5,
+      "justification": "Characters, digits, and symbols are correct with no garbling; the Vietnamese name 'Lê Thanh Hương' keeps full diacritics (ê, ươ) and the email and em-dash in the book title are preserved exactly.",
+      "evidence": []
+    },
+    "structure_preservation": {
+      "score": 4,
+      "justification": "Slide boundaries are preserved via '<!-- slide N -->' markers and headings/lists are in correct reading order, but on the Content slide output.md FLATTENS two items that the source and expected nest as sub-bullets under 'Problem Solving'.",
+      "evidence": ["output.md flat: '- Problem Solving\\n- Search Algorithms\\n- Constraint Satisfaction Problems'", "source/expected nest them indented under '- Problem Solving'"]
+    },
+    "faithfulness_no_hallucination": {
+      "score": 5,
+      "justification": "output.md contains only content present in the source slides; no invented text was found. (The stray lowercase 'artificial' in summary.json's concepts list does not appear in output.md.)",
+      "evidence": []
+    },
+    "formula_table_code": {
+      "score": 5,
+      "justification": "N/A — no formulas, tables, or code in this course-introduction slide deck.",
+      "evidence": []
+    }
+  },
+  "classification": {
+    "expected_type": "slide_pdf",
+    "expected_route": "hybrid",
+    "actual_type": "slide_pdf",
+    "actual_route": "unrecorded",
+    "pass": true
+  },
+  "hallucinations": [],
+  "normalization_note": "The normalized markdown reads coherently and drops no large spans; all 7 slides are present with '<!-- slide N -->' boundary comments and '#' headings, and content is complete. Only deviations are the flattened sub-bullets on the Content slide and inaccurate summary metadata (language='mixed', ocr_quality='low').",
+  "overall_comment": "High-quality faithful extraction of a text-native English AI course-intro deck: complete text coverage, correct Vietnamese diacritics, no hallucinations, and slide boundaries preserved. The only real content defect is a list-nesting error on the Content slide (output flattens 'Search Algorithms' / 'Constraint Satisfaction Problems' that the source nests under 'Problem Solving'). Routing is unrecoverable from processing_meta, so pass is judged on consistent slide-type/language signals; metadata labels are slightly off."
+}

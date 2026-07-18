@@ -1,0 +1,28 @@
+{
+  "char_budget": 24000,
+  "batches": [
+    {
+      "batch_index": 0,
+      "block_count": 2,
+      "input_chars": 116,
+      "page_or_slide_range": [
+        1,
+        2
+      ],
+      "mode": "passthrough_vision_disabled",
+      "output_chars": 116
+    }
+  ],
+  "cleaned_blocks": [
+    {
+      "kind": "vision_placeholder",
+      "page": 1,
+      "content": "[VISION_PLACEHOLDER] OCR output pending for scanned page."
+    },
+    {
+      "kind": "vision_placeholder",
+      "page": 2,
+      "content": "[VISION_PLACEHOLDER] OCR output pending for scanned page."
+    }
+  ]
+}

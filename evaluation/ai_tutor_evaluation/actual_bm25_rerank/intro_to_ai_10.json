@@ -1,0 +1,75 @@
+{
+  "qid": "intro_to_ai_10",
+  "course_code": "IT3160E",
+  "question": "What is the termination condition for the training loop of a neural network?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "99289359-1270-48c4-a500-c3d5e2cd3dc4",
+  "answer": "Trong các tài liệu đã truy xuất **không thấy nêu trực tiếp** điều kiện dừng của vòng lặp huấn luyện mạng nơ-ron.\n\nThông thường, vòng lặp huấn luyện sẽ dừng khi **một trong các điều kiện** sau được thỏa:\n- đạt **số epoch tối đa** đã đặt trước,\n- lỗi huấn luyện đã **giảm xuống dưới ngưỡng** mong muốn,\n- hoặc **không cải thiện thêm** sau một số vòng lặp liên tiếp (early stopping).\n\nNếu bạn muốn, tôi có thể giúp bạn diễn giải theo đúng ngữ cảnh của **BP/backpropagation** trong môn này.",
+  "citations": [],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "termination condition for the training loop of a neural network",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c203c17e-d401-439a-b1cb-c7bee0a4c0b5",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP algorithm – Forward phase (1)",
+          "chunk_order": 38,
+          "cosine_sim": 0.3978,
+          "final_score": 0.1929,
+          "content": "- For each training instance $x$\n  - The input vector $x$ is propagated from the input layer to the output layer\n  - The network produces an actual output $Out$ (i.e., a vector of $Out_i$, $i=1..n$)\n- Given an input vector $x$, a neuron $z_q$ in the hidden layer receives a net input of\n- ...and produces a (local) output of\n\n$Net_q = \\sum_{j=1}^{m} w_{qj} x_j$\n\nwhere $f(.)$ is the activation (transfer) function of neuron $z_q$\n\n$Out_q = f(Net_q) = f\\left(\\sum_{j=1}^{m} w_{qj} x_j\\right)$"
+        },
+        {
+          "chunk_id": "3650b8da-e54b-4d06-84a1-b44ff3b0fb2e",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Network structure",
+          "chunk_order": 21,
+          "cosine_sim": 0.3305,
+          "final_score": 0.1663,
+          "content": "- A layer is a group of neurons\n- A hidden layer is any layer between the input and the output layers\n- Hidden nodes do not directly interact with the external environment\n- An ANN is said to be *fully connected* if every output from one layer is connected to every node in the next layer\n- An ANN is called *feed-forward network* if no node output is an input to a node in the same layer or in a preceding layer\n- When node outputs can be directed back as inputs to a node in the same (or a preceding) layer, it is a *feedback network*\n  - If the feedback is directed back as input to the nodes in the same layer, then it is called *lateral feedback*\n- Feedback networks that have closed loops are called *recurrent networks*"
+        },
+        {
+          "chunk_id": "f119eadf-07ee-492e-8b09-4d3b3ef36616",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP illustration – Forward phase (1)",
+          "chunk_order": 54,
+          "cosine_sim": 0.3438,
+          "final_score": 0.1471,
+          "content": "```text\nx1 ──► f(Net1) ──► f(Net4) ──► f(Net6) ──► Out6\n │        │  ╲        ▲  ╲         ▲\n │        │   ╲       │   ╲        │\n ├──► f(Net2) ──► f(Net5) ──────────┘\n │        │  ╲        ▲\n │        │   ╲       │\n └──► f(Net3) ─────────┘\n\nx2 ──► f(Net1)\n │\n ├──► f(Net2)\n │\n └──► f(Net3)\n```\n\n[Diagram: This shows the forward propagation of a multilayer neural network, where inputs are transformed through hidden layers to produce the final output. It matters because each node computes an intermediate activation that feeds the next layer, illustrating how information flows from inputs to prediction.]"
+        },
+        {
+          "chunk_id": "76e3a7dc-48f5-433e-b2dd-50908c451f70",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Structure and operation of a neuron",
+          "chunk_order": 6,
+          "cosine_sim": 0.3546,
+          "final_score": 0.1337,
+          "content": "- The **input signals** to the neuron $(x_i,\\ i = 1..m)$\n  - Each input $x_i$ associates with a weight $w_i$\n- The **bias** $w_0$ (with the input $x_0=1$)\n- **Net input** is an integration function of the inputs – $Net(\\mathbf{w}, \\mathbf{x})$\n- **Activation (transfer)** function computes the output of the neuron – $f(Net(\\mathbf{w}, \\mathbf{x}))$\n- **Output** of the neuron: $Out=f(Net(\\mathbf{w}, \\mathbf{x}))$\n\n```text\nx0=1   --w0-->\\\nx1     --w1--> \\\nx2     --w2-->  \\\n...              >  +-----+    +-----+    ---> Output of the neuron (Out)\nxm     --wm-->  /   |  Σ  | -> |  f  |\n               /     +-----+    +-----+\n\nInputs to the neuron (x)     Net input (Net)     Activation (transfer) function (f)\n```\n\n[Diagram: The neuron first combines weighted inputs, including a bias term, into a single net input, then passes that value through an activation function to produce the final output. This structure is the basic computational unit behind neural networks, enabling them to model nonlinear relationships.]"
+        },
+        {
+          "chunk_id": "d9770c9f-6f20-440d-b649-757fb42d6ccc",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP algorithm – Forward phase (2)",
+          "chunk_order": 39,
+          "cosine_sim": 0.3155,
+          "final_score": 0.1325,
+          "content": "- The net input for a neuron $y_i$ in the output layer is\n\n$$\n  Net_i = \\sum_{q=1}^{l} w_{iq} Out_q = \\sum_{q=1}^{l} w_{iq} f\\left(\\sum_{j=1}^{m} w_{qj} x_j\\right)\n  $$\n\n- Neuron $y_i$ produces the output value (i.e., an output of the network)\n\n$$\n  Out_i = f(Net_i) = f\\left(\\sum_{q=1}^{l} w_{iq} Out_q\\right) = f\\left(\\sum_{q=1}^{l} w_{iq} f\\left(\\sum_{j=1}^{m} w_{qj} x_j\\right)\\right)\n  $$\n\n- The vector of output values $Out_i$ $(i=1..n)$ is the actual network output, given the input vector $x$"
+        },
+        {
+          "chunk_id": "b7119f3c-3e4f-49f6-ae7b-cf57915b5d2a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Regression algorithm",
+          "chunk_order": 23,
+          "cosine_sim": 0.246,
+          "final_score": 0.1286,
+          "content": "- General process for predecessor construction\n  - Give a goal description G\n  - Let A be an action that is relevant and consistent\n  - The predecessors are as follows:\n    - Any positive effects of A that appear in G are deleted.\n    - Each precondition literal of A is added, unless it already appears.\n- Any standard search algorithm can be added to perform the search.\n- Termination when predecessor satisfied by initial state.\n  - In FO case, satisfaction might require a substitution."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.0
+}

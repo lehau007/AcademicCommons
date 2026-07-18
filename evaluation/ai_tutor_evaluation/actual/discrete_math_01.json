@@ -1,0 +1,39 @@
+{
+  "qid": "discrete_math_01",
+  "course_code": "IT3020E",
+  "question": "What are the definitions of an Articulation Point and a Bridge in an undirected graph?",
+  "session_id": "dfc87600-258c-4d42-ba0d-bf94531e272d",
+  "answer": "Trong **đồ thị vô hướng**, hai khái niệm được định nghĩa như sau:\n\n### 1. Articulation Point (đỉnh khớp / cut vertex)\nMột **đỉnh** được gọi là **articulation point** nếu khi **loại bỏ đỉnh đó** (cùng với các cạnh kề nó), thì **số thành phần liên thông của đồ thị tăng lên**.\n\nNói đơn giản:\n- Nếu đồ thị ban đầu liên thông,\n- mà xóa một đỉnh nào đó làm đồ thị **không còn liên thông**,\n- thì đỉnh đó là một articulation point.\n\n### 2. Bridge (cạnh cầu)\nMột **cạnh** được gọi là **bridge** nếu khi **loại bỏ cạnh đó**, thì **số thành phần liên thông của đồ thị tăng lên**.\n\nNói đơn giản:\n- Nếu xóa một cạnh mà làm đồ thị bị tách thành nhiều phần hơn,\n- thì cạnh đó là một bridge.",
+  "citations": [
+    {
+      "chunk_id": "367c4728-ce7e-4aa8-beac-8aaf0b715f16",
+      "document_title": "2_1-GraphFundamentals.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Connectedness",
+      "page_number": null,
+      "chunk_order": 46,
+      "excerpt": "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components than in the original graph. The removal of a cut vertex from a connected graph produces a gr"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "definitions of articulation point and bridge in an undirected graph",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "367c4728-ce7e-4aa8-beac-8aaf0b715f16",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "Connectedness",
+          "chunk_order": 46,
+          "cosine_sim": 0.6658,
+          "final_score": 0.9443,
+          "content": "**Articulation Point (Cut vertex)**: removal of a vertex produces a subgraph with more connected components than in the original graph. The removal of a cut vertex from a connected graph produces a graph that is not connected\n\n**Bridge**: An edge whose removal produces a subgraph with more connected components than in the original graph.\n\n```text\n        +---+       +---+           +---+\n        | b |-------| c |-----------| e |\n        +---+       +---+           +---+\n          |           |               |\n          |           |               |\n        +---+       +---+             |\n        | a |-------| d |-------------+\n        +---+                         |\n                                      |\n                                    +---+\n                                    | g |\n                                    +---+\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.4
+}

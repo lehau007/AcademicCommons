@@ -1,0 +1,173 @@
+{
+  "qid": "intro_to_ai_10",
+  "course_code": "IT3160E",
+  "question": "What is the termination condition for the training loop of a neural network?",
+  "session_id": "eb4ea4b9-d633-453a-94eb-c784dd9ef6fa",
+  "answer": "The training loop terminates when the **current total error is acceptable**, i.e.\n\n\\[\nE < E_{\\text{threshold}}\n\\]\n\nAccording to the course material, the procedure is:\n\n- After one epoch has been completed, check the total error.\n- If \\(E < E_{\\text{threshold}}\\), **stop training** and output the final weights.\n- Otherwise, reset \\(E = 0\\) and start a new epoch.",
+  "citations": [
+    {
+      "chunk_id": "b9b2b22e-ed24-4f91-aee0-dccb99e7a18e",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Step 6 (Total error check)",
+      "page_number": null,
+      "chunk_order": 53,
+      "excerpt": "If the current total error is acceptable $(E < E_{threshold})$ then the training process terminates and output the final weights;\n\nOtherwise, reset E=0, and initiate the new training epoch by going to"
+    },
+    {
+      "chunk_id": "97f2b641-a3db-4372-8f37-3fbcd505a384",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Step 1 (Training loop)",
+      "page_number": null,
+      "chunk_order": 48,
+      "excerpt": "- Apply the input vector of the $k^{th}$ training instance to the input layer $(q=1)$\n- ${}^q Out_i = {}^1 Out_i = x_i^{(k)}, \\forall l$"
+    },
+    {
+      "chunk_id": "8807a5fa-96ab-45c0-bf0e-8a5d2b5a1c60",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Step 5 (One epoch check)",
+      "page_number": null,
+      "chunk_order": 52,
+      "excerpt": "Check whether the entire training set has been exploited (i.e., one epoch)\n\nIf the entire training set has been exploited, then go to step 6; otherwise, go to step 1"
+    },
+    {
+      "chunk_id": "c203c17e-d401-439a-b1cb-c7bee0a4c0b5",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "BP algorithm – Forward phase (1)",
+      "page_number": null,
+      "chunk_order": 38,
+      "excerpt": "- For each training instance $x$\n  - The input vector $x$ is propagated from the input layer to the output layer\n  - The network produces an actual output $Out$ (i.e., a vector of $Out_i$, $i=1..n$)\n-"
+    },
+    {
+      "chunk_id": "748d5a7f-a0e1-4dd7-b9bb-d1648fd98ce4",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "BP algorithm – Backward phase (1)",
+      "page_number": null,
+      "chunk_order": 40,
+      "excerpt": "- For each training instance $x$\n  - The error signals resulting from the difference between the desired output $d$ and the actual output $Out$ are computed\n  - The error signals are *back-propagated*"
+    },
+    {
+      "chunk_id": "6b047347-a7a1-46eb-9f67-43b02c48fe2a",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Step 3 (Output error measure)",
+      "page_number": null,
+      "chunk_order": 50,
+      "excerpt": "Compute the error and error signals ${}^{Q}\\delta_i$ for every neuron in the output layer\n\n$$\nE = E + \\frac{1}{2}\\sum_{i=1}^{n}\\left(d_i^{(k)}-{}^{Q}Out_i\\right)^2\n$$\n\n$$\n{}^{Q}\\delta_i = \\left(d_i^{("
+    },
+    {
+      "chunk_id": "58d50c8a-1f40-4028-ace6-b50bfb7b2b66",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Step 2 (Forward propagation)",
+      "page_number": null,
+      "chunk_order": 49,
+      "excerpt": "- Propagate the signal forward through the network, until the network outputs (in the output layer) ${}^Q Out_i$ have all been obtained\n\n$$\n{}^q Out_i = f({}^q Net_i) = f\\left(\\sum_j {}^q w_{ij}\\, {}^"
+    },
+    {
+      "chunk_id": "93f83658-ef84-4d0c-948f-00c0eacd1046",
+      "document_title": "lecture15-NeuronNetworks.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "General weight learning rule",
+      "page_number": null,
+      "chunk_order": 25,
+      "excerpt": "```text\nInputs x = [x0=1, x1, ..., xj, ..., xm]\n   |      |    |       |        |\n   |     w0   w1      wj       wm\n   v      v    v       v        v\n+-------------------------------------------------"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "termination condition for the training loop of a neural network",
+      "namespaces": [
+        "knowledge",
+        "exercise"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "b9b2b22e-ed24-4f91-aee0-dccb99e7a18e",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Step 6 (Total error check)",
+          "chunk_order": 53,
+          "cosine_sim": 0.5065,
+          "final_score": 0.5825,
+          "content": "If the current total error is acceptable $(E < E_{threshold})$ then the training process terminates and output the final weights;\n\nOtherwise, reset E=0, and initiate the new training epoch by going to step 1"
+        },
+        {
+          "chunk_id": "97f2b641-a3db-4372-8f37-3fbcd505a384",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Step 1 (Training loop)",
+          "chunk_order": 48,
+          "cosine_sim": 0.4369,
+          "final_score": 0.5025,
+          "content": "- Apply the input vector of the $k^{th}$ training instance to the input layer $(q=1)$\n- ${}^q Out_i = {}^1 Out_i = x_i^{(k)}, \\forall l$"
+        },
+        {
+          "chunk_id": "8807a5fa-96ab-45c0-bf0e-8a5d2b5a1c60",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Step 5 (One epoch check)",
+          "chunk_order": 52,
+          "cosine_sim": 0.4332,
+          "final_score": 0.4981,
+          "content": "Check whether the entire training set has been exploited (i.e., one epoch)\n\nIf the entire training set has been exploited, then go to step 6; otherwise, go to step 1"
+        },
+        {
+          "chunk_id": "c203c17e-d401-439a-b1cb-c7bee0a4c0b5",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP algorithm – Forward phase (1)",
+          "chunk_order": 38,
+          "cosine_sim": 0.4148,
+          "final_score": 0.4771,
+          "content": "- For each training instance $x$\n  - The input vector $x$ is propagated from the input layer to the output layer\n  - The network produces an actual output $Out$ (i.e., a vector of $Out_i$, $i=1..n$)\n- Given an input vector $x$, a neuron $z_q$ in the hidden layer receives a net input of\n- ...and produces a (local) output of\n\n$Net_q = \\sum_{j=1}^{m} w_{qj} x_j$\n\nwhere $f(.)$ is the activation (transfer) function of neuron $z_q$\n\n$Out_q = f(Net_q) = f\\left(\\sum_{j=1}^{m} w_{qj} x_j\\right)$"
+        },
+        {
+          "chunk_id": "748d5a7f-a0e1-4dd7-b9bb-d1648fd98ce4",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "BP algorithm – Backward phase (1)",
+          "chunk_order": 40,
+          "cosine_sim": 0.4064,
+          "final_score": 0.4674,
+          "content": "- For each training instance $x$\n  - The error signals resulting from the difference between the desired output $d$ and the actual output $Out$ are computed\n  - The error signals are *back-propagated* from the output layer to the previous layers to update the weights\n- Before discussing the error signals and their back propagation, we first define an error (cost) function\n\n$$\nE(w)=\\frac{1}{2}\\sum_{i=1}^{n}(d_i-Out_i)^2=\\frac{1}{2}\\sum_{i=1}^{n}\\left[d_i-f(Net_i)\\right]^2\n$$\n\n$$\n=\\frac{1}{2}\\sum_{i=1}^{n}\\left[d_i-f\\left(\\sum_{q=1}^{l} w_{iq}Out_q\\right)\\right]^2\n$$"
+        },
+        {
+          "chunk_id": "6b047347-a7a1-46eb-9f67-43b02c48fe2a",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Step 3 (Output error measure)",
+          "chunk_order": 50,
+          "cosine_sim": 0.4029,
+          "final_score": 0.4633,
+          "content": "Compute the error and error signals ${}^{Q}\\delta_i$ for every neuron in the output layer\n\n$$\nE = E + \\frac{1}{2}\\sum_{i=1}^{n}\\left(d_i^{(k)}-{}^{Q}Out_i\\right)^2\n$$\n\n$$\n{}^{Q}\\delta_i = \\left(d_i^{(k)}-{}^{Q}Out_i\\right) f'({}^{Q}Net_i)\n$$"
+        },
+        {
+          "chunk_id": "58d50c8a-1f40-4028-ace6-b50bfb7b2b66",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "Step 2 (Forward propagation)",
+          "chunk_order": 49,
+          "cosine_sim": 0.3939,
+          "final_score": 0.453,
+          "content": "- Propagate the signal forward through the network, until the network outputs (in the output layer) ${}^Q Out_i$ have all been obtained\n\n$$\n{}^q Out_i = f({}^q Net_i) = f\\left(\\sum_j {}^q w_{ij}\\, {}^{q-1}Out_j\\right)\n$$"
+        },
+        {
+          "chunk_id": "93f83658-ef84-4d0c-948f-00c0eacd1046",
+          "document_id": "0cca685b-b94d-42e9-a82b-f3eed54d3583",
+          "section_title": "General weight learning rule",
+          "chunk_order": 25,
+          "cosine_sim": 0.3802,
+          "final_score": 0.4373,
+          "content": "```text\nInputs x = [x0=1, x1, ..., xj, ..., xm]\n   |      |    |       |        |\n   |     w0   w1      wj       wm\n   v      v    v       v        v\n+--------------------------------------------------+\n|                      a neuron                     |\n|                         o                         |-----> Out\n|                        Δw                         |\n+--------------------------------------------------+\n                           ^\n                           |\n                        +--+--+\n                        |  ×   |<------ Learning signal generator <------ d\n                        +--+--+\n                           ^\n                           |\n                           η\n                           ^\n                           |\n                           x\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.8
+}

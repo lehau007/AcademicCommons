@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent1_output.schema.json",
+  "title": "Agent 1: Course Context Aggregator Output Contract (v1)",
+  "description": "Output of Agent 1 in the 3-agent evaluation pipeline. Provides course context, duplicate detection, and cold-start flag. See project_description.md Section 6.2.",
+  "type": "object",
+  "required": ["schema_version", "course_context", "duplicate", "cold_start"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "course_context": {
+      "type": "object",
+      "required": ["syllabus_topic_summary", "existing_document_count", "topic_coverage"],
+      "properties": {
+        "syllabus_topic_summary": {
+          "type": "string"
+        },
+        "existing_document_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "topic_coverage": {
+          "type": "object",
+          "description": "Map of topic_name → coverage status",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["covered", "partial", "missing"]
+          }
+        }
+      }
+    },
+    "duplicate": {
+      "type": "object",
+      "required": ["is_duplicate", "duplicate_of_document_id", "similarity_score"],
+      "properties": {
+        "is_duplicate": { "type": "boolean" },
+        "duplicate_of_document_id": { "type": ["string", "null"] },
+        "similarity_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overlapping ratio computed from Chunk-Level Set Matching. Threshold >= 0.40 flags duplicate at chunk similarity >= 0.85."
+        }
+      }
+    },
+    "cold_start": {
+      "type": "object",
+      "required": ["is_cold_start", "reason"],
+      "properties": {
+        "is_cold_start": { "type": "boolean" },
+        "reason": {
+          "type": ["string", "null"],
+          "description": "Reason for cold-start flag (e.g., 'no_seed_document' or 'fewer_than_3_approved_docs')"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

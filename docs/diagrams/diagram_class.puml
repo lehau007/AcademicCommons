@@ -1,0 +1,203 @@
+@startuml class
+' Domain Class Diagram - Academic Commons System (persistent model)
+' Object-oriented view of the SQLAlchemy ORM entities in src/backend/app/models/.
+' Render: java -jar plantuml.jar -tpng docs/diagrams/diagram_class.puml -o ../../thesis_book/figures
+' Requires Graphviz (dot). For a no-Graphviz fallback add: !pragma layout smetana
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam linetype ortho
+skinparam ArrowColor #5B6470
+skinparam class {
+  BackgroundColor #F4F6F8
+  BorderColor #6B7480
+  FontColor #1F2730
+  AttributeFontColor #1F2730
+}
+skinparam enum {
+  BackgroundColor #EEF2F6
+  BorderColor #6B7480
+}
+
+' ===================== Core actors / catalog =====================
+class User {
+  +UUID id
+  +str email
+  +str role
+  +str full_name
+  +bool is_active
+}
+
+class Course {
+  +UUID id
+  +str code
+  +str name
+  +int review_sla_hours
+  +bool is_active
+}
+
+class CourseReviewerAssignment {
+  +UUID id
+  +bool is_active
+  +datetime assigned_at
+}
+
+' ===================== Documents =====================
+class Document {
+  +UUID id
+  +DocumentTier document_tier
+  +MaterialType material_type
+  +ContributionType contribution_type
+  +DocumentStatus status
+  +int version
+  +bool sla_breached
+  +course_code() : str
+  +reviewer_note() : str
+}
+
+class DocumentSummary {
+  +UUID id
+  +str topic
+  +list~str~ concepts
+  +OcrQuality ocr_quality
+  +list summary_embedding
+}
+
+class DocumentChunk {
+  +UUID id
+  +RagNamespace rag_namespace
+  +int chunk_order
+  +str content
+  +list embedding
+}
+
+class DocumentStateLog {
+  +UUID id
+  +DocumentStatus from_state
+  +DocumentStatus to_state
+  +str actor_type
+  +str reason
+}
+
+' ===================== Processing & evaluation =====================
+class ProcessingJob {
+  +UUID id
+  +ProcessingJobType job_type
+  +JobStatus status
+  +int attempt_count
+}
+
+class EvaluationJob {
+  +UUID id
+  +int run_number
+  +JobStatus status
+  +bool is_latest
+}
+
+class EvaluationReport {
+  +UUID id
+  +dict agent1_output
+  +dict agent2_output
+  +dict agent3_output
+  +str final_recommendation
+}
+
+class ReviewDecision {
+  +UUID id
+  +str decision
+  +ContributionType final_contribution_type
+  +str note
+}
+
+' ===================== Retrieval / interaction =====================
+class Citation {
+  +UUID id
+  +DocumentTier document_tier
+  +float relevance_score
+  +str excerpt
+}
+
+class CommunityVote {
+  +UUID id
+  +str vote
+}
+
+class ContributionScore {
+  +UUID id
+  +float points
+  +int global_rank
+}
+
+class MindmapArtifact {
+  +UUID id
+  +dict concept_graph
+  +bool is_cached
+}
+
+class MockTestItem {
+  +UUID id
+  +QuestionType question_type
+  +Difficulty difficulty
+  +str correct_answer
+}
+
+class ChatSession {
+  +UUID id
+  +str summary
+}
+
+class ChatMessage {
+  +UUID id
+  +ChatRole role
+  +str content
+  +list citations
+}
+
+class CourseSummaryCache {
+  +UUID course_id
+  +str summary_markdown
+}
+
+class AdminAuditLog {
+  +UUID id
+  +str action_type
+  +str target_entity_type
+  +str reason
+}
+
+class Notification {
+  +UUID id
+  +str type
+  +str message
+}
+
+' ===================== Associations =====================
+Course "1" --> "*" Document : contains
+User   "1" --> "*" Document : uploads
+Course "1" --> "*" CourseReviewerAssignment
+User   "1" --> "*" CourseReviewerAssignment : reviewer
+User   "1" --> "*" CourseReviewerAssignment : assigned by
+Document "1" *-- "0..1" DocumentSummary
+Document "1" *-- "*"    DocumentChunk
+Document "1" --> "*"    DocumentStateLog
+User     "1" --> "*"    DocumentStateLog : actor
+Document "1" --> "*"    ProcessingJob
+Document "1" --> "*"    EvaluationJob
+EvaluationJob "1" --> "0..1" EvaluationReport
+EvaluationReport "1" --> "0..1" ReviewDecision
+User "1" --> "*" ReviewDecision : decides
+DocumentChunk "1" --> "*" Citation
+Document "1" --> "*" CommunityVote
+User     "1" --> "*" CommunityVote
+User   "1" --> "*" ContributionScore
+Course "1" --> "*" ContributionScore
+Course "1" --> "*" MindmapArtifact
+Course "1" --> "*" MockTestItem
+User   "1" *-- "*" ChatSession
+Course "1" --> "*" ChatSession
+ChatSession "1" *-- "*" ChatMessage
+Course "1" *-- "0..1" CourseSummaryCache
+User "1" --> "*" AdminAuditLog : acts
+User "1" --> "*" Notification : receives
+
+@enduml

@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-06-01T02:37:42.390236+00:00",
+  "run_id": "improvement_test_01",
+  "total_images_classified": 25,
+  "decorative_images_skipped": 17,
+  "decorative_minimal_tagged": 0,
+  "meaningful_visuals_extracted": 8,
+  "decorative_ratio": 0.68,
+  "raw_chars_total": 8237,
+  "normalized_chars_total": 5620,
+  "placeholder_count_total": 0,
+  "validator_failure_total": 0,
+  "structured_json_parse_pass_rate": 1.0,
+  "per_sample": [
+    {
+      "sample_id": "graph_presentation",
+      "total_images": 25,
+      "decorative_skipped": 17,
+      "decorative_minimal_tagged": 0,
+      "meaningful_extracted": 8,
+      "raw_chars": 8237,
+      "normalized_chars": 5620,
+      "placeholder_count": 0,
+      "validator_failures": 0
+    }
+  ]
+}

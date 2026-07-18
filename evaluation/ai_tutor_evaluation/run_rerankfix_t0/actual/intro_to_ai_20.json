@@ -1,0 +1,84 @@
+{
+  "qid": "intro_to_ai_20",
+  "course_code": "IT3160E",
+  "question": "What three formal components make up a logic?",
+  "session_id": "222bf3b3-9280-4963-8137-9904bf0c9442",
+  "answer": "A logic consists of **three formal components**:\n\n1. **Language** `L` — the set of sentences defined by a precise syntax.\n2. **Semantics** `S` — the meaning of the expressions in `L`.\n3. **Inference system** `R` — the set of derivation rules used to infer new statements.\n\nSo, a logic is often written as the triplet **`<L, S, R>`**.",
+  "citations": [
+    {
+      "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+      "document_title": "lecture9-PropositionalLogic.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "What is Logic ?",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of e"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "What three formal components make up a logic?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c1785f8e-c5f3-4cd6-b123-9e3ef162fb4e",
+          "document_id": "89c8e3f4-7284-403f-aa75-024bd567f8c8",
+          "section_title": "What is Logic ?",
+          "chunk_order": 3,
+          "cosine_sim": 0.6922,
+          "final_score": 0.7703,
+          "content": "- A logic is a triplet <L,S,R>\n  - L, the language of the logic, is a class of sentences described by a precise syntax, usually a formal grammar\n  - S, the logic’s semantic, describes the meaning of elements in L\n  - R, the logic’s inference system, consisting of derivation rules over L\n- Examples of logics:\n  - Propositional, First Order, Higher Order, Temporal, Fuzzy, Modal, Linear, . . ."
+        },
+        {
+          "chunk_id": "445fad8f-9d0f-41dd-a04e-07112429a5e2",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "First Order Logic",
+          "chunk_order": 2,
+          "cosine_sim": 0.5277,
+          "final_score": 0.619,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "65040f6f-d00f-4429-9c1d-63bcd642be7c",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL",
+          "chunk_order": 4,
+          "cosine_sim": 0.5277,
+          "final_score": 0.619,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "6cc71333-6e7a-4da7-a400-de6ab3b19efc",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL",
+          "chunk_order": 11,
+          "cosine_sim": 0.5277,
+          "final_score": 0.619,
+          "content": "- Syntax\n- Semantic\n- Inference\n  - Resolution"
+        },
+        {
+          "chunk_id": "4f3c4a18-ab7c-4b88-b72e-e5f402d4909f",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "FOL Semantic",
+          "chunk_order": 12,
+          "cosine_sim": 0.5858,
+          "final_score": 0.5436,
+          "content": "- Variables\n  - Objects\n- Constants\n  - Entities\n- Function symbol\n  - Function from objects to objects\n- Relation symbol\n  - Relation between objects\n- Quantifiers\n  - $\\exists x.P$ true if P is true under some value of x\n  - $\\forall x.P$ true if P is true under every value of x\n- Logical connectives\n  - Similar to Propositional Logic"
+        },
+        {
+          "chunk_id": "aa3745f1-792d-44e4-a2da-499e696e6a0b",
+          "document_id": "33d08b98-88af-4a27-bd8b-44cdcfbbc45b",
+          "section_title": "First Order Logic (FOL)",
+          "chunk_order": 3,
+          "cosine_sim": 0.522,
+          "final_score": 0.4584,
+          "content": "- First Order Logic is about\n  - Objects\n  - Relations\n  - Facts\n- The world is made of objects\n  - Objects are things with individual identities and properties to distinguish them\n  - Various relations hold among objects. Some of these relations are functional\n  - Every fact involving objects and their relations are either true or false"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.0
+}

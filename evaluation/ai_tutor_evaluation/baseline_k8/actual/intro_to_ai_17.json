@@ -1,0 +1,132 @@
+{
+  "qid": "intro_to_ai_17",
+  "course_code": "IT3160E",
+  "question": "What are the four items required to formally define a Search Problem?",
+  "session_id": "07b33985-85f0-422f-85e7-616e0ebd8e12",
+  "answer": "The four items required to formally define a search problem are:\n\n1. **Initial state**  \n   - The starting point of the search.\n\n2. **Actions / Successor function**  \n   - Specifies what actions can be taken from each state and what states they lead to.\n\n3. **Goal test**  \n   - A test to check whether a state is a goal state.\n\n4. **Path cost**  \n   - The cost of a solution path, usually the sum of step costs.\n\nThese are the standard ingredients used to define a search problem in AI.",
+  "citations": [
+    {
+      "chunk_id": "d24868af-9916-46a2-a249-4335ac624367",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: The 8-puzzle",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "[Diagram: The slide introduces the 8-puzzle as a search problem by defining its state space, allowed actions, goal condition, and step cost. This matters because these four ingredients fully specify h"
+    },
+    {
+      "chunk_id": "3d8f7320-9702-4965-868b-c8b835361eba",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Search Problem Definition",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- A problem is defined by four items:\n  1. initial state: e.g., Arad\n  2. actions or successor function $S(x)$ = set of action-state pairs\n     - e.g., $S(Arad)$ = {<Arad → Zerind, Zerind>, ... }\n  3."
+    },
+    {
+      "chunk_id": "34ce2be8-1120-4398-af2f-abb279797019",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Implementation: states vs. nodes",
+      "page_number": null,
+      "chunk_order": 24,
+      "excerpt": "- A `state` is a (representation of) a physical configuration\n- A `node` is a data structure constituting part of a search tree includes `state`, `parent node`, `action`, `path cost` $g(x)$, `depth`\n\n"
+    },
+    {
+      "chunk_id": "31364df7-5700-4f95-b913-385de1c8b2c5",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Implementation: general tree search",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "```text\nfunction TREE-SEARCH(problem, fringe) returns a solution, or failure\n    fringe ← INSERT(MAKE-NODE(INITIAL-STATE[problem]), fringe)\n    loop do\n        if fringe is empty then return failure\n "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "four items required to formally define a search problem",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "d24868af-9916-46a2-a249-4335ac624367",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Example: The 8-puzzle",
+          "chunk_order": 13,
+          "cosine_sim": 0.5335,
+          "final_score": 0.6135,
+          "content": "[Diagram: The slide introduces the 8-puzzle as a search problem by defining its state space, allowed actions, goal condition, and step cost. This matters because these four ingredients fully specify how an algorithm can evaluate and solve the puzzle.]"
+        },
+        {
+          "chunk_id": "3d8f7320-9702-4965-868b-c8b835361eba",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Search Problem Definition",
+          "chunk_order": 11,
+          "cosine_sim": 0.4803,
+          "final_score": 0.5523,
+          "content": "- A problem is defined by four items:\n  1. initial state: e.g., Arad\n  2. actions or successor function $S(x)$ = set of action-state pairs\n     - e.g., $S(Arad)$ = {<Arad → Zerind, Zerind>, ... }\n  3. goal test, can be\n     - explicit, e.g., $x$ = Bucharest\n     - implicit, e.g., $Checkmate(x)$\n  4. path cost (additive)\n     - e.g., sum of distances, number of actions executed, etc.\n     - $c(x,a,y)$ is the step cost, assumed to be $\\ge 0$\n- A solution is a sequence of actions leading from the initial state to a goal state"
+        },
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.4487,
+          "final_score": 0.516,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "19ce7cd1-6107-43e5-85c2-b0ca65810675",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Progression algorithm",
+          "chunk_order": 18,
+          "cosine_sim": 0.442,
+          "final_score": 0.5083,
+          "content": "- Formulation as state-space search problem:\n  - Initial state and goal test: obvious\n  - Successor function: generate from applicable actions\n  - Step cost = each action costs 1\n- Any complete graph search algorithm is a complete planning algorithm.\n  - E.g. A*\n- Inherently inefficient:\n  - (1) irrelevant actions lead to very broad search tree\n  - (2) good heuristic required for efficient search"
+        },
+        {
+          "chunk_id": "b7119f3c-3e4f-49f6-ae7b-cf57915b5d2a",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Regression algorithm",
+          "chunk_order": 23,
+          "cosine_sim": 0.404,
+          "final_score": 0.4646,
+          "content": "- General process for predecessor construction\n  - Give a goal description G\n  - Let A be an action that is relevant and consistent\n  - The predecessors are as follows:\n    - Any positive effects of A that appear in G are deleted.\n    - Each precondition literal of A is added, unless it already appears.\n- Any standard search algorithm can be added to perform the search.\n- Termination when predecessor satisfied by initial state.\n  - In FO case, satisfaction might require a substitution."
+        },
+        {
+          "chunk_id": "e5856f15-e16c-4576-98a7-3d3fb91acd02",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "Outline",
+          "chunk_order": 2,
+          "cosine_sim": 0.3824,
+          "final_score": 0.4397,
+          "content": "- Planning problem\n- State-space search\n- Partial-order planning\n- Planning graphs\n- Planning with propositional logic"
+        },
+        {
+          "chunk_id": "34ce2be8-1120-4398-af2f-abb279797019",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Implementation: states vs. nodes",
+          "chunk_order": 24,
+          "cosine_sim": 0.3731,
+          "final_score": 0.4291,
+          "content": "- A `state` is a (representation of) a physical configuration\n- A `node` is a data structure constituting part of a search tree includes `state`, `parent node`, `action`, `path cost` $g(x)$, `depth`\n\n```text\n          parent, action\n                 ↑\n                 |\n             +--------+\n             |  Node  |\n             |        |   depth = 6\n             |        |   g = 6\n             +--------+\n                 |\n              state\n                 |\n      +-------------------+\n      |       State       |\n      |  5 | 4 |   |      |\n      |  6 | 1 | 8 |      |\n      |  7 | 3 | 2 |      |\n      +-------------------+\n```"
+        },
+        {
+          "chunk_id": "31364df7-5700-4f95-b913-385de1c8b2c5",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Implementation: general tree search",
+          "chunk_order": 23,
+          "cosine_sim": 0.3728,
+          "final_score": 0.4287,
+          "content": "```text\nfunction TREE-SEARCH(problem, fringe) returns a solution, or failure\n    fringe ← INSERT(MAKE-NODE(INITIAL-STATE[problem]), fringe)\n    loop do\n        if fringe is empty then return failure\n        node ← REMOVE-FRONT(fringe)\n        if GOAL-TEST[problem](STATE[node]) then return SOLUTION(node)\n        fringe ← INSERT-ALL(EXPAND(node, problem), fringe)\n\nfunction EXPAND(node, problem) returns a set of nodes\n    successors ← the empty set\n    for each action, result in SUCCESSOR-FN[problem](STATE[node]) do\n        s ← a new NODE\n        PARENT-NODE[s] ← node; ACTION[s] ← action; STATE[s] ← result\n        PATH-COST[s] ← PATH-COST[node] + STEP-COST(node, action, s)\n        DEPTH[s] ← DEPTH[node] + 1\n        add s to successors\n    return successors\n```\n\n[Diagram: The first procedure describes the generic search loop: repeatedly take a node from the fringe, test for a goal, and expand it if needed. The second procedure shows how successor nodes are generated and annotated with parent, action, cost, and depth so the search can reconstruct solutions and evaluate paths.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.3
+}

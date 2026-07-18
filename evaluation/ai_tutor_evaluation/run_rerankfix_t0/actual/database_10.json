@@ -1,0 +1,114 @@
+{
+  "qid": "database_10",
+  "course_code": "IT3292E",
+  "question": "What are two algorithms mentioned for executing Join operations in query processing?",
+  "session_id": "ea05b6f7-7614-4b48-b28a-ff688b8a9ed6",
+  "answer": "Two algorithms mentioned for executing **Join** operations are:\n\n1. **Sort-merge join**\n2. **Hash join** (specifically, the material mentions **partition-hash join**)\n\nThe course material also notes that the choice of join algorithm is part of query execution decisions.",
+  "citations": [
+    {
+      "chunk_id": "37d26169-1f4a-4855-8f6b-e8d148c5ed7c",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "- Partition-hash JOIN\n  - Hash two relations on join attributes\n  - Join buckets accordingly"
+    },
+    {
+      "chunk_id": "767043fa-1a26-4e37-9ef5-ef2336fcd295",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- Algebra expression is not a query execution plan.\n- Additional decisions required:\n  - which indexes to use, for example, for joins and selects?\n  - which algorithms to use, for example, sort-merge "
+    },
+    {
+      "chunk_id": "d2ecb434-97b6-4c35-a580-09367ee35fdf",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.3. Step 3: Cost estimation",
+      "page_number": null,
+      "chunk_order": 37,
+      "excerpt": "- Heuristic rules\n  - Break apart conjunctive selections into a sequence of simple selections\n  - Move $\\sigma$ down the query tree as soon as possible\n  - Replace $\\sigma$-x pairs by ⋈\n  - Break apar"
+    },
+    {
+      "chunk_id": "4ee91914-f3bf-411c-b1cf-8fed396b3113",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "- Execution Strategy: Materialization vs. Pipelining\n  - Execution strategy defines how to walk the query execution plan\n    - Materialization\n    - Pipelining\n\n```text\n                        Join\n  "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "What are two algorithms mentioned for executing Join operations in query processing?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "37d26169-1f4a-4855-8f6b-e8d148c5ed7c",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 27,
+          "cosine_sim": 0.5194,
+          "final_score": 0.5175,
+          "content": "- Partition-hash JOIN\n  - Hash two relations on join attributes\n  - Join buckets accordingly"
+        },
+        {
+          "chunk_id": "767043fa-1a26-4e37-9ef5-ef2336fcd295",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 21,
+          "cosine_sim": 0.5171,
+          "final_score": 0.461,
+          "content": "- Algebra expression is not a query execution plan.\n- Additional decisions required:\n  - which indexes to use, for example, for joins and selects?\n  - which algorithms to use, for example, sort-merge vs. hash join?\n  - materialize intermediate results or pipeline them?"
+        },
+        {
+          "chunk_id": "a98c89b1-edf6-469d-a0ff-42bce19213ab",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "SQL Retrieval statement (Part 2)",
+          "chunk_order": 7,
+          "cosine_sim": 0.526,
+          "final_score": 0.4551,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Union, Intersection and Difference of Queries\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        },
+        {
+          "chunk_id": "d2ecb434-97b6-4c35-a580-09367ee35fdf",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.3. Step 3: Cost estimation",
+          "chunk_order": 37,
+          "cosine_sim": 0.507,
+          "final_score": 0.4548,
+          "content": "- Heuristic rules\n  - Break apart conjunctive selections into a sequence of simple selections\n  - Move $\\sigma$ down the query tree as soon as possible\n  - Replace $\\sigma$-x pairs by ⋈\n  - Break apart and move $\\Pi$ down the tree as soon as possible\n  - Perform the joins with the smallest expected result first"
+        },
+        {
+          "chunk_id": "fc3086cc-0b24-4315-b70e-0cb6a456e8ca",
+          "document_id": "7ab61576-3840-4fb0-b1fd-1df6b6ea04d5",
+          "section_title": "Data Manipulation: Advanced SELECT",
+          "chunk_order": 14,
+          "cosine_sim": 0.5232,
+          "final_score": 0.4399,
+          "content": "- Joins operators\n- Subqueries: in FROM clause and in WHERE clause\n- Aggregation operators\n- Grouping and aggregation in SQL, conditions in HAVING clause\n- Controlling the output: duplicate elimination, ordering the result"
+        },
+        {
+          "chunk_id": "4ee91914-f3bf-411c-b1cf-8fed396b3113",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 30,
+          "cosine_sim": 0.5075,
+          "final_score": 0.3595,
+          "content": "- Execution Strategy: Materialization vs. Pipelining\n  - Execution strategy defines how to walk the query execution plan\n    - Materialization\n    - Pipelining\n\n```text\n                        Join\n                         ↑\n\n              PressRel.Symbol = EastCoast.CoSymbol\n                           ↖   ↗\n                         Join   Project\n                          ↖     ↗\n           PressRel.Symbol = Clients.Symbol   CoSymbol\n                     ↖              ↗          ↑\n                   Scan            Select       |\n                 PressRel           Client = “Atkins”  Scan\n                                    ↑                Clients\n                                   Scan\n                                 EastCoast\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 6.4
+}

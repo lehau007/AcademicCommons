@@ -1,0 +1,115 @@
+{
+  "qid": "hard_dm_table_13",
+  "course_code": "IT3020E",
+  "question": "Liệt kê theo thứ tự từ điển tất cả các tập con 3 phần tử của {1,2,3,4,5}; có tất cả bao nhiêu tập con như vậy?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "traditional",
+  "session_id": "6c6ca992-902b-46fa-988c-cf3118b93f9a",
+  "answer": "# Liệt kê tập con 3 phần tử của {1, 2, 3, 4, 5} theo thứ tự từ điển\n\nTheo tài liệu, ta có tập $N = \\{1, 2, 3, 4, 5\\}$ và cần liệt kê tất cả các tập con 3 phần tử theo thứ tự từ điển (lexicographic order).\n\n## Kết quả liệt kê\n\n| STT | Tập con |\n|---|---|\n| 1 | (1, 2, 3) |\n| 2 | (1, 2, 4) |\n| 3 | (1, 2, 5) |\n| 4 | (1, 3, 4) |\n| 5 | (1, 3, 5) |\n| 6 | (1, 4, 5) |\n| 7 | (2, 3, 4) |\n| 8 | (2, 3, 5) |\n| 9 | (2, 4, 5) |\n| 10 | (3, 4, 5) |\n\n## Số lượng tập con\n\nTổng cộng có **10 tập con** 3 phần tử của {1, 2, 3, 4, 5}.\n\n**Công thức tổng quát:** Số tập con $m$ phần tử của tập hợp $n$ phần tử được tính bằng tổ hợp:\n$$C(n, m) = \\binom{n}{m} = \\frac{n!}{m!(n-m)!}$$\n\nÁp dụng với $n = 5$, $m = 3$:\n$$\\binom{5}{3} = \\frac{5!}{3! \\cdot 2!} = \\frac{120}{6 \\cdot 2} = 10$$\n\n## Quy luật thứ tự từ điển\n\nTrong cách liệt kê trên:\n- Phần tử nhỏ nhất thay đổi **chậm nhất** (giữ cố định càng lâu càng tốt).\n- Phần tử lớn nhất thay đổi **nhanh nhất**.\n- Ví dụ: với $a_1 = 1$, ta lần lượt duyệt $a_2$ từ 2 → 3 → 4; ứng với mỗi $a_2$, $a_3$ lấy giá trị nhỏ nhất lớn hơn $a_2$ và ≤ 5.\n\nĐiều kiện của tập $S(m, n)$:\n$$S(m,n) = \\{(a_1, \\ldots, a_m) \\in N^m : 1 \\le a_1 < a_2 < \\ldots < a_m \\le n\\}$$\n\n---\n\n```json",
+  "citations": [
+    {
+      "chunk_id": "2e91d694-4dcf-4bf8-8846-e1d665bc5843",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Generate $m$-element subsets of set with $n$ elements",
+      "page_number": null,
+      "chunk_order": 46,
+      "excerpt": "Example: Enumerate all 3-element subset of $X = \\{1, 2, 3, 4, 5\\}$ in dictionary order\n\n| 1 | 2 | 3 |\n|---|---|---|\n| 1 | 2 | 4 |\n| 1 | 2 | 5 |\n| 1 | 3 | 4 |\n| 1 | 3 | 5 |\n| 1 | 4 | 5 |\n| 2 | 3 | 4 |\n"
+    },
+    {
+      "chunk_id": "668ce4b9-cf66-4110-8e6a-8397e1eca0be",
+      "document_title": "1-3-Enumeration.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example 2. Generate $m$-element subsets of the set of $n$ elements",
+      "page_number": null,
+      "chunk_order": 72,
+      "excerpt": "**Problem:** Enumerate all $m$-element subsets of the set $n$ elements $N = \\{1,2,\\ldots,n\\}$.\n\n**Example:** Enumerate all 3-element subsets of the set 5 elements $N = \\{1,2,3,4,5\\}$\n\n**Solution:** $("
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "Liệt kê theo thứ tự từ điển tất cả các tập con 3 phần tử của {1,2,3,4,5}; có tất cả bao nhiêu tập con như vậy?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "1e08b37c-ec49-45ae-9d25-064325e6ebe5",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3771,
+          "final_score": 0.6504,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "a6cdf695-f604-4480-b1e7-8a20d3e77594",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Decision tree S(5,3)",
+          "chunk_order": 76,
+          "cosine_sim": 0.3982,
+          "final_score": 0.4579,
+          "content": "- Try(1);\n\n```text\n                                  ()\n                          /-------|-------\\\n                         1        2        3\n                        /          |         \\\n                      (1)         (2)       (3)\n                    /  |  \\        / \\         \\\n                   2   3   4      3   4         4\n                  /    /     \\    /     \\         \\\n              (1,2) (1,3)   (1,4) (2,3)  (2,4)   (3,4)\n               /|\\     |\\      |    / \\     |       |\n              3 4 5    4 5     5   4   5    5       5\n            /  |  \\   /  \\     |  / \\   \\    |       |\n      (1,2,3)(1,2,4)(1,2,5)(1,3,4)(1,3,5)(1,4,5)(2,3,4)(2,3,5)(2,4,5)(3,4,5)\n```\n\n[Diagram: This is a combinatorial decision tree that enumerates all 3-element subsets chosen from {1,2,3,4,5} in lexicographic order. It matters because it visualizes how each partial choice expands into valid combinations without repetition.]"
+        },
+        {
+          "chunk_id": "dcf3e83d-351b-46a7-92fc-8702b13c7671",
+          "document_id": "e4c8a45c-c2f1-4057-bbb8-f76c2dc6a262",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3772,
+          "final_score": 0.4337,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "69c897f3-cf84-4477-808b-1496d9753d9b",
+          "document_id": "057616a7-05cc-4688-8a79-da9edd276028",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3771,
+          "final_score": 0.4336,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "a9e1ef20-4640-4464-89e3-25ec3ecdca7f",
+          "document_id": "72cf27d6-c3f7-4286-b82a-5064abacb7d8",
+          "section_title": "COMBINATORIAL THEORY",
+          "chunk_order": 1,
+          "cosine_sim": 0.3771,
+          "final_score": 0.4336,
+          "content": "(Lý thuyết tổ hợp)"
+        },
+        {
+          "chunk_id": "0abbf68e-01f1-4f39-8ff6-fe18d26a601a",
+          "document_id": "de3e0f67-bffc-4058-8173-7aec6db9262b",
+          "section_title": "16 spanning trees of $K_4$",
+          "chunk_order": 15,
+          "cosine_sim": 0.3336,
+          "final_score": 0.3837,
+          "content": "```text\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n  | \\\n  |  \\\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n  |       |\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n  |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n  \\       |\n   \\      |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n  \\     /\n   \\   /\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n        / |\n       /  |\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n      /   |\n     /    |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |---| 2 |\n+---+   +---+\n      |   |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  | \\   /\n  |  \\ /\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  |     /|\n  |    / |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  |   /   \\\n  |  /     \\\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  |       |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  \\     /|\n   \\   / |\n+---+   +---+\n| 3 |   | 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n   \\   / \n    \\ /\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  \\       |\n   \\      |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n\n+---+   +---+\n| 1 |   | 2 |\n+---+   +---+\n  |       |\n+---+   +---+\n| 3 |---| 4 |\n+---+   +---+\n```"
+        },
+        {
+          "chunk_id": "2e91d694-4dcf-4bf8-8846-e1d665bc5843",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Generate $m$-element subsets of set with $n$ elements",
+          "chunk_order": 46,
+          "cosine_sim": 0.3065,
+          "final_score": 0.3525,
+          "content": "Example: Enumerate all 3-element subset of $X = \\{1, 2, 3, 4, 5\\}$ in dictionary order\n\n| 1 | 2 | 3 |\n|---|---|---|\n| 1 | 2 | 4 |\n| 1 | 2 | 5 |\n| 1 | 3 | 4 |\n| 1 | 3 | 5 |\n| 1 | 4 | 5 |\n| 2 | 3 | 4 |\n| 2 | 3 | 5 |\n| 2 | 4 | 5 |\n| 3 | 4 | 5 |\n\n[Diagram: This is a lexicographic listing of all 3-element subsets chosen from a 5-element set. It shows the ordered progression of combinations as the smallest possible element changes first, which is important for systematically generating combinations without repetition.]"
+        },
+        {
+          "chunk_id": "668ce4b9-cf66-4110-8e6a-8397e1eca0be",
+          "document_id": "7be5cdff-6f79-4641-9257-e15689956d6d",
+          "section_title": "Example 2. Generate $m$-element subsets of the set of $n$ elements",
+          "chunk_order": 72,
+          "cosine_sim": 0.2987,
+          "final_score": 0.3435,
+          "content": "**Problem:** Enumerate all $m$-element subsets of the set $n$ elements $N = \\{1,2,\\ldots,n\\}$.\n\n**Example:** Enumerate all 3-element subsets of the set 5 elements $N = \\{1,2,3,4,5\\}$\n\n**Solution:** $(1,2,3), (1,2,4), (1,2,5), (1,3,4), (1,3,5), (1,4,5), (2,3,4), (2,3,5), (2,4,5), (3,4,5)$\n\n➔ Equivalent problem: Enumerate all elements of set:\n\n$$S(m,n)=\\{(a_1,\\ldots,a_m)\\in N^m:\\ 1\\le a_1<\\ldots<a_m\\le n\\}$$"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 10.6
+}

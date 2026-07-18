@@ -1,0 +1,55 @@
+{
+  "qid": "database_05",
+  "course_code": "IT3292E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "Nearly all claims are supported by the retrieved chunks. The only minor unsupported claim is that the combination of foreign keys 'typically' becomes the primary key of the new table, which is not explicitly stated in the chunks.",
+      "evidence": [
+        "their combination is typically used as the primary key of the new table"
+      ]
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how to map a many-to-many relationship from an ERD to a relational schema. It explains the creation of a new relation containing primary keys from both entity sets, provides the mapping rule, and includes a concrete example.",
+      "evidence": [
+        "Create a new relation (table) for that relationship",
+        "This new table contains the primary key attributes of both participating entity sets",
+        "learn(subject_id, student_id)"
+      ]
+    },
+    "answer_correctness": {
+      "score": 4,
+      "justification": "The answer correctly states that a new relation is created containing the primary keys of both entity sets. However, it doesn't explicitly mention that these prime attributes are used as foreign keys in the new relation, which is a key detail in the ground truth.",
+      "evidence": [
+        "Ground truth: 'These prime attributes are used as foreign keys in the new relation'",
+        "Answer: 'These attributes usually become foreign keys' (less definitive than ground truth)"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Only 1 out of 3 chunks directly addresses n-m relationship mapping. The other two are high-level summaries that mention mapping exists but provide no specific guidance on how to map n-m relationships.",
+      "evidence": [
+        "5dd8419d: 'Mapping from ERD to relational schema - transform from ERD into a set of tables' (too general)",
+        "7f790225: 'Mapping from ERD to relational schema' (no detail on n-m specifically)"
+      ]
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "The retrieved chunks contain the core mapping rule (create new relation with prime-attributes of both entity sets) and an example. However, the ground truth's explicit mention that these prime attributes are used as 'foreign keys' in the new relation is not clearly stated in the chunks.",
+      "evidence": [
+        "These prime attributes are used as foreign keys in the new relation"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "All citations accurately support the statements they are attached to. The first two chunks support the general context of ERD-to-relational mapping, and the third chunk directly supports the specific rule for n-m relationships, including the exact example used.",
+      "evidence": [
+        "Statement: 'creating a new relation (table)' supported by chunk 5fe44724: 'Create a new relation which has all prime-attributes of both entity sets'",
+        "Statement: 'This new table contains the primary key attributes of both participating entity sets' supported by chunk 5fe44724: 'Create a new relation which has all prime-attributes of both entity sets'",
+        "Statement: 'learn(subject_id, student_id)' example directly matches chunk 5fe44724: 'learn(subject_id, student_id)'"
+      ]
+    }
+  }
+}

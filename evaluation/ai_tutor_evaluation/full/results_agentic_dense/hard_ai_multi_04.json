@@ -1,0 +1,31 @@
+{
+  "qid": "hard_ai_multi_04",
+  "course_code": "IT3160E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "A* complete=YES/time-exp grounded; depth-limited DFS part from trimmed chunk, correct"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "A* complete=YES/time-exp grounded; depth-limited DFS part from trimmed chunk, correct"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "A* complete=YES/time-exp grounded; depth-limited DFS part from trimmed chunk, correct"
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "A* complete=YES/time-exp grounded; depth-limited DFS part from trimmed chunk, correct"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "A* complete=YES/time-exp grounded; depth-limited DFS part from trimmed chunk, correct"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "A* complete=YES/time-exp grounded; depth-limited DFS part from trimmed chunk, correct"
+    }
+  }
+}

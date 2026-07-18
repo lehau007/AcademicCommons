@@ -1,0 +1,316 @@
+{
+  "qid": "hard_ai_multi_04",
+  "course_code": "IT3160E",
+  "question": "Trả lời hai ý về tìm kiếm trong AI: (1) A* có đầy đủ (complete) không và độ phức tạp thời gian của nó ra sao; (2) tìm kiếm giới hạn độ sâu (depth-limited search) khắc phục nhược điểm gì của tìm kiếm theo chiều sâu (DFS)?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "7a7bb908-0049-40f7-a18f-d358235fa2ce",
+  "answer": "# Trả lời về tìm kiếm trong AI\n\n## (1) A* có đầy đủ (complete) không và độ phức tạp thời gian của nó\n\nTheo tài liệu môn học, đặc tính của A* được tóm tắt như sau:\n\n- **Tính đầy đủ (Completeness):** **CÓ (YES)** — A* là thuật toán tìm kiếm đầy đủ.\n- **Tính tối ưu (Optimality):** **CÓ (YES)** với hàm heuristic chấp nhận được (admissible). A* đảm bảo tìm được lời giải tối ưu nhờ nguyên tắc:\n  - Không mở rộng node có $f_{i+1}$ cho đến khi mở rộng xong tất cả node có $f_i$.\n  - A* mở rộng **tất cả** các node có $f(n) < C^*$ (trong đó $C^*$ là chi phí lời giải tối ưu).\n  - A* mở rộng **một số** node có $f(n) = C^*$.\n  - A* **không mở rộng** node nào có $f(n) > C^*$.\n- **Tính hiệu quả tối ưu:** A* cũng là tối ưu về hiệu quả (không tính các trường hợp hòa) — không có thuật toán tìm kiếm đầy đủ-tối ưu nào mở rộng ít node hơn A* (ngoại trừ trường hợp có nhiều lời giải cùng chi phí).\n- **Độ phức tạp thời gian:** Tài liệu ghi là **\"exponential with path length\"** (hàm mũ theo độ dài đường đi). Đây là điểm yếu lý thuyết của A* — số node được mở rộng vẫn tăng theo cấp số nhân trong trường hợp xấu nhất, mặc dù một heuristic tốt có thể cải thiện đáng kể trong thực tế.\n- **Độ phức tạp không gian:** A* lưu **tất cả** các node đã sinh ra trong bộ nhớ, vì vậy **không gian mới là vấn đề lớn chứ không phải thời gian**. Đây cũng là lý do các biến thể như IDA*, RBFS và SMA* ra đời nhằm giới hạn bộ nhớ mà vẫn giữ tính đầy đủ và tối ưu.\n\n## (2) Tìm kiếm giới hạn độ sâu (Depth-Limited Search) khắc phục nhược điểm gì của DFS?\n\nNhược điểm cốt lõi của DFS mà tài liệu nêu rõ:\n\n> *\"Depth-first search can get stuck on infinite path when a different choice would would lead to a solution\"*\n\nNghĩa là: DFS có thể bị **mắc kẹt trên đường đi vô hạn**, bỏ lỡ lời giải mặc dù lời giải thực ra lại nằm ở nhánh khác. Điều này xảy ra vì DFS đi sâu không giới hạn dọc theo một nhánh trước khi quay lui.\n\n**Cách Depth-Limited Search khắc phục:**\n- Đặt một **giới hạn độ sâu $l$** cho tìm kiếm: các node ở đúng độ sâu $l$ được coi là **không có node con** (không mở rộng tiếp).\n- Nhờ vậy, thuật toán **không bao giờ đi sâu hơn $l$ bước** trên bất kỳ đường đi nào, tránh được vòng lặp / đường đi vô hạn của DFS thuần túy.\n- Tuy nhiên, cần lưu ý: theo bảng tổng kết thuật toán trong tài liệu, **Depth-Limited vẫn chưa đầy đủ (Complete? No)** — vì nếu lời giải nằm ngoài giới hạn $l$ thì không tìm thấy. Chính vì nhược điểm này mà **Iterative Deepening Search** ra đời: lặp lại Depth-Limited với $l$ tăng dần (1, 2, 3, …) cho đến khi tìm thấy lời giải, kết hợp được ưu điểm không gian thấp của DFS với tính đầy đủ.\n\n**Tóm lại:** Depth-Limited Search khắc phục nhược điểm \"bị mắc kẹt trên đường đi vô hạn / bỏ lỡ lời giải\" của DFS bằng cách đặt giới hạn độ sâu $l$, đảm bảo tìm kiếm luôn dừng.",
+  "citations": [
+    {
+      "chunk_id": "e502adf5-5421-449d-9d42-22d6ec561ece",
+      "document_title": "lecture4-search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "A* search, evaluation",
+      "page_number": null,
+      "chunk_order": 37,
+      "excerpt": "- Completeness: YES\n- Time complexity: (exponential with path length)\n- Space complexity: (all nodes are stored)\n- Optimality: YES\n  - Cannot expand $f_{i+1}$ until $f_i$ is finished.\n  - A* expands a"
+    },
+    {
+      "chunk_id": "bc7cf346-8804-4327-9d16-5526c6cd5e0c",
+      "document_title": "lecture4-search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Greedy Best-First Search",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "[Diagram: The picture illustrates a heuristic landscape where Greedy Best-First Search moves toward the apparently most promising states, guided by estimated closeness to the goal. This explains why i"
+    },
+    {
+      "chunk_id": "fa65614b-8fe0-4ce1-8623-c3565087ecbc",
+      "document_title": "lecture4-search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Contours of A* Search",
+      "page_number": null,
+      "chunk_order": 32,
+      "excerpt": "- A* expands nodes in order of increasing $f$ value\n- Gradually adds \"$f$-contours\" of nodes\n- Contour $i$ has all nodes with $f=f_i$, where $f_i < f_{i+1}$\n\n```text\n                 o\n               "
+    },
+    {
+      "chunk_id": "7b29c8aa-6966-4bc1-a230-e2edd01e97d2",
+      "document_title": "lecture4-search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Can we Prove Anything?",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "- If the state space is finite and we avoid repeated states, the search is complete\n- If the state space is finite and we do not avoid repeated states, the search is in general not complete\n- If the s"
+    },
+    {
+      "chunk_id": "a176b3fe-c3c0-4e3f-9d5e-b71b984ac92c",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary of algorithms",
+      "page_number": null,
+      "chunk_order": 37,
+      "excerpt": "| Criterion | Breadth-First | Uniform-Cost | Depth-First | Depth-Limited | Iterative Deepening |\n|---|---|---|---|---|---|\n| Complete? | Yes | Yes | No | No | Yes |\n| Time | $O(b^{d+1})$ | $O(b^{\\lcei"
+    },
+    {
+      "chunk_id": "a7d3a1ec-ee61-4086-90c5-a96f715eafb9",
+      "document_title": "lecture4-search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Greedy Best-First Search",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "- Complete? No – can get stuck in loops, e.g., Iasi $\\rightarrow$ Neamt $\\rightarrow$ Iasi $\\rightarrow$ Neamt $\\rightarrow$ ...\n- Time? $O(b^m)$, but a good heuristic can give dramatic improvement\n- "
+    },
+    {
+      "chunk_id": "bf3f647a-f779-4072-8ce4-dd41c6ed7dce",
+      "document_title": "lecture4-search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "A* search, evaluation",
+      "page_number": null,
+      "chunk_order": 36,
+      "excerpt": "- Completeness: YES\n- Time complexity: (exponential with path length)\n- Space complexity:\n  - It keeps all generated nodes in memory\n  - Hence space is the major problem not time"
+    },
+    {
+      "chunk_id": "e00eb634-2376-4696-8ba3-58c18c46372b",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Depth-limited search",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "- Depth-first search can get stuck on infinite path when a different choice would lead to a solution\n- [Formula: depth-limited search = depth-first search with depth limit l, nodes at depth l have no "
+    },
+    {
+      "chunk_id": "931ef975-3849-4ada-8808-cbf9ae1fe222",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative deepening search",
+      "page_number": null,
+      "chunk_order": 32,
+      "excerpt": "[Diagram: The figure illustrates progressively deepened search frontiers over the same tree, showing how the algorithm repeatedly reruns DFS with larger depth limits until the goal becomes reachable. "
+    },
+    {
+      "chunk_id": "5adfc234-57b6-41ed-b47b-ca834fe9704e",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative deepening search (con’t)",
+      "page_number": null,
+      "chunk_order": 34,
+      "excerpt": "- Limit = 3\n\n```text\nIterative deepening search at limit 3:\nA\n├─ B\n│  ├─ D\n│  │  ├─ H\n│  │  └─ I\n│  └─ E\n│     ├─ J\n│     └─ K\n└─ C\n   ├─ F\n   │  ├─ L\n   │  └─ M\n   └─ G\n      ├─ N\n      └─ O\n```\n\n[Di"
+    },
+    {
+      "chunk_id": "da5b2bdc-de5f-483b-8577-69c765c5ff9e",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative deepening search",
+      "page_number": null,
+      "chunk_order": 31,
+      "excerpt": "- Problem with depth-limited search: if the shallowest goal is beyond the depth limit, no solution is found.\n- Iterative deepening search:\n  1. Do a DFS which only searches for paths of length 1\n\n(DFS"
+    },
+    {
+      "chunk_id": "81ae7bf8-2768-485b-8bee-1874db0615cd",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Depth-limited search",
+      "page_number": null,
+      "chunk_order": 29,
+      "excerpt": "[Diagram: The pseudocode shows how depth-limited search preserves the systematic nature of depth-first search while preventing it from diving indefinitely. The special cutoff result lets the algorithm"
+    },
+    {
+      "chunk_id": "494db24f-170c-42ea-8588-5a192e02e5b7",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative deepening search (con’t)",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "```text\nLimit = 0\n  A\nLimit = 1\n  A\n B   C\nLimit = 2\n    A\n  B   C\n D E F G\n```\n\n[Diagram: The slide illustrates iterative deepening search as a sequence of depth-limited traversals, starting from sha"
+    },
+    {
+      "chunk_id": "65ee7ce7-2cc0-4c7a-89b1-256f57c79120",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "8-puzzle game with depth limit l = 5",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "```text\n[Diagram: A search tree of 8-puzzle states expanded up to depth 5. It illustrates how limited-depth search explores possible moves level by level, stopping before deeper states and showing why"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "A* search algorithm completeness time complexity optimality",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "b3c50da4-c71e-47a5-99d5-c335272ea963",
+          "document_id": "059978e9-1231-4089-9ec1-ca4fad002888",
+          "section_title": "Memory-bounded heuristic search",
+          "chunk_order": 3,
+          "cosine_sim": 0.4717,
+          "final_score": 0.5424,
+          "content": "- Some solutions to A* space problems (maintain completeness and optimality)\n  - Iterative-deepening A* (IDA*)\n    - Here cutoff information is the $f$-cost $(g+h)$ instead of depth\n  - Recursive best-first search(RBFS)\n    - Recursive algorithm that attempts to mimic standard best-first search with linear space.\n  - (simple) Memory-bounded A* ((S)MA*)\n    - Drop the worst-leaf node when memory is full"
+        },
+        {
+          "chunk_id": "e502adf5-5421-449d-9d42-22d6ec561ece",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "A* search, evaluation",
+          "chunk_order": 37,
+          "cosine_sim": 0.4663,
+          "final_score": 0.5362,
+          "content": "- Completeness: YES\n- Time complexity: (exponential with path length)\n- Space complexity: (all nodes are stored)\n- Optimality: YES\n  - Cannot expand $f_{i+1}$ until $f_i$ is finished.\n  - A* expands all nodes with $f(n) < C^*$\n  - A* expands some nodes with $f(n) = C^*$\n  - A* expands no nodes with $f(n) > C^*$\n\nAlso optimally efficient (not including ties)"
+        },
+        {
+          "chunk_id": "bc7cf346-8804-4327-9d16-5526c6cd5e0c",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Greedy Best-First Search",
+          "chunk_order": 19,
+          "cosine_sim": 0.4577,
+          "final_score": 0.5263,
+          "content": "[Diagram: The picture illustrates a heuristic landscape where Greedy Best-First Search moves toward the apparently most promising states, guided by estimated closeness to the goal. This explains why it can be fast in practice but also why it may get trapped in local choices and fail to find a complete or optimal solution.]\n\n- What do we need to do to make it complete?\n- $\\Rightarrow$ A* search\n- Can we make it optimal? $\\rightarrow$ No"
+        },
+        {
+          "chunk_id": "fa65614b-8fe0-4ce1-8623-c3565087ecbc",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Contours of A* Search",
+          "chunk_order": 32,
+          "cosine_sim": 0.4393,
+          "final_score": 0.5052,
+          "content": "- A* expands nodes in order of increasing $f$ value\n- Gradually adds \"$f$-contours\" of nodes\n- Contour $i$ has all nodes with $f=f_i$, where $f_i < f_{i+1}$\n\n```text\n                 o\n                 |\n                 z\n                / \\\n               /   \\\n              A     S ---- F ---- B ---- U ---- H ---- E\n             / \\     \\      \\      \\      |\n            T   \\     R      P       \\     |\n             \\   \\    |     /         \\    |\n              L   \\   C    /           G    |\n              |    \\  |   /                 |\n              M     \\ |  /                  |\n              |      D--                    |\n```\n\n```text\n   --- contour around earlier / lower-nodes ---\n```\n\n[Diagram: The red dashed contours illustrate how A* reveals the search space in layers of increasing evaluation value $f=g+h$. This matters because it shows why A* can remain efficient while still guaranteeing optimality when the heuristic is admissible.]"
+        },
+        {
+          "chunk_id": "7b29c8aa-6966-4bc1-a230-e2edd01e97d2",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Can we Prove Anything?",
+          "chunk_order": 30,
+          "cosine_sim": 0.4094,
+          "final_score": 0.4708,
+          "content": "- If the state space is finite and we avoid repeated states, the search is complete\n- If the state space is finite and we do not avoid repeated states, the search is in general not complete\n- If the state space is infinite, the search is in general not complete"
+        },
+        {
+          "chunk_id": "a176b3fe-c3c0-4e3f-9d5e-b71b984ac92c",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Summary of algorithms",
+          "chunk_order": 37,
+          "cosine_sim": 0.4065,
+          "final_score": 0.4675,
+          "content": "| Criterion | Breadth-First | Uniform-Cost | Depth-First | Depth-Limited | Iterative Deepening |\n|---|---|---|---|---|---|\n| Complete? | Yes | Yes | No | No | Yes |\n| Time | $O(b^{d+1})$ | $O(b^{\\lceil C^*/\\epsilon \\rceil})$ | $O(b^m)$ | $O(b^l)$ | $O(b^d)$ |\n| Space | $O(b^{d+1})$ | $O(b^{\\lceil C^*/\\epsilon \\rceil})$ | $O(bm)$ | $O(bl)$ | $O(bd)$ |\n| Optimal? | Yes | Yes | No | No | Yes |"
+        },
+        {
+          "chunk_id": "a7d3a1ec-ee61-4086-90c5-a96f715eafb9",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "Greedy Best-First Search",
+          "chunk_order": 18,
+          "cosine_sim": 0.3963,
+          "final_score": 0.4557,
+          "content": "- Complete? No – can get stuck in loops, e.g., Iasi $\\rightarrow$ Neamt $\\rightarrow$ Iasi $\\rightarrow$ Neamt $\\rightarrow$ ...\n- Time? $O(b^m)$, but a good heuristic can give dramatic improvement\n- Space? $O(b^m)$ -- keeps all nodes in memory\n- Optimal? No\n\n```text\n                b\n               ↗\n          [+-----------+]\n          |      •      |\n          |     /|\\     |\n          |    / | \\    |\n          |   /  |  \\   |\n          |  /   / \\  \\  |\n          | /   /   \\  \\ |\n          |/   /     \\  \\|\n        [+-----------+]   [+-----------+]\n        |      •      |   |      •      |\n        +-------------+   +-------------+\n\n                 m\n        [ } bracket indicating search depth/levels ]\n\n          [grey shaded heuristic contour]\n          [nodes near the top are preferred by the heuristic]\n```"
+        },
+        {
+          "chunk_id": "bf3f647a-f779-4072-8ce4-dd41c6ed7dce",
+          "document_id": "789b2a7d-059f-4511-8e1d-84c9e3da61f3",
+          "section_title": "A* search, evaluation",
+          "chunk_order": 36,
+          "cosine_sim": 0.3683,
+          "final_score": 0.4236,
+          "content": "- Completeness: YES\n- Time complexity: (exponential with path length)\n- Space complexity:\n  - It keeps all generated nodes in memory\n  - Hence space is the major problem not time"
+        }
+      ]
+    },
+    {
+      "mode": "dense_rerank",
+      "query": "depth-limited search DFS depth-first search disadvantages limitations infinite path",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "e00eb634-2376-4696-8ba3-58c18c46372b",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Depth-limited search",
+          "chunk_order": 27,
+          "cosine_sim": 0.514,
+          "final_score": 0.5911,
+          "content": "- Depth-first search can get stuck on infinite path when a different choice would lead to a solution\n- [Formula: depth-limited search = depth-first search with depth limit l, nodes at depth l have no successors]"
+        },
+        {
+          "chunk_id": "931ef975-3849-4ada-8808-cbf9ae1fe222",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Iterative deepening search",
+          "chunk_order": 32,
+          "cosine_sim": 0.4577,
+          "final_score": 0.5263,
+          "content": "[Diagram: The figure illustrates progressively deepened search frontiers over the same tree, showing how the algorithm repeatedly reruns DFS with larger depth limits until the goal becomes reachable. This matters because it combines DFS’s low memory use with completeness, avoiding the “missed solution” problem of a fixed depth limit.]\n\n```text\nfunction ITERATIVE-DEEPENING-SEARCH(problem) returns a solution, or failure\n    inputs: problem, a problem\n    for depth ← 0 to ∞ do\n        result ← DEPTH-LIMITED-SEARCH(problem, depth)\n        if result ≠ cutoff then return result\n```"
+        },
+        {
+          "chunk_id": "5adfc234-57b6-41ed-b47b-ca834fe9704e",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Iterative deepening search (con’t)",
+          "chunk_order": 34,
+          "cosine_sim": 0.4473,
+          "final_score": 0.5144,
+          "content": "- Limit = 3\n\n```text\nIterative deepening search at limit 3:\nA\n├─ B\n│  ├─ D\n│  │  ├─ H\n│  │  └─ I\n│  └─ E\n│     ├─ J\n│     └─ K\n└─ C\n   ├─ F\n   │  ├─ L\n   │  └─ M\n   └─ G\n      ├─ N\n      └─ O\n```\n\n[Diagram: The sequence of panels shows depth-limited search repeated with increasing progress through the tree until the limit is reached. It illustrates how iterative deepening explores nodes in a depth-first manner while gradually expanding the search horizon, combining the low memory use of DFS with the completeness of BFS-like layer-by-layer discovery.]"
+        },
+        {
+          "chunk_id": "da5b2bdc-de5f-483b-8577-69c765c5ff9e",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Iterative deepening search",
+          "chunk_order": 31,
+          "cosine_sim": 0.4434,
+          "final_score": 0.5099,
+          "content": "- Problem with depth-limited search: if the shallowest goal is beyond the depth limit, no solution is found.\n- Iterative deepening search:\n  1. Do a DFS which only searches for paths of length 1\n\n(DFS gives up on any path of length 2)\n\n2. If “1” failed, do a DFS which only searches paths of 2 or less.\n  3. If “2” failed, do a DFS which only searches paths of 3 or less.\n  4. ....and so on.\n\n```text\n        b\n      /   \\\n     o     o\n    / \\   / \\\n   /   \\ /   \\\n  /-----/-----\\\n /             \\\n/               \\\n-----------------\n      |\n      |\n      o\n```"
+        },
+        {
+          "chunk_id": "81ae7bf8-2768-485b-8bee-1874db0615cd",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Depth-limited search",
+          "chunk_order": 29,
+          "cosine_sim": 0.4359,
+          "final_score": 0.5013,
+          "content": "[Diagram: The pseudocode shows how depth-limited search preserves the systematic nature of depth-first search while preventing it from diving indefinitely. The special cutoff result lets the algorithm distinguish between “no solution found yet because the limit was reached” and true failure, which is crucial for iterative deepening and controlled exploration.]"
+        },
+        {
+          "chunk_id": "494db24f-170c-42ea-8588-5a192e02e5b7",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Iterative deepening search (con’t)",
+          "chunk_order": 33,
+          "cosine_sim": 0.3893,
+          "final_score": 0.4477,
+          "content": "```text\nLimit = 0\n  A\nLimit = 1\n  A\n B   C\nLimit = 2\n    A\n  B   C\n D E F G\n```\n\n[Diagram: The slide illustrates iterative deepening search as a sequence of depth-limited traversals, starting from shallow limits and increasing gradually. This approach combines the space efficiency of depth-first search with the completeness of breadth-first search for finding shallow solutions.]"
+        },
+        {
+          "chunk_id": "65ee7ce7-2cc0-4c7a-89b1-256f57c79120",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "8-puzzle game with depth limit l = 5",
+          "chunk_order": 30,
+          "cosine_sim": 0.3703,
+          "final_score": 0.4258,
+          "content": "```text\n[Diagram: A search tree of 8-puzzle states expanded up to depth 5. It illustrates how limited-depth search explores possible moves level by level, stopping before deeper states and showing why depth limits control search cost and completeness.]\n```"
+        },
+        {
+          "chunk_id": "a176b3fe-c3c0-4e3f-9d5e-b71b984ac92c",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Summary of algorithms",
+          "chunk_order": 37,
+          "cosine_sim": 0.3684,
+          "final_score": 0.4236,
+          "content": "| Criterion | Breadth-First | Uniform-Cost | Depth-First | Depth-Limited | Iterative Deepening |\n|---|---|---|---|---|---|\n| Complete? | Yes | Yes | No | No | Yes |\n| Time | $O(b^{d+1})$ | $O(b^{\\lceil C^*/\\epsilon \\rceil})$ | $O(b^m)$ | $O(b^l)$ | $O(b^d)$ |\n| Space | $O(b^{d+1})$ | $O(b^{\\lceil C^*/\\epsilon \\rceil})$ | $O(bm)$ | $O(bl)$ | $O(bd)$ |\n| Optimal? | Yes | Yes | No | No | Yes |"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 46.5
+}

@@ -1,0 +1,60 @@
+{
+  "qid": "intro_to_ai_08",
+  "course_code": "IT3160E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every factual claim in the tutor's answer is directly supported by the retrieved chunks. The distinction between search problems (no adversary, finding a path/solution, optimal solutions possible) and games (adversary present, strategy required for all opponent replies, approximate solutions due to time limits) is grounded in chunk a0987283-c423-4f4c-8151-3144edea7054, including the specific examples provided.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly addresses the question by clearly distinguishing standard search problems (no adversary, finding a path/solution) from games (adversary present, requiring a strategy for all opponent replies). All content is on-topic and relevant to the distinction asked about.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: no adversary vs. adversary, finding optimal solution/goal vs. strategy for every opponent reply, and evaluation of cost vs. goodness of position. No contradictions are present.",
+      "evidence": [
+        "Ground truth: 'no adversary' → Tutor: 'Không có adversary (không có đối thủ)'",
+        "Ground truth: 'strategy that specifies a move for every possible opponent reply' → Tutor: 'chiến lược phải chỉ ra nên đi nước nào cho mọi phản ứng có thể của đối thủ'",
+        "Ground truth: 'evaluates the estimated cost from start to goal' → Tutor: 'tìm một đường đi / lời giải từ trạng thái ban đầu đến trạng thái đích' with heuristics for optimal solution",
+        "Ground truth: 'evaluates the goodness of a game position' → Tutor discusses strategy evaluation in adversarial context"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "The first chunk is highly relevant and directly addresses the distinction. The second chunk provides some context about CSPs vs. standard search but is tangentially relevant. The remaining four chunks (search vs. planning example, why study games, 8-puzzle example, and minimax details) are largely noise—they don't help distinguish standard search from games.",
+      "evidence": [
+        "chunk 0b538699: 'get milk, bananas, and a cordless drill' - planning example unrelated to games distinction",
+        "chunk d24868af: '8-puzzle' - specific search problem example, not comparative",
+        "chunk fea36428: 'Minimax' details - game mechanics, not the core distinction"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk a0987283 explicitly covers all major distinctions: no adversary vs. adversary, finding goal vs. strategy for every opponent reply, and evaluation of cost to goal vs. goodness of position.",
+      "evidence": [
+        "Search – no adversary",
+        "Solution is (heuristic) method for finding goal",
+        "Heuristics and CSP techniques can find *optimal* solution",
+        "Evaluation function: estimate of cost from start to goal",
+        "Games – adversary",
+        "Solution is strategy (strategy specifies move for every possible opponent reply)",
+        "Evaluation function: evaluate \"goodness\" of game position"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation accurately supports the statements made. The first chunk directly supports the core distinctions (no adversary vs. adversary, solution types, optimal vs. approximate, examples). The second and third chunks appropriately support the multi-agent and game-specific claims.",
+      "evidence": [
+        "Statement: 'Không có adversary' → Chunk a0987283: 'Search – no adversary'",
+        "Statement: 'Có adversary: kết quả phụ thuộc vào hành động của đối thủ' → Chunk a0987283: 'Games – adversary'",
+        "Statement: 'chiến lược phải chỉ ra nên đi nước nào cho mọi phản ứng có thể của đối thủ' → Chunk a0987283: 'Solution is strategy (strategy specifies move for every possible opponent reply)'",
+        "Statement: 'môi trường đối kháng nhiều tác nhân' → Chunk d1fea5ae: 'Competitive multi-agent environments give rise to adversarial search'",
+        "Statement: 'chess, checkers, Othello, backgammon' → Chunk a0987283: 'Examples: chess, checkers, Othello, backgammon'"
+      ]
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "char_budget": 24000,
+  "batches": [
+    {
+      "batch_index": 0,
+      "block_count": 17,
+      "input_chars": 2637,
+      "page_or_slide_range": [
+        1,
+        17
+      ],
+      "mode": "llm",
+      "output_chars": 2557
+    }
+  ],
+  "cleaned_blocks": [
+    {
+      "kind": "text",
+      "page": 1,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1   | cell 2   |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 2,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 3,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 4,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of y = x^2]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 5,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 6,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 7,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1   | cell 2   |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 8,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of y = x^2]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 9,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1   | cell 2   |\n\n$E=mc^2$\n\n[Diagram: graph of y = x^2]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 10,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1   | cell 2   |\n\n$E=mc^2$\n\n[Diagram: graph of y = x^2]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 11,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 12,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of y = x^2]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 13,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 14,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 15,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 16,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "content": "## heading\n\n- list item 1\n- list item 2\n\n| Column 1 | Column 2 |\n|----------|----------|\n| cell 1    | cell 2    |\n\n$E=mc^2$\n\n[Diagram: graph of function]",
+      "ocr_strategy": "region_based"
+    }
+  ]
+}

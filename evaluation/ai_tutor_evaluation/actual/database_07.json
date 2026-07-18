@@ -1,0 +1,58 @@
+{
+  "qid": "database_07",
+  "course_code": "IT3292E",
+  "question": "What is an update anomaly in the context of database normalization?",
+  "session_id": "b4eac45c-3738-4c3c-ab18-4e3b40d18208",
+  "answer": "An **update anomaly** is a problem in a poorly normalized database where the same fact is stored in multiple rows, so when that fact changes, you must update it in several places.\n\nIf some copies are not updated, the database becomes **inconsistent**.\n\nIn normalization, one goal is to remove these kinds of **anomalies** and **redundancies** from the database.",
+  "citations": [
+    {
+      "chunk_id": "a647a8d6-d7bd-4caf-93ee-8a4df4898d08",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.1. Motivation",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- Normalization is the process of removing **anomalies** and **redundancies** from DB"
+    },
+    {
+      "chunk_id": "20a03c19-d212-4f2d-82ab-66ddd141b27e",
+      "document_title": "06_Normalization.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "1. **Introduction**\n   - Normalization is the process of removing anomalies and redundancies from DB\n   - Full & Partial Dependency\n   - Transitive dependency\n\n2. **Normal Forms**\n   - 1NF, 2NF, 3NF\n\n"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "update anomaly database normalization definition",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "a647a8d6-d7bd-4caf-93ee-8a4df4898d08",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "1.1. Motivation",
+          "chunk_order": 10,
+          "cosine_sim": 0.6342,
+          "final_score": 1.2549,
+          "content": "- Normalization is the process of removing **anomalies** and **redundancies** from DB"
+        },
+        {
+          "chunk_id": "20a03c19-d212-4f2d-82ab-66ddd141b27e",
+          "document_id": "89a9c46b-117b-4129-84d7-d3d40e1eee80",
+          "section_title": "Summary",
+          "chunk_order": 27,
+          "cosine_sim": 0.4588,
+          "final_score": 0.9362,
+          "content": "1. **Introduction**\n   - Normalization is the process of removing anomalies and redundancies from DB\n   - Full & Partial Dependency\n   - Transitive dependency\n\n2. **Normal Forms**\n   - 1NF, 2NF, 3NF\n\n3. **Normalization**\n   - Properties of relational decompositions\n   - An algorithm decomposes a universal relation into 3NF\n   - Some examples"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.7
+}

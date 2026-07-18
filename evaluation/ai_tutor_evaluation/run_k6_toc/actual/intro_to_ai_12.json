@@ -1,0 +1,104 @@
+{
+  "qid": "intro_to_ai_12",
+  "course_code": "IT3160E",
+  "question": "According to Mitchell (1997), what are the three core elements that define a machine learning problem?",
+  "session_id": "f3c13847-911e-4acb-a20c-696b3ecc9c0d",
+  "answer": "According to **Mitchell (1997)**, a machine learning problem is defined by **three core elements**:\n\n1. **Task (T)** – the task the system is trying to improve at  \n2. **Performance measure (P)** – how success is evaluated  \n3. **Experience (E)** – the data or experience the system learns from  \n\nIn short, a program is said to learn if its performance at task **T**, measured by **P**, improves with experience **E**.",
+  "citations": [
+    {
+      "chunk_id": "e8e13d75-dbc3-448c-90bb-4a217b293d54",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Introduction of Machine learning",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Definitions of Machine learning...\n  - A process by which a system improves its performance [Simon, 1983]\n  - Any computer program that improves its performance at some task through experience [Mitc"
+    },
+    {
+      "chunk_id": "700be3f7-94d4-45ac-8291-73bb21cc5724",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Introduction of Machine learning",
+      "page_number": null,
+      "chunk_order": 3,
+      "excerpt": "Learning = Improving with experience at some task\n\n- Improve over task **T**\n  - With respect to performance measure **P**\n  - Based on experience **E**"
+    },
+    {
+      "chunk_id": "c2c1e177-178e-4d68-b558-85165d2e58fa",
+      "document_title": "lecture13-MachineLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Types of learning problems",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "- A rough (and somewhat outdated) classification of learning problems:\n  - Supervised learning, where we get a set of training inputs and outputs\n    - classification, regression\n  - Unsupervised lear"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Mitchell (1997) three core elements define a machine learning problem task experience performance measure",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "ae50e9e8-47d8-4721-9de7-0b2d63d378dc",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Features of RL",
+          "chunk_order": 3,
+          "cosine_sim": 0.4356,
+          "final_score": 0.501,
+          "content": "- Learning from numerical rewards\n- Interaction with the task; sequences of states, actions and rewards\n- Uncertainty and non-deterministic worlds\n- Delayed consequences\n- The explore/exploit dilemma\n- The whole problem of goal-directed learning"
+        },
+        {
+          "chunk_id": "c1c65690-ce15-4210-b5ce-51ca58f39d4c",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Reinforcement Learning (RL)",
+          "chunk_order": 2,
+          "cosine_sim": 0.4141,
+          "final_score": 0.4762,
+          "content": "- RL is ML method that optimize the reward\n  - A class of tasks\n  - A process of trial-and-error learning\n    - Good actions are “rewarded”\n    - Bad actions are “punished”"
+        },
+        {
+          "chunk_id": "00d7b922-e2e8-4311-922a-651df539f47a",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Rational agent",
+          "chunk_order": 8,
+          "cosine_sim": 0.3961,
+          "final_score": 0.4555,
+          "content": "- For each possible percept sequence, a rational agent should select an **action** that is expected to maximize its **performance measure**, given the evidence provided by the **percept sequence** and whatever **built-in knowledge** the agent has.\n- An agent is **autonomous** if its behavior is determined by its own experience (with ability to learn and adapt)"
+        },
+        {
+          "chunk_id": "e8e13d75-dbc3-448c-90bb-4a217b293d54",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Introduction of Machine learning",
+          "chunk_order": 2,
+          "cosine_sim": 0.6054,
+          "final_score": 0.3481,
+          "content": "- Definitions of Machine learning...\n  - A process by which a system improves its performance [Simon, 1983]\n  - Any computer program that improves its performance at some task through experience [Mitchell, 1997]\n  - Programming computers to optimize a performance criterion using example data or past experience [Alpaydin, 2004]\n\n- Representation of the learning problem [Mitchell, 1997]"
+        },
+        {
+          "chunk_id": "700be3f7-94d4-45ac-8291-73bb21cc5724",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Introduction of Machine learning",
+          "chunk_order": 3,
+          "cosine_sim": 0.5188,
+          "final_score": 0.2983,
+          "content": "Learning = Improving with experience at some task\n\n- Improve over task **T**\n  - With respect to performance measure **P**\n  - Based on experience **E**"
+        },
+        {
+          "chunk_id": "c2c1e177-178e-4d68-b558-85165d2e58fa",
+          "document_id": "82f5537b-9dd5-43d4-bc4d-ef54f5dc93be",
+          "section_title": "Types of learning problems",
+          "chunk_order": 13,
+          "cosine_sim": 0.4142,
+          "final_score": 0.2382,
+          "content": "- A rough (and somewhat outdated) classification of learning problems:\n  - Supervised learning, where we get a set of training inputs and outputs\n    - classification, regression\n  - Unsupervised learning, where we are interested in capturing inherent organization in the data\n    - clustering, density estimation\n  - Reinforcement learning, where we only get feedback in the form of how well we are doing (not what we should be doing)\n    - Planning"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.7
+}

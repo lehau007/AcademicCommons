@@ -1,0 +1,31 @@
+{
+  "qid": "intro_to_ai_19",
+  "course_code": "IT3160E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "pruning grounded; double-depth/O(b^m/2) not in shown ctx"
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "-"
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "-"
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "double-depth GT detail not clearly retrieved"
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "-"
+    }
+  }
+}

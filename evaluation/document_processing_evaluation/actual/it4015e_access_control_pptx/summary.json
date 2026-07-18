@@ -1,0 +1,594 @@
+{
+  "topic": "Access Control",
+  "concepts": [
+    "Access Control",
+    "Sep 2009",
+    "Topics",
+    "What is AC",
+    "Access Control is Pervasive",
+    "Information Security by Van K Nguyen Hanoi University of Technology",
+    "Overview",
+    "Access Matrix"
+  ],
+  "language": "en",
+  "ocr_quality": "low",
+  "section_summaries": [
+    {
+      "heading": "Access Control",
+      "summary": "Information Security Van K Nguyen - HUT",
+      "page_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "heading": "Topics",
+      "summary": "- Overview - Access Control Matrix model - Discretionary Access Control (DAC) - Mandatory Access Control (MAC) and an example model - Role Based Access Control (RBAC) - Access Control in Unix",
+      "page_range": [
+        3,
+        3
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        4,
+        4
+      ]
+    },
+    {
+      "heading": "What is AC",
+      "summary": "Quote from Ross Anderson (text “Security Engineering”) Its function is to control which principals (persons, processes, machines, …) have access to which resources in the system -- which files they can read, which programs they can execute, and how they share data with other...",
+      "page_range": [
+        5,
+        5
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        6,
+        6
+      ]
+    },
+    {
+      "heading": "Access Control is Pervasive",
+      "summary": "- Application - business applications - Middleware - DBMS - Operating System - controlling access to files, ports - Hardware - memory protection, privilege levels",
+      "page_range": [
+        7,
+        7
+      ]
+    },
+    {
+      "heading": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "summary": "Access Control Matrix – A general model for protection systems Lampson’1971 “Protection” Refined by Graham and Denning’1972 “Protection---Principles and Practice” Harrison, Ruzzo, and Ullman’1976 “Protection in Operating Systems”",
+      "page_range": [
+        8,
+        8
+      ]
+    },
+    {
+      "heading": "Overview",
+      "summary": "- Protection state of system - Describes current settings, values of system relevant to protection - Access control matrix - Describes protection state precisely - Matrix describing rights of subjects - State transitions change elements of matrix",
+      "page_range": [
+        9,
+        9
+      ]
+    },
+    {
+      "heading": "Access Matrix",
+      "summary": "- A set of subjects S - A set of objects O - A set of rights R - An access control matrix - one row for each subject - one column for each subject/object - elements are right of subject on another subject or object",
+      "page_range": [
+        10,
+        10
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        11,
+        11
+      ]
+    },
+    {
+      "heading": "Description",
+      "summary": "- Subjects S = { s1,…,sn } - Objects O = { o1,…,om } - Rights R = { r1,…,rk } - Entries A[si, oj] ⊆ R - A[si, oj] = { rx, …, ry } means subject si has rights rx, …, ry over object oj",
+      "page_range": [
+        12,
+        12
+      ]
+    },
+    {
+      "heading": "Example 1",
+      "summary": "- Processes p, q - Files f, g - Rights r, w, x, a, o | | f | g | p | q | |---|---|---|---|---| | p | rwo | r | rwxo | w | | q | a | ro | r | rwxo |",
+      "page_range": [
+        13,
+        13
+      ]
+    },
+    {
+      "heading": "Example 2",
+      "summary": "Procedures inc_ctr, dec_ctr, manage Variable counter Rights +, –, call | | counter | inc_ctr | dec_ctr | manage | |------------|---------|---------|---------|--------| | inc_ctr | + | | | | | dec_ctr | – | | | | | manage | | call | call | call |",
+      "page_range": [
+        14,
+        14
+      ]
+    },
+    {
+      "heading": "Implementation",
+      "summary": "Storing the access matrix - by rows: capability lists - by column: access control lists - through indirection: - e.g., key and lock list - e.g., groups, roles, multiple level of indirections, multiple locks How to do indirection correctly and conveniently is the key to...",
+      "page_range": [
+        15,
+        15
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        16,
+        16
+      ]
+    },
+    {
+      "heading": "Implementation",
+      "summary": "Access Control List (column) | File 1 | File 2 | |---|---| | Joe:Read | Joe:Read | | Joe:Write | Sam:Read | | Joe:Own | | | | Sam:Write | | | Sam:Own | Capability List (row) - Joe: File 1/Read, File 1/Write, File 1/Own, File 2/Read - Sam: File 2/Read, File 2/Write, File 2/Own...",
+      "page_range": [
+        17,
+        17
+      ]
+    },
+    {
+      "heading": "Access control lists",
+      "summary": "- ACL is a list of permissions attached to an object - Who can modify the object's ACL? - What changes are allowed?",
+      "page_range": [
+        18,
+        18
+      ]
+    },
+    {
+      "heading": "Owners and Groups",
+      "summary": "Who can modify the object's ACL? - One way is by introducing owners of objects - With ACLs we can define any combination of access, but that makes them difficult to manage - Group allow relatively fine-grained access control while making ACLs easier to manage - Owners and...",
+      "page_range": [
+        19,
+        19
+      ]
+    },
+    {
+      "heading": "Capability lists",
+      "summary": "One way to partition the matrix is by rows. All access rights of one user together, stored in a data structure called a capability list Lists all the access rights or capabilities that a user has.",
+      "page_range": [
+        20,
+        20
+      ]
+    },
+    {
+      "heading": "Capability lists",
+      "summary": "Sep 2009 Information Security by Van K Nguyen Hanoi University of Technology - All access to objects is done through capabilities - Every program holds a set of capabilities - Each program holds a small number of capabilities - The only way a program can obtain capabilities is...",
+      "page_range": [
+        21,
+        21
+      ]
+    },
+    {
+      "heading": "Harrison-Ruzzo-Ullman model",
+      "summary": "Discretionary Access Control Rights defined on specific (subject, object), decided by individual owners (as oppose to Mandatory Access Control, decided by system policies) HRU work - Formulating access matrices, towards Operating Systems - Provide a model that is sufficiently...",
+      "page_range": [
+        22,
+        22
+      ]
+    },
+    {
+      "heading": "Primitive Operations",
+      "summary": "- create subject s; create object o - Creates new row, column in ACM; creates new column in ACM - destroy subject s; destroy object o - Deletes row, column from ACM; deletes column from ACM - enter r into A[s, o] - Adds r rights for subject s over object o - delete r from A[s,...",
+      "page_range": [
+        23,
+        23
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        24,
+        24
+      ]
+    },
+    {
+      "heading": "Creating File",
+      "summary": "- Process p creates file f with r and w permission - `command create•file(p, f)` - create object f; - enter own into A[p, f]; - enter r into A[p, f]; - enter w into A[p, f]; - end",
+      "page_range": [
+        25,
+        25
+      ]
+    },
+    {
+      "heading": "Mono-Operational Commands",
+      "summary": "Make process p the owner of file g - `command make•owner(p, g)` - `enter own into A[p, g];` - end Mono-operational command Single primitive operation in this command",
+      "page_range": [
+        26,
+        26
+      ]
+    },
+    {
+      "heading": "Conditional Commands",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology - Let p give q r rights over f, if p owns f - command grant•read•file•1(p, f, q) - if own in A[p, f] - then - enter r into A[q, f]; - end - Mono-conditional command - Single condition in this command",
+      "page_range": [
+        27,
+        27
+      ]
+    },
+    {
+      "heading": "Discretionary Access Control (DAC)",
+      "summary": "- No precise definition - Widely used in modern operating systems - Often has the notion of owner of an object - The owner controls other users’ accesses to the object - Allows access rights to be propagated to other subjects",
+      "page_range": [
+        28,
+        28
+      ]
+    },
+    {
+      "heading": "Drawbacks in DAC",
+      "summary": "- DAC cannot protect against - Trojan horse - Malware - Software bugs - Malicious local users - Cannot control information flow",
+      "page_range": [
+        29,
+        29
+      ]
+    },
+    {
+      "heading": "Mandatory Access Control (MAC)",
+      "summary": "Sep 2009 Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        30,
+        30
+      ]
+    },
+    {
+      "heading": "Mandatory Access Control",
+      "summary": "Objects: security classification - e.g., grades=(confidential, {student-info}) Subjects: security clearances - e.g., Joe=(confidential, {student-info}) Access rules: defined by comparing the security classification of the requested objects with the security clearance of the...",
+      "page_range": [
+        31,
+        31
+      ]
+    },
+    {
+      "heading": "Mandatory Access Control",
+      "summary": "- If access control rules are satisfied, access is permitted - e.g., Joe wants to read grades. - label(Joe)=(confidential,{student-info}) - label(grades)=(confidential,{student-info}) - Joe is permitted to read grades Granularity of access rights!",
+      "page_range": [
+        32,
+        32
+      ]
+    },
+    {
+      "heading": "Mandatory Access Control",
+      "summary": "- Information Security by Van K Nguyen Hanoi University of Technology - Security Classes (labels): (A,C) - A – total order authority level - C – set of categories - e.g., A = confidential > public , C = {student-info, dept-info} - (confidential,{ }) - (confidential,{dept-info})...",
+      "page_range": [
+        33,
+        33
+      ]
+    },
+    {
+      "heading": "Mandatory Access Control",
+      "summary": "Dominance (≥): label l=(A,C) dominates l’=(A’,C’) iff A ≥ A’ and C ⊇ C’ - e.g., (confidential,{student-info}) ≥ (public,{student-info}) - BUT NOT (confidential, {student-info}) ≥ (public,{student-info, department-info})",
+      "page_range": [
+        34,
+        34
+      ]
+    },
+    {
+      "heading": "Bell- LaPadula (BLP) Model",
+      "summary": "- Confidentiality protection - Lattice-based access control - Subjects - Objects - Security labels - Supports decentralized administration",
+      "page_range": [
+        35,
+        35
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        36,
+        36
+      ]
+    },
+    {
+      "heading": "BLP Reference Monitor",
+      "summary": "- All accesses are controlled by the reference monitor - Cannot be bypassed - Access is allowed iff the resulting system state satisfies all security properties - Trusted subjects: subjects trusted not to compromise security",
+      "page_range": [
+        37,
+        37
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        38,
+        38
+      ]
+    },
+    {
+      "heading": "BLP Axioms 1.",
+      "summary": "- Simple-security property: a subject s is allowed to read an object o only if the security label of s dominates the security label of o - No read up - Applies to all subjects - Subject s can read object o iff L(o) ≤ L(s) and s has permission to read o - Note: combines...",
+      "page_range": [
+        39,
+        39
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology - *-property: a subject s is allowed to write an object o only if the security label of o dominates the security label of s - No write down - Applies to un-trusted subjects only - Subject s can write object o...",
+      "page_range": [
+        40,
+        40
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        41,
+        41
+      ]
+    },
+    {
+      "heading": "Example",
+      "summary": "- Tamara can read all files - Claire cannot read Personnel or E-Mail Files - Ulaley can only read Telephone Lists",
+      "page_range": [
+        42,
+        42
+      ]
+    },
+    {
+      "heading": "Levels and Lattices",
+      "summary": "- Information Security by Van K Nguyen Hanoi University of Technology - Security level is (clearance, category set) - ( Top Secret, { NUC, EUR, ASI } ) - ( Confidential, { EUR, ASI } ) - ( Secret, { NUC, ASI } ) - (A, C) dom (A′, C′) iff A′ ≤ A and C′ ⊆ C - (Top Secret, {NUC,...",
+      "page_range": [
+        43,
+        43
+      ]
+    },
+    {
+      "heading": "MAC Overview",
+      "summary": "- Advantages: - Very secure - Centralized enforcement - Disadvantages: - May be too restrictive - Need additional mechanisms to implement multi-level security system - Security administration is difficult",
+      "page_range": [
+        44,
+        44
+      ]
+    },
+    {
+      "heading": "RBAC Motivation",
+      "summary": "Sep 2009 Information Security by Van K Nguyen Hanoi University of Technology - Multi-user systems - Multi-application systems - Permissions are associated with roles - Role-permission assignments are persistent v.s. user-permission assignments - Intuitive: competency, authority...",
+      "page_range": [
+        45,
+        45
+      ]
+    },
+    {
+      "heading": "Motivation",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology - Express organizational policies - Separation of duties - Delegation of authority - Flexible: easy to modify to meet new security requirements - Supports - Least-privilege - Separation of duties - Data...",
+      "page_range": [
+        46,
+        46
+      ]
+    },
+    {
+      "heading": "Roles",
+      "summary": "- User group: collection of user with possibly different permissions - Role: mediator between collection of users and collection of permissions - RBAC independent from DAC and MAC (they may coexist) - RBAC is policy neutral: configuration of RBAC determines the policy to be...",
+      "page_range": [
+        47,
+        47
+      ]
+    },
+    {
+      "heading": "RBAC",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology - RBAC3 consolidated model - RBAC1 - role hierarchy - RBAC2 - constraints - RBAC0 base model",
+      "page_range": [
+        48,
+        48
+      ]
+    },
+    {
+      "heading": "RBAC0",
+      "summary": "- U - Users - R - Roles - P - Permissions - S - Sessions - User assignment - Permission assignment",
+      "page_range": [
+        49,
+        49
+      ]
+    },
+    {
+      "heading": "RBAC0",
+      "summary": "- User: human beings - Role: job function (title) - Permission: approval of a mode of access - Always positive - Abstract representation - Can apply to single object or to many",
+      "page_range": [
+        50,
+        50
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        51,
+        51
+      ]
+    },
+    {
+      "heading": "RBAC0",
+      "summary": "- UA: user assignments - Many-to-many - PA: Permission assignment - Many-to-many - Session: mapping of a user to possibly many roles - Multiple roles can be activated simultaneously - Permissions: union of permissions from all roles - Each session is associated with a single...",
+      "page_range": [
+        52,
+        52
+      ]
+    },
+    {
+      "heading": "RBAC0 Components",
+      "summary": "Users, Roles, Permissions, Sessions - PA ⊆ P x R (many-to-many) - UA ⊆ U x R (many-to-many) - user: S 🡪 U, mapping each session si to a single user user(si) - roles: S 🡪 2R, mapping each session si to a set of roles: - roles(si) ⊆ {r | (user(si), r) ∈ UA} and si has permissions...",
+      "page_range": [
+        53,
+        53
+      ]
+    },
+    {
+      "heading": "RBAC0",
+      "summary": "- Permissions apply to data and resource objects only - Permissions do NOT apply to RBAC components - Administrative permissions: modify U,R,S,P - Session: under the control of user to - Activate any subset of permitted roles - Change roles within a session",
+      "page_range": [
+        54,
+        54
+      ]
+    },
+    {
+      "heading": "RBAC1",
+      "summary": "Structuring roles Inheritance of permission from junior role (bottom) to senior role (top) Partial order - Reflexive - Transitive - Anti-symmetric",
+      "page_range": [
+        55,
+        55
+      ]
+    },
+    {
+      "heading": "RBAC1",
+      "summary": "Role Hierarchy",
+      "page_range": [
+        56,
+        56
+      ]
+    },
+    {
+      "heading": "RBAC1",
+      "summary": "Role Hierarchy - Primary-care - Physician - Physician - Specialist - Physician - Health-care provider - Inheritance - of - privileges",
+      "page_range": [
+        57,
+        57
+      ]
+    },
+    {
+      "heading": "RBAC1 Components",
+      "summary": "- Same as RBAC0: Users, Roles, Permissions, Sessions, PA ⊆ P x R, UA ⊆ U x R, user: S 🡪 U, mapping each session si to a single user user(si) - RH ⊆ R x R, partial order (≥ dominance) - roles: S 🡪 2R, mapping each session si to a set of roles - roles(si) ⊆ {r | (∃r’ ≥ r)...",
+      "page_range": [
+        58,
+        58
+      ]
+    },
+    {
+      "heading": "General Concepts",
+      "summary": "- Users, Groups, Processes, Files - Each user has a unique UID - Each group has a unique GID - Each process has a unique PID - Users belong to multiple groups GID - Objects whose access is controlled - Files - Directories - Organization of Objects - Files are arranged in a...",
+      "page_range": [
+        59,
+        59
+      ]
+    },
+    {
+      "heading": "Basic Permissions Bits on Files",
+      "summary": "- Permission: - Read: control reading the content of a file - Write: controls changing the content of a file - Execute: controls loading the file then execute - Many operations can be performed only by the owner of the file",
+      "page_range": [
+        60,
+        60
+      ]
+    },
+    {
+      "heading": "Where are Permission Bits Kept?",
+      "summary": "- Each file/directory has associated an i-node. - The file type, permissions, owner UID and owner GID are save on disk in the inode of a file or directory",
+      "page_range": [
+        61,
+        61
+      ]
+    },
+    {
+      "heading": "Permission Bits on Directories",
+      "summary": "- Read: for showing file names in a directory - Execution: for traversing a directory - does a lookup, allows one to find inode # from file name - ‘chdir’ to a directory requires execution - Write + execution: for creating/deleting files in the directory - requires no...",
+      "page_range": [
+        62,
+        62
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        63,
+        63
+      ]
+    },
+    {
+      "heading": "The Three Sets of Permission Bits",
+      "summary": "- Permission example - `drwxr-xr-x` - First: directory or not - Next three: owner permission - if the user is the owner of a file then the r/w/x bits for owner apply - Next three: group permission - if the user belongs to the group the file belongs to then the r/w/x bits for...",
+      "page_range": [
+        64,
+        64
+      ]
+    },
+    {
+      "heading": "Where are Permission Bits Kept?",
+      "summary": "- Each file/directory has associated an inode. - The file type, permissions, owner UID and owner GID are save on disk in the inode of a file or directory",
+      "page_range": [
+        65,
+        65
+      ]
+    },
+    {
+      "heading": "Users vs. Subjects",
+      "summary": "- Permission bits talk about what users can access a file - but it is subjects (processes) to perform actions on files - When a subject accesses a file, the system check which user it is acting on behalf of - Problem: what if an executable need stronger permission than the...",
+      "page_range": [
+        66,
+        66
+      ]
+    },
+    {
+      "heading": "Real User ID vs. Effective User ID",
+      "summary": "- Each process has three user IDs - real user ID (ruid): owner of the process - effective user ID (euid): used in most access control decisions, often the same as ruid unless there is a change - saved user ID (suid): keeps the previous euid if it was a change - and three group...",
+      "page_range": [
+        67,
+        67
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        68,
+        68
+      ]
+    },
+    {
+      "heading": "The setuid flag",
+      "summary": "- When used for a file - allows certain processes to have more than ordinary privileges while still being executable by ordinary users - When set, the effective uid of the calling process takes the value of the owner of the file",
+      "page_range": [
+        69,
+        69
+      ]
+    },
+    {
+      "heading": "Sep 2009",
+      "summary": "Information Security by Van K Nguyen Hanoi University of Technology",
+      "page_range": [
+        70,
+        70
+      ]
+    },
+    {
+      "heading": "How the process user IDs work",
+      "summary": "- When a process is created by `fork` - it inherits all three UIDs from its parent process - When a process executes a file by `exec` - if (the setuid bit of the file is off) - it keeps its three user IDs - otherwise // the setuid is set - euid of the process = ruid of the file...",
+      "page_range": [
+        71,
+        71
+      ]
+    },
+    {
+      "heading": "How to solve the passwd problem and the likes?",
+      "summary": "- Passwd is owned by root and setuid is set - When a process executes it, then effective user becomes root, so the program runs as root on behalf of the user (only within the passwd work) - Can be a security flaw if the mechanism for temporary higher privilege is abused",
+      "page_range": [
+        72,
+        72
+      ]
+    }
+  ],
+  "overall_summary": "Access Control: Information Security Van K Nguyen - HUT Sep 2009: Information Security by Van K Nguyen Hanoi University of Technology Topics: - Overview - Access Control Matrix model - Discretionary Access Control (DAC) - Mandatory Access Control (MAC) and an example model - Role Based Access Control (RBAC) - Access Control in Unix Sep 2009: Information Security by Van K Nguyen Hanoi University of Technology What is AC: Quote from Ross Anderson (text “Security Engineering”) Its function is to control which principals (persons, processes, machines, …) have access to which resources in the system -- which files they can read, which programs they can execute, and how they share data with other... Sep 2009: Information Security by Van K Nguyen Hanoi University of Technology"
+}

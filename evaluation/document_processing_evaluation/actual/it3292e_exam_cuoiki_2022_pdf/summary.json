@@ -1,0 +1,50 @@
+{
+  "topic": "ĐẠI HỌC BÁCH KHOA HN",
+  "concepts": [
+    "ĐẠI HỌC BÁCH KHOA HN",
+    "Phần I – Điền câu trả lời đúng vào chỗ trống (3 điểm)",
+    "Phần II – Chọn một đáp án đúng (3 điểm)",
+    "Phần III – Tự luận (4 điểm)",
+    "câu",
+    "liệu",
+    "của",
+    "một"
+  ],
+  "language": "vi",
+  "ocr_quality": "low",
+  "section_summaries": [
+    {
+      "heading": "ĐẠI HỌC BÁCH KHOA HN",
+      "summary": "Học kỳ: 2022.2 **Thi kết thúc học phần CƠ SỞ DỮ LIỆU - IT3092** Thời gian: **60 phút**. Không được sử dụng tài liệu Họ và tên SV: Nguyễn Tuấn Anh MSSV: 1024562 | Điểm | Chữ ký của giảng viên | Chữ ký của giám thị | |---|---|---| | | | |",
+      "page_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "heading": "Phần I – Điền câu trả lời đúng vào chỗ trống (3 điểm)",
+      "summary": "**Câu 1.** Cho sơ đồ quan hệ R(A,B,C,D,E) và tập phụ thuộc hàm F = {A→C, B→D, C→A, B→C, C→D, CD→B, BD→E}. Hãy tìm [CD]+?",
+      "page_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "heading": "Phần II – Chọn một đáp án đúng (3 điểm)",
+      "summary": "**Câu 7.** Phát biểu nào dưới đây là SAI? (A) Trigger được kích hoạt khi có sự kiện xảy ra.",
+      "page_range": [
+        3,
+        3
+      ]
+    },
+    {
+      "heading": "Phần III – Tự luận (4 điểm)",
+      "summary": "Cho cơ sở dữ liệu quan hệ: SV (MSSV, TenSV, NamSinh, QueQuan, Lop, MAKH) CMCD (MCCB, TenCB, Tel, HocVi, MAKH) Khoa (MAKH, TenKH, Tel, Website) HuongDan (MSSV, MCCB, TenDT, KQHD) 1. Hãy viết câu lệnh SQL thực hiện các yêu cầu sau: a/ Cập nhật CBGD có MCCB = 'CB1009' với Tài...",
+      "page_range": [
+        4,
+        4
+      ]
+    }
+  ],
+  "overall_summary": "ĐẠI HỌC BÁCH KHOA HN: Học kỳ: 2022.2 **Thi kết thúc học phần CƠ SỞ DỮ LIỆU - IT3092** Thời gian: **60 phút**. Không được sử dụng tài liệu Họ và tên SV: Nguyễn Tuấn Anh MSSV: 1024562 | Điểm | Chữ ký của giảng viên | Chữ ký của giám thị | |---|---|---| | | | | Phần I – Điền câu trả lời đúng vào chỗ trống (3 điểm): **Câu 1.** Cho sơ đồ quan hệ R(A,B,C,D,E) và tập phụ thuộc hàm F = {A→C, B→D, C→A, B→C, C→D, CD→B, BD→E}. Hãy tìm [CD]+? Phần II – Chọn một đáp án đúng (3 điểm): **Câu 7.** Phát biểu nào dưới đây là SAI? (A) Trigger được kích hoạt khi có sự kiện xảy ra. Phần III – Tự luận (4 điểm): Cho cơ sở dữ liệu quan hệ: SV (MSSV, TenSV, NamSinh, QueQuan, Lop, MAKH) CMCD (MCCB, TenCB, Tel, HocVi, MAKH) Khoa (MAKH, TenKH, Tel, Website) HuongDan (MSSV, MCCB, TenDT, KQHD) 1. Hãy viết câu lệnh SQL thực hiện các yêu cầu sau: a/ Cập nhật CBGD có MCCB = 'CB1009' với Tài..."
+}

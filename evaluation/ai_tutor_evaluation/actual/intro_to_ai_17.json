@@ -1,0 +1,67 @@
+{
+  "qid": "intro_to_ai_17",
+  "course_code": "IT3160E",
+  "question": "What are the four items required to formally define a Search Problem?",
+  "session_id": "15342394-ad7e-414c-8cae-d1616e3e4b80",
+  "answer": "The four items required to formally define a **search problem** are:\n\n1. **Initial state**  \n2. **Actions / successor function**  \n3. **Goal test**  \n4. **Path cost**\n\nIn the course notes, the successor function gives the possible action-state pairs from a state, the goal test checks whether a state satisfies the goal, and the path cost is usually additive.",
+  "citations": [
+    {
+      "chunk_id": "d24868af-9916-46a2-a249-4335ac624367",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: The 8-puzzle",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "[Diagram: The slide introduces the 8-puzzle as a search problem by defining its state space, allowed actions, goal condition, and step cost. This matters because these four ingredients fully specify h"
+    },
+    {
+      "chunk_id": "3d8f7320-9702-4965-868b-c8b835361eba",
+      "document_title": "lecture3_search.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Search Problem Definition",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- A problem is defined by four items:\n  1. initial state: e.g., Arad\n  2. actions or successor function $S(x)$ = set of action-state pairs\n     - e.g., $S(Arad)$ = {<Arad → Zerind, Zerind>, ... }\n  3."
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "formally define a search problem four items",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "d24868af-9916-46a2-a249-4335ac624367",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Example: The 8-puzzle",
+          "chunk_order": 13,
+          "cosine_sim": 0.4549,
+          "final_score": 0.7601,
+          "content": "[Diagram: The slide introduces the 8-puzzle as a search problem by defining its state space, allowed actions, goal condition, and step cost. This matters because these four ingredients fully specify how an algorithm can evaluate and solve the puzzle.]"
+        },
+        {
+          "chunk_id": "3d8f7320-9702-4965-868b-c8b835361eba",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Search Problem Definition",
+          "chunk_order": 11,
+          "cosine_sim": 0.4211,
+          "final_score": 0.6691,
+          "content": "- A problem is defined by four items:\n  1. initial state: e.g., Arad\n  2. actions or successor function $S(x)$ = set of action-state pairs\n     - e.g., $S(Arad)$ = {<Arad → Zerind, Zerind>, ... }\n  3. goal test, can be\n     - explicit, e.g., $x$ = Bucharest\n     - implicit, e.g., $Checkmate(x)$\n  4. path cost (additive)\n     - e.g., sum of distances, number of actions executed, etc.\n     - $c(x,a,y)$ is the step cost, assumed to be $\\ge 0$\n- A solution is a sequence of actions leading from the initial state to a goal state"
+        },
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.4717,
+          "final_score": 0.3677,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 9.4
+}

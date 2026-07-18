@@ -1,0 +1,37 @@
+{
+  "qid": "hard_dm_long_10",
+  "course_code": "IT3020E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "All claims traceable to the retrieved chunks; no invented content.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "Directly and completely answers the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "Matches the ground-truth key facts with no contradiction.",
+      "evidence": []
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "First retrieval all noise stubs; second retrieval recovered the enumeration content.",
+      "evidence": []
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "Every key ground-truth fact appears in some retrieved chunk.",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "Citations point to chunks that support the statements.",
+      "evidence": []
+    }
+  }
+}

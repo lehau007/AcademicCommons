@@ -1,0 +1,21 @@
+{
+  "sample_id": "it3292e_comm_past_exam_pdf_01",
+  "course_code": "IT3292E",
+  "tier": "community",
+  "input_path": "data/sample/community/IT3292E/past_exam/Database-giữa kì cô Oanh.pdf",
+  "expected_type": "scanned_pdf",
+  "expected_route": "vision_only",
+  "actual_route": "vision_only",
+  "route_evidence": {
+    "reason": "pdf_probe",
+    "inferred_type": "scanned_pdf",
+    "text_chars": 0,
+    "page_count": 2,
+    "image_count": 2,
+    "avg_chars_per_page": 0.0,
+    "images_per_page": 1.0
+  },
+  "file_sha256": "5ad3b45bf248fae148efe862eb100afb88db059874b272a02a3c67510b1a20a8",
+  "model": "local_placeholder",
+  "duration_ms": 54679
+}

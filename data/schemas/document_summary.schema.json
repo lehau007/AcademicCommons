@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "document_summary.schema.json",
+  "title": "Document Summary Contract (v1)",
+  "description": "Structured summary produced during PARSING stage for all document tiers. Used as input for the 3-agent evaluation pipeline (community only) and as metadata for Mindmap/Mock Test features (all tiers). See project_description.md Section 6.2.",
+  "type": "object",
+  "required": ["schema_version", "topic", "concepts", "language", "ocr_quality", "section_summaries", "overall_summary"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "topic": {
+      "type": "string",
+      "description": "Primary topic of the document"
+    },
+    "concepts": {
+      "type": "array",
+      "description": "Key concepts extracted from the document",
+      "items": { "type": "string" }
+    },
+    "language": {
+      "type": "string",
+      "enum": ["vi", "en", "mixed"],
+      "description": "Detected language of the document"
+    },
+    "ocr_quality": {
+      "type": "string",
+      "enum": ["high", "medium", "low"],
+      "description": "Estimated OCR output quality"
+    },
+    "section_summaries": {
+      "type": "array",
+      "description": "Per-section summaries",
+      "items": {
+        "type": "object",
+        "required": ["heading", "summary", "page_range"],
+        "properties": {
+          "heading": { "type": "string" },
+          "summary": { "type": "string" },
+          "page_range": {
+            "type": "array",
+            "items": { "type": "integer" },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      }
+    },
+    "overall_summary": {
+      "type": "string",
+      "description": "200-500 word summary of the entire document"
+    }
+  },
+  "additionalProperties": false
+}

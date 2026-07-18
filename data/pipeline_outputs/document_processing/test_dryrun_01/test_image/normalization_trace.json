@@ -1,0 +1,19 @@
+{
+  "char_budget": 24000,
+  "batches": [
+    {
+      "batch_index": 0,
+      "block_count": 1,
+      "input_chars": 188,
+      "page_or_slide_range": null,
+      "mode": "llm",
+      "output_chars": 219
+    }
+  ],
+  "cleaned_blocks": [
+    {
+      "kind": "text",
+      "content": "There is no visual element provided. Please share the visual element, and I'll be happy to assist you in describing its content, focusing on learning value, and performing OCR on any text."
+    }
+  ]
+}

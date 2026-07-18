@@ -1,0 +1,56 @@
+{
+  "qid": "database_05",
+  "course_code": "IT3292E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 4,
+      "justification": "Nearly all claims are supported by the retrieved chunks. The core mapping process is accurately described. However, the claim that the combination 'is typically used as the composite primary key' is not explicitly stated in the chunks, which only mention 'all prime-attributes' without specifying they form a composite key.",
+      "evidence": [
+        "The combination of these attributes is typically used as the composite primary key"
+      ]
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses how to map a many-to-many relationship from an ERD to a relational schema. It explains creating a new relation with primary keys from both entities, provides a concrete example, and clarifies the foreign key relationships.",
+      "evidence": [
+        "Create a new relation (table) for the relationship itself",
+        "This new relation contains the primary key attributes of both entity sets",
+        "learn(subject_id, student_id)"
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: creating a new relation, including primary keys from both entity sets, and using them as foreign keys. The additional details about composite keys and the concrete example enhance understanding without contradicting the ground truth.",
+      "evidence": [
+        "Ground truth: 'create a new relation that includes all the prime-attributes (primary keys) of both participating entity sets'",
+        "Tutor: 'Create a new relation (table)... contains the primary key attributes of both entity sets'",
+        "Ground truth: 'These prime attributes are used as foreign keys'",
+        "Tutor: 'subject_id is a foreign key... student_id is a foreign key'"
+      ]
+    },
+    "context_precision": {
+      "score": 4,
+      "justification": "Five of the six chunks are relevant to the question. Chunk 5fe44724 directly answers the question about n-m mapping, chunk 06e46a59 provides useful contrast with 1-n mapping, and chunks 7f790225, 5dd8419d, and 51ad005f provide relevant context about ERD-to-schema mapping. Only chunk c47a1b9a about multivalued attributes is irrelevant to the specific question about n-m relationships.",
+      "evidence": [
+        "c47a1b9a-ef5c-4694-9308-32b9f3708358: 'Mapping of multivalued attributes'"
+      ]
+    },
+    "context_recall": {
+      "score": 4,
+      "justification": "The retrieved chunks contain nearly all key facts from the ground truth: creating a new relation with prime-attributes (primary keys) of both entity sets is explicitly stated in chunk 5fe44724. However, the ground truth's specific mention that these prime attributes are 'used as foreign keys in the new relation' is not explicitly stated in the retrieved chunks, though it is strongly implied by the mapping process described.",
+      "evidence": [
+        "Create a new relation which has all prime-attributes of both entity sets",
+        "learn(subject_id, student_id)"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The core explanation about creating a new relation with primary keys from both entity sets is explicitly supported by chunk 5fe44724, and the example using student/subject/learn is taken verbatim from the same chunk.",
+      "evidence": [
+        "Statement: 'Create a new relation which has all prime-attributes of both entity sets' → Chunk 5fe44724: 'Mapping of n - m relationships - Create a new relation which has all prime-attributes of both entity sets'",
+        "Statement: 'learn(subject_id, student_id)' example → Chunk 5fe44724: 'learn(subject_id, student_id)' with matching ER diagram showing student and subject entities"
+      ]
+    }
+  }
+}

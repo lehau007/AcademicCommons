@@ -1,0 +1,136 @@
+{
+  "qid": "intro_to_ai_13",
+  "course_code": "IT3160E",
+  "question": "In Reinforcement Learning, what is the purpose of the discount rate in the discounted return model?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "1fd2742b-9d0d-4269-bcdf-6d98a1f0bdcf",
+  "answer": "Trong **mô hình discounted return**, **discount rate** \\(\\gamma\\) có hai mục đích chính:\n\n1. **Giới hạn tổng phần thưởng vô hạn**  \n   Khi chuỗi phần thưởng kéo dài rất lâu hoặc vô hạn, việc nhân dần các phần thưởng tương lai với \\(\\gamma\\) giúp tổng return không bị tăng mãi.\n\n2. **Ưu tiên phần thưởng sớm hơn**  \n   Phần thưởng nhận được càng muộn thì càng bị giảm trọng số, nên tác tử sẽ **ưu tiên các đường đi ngắn hơn** hoặc các kết quả đạt được sớm hơn.\n\nNói ngắn gọn: **discount rate dùng để làm phần thưởng tương lai kém quan trọng hơn phần thưởng hiện tại, đồng thời giúp return được ổn định/hữu hạn**.",
+  "citations": [
+    {
+      "chunk_id": "4749a60f-0207-4a2f-8b16-da4bd232c199",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Discounted Return",
+      "page_number": null,
+      "chunk_order": 10,
+      "excerpt": "- The geometrically discounted model of return\n\n$$\nR_t = r_{t+1} + \\gamma r_{t+2} + \\cdots + \\gamma^T r_T\n$$\n\n$$\n0 \\le \\gamma \\le 1\n$$\n\n- $\\gamma$ is called discount rate, used to\n  - Bound the infini"
+    },
+    {
+      "chunk_id": "15a52b76-2ffb-4689-a3a5-d54d0c538e01",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "[Diagram: The slide shows two grid-world value layouts comparing state/action outcomes under a discounted setting with $\\gamma = 0,9$. It illustrates how a rightward move from the start state leads to"
+    },
+    {
+      "chunk_id": "395783be-abae-4327-9349-6b24602eed8c",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Artificial Intelligence",
+      "page_number": null,
+      "chunk_order": 1,
+      "excerpt": "- Lecturer 14 – Reinforcement Learning\n\nSchool of Information and Communication Technology - HUST"
+    },
+    {
+      "chunk_id": "3032f7c1-b46d-4fd0-ae5c-23c3b853968b",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Supervised Learning vs. Reinforcement Learning",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "- Supervised learning\n  - Teacher: Is this an AI course or a Math course?\n  - Leaner: Math\n  - Teacher: No, AI\n  - …\n  - Teacher: Is this an AI course or a Math course?\n  - Leaner : AI\n  - Teacher : Y"
+    },
+    {
+      "chunk_id": "c5476576-a52e-48ec-8d8c-057bfec9551f",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Optimal Policies",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- An RL agent adapts its policy in order to increase return\n- A policy $p_1$ is at least as good as a policy $p_2$ if its expected return is at least as great in each possible initial state\n- An optim"
+    },
+    {
+      "chunk_id": "d53411ed-53ca-4c88-91f9-5105cadb85ca",
+      "document_title": "lecture14-ReinforcementLearning.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "[Diagram: The two panels illustrate a value-update step for state $s_1$ in a grid-like state space, where a reward of 90 propagates through connected states and influences the value estimate. This mat"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "discount rate in discounted return model reinforcement learning purpose",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "4749a60f-0207-4a2f-8b16-da4bd232c199",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Discounted Return",
+          "chunk_order": 10,
+          "cosine_sim": 0.5867,
+          "final_score": 0.7384,
+          "content": "- The geometrically discounted model of return\n\n$$\nR_t = r_{t+1} + \\gamma r_{t+2} + \\cdots + \\gamma^T r_T\n$$\n\n$$\n0 \\le \\gamma \\le 1\n$$\n\n- $\\gamma$ is called discount rate, used to\n  - Bound the infinite sum\n  - Favor earlier rewards, in other words to give preference to shorter paths"
+        },
+        {
+          "chunk_id": "15a52b76-2ffb-4689-a3a5-d54d0c538e01",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Example",
+          "chunk_order": 18,
+          "cosine_sim": 0.4408,
+          "final_score": 0.2034,
+          "content": "[Diagram: The slide shows two grid-world value layouts comparing state/action outcomes under a discounted setting with $\\gamma = 0,9$. It illustrates how a rightward move from the start state leads toward the goal while most other transitions have zero reward, emphasizing the structure of the example and the role of discounting in evaluating future returns.]"
+        },
+        {
+          "chunk_id": "395783be-abae-4327-9349-6b24602eed8c",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Artificial Intelligence",
+          "chunk_order": 1,
+          "cosine_sim": 0.3972,
+          "final_score": 0.0628,
+          "content": "- Lecturer 14 – Reinforcement Learning\n\nSchool of Information and Communication Technology - HUST"
+        },
+        {
+          "chunk_id": "3032f7c1-b46d-4fd0-ae5c-23c3b853968b",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Supervised Learning vs. Reinforcement Learning",
+          "chunk_order": 6,
+          "cosine_sim": 0.4281,
+          "final_score": 0.0559,
+          "content": "- Supervised learning\n  - Teacher: Is this an AI course or a Math course?\n  - Leaner: Math\n  - Teacher: No, AI\n  - …\n  - Teacher: Is this an AI course or a Math course?\n  - Leaner : AI\n  - Teacher : Yes\n\n- Reinforcement learning\n  - World: You are in state 9. Choose action A or B\n  - Leaner: A\n  - World: Your reward is 100\n  - …\n  - World: You are in state 15. Choose action C or D\n  - Learner: D\n  - World : Your reward is 50"
+        },
+        {
+          "chunk_id": "c5476576-a52e-48ec-8d8c-057bfec9551f",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Optimal Policies",
+          "chunk_order": 11,
+          "cosine_sim": 0.3929,
+          "final_score": 0.0558,
+          "content": "- An RL agent adapts its policy in order to increase return\n- A policy $p_1$ is at least as good as a policy $p_2$ if its expected return is at least as great in each possible initial state\n- An optimal policy $p$ is at least as good as any other policy"
+        },
+        {
+          "chunk_id": "d53411ed-53ca-4c88-91f9-5105cadb85ca",
+          "document_id": "4d646997-9ba2-4b6a-8c60-a631e9614c60",
+          "section_title": "Example",
+          "chunk_order": 22,
+          "cosine_sim": 0.3869,
+          "final_score": 0.052,
+          "content": "[Diagram: The two panels illustrate a value-update step for state $s_1$ in a grid-like state space, where a reward of 90 propagates through connected states and influences the value estimate. This matters because it shows how local reward information can back up to update neighboring states in dynamic programming or reinforcement learning.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.2
+}

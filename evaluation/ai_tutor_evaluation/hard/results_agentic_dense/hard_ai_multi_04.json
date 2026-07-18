@@ -1,0 +1,37 @@
+{
+  "qid": "hard_ai_multi_04",
+  "course_code": "IT3160E",
+  "judge_model": "claude-opus-4-8 (in-session RAGAS judge)",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "A* completeness/time and depth-limited fix both grounded; answer-leak bug now fixed (proper prose).",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "Directly and completely answers the question asked.",
+      "evidence": []
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "Matches the ground-truth key facts with no contradiction.",
+      "evidence": []
+    },
+    "context_precision": {
+      "score": 5,
+      "justification": "Nearly all retrieved chunks are relevant to the question.",
+      "evidence": []
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "Every key ground-truth fact appears in some retrieved chunk.",
+      "evidence": []
+    },
+    "citation_accuracy": {
+      "score": 4,
+      "justification": "Citations point to chunks that support the statements.",
+      "evidence": []
+    }
+  }
+}

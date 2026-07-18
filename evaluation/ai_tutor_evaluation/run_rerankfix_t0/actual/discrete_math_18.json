@@ -1,0 +1,134 @@
+{
+  "qid": "discrete_math_18",
+  "course_code": "IT3020E",
+  "question": "In an Adjacency List representation of a graph, how is the list structured?",
+  "session_id": "853629f6-8746-4b21-b970-8c0f0253a3d3",
+  "answer": "Trong **Adjacency List** (danh sách kề), cấu trúc được tổ chức như sau:\n\n- Có một **mảng `Adjacency` gồm |V| danh sách**, tương ứng với số đỉnh của đồ thị.\n- **Mỗi đỉnh `u` có đúng 1 danh sách riêng**.\n- Danh sách `Adjacency[u]` chứa **các đỉnh kề với `u`**.\n- Với **đồ thị có hướng**, danh sách thường chứa các **đỉnh kề đi ra** (out-neighbors).\n\nVí dụ:\n- Nếu `u` kề với `v` và `w`, thì:\n  - `Adjacency[u] = v → w`\n\nTóm lại, **mỗi đỉnh được gắn với một danh sách các đỉnh mà nó nối tới**.",
+  "citations": [
+    {
+      "chunk_id": "4a1180a7-d969-4f6a-9155-95f007be49a8",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "4. Adjacency List",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "**Adjacency list**: each vertex has a list of which vertices it is adjacent to\n\n- Is an array **Adjacency** consisting of |V| lists\n\n- Each vertex has 1 list\n- Each vertex u ∈ V: Adjacency[u] consists"
+    },
+    {
+      "chunk_id": "fe4e8b85-b4a1-42f3-9da8-b205bac7e619",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Undirected graph",
+      "page_number": null,
+      "chunk_order": 19,
+      "excerpt": "```\n    u --- v\n    |    /|\n    |   / |\n    w  /  y\n       |\n    x---z    t (isolated)\n```\n\nAdjacency List:\n\n- u → v → w\n- v → u → w → y\n- w → u → v\n- x → z\n- y → v\n- z → x\n- t → (empty)"
+    },
+    {
+      "chunk_id": "59c3ae5a-aea6-4602-aac9-44590e9e2884",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Directed graph",
+      "page_number": null,
+      "chunk_order": 20,
+      "excerpt": "```\n    a ----> b <---- e\n    |       ^       |\n    |       |       |\n    v       |       |\n    c ------        |\n                    |\n    d          f <--+\n    (isolated) (self-loop)\n```\n\nAdjacency "
+    },
+    {
+      "chunk_id": "cd7e7d21-fba2-4d9d-8712-a247ab9ed15e",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Graph representation",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "**Undirected Graph:**\n\n```\n    [1]---[2]\n     |    /|\n     |   / |\n     |  /  |\n    [5]---[4]---[3]\n         /\n        /\n```\n\n**Adjacency List (Undirected):**\n\n| Vertex | Neighbors |\n|--------|-------"
+    },
+    {
+      "chunk_id": "1b439c92-6e3f-4305-945a-fe2108ff7ee1",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Graph Representation",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- Incidence matrix\n- Adjacency matrix\n- Weight matrix\n- **Adjacency list**"
+    },
+    {
+      "chunk_id": "58612d91-80f8-4287-8a5f-95cc04006ace",
+      "document_title": "2_2-GraphPresentation.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Graph Representation",
+      "page_number": null,
+      "chunk_order": 9,
+      "excerpt": "- Incidence matrix\n- **Adjacency matrix**\n- Weight matrix\n- Adjacency list"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "Adjacency List representation of a graph: how is the list structured?",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "4a1180a7-d969-4f6a-9155-95f007be49a8",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "4. Adjacency List",
+          "chunk_order": 18,
+          "cosine_sim": 0.6909,
+          "final_score": 1.3253,
+          "content": "**Adjacency list**: each vertex has a list of which vertices it is adjacent to\n\n- Is an array **Adjacency** consisting of |V| lists\n\n- Each vertex has 1 list\n- Each vertex u ∈ V: Adjacency[u] consists of nodes that are adjacent to u.\n\n**Example:**"
+        },
+        {
+          "chunk_id": "fe4e8b85-b4a1-42f3-9da8-b205bac7e619",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Undirected graph",
+          "chunk_order": 19,
+          "cosine_sim": 0.5701,
+          "final_score": 1.2065,
+          "content": "```\n    u --- v\n    |    /|\n    |   / |\n    w  /  y\n       |\n    x---z    t (isolated)\n```\n\nAdjacency List:\n\n- u → v → w\n- v → u → w → y\n- w → u → v\n- x → z\n- y → v\n- z → x\n- t → (empty)"
+        },
+        {
+          "chunk_id": "59c3ae5a-aea6-4602-aac9-44590e9e2884",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Directed graph",
+          "chunk_order": 20,
+          "cosine_sim": 0.5657,
+          "final_score": 1.1604,
+          "content": "```\n    a ----> b <---- e\n    |       ^       |\n    |       |       |\n    v       |       |\n    c ------        |\n                    |\n    d          f <--+\n    (isolated) (self-loop)\n```\n\nAdjacency List:\n\n- a → b → c\n- b → e\n- c → b\n- d → (empty)\n- e → b\n- f → f"
+        },
+        {
+          "chunk_id": "cd7e7d21-fba2-4d9d-8712-a247ab9ed15e",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph representation",
+          "chunk_order": 21,
+          "cosine_sim": 0.6097,
+          "final_score": 1.1515,
+          "content": "**Undirected Graph:**\n\n```\n    [1]---[2]\n     |    /|\n     |   / |\n     |  /  |\n    [5]---[4]---[3]\n         /\n        /\n```\n\n**Adjacency List (Undirected):**\n\n| Vertex | Neighbors |\n|--------|-----------|\n| 1 | 2 → 5 |\n| 2 | 1 → 5 → 3 → 4 |\n| 3 | 2 → 4 |\n| 4 | 2 → 5 → 3 |\n| 5 | 4 → 1 → 2 |\n\n**Adjacency Matrix (Undirected):**\n\n|   | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| 1 | 0 | 1 | 0 | 0 | 1 |\n| 2 | 1 | 0 | 1 | 1 | 1 |\n| 3 | 0 | 1 | 0 | 1 | 0 |\n| 4 | 0 | 1 | 1 | 0 | 1 |\n| 5 | 1 | 1 | 0 | 1 | 0 |\n\n**Directed Graph:**\n\n```\n    [1]--->[2]<---[3]\n     |      |      |\n     v      v      v\n    [4]<---[5]    [6]-->(self-loop)\n           ^\n           |\n          (from 3)\n```\n\n**Adjacency List (Directed):**\n\n| Vertex | Out-neighbors |\n|--------|---------------|\n| 1 | 2 → 4 |\n| 2 | 5 |\n| 3 | 6 → 5 |\n| 4 | 2 |\n| 5 | 4 |\n| 6 | 6 |\n\n**Adjacency Matrix (Directed):**\n\n|   | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| 1 | 0 | 1 | 0 | 1 | 0 | 0 |\n| 2 | 0 | 0 | 0 | 0 | 1 | 0 |\n| 3 | 0 | 0 | 0 | 0 | 1 | 1 |\n| 4 | 0 | 1 | 0 | 0 | 0 | 0 |\n| 5 | 0 | 0 | 0 | 1 | 0 | 0 |\n| 6 | 0 | 0 | 0 | 0 | 0 | 1 |"
+        },
+        {
+          "chunk_id": "1b439c92-6e3f-4305-945a-fe2108ff7ee1",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph Representation",
+          "chunk_order": 17,
+          "cosine_sim": 0.5476,
+          "final_score": 0.5327,
+          "content": "- Incidence matrix\n- Adjacency matrix\n- Weight matrix\n- **Adjacency list**"
+        },
+        {
+          "chunk_id": "58612d91-80f8-4287-8a5f-95cc04006ace",
+          "document_id": "834a3ecd-57a6-4ee9-8c13-73b7ae7c13a9",
+          "section_title": "Graph Representation",
+          "chunk_order": 9,
+          "cosine_sim": 0.5135,
+          "final_score": 0.5149,
+          "content": "- Incidence matrix\n- **Adjacency matrix**\n- Weight matrix\n- Adjacency list"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 7.2
+}

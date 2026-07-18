@@ -1,0 +1,58 @@
+{
+  "topic": "Midterm Exam 20232",
+  "concepts": [
+    "Midterm Exam 20232",
+    "Question 1",
+    "Question 2",
+    "Question 3",
+    "Question 4",
+    "blood",
+    "date",
+    "name"
+  ],
+  "language": "en",
+  "ocr_quality": "medium",
+  "section_summaries": [
+    {
+      "heading": "Midterm Exam 20232",
+      "summary": "**Class:** 149325 **Date:** 23/4/2024 **Duration:** 75 min (Closed book) **Student ID:** **Student Name:**",
+      "page_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "heading": "Question 1",
+      "summary": "Modeling the following data requirement using ER model and then transforming it into relational schema Bloodhound Coaches runs daily scheduled services all over the country. Customers want to check the schedules and prices online, so a first step is to put the schedule into a...",
+      "page_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "heading": "Question 2",
+      "summary": "A relation R(ABCD) and a set of functional dependency F = {AB→D; BC→C; AC→B; AC→CD}. Write 4 other functional dependencies that can be derived from F using the Armstrong's axiom system.",
+      "page_range": [
+        3,
+        3
+      ]
+    },
+    {
+      "heading": "Question 3",
+      "summary": "A relation R(ABEIJGH), and a set of functional dependency F = {AB→E; AG→J; BE→I; E→G; GI→H} a. Find a candidate key of R b.",
+      "page_range": [
+        4,
+        4
+      ]
+    },
+    {
+      "heading": "Question 4",
+      "summary": "Given the Blood Bank Database schema: - Blood_Type (blood_type_ID, name, description) - Donor (donor_ID, blood_type_id, name, date_of_birth, contact_number, city) - Donation (d_tran_ID, donor_ID, donation_confirmation, health_condition, amount, date) - Hospital (hospital_ID,...",
+      "page_range": [
+        5,
+        5
+      ]
+    }
+  ],
+  "overall_summary": "Midterm Exam 20232: **Class:** 149325 **Date:** 23/4/2024 **Duration:** 75 min (Closed book) **Student ID:** **Student Name:** Question 1: Modeling the following data requirement using ER model and then transforming it into relational schema Bloodhound Coaches runs daily scheduled services all over the country. Customers want to check the schedules and prices online, so a first step is to put the schedule into a... Question 2: A relation R(ABCD) and a set of functional dependency F = {AB→D; BC→C; AC→B; AC→CD}. Write 4 other functional dependencies that can be derived from F using the Armstrong's axiom system. Question 3: A relation R(ABEIJGH), and a set of functional dependency F = {AB→E; AG→J; BE→I; E→G; GI→H} a. Find a candidate key of R b. Question 4: Given the Blood Bank Database schema: - Blood_Type (blood_type_ID, name, description) - Donor (donor_ID, blood_type_id, name, date_of_birth, contact_number, city) - Donation (d_tran_ID, donor_ID, donation_confirmation, health_condition, amount, date) - Hospital (hospital_ID,..."
+}

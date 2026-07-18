@@ -1,0 +1,175 @@
+{
+  "qid": "database_10",
+  "course_code": "IT3292E",
+  "question": "What are two algorithms mentioned for executing Join operations in query processing?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "6c3ba393-68ec-4d3d-8617-12d702339d33",
+  "answer": "In the course materials on query processing (Section 2.2 – *Step 2: Execution algorithms of RA operations*), the following algorithms are mentioned for executing **Join** operations:\n\n### 1. **Nested-loop JOIN**\n- For each tuple `tr` in relation `r`, scan every tuple `ts` in relation `s` and output a result tuple whenever the join condition is satisfied.\n- **Pros:** No index needed; works for any join condition type.\n- **Cons:** Expensive — cost is **O(n²)**, since every pair of tuples is compared.\n\n### 2. **Sort-merge JOIN**\n- Requires both relations to be physically sorted on the join attributes.\n- Merge the two sorted files by maintaining two file pointers: advance whichever pointer points to the smaller tuple; whenever tuples match, output all possible pairings.\n- **Pros:** Very efficient when the data is already presorted (sequential block-by-block reads).\n- **Cons:** If the data is not presorted, an explicit sort step is needed, adding extra cost and delay.\n\n### 3. (Bonus) **Partition-hash JOIN**\n- Both relations are hashed on the join attributes so that matching tuples land in the same bucket; the buckets are then joined independently.\n- Useful when handling **larger-than-memory** sources (the section explicitly highlights that join implementations must deal with relations that don't fit in memory).\n\nThe course materials explicitly contrast two of these when discussing the optimizer's choices — namely **sort-merge vs. hash join** — as decisions the query optimizer must make when translating a relational algebra expression into an executable query plan.",
+  "citations": [
+    {
+      "chunk_id": "60e2d3b0-073a-4e95-8da3-87129e9fcf9e",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Sort-merge JOIN\n  - Requires data physically sorted by join attributes: Merge and join sorted files, reading sequentially a block at a time\n  - Maintain two file pointers\n    - While tuple at R < tu"
+    },
+    {
+      "chunk_id": "767043fa-1a26-4e37-9ef5-ef2336fcd295",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 21,
+      "excerpt": "- Algebra expression is not a query execution plan.\n- Additional decisions required:\n  - which indexes to use, for example, for joins and selects?\n  - which algorithms to use, for example, sort-merge "
+    },
+    {
+      "chunk_id": "efd74b7f-b689-4ded-8541-2fa9ced35b6b",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 29,
+      "excerpt": "[Diagram: The slide illustrates the partition-hash join strategy in relational algebra. Both relations are first partitioned by hashing the join key, so matching tuples end up in the same bucket and c"
+    },
+    {
+      "chunk_id": "ee5dab53-472e-45b7-b155-ad9876d81237",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 22,
+      "excerpt": "- Basic Operators\n- One-pass operators:\n  - Scan\n  - Select\n  - Project\n- Multi-pass operators:\n  - Join\n    - Various implementations\n    - Handling of larger-than-memory sources\n  - Aggregation, uni"
+    },
+    {
+      "chunk_id": "37d26169-1f4a-4855-8f6b-e8d148c5ed7c",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 27,
+      "excerpt": "- Partition-hash JOIN\n  - Hash two relations on join attributes\n  - Join buckets accordingly"
+    },
+    {
+      "chunk_id": "0e4816a0-8049-4188-a8d0-8fd678117178",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+      "page_number": null,
+      "chunk_order": 24,
+      "excerpt": "- Nested-loop JOIN\n\n```text\n+--------------------------------------------------------------+\n| For each tuple tr in r {                                     |\n|   for each tuple ts in s {              "
+    },
+    {
+      "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Rel"
+    },
+    {
+      "chunk_id": "b47df70f-ce06-4146-a657-69347163ed02",
+      "document_title": "09_10_query_processing.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.4. Optimizer",
+      "page_number": null,
+      "chunk_order": 13,
+      "excerpt": "[Diagram: The figure illustrates how a relational algebra expression can be turned into an executable plan by selecting specific algorithms, such as using an index for selection. This matters because "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "algorithms for executing Join operations in query processing nested loop join hash join sort-merge join",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "60e2d3b0-073a-4e95-8da3-87129e9fcf9e",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 26,
+          "cosine_sim": 0.4841,
+          "final_score": 0.5568,
+          "content": "- Sort-merge JOIN\n  - Requires data physically sorted by join attributes: Merge and join sorted files, reading sequentially a block at a time\n  - Maintain two file pointers\n    - While tuple at R < tuple at S, advance R (and vice versa)\n    - While tuples match, output all possible pairings\n  - Very efficient for presorted data. Otherwise, may require a sort (adds cost + delay)"
+        },
+        {
+          "chunk_id": "767043fa-1a26-4e37-9ef5-ef2336fcd295",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 21,
+          "cosine_sim": 0.4632,
+          "final_score": 0.5327,
+          "content": "- Algebra expression is not a query execution plan.\n- Additional decisions required:\n  - which indexes to use, for example, for joins and selects?\n  - which algorithms to use, for example, sort-merge vs. hash join?\n  - materialize intermediate results or pipeline them?"
+        },
+        {
+          "chunk_id": "efd74b7f-b689-4ded-8541-2fa9ced35b6b",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 29,
+          "cosine_sim": 0.4426,
+          "final_score": 0.509,
+          "content": "[Diagram: The slide illustrates the partition-hash join strategy in relational algebra. Both relations are first partitioned by hashing the join key, so matching tuples end up in the same bucket and can be joined independently and efficiently.]"
+        },
+        {
+          "chunk_id": "ee5dab53-472e-45b7-b155-ad9876d81237",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 22,
+          "cosine_sim": 0.4383,
+          "final_score": 0.504,
+          "content": "- Basic Operators\n- One-pass operators:\n  - Scan\n  - Select\n  - Project\n- Multi-pass operators:\n  - Join\n    - Various implementations\n    - Handling of larger-than-memory sources\n  - Aggregation, union, etc."
+        },
+        {
+          "chunk_id": "37d26169-1f4a-4855-8f6b-e8d148c5ed7c",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 27,
+          "cosine_sim": 0.419,
+          "final_score": 0.4819,
+          "content": "- Partition-hash JOIN\n  - Hash two relations on join attributes\n  - Join buckets accordingly"
+        },
+        {
+          "chunk_id": "0e4816a0-8049-4188-a8d0-8fd678117178",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "2.2. Step 2: Execution algorithms of RA operations",
+          "chunk_order": 24,
+          "cosine_sim": 0.4131,
+          "final_score": 0.475,
+          "content": "- Nested-loop JOIN\n\n```text\n+--------------------------------------------------------------+\n| For each tuple tr in r {                                     |\n|   for each tuple ts in s {                                   |\n|     if (tr and ts satisfy the join condition) {              |\n|       add tuple tr x ts to the result set                    |\n|     }                                                        |\n|   }                                                            |\n| }                                                            |\n+--------------------------------------------------------------+\n```\n\n[Diagram: This shows the nested-loop strategy for joining two relations by comparing every tuple in one relation with every tuple in the other. It is simple and does not require an index, but its quadratic cost makes it expensive for large inputs.]\n\n- No index needed\n- Any join condition types\n- Expensive: $O(n^2)$"
+        },
+        {
+          "chunk_id": "fc2a1adb-246b-422f-906f-f760b98892a9",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.3508,
+          "final_score": 0.4035,
+          "content": "| Term | Definition |\n|---|---|\n| Query processing | Activities involved in retrieving/storing data from/to the database |\n| Query optimization | Selection of an efficient query execution plan |\n| Relational algebra | An algebra whose operands are relations or variables that represent Relations |"
+        },
+        {
+          "chunk_id": "b47df70f-ce06-4146-a657-69347163ed02",
+          "document_id": "5e671e51-29bd-4eed-843a-9700dba02cbf",
+          "section_title": "1.4. Optimizer",
+          "chunk_order": 13,
+          "cosine_sim": 0.3256,
+          "final_score": 0.3745,
+          "content": "[Diagram: The figure illustrates how a relational algebra expression can be turned into an executable plan by selecting specific algorithms, such as using an index for selection. This matters because the optimizer lowers query cost by choosing a more efficient physical execution strategy.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 18.5
+}

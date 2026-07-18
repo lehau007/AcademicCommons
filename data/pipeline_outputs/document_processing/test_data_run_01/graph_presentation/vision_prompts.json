@@ -1,0 +1,104 @@
+[
+  {
+    "kind": "vision_ocr",
+    "page": 1,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 2,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 3,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 4,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 5,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 6,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 7,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 8,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 9,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 10,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 11,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 12,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 13,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 14,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 15,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 16,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  },
+  {
+    "kind": "vision_ocr",
+    "page": 17,
+    "instruction": "This is a lecture slide page. Extract its content as Markdown:\n- The slide title (large text at top) → ## heading\n- Bullet points → - list items\n- Any table → Markdown table\n- Any formula or equation → LaTeX inside $...$\n- Any diagram/graph → brief description in [Diagram: ...]\nOutput only the Markdown content, no commentary.",
+    "ocr_strategy": "region_based"
+  }
+]

@@ -1,0 +1,96 @@
+{
+  "qid": "database_06",
+  "course_code": "IT3292E",
+  "question": "What is the mapping process for a multivalued attribute in an ERD?",
+  "session_id": "139f3fd3-f6bc-4355-bbfc-3eb479145f93",
+  "answer": "For a **multivalued attribute** in an ERD, the mapping process to a relational schema is:\n\n1. **Create a new relation (table)** for that multivalued attribute.\n2. Include:\n   - the **multivalued attribute A**\n   - the **primary key K** of the corresponding entity set, as a **foreign key** in the new relation\n3. Make the **primary key of the new relation** the **combination of A and K**.\n\n### Example\nIf `subject` has a multivalued attribute `lecturer`, then map it as:\n\n- `subject(subject_id, name, credit)`\n- `subject_lecturer(subject_id, lecturer)`\n\nHere, the primary key of `subject_lecturer` is `(subject_id, lecturer)`.\n\nThis is the standard way to store multiple values of one attribute without violating relational design rules.",
+  "citations": [
+    {
+      "chunk_id": "c47a1b9a-ef5c-4694-9308-32b9f3708358",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.1. Mapping process",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "## 3.1. Mapping process\n\n- Mapping of multivalued attributes\n  - For each multivalued attribute A, create a new relation R including an attribute corresponding to A, plus the primary key attribute K ("
+    },
+    {
+      "chunk_id": "5dd8419d-5d38-4e00-ac5d-406d74c3ba51",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 33,
+      "excerpt": "- Introduction\n  - ERD in DB designing, and its components\n- How to create an ERD\n  - discover entity sets, attributes and relationships among entity sets\n- Mapping from ERD to relational schema\n  - t"
+    },
+    {
+      "chunk_id": "7f790225-c759-45bd-8f5e-20bf7a0fb665",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Remark",
+      "page_number": null,
+      "chunk_order": 30,
+      "excerpt": "- ERD: an approach to DB designing\n- Entity sets, attributes, key, relationships\n- How to create an ERD\n- Mapping from ERD to relational schema"
+    },
+    {
+      "chunk_id": "6b208e76-6be8-43f0-9f0e-d742900c02a1",
+      "document_title": "05_entity_relationship_model.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "1.3. Attributes",
+      "page_number": null,
+      "chunk_order": 12,
+      "excerpt": "- Some types of attributes\n  - **Single-valued attributes**: have a single value for a particular entity\n  - **Multi-valued attributes**: can have different numbers of values\n\n[Diagram: Entity-Relatio"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "query": "mapping process for a multivalued attribute in an ERD to relational schema",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "c47a1b9a-ef5c-4694-9308-32b9f3708358",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "3.1. Mapping process",
+          "chunk_order": 28,
+          "cosine_sim": 0.6599,
+          "final_score": 1.478,
+          "content": "## 3.1. Mapping process\n\n- Mapping of multivalued attributes\n  - For each multivalued attribute A, create a new relation R including an attribute corresponding to A, plus the primary key attribute K (as a foreign key in R) of the corresponding entity set\n  - The primary key of R is the combination of A and K.\n    - subject_lecturer(subject_id, lecturer)\n\n[Diagram: ER diagram showing a \"subject\" entity (rectangle) with attributes subject_id, name (single ellipses), credit (single ellipse), and lecturer (double ellipse indicating multivalued attribute). The double ellipse around \"lecturer\" indicates it is a multivalued attribute, which requires creating a separate relation table subject_lecturer(subject_id, lecturer) with composite primary key.]"
+        },
+        {
+          "chunk_id": "5dd8419d-5d38-4e00-ac5d-406d74c3ba51",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "Summary",
+          "chunk_order": 33,
+          "cosine_sim": 0.5391,
+          "final_score": 0.95,
+          "content": "- Introduction\n  - ERD in DB designing, and its components\n- How to create an ERD\n  - discover entity sets, attributes and relationships among entity sets\n- Mapping from ERD to relational schema\n  - transform from ERD into a set of tables"
+        },
+        {
+          "chunk_id": "7f790225-c759-45bd-8f5e-20bf7a0fb665",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "Remark",
+          "chunk_order": 30,
+          "cosine_sim": 0.6177,
+          "final_score": 0.9422,
+          "content": "- ERD: an approach to DB designing\n- Entity sets, attributes, key, relationships\n- How to create an ERD\n- Mapping from ERD to relational schema"
+        },
+        {
+          "chunk_id": "6b208e76-6be8-43f0-9f0e-d742900c02a1",
+          "document_id": "a95b8500-292d-4d7a-b3bf-c6b4409bdfc5",
+          "section_title": "1.3. Attributes",
+          "chunk_order": 12,
+          "cosine_sim": 0.5177,
+          "final_score": 0.5856,
+          "content": "- Some types of attributes\n  - **Single-valued attributes**: have a single value for a particular entity\n  - **Multi-valued attributes**: can have different numbers of values\n\n[Diagram: Entity-Relationship diagram showing the \"subject\" entity (rectangle) with four attributes (ovals): subject_id, name, credit, and lecturer. The \"lecturer\" attribute is drawn with a double oval, indicating it is a multi-valued attribute. The other attributes (subject_id, name, credit) are single-valued attributes represented by single ovals.]"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.6
+}

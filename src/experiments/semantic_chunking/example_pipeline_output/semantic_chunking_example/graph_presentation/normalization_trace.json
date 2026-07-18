@@ -1,0 +1,239 @@
+{
+  "cleaned_blocks": [
+    {
+      "kind": "text",
+      "page": 1,
+      "content": "Discrete Mathematics"
+    },
+    {
+      "kind": "text",
+      "page": 1,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 1, Image 0)\nThe image is a promotional graphic for the 25th anniversary of the School of Information and Communication Technology at Hanoi University of Science and Technology. It features the university and school logos and names in white text against a red background with a subtle halftone dot pattern.\n"
+    },
+    {
+      "kind": "text",
+      "page": 2,
+      "content": "2\nPART 1\nCOMBINATORIAL THEORY    \n(Lý thuyết tổhợp)\nPART 2\nGRAPH THEORY\n(Lý thuyết đồthị)"
+    },
+    {
+      "kind": "text",
+      "page": 2,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 2, Image 0)\nA white background features a red horizontal stripe at the top and a red line at the bottom, accompanied by a 25th-anniversary logo for the School of Information and Communication Technology (SOICT) in the bottom-left corner.\n"
+    },
+    {
+      "kind": "text",
+      "page": 3,
+      "content": "Content of Part 2\nChapter 1. Fundamental concepts\nChapter 2. Graph representation\nChapter 3. Graph Traversal\nChapter 4. Tree and Spanning tree\nChapter 5. Shortest path problem\nChapter 6. Maximum flow problem"
+    },
+    {
+      "kind": "text",
+      "page": 3,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 3, Image 0)\nA logo and branding banner for the 25th anniversary of SOICT.\n"
+    },
+    {
+      "kind": "text",
+      "page": 4,
+      "content": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n4"
+    },
+    {
+      "kind": "text",
+      "page": 4,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 4, Image 0)\nThe image displays a 25th-anniversary logo for the School of Information and Communication Technology (SOICT) at Bach Khoa University, positioned in the bottom left corner against a white background with a thin horizontal red line extending to the right.\n"
+    },
+    {
+      "kind": "text",
+      "page": 5,
+      "content": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n5\nNGUYỄN KHÁNH PHƯƠNG\nBộ môn KHMT – ĐHBK HN"
+    },
+    {
+      "kind": "text",
+      "page": 5,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 5, Image 0)\nA white background features a red and yellow header stripe and a lower section with the \"SOICT\" 25th-anniversary logo and text.\n"
+    },
+    {
+      "kind": "text",
+      "page": 6,
+      "content": "1. Incidence Matrix\nG = (V, E) is an unditected graph:\n• V = {v1, v2, v3, …, vn }\n• E = {e1, e2, …, em }\nThen the incidence matrix with respect to this ordering of V and E is the n x\nm matrix M = [mij], where\nCan also be used to represent :\n• Multiple edges: by using columns with identical entries, since these edges\nare incident with the same pair of vertices\n• Loops: by using a column with exactly one entry equal to 1,\ncorresponding to the vertex that is incident with the loop\nî\ní\nì\n=\notherwise\n  \n0\nith v\nincident w\n \nis\n e \nedge\n  when \n1\n \n  \n \nm\ni\nj\nij\n6"
+    },
+    {
+      "kind": "text",
+      "page": 6,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 6, Image 0)\nThis image features a logo for a 25th-anniversary celebration of the School of Information and Communication Technology (SOICT), positioned at the bottom against a white background with a thin red line.\n"
+    },
+    {
+      "kind": "text",
+      "page": 7,
+      "content": "1.Incidence Matrix\nMatrix M |V| x |E| = [mij], where\nCan also be used to represent :\n• Multiple edges: by using columns with identical entries, since these edges\nare incident with the same pair of vertices\n• Loops: by using a column with exactly one entry equal to 1,\ncorresponding to the vertex that is incident with the loop\nî\ní\nì\n=\notherwise\n  \n0\nith v\nincident w\n \nis\n e \nedge\n  when \n1\n \n  \n \nm\ni\nj\nij\n7"
+    },
+    {
+      "kind": "text",
+      "page": 7,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 7, Image 0)\nA promotional graphic featuring the SOICT 25th anniversary logo and Vietnamese text, with a horizontal red line at the bottom.\n"
+    },
+    {
+      "kind": "text",
+      "page": 8,
+      "content": "1.Incidence Matrix\nExample: G = (V, E)\ne1\ne2\ne3\nv\n1\n0\n1\nu\n1\n1\n0\nw\n0\n1\n1\n8\nv\nw\nu\ne1\ne3\ne2"
+    },
+    {
+      "kind": "text",
+      "page": 8,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 8, Image 0)\nThe image presents a white background with a red and yellow border at the top, accompanied by a logo and text in the bottom-left corner. The logo features a red rectangle with a gold design on the left side, followed by the text \"25 SOICT\" in gold and red. To the right of the logo, the text \"VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG\" is displayed in red.\n\n**Key Features:**\n\n* **Background:** White\n* **Border:** Red and yellow at the top\n* **Logo:**\n\t+ Red rectangle\n\t+ Gold design on the left side\n\t+ Text: \"25 SOICT\" in gold and red\n* **Text:**\n\t+ \"VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG\" in red\n\n**Overall Impression:**\n\nThe image appears to be a decorative element, likely used as a header or footer for a document or presentation. The use of a red and yellow border, along with the logo and text, suggests a professional or academic setting. The Vietnamese text indicates that the image may be related to an institution or organization in Vietnam.\n"
+    },
+    {
+      "kind": "text",
+      "page": 9,
+      "content": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n9"
+    },
+    {
+      "kind": "text",
+      "page": 9,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 9, Image 0)\nThe image presents a white background with a red and yellow stripe running across the top. At the bottom of the image, there are several lines of text in Vietnamese, accompanied by a logo on the left side.\n\n*   The logo features a red rectangle with a yellow design inside it.\n*   To the right of the logo, the text \"25 SOICT\" is displayed in yellow and red font.\n*   Below this, the text \"VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG\" is written in red font.\n*   A red line runs along the bottom of the image, extending from the left side to the right side.\n\nThe overall design of the image suggests that it may be a cover page or title slide for a presentation, possibly related to technology or communication.\n"
+    },
+    {
+      "kind": "text",
+      "page": 10,
+      "content": "2. Adjacency Matrix\nThe Adjacency Matrix (NxN) A = [aij] where |V| = N\nFor undirected graph\nFor directed graph\nThis makes it easier to find subgraphs, and to reverse graphs if needed.\nî\ní\nì\n=\notherwise\n  \n0\nG\n \nof\n \nedge\nan \n \nis\n )\n v\n,\n(v\n \nif\n  \n1\n \n  \n a\nj\ni\nij\nî\ní\nì\n=\notherwise\n  \n0\nG\n \nof\n \nedge\nan \n \nis\n }\n v\n,\n{v\n \nif\n  \n1\n \n  \n a\nj\ni\nij\n2\n1\n3\nA=\n0 1 1\n1 0 1\n1 1 0\n2\n1\n3\nA=\n0 1 0\n0 0 0\n1 1 0"
+    },
+    {
+      "kind": "text",
+      "page": 10,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 10, Image 0)\nThe image presents a white background with a red and yellow border at the top, accompanied by a logo and text in the bottom-left corner. The logo features a red square with a gold design on the left side, followed by the text \"25 SOICT\" in gold and red. To the right of the logo, the text \"VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG\" is displayed in red.\n\n*   **Top Border:**\n    *   Color: Red and yellow\n    *   Location: Top of the image\n*   **Logo:**\n    *   Shape: Red square with a gold design\n    *   Text: \"25 SOICT\"\n    *   Colors: Red and gold\n    *   Location: Bottom-left corner\n*   **Text:**\n    *   Content: \"VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG\"\n    *   Color: Red\n    *   Location: Bottom-left corner, to the right of the logo\n\nThe image appears to be a decorative element, likely used as a header or footer for a document or presentation. The logo and text suggest that it may be related to an academic or professional organization, possibly in the field of information technology or communication.\n"
+    },
+    {
+      "kind": "text",
+      "page": 11,
+      "content": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n11"
+    },
+    {
+      "kind": "text",
+      "page": 11,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 11, Image 0)\nThe image presents a white background with a red and yellow border at the top, accompanied by a logo and text in the bottom-left corner.\n\n*   The top border features a red color on the left side and gradually transitions to yellow on the right side.\n*   In the bottom-left corner, there is a logo consisting of:\n    *   A red rectangle with a white circle inside it.\n    *   A yellow number \"25\" positioned to the right of the rectangle.\n    *   The letters \"SOICT\" in red font, placed to the right of the number.\n*   To the right of the logo, there is a line of red text that reads \"VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG\".\n*   A red line extends from the text to the right edge of the image.\n\nThe image appears to be a decorative slide or presentation page, likely used for a professional or academic setting.\n"
+    },
+    {
+      "kind": "text",
+      "page": 12,
+      "content": "3. Weight matrix\n• Weighted graphs have values associated with edges.\n• In the case weighted graphs, instead of adjacency matrix, we use \nweight matrix to represent the graph\nC =  c[i, j],  i, j = 1, 2,..., n,\nwhere   \n• q: special value to identify (i, j) is not an edge; depends on the case, \nthe value of q could be:  0, +¥, -¥.\n12\nq\nÎ\nì\n= í\nÏ\nî\n( , ), if  (\n)\n[ , ]\n,       if  (\n)\n,\nc i j\ni, j\nE\nc i j\ni, j\nE"
+    },
+    {
+      "kind": "text",
+      "page": 12,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 12, Image 0)\nThis image shows a white background with a decorative red and yellow stripe across the top and a corporate logo and text for the School of Information and Communication Technology at the bottom.\n"
+    },
+    {
+      "kind": "text",
+      "page": 13,
+      "content": "1     2      3      4       5     6\n0      3      0      5      0     0     \n3      0      2      0      0     0     \n0      2      0      3      6     0     \n5      0      3      0      7     0     \n0      0      6      7      0     0     \n0      0      0      0      0     0     \n1\n2\n3\n4\n5\n6\n1\n2\n3\n5\n4\n6\nWeight matrix of undirected graph\n3\n5\n2\n3\n7\n6"
+    },
+    {
+      "kind": "text",
+      "page": 13,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 13, Image 0)\nA white graphic featuring a red and yellow header stripe and a logo for the School of Information and Communication Technology (SOICT) with its 25th-anniversary mark at the bottom.\n"
+    },
+    {
+      "kind": "text",
+      "page": 14,
+      "content": "1      2      3      4      5     6\n0      3      0      7      0     0    \n0      0      1      0      0     0    \n0      0      0      2      3     0    \n0      0      0      0      9     0    \n0      0      0      0      0     0    \n0      0      0      0      0     0    \n1\n2\n3\n4\n5\n6\n1\n2\n3\n5\n4\n6\nWeight matrix of directed graph\n3\n1\n7\n2\n9\n3"
+    },
+    {
+      "kind": "text",
+      "page": 14,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 14, Image 0)\nThe image shows the logo for the 25th anniversary of SOICT, along with its name in Vietnamese, positioned against a plain white background with a horizontal red line.\n"
+    },
+    {
+      "kind": "text",
+      "page": 15,
+      "content": "Graph Representation\n1. Incidence matrix\n2. Adjacency matrix\n3. Weight matrix\n4. Adjacency list\n15"
+    },
+    {
+      "kind": "text",
+      "page": 15,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 15, Image 0)\nA logo for the 25th anniversary of SOICT, featuring a stylized number 25, the SOICT acronym, and Vietnamese text.\n"
+    },
+    {
+      "kind": "text",
+      "page": 16,
+      "content": "3. Adjacency List\nAdjacency list: each vertex has a list of which vertices it is adjacent\n• Is an array Adjacency consiststing of |V| list\n• Each vertex has 1 list\n• Each vertex u Î V: Adjacency[u] consists of nodes that are adjacent to u.\nExample:\nUndirected graph\nDirected graph\n16\nv\nu\nu\nz\nv\nx\nw\nw\nv\ny\nu\nv\nw\nx\ny\nz\nt\nb\ne\nb\nb\nf\nc\na\nb\nc\nd\ne\nf"
+    },
+    {
+      "kind": "text",
+      "page": 16,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 16, Image 0)\nThis visual element functions as a formal institutional identifier. It conveys the following information:\n\n*   **Institutional Identity:** It identifies the \"VIỆN CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG\" (School of Information and Communication Technology).\n*   **Affiliation:** It includes the logo of \"ĐẠI HỌC BÁCH KHOA\" (Hanoi University of Science and Technology), indicating the school's parent institution.\n*   **Milestone Identification:** The number \"25\" combined with the text \"YEARS ANNIVERSARY\" signifies that this graphic commemorates the 25th anniversary of the institution.\n*   **Acronym:** It displays the formal acronym \"SOICT\" used to represent the school.\n"
+    },
+    {
+      "kind": "text",
+      "page": 16,
+      "image_index": 1,
+      "content": "\n### Visual Element (Page 16, Image 1)\n\n{\n  \"nodes\": [\"u\", \"v\", \"w\", \"y\", \"x\", \"z\", \"t\"],\n  \"directed\": false,\n  \"edges\": [\n    [\"u\", \"v\"],\n    [\"u\", \"w\"],\n    [\"v\", \"w\"],\n    [\"v\", \"y\"],\n    [\"x\", \"z\"]\n  ]\n}\n\n"
+    },
+    {
+      "kind": "text",
+      "page": 16,
+      "image_index": 2,
+      "content": "\n### Visual Element (Page 16, Image 2)\n\n{\n  \"nodes\": [\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"],\n  \"edges\": [\n    {\n      \"source\": \"a\",\n      \"target\": \"b\",\n      \"directed\": true\n    },\n    {\n      \"source\": \"a\",\n      \"target\": \"c\",\n      \"directed\": true\n    },\n    {\n      \"source\": \"c\",\n      \"target\": \"b\",\n      \"directed\": true\n    },\n    {\n      \"source\": \"e\",\n      \"target\": \"b\",\n      \"directed\": true\n    },\n    {\n      \"source\": \"b\",\n      \"target\": \"e\",\n      \"directed\": true\n    },\n    {\n      \"source\": \"f\",\n      \"target\": \"f\",\n      \"directed\": true\n    }\n  ]\n}\n\n"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "content": "Graph representation\n17\ngraph\nAdjacency list\nAdjacency matrix"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 0,
+      "content": "\n### Visual Element (Page 17, Image 0)\nA banner featuring a 25th-anniversary logo for the School of Information and Communication Technology (SOICT) at Bach Khoa University.\n"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 1,
+      "content": "\n### Visual Element (Page 17, Image 1)\nTo extract the node labels, edge list, and directionality from the given graph and return a structured graph representation in JSON, let's first analyze the graph:\n\n1. **Node Labels**: The node labels are the numbers inside the circles. From the graph, we can see that the node labels are `1`, `2`, `3`, `4`, and `5`.\n\n2. **Edge List**: The edges are the lines connecting the nodes. By observing the graph, we can list the edges as follows: \n   - Node `1` is connected to node `2` and node `5`.\n   - Node `2` is connected to node `1`, node `4`, node `5`, and node `3`.\n   - Node `3` is connected to node `2` and node `4`.\n   - Node `4` is connected to node `2`, node `3`, and node `5`.\n   - Node `5` is connected to node `1`, node `2`, and node `4`.\n\n   Specifically, the edges are: `(1, 2)`, `(1, 5)`, `(2, 4)`, `(2, 5)`, `(2, 3)`, `(3, 4)`, `(4, 5)`.\n\n3. **Directionality**: The graph does not have arrowheads on its edges, which typically indicates that it is an undirected graph. In an undirected graph, edges do not have a direction.\n\nGiven this information, here is the structured graph representation in JSON:\n\n\n{\n  \"nodes\": [\n    {\"id\": 1},\n    {\"id\": 2},\n    {\"id\": 3},\n    {\"id\": 4},\n    {\"id\": 5}\n  ],\n  \"edges\": [\n    {\"source\": 1, \"target\": 2},\n    {\"source\": 1, \"target\": 5},\n    {\"source\": 2, \"target\": 4},\n    {\"source\": 2, \"target\": 5},\n    {\"source\": 2, \"target\": 3},\n    {\"source\": 3, \"target\": 4},\n    {\"source\": 4, \"target\": 5}\n  ],\n  \"directed\": false\n}\n\n\nThis JSON object represents the graph with its nodes and edges. The `\"directed\": false` property indicates that the graph is undirected. If the graph were directed, `\"directed\": true` would be used, and the direction of each edge would be represented by the `\"source\"` and `\"target\"` properties of each edge, implying direction from source to target.\n"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 2,
+      "content": "|  |  |  |  |  |\n| --- | --- | --- | --- | --- |\n| 1 | 2 | 5 | 3 | 4 |\n| 2 | 1 | 5 | 3 | 4 |\n| 3 | 2 | 4 | None | None |\n| 4 | 2 | 5 | 3 | None |\n| 5 | 4 | 1 | None | 2 |"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 3,
+      "content": "|  | 1 | 2 | 3 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 1 | 0 | 0 | 1 |\n| 2 | 1 | 0 | 1 | 1 | 1 |\n| 3 | 0 | 1 | 0 | 1 | 0 |\n| 4 | 0 | 1 | 1 | 0 | 1 |\n| 5 | 1 | 1 | 0 | 1 | 0 |\n\n**Note:** E\n**Note:** x\n**Note:** t\n**Note:** r\n**Note:** a\n**Note:** c\n**Note:** t\n**Note:** e\n**Note:** d\n**Note:**  \n**Note:** f\n**Note:** r\n**Note:** o\n**Note:** m\n**Note:**  \n**Note:** t\n**Note:** h\n**Note:** e\n**Note:**  \n**Note:** p\n**Note:** r\n**Note:** o\n**Note:** v\n**Note:** i\n**Note:** d\n**Note:** e\n**Note:** d\n**Note:**  \n**Note:** t\n**Note:** a\n**Note:** b\n**Note:** l\n**Note:** e\n**Note:**  \n**Note:** i\n**Note:** m\n**Note:** a\n**Note:** g\n**Note:** e\n**Note:** ."
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 4,
+      "content": "\n### Visual Element (Page 17, Image 4)\nTo extract the node labels, edge list, and directionality from the given diagram and return a structured graph representation in JSON, let's analyze the diagram step by step.\n\n### Node Labels:\nThe node labels are the numbers within the circles: 1, 2, 3, 4, 5, and 6.\n\n### Edge List and Directionality:\nThe edges and their directions are as follows:\n- From node 1 to node 4\n- From node 1 to node 2\n- From node 2 to node 5\n- From node 4 to node 5\n- From node 5 to node 2\n- From node 3 to node 6\n- From node 6 to node 6 (self-loop)\n\n### Structured Graph Representation in JSON:\n\n{\n  \"nodes\": [\n    {\"id\": 1},\n    {\"id\": 2},\n    {\"id\": 3},\n    {\"id\": 4},\n    {\"id\": 5},\n    {\"id\": 6}\n  ],\n  \"edges\": [\n    {\"source\": 1, \"target\": 4, \"direction\": \"out\"},\n    {\"source\": 1, \"target\": 2, \"direction\": \"out\"},\n    {\"source\": 2, \"target\": 5, \"direction\": \"out\"},\n    {\"source\": 4, \"target\": 5, \"direction\": \"out\"},\n    {\"source\": 5, \"target\": 2, \"direction\": \"out\"},\n    {\"source\": 3, \"target\": 6, \"direction\": \"out\"},\n    {\"source\": 6, \"target\": 6, \"direction\": \"out\"}\n  ],\n  \"graphType\": \"directed\"\n}\n\n\nHowever, a more common and detailed way to represent a graph, especially in the context of graph theory and network analysis, might include additional information such as edge weights (if any) and node properties. For simplicity and based on the information provided:\n\n### Alternative Representation with Directionality Indicated by Arrow:\nIf you want to emphasize directionality explicitly with arrows (→) in a textual form:\n\n\n{\n  \"nodes\": [1, 2, 3, 4, 5, 6],\n  \"edges\": [\n    {\"source\": 1, \"target\": 4, \"relation\": \"1 → 4\"},\n    {\"source\": 1, \"target\": 2, \"relation\": \"1 → 2\"},\n    {\"source\": 2, \"target\": 5, \"relation\": \"2 → 5\"},\n    {\"source\": 4, \"target\": 5, \"relation\": \"4 → 5\"},\n    {\"source\": 5, \"target\": 2, \"relation\": \"5 → 2\"},\n    {\"source\": 3, \"target\": 6, \"relation\": \"3 → 6\"},\n    {\"source\": 6, \"target\": 6, \"relation\": \"6 → 6\"}\n  ]\n}\n\n\nBoth representations convey the structure of the graph. The first JSON structure is more aligned with common graph database and network analysis representations, emphasizing the directional nature of edges directly within the edge definitions.\n"
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 5,
+      "content": "|  | 2 | 5 | 6 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| 1 | 2 | None | None | 4 | None |\n| 2 | None | 5 | None | None | None |\n| 3 | None | 6 | None | None | 5 |\n| 4 | 2 | None | None | None | None |\n| 5 | 4 | None | None | None | None |\n| 6 | 6 | None | None | None | None |\n\n**Note:** T\n**Note:** h\n**Note:** e\n**Note:**  \n**Note:** t\n**Note:** a\n**Note:** b\n**Note:** l\n**Note:** e\n**Note:**  \n**Note:** a\n**Note:** p\n**Note:** p\n**Note:** e\n**Note:** a\n**Note:** r\n**Note:** s\n**Note:**  \n**Note:** t\n**Note:** o\n**Note:**  \n**Note:** h\n**Note:** a\n**Note:** v\n**Note:** e\n**Note:**  \n**Note:** s\n**Note:** o\n**Note:** m\n**Note:** e\n**Note:**  \n**Note:** m\n**Note:** i\n**Note:** s\n**Note:** s\n**Note:** i\n**Note:** n\n**Note:** g\n**Note:**  \n**Note:** v\n**Note:** a\n**Note:** l\n**Note:** u\n**Note:** e\n**Note:** s\n**Note:**  \n**Note:** r\n**Note:** e\n**Note:** p\n**Note:** r\n**Note:** e\n**Note:** s\n**Note:** e\n**Note:** n\n**Note:** t\n**Note:** e\n**Note:** d\n**Note:**  \n**Note:** b\n**Note:** y\n**Note:**  \n**Note:** a\n**Note:**  \n**Note:** s\n**Note:** l\n**Note:** a\n**Note:** s\n**Note:** h\n**Note:**  \n**Note:** (\n**Note:** /\n**Note:** )\n**Note:**  \n**Note:** a\n**Note:** n\n**Note:** d\n**Note:**  \n**Note:** t\n**Note:** h\n**Note:** e\n**Note:**  \n**Note:** s\n**Note:** t\n**Note:** r\n**Note:** u\n**Note:** c\n**Note:** t\n**Note:** u\n**Note:** r\n**Note:** e\n**Note:**  \n**Note:** s\n**Note:** e\n**Note:** e\n**Note:** m\n**Note:** s\n**Note:**  \n**Note:** t\n**Note:** o\n**Note:**  \n**Note:** b\n**Note:** e\n**Note:**  \n**Note:** i\n**Note:** r\n**Note:** r\n**Note:** e\n**Note:** g\n**Note:** u\n**Note:** l\n**Note:** a\n**Note:** r\n**Note:**  \n**Note:** w\n**Note:** i\n**Note:** t\n**Note:** h\n**Note:**  \n**Note:** v\n**Note:** a\n**Note:** r\n**Note:** y\n**Note:** i\n**Note:** n\n**Note:** g\n**Note:**  \n**Note:** n\n**Note:** u\n**Note:** m\n**Note:** b\n**Note:** e\n**Note:** r\n**Note:** s\n**Note:**  \n**Note:** o\n**Note:** f\n**Note:**  \n**Note:** c\n**Note:** e\n**Note:** l\n**Note:** l\n**Note:** s\n**Note:**  \n**Note:** p\n**Note:** e\n**Note:** r\n**Note:**  \n**Note:** r\n**Note:** o\n**Note:** w\n**Note:** ."
+    },
+    {
+      "kind": "text",
+      "page": 17,
+      "image_index": 6,
+      "content": "|  | 1 | 2 | 3 | 4 | 5 | 6 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 1 | 0 | 1 | 0 | 0 |\n| 2 | 0 | 0 | 0 | 0 | 1 | 0 |\n| 3 | 0 | 0 | 0 | 0 | 1 | 1 |\n| 4 | 0 | 1 | 0 | 0 | 0 | 0 |\n| 5 | 0 | 0 | 0 | 1 | 0 | 0 |\n| 6 | 0 | 0 | 0 | 0 | 0 | 1 |\n\n**Note:** T\n**Note:** h\n**Note:** e\n**Note:**  \n**Note:** t\n**Note:** a\n**Note:** b\n**Note:** l\n**Note:** e\n**Note:**  \n**Note:** r\n**Note:** e\n**Note:** p\n**Note:** r\n**Note:** e\n**Note:** s\n**Note:** e\n**Note:** n\n**Note:** t\n**Note:** s\n**Note:**  \n**Note:** a\n**Note:**  \n**Note:** 6\n**Note:** x\n**Note:** 6\n**Note:**  \n**Note:** s\n**Note:** q\n**Note:** u\n**Note:** a\n**Note:** r\n**Note:** e\n**Note:**  \n**Note:** m\n**Note:** a\n**Note:** t\n**Note:** r\n**Note:** i\n**Note:** x\n**Note:**  \n**Note:** w\n**Note:** i\n**Note:** t\n**Note:** h\n**Note:**  \n**Note:** b\n**Note:** i\n**Note:** n\n**Note:** a\n**Note:** r\n**Note:** y\n**Note:**  \n**Note:** v\n**Note:** a\n**Note:** l\n**Note:** u\n**Note:** e\n**Note:** s\n**Note:** ."
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "qid": "intro_to_ai_04",
+  "course_code": "IT3160E",
+  "question": "How does a model-based reflex agent differ from a simple reflex agent?",
+  "ablation_mode": "hybrid_rerank",
+  "pipeline": "agentic",
+  "session_id": "a56aa292-8b18-4b0e-828a-19b1c1eb7820",
+  "answer": "## Model-based Reflex Agent vs. Simple Reflex Agent\n\nAccording to the course material, these two are among the **four basic agent types** (alongside goal-based and utility-based agents). They differ primarily in **how much of the world they track** when deciding what to do.\n\n### Simple Reflex Agent\n- Selects actions based **only on the current percept**.\n- **Ignores the rest of the percept history** — it does not remember what it has seen before.\n- Behavior is essentially a direct mapping: *current percept → action* (e.g., the `Reflex-Vacuum-Agent` function, which decides what to do purely from the current `[position, state]`).\n- Works well only in **fully observable** environments where the current percept tells the agent everything it needs to know.\n\n### Model-based Reflex Agent\n- Also reacts to the current percept, but it **maintains an internal state** that depends on the **percept history**.\n- This internal state \"reflects at least some of the **unobserved aspects of the current state**.\"\n- In other words, the agent keeps a small **model** of how the world evolves, so it can reason about parts of the environment it cannot currently see.\n\n### The Key Difference\n\n| Aspect | Simple Reflex | Model-based Reflex |\n|---|---|---|\n| Information used | Current percept only | Current percept **+ percept history** |\n| Internal state | ❌ None | ✅ Maintained |\n| Handles unobserved aspects of state? | No | Yes (via the internal model) |\n| Suitable environment | Fully observable | **Partially observable** |\n\n**In short:** a *simple reflex agent* is memoryless and reacts only to what it perceives *right now*, whereas a *model-based reflex agent* keeps an internal state built from the history of percepts, allowing it to cope with situations where the current percept alone is not enough to determine the right action.\n\n---\n\n### References\nThe above is drawn from the \"Agent types\", \"Simple reflex agent\", and \"Model-based reflex agents\" sections of the course slides on intelligent agents.",
+  "citations": [
+    {
+      "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Agent types",
+      "page_number": null,
+      "chunk_order": 15,
+      "excerpt": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+    },
+    {
+      "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Model-based reflex agents",
+      "page_number": null,
+      "chunk_order": 17,
+      "excerpt": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+    },
+    {
+      "chunk_id": "75437ac4-f4c2-40fc-b423-73af5390e468",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Vacuum-cleaner world",
+      "page_number": null,
+      "chunk_order": 6,
+      "excerpt": "**Function Reflex-Vacuum-Agent([position, state]) returns action**\nIf state = Dirty then return Suck\nElse if position = A then return Right\nElse if position = B then return Left\nEnd Function\n\n- Does t"
+    },
+    {
+      "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Simple reflex agent",
+      "page_number": null,
+      "chunk_order": 16,
+      "excerpt": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+    },
+    {
+      "chunk_id": "42770932-24e6-4ee8-9171-de27163bcdd8",
+      "document_title": "lecture2_agent.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Goal-based agents",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "- Agents that take actions in the pursuit of a goal or goals.\n- Goals introduce the need to reason about the future or other hypothetical states. It may be the case that none of the actions an agent c"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "hybrid_rerank",
+      "query": "model-based reflex agent vs simple reflex agent difference internal state",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "5f809156-1130-441e-adc1-3a3f6346dec0",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Agent types",
+          "chunk_order": 15,
+          "cosine_sim": 0.4325,
+          "final_score": 0.4973,
+          "content": "- Four basic agent types:\n  - Simple reflex agents\n  - Model-based reflex agents\n  - Goal-based agents\n  - Utility-based agents"
+        },
+        {
+          "chunk_id": "1b13e642-812a-4ea7-a818-61dd4bb5febb",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Model-based reflex agents",
+          "chunk_order": 17,
+          "cosine_sim": 0.431,
+          "final_score": 0.4957,
+          "content": "- These agents maintain **internal states** that depends on the percept history and thereby reflects at least some of the unobserved aspects of the current state."
+        },
+        {
+          "chunk_id": "75437ac4-f4c2-40fc-b423-73af5390e468",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Vacuum-cleaner world",
+          "chunk_order": 6,
+          "cosine_sim": 0.4236,
+          "final_score": 0.4872,
+          "content": "**Function Reflex-Vacuum-Agent([position, state]) returns action**\nIf state = Dirty then return Suck\nElse if position = A then return Right\nElse if position = B then return Left\nEnd Function\n\n- Does the agent act reasonably?"
+        },
+        {
+          "chunk_id": "34d80968-e57c-4fc6-b919-a9361d630902",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Simple reflex agent",
+          "chunk_order": 16,
+          "cosine_sim": 0.3827,
+          "final_score": 0.4401,
+          "content": "- These agents select actions on the basis of the *current* percept, ignoring the rest of the percept history"
+        },
+        {
+          "chunk_id": "510f0071-bb3f-4556-a2bd-e64ce8eedd02",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem-solving agents",
+          "chunk_order": 3,
+          "cosine_sim": 0.3709,
+          "final_score": 0.4265,
+          "content": "```text\nfunction SIMPLE-PROBLEM-SOLVING-AGENT(percept) returns an action\n    static: seq, an action sequence, initially empty\n            state, some description of the current world state\n            goal, a goal, initially null\n            problem, a problem formulation\n\n    state ← UPDATE-STATE(state, percept)\n    if seq is empty then do\n        goal ← FORMULATE-GOAL(state)\n        problem ← FORMULATE-PROBLEM(state, goal)\n        seq ← SEARCH(problem)\n    action ← FIRST(seq)\n    seq ← REST(seq)\n    return action\n```\n\n[Diagram: This pseudocode shows a simple agent loop that maintains internal state, formulates a goal and problem when it has no planned actions, and then uses search to produce an action sequence. It matters because it illustrates how an agent can act deliberately rather than reacting only to the current percept.]"
+        },
+        {
+          "chunk_id": "a90c4e92-5939-412a-88b3-4862ec370d04",
+          "document_id": "9c36bc61-be77-4df8-9e4f-922f08f16e38",
+          "section_title": "b) regression",
+          "chunk_order": 17,
+          "cosine_sim": 0.3617,
+          "final_score": 0.416,
+          "content": "[Diagram: The figure contrasts forward state expansion with regression-based reasoning in a simple travel domain. It shows how applying an action changes which facts hold, and how reasoning backward from a goal can identify which earlier state is needed to achieve it.]"
+        },
+        {
+          "chunk_id": "a9f924dc-ea73-4210-b3cf-b2bfdf364853",
+          "document_id": "05b2b027-8faf-4bd7-9663-47f319deeb15",
+          "section_title": "Problem types",
+          "chunk_order": 10,
+          "cosine_sim": 0.3222,
+          "final_score": 0.3705,
+          "content": "- Deterministic, fully observable → single-state problem\n  - Agent knows exactly which state it will be in; solution is a sequence\n- Non-observable → sensorless problem (conformant problem)\n  - Agent may have no idea where it is; solution is a sequence\n- Nondeterministic and/or partially observable → contingency problem\n  - percepts provide new information about current state\n  - often interleave → search, execution\n- Unknown state space → exploration problem"
+        },
+        {
+          "chunk_id": "42770932-24e6-4ee8-9171-de27163bcdd8",
+          "document_id": "88e4499c-6159-4906-be33-0582605596c3",
+          "section_title": "Goal-based agents",
+          "chunk_order": 18,
+          "cosine_sim": 0.267,
+          "final_score": 0.3071,
+          "content": "- Agents that take actions in the pursuit of a goal or goals.\n- Goals introduce the need to reason about the future or other hypothetical states. It may be the case that none of the actions an agent can currently perform will lead to a goal state."
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 22.2
+}

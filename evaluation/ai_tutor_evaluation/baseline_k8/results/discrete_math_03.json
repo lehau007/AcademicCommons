@@ -1,0 +1,59 @@
+{
+  "qid": "discrete_math_03",
+  "course_code": "IT3020E",
+  "judge_model": "anthropic/claude-sonnet-4.5",
+  "scores": {
+    "faithfulness": {
+      "score": 5,
+      "justification": "Every claim in the tutor's answer is directly supported by the retrieved chunks. The definitions of strongly and weakly connected graphs, the key differences, the relationship between them, and the example scenario all match the source material.",
+      "evidence": []
+    },
+    "answer_relevancy": {
+      "score": 5,
+      "justification": "The answer directly and completely addresses the question by defining both strongly connected and weakly connected directed graphs, explaining the key difference between them, and providing additional context about their relationship.",
+      "evidence": [
+        "A **strongly connected** directed graph is one where, for **every pair of vertices** \\(u\\) and \\(v\\), there is: a directed path from \\(u\\) to \\(v\\), and a directed path from \\(v\\) to \\(u\\).",
+        "A **weakly connected** directed graph is one whose **underlying undirected graph** is connected."
+      ]
+    },
+    "answer_correctness": {
+      "score": 5,
+      "justification": "The tutor's answer covers all key facts from the ground truth: strongly connected requires paths in both directions between any two vertices, and weakly connected means the underlying undirected graph is connected. No contradictions exist, and the additional explanatory detail is correct.",
+      "evidence": [
+        "Ground truth: 'there is a path from u to v and from v to u whenever u and v are vertices'",
+        "Tutor: 'for every pair of vertices u and v, there is: a directed path from u to v, and a directed path from v to u'",
+        "Ground truth: 'weakly connected if its corresponding undirected graph is connected'",
+        "Tutor: 'weakly connected directed graph is one whose underlying undirected graph is connected'"
+      ]
+    },
+    "context_precision": {
+      "score": 3,
+      "justification": "Roughly half the chunks are relevant. Chunks 1-2 directly define strong/weak connectivity; chunk 4 discusses strongly connected components (related). Chunks 3, 5-7 focus on algorithms for checking strong connectivity (not directly answering the definitional question), and chunk 8 discusses graph orientation (tangential).",
+      "evidence": [
+        "chunk 9ffc8d2a: 'contrasts a directed graph with its transpose'",
+        "chunk 7589e55b: 'Perform DFS(v) on G'",
+        "chunk 0c9dbb8c: 'Check if the graph G is strongly connected'",
+        "chunk 9d3197f2: 'Perform DFS(v)'",
+        "chunk 4da4c6aa: 'graph orientation'"
+      ]
+    },
+    "context_recall": {
+      "score": 5,
+      "justification": "All key facts from the ground truth are present in the retrieved chunks. Chunk 1a482e23 contains verbatim definitions of both strongly connected (path from u to v and v to u) and weakly connected (corresponding undirected graph is connected) graphs.",
+      "evidence": [
+        "A directed graph is **strongly connected** if there is a path from $u$ to $v$ and from $v$ to $u$ whenever $u$ and $v$ are vertices in the graph",
+        "A directed graph is **weakly connected** if its corresponding undirected graph is connected"
+      ]
+    },
+    "citation_accuracy": {
+      "score": 5,
+      "justification": "Every citation directly supports the statements made. The definitions of strongly and weakly connected graphs, the key differences, and the relationship between them are all explicitly present in the cited chunks.",
+      "evidence": [
+        "Chunk 1a482e23 states: 'A directed graph is **strongly connected** if there is a path from $u$ to $v$ and from $v$ to $u$ whenever $u$ and $v$ are vertices' — directly supports the tutor's definition of strongly connected.",
+        "Chunk 1a482e23 states: 'A directed graph is **weakly connected** if its corresponding undirected graph is connected' — directly supports the tutor's definition of weakly connected.",
+        "Chunk 1a482e23 states: 'A strongly connected Graph can be weakly connected but the vice-versa is not true' — directly supports the tutor's relationship statement.",
+        "Chunk 3a632b03 states: 'Strong connectivity requires mutual reachability along arrow directions, while weak connectivity only asks whether the graph remains connected after ignoring arrow directions' — supports the key difference explanation."
+      ]
+    }
+  }
+}

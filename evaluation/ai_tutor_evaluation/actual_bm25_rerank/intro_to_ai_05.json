@@ -1,0 +1,136 @@
+{
+  "qid": "intro_to_ai_05",
+  "course_code": "IT3160E",
+  "question": "What defines a Constraint Satisfaction Problem (CSP)?",
+  "ablation_mode": "bm25_rerank",
+  "session_id": "fa4681db-fdef-4824-ba63-c973ebd7bfef",
+  "answer": "A **Constraint Satisfaction Problem (CSP)** là một loại bài toán trong đó:\n\n- **Trạng thái** được tạo bởi một tập biến cố định \\(X_i\\), mỗi biến có giá trị thuộc miền \\(D_i\\)\n- **Mục tiêu** là thỏa mãn một **tập các ràng buộc** trên giá trị của các biến\n\nNói ngắn gọn:  \n> **CSP = các biến + miền giá trị + các ràng buộc cần thỏa mãn**\n\nVí dụ, trong bài toán tô màu bản đồ, mỗi vùng là một biến, miền giá trị là các màu có thể chọn, và ràng buộc là hai vùng kề nhau không được cùng màu.",
+  "citations": [
+    {
+      "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "CSP",
+      "page_number": null,
+      "chunk_order": 2,
+      "excerpt": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with valu"
+    },
+    {
+      "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one vari"
+    },
+    {
+      "chunk_id": "4b70b8aa-674d-4b10-b3e7-41eb2604e8dd",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraint Graph",
+      "page_number": null,
+      "chunk_order": 8,
+      "excerpt": "[Diagram: The graph shows how a binary CSP can be represented as a network of variables connected by constraints. This matters because it turns constraint satisfaction into a graph structure, making r"
+    },
+    {
+      "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Constraint Graph",
+      "page_number": null,
+      "chunk_order": 7,
+      "excerpt": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n "
+    },
+    {
+      "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Iterative Algorithms for CSPs",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables"
+    },
+    {
+      "chunk_id": "74b8dba6-bfb6-4f3c-b333-810c92314229",
+      "document_title": "lecture8-ConstraintSatisfactionProblems.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Example: Cryptarimetetic",
+      "page_number": null,
+      "chunk_order": 11,
+      "excerpt": "- Variables\n  - F,T,O,U,R,W, X$_1$, X$_2$, X$_3$\n- Domain\n  - {0,1,2,3,4,5,6,7, 8,9}\n- Constraints\n  - Alldiff(F,T,O,U,R,W)\n  - O+O = R+10*X$_1$\n  - X$_1$+W+W = U+10*X$_2$\n  - X$_2$+T+T = O+10*X$_3$\n "
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "bm25_rerank",
+      "query": "Constraint Satisfaction Problem (CSP) definition variables domains constraints",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "67acdf6b-a097-42bc-8509-de3197985960",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "CSP",
+          "chunk_order": 2,
+          "cosine_sim": 0.5999,
+          "final_score": 0.7504,
+          "content": "- Standard search problems\n  - State is a “black-box”\n    - Any data structure that implements initial states, goal states, successor function\n- CSPs\n  - State is composed of variables $X_i$ with value in domain $D_i$\n  - Goal test is a set of constraints over variables"
+        },
+        {
+          "chunk_id": "cb0570c6-a887-4b45-b49f-c6c72739d94b",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Summary",
+          "chunk_order": 28,
+          "cosine_sim": 0.6452,
+          "final_score": 0.7117,
+          "content": "- CSPs are a special kind of problem:\n  - states defined by values of a fixed set of variables\n  - goal test defined by constraints on variable values\n- Backtracking = depth-first search with one variable assigned per node\n- Variable ordering and value selection heuristics help significantly\n- Forward checking prevents assignments that guarantee later failure\n- Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistencies\n- The CSPs representation allows analysis of problem structure\n- Tree-structured CSPs can be solved in linear time\n- Iterative min-conflicts is usually effective in practice"
+        },
+        {
+          "chunk_id": "4b70b8aa-674d-4b10-b3e7-41eb2604e8dd",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 8,
+          "cosine_sim": 0.6487,
+          "final_score": 0.6,
+          "content": "[Diagram: The graph shows how a binary CSP can be represented as a network of variables connected by constraints. This matters because it turns constraint satisfaction into a graph structure, making relationships between variables easier to analyze and solve.]"
+        },
+        {
+          "chunk_id": "2f1e8c6a-6176-47ea-90a1-4a93728778b7",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Constraint Graph",
+          "chunk_order": 7,
+          "cosine_sim": 0.6646,
+          "final_score": 0.5295,
+          "content": "- Binary CSPs\n  - Each constraint relates at most two variables\n- Constraint graph\n  - Node is variable\n  - Edge is constraint\n\n```text\n      WA -------- NT -------- Q\n       \\          / \\        /\n        \\        /   \\      /\n         \\      /     \\    /\n          \\    /       \\  /\n           \\  /         \\/\n            SA -------- NSW\n             \\           /\n              \\         /\n               \\       /\n                \\     /\n                  V\n```"
+        },
+        {
+          "chunk_id": "2aed7a58-0410-4fd4-8a1e-4dd3c50dad98",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Iterative Algorithms for CSPs",
+          "chunk_order": 26,
+          "cosine_sim": 0.5428,
+          "final_score": 0.5227,
+          "content": "- Hill-climbing, Simulated Annealing can be used for CSPs\n  - Complete state, e.g., all variables are assigned at each node\n- Allow states with unsatisfiable constraints\n- Operators reassign variables\n- Variable selection\n  - Random\n- Value selection by min-conflicts heuristic\n  - Choose value that violates the fewest constraints\n    - i.e., hill climbing with $h(n) =$ total number of violated constraints"
+        },
+        {
+          "chunk_id": "74b8dba6-bfb6-4f3c-b333-810c92314229",
+          "document_id": "3a8aac92-67be-45ad-a3c0-063b87485404",
+          "section_title": "Example: Cryptarimetetic",
+          "chunk_order": 11,
+          "cosine_sim": 0.4861,
+          "final_score": 0.4732,
+          "content": "- Variables\n  - F,T,O,U,R,W, X$_1$, X$_2$, X$_3$\n- Domain\n  - {0,1,2,3,4,5,6,7, 8,9}\n- Constraints\n  - Alldiff(F,T,O,U,R,W)\n  - O+O = R+10*X$_1$\n  - X$_1$+W+W = U+10*X$_2$\n  - X$_2$+T+T = O+10*X$_3$\n  - X$_3$=F\n\n```text\n      TWO\n    + TWO\n    ------\n      FOUR\n\n      F   T   U   W   R   O\n      |   |   |   |   |   |\n     [ ] [ ] [ ] [ ] [ ] [ ]\n       \\   \\         /   /\n        \\   \\       /   /\n         X$_3$   X$_2$   X$_1$\n```"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 8.1
+}

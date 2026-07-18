@@ -1,0 +1,165 @@
+{
+  "qid": "hard_db_table_06",
+  "course_code": "IT3292E",
+  "question": "Theo bảng định nghĩa DBMS trong slide, Wikipedia và Techtarget định nghĩa DBMS như thế nào, và slide liệt kê những ví dụ DBMS nào?",
+  "ablation_mode": "dense_rerank",
+  "pipeline": "agentic",
+  "session_id": "622cadf1-55dc-400a-9949-b71a77c4f623",
+  "answer": "# Định nghĩa DBMS theo Wikipedia và Techtarget (theo slide)\n\nTheo bảng định nghĩa DBMS trong slide mục **2.4. Database Management System (DBMS)**:\n\n| Nguồn | Định nghĩa |\n|---|---|\n| **Wikipedia** | A software to facilitate the creation and maintenance of a database (Một phần mềm hỗ trợ việc **tạo lập** và **bảo trì** cơ sở dữ liệu) |\n| **Techtarget** | The DBMS provides users and programmers with a systematic way to **create, retrieve, update and manage** data (DBMS cung cấp cho người dùng và lập trình viên một cách có hệ thống để **tạo, truy xuất, cập nhật và quản lý** dữ liệu) |\n\n## Các ví dụ về DBMS được liệt kê trong slide\n\nSlide liệt kê **6 ví dụ** phổ biến về các hệ quản trị cơ sở dữ liệu:\n\n1. **MySQL**\n2. **Microsoft Access**\n3. **Microsoft SQL Server**\n4. **Oracle Database**\n5. **IBM DB2**\n6. **PostgreSQL**\n\nNgoài ra, slide cũng nêu các **hoạt động chính** của DBMS, được phân loại thành:\n- **Defining** – xác định các kiểu dữ liệu (specifying types of data)\n- **Constructing** – lưu trữ và nhập dữ liệu (storing & populating)\n- **Manipulating** – truy vấn, cập nhật, tạo báo cáo (querying, updating, reporting)",
+  "citations": [
+    {
+      "chunk_id": "786cf68a-c479-46bf-9556-87695dc6e3d1",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Database Management System (DBMS)",
+      "page_number": null,
+      "chunk_order": 23,
+      "excerpt": "- Definitions\n\n| Source | Definition |\n|---|---|\n| Wikipedia | A software to facilitate the creation and maintenance of a database |\n| Techtarget | The DBMS provides users and programmers with a syste"
+    },
+    {
+      "chunk_id": "39afb781-017d-4f1c-ba00-48567d0028b3",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Keywords and descriptions",
+      "page_number": null,
+      "chunk_order": 5,
+      "excerpt": "| Keyword | Description |\n|---|---|\n| Database | A shared collection of related data designed to meet the information needs of an organization |\n| DBMS | A software to facilitate the creation and main"
+    },
+    {
+      "chunk_id": "56a4cfb3-370f-42d7-914f-16fddabc0aac",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "Summary",
+      "page_number": null,
+      "chunk_order": 42,
+      "excerpt": "- Overview\n  - Course overview\n  - Course objective\n  - Motivation for studying databases\n- Basic concepts\n  - Data\n  - Database\n  - Data model vs. schema vs. Instance\n  - Database management system ("
+    },
+    {
+      "chunk_id": "1fb843a8-696d-496f-bf5b-6d6a839a737a",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.5. Database Environment",
+      "page_number": null,
+      "chunk_order": 28,
+      "excerpt": "- A database environment is a collective system of components that regulates the management, the use of data, and the data itself\n  - Hardware\n  - Software\n  - Data\n  - Users\n  - Procedures/Manuals\n\n`"
+    },
+    {
+      "chunk_id": "1733b32b-3e7b-4e0a-8ac3-ea29c567f869",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "3.2. Database approach",
+      "page_number": null,
+      "chunk_order": 39,
+      "excerpt": "- Characteristics of Database Approach\n  - Persistence\n    - store data on secondary storage\n  - Retrieval\n    - a declarative query language\n    - a procedural database programming language\n  - Perfo"
+    },
+    {
+      "chunk_id": "6392b873-ede6-448d-9388-876329e08c99",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.4. Database Management System (DBMS)",
+      "page_number": null,
+      "chunk_order": 26,
+      "excerpt": "- Defining ~ specifying types of data\n- Constructing ~ storing & populating\n- Manipulating ~ querying, updating, reporting\n\n```text\n+-----------+   +--------------+   +-------------------------------+"
+    },
+    {
+      "chunk_id": "0ec8e4ed-d2ae-4a2f-bcc3-17e71b54a765",
+      "document_title": "01_02_Introduction_RDB.pdf",
+      "document_tier": "official",
+      "document_subtype": "lecture_slides",
+      "section_title": "2.2. Database",
+      "page_number": null,
+      "chunk_order": 18,
+      "excerpt": "- Definitions\n\n|  |  |\n|---|---|\n| Wikipedia | Database is a **shared collection of related data** designed to **meet the information needs** of an organization |\n| Intro to CS | A database is a colle"
+    }
+  ],
+  "retrieval_calls": [
+    {
+      "mode": "dense_rerank",
+      "query": "định nghĩa DBMS theo Wikipedia Techtarget, ví dụ DBMS",
+      "namespaces": [
+        "knowledge"
+      ],
+      "chunks": [
+        {
+          "chunk_id": "786cf68a-c479-46bf-9556-87695dc6e3d1",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 23,
+          "cosine_sim": 0.4936,
+          "final_score": 0.5677,
+          "content": "- Definitions\n\n| Source | Definition |\n|---|---|\n| Wikipedia | A software to facilitate the creation and maintenance of a database |\n| Techtarget | The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n\n```text\n+-------------------+--------------------------------------------------------------+\n| MySQL             | Microsoft Access | Microsoft SQL Server | ORACLE DATABASE   |\n| IBM DB2           | PostgreSQL                                              |\n+-------------------+--------------------------------------------------------------+\n```\n\n[Table: DBMS definitions (Wikipedia: software to create and maintain a database; Techtarget: a systematic way to create, retrieve, update and manage data) and a list of example DBMS products: MySQL, Microsoft Access, Microsoft SQL Server, ORACLE DATABASE, IBM DB2, PostgreSQL.]"
+        },
+        {
+          "chunk_id": "87c4388a-9b04-4c2c-8cd3-0a63f0ca0cc4",
+          "document_id": "41675e53-cce9-4351-b252-22585d1b12dd",
+          "section_title": "Keywords",
+          "chunk_order": 5,
+          "cosine_sim": 0.4231,
+          "final_score": 0.4865,
+          "content": "| Keyword | Description |\n|---|---|\n| DBMS | Database Management System: system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data |\n| CREATE TABLE | SQL statement to define a table into a database |\n| ALTER TABLE | SQL statement to modify table structure if needed (add /delete/modify column(s), add/remove constraint(s)) |\n| INSERT/UPDATE/DELETE | SQL statements to add new record to a table; to change the data of one or more records in a table; to remove single record or multiple records from a table |\n| SELECT | SQL statement to retrieve data from a database |"
+        },
+        {
+          "chunk_id": "39afb781-017d-4f1c-ba00-48567d0028b3",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "Keywords and descriptions",
+          "chunk_order": 5,
+          "cosine_sim": 0.3863,
+          "final_score": 0.4442,
+          "content": "| Keyword | Description |\n|---|---|\n| Database | A shared collection of related data designed to meet the information needs of an organization |\n| DBMS | A software to facilitate the creation and maintenance of a database |\n| Data model | A set of concepts used to describe the structure of a database: data types, relationships, constraints, semantics, ... |\n| Schema | A data structure fulfilled all features of the parts of the real world which is of interest to the users |\n| Instance | The data itself (in the context of data model and database schema) |"
+        },
+        {
+          "chunk_id": "56a4cfb3-370f-42d7-914f-16fddabc0aac",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "Summary",
+          "chunk_order": 42,
+          "cosine_sim": 0.3624,
+          "final_score": 0.4167,
+          "content": "- Overview\n  - Course overview\n  - Course objective\n  - Motivation for studying databases\n- Basic concepts\n  - Data\n  - Database\n  - Data model vs. schema vs. Instance\n  - Database management system (DBMS)\n  - Database environment\n  - Database users\n- Data management\n  - File management system approach\n  - Database management system approach"
+        },
+        {
+          "chunk_id": "1fb843a8-696d-496f-bf5b-6d6a839a737a",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.5. Database Environment",
+          "chunk_order": 28,
+          "cosine_sim": 0.3475,
+          "final_score": 0.3997,
+          "content": "- A database environment is a collective system of components that regulates the management, the use of data, and the data itself\n  - Hardware\n  - Software\n  - Data\n  - Users\n  - Procedures/Manuals\n\n```text\n        😊\n   +----------------------+\n   |     Application      |   <--- use and\n   +----------------------+        control the\n                                   content\n\n        😐\n   +----------------------+\n   |         DBMS         |   <--- enable the database\n   +----------------------+        to be developed\n                                   and the DBMS software\n                                   to be designed and\n                                   implemented\n\n      +--------+      +--------+\n      |   DB   |      |   DB   |\n      +--------+      +--------+\n```"
+        },
+        {
+          "chunk_id": "1733b32b-3e7b-4e0a-8ac3-ea29c567f869",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "3.2. Database approach",
+          "chunk_order": 39,
+          "cosine_sim": 0.3379,
+          "final_score": 0.3885,
+          "content": "- Characteristics of Database Approach\n  - Persistence\n    - store data on secondary storage\n  - Retrieval\n    - a declarative query language\n    - a procedural database programming language\n  - Performance\n    - retrieve and store data quickly\n    - deal with large volume of data"
+        },
+        {
+          "chunk_id": "6392b873-ede6-448d-9388-876329e08c99",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.4. Database Management System (DBMS)",
+          "chunk_order": 26,
+          "cosine_sim": 0.3373,
+          "final_score": 0.3879,
+          "content": "- Defining ~ specifying types of data\n- Constructing ~ storing & populating\n- Manipulating ~ querying, updating, reporting\n\n```text\n+-----------+   +--------------+   +-------------------------------+\n| MySQL     |   | Microsoft    |   | Microsoft SQL Server          |\n|           |   | Access       |   |                               |\n+-----------+   +--------------+   +-------------------------------+\n\n+------------------+   +--------+   +-------------+\n| Oracle Database   |   | IBM DB2|   | PostgreSQL  |\n+------------------+   +--------+   +-------------+\n```"
+        },
+        {
+          "chunk_id": "0ec8e4ed-d2ae-4a2f-bcc3-17e71b54a765",
+          "document_id": "9992ef5d-5316-4bbe-ae70-194338e0a6b5",
+          "section_title": "2.2. Database",
+          "chunk_order": 18,
+          "cosine_sim": 0.325,
+          "final_score": 0.3737,
+          "content": "- Definitions\n\n|  |  |\n|---|---|\n| Wikipedia | Database is a **shared collection of related data** designed to **meet the information needs** of an organization |\n| Intro to CS | A database is a collection of information that is organized so that it can be **easily accessed, managed and updated** |"
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 19.4
+}
