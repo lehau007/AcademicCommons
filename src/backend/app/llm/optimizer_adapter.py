@@ -27,7 +27,6 @@ class OptimizerSDK:
     BudgetExceededError: type[Exception]
     AzureOpenAIClient: type[Any]
     GoogleClient: type[Any]
-    GroqClient: type[Any]
     BedrockConverseClient: type[Any]
     BedrockClient: type[Any]
     JsonlLogBackend: type[Any]
@@ -366,7 +365,6 @@ def _load_optimizer_sdk() -> OptimizerSDK:
     client_module = importlib.import_module("llm_cost_optimizer.client")
     azure_module = importlib.import_module("llm_cost_optimizer.clients.azure_openai")
     google_module = importlib.import_module("llm_cost_optimizer.clients.google")
-    groq_module = importlib.import_module("llm_cost_optimizer.clients.groq")
     bedrock_module = importlib.import_module("llm_cost_optimizer.clients.bedrock")
     jsonl_log_module = importlib.import_module("llm_cost_optimizer.tracking.log_backends.jsonl")
     cost_module = importlib.import_module("llm_cost_optimizer.tracking.cost")
@@ -380,7 +378,6 @@ def _load_optimizer_sdk() -> OptimizerSDK:
         BudgetExceededError=client_module.BudgetExceededError,
         AzureOpenAIClient=azure_module.AzureOpenAIClient,
         GoogleClient=google_module.GoogleClient,
-        GroqClient=groq_module.GroqClient,
         BedrockConverseClient=bedrock_module.BedrockConverseClient,
         BedrockClient=bedrock_module.BedrockClient,
         JsonlLogBackend=jsonl_log_module.JsonlLogBackend,

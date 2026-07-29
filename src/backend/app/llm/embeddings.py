@@ -6,7 +6,10 @@ import math
 from abc import ABC, abstractmethod
 from typing import Any
 
+from google import genai
+
 from app.llm.errors import EmbeddingProviderError
+from app.llm.vertex_auth import get_vertex_credentials_and_project
 
 
 class EmbeddingService(ABC):
@@ -155,6 +158,57 @@ class OpenRouterEmbedding(EmbeddingService):
                         f"Embedding trả về {len(vector)} chiều, cần {self.dimension} chiều."
                     )
                 vectors.append(vector)
+        return vectors
+
+
+class VertexEmbedding(EmbeddingService):
+    """Google Vertex AI Text Embedding provider via google.genai with vertexai=True."""
+
+    def __init__(
+        self,
+        *,
+        project_id: str | None = None,
+        location: str = "us-central1",
+        model: str = "text-embedding-004",
+        dimension: int = 768,
+        batch_size: int = 50,
+        client: Any | None = None,
+    ) -> None:
+        self.project_id = project_id
+        self.location = location
+        self.model = model
+        self.dimension = dimension
+        self.batch_size = batch_size
+        self._client = client
+
+    def _load_client(self) -> Any:
+        if self._client is None:
+            creds, resolved_project = get_vertex_credentials_and_project()
+            self._client = genai.Client(
+                vertexai=True,
+                project=self.project_id or resolved_project,
+                location=self.location,
+                credentials=creds,
+            )
+        return self._client
+
+    def encode(self, texts: list[str], input_type: str = "passage") -> list[list[float]]:
+        del input_type
+        if not texts:
+            return []
+        client = self._load_client()
+        vectors: list[list[float]] = []
+        for start in range(0, len(texts), self.batch_size):
+            batch = texts[start : start + self.batch_size]
+            try:
+                response = client.models.embed_content(
+                    model=self.model,
+                    contents=batch,
+                )
+                for item in response.embeddings:
+                    vectors.append([float(v) for v in item.values])
+            except Exception as exc:
+                raise EmbeddingProviderError(f"Vertex AI embedding failed: {exc}") from exc
         return vectors
 
 

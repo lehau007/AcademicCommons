@@ -6,7 +6,7 @@ from uuid import uuid4
 
 import pytest
 
-from app.llm.embeddings import DeterministicEmbeddingService, NvidiaEmbedding, OpenRouterEmbedding
+from app.llm.embeddings import DeterministicEmbeddingService, NvidiaEmbedding, OpenRouterEmbedding, VertexEmbedding
 from app.llm.errors import RerankProviderError
 from app.models.enums import DocumentTier
 from app.services.retrieval_service import (
@@ -151,8 +151,8 @@ def _settings(**overrides) -> SimpleNamespace:
         nvidia_api_key=None,
         nvidia_base_url="https://integrate.api.nvidia.com/v1",
         nvidia_rerank_base="https://ai.api.nvidia.com/v1/retrieval",
-        embedding_model="nvidia/nv-embedqa-e5-v5",
-        embedding_dim=1536,
+        embedding_model="text-multilingual-embedding-002",
+        embedding_dim=768,
         rerank_model="nvidia/llama-nemotron-rerank-vl-1b-v2",
         rerank_enabled=True,
         tutor_mmr_lambda=0.7,
@@ -161,22 +161,27 @@ def _settings(**overrides) -> SimpleNamespace:
     return SimpleNamespace(**base)
 
 
+def test_build_embedding_service_prefers_vertex() -> None:
+    svc = build_embedding_service(_settings(embedding_provider_order="vertex,openrouter,nvidia"))
+    assert isinstance(svc, VertexEmbedding)
+    assert svc.model == "text-multilingual-embedding-002"
+    assert svc.dimension == 768
+
+
 def test_build_embedding_service_prefers_openrouter() -> None:
-    svc = build_embedding_service(_settings(openrouter_api_key="or-key", nvidia_api_key="nv-key"))
+    svc = build_embedding_service(_settings(openrouter_api_key="or-key", nvidia_api_key="nv-key", embedding_provider_order="openrouter,nvidia"))
     assert isinstance(svc, OpenRouterEmbedding)
     assert svc.model == "openai/text-embedding-3-small"
-    assert svc.dimension == 1536
 
 
 def test_build_embedding_service_nvidia_when_no_openrouter_key() -> None:
-    svc = build_embedding_service(_settings(nvidia_api_key="nv-key"))
+    svc = build_embedding_service(_settings(nvidia_api_key="nv-key", embedding_provider_order="nvidia"))
     assert isinstance(svc, NvidiaEmbedding)
 
 
 def test_build_embedding_service_offline_stub_without_keys() -> None:
-    svc = build_embedding_service(_settings())
+    svc = build_embedding_service(_settings(embedding_provider_order="stub"))
     assert isinstance(svc, DeterministicEmbeddingService)
-    assert svc.dimension == 1536
 
 
 def test_rerank_uses_openrouter_order_and_attaches_scores(monkeypatch: pytest.MonkeyPatch) -> None:

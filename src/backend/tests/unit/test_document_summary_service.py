@@ -81,14 +81,15 @@ def test_default_embedding_service_follows_retrieval_tier(monkeypatch) -> None:
     fake_settings = SimpleNamespace(
         openrouter_api_key=None,
         nvidia_api_key=None,
-        embedding_dim=1536,
+        embedding_provider_order="stub",
+        embedding_dim=768,
     )
     monkeypatch.setattr("app.config.get_settings", lambda: fake_settings)
 
     service = summary_module.build_embedding_service()
 
     assert isinstance(service, DeterministicEmbeddingService)
-    assert service.dimension == 1536
+    assert service.dimension == 768
 
 
 async def test_upsert_document_summary_updates_existing_row_in_place() -> None:

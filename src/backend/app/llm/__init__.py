@@ -5,18 +5,20 @@ from app.llm.embeddings import (
     NvidiaEmbedding,
     OpenRouterEmbedding,
     SentenceTransformerEmbedding,
+    VertexEmbedding,
 )
 from app.llm.providers import (
     AzureOpenAIProvider,
     BedrockProvider,
     GeminiProvider,
-    GroqProvider,
     LLMProvider,
     LLMUnavailable,
     OpenCodeProvider,
     OpenRouterProvider,
     ProviderResult,
+    VertexGeminiProvider,
 )
+from app.llm.rerank import VertexRerank
 from app.llm.router import LLMRouter, build_llm_router
 
 __all__ = [
@@ -25,7 +27,6 @@ __all__ = [
     "DeterministicEmbeddingService",
     "EmbeddingService",
     "GeminiProvider",
-    "GroqProvider",
     "LLMProvider",
     "LLMRouter",
     "LLMUnavailable",
@@ -35,5 +36,9 @@ __all__ = [
     "OpenRouterProvider",
     "ProviderResult",
     "SentenceTransformerEmbedding",
+    "VertexEmbedding",
+    "VertexGeminiProvider",
+    "VertexRerank",
     "build_llm_router",
 ]
+

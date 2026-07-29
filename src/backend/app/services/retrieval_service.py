@@ -142,51 +142,74 @@ def _rerank(
 ) -> list[RetrievedChunk]:
     """Reorder candidates via the top-tier reranker.
 
-    With an OpenRouter key the OpenRouter reranker is authoritative: failures
-    raise ``RerankProviderError`` (surfaced to the UI) instead of silently
-    falling back, because a silent quality drop is worse than a visible error.
-    Without an OpenRouter key the legacy chain applies: NVIDIA reranker when
-    configured (errors fall back to local MMR), else local MMR, so offline
-    tests and degraded deployments keep working.
+    Iterates through ``rerank_provider_order`` (default: vertex, openrouter, nvidia).
+    Falls back to local MMR if external rerankers fail or are unconfigured.
     """
-    if not candidates:
-        return []
+    if not candidates or not getattr(settings, "rerank_enabled", False):
+        return _mmr_rerank(candidates, query_vec, lam=settings.tutor_mmr_lambda, k=k)
 
-    if getattr(settings, "openrouter_api_key", None) and getattr(settings, "rerank_enabled", False):
-        import app.llm.rerank as rerank_module
+    order_str = getattr(settings, "rerank_provider_order", "vertex,openrouter,nvidia")
+    providers = [p.strip().lower() for p in order_str.split(",") if p.strip()]
 
-        service = rerank_module.OpenRouterRerank(
-            api_key=settings.openrouter_api_key,
-            base_url=settings.openrouter_base_url,
-            model=settings.openrouter_rerank_model,
-        )
-        scored = service.rank_scored(query, [c.content for c in candidates])
-        reranked: list[RetrievedChunk] = []
-        for idx, rerank_score in scored:
-            if 0 <= idx < len(candidates):
-                candidates[idx].rerank_score = rerank_score
-                reranked.append(candidates[idx])
-        # Return the full ranked pool with scores attached; search() applies the dynamic-k
-        # floor and trims to k so the relevance floor is enforced before truncation.
-        return reranked
+    for p in providers:
+        if p == "vertex":
+            try:
+                from app.llm.rerank import VertexRerank
+                from app.llm.vertex_auth import get_vertex_credentials_and_project
 
-    api_key = getattr(settings, "nvidia_api_key", None)
-    if api_key and getattr(settings, "rerank_enabled", False):
-        try:
-            from app.llm.rerank import RerankService
+                creds, default_proj = get_vertex_credentials_and_project()
+                project_id = getattr(settings, "vertex_project_id", None) or default_proj
+                if creds or project_id:
+                    service = VertexRerank(
+                        project_id=project_id,
+                        location=getattr(settings, "vertex_location", "global"),
+                        model=getattr(settings, "vertex_rerank_model", "semantic-ranker-512@latest"),
+                    )
+                    scored = service.rank_scored(query, [c.content for c in candidates])
+                    reranked: list[RetrievedChunk] = []
+                    for idx, rerank_score in scored:
+                        if 0 <= idx < len(candidates):
+                            candidates[idx].rerank_score = rerank_score
+                            reranked.append(candidates[idx])
+                    if reranked:
+                        return reranked
+            except Exception:
+                pass
+        elif p == "openrouter":
+            if getattr(settings, "openrouter_api_key", None):
+                import app.llm.rerank as rerank_module
 
-            rerank_url = f"{settings.nvidia_rerank_base.rstrip('/')}/{settings.rerank_model}/reranking"
-            service = RerankService(
-                api_key=api_key,
-                url=rerank_url,
-                model=settings.rerank_model,
-            )
-            order = service.rank(query, [c.content for c in candidates])
-            reranked = [candidates[i] for i in order if 0 <= i < len(candidates)]
-            if reranked:
-                return reranked[:k]
-        except Exception:
-            pass
+                service = rerank_module.OpenRouterRerank(
+                    api_key=settings.openrouter_api_key,
+                    base_url=settings.openrouter_base_url,
+                    model=settings.openrouter_rerank_model,
+                )
+                scored = service.rank_scored(query, [c.content for c in candidates])
+                reranked = []
+                for idx, rerank_score in scored:
+                    if 0 <= idx < len(candidates):
+                        candidates[idx].rerank_score = rerank_score
+                        reranked.append(candidates[idx])
+                if reranked:
+                    return reranked
+        elif p == "nvidia":
+            api_key = getattr(settings, "nvidia_api_key", None)
+            if api_key:
+                try:
+                    from app.llm.rerank import RerankService
+
+                    rerank_url = f"{settings.nvidia_rerank_base.rstrip('/')}/{settings.rerank_model}/reranking"
+                    service = RerankService(
+                        api_key=api_key,
+                        url=rerank_url,
+                        model=settings.rerank_model,
+                    )
+                    order = service.rank(query, [c.content for c in candidates])
+                    reranked = [candidates[i] for i in order if 0 <= i < len(candidates)]
+                    if reranked:
+                        return reranked[:k]
+                except Exception:
+                    pass
 
     return _mmr_rerank(candidates, query_vec, lam=settings.tutor_mmr_lambda, k=k)
 
@@ -441,22 +464,45 @@ def get_retrieval_service(settings: Any = None) -> RetrievalService:
 
 
 def build_embedding_service(settings: Any) -> EmbeddingService:
-    """Return the highest-tier embedder with credentials: OpenRouter → NVIDIA → offline stub."""
-    if getattr(settings, "openrouter_api_key", None):
-        return OpenRouterEmbedding(
-            api_key=settings.openrouter_api_key,
-            base_url=settings.openrouter_base_url,
-            model=settings.openrouter_embedding_model,
-            dimension=settings.embedding_dim,
-        )
-    if settings.nvidia_api_key:
-        return NvidiaEmbedding(
-            api_key=settings.nvidia_api_key,
-            base_url=settings.nvidia_base_url,
-            model=settings.embedding_model,
-            dimension=settings.embedding_dim,
-        )
-    return DeterministicEmbeddingService(settings.embedding_dim)
+    """Return the highest-tier embedder matching credentials according to embedding_provider_order."""
+    from app.llm.embeddings import VertexEmbedding
+    from app.llm.vertex_auth import get_vertex_credentials_and_project
+
+    order_str = getattr(settings, "embedding_provider_order", "vertex,openrouter,nvidia")
+    providers = [p.strip().lower() for p in order_str.split(",") if p.strip()]
+
+    for p in providers:
+        if p == "vertex":
+            try:
+                creds, default_proj = get_vertex_credentials_and_project()
+                project_id = getattr(settings, "vertex_project_id", None) or default_proj
+                if creds or project_id:
+                    return VertexEmbedding(
+                        project_id=project_id,
+                        location=getattr(settings, "vertex_location", "us-central1"),
+                        model=getattr(settings, "vertex_embedding_model", "text-multilingual-embedding-002"),
+                        dimension=getattr(settings, "embedding_dim", 768),
+                    )
+            except Exception:
+                pass
+        elif p == "openrouter":
+            if getattr(settings, "openrouter_api_key", None):
+                return OpenRouterEmbedding(
+                    api_key=settings.openrouter_api_key,
+                    base_url=settings.openrouter_base_url,
+                    model=settings.openrouter_embedding_model,
+                    dimension=getattr(settings, "embedding_dim", 768),
+                )
+        elif p == "nvidia":
+            if getattr(settings, "nvidia_api_key", None):
+                return NvidiaEmbedding(
+                    api_key=settings.nvidia_api_key,
+                    base_url=settings.nvidia_base_url,
+                    model=settings.embedding_model,
+                    dimension=getattr(settings, "embedding_dim", 768),
+                )
+
+    return DeterministicEmbeddingService(getattr(settings, "embedding_dim", 768))
 
 
 __all__ = [

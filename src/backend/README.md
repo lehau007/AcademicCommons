@@ -73,7 +73,7 @@ src/backend/
 │   ├── api/          # FastAPI routers (v1: auth, courses, documents, review, tutor, admin)
 │   ├── core/         # State machine, RBAC, audit helpers
 │   ├── db/           # SQLAlchemy async engine, session factory
-│   ├── llm/          # LLM router (Azure → Gemini → Groq), embedding service
+│   ├── llm/          # LLM router (Vertex AI → Bedrock → Gemini), embedding & reranking services
 │   ├── models/       # SQLAlchemy ORM models (17 tables)
 │   ├── schemas/      # Pydantic v2 request/response contracts
 │   ├── services/     # Business logic (document, review, tutor, mindmap, mock test)
@@ -164,7 +164,12 @@ Key variables:
 | `AZURE_OPENAI_ENDPOINT` | Azure endpoint URL |
 | `AZURE_OPENAI_DEPLOYMENT` | Model deployment name |
 | `GEMINI_API_KEY` | Fallback LLM |
-| `GROQ_API_KEY` | Text-only fallback LLM |
+| `VERTEX_PROJECT_ID` | Optional Google Cloud project ID for Vertex AI (falls back to gcloud ADC) |
+| `VERTEX_LOCATION` | Vertex AI location (default `us-central1`) |
+| `VERTEX_LLM_MODEL` | Vertex AI Gemini model name (default `gemini-1.5-flash`) |
+| `VERTEX_EMBEDDING_MODEL` | Vertex AI Text Embedding model (default `text-embedding-004`) |
+| `VERTEX_RERANK_MODEL` | Vertex AI Discovery Engine Rerank model (default `semantic-ranker-512@latest`) |
+| `NORMALIZATION_MAX_OUTPUT_TOKENS` | Max output tokens for document normalization (default `16384`) |
 | `EMBEDDING_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` |
 | `EMBEDDING_DIM` | `384` |
 

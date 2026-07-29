@@ -24,10 +24,11 @@ from app.services.document_processing.providers.base import VisionLanguageProvid
 from app.services.document_processing.providers.bedrock import BedrockVisionProvider
 from app.services.document_processing.providers.chain import ProviderChain
 from app.services.document_processing.providers.gemini import GeminiVisionProvider
-from app.services.document_processing.providers.groq import GroqVisionProvider
 from app.services.document_processing.providers.opencode import OpenCodeVisionProvider
 from app.services.document_processing.providers.openrouter import OpenRouterVisionProvider
+from app.services.document_processing.providers.vertex import VertexVisionProvider
 from app.services.document_processing.routing import RouteDecider
+
 from app.services.document_processing.validation import OutputValidator
 
 
@@ -61,6 +62,9 @@ class DocumentProcessingPipeline:
         """
         cfg = self._config
 
+        def _vertex() -> VisionLanguageProvider | None:
+            return VertexVisionProvider(cfg, recorder=self._recorder, emitter=self._emitter)
+
         def _bedrock() -> VisionLanguageProvider | None:
             if cfg.bedrock_api_key and cfg.bedrock_model_id:
                 return BedrockVisionProvider(cfg, recorder=self._recorder, emitter=self._emitter)
@@ -69,11 +73,6 @@ class DocumentProcessingPipeline:
         def _gemini() -> VisionLanguageProvider | None:
             if cfg.gemini_api_key:
                 return GeminiVisionProvider(cfg, recorder=self._recorder, emitter=self._emitter)
-            return None
-
-        def _groq() -> VisionLanguageProvider | None:
-            if cfg.groq_api_key:
-                return GroqVisionProvider(cfg, recorder=self._recorder, emitter=self._emitter)
             return None
 
         def _azure() -> VisionLanguageProvider | None:
@@ -92,13 +91,14 @@ class DocumentProcessingPipeline:
             return None
 
         builders: dict[str, Callable[[], VisionLanguageProvider | None]] = {
+            "vertex": _vertex,
             "bedrock": _bedrock,
             "gemini": _gemini,
-            "groq": _groq,
             "azure": _azure,
             "opencode": _opencode,
             "openrouter": _openrouter,
         }
+
 
         providers: list[VisionLanguageProvider] = []
         for name in cfg.provider_order:

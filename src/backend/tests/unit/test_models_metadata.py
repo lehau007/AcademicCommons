@@ -41,8 +41,8 @@ def test_vector_columns_use_embedding_dimension() -> None:
 
     assert isinstance(chunk_embedding, Vector)
     assert isinstance(summary_embedding, Vector)
-    assert chunk_embedding.dimension == 1024
-    assert summary_embedding.dimension == 1024
+    assert chunk_embedding.dimension == 768
+    assert summary_embedding.dimension == 768
 
 
 def test_vector_type_serializes_python_lists_for_pgvector() -> None:

@@ -82,7 +82,6 @@ def _fake_sdk(optimizer_cls: type = _FakeOptimizer) -> OptimizerSDK:
         BudgetExceededError=_BudgetExceededError,
         AzureOpenAIClient=_Kw,
         GoogleClient=_Kw,
-        GroqClient=_Kw,
         BedrockConverseClient=_Kw,
         BedrockClient=_Kw,
         JsonlLogBackend=_Kw,

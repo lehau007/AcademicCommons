@@ -13,8 +13,6 @@ from app.config import Settings
 # Azure AI Foundry defaults (mirrors the experiment defaults; overridden via Settings).
 AZURE_ENDPOINT_DEFAULT = "https://haulv226038-3382-resource.services.ai.azure.com/openai/v1"
 AZURE_DEPLOYMENT_DEFAULT = "gpt-4-1-mini-2025-04-14-ft-cd68c6dbd12543298c5eb1ad64af5e4a"
-GROQ_BASE_URL = "https://api.groq.com/openai/v1"
-GROQ_MODEL_DEFAULT = "meta-llama/llama-4-scout-17b-16e-instruct"
 OPENCODE_BASE_URL = "https://opencode.ai/zen/go/v1"
 OPENCODE_MODEL_DEFAULT = "minimax-m3"
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
@@ -36,11 +34,12 @@ class DocumentProcessingConfig:
     gemini_api_key: str | None = None
     gemini_model: str = "gemini-3.1-flash-lite"
 
-    groq_api_key: str | None = None
-    groq_model: str = GROQ_MODEL_DEFAULT
-    groq_base_url: str = GROQ_BASE_URL
+    vertex_project_id: str | None = None
+    vertex_location: str = "us-central1"
+    vertex_llm_model: str = "gemini-2.5-flash"
 
     opencode_api_key: str | None = None
+
     opencode_model: str = OPENCODE_MODEL_DEFAULT
     opencode_base_url: str = OPENCODE_BASE_URL
 
@@ -57,6 +56,7 @@ class DocumentProcessingConfig:
     output_cost_per_1m: float = 0.60
     normalize_char_budget: int = 24000
     normalize_max_workers: int = 4
+    normalization_max_output_tokens: int = 16384
     request_timeout_seconds: float = 30.0
 
     @classmethod
@@ -70,9 +70,11 @@ class DocumentProcessingConfig:
             azure_api_key=settings.azure_ai_api_key,
             gemini_api_key=settings.gemini_api_key,
             gemini_model=settings.gemini_model,
-            groq_api_key=settings.groq_api_key,
-            groq_model=settings.groq_model,
+            vertex_project_id=settings.vertex_project_id,
+            vertex_location=settings.vertex_location,
+            vertex_llm_model=settings.vertex_llm_model,
             opencode_api_key=settings.opencode_api_key,
+
             opencode_model=settings.opencode_model,
             opencode_base_url=settings.opencode_base_url,
             openrouter_api_key=settings.openrouter_api_key,

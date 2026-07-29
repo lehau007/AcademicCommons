@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 import os
+
 # botocore reads AWS_PROFILE and AWS_DEFAULT_PROFILE straight from the process env
 # and treats "" as a literal (invalid) profile name. Scrub blank values defensively
 # at startup so a misconfigured container env can't crash session/client creation.
@@ -76,8 +79,6 @@ class Settings(BaseSettings):
     azure_openai_api_version: str = "2024-08-01-preview"
     gemini_api_key: str | None = None
     gemini_model: str = "gemini-3.1-flash-lite"
-    groq_api_key: str | None = None
-    groq_model: str = "meta-llama/llama-4-scout-17b-16e-instruct"
 
     # OpenCode (opencode.ai) Go-plan gateway, OpenAI-compatible
     opencode_api_key: str | None = None
@@ -98,8 +99,16 @@ class Settings(BaseSettings):
     aws_profile: str | None = None
     bedrock_model_id: str | None = None
 
+    vertex_project_id: str | None = None
+    vertex_location: str = "us-central1"
+    vertex_llm_model: str = "gemini-2.5-flash"
+    vertex_embedding_model: str = "text-multilingual-embedding-002"
+    vertex_rerank_model: str = "semantic-ranker-512@latest"
+
     # Provider failover order; missing-credential providers are skipped
-    llm_provider_order: str = "bedrock,gemini,groq"
+    llm_provider_order: str = "vertex,bedrock,gemini"
+    embedding_provider_order: str = "vertex,openrouter,nvidia"
+    rerank_provider_order: str = "vertex,openrouter,nvidia"
     llm_optimizer_enabled: bool = False
     llm_optimizer_enabled_flows: str = ""
     llm_optimizer_prompt_version: str = "v1"
@@ -129,8 +138,8 @@ class Settings(BaseSettings):
 
     nvidia_api_key: str | None = None
     nvidia_base_url: str = "https://integrate.api.nvidia.com/v1"
-    embedding_model: str = "nvidia/nv-embedqa-e5-v5"
-    embedding_dim: int = 1536
+    embedding_model: str = "text-multilingual-embedding-002"
+    embedding_dim: int = 768
     rerank_model: str = "nvidia/llama-nemotron-rerank-vl-1b-v2"
     rerank_enabled: bool = True
     # Reranking lives on a different host/path than embeddings:
@@ -189,7 +198,6 @@ class Settings(BaseSettings):
         "azure_openai_endpoint",
         "azure_openai_deployment",
         "gemini_api_key",
-        "groq_api_key",
         "opencode_api_key",
         "openrouter_api_key",
         "bedrock_api_key",
@@ -198,6 +206,7 @@ class Settings(BaseSettings):
         "bedrock_model_id",
         "nvidia_api_key",
         "resend_api_key",
+        "vertex_project_id",
         mode="before",
     )
     @classmethod
@@ -265,3 +274,6 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
+
+
+settings = get_settings()

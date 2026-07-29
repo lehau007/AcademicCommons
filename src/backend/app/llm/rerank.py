@@ -5,6 +5,7 @@ from typing import Any
 import httpx
 
 from app.llm.errors import RerankProviderError
+from app.llm.vertex_auth import get_vertex_credentials_and_project
 
 
 class RerankService:
@@ -117,4 +118,64 @@ class OpenRouterRerank:
         return [idx for idx, _ in self.rank_scored(query, passages)]
 
 
-__all__ = ["OpenRouterRerank", "RerankService"]
+class VertexRerank:
+    """Google Vertex AI Discovery Engine Ranking API client with gcloud ADC auth."""
+
+    def __init__(
+        self,
+        *,
+        project_id: str | None = None,
+        location: str = "global",
+        model: str = "semantic-ranker-512@latest",
+        timeout: float = 30.0,
+        client: Any | None = None,
+    ) -> None:
+        self.project_id = project_id
+        self.location = location
+        self.model = model
+        self.timeout = timeout
+        self._client = client
+
+    def rank_scored(self, query: str, passages: list[str]) -> list[tuple[int, float]]:
+        if not passages:
+            return []
+        creds, resolved_project = get_vertex_credentials_and_project()
+        project = self.project_id or resolved_project or "default"
+
+        if creds and hasattr(creds, "token") and not creds.token:
+            try:
+                import google.auth.transport.requests
+
+                creds.refresh(google.auth.transport.requests.Request())
+            except Exception:
+                pass
+
+        token = getattr(creds, "token", "") or ""
+        url = f"https://discoveryengine.googleapis.com/v1alpha/projects/{project}/locations/{self.location}/rankingConfigurations/default_ranking_config:rank"
+
+        records = [{"id": str(i), "content": p} for i, p in enumerate(passages)]
+        payload = {"model": self.model, "query": query, "records": records, "topN": len(passages)}
+        headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+
+        try:
+            if self._client is not None:
+                resp = self._client.post(url, json=payload, headers=headers)
+            else:
+                resp = httpx.post(url, json=payload, headers=headers, timeout=self.timeout)
+            resp.raise_for_status()
+            data = resp.json()
+            records_resp = data.get("records", [])
+            results = []
+            for item in records_resp:
+                idx = int(item["id"])
+                score = float(item.get("score", 0.0))
+                results.append((idx, score))
+            return sorted(results, key=lambda x: x[1], reverse=True)
+        except Exception as exc:
+            raise RerankProviderError(f"Vertex AI ranking failed: {exc}") from exc
+
+    def rank(self, query: str, passages: list[str]) -> list[int]:
+        return [idx for idx, _ in self.rank_scored(query, passages)]
+
+
+__all__ = ["OpenRouterRerank", "RerankService", "VertexRerank"]

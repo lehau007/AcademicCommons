@@ -18,8 +18,8 @@ depends_on = None
 
 
 def upgrade() -> None:
-    op.add_column("mock_test_items", sa.Column("test_run_id", sa.dialects.postgresql.UUID(as_uuid=True), nullable=True))
-    op.create_index("idx_mock_test_run", "mock_test_items", ["test_run_id"])
+    op.execute("ALTER TABLE mock_test_items ADD COLUMN IF NOT EXISTS test_run_id UUID;")
+    op.execute("CREATE INDEX IF NOT EXISTS idx_mock_test_run ON mock_test_items (test_run_id);")
 
 
 def downgrade() -> None:

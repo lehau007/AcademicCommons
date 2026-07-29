@@ -8,7 +8,6 @@ from app.llm import (
     BedrockProvider,
     DeterministicEmbeddingService,
     GeminiProvider,
-    GroqProvider,
     LLMProvider,
     LLMRouter,
     LLMUnavailable,
@@ -219,19 +218,6 @@ async def test_gemini_provider_uses_generate_content_shape() -> None:
 
 
 @pytest.mark.asyncio
-async def test_groq_provider_uses_openai_shape() -> None:
-    client = FakeOpenAIClient()
-    provider = GroqProvider(api_key="secret", model="groq-test", client=client)
-    result = await provider.chat([{"role": "user", "content": "hello"}], schema={"type": "object"})
-
-    captured = client.chat.completions.captured
-    assert captured["model"] == "groq-test"
-    assert captured["messages"] == [{"role": "user", "content": "hello"}]
-    assert captured["response_format"] == {"type": "json_object"}
-    assert result.content == "{\"ok\": true}"
-
-
-@pytest.mark.asyncio
 async def test_opencode_provider_uses_openai_shape() -> None:
     client = FakeOpenAIClient()
     provider = OpenCodeProvider(api_key="secret", model="minimax-m3", client=client)
@@ -360,30 +346,28 @@ def test_build_llm_router_respects_configured_order() -> None:
         azure_openai_endpoint="https://example.services.ai.azure.com",
         azure_openai_deployment="gpt-test",
         gemini_api_key="gemini-key",
-        groq_api_key="groq-key",
         bedrock_model_id="amazon.nova-lite-v1:0",
-        llm_provider_order="bedrock,groq,gemini,azure",
+        llm_provider_order="bedrock,gemini,azure",
     )
 
     router = build_llm_router(settings)
 
-    assert [p.provider_name for p in router.providers] == ["bedrock", "groq", "gemini", "azure"]
+    assert [p.provider_name for p in router.providers] == ["bedrock", "gemini", "azure"]
 
 
-def test_build_llm_router_defaults_to_bedrock_then_gemini_then_groq() -> None:
+def test_build_llm_router_defaults_to_vertex_then_bedrock_then_gemini() -> None:
     settings = Settings(
         _env_file=None,
         azure_ai_api_key="azure-key",
         azure_openai_endpoint="https://example.services.ai.azure.com",
         azure_openai_deployment="gpt-test",
         gemini_api_key="gemini-key",
-        groq_api_key="groq-key",
         bedrock_model_id="amazon.nova-lite-v1:0",
     )
 
     router = build_llm_router(settings)
 
-    assert [p.provider_name for p in router.providers] == ["bedrock", "gemini", "groq"]
+    assert [p.provider_name for p in router.providers] == ["vertex", "bedrock", "gemini"]
 
 
 def test_build_llm_router_includes_opencode_when_configured() -> None:
@@ -416,7 +400,7 @@ def test_build_llm_router_skips_providers_without_credentials() -> None:
     settings = Settings(
         _env_file=None,
         gemini_api_key="gemini-key",
-        llm_provider_order="bedrock,azure,gemini,groq",
+        llm_provider_order="bedrock,azure,gemini",
     )
 
     router = build_llm_router(settings)

@@ -13,6 +13,9 @@ from google import genai
 from google.genai import types as genai_types
 from openai import AsyncOpenAI
 
+from app.llm.vertex_auth import get_vertex_credentials_and_project
+
+
 ChatMessage = dict[str, str]
 
 
@@ -136,47 +139,6 @@ class AzureOpenAIProvider(LLMProvider):
         except Exception as exc:
             raise RuntimeError(f"Azure OpenAI client failed: {exc}") from exc
         return _openai_result(response, "azure", self.model, started)
-
-
-class GroqProvider(LLMProvider):
-    provider_name = "groq"
-
-    def __init__(
-        self,
-        *,
-        api_key: str,
-        model: str = "meta-llama/llama-4-scout-17b-16e-instruct",
-        timeout: float = 30.0,
-        client: OpenAICompatibleClient | None = None,
-    ) -> None:
-        self.api_key = api_key
-        self.model = model
-        self.timeout = timeout
-        self.client = client or AsyncOpenAI(
-            base_url="https://api.groq.com/openai/v1",
-            api_key=api_key,
-            timeout=timeout,
-        )
-
-    async def chat(
-        self,
-        messages: list[ChatMessage],
-        *,
-        schema: dict[str, Any] | None = None,
-        max_tokens: int | None = None,
-    ) -> ProviderResult:
-        started = time.perf_counter()
-        request: dict[str, Any] = {"model": self.model, "messages": messages}
-        if max_tokens is not None:
-            request["max_tokens"] = max_tokens
-        if schema is not None:
-            request["response_format"] = {"type": "json_object"}
-
-        try:
-            response = await self.client.chat.completions.create(**request)
-        except Exception as exc:
-            raise RuntimeError(f"Groq client failed: {exc}") from exc
-        return _openai_result(response, "groq", self.model, started)
 
 
 class OpenCodeProvider(LLMProvider):
@@ -387,6 +349,119 @@ class GeminiProvider(LLMProvider):
             provider="gemini",
             model=self.model,
         )
+
+
+class VertexGeminiProvider(LLMProvider):
+    provider_name = "vertex"
+
+    def __init__(
+        self,
+        *,
+        project_id: str | None = None,
+        location: str = "us-central1",
+        model: str = "gemini-2.5-flash",
+        timeout: float = 30.0,
+        credentials: Any | None = None,
+        client: Any | None = None,
+    ) -> None:
+        self.project_id = project_id
+        self.location = location
+        self.model = model
+        self.timeout = timeout
+        if client is not None:
+            self.client = client
+        else:
+            creds, resolved_project = get_vertex_credentials_and_project()
+            self.client = genai.Client(
+                vertexai=True,
+                project=project_id or resolved_project,
+                location=location,
+                credentials=credentials or creds,
+                http_options=genai_types.HttpOptions(timeout=int(timeout * 1000)),
+            )
+
+    async def chat(
+        self,
+        messages: list[ChatMessage],
+        *,
+        schema: dict[str, Any] | None = None,
+        max_tokens: int | None = None,
+    ) -> ProviderResult:
+        started = time.perf_counter()
+        config: dict[str, Any] = {}
+        config["max_output_tokens"] = max_tokens if max_tokens is not None else 16384
+        if schema is not None:
+            config["response_mime_type"] = "application/json"
+            config["response_schema"] = schema
+
+        try:
+            response = await asyncio.to_thread(
+                self.client.models.generate_content,
+                model=self.model,
+                contents=_messages_to_text(messages),
+                config=genai_types.GenerateContentConfig(**config),
+            )
+        except Exception as exc:
+            raise RuntimeError(f"Vertex Gemini client failed: {exc}") from exc
+
+        usage = getattr(response, "usage_metadata", None)
+        return ProviderResult(
+            content=str(getattr(response, "text", "") or ""),
+            tokens_in=int(getattr(usage, "prompt_token_count", 0) or 0),
+            tokens_out=int(getattr(usage, "candidates_token_count", 0) or 0),
+            latency_ms=_elapsed_ms(started),
+            cost_usd=0.0,
+            provider="vertex",
+            model=self.model,
+        )
+
+    async def stream(
+        self,
+        messages: list[ChatMessage],
+        *,
+        schema: dict[str, Any] | None = None,
+        max_tokens: int | None = None,
+    ) -> AsyncIterator[StreamChunk]:
+        if schema is not None:
+            async for chunk in super().stream(messages, schema=schema, max_tokens=max_tokens):
+                yield chunk
+            return
+
+        started = time.perf_counter()
+        config: dict[str, Any] = {}
+        config["max_output_tokens"] = max_tokens if max_tokens is not None else 16384
+
+        try:
+            response_stream = await asyncio.to_thread(
+                self.client.models.generate_content_stream,
+                model=self.model,
+                contents=_messages_to_text(messages),
+                config=genai_types.GenerateContentConfig(**config),
+            )
+        except Exception as exc:
+            raise RuntimeError(f"Vertex Gemini stream failed: {exc}") from exc
+
+        parts: list[str] = []
+        usage: Any = None
+        for chunk in response_stream:
+            text = getattr(chunk, "text", "") or ""
+            if text:
+                parts.append(text)
+                yield StreamChunk(text=text)
+            if getattr(chunk, "usage_metadata", None):
+                usage = chunk.usage_metadata
+
+        result = ProviderResult(
+            content="".join(parts),
+            tokens_in=int(getattr(usage, "prompt_token_count", 0) or 0),
+            tokens_out=int(getattr(usage, "candidates_token_count", 0) or 0),
+            latency_ms=_elapsed_ms(started),
+            cost_usd=0.0,
+            provider="vertex",
+            model=self.model,
+        )
+        yield StreamChunk(done=True, result=result)
+
 
 
 class BedrockProvider(LLMProvider):

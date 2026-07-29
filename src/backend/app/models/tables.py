@@ -286,7 +286,7 @@ class DocumentSummary(Base):
     ocr_quality: Mapped[OcrQuality | None] = mapped_column(pg_enum(OcrQuality, "ocr_quality_enum"))
     section_summaries: Mapped[list[dict[str, Any]]] = mapped_column(JSONB, server_default=text("'[]'::jsonb"))
     overall_summary: Mapped[str | None] = mapped_column(Text)
-    summary_embedding: Mapped[list[float] | None] = mapped_column(Vector(1024))
+    summary_embedding: Mapped[list[float] | None] = mapped_column(Vector(768))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=timestamp_now)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=timestamp_now)
 
@@ -320,7 +320,7 @@ class DocumentChunk(Base):
     page_number: Mapped[int | None] = mapped_column(Integer)
     chunk_order: Mapped[int] = mapped_column(Integer, nullable=False)
     content: Mapped[str] = mapped_column(Text, nullable=False)
-    embedding: Mapped[list[float] | None] = mapped_column(Vector(1024))
+    embedding: Mapped[list[float] | None] = mapped_column(Vector(768))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=timestamp_now)
 
     document: Mapped[Document] = relationship(back_populates="chunks")

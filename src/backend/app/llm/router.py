@@ -15,14 +15,15 @@ from app.llm.providers import (
     BedrockProvider,
     ChatMessage,
     GeminiProvider,
-    GroqProvider,
     LLMProvider,
     LLMUnavailable,
     OpenCodeProvider,
     OpenRouterProvider,
     ProviderResult,
     StreamChunk,
+    VertexGeminiProvider,
 )
+
 
 logger = logging.getLogger(__name__)
 
@@ -117,7 +118,13 @@ class LLMRouter:
 def build_llm_router(settings: Settings) -> LLMRouter:
     available: dict[str, Callable[[], LLMProvider]] = {}
     optimizer_bindings: dict[str, OptimizerProviderBinding] = {}
+    available["vertex"] = lambda: VertexGeminiProvider(
+        model=settings.vertex_llm_model,
+        location=settings.vertex_location,
+        project_id=settings.vertex_project_id,
+    )
     if settings.azure_ai_api_key and settings.azure_openai_endpoint and settings.azure_openai_deployment:
+
         azure_api_key = settings.azure_ai_api_key
         azure_endpoint = settings.azure_openai_endpoint
         azure_deployment = settings.azure_openai_deployment
@@ -147,18 +154,6 @@ def build_llm_router(settings: Settings) -> LLMRouter:
             model_version=settings.llm_optimizer_model_version,
             build_client=lambda sdk: sdk.GoogleClient(
                 api_key=gemini_api_key,
-                prefix_cache_enabled=settings.llm_optimizer_prefix_cache_enabled,
-            ),
-        )
-    if settings.groq_api_key:
-        groq_api_key = settings.groq_api_key
-        available["groq"] = lambda: GroqProvider(api_key=groq_api_key, model=settings.groq_model)
-        optimizer_bindings["groq"] = OptimizerProviderBinding(
-            provider_name="groq",
-            model_id=settings.groq_model,
-            model_version=settings.llm_optimizer_model_version,
-            build_client=lambda sdk: sdk.GroqClient(
-                api_key=groq_api_key,
                 prefix_cache_enabled=settings.llm_optimizer_prefix_cache_enabled,
             ),
         )
