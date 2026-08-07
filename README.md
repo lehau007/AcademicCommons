@@ -2,6 +2,10 @@
 
 A course-centric academic knowledge platform for SoICT students. Upload learning materials → AI + human review pipeline → use approved documents through Virtual Tutor (RAG), Mindmap, and Mock Test features.
 
+## Demo
+
+<video src="figures/ui/demo.mov" width="100%" controls></video>
+
 ## Graduation Thesis
 - **Author**: Lê Văn Hậu
 - **Institution**: SoICT, Hanoi University of Science and Technology
