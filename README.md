@@ -4,7 +4,7 @@ A course-centric academic knowledge platform for SoICT students. Upload learning
 
 ## Demo
 
-<video src="figures/ui/demo.mov" width="100%" controls></video>
+![UI Demo](figures/ui/demo.gif)
 
 ## Graduation Thesis
 - **Author**: Lê Văn Hậu
