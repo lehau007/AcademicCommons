@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 
 from app.llm.errors import RerankProviderError
-from app.llm.rerank import OpenRouterRerank
+from app.llm.rerank import OpenRouterRerank, RerankService
 
 
 class _FakeResponse:
@@ -81,3 +81,77 @@ def test_rank_malformed_response_wrapped() -> None:
     client = _FakeHttpClient({"unexpected": True})
     with pytest.raises(RerankProviderError):
         OpenRouterRerank(api_key="k", client=client).rank("q", ["p0"])
+
+
+def test_rank_scored_logs_metadata_only(caplog) -> None:
+    payload = {"results": [{"index": 1, "relevance_score": 0.8}, {"index": 0, "relevance_score": 0.3}]}
+    service = OpenRouterRerank(api_key="test-key", client=_FakeHttpClient(payload))
+
+    with caplog.at_level("INFO", logger="app.llm.rerank"):
+        scored = service.rank_scored("DO_NOT_LOG_QUERY", ["DO_NOT_LOG_P0", "DO_NOT_LOG_P1"])
+
+    assert scored == [(1, 0.8), (0, 0.3)]
+    combined = "\n".join(caplog.messages)
+    assert "event=rerank_call_start" in combined
+    assert "event=rerank_call_success" in combined
+    assert "provider=openrouter" in combined
+    assert "model=cohere/rerank-v3.5" in combined
+    assert "item_count=2" in combined
+    assert "latency_ms=" in combined
+    assert "DO_NOT_LOG_QUERY" not in combined
+    assert "DO_NOT_LOG_P0" not in combined
+
+
+def test_rank_http_error_logs_metadata_only(caplog) -> None:
+    client = _FakeHttpClient({}, status=500)
+
+    with pytest.raises(RerankProviderError):
+        with caplog.at_level("INFO", logger="app.llm.rerank"):
+            OpenRouterRerank(api_key="k", client=client).rank("DO_NOT_LOG_QUERY", ["DO_NOT_LOG_P0"])
+
+    combined = "\n".join(caplog.messages)
+    assert "event=rerank_call_start" in combined
+    assert "event=rerank_call_error" in combined
+    assert "provider=openrouter" in combined
+    assert "exception_type=RuntimeError" in combined
+    assert "latency_ms=" in combined
+    assert "DO_NOT_LOG_QUERY" not in combined
+    assert "DO_NOT_LOG_P0" not in combined
+
+
+def test_nvidia_rank_logs_metadata_only(caplog) -> None:
+    payload = {"rankings": [{"index": 2}, {"index": 0}, {"index": 1}]}
+    client = _FakeHttpClient(payload)
+    service = RerankService(api_key="test-key", client=client)
+
+    with caplog.at_level("INFO", logger="app.llm.rerank"):
+        order = service.rank("DO_NOT_LOG_QUERY", ["DO_NOT_LOG_P0", "DO_NOT_LOG_P1", "DO_NOT_LOG_P2"])
+
+    assert order == [2, 0, 1]
+    combined = "\n".join(caplog.messages)
+    assert "event=rerank_call_start" in combined
+    assert "event=rerank_call_success" in combined
+    assert "provider=nvidia" in combined
+    assert "model=nvidia/llama-nemotron-rerank-vl-1b-v2" in combined
+    assert "item_count=3" in combined
+    assert "latency_ms=" in combined
+    assert "DO_NOT_LOG_QUERY" not in combined
+    assert "DO_NOT_LOG_P0" not in combined
+
+
+def test_nvidia_rank_http_error_logs_and_preserves_exception(caplog) -> None:
+    client = _FakeHttpClient({}, status=500)
+    service = RerankService(api_key="test-key", client=client)
+
+    with pytest.raises(RuntimeError, match="HTTP 500"):
+        with caplog.at_level("INFO", logger="app.llm.rerank"):
+            service.rank("DO_NOT_LOG_QUERY", ["DO_NOT_LOG_PASSAGE"])
+
+    combined = "\n".join(caplog.messages)
+    assert "event=rerank_call_start" in combined
+    assert "event=rerank_call_error" in combined
+    assert "provider=nvidia" in combined
+    assert "exception_type=RuntimeError" in combined
+    assert "latency_ms=" in combined
+    assert "DO_NOT_LOG_QUERY" not in combined
+    assert "DO_NOT_LOG_PASSAGE" not in combined

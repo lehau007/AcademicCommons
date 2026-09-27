@@ -14,6 +14,7 @@ from app.db.session import get_session
 from app.models import Document, DocumentStateLog, EvaluationReport, User
 from app.models.enums import ContributionType, DocumentStatus, MaterialType
 from app.schemas.documents import (
+    AssetUrlsResponse,
     DocumentDeleteRequest,
     DocumentRead,
     DocumentUploadResponse,
@@ -21,6 +22,8 @@ from app.schemas.documents import (
 )
 from app.services.document_service import (
     can_view_document,
+    get_asset_signed_url,
+    get_asset_signed_urls,
     get_evaluation_report,
     get_markdown_content,
     get_signed_url,
@@ -341,6 +344,44 @@ async def get_document_raw_url(
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Invalid document ID") from None
 
     url = await get_signed_url(session, storage, doc_uuid, user)
+    return SignedUrlResponse(url=url, expires_in_seconds=900)
+
+
+@router.get("/{document_id}/assets/urls", response_model=AssetUrlsResponse)
+async def get_document_asset_urls(
+    document_id: str,
+    session: SessionDep,
+    storage: StorageDep,
+    user: CurrentUserDep,
+    names: Annotated[str, Query(description="Comma-separated asset names, at most 200")],
+) -> AssetUrlsResponse:
+    """Signed URLs for many figure assets of one document in one request (one permission check)."""
+    from uuid import UUID
+    try:
+        doc_uuid = UUID(document_id)
+    except ValueError:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Invalid document ID") from None
+
+    asset_names = [name.strip() for name in names.split(",") if name.strip()]
+    urls = await get_asset_signed_urls(session, storage, doc_uuid, asset_names, user)
+    return AssetUrlsResponse(urls=urls, expires_in_seconds=900)
+
+
+@router.get("/{document_id}/assets/{asset_name}/url", response_model=SignedUrlResponse)
+async def get_document_asset_url(
+    document_id: str,
+    asset_name: str,
+    session: SessionDep,
+    storage: StorageDep,
+    user: CurrentUserDep,
+) -> SignedUrlResponse:
+    from uuid import UUID
+    try:
+        doc_uuid = UUID(document_id)
+    except ValueError:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Invalid document ID") from None
+
+    url = await get_asset_signed_url(session, storage, doc_uuid, asset_name, user)
     return SignedUrlResponse(url=url, expires_in_seconds=900)
 
 

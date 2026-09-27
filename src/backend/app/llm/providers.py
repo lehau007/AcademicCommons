@@ -363,11 +363,13 @@ class VertexGeminiProvider(LLMProvider):
         timeout: float = 30.0,
         credentials: Any | None = None,
         client: Any | None = None,
+        thinking_level: str | None = None,
     ) -> None:
         self.project_id = project_id
         self.location = location
         self.model = model
         self.timeout = timeout
+        self.thinking_level = thinking_level
         if client is not None:
             self.client = client
         else:
@@ -380,6 +382,21 @@ class VertexGeminiProvider(LLMProvider):
                 http_options=genai_types.HttpOptions(timeout=int(timeout * 1000)),
             )
 
+    def _generation_config(self, max_tokens: int | None, schema: dict[str, Any] | None = None) -> Any:
+        config: dict[str, Any] = {"max_output_tokens": max_tokens if max_tokens is not None else 16384}
+        if schema is not None:
+            config["response_mime_type"] = "application/json"
+            config["response_schema"] = schema
+        if self.thinking_level:
+            config["thinking_config"] = genai_types.ThinkingConfig(thinking_level=self.thinking_level)
+        return genai_types.GenerateContentConfig(**config)
+
+    @staticmethod
+    def _tokens_out(usage: Any) -> int:
+        return int(getattr(usage, "candidates_token_count", 0) or 0) + int(
+            getattr(usage, "thoughts_token_count", 0) or 0
+        )
+
     async def chat(
         self,
         messages: list[ChatMessage],
@@ -388,18 +405,13 @@ class VertexGeminiProvider(LLMProvider):
         max_tokens: int | None = None,
     ) -> ProviderResult:
         started = time.perf_counter()
-        config: dict[str, Any] = {}
-        config["max_output_tokens"] = max_tokens if max_tokens is not None else 16384
-        if schema is not None:
-            config["response_mime_type"] = "application/json"
-            config["response_schema"] = schema
 
         try:
             response = await asyncio.to_thread(
                 self.client.models.generate_content,
                 model=self.model,
                 contents=_messages_to_text(messages),
-                config=genai_types.GenerateContentConfig(**config),
+                config=self._generation_config(max_tokens, schema),
             )
         except Exception as exc:
             raise RuntimeError(f"Vertex Gemini client failed: {exc}") from exc
@@ -408,7 +420,7 @@ class VertexGeminiProvider(LLMProvider):
         return ProviderResult(
             content=str(getattr(response, "text", "") or ""),
             tokens_in=int(getattr(usage, "prompt_token_count", 0) or 0),
-            tokens_out=int(getattr(usage, "candidates_token_count", 0) or 0),
+            tokens_out=self._tokens_out(usage),
             latency_ms=_elapsed_ms(started),
             cost_usd=0.0,
             provider="vertex",
@@ -428,15 +440,13 @@ class VertexGeminiProvider(LLMProvider):
             return
 
         started = time.perf_counter()
-        config: dict[str, Any] = {}
-        config["max_output_tokens"] = max_tokens if max_tokens is not None else 16384
 
         try:
             response_stream = await asyncio.to_thread(
                 self.client.models.generate_content_stream,
                 model=self.model,
                 contents=_messages_to_text(messages),
-                config=genai_types.GenerateContentConfig(**config),
+                config=self._generation_config(max_tokens),
             )
         except Exception as exc:
             raise RuntimeError(f"Vertex Gemini stream failed: {exc}") from exc
@@ -454,7 +464,7 @@ class VertexGeminiProvider(LLMProvider):
         result = ProviderResult(
             content="".join(parts),
             tokens_in=int(getattr(usage, "prompt_token_count", 0) or 0),
-            tokens_out=int(getattr(usage, "candidates_token_count", 0) or 0),
+            tokens_out=self._tokens_out(usage),
             latency_ms=_elapsed_ms(started),
             cost_usd=0.0,
             provider="vertex",

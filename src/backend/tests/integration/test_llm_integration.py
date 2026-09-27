@@ -6,7 +6,7 @@ from app.config import Settings
 from app.llm import (
     BedrockProvider,
     GeminiProvider,
-    GroqProvider,
+    OpenRouterProvider,
     ProviderResult,
 )
 from app.llm.router import build_llm_router
@@ -15,11 +15,11 @@ from app.llm.router import build_llm_router
 settings = Settings()
 has_bedrock = bool(settings.bedrock_model_id)
 has_gemini = bool(settings.gemini_api_key)
-has_groq = bool(settings.groq_api_key)
+has_openrouter = bool(settings.openrouter_api_key)
 
 pytestmark = pytest.mark.skipif(
-    not (has_bedrock and has_gemini and has_groq),
-    reason="Missing credentials/configurations for Bedrock, Gemini, or Groq integration tests.",
+    not (has_bedrock and has_gemini and has_openrouter),
+    reason="Missing credentials/configurations for Bedrock, Gemini, or OpenRouter integration tests.",
 )
 
 
@@ -65,11 +65,11 @@ async def test_direct_provider_chat_gemini() -> None:
 
 
 @pytest.mark.asyncio
-async def test_direct_provider_chat_groq() -> None:
+async def test_direct_provider_chat_openrouter() -> None:
     settings = Settings()
-    provider = GroqProvider(
-        api_key=settings.groq_api_key,
-        model=settings.groq_model,
+    provider = OpenRouterProvider(
+        api_key=settings.openrouter_api_key,
+        model=settings.openrouter_model,
     )
     result = await provider.chat(
         [
@@ -80,14 +80,14 @@ async def test_direct_provider_chat_groq() -> None:
     )
     assert isinstance(result, ProviderResult)
     assert result.content.strip() != ""
-    assert result.provider == "groq"
+    assert result.provider == "openrouter"
 
 
 @pytest.mark.asyncio
 async def test_llm_router_chat_optimizer_disabled() -> None:
     settings = Settings(
         llm_optimizer_enabled=False,
-        llm_provider_order="bedrock,gemini,groq",
+        llm_provider_order="bedrock,gemini,openrouter",
     )
     router = build_llm_router(settings)
     
@@ -110,7 +110,7 @@ async def test_llm_router_chat_optimizer_enabled() -> None:
     settings = Settings(
         llm_optimizer_enabled=True,
         llm_optimizer_enabled_flows="tutor",
-        llm_provider_order="bedrock,gemini,groq",
+        llm_provider_order="bedrock,gemini,openrouter",
     )
     router = build_llm_router(settings)
     
@@ -135,7 +135,7 @@ async def test_llm_router_fallback_flow_optimizer_disabled() -> None:
         llm_optimizer_enabled=False,
         # Force Bedrock to fail by setting bedrock_model_id to an invalid ID
         bedrock_model_id="amazon.nonexistent-model-v1:0",
-        llm_provider_order="bedrock,gemini,groq",
+        llm_provider_order="bedrock,gemini,openrouter",
     )
     router = build_llm_router(settings)
     
@@ -159,7 +159,7 @@ async def test_llm_router_fallback_flow_optimizer_enabled() -> None:
         llm_optimizer_enabled_flows="tutor",
         # Force Bedrock to fail by setting bedrock_model_id to an invalid ID
         bedrock_model_id="amazon.nonexistent-model-v1:0",
-        llm_provider_order="bedrock,gemini,groq",
+        llm_provider_order="bedrock,gemini,openrouter",
     )
     router = build_llm_router(settings)
     

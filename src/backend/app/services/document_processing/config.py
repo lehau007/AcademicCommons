@@ -22,7 +22,10 @@ OPENROUTER_MODEL_DEFAULT = "openai/gpt-5.4-mini"
 @dataclass(frozen=True)
 class DocumentProcessingConfig:
     enable_real_vision: bool = False
-    vision_max_workers: int = 6
+    max_concurrency: int = 16
+    global_concurrency: int = 32
+    # Default output budget when a caller does not pass one.
+    max_output_tokens: int = 8192
 
     # Vision/OCR provider chain order (mirrors settings.llm_provider_order_list).
     provider_order: tuple[str, ...] = ()
@@ -35,8 +38,11 @@ class DocumentProcessingConfig:
     gemini_model: str = "gemini-3.1-flash-lite"
 
     vertex_project_id: str | None = None
-    vertex_location: str = "us-central1"
-    vertex_llm_model: str = "gemini-2.5-flash"
+    vertex_genai_location: str = "global"
+    ocr_vision_model: str = "gemini-3.5-flash-lite"
+    ocr_vision_thinking_level: str | None = "minimal"
+    ocr_vision_fallback_model: str = "gemini-3.8-flash"
+    ocr_vision_fallback_thinking_level: str | None = "low"
 
     opencode_api_key: str | None = None
 
@@ -54,16 +60,12 @@ class DocumentProcessingConfig:
 
     input_cost_per_1m: float = 0.15
     output_cost_per_1m: float = 0.60
-    normalize_char_budget: int = 24000
-    normalize_max_workers: int = 4
-    normalization_max_output_tokens: int = 16384
-    request_timeout_seconds: float = 30.0
+    request_timeout_seconds: float = 60.0
 
     @classmethod
     def from_settings(cls, settings: Settings) -> DocumentProcessingConfig:
         return cls(
             enable_real_vision=settings.ocr_enable_real_vision,
-            vision_max_workers=settings.ocr_vision_max_workers,
             provider_order=tuple(settings.llm_provider_order_list),
             azure_endpoint=settings.azure_openai_endpoint or AZURE_ENDPOINT_DEFAULT,
             azure_deployment=settings.azure_openai_deployment or AZURE_DEPLOYMENT_DEFAULT,
@@ -71,8 +73,6 @@ class DocumentProcessingConfig:
             gemini_api_key=settings.gemini_api_key,
             gemini_model=settings.gemini_model,
             vertex_project_id=settings.vertex_project_id,
-            vertex_location=settings.vertex_location,
-            vertex_llm_model=settings.vertex_llm_model,
             opencode_api_key=settings.opencode_api_key,
 
             opencode_model=settings.opencode_model,
@@ -86,6 +86,12 @@ class DocumentProcessingConfig:
             aws_region=settings.aws_region,
             input_cost_per_1m=settings.azure_openai_input_cost_per_1m,
             output_cost_per_1m=settings.azure_openai_output_cost_per_1m,
-            normalize_char_budget=settings.document_processing_normalize_char_budget,
-            normalize_max_workers=settings.document_processing_normalize_max_workers,
+            max_concurrency=settings.document_processing_max_concurrency,
+            global_concurrency=settings.document_processing_global_concurrency,
+            request_timeout_seconds=settings.document_processing_request_timeout_seconds,
+            vertex_genai_location=settings.vertex_genai_location,
+            ocr_vision_model=settings.ocr_vision_model,
+            ocr_vision_thinking_level=settings.ocr_vision_thinking_level or None,
+            ocr_vision_fallback_model=settings.ocr_vision_fallback_model,
+            ocr_vision_fallback_thinking_level=settings.ocr_vision_fallback_thinking_level or None,
         )

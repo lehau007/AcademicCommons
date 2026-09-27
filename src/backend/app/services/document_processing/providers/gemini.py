@@ -43,6 +43,8 @@ class GeminiVisionProvider(VisionLanguageProvider):
         *,
         images: list[bytes] | None = None,
         operation: str = "text",
+        response_schema: dict[str, Any] | None = None,  # noqa: ARG002 - JSON is requested via the prompt
+        max_output_tokens: int | None = None,
     ) -> ProviderResponse:
         model_id = self._config.gemini_model
         if not HAS_GENAI:
@@ -91,7 +93,7 @@ class GeminiVisionProvider(VisionLanguageProvider):
                 model=model_id,
                 contents=contents,
                 config=types.GenerateContentConfig(
-                    max_output_tokens=self._config.normalization_max_output_tokens,
+                    max_output_tokens=max_output_tokens or self._config.max_output_tokens,
                     temperature=0.3,
                 ),
             )

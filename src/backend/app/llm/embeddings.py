@@ -2,14 +2,57 @@ from __future__ import annotations
 
 import hashlib
 import importlib
+import logging
 import math
+import time
 from abc import ABC, abstractmethod
+from collections.abc import Callable
 from typing import Any
 
 from google import genai
 
 from app.llm.errors import EmbeddingProviderError
+from app.llm.observability import log_event
 from app.llm.vertex_auth import get_vertex_credentials_and_project
+
+logger = logging.getLogger(__name__)
+
+
+def _safe_log_event(event: str, **fields: object) -> None:
+    try:
+        log_event(logger, event, **fields)
+    except Exception:
+        pass
+
+
+def _load_client_with_observability(
+    load_client: Callable[[], Any],
+    *,
+    provider: str,
+    model: str,
+    item_count: int,
+    dimension: int,
+    input_type: str,
+) -> Any:
+    started = time.perf_counter()
+    try:
+        return load_client()
+    except Exception as exc:
+        fields = {
+            "provider": provider,
+            "model": model,
+            "item_count": item_count,
+            "dimension": dimension,
+            "input_type": input_type,
+        }
+        _safe_log_event("embedding_call_start", **fields)
+        _safe_log_event(
+            "embedding_call_error",
+            **fields,
+            latency_ms=round((time.perf_counter() - started) * 1000),
+            exception_type=type(exc).__name__,
+        )
+        raise
 
 
 class EmbeddingService(ABC):
@@ -92,16 +135,55 @@ class NvidiaEmbedding(EmbeddingService):
     def encode(self, texts: list[str], input_type: str = "passage") -> list[list[float]]:
         if not texts:
             return []
-        client = self._load_client()
+        client = _load_client_with_observability(
+            self._load_client,
+            provider="nvidia",
+            model=self.model,
+            item_count=len(texts),
+            dimension=self.dimension,
+            input_type=input_type,
+        )
         vectors: list[list[float]] = []
         for start in range(0, len(texts), self.batch_size):
             batch = texts[start : start + self.batch_size]
-            response = client.embeddings.create(
+            started = time.perf_counter()
+            _safe_log_event(
+                "embedding_call_start",
+                provider="nvidia",
                 model=self.model,
-                input=batch,
-                extra_body={"input_type": input_type, "truncate": "END"},
+                item_count=len(batch),
+                dimension=self.dimension,
+                input_type=input_type,
             )
-            vectors.extend([list(map(float, item.embedding)) for item in response.data])
+            try:
+                response = client.embeddings.create(
+                    model=self.model,
+                    input=batch,
+                    extra_body={"input_type": input_type, "truncate": "END"},
+                )
+                batch_vectors = [list(map(float, item.embedding)) for item in response.data]
+            except Exception as exc:
+                _safe_log_event(
+                    "embedding_call_error",
+                    provider="nvidia",
+                    model=self.model,
+                    item_count=len(batch),
+                    dimension=self.dimension,
+                    input_type=input_type,
+                    latency_ms=round((time.perf_counter() - started) * 1000),
+                    exception_type=type(exc).__name__,
+                )
+                raise
+            _safe_log_event(
+                "embedding_call_success",
+                provider="nvidia",
+                model=self.model,
+                item_count=len(batch),
+                dimension=self.dimension,
+                input_type=input_type,
+                latency_ms=round((time.perf_counter() - started) * 1000),
+            )
+            vectors.extend(batch_vectors)
         return vectors
 
 
@@ -140,24 +222,72 @@ class OpenRouterEmbedding(EmbeddingService):
         return self._client
 
     def encode(self, texts: list[str], input_type: str = "passage") -> list[list[float]]:
-        del input_type
         if not texts:
             return []
-        client = self._load_client()
+        client = _load_client_with_observability(
+            self._load_client,
+            provider="openrouter",
+            model=self.model,
+            item_count=len(texts),
+            dimension=self.dimension,
+            input_type=input_type,
+        )
         vectors: list[list[float]] = []
         for start in range(0, len(texts), self.batch_size):
             batch = texts[start : start + self.batch_size]
+            started = time.perf_counter()
+            _safe_log_event(
+                "embedding_call_start",
+                provider="openrouter",
+                model=self.model,
+                item_count=len(batch),
+                dimension=self.dimension,
+                input_type=input_type,
+            )
             try:
                 response = client.embeddings.create(model=self.model, input=batch)
+                batch_vectors: list[list[float]] = []
+                for item in response.data:
+                    vector = [float(v) for v in item.embedding]
+                    if len(vector) != self.dimension:
+                        raise EmbeddingProviderError(
+                            f"Embedding trả về {len(vector)} chiều, cần {self.dimension} chiều."
+                        )
+                    batch_vectors.append(vector)
+            except EmbeddingProviderError as exc:
+                _safe_log_event(
+                    "embedding_call_error",
+                    provider="openrouter",
+                    model=self.model,
+                    item_count=len(batch),
+                    dimension=self.dimension,
+                    input_type=input_type,
+                    latency_ms=round((time.perf_counter() - started) * 1000),
+                    exception_type=type(exc).__name__,
+                )
+                raise
             except Exception as exc:
+                _safe_log_event(
+                    "embedding_call_error",
+                    provider="openrouter",
+                    model=self.model,
+                    item_count=len(batch),
+                    dimension=self.dimension,
+                    input_type=input_type,
+                    latency_ms=round((time.perf_counter() - started) * 1000),
+                    exception_type=type(exc).__name__,
+                )
                 raise EmbeddingProviderError() from exc
-            for item in response.data:
-                vector = [float(v) for v in item.embedding]
-                if len(vector) != self.dimension:
-                    raise EmbeddingProviderError(
-                        f"Embedding trả về {len(vector)} chiều, cần {self.dimension} chiều."
-                    )
-                vectors.append(vector)
+            _safe_log_event(
+                "embedding_call_success",
+                provider="openrouter",
+                model=self.model,
+                item_count=len(batch),
+                dimension=self.dimension,
+                input_type=input_type,
+                latency_ms=round((time.perf_counter() - started) * 1000),
+            )
+            vectors.extend(batch_vectors)
         return vectors
 
 
@@ -171,7 +301,7 @@ class VertexEmbedding(EmbeddingService):
         location: str = "us-central1",
         model: str = "text-embedding-004",
         dimension: int = 768,
-        batch_size: int = 50,
+        batch_size: int = 10,
         client: Any | None = None,
     ) -> None:
         self.project_id = project_id
@@ -193,22 +323,56 @@ class VertexEmbedding(EmbeddingService):
         return self._client
 
     def encode(self, texts: list[str], input_type: str = "passage") -> list[list[float]]:
-        del input_type
         if not texts:
             return []
-        client = self._load_client()
+        client = _load_client_with_observability(
+            self._load_client,
+            provider="vertex",
+            model=self.model,
+            item_count=len(texts),
+            dimension=self.dimension,
+            input_type=input_type,
+        )
         vectors: list[list[float]] = []
         for start in range(0, len(texts), self.batch_size):
             batch = texts[start : start + self.batch_size]
+            started = time.perf_counter()
+            _safe_log_event(
+                "embedding_call_start",
+                provider="vertex",
+                model=self.model,
+                item_count=len(batch),
+                dimension=self.dimension,
+                input_type=input_type,
+            )
             try:
                 response = client.models.embed_content(
                     model=self.model,
                     contents=batch,
                 )
-                for item in response.embeddings:
-                    vectors.append([float(v) for v in item.values])
+                batch_vectors = [[float(v) for v in item.values] for item in response.embeddings]
             except Exception as exc:
+                _safe_log_event(
+                    "embedding_call_error",
+                    provider="vertex",
+                    model=self.model,
+                    item_count=len(batch),
+                    dimension=self.dimension,
+                    input_type=input_type,
+                    latency_ms=round((time.perf_counter() - started) * 1000),
+                    exception_type=type(exc).__name__,
+                )
                 raise EmbeddingProviderError(f"Vertex AI embedding failed: {exc}") from exc
+            _safe_log_event(
+                "embedding_call_success",
+                provider="vertex",
+                model=self.model,
+                item_count=len(batch),
+                dimension=self.dimension,
+                input_type=input_type,
+                latency_ms=round((time.perf_counter() - started) * 1000),
+            )
+            vectors.extend(batch_vectors)
         return vectors
 
 

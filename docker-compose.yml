@@ -95,6 +95,7 @@ services:
       - "8000:8000"
     volumes:
       - ~/.aws:/root/.aws:ro
+      - ~/.config/gcloud:/root/.config/gcloud:ro
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=5).read()"]
       interval: 5s
@@ -131,6 +132,7 @@ services:
         condition: service_healthy
     volumes:
       - ~/.aws:/root/.aws:ro
+      - ~/.config/gcloud:/root/.config/gcloud:ro
     healthcheck:
       test: ["CMD", "python", "-c", "import os; from redis import Redis; assert Redis.from_url(os.environ['REDIS_URL']).ping()"]
       interval: 10s
@@ -154,6 +156,7 @@ services:
         condition: service_healthy
     volumes:
       - ~/.aws:/root/.aws:ro
+      - ~/.config/gcloud:/root/.config/gcloud:ro
     healthcheck:
       test: ["CMD", "python", "-c", "import os; from redis import Redis; assert Redis.from_url(os.environ['REDIS_URL']).ping()"]
       interval: 10s
@@ -177,6 +180,7 @@ services:
         condition: service_healthy
     volumes:
       - ~/.aws:/root/.aws:ro
+      - ~/.config/gcloud:/root/.config/gcloud:ro
     healthcheck:
       test: ["CMD", "python", "-c", "import os; from redis import Redis; assert Redis.from_url(os.environ['REDIS_URL']).ping()"]
       interval: 10s

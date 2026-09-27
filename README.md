@@ -2,10 +2,6 @@
 
 A course-centric academic knowledge platform for SoICT students. Upload learning materials → AI + human review pipeline → use approved documents through Virtual Tutor (RAG), Mindmap, and Mock Test features.
 
-## Demo
-
-![UI Demo](figures/ui/demo.gif)
-
 ## Graduation Thesis
 - **Author**: Lê Văn Hậu
 - **Institution**: SoICT, Hanoi University of Science and Technology
@@ -16,7 +12,7 @@ A course-centric academic knowledge platform for SoICT students. Upload learning
 - **Frontend**: React / Next.js
 - **Database**: Supabase (PostgreSQL + pgvector)
 - **Queue**: Redis + BullMQ
-- **LLM**: Moonshot Kimi K2.5
+- **LLM**: Gemini 3.5 Flash Lite
 - **OCR**: Gemini Vision / Google Cloud Vision
 
 ## Project Structure
@@ -49,6 +45,15 @@ GraduationThesis/
 │   └── pipeline_outputs/    #   Expected pipeline outputs (ground truth)
 └── 
 ```
+
+## Latest Results — Document Processing v4
+
+Live benchmark of the current ingest pipeline (text-first extraction, figures kept as image assets, no LLM normalization), run on 2026-09-27 with real Vertex Gemini calls: 10 real course files (127 pages) + 2 synthetic stress documents.
+
+- **Speed**: a 189-page slide deck in **91 s** (~0.5 s/page); a 40-page scanned PDF with full OCR in **43 s** (~1.1 s/page). The previous pipeline (v3) needed ~30 min for a 200-page document, so v4 is roughly **20× faster**. Wall time depends on Vertex latency (the same deck took 40 s in the previous run).
+- **Quality**: token recall vs. human-written ground truth is **0.82** averaged over 10 files (v3: 0.85). Without the one standalone chart image, whose ground truth is mostly a free-form description, it is **0.88** (v3: 0.86).
+- **Reliability**: 162 vision calls with 1 failure, recovered by the fallback model; 0 pages lost.
+- **Gates**: G1 (~190 pages ≤ 180 s) PASS · G2 (scanned PDF ≤ 120 s) PASS · 
 
 ## Quick Start
 

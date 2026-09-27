@@ -53,6 +53,19 @@ class LlmCallRecorder:
         total = len(records)
         successful = sum(1 for r in records if r["status"] == "success")
         latencies = [r["latency_ms"] for r in records]
+
+        by_model: dict[str, dict[str, int]] = {}
+        by_operation: dict[str, int] = {}
+        for r in records:
+            bucket = by_model.setdefault(
+                r["model"], {"calls": 0, "failed_calls": 0, "prompt_tokens": 0, "completion_tokens": 0}
+            )
+            bucket["calls"] += 1
+            bucket["failed_calls"] += 0 if r["status"] == "success" else 1
+            bucket["prompt_tokens"] += r["prompt_tokens"]
+            bucket["completion_tokens"] += r["completion_tokens"]
+            by_operation[r["operation"]] = by_operation.get(r["operation"], 0) + 1
+
         return {
             "total_calls": total,
             "successful_calls": successful,
@@ -63,4 +76,6 @@ class LlmCallRecorder:
             "total_cost_usd": round(sum(r["estimated_cost_usd"] for r in records), 8),
             "avg_latency_ms": round(sum(latencies) / max(len(latencies), 1), 1),
             "records": records,
+            "by_model": by_model,
+            "by_operation": by_operation,
         }

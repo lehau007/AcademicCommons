@@ -45,6 +45,8 @@ class BedrockVisionProvider(VisionLanguageProvider):
         *,
         images: list[bytes] | None = None,
         operation: str = "text",
+        response_schema: dict[str, Any] | None = None,  # noqa: ARG002 - JSON is requested via the prompt
+        max_output_tokens: int | None = None,
     ) -> ProviderResponse:
         model = self._config.bedrock_model_id or ""
         if not HAS_OPENAI:
@@ -116,7 +118,7 @@ class BedrockVisionProvider(VisionLanguageProvider):
                     model=model,
                     messages=messages,
                     temperature=0.3,
-                    max_tokens=4096,
+                    max_tokens=max_output_tokens or 4096,
                 )
 
                 latency_ms = int((time.time() - t0) * 1000)

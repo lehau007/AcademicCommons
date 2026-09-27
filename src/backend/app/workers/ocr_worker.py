@@ -20,11 +20,13 @@ from app.config import get_settings
 from app.core.state_machine import DocumentStateMachine
 from app.db.session import AsyncSessionLocal
 from app.models import Document, EvaluationJob, ProcessingJob
-from app.models.enums import DocumentStatus, DocumentTier, FileFormat, JobStatus, ProcessingJobType
+from app.models.enums import DocumentStatus, DocumentTier, JobStatus, ProcessingJobType
 from app.services.document_processing import build_document_processing_pipeline
+from app.services.document_processing.assets import Asset
+from app.services.document_processing.models import DocumentProcessingResult
 from app.services.document_summary_service import upsert_document_summary
 from app.storage import get_storage
-from app.storage.client import markdown_document_key, pagemap_document_key
+from app.storage.client import StorageClient, asset_document_key, markdown_document_key, pagemap_document_key
 from app.workers.jobs import enqueue_eval_job, enqueue_index_job
 
 OCR_MAX_TRIES = 3
@@ -206,14 +208,17 @@ async def process_ocr_job(ctx: dict[str, object], payload: dict[str, str]) -> No
                 with trace.step("write_temp_input", byte_count=len(raw_bytes), suffix=suffix):
                     input_path.write_bytes(raw_bytes)
                 with trace.step("run_document_processing_pipeline"):
+                    assets: list[Asset] = []
                     if custom_runner is not None:
                         markdown_text = await custom_runner(input_path, document)
                         page_map: list[tuple[int, int]] = []
                     else:
-                        markdown_text, page_map = await run_document_processing_pipeline(
-                            input_path, document, trace=trace
-                        )
+                        result = await run_document_processing_pipeline(input_path, document, trace=trace)
+                        markdown_text, page_map, assets = result.markdown, result.page_map, result.assets
 
+            if assets:
+                with trace.step("storage_put_assets", asset_count=len(assets)):
+                    await upload_assets(storage, document.course_id, document.id, assets)
             md_key = markdown_document_key(document.course_id, document.id)
             with trace.step("storage_put_markdown", storage_key=md_key, markdown_chars=len(markdown_text)):
                 await storage.put_object(md_key, markdown_text.encode("utf-8"), "text/markdown; charset=utf-8")
@@ -287,38 +292,49 @@ async def process_ocr_job(ctx: dict[str, object], payload: dict[str, str]) -> No
         raise
 
 
+async def upload_assets(
+    storage: StorageClient,
+    course_id: UUID,
+    document_id: UUID,
+    assets: list[Asset],
+    *,
+    concurrency: int = 8,
+) -> int:
+    """Upload figure/page images before the markdown that references them. Returns bytes uploaded."""
+    semaphore = asyncio.Semaphore(concurrency)
+
+    async def _put(asset: Asset) -> None:
+        async with semaphore:
+            await storage.put_object(
+                asset_document_key(course_id, document_id, asset.name), asset.data, asset.content_type
+            )
+
+    await asyncio.gather(*(_put(asset) for asset in assets))
+    return sum(len(asset.data) for asset in assets)
+
+
 async def run_document_processing_pipeline(
     input_path: Path,
     document: Document,
     trace: OcrTrace | None = None,
-) -> tuple[str, list[tuple[int, int]]]:
-    """Run the native OOP document processing pipeline and return (markdown, page_map).
-
-    Replaces the previous dynamic ``importlib`` load of the experiment script. The
-    pipeline is synchronous (PyMuPDF/python-pptx + blocking provider SDKs), so it runs
-    in a worker thread to avoid blocking the event loop.
-    """
+) -> DocumentProcessingResult:
+    """Run the v4 pipeline in a worker thread (PyMuPDF + blocking provider SDKs)."""
     pipeline = build_document_processing_pipeline(
         get_settings(),
         progress_callback=trace.pipeline_progress if trace is not None else None,
     )
     with _optional_step(trace, "run_native_document_processing"):
-        result = await asyncio.to_thread(
-            pipeline.process_document,
-            input_path,
-            document_id=str(document.id),
-            expected_route=_expected_route(document.file_format),
-        )
+        result = await asyncio.to_thread(pipeline.process_document, input_path, document_id=str(document.id))
     if trace is not None:
         trace.pipeline_progress({
             "event": "pipeline_complete",
             "route": result.route,
-            "inferred_type": result.inferred_type,
             "normalized_chars": len(result.markdown),
-            "llm_metrics": result.llm_metrics,
+            "stats": result.stats,
             "quality_flags": result.quality_flags,
+            "llm_metrics": {k: v for k, v in result.llm_metrics.items() if k != "records"},
         })
-    return result.markdown, result.page_map
+    return result
 
 
 async def _create_next_evaluation_job(session: AsyncSession, document_id: UUID) -> EvaluationJob:
@@ -401,10 +417,6 @@ async def _record_processing_failure(
                 reason=f"{job_type.value} job failed after retries from {failed_from_state.value}",
             )
         await session.commit()
-
-
-def _expected_route(file_format: FileFormat) -> str:
-    return "hybrid" if file_format in {FileFormat.PDF, FileFormat.PPTX} else "vision_only"
 
 
 def _traceback_tail() -> str:

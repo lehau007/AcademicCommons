@@ -1,11 +1,23 @@
 from __future__ import annotations
 
+import logging
+import time
 from typing import Any
 
 import httpx
 
 from app.llm.errors import RerankProviderError
+from app.llm.observability import log_event
 from app.llm.vertex_auth import get_vertex_credentials_and_project
+
+logger = logging.getLogger(__name__)
+
+
+def _safe_log_event(event: str, **fields: object) -> None:
+    try:
+        log_event(logger, event, **fields)
+    except Exception:
+        pass
 
 
 class RerankService:
@@ -36,6 +48,13 @@ class RerankService:
         if not passages:
             return []
 
+        started = time.perf_counter()
+        _safe_log_event(
+            "rerank_call_start",
+            provider="nvidia",
+            model=self.model,
+            item_count=len(passages),
+        )
         payload = {
             "model": self.model,
             "query": {"text": query},
@@ -47,18 +66,37 @@ class RerankService:
             "Accept": "application/json",
         }
 
-        if self._client is not None:
-            response = self._client.post(self.url, json=payload, headers=headers)
-        else:
-            response = httpx.post(
-                self.url,
-                json=payload,
-                headers=headers,
-                timeout=self.timeout,
+        try:
+            if self._client is not None:
+                response = self._client.post(self.url, json=payload, headers=headers)
+            else:
+                response = httpx.post(
+                    self.url,
+                    json=payload,
+                    headers=headers,
+                    timeout=self.timeout,
+                )
+            response.raise_for_status()
+            rankings = response.json()["rankings"]
+            ordered = [int(item["index"]) for item in rankings]
+        except Exception as exc:
+            _safe_log_event(
+                "rerank_call_error",
+                provider="nvidia",
+                model=self.model,
+                item_count=len(passages),
+                latency_ms=round((time.perf_counter() - started) * 1000),
+                exception_type=type(exc).__name__,
             )
-        response.raise_for_status()
-        rankings = response.json()["rankings"]
-        return [int(item["index"]) for item in rankings]
+            raise
+        _safe_log_event(
+            "rerank_call_success",
+            provider="nvidia",
+            model=self.model,
+            item_count=len(passages),
+            latency_ms=round((time.perf_counter() - started) * 1000),
+        )
+        return ordered
 
 
 class OpenRouterRerank:
@@ -101,6 +139,13 @@ class OpenRouterRerank:
             "Content-Type": "application/json",
         }
 
+        started = time.perf_counter()
+        _safe_log_event(
+            "rerank_call_start",
+            provider="openrouter",
+            model=self.model,
+            item_count=len(passages),
+        )
         try:
             if self._client is not None:
                 response = self._client.post(url, json=payload, headers=headers)
@@ -109,9 +154,25 @@ class OpenRouterRerank:
             response.raise_for_status()
             results = response.json()["results"]
             ordered = sorted(results, key=lambda item: float(item["relevance_score"]), reverse=True)
-            return [(int(item["index"]), float(item["relevance_score"])) for item in ordered]
+            scored = [(int(item["index"]), float(item["relevance_score"])) for item in ordered]
         except Exception as exc:
+            _safe_log_event(
+                "rerank_call_error",
+                provider="openrouter",
+                model=self.model,
+                item_count=len(passages),
+                latency_ms=round((time.perf_counter() - started) * 1000),
+                exception_type=type(exc).__name__,
+            )
             raise RerankProviderError() from exc
+        _safe_log_event(
+            "rerank_call_success",
+            provider="openrouter",
+            model=self.model,
+            item_count=len(passages),
+            latency_ms=round((time.perf_counter() - started) * 1000),
+        )
+        return scored
 
     def rank(self, query: str, passages: list[str]) -> list[int]:
         """Return indices of ``passages`` ordered by descending relevance."""
@@ -157,6 +218,13 @@ class VertexRerank:
         payload = {"model": self.model, "query": query, "records": records, "topN": len(passages)}
         headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
 
+        started = time.perf_counter()
+        _safe_log_event(
+            "rerank_call_start",
+            provider="vertex",
+            model=self.model,
+            item_count=len(passages),
+        )
         try:
             if self._client is not None:
                 resp = self._client.post(url, json=payload, headers=headers)
@@ -170,9 +238,25 @@ class VertexRerank:
                 idx = int(item["id"])
                 score = float(item.get("score", 0.0))
                 results.append((idx, score))
-            return sorted(results, key=lambda x: x[1], reverse=True)
+            ordered = sorted(results, key=lambda x: x[1], reverse=True)
         except Exception as exc:
+            _safe_log_event(
+                "rerank_call_error",
+                provider="vertex",
+                model=self.model,
+                item_count=len(passages),
+                latency_ms=round((time.perf_counter() - started) * 1000),
+                exception_type=type(exc).__name__,
+            )
             raise RerankProviderError(f"Vertex AI ranking failed: {exc}") from exc
+        _safe_log_event(
+            "rerank_call_success",
+            provider="vertex",
+            model=self.model,
+            item_count=len(passages),
+            latency_ms=round((time.perf_counter() - started) * 1000),
+        )
+        return ordered
 
     def rank(self, query: str, passages: list[str]) -> list[int]:
         return [idx for idx, _ in self.rank_scored(query, passages)]

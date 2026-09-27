@@ -65,6 +65,8 @@ class OpenCodeVisionProvider(VisionLanguageProvider):
         *,
         images: list[bytes] | None = None,
         operation: str = "text",
+        response_schema: dict[str, Any] | None = None,  # noqa: ARG002 - JSON is requested via the prompt
+        max_output_tokens: int | None = None,
     ) -> ProviderResponse:
         model = self._config.opencode_model
         if not HAS_OPENAI:
@@ -124,7 +126,7 @@ class OpenCodeVisionProvider(VisionLanguageProvider):
                 # minimax-m3 spends part of its budget on a <think> reasoning
                 # trace before the transcription; 4096 truncated text-dense
                 # pages mid-thought, so give the answer room after reasoning.
-                max_tokens=8192,
+                max_tokens=max_output_tokens or 8192,
             )
             latency_ms = int((time.time() - t0) * 1000)
             usage = response.usage

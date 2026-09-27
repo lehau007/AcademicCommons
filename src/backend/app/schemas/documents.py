@@ -71,3 +71,8 @@ class DocumentListRead(BaseModel):
 class SignedUrlResponse(BaseModel):
     url: str
     expires_in_seconds: int = 900
+
+
+class AssetUrlsResponse(BaseModel):
+    urls: dict[str, str]
+    expires_in_seconds: int = 900

@@ -165,13 +165,21 @@ Key variables:
 | `AZURE_OPENAI_DEPLOYMENT` | Model deployment name |
 | `GEMINI_API_KEY` | Fallback LLM |
 | `VERTEX_PROJECT_ID` | Optional Google Cloud project ID for Vertex AI (falls back to gcloud ADC) |
-| `VERTEX_LOCATION` | Vertex AI location (default `us-central1`) |
-| `VERTEX_LLM_MODEL` | Vertex AI Gemini model name (default `gemini-1.5-flash`) |
+| `VERTEX_LOCATION` | Vertex AI location for embeddings/rerank (default `us-central1`) |
+| `VERTEX_GENAI_LOCATION` | Vertex AI location for all generative Gemini calls (default `global`; the Gemini 3 models are served only there) |
+| `VERTEX_CHAT_MODEL` / `VERTEX_CHAT_THINKING_LEVEL` | Tutor/chat model (default `gemini-3.8-flash` / `low`) |
+| `OCR_VISION_MODEL` / `OCR_VISION_THINKING_LEVEL` | Primary model for scanned-page OCR and figure descriptions (default `gemini-3.5-flash-lite` / `minimal`) |
+| `OCR_VISION_FALLBACK_MODEL` / `OCR_VISION_FALLBACK_THINKING_LEVEL` | Fallback vision model, also the first model of the tutor's figure viewer (default `gemini-3.8-flash` / `low`) |
+| `DOCUMENT_PROCESSING_MAX_CONCURRENCY` | Concurrent VLM calls per document (default `16`) |
+| `DOCUMENT_PROCESSING_GLOBAL_CONCURRENCY` | Process-wide cap on concurrent VLM calls across OCR jobs (default `32`) |
+| `DOCUMENT_PROCESSING_REQUEST_TIMEOUT_SECONDS` | Per-call Vertex timeout before falling back to the next provider (default `60`) |
 | `VERTEX_EMBEDDING_MODEL` | Vertex AI Text Embedding model (default `text-embedding-004`) |
 | `VERTEX_RERANK_MODEL` | Vertex AI Discovery Engine Rerank model (default `semantic-ranker-512@latest`) |
-| `NORMALIZATION_MAX_OUTPUT_TOKENS` | Max output tokens for document normalization (default `16384`) |
 | `EMBEDDING_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` |
 | `EMBEDDING_DIM` | `384` |
+
+`*_THINKING_LEVEL` applies to Gemini 3 models only: set it to an empty value when the matching model
+setting points at a non-Gemini-3 model (Gemini 2.5 models reject `thinking_level`).
 
 See `.env.example` at the repo root for the full list and local-dev defaults.
 

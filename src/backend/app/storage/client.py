@@ -15,6 +15,14 @@ def pagemap_document_key(course_id: UUID, document_id: UUID) -> str:
     return f"documents/{course_id}/{document_id}/markdown/pagemap.json"
 
 
+def asset_document_prefix(course_id: UUID, document_id: UUID) -> str:
+    return f"documents/{course_id}/{document_id}/assets/"
+
+
+def asset_document_key(course_id: UUID, document_id: UUID, name: str) -> str:
+    return f"{asset_document_prefix(course_id, document_id)}{name}"
+
+
 class StorageClient(ABC):
     @abstractmethod
     async def put_object(self, key: str, source: bytes | Path, content_type: str) -> str:
@@ -30,4 +38,9 @@ class StorageClient(ABC):
 
     @abstractmethod
     async def delete_object(self, key: str) -> None:
+        raise NotImplementedError
+
+    @abstractmethod
+    async def delete_prefix(self, prefix: str) -> int:
+        """Delete every object under ``prefix``; returns the number deleted."""
         raise NotImplementedError

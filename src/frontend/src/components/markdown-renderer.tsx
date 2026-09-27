@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactElement, ReactNode } from "react";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { defaultUrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -9,12 +9,14 @@ import rehypeHighlight from "rehype-highlight";
 import "katex/dist/katex.min.css";
 import MermaidDiagram from "./mermaid-diagram";
 import CodeBlock, { nodeToText } from "./code-block";
+import AssetImage from "./asset-image";
 
 /**
  * Renders Markdown produced by the OCR pipeline and the AI Tutor.
  * Supports GFM (tables, lists, task lists), LaTeX math ($...$ / $$...$$)
  * via KaTeX, per-language syntax highlighting via highlight.js, and
  * ```mermaid fenced code blocks rendered as live diagrams.
+ * Figure images use stable asset://{documentId}/{name} links resolved to signed URLs at render time.
  */
 export default function MarkdownRenderer({
   content,
@@ -37,6 +39,7 @@ export default function MarkdownRenderer({
           // from throwing; they render uncolored but still styled.
           [rehypeHighlight, { ignoreMissing: true, detect: false }],
         ]}
+        urlTransform={(url) => (url.startsWith("asset://") ? url : defaultUrlTransform(url))}
         components={{
           // Inline code only — block code is handled by the `pre` renderer
           // below, so here we just style the inline `code` chip.
@@ -79,6 +82,15 @@ export default function MarkdownRenderer({
 
             const language = /language-(\w+)/.exec(codeClassName)?.[1] ?? "";
             return <CodeBlock language={language}>{props.children}</CodeBlock>;
+          },
+          img(props) {
+            // Do not spread props: react-markdown passes a `node` prop that must not reach the DOM.
+            const { src, alt, title } = props;
+            if (typeof src === "string" && src.startsWith("asset://")) {
+              return <AssetImage src={src} alt={alt ?? ""} />;
+            }
+            // eslint-disable-next-line @next/next/no-img-element
+            return <img src={typeof src === "string" ? src : undefined} alt={alt ?? ""} title={title} />;
           },
         }}
       >

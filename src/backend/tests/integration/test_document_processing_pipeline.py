@@ -18,7 +18,7 @@ SAMPLE_DIR = Path(
     "/Users/admin/Desktop/graduation-thesis/GraduationThesis/src/experiments/"
     "document_processing/test_data"
 )
-VALID_ROUTES = {"direct_text", "hybrid", "vision_only"}
+VALID_ROUTES = {"text_layer", "ocr", "mixed", "pptx", "image"}
 
 
 def _sample_files() -> list[Path]:

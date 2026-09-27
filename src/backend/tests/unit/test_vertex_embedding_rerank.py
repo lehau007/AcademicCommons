@@ -98,6 +98,79 @@ def test_vertex_embedding_encode_error_propagation() -> None:
     assert "Vertex AI embedding failed" in str(excinfo.value)
 
 
+def test_vertex_embedding_logs_provider_model_dimension_without_text(caplog) -> None:
+    client = _FakeGenAIClient()
+    service = VertexEmbedding(
+        project_id="test-proj",
+        model="text-multilingual-embedding-002",
+        dimension=3,
+        client=client,
+    )
+
+    with caplog.at_level("INFO", logger="app.llm.embeddings"):
+        vectors = service.encode(["DO_NOT_LOG_DOCUMENT_TEXT"])
+
+    combined = "\n".join(caplog.messages)
+    assert vectors == [[0.1, 0.2, 0.3]]
+    assert "event=embedding_call_start" in combined
+    assert "event=embedding_call_success" in combined
+    assert "provider=vertex" in combined
+    assert "model=text-multilingual-embedding-002" in combined
+    assert "dimension=3" in combined
+    assert "item_count=1" in combined
+    assert "input_type=passage" in combined
+    assert "DO_NOT_LOG_DOCUMENT_TEXT" not in combined
+
+
+def test_vertex_embedding_logs_error_without_text(caplog) -> None:
+    client = _FakeGenAIClient(fail=True)
+    service = VertexEmbedding(project_id="test-proj", client=client)
+
+    with pytest.raises(EmbeddingProviderError):
+        with caplog.at_level("INFO", logger="app.llm.embeddings"):
+            service.encode(["DO_NOT_LOG_DOCUMENT_TEXT"])
+
+    combined = "\n".join(caplog.messages)
+    assert "event=embedding_call_start" in combined
+    assert "event=embedding_call_error" in combined
+    assert "provider=vertex" in combined
+    assert "exception_type=RuntimeError" in combined
+    assert "DO_NOT_LOG_DOCUMENT_TEXT" not in combined
+
+
+def test_vertex_embedding_client_bootstrap_error_logs_metadata_only(
+    caplog,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    service = VertexEmbedding(
+        project_id="test-proj",
+        model="text-multilingual-embedding-002",
+        dimension=768,
+    )
+    monkeypatch.setattr(
+        service,
+        "_load_client",
+        MagicMock(side_effect=RuntimeError("SECRET_VERTEX_BOOTSTRAP_FAILURE")),
+    )
+
+    with pytest.raises(RuntimeError, match="SECRET_VERTEX_BOOTSTRAP_FAILURE"):
+        with caplog.at_level("INFO", logger="app.llm.embeddings"):
+            service.encode(["SECRET_VERTEX_BOOTSTRAP_INPUT"], input_type="query")
+
+    combined = "\n".join(caplog.messages)
+    assert "event=embedding_call_start" in combined
+    assert "event=embedding_call_error" in combined
+    assert "provider=vertex" in combined
+    assert "model=text-multilingual-embedding-002" in combined
+    assert "dimension=768" in combined
+    assert "input_type=query" in combined
+    assert "item_count=1" in combined
+    assert "latency_ms=" in combined
+    assert "exception_type=RuntimeError" in combined
+    assert "SECRET_VERTEX_BOOTSTRAP_FAILURE" not in combined
+    assert "SECRET_VERTEX_BOOTSTRAP_INPUT" not in combined
+
+
 # --- VertexRerank Tests ---
 
 @patch("app.llm.rerank.get_vertex_credentials_and_project")
@@ -182,3 +255,47 @@ def test_vertex_rerank_error_propagation(mock_auth: MagicMock) -> None:
     with pytest.raises(RerankProviderError) as excinfo:
         reranker.rank_scored("query", ["doc0"])
     assert "Vertex AI ranking failed" in str(excinfo.value)
+
+
+@patch("app.llm.rerank.get_vertex_credentials_and_project")
+def test_vertex_rerank_logs_metadata_only(mock_auth: MagicMock, caplog) -> None:
+    mock_creds = SimpleNamespace(token="fake-token")
+    mock_auth.return_value = (mock_creds, "default-project")
+    payload = {"records": [{"id": "1", "score": 0.9}, {"id": "0", "score": 0.2}]}
+    http_client = _FakeHttpClient(payload)
+    reranker = VertexRerank(project_id="my-proj", client=http_client)
+
+    with caplog.at_level("INFO", logger="app.llm.rerank"):
+        scored = reranker.rank_scored("DO_NOT_LOG_QUERY", ["DO_NOT_LOG_P0", "DO_NOT_LOG_P1"])
+
+    assert scored == [(1, 0.9), (0, 0.2)]
+    combined = "\n".join(caplog.messages)
+    assert "event=rerank_call_start" in combined
+    assert "event=rerank_call_success" in combined
+    assert "provider=vertex" in combined
+    assert "model=semantic-ranker-512@latest" in combined
+    assert "item_count=2" in combined
+    assert "latency_ms=" in combined
+    assert "DO_NOT_LOG_QUERY" not in combined
+    assert "DO_NOT_LOG_P0" not in combined
+
+
+@patch("app.llm.rerank.get_vertex_credentials_and_project")
+def test_vertex_rerank_logs_error_without_query_or_passages(mock_auth: MagicMock, caplog) -> None:
+    mock_creds = SimpleNamespace(token="fake-token")
+    mock_auth.return_value = (mock_creds, "default-project")
+
+    reranker = VertexRerank(client=_FakeHttpClient({}, status=500))
+
+    with pytest.raises(RerankProviderError):
+        with caplog.at_level("INFO", logger="app.llm.rerank"):
+            reranker.rank_scored("DO_NOT_LOG_QUERY", ["DO_NOT_LOG_P0"])
+
+    combined = "\n".join(caplog.messages)
+    assert "event=rerank_call_start" in combined
+    assert "event=rerank_call_error" in combined
+    assert "provider=vertex" in combined
+    assert "exception_type=RuntimeError" in combined
+    assert "latency_ms=" in combined
+    assert "DO_NOT_LOG_QUERY" not in combined
+    assert "DO_NOT_LOG_P0" not in combined

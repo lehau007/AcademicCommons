@@ -482,6 +482,7 @@ def build_embedding_service(settings: Any) -> EmbeddingService:
                         location=getattr(settings, "vertex_location", "us-central1"),
                         model=getattr(settings, "vertex_embedding_model", "text-multilingual-embedding-002"),
                         dimension=getattr(settings, "embedding_dim", 768),
+                        batch_size=10,
                     )
             except Exception:
                 pass

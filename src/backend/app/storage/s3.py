@@ -79,6 +79,24 @@ class S3CompatibleStorage(StorageClient):
     async def delete_object(self, key: str) -> None:
         await asyncio.to_thread(self._client.delete_object, Bucket=self._bucket, Key=key)
 
+    async def delete_prefix(self, prefix: str) -> int:
+        def _delete() -> int:
+            deleted = 0
+            while True:
+                page = self._client.list_objects_v2(Bucket=self._bucket, Prefix=prefix, MaxKeys=1000)
+                keys = [{"Key": obj["Key"]} for obj in page.get("Contents", [])]
+                if not keys:
+                    return deleted
+                response = self._client.delete_objects(Bucket=self._bucket, Delete={"Objects": keys, "Quiet": True})
+                errors = (response or {}).get("Errors") or []
+                if errors:
+                    # Quiet mode reports per-key failures here instead of raising; re-listing would
+                    # return the same keys forever.
+                    raise RuntimeError(f"delete_prefix({prefix!r}): {len(errors)} object(s) could not be deleted")
+                deleted += len(keys)
+
+        return await asyncio.to_thread(_delete)
+
     async def generate_signed_url(self, key: str, ttl: int = 900) -> str:
         url: str = await asyncio.to_thread(
             self._public_client.generate_presigned_url,

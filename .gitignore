@@ -54,3 +54,26 @@ thesis/main-blx.bib
 .playwright-mcp/
 # Local DB backups (pg_dump)
 backups/
+# Document processing v4 benchmark assets (keep benchmark.json, report.md, and outputs/*.md)
+evaluation/document_processing_evaluation/results_v4/outputs/*_assets/
+
+# Local-only: agent/tool config, thesis material, datasets, evaluation (kept on disk, never committed)
+/.agents/
+/.antigravity/
+/.claude/
+/.codex/
+/.gemini/
+/.playwright-mcp/
+/.stitch/
+/.superpowers/
+/data/
+/docs/
+/evaluation/
+/presentation_slides/
+/references/
+/scratch/
+/SOICT_thesis_book_template/
+/thesis_book/
+/AGENTS.md
+/CLAUDE.md
+/note.txt

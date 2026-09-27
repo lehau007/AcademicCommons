@@ -37,7 +37,8 @@ from app.models.enums import (
     MaterialType,
     ProcessingJobType,
 )
-from app.storage.client import StorageClient, raw_document_key
+from app.services.document_processing.assets import ASSET_NAME_RE
+from app.storage.client import StorageClient, asset_document_key, asset_document_prefix, raw_document_key
 
 logger = logging.getLogger(__name__)
 
@@ -470,6 +471,7 @@ async def hard_delete_document(
 
     raw_path = doc.storage_raw_path
     md_path = doc.storage_md_path
+    course_id = doc.course_id
 
     try:
         await log_admin_action(
@@ -546,6 +548,11 @@ async def hard_delete_document(
             except Exception:
                 logger.warning("Failed to delete storage object %s for document %s", key, document_id)
 
+    try:
+        await storage.delete_prefix(asset_document_prefix(course_id, document_id))
+    except Exception:
+        logger.warning("Failed to delete asset objects for document %s", document_id)
+
 
 async def get_evaluation_report(
     session: AsyncSession,
@@ -608,3 +615,49 @@ async def get_signed_url(
     if doc.storage_raw_path is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Raw file not available")
     return await storage.generate_signed_url(doc.storage_raw_path, ttl=900)
+
+
+async def get_asset_signed_url(
+    session: AsyncSession,
+    storage: StorageClient,
+    document_id: UUID,
+    asset_name: str,
+    user: User,
+) -> str:
+    if not ASSET_NAME_RE.fullmatch(asset_name):
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Invalid asset name")
+    doc = await get_document_or_404(session, document_id)
+    if not can_view_document(user, doc):
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Access denied")
+    await _assert_reviewer_assigned_to_doc(session, user, doc)
+    return await storage.generate_signed_url(asset_document_key(doc.course_id, doc.id, asset_name), ttl=900)
+
+
+MAX_ASSET_URL_BATCH = 200
+
+
+async def get_asset_signed_urls(
+    session: AsyncSession,
+    storage: StorageClient,
+    document_id: UUID,
+    asset_names: list[str],
+    user: User,
+) -> dict[str, str]:
+    """Sign many figure assets of one document with a single lookup and permission check."""
+    if not asset_names:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="No asset names given")
+    if len(asset_names) > MAX_ASSET_URL_BATCH:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=f"At most {MAX_ASSET_URL_BATCH} asset names per request",
+        )
+    if not all(ASSET_NAME_RE.fullmatch(name) for name in asset_names):
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Invalid asset name")
+    doc = await get_document_or_404(session, document_id)
+    if not can_view_document(user, doc):
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Access denied")
+    await _assert_reviewer_assigned_to_doc(session, user, doc)
+    return {
+        name: await storage.generate_signed_url(asset_document_key(doc.course_id, doc.id, name), ttl=900)
+        for name in dict.fromkeys(asset_names)
+    }

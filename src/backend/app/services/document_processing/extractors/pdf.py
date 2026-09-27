@@ -1,317 +1,194 @@
-"""PDF extractor. Ports experiment ``extract_pdf_text`` (lines ~940-1132)."""
+"""PDF extractor v4: text-layer Markdown via layout analysis; VLM only for figures and scanned pages."""
 
 from __future__ import annotations
 
-import hashlib
-from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass
+import logging
+import threading
+from collections import Counter, defaultdict
+from concurrent.futures import Future, ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
-from app.services.document_processing.classification import VisualClassifier
+import fitz  # type: ignore[import-untyped]
+
+from app.services.document_processing.assets import AssetCollector
 from app.services.document_processing.extractors.base import Extractor
-from app.services.document_processing.models import ExtractionResult
-from app.services.document_processing.routing import RouteDecider
+from app.services.document_processing.figures import FigureDescription, render_figure_block
+from app.services.document_processing.layout import LayoutPage, PdfLayoutReader, PictureRegion, picture_text
+from app.services.document_processing.models import ExtractionResult, PageSegment
+from app.services.document_processing.ocr import insert_page_image
+from app.services.document_processing.pdf_figures import is_too_small, region_signature, repeated_signatures, splice
+
+logger = logging.getLogger(__name__)
+
+SCANNED_TEXT_THRESHOLD = 40
+# A page whose only "text" comes from a full-page image (layout._FULL_PAGE_COVERAGE_THRESHOLD)
+# unique to that page (no other page in the document repeats it — i.e. not a recurring
+# lecture-deck background) is still effectively scanned as long as its native text stays below
+# this higher ceiling (title slides, cover pages, a scan with a printed header/watermark).
+SCANNED_IMAGE_TEXT_CEILING = 200
+FIGURE_ZOOM = 2.0
+OCR_ZOOM = 2.0
+PAGE_ASSET_ZOOM = 1.5
+PAGE_ASSET_JPEG_QUALITY = 80
+CROP_MARGIN_PT = 4.0
+
+Replacement = tuple[tuple[int, int], str]
+
+# PyMuPDF is not thread-safe: one process-wide lock serializes every MuPDF call made by the
+# extractor, across pages and across concurrent OCR jobs. Never acquired while already held.
+_PYMUPDF_LOCK = threading.Lock()
 
 
-@dataclass
-class _PageRenderTask:
-    page_index: int
-    image_bytes: bytes
-    prompt_text: str
+def _region_text(page: LayoutPage, region: PictureRegion) -> str:
+    start, end = region.span
+    return picture_text(page.markdown[start:end])
 
 
-@dataclass
-class _ImageTask:
-    page_index: int
-    image_index: int
-    image_bytes: bytes
-    image_hash: str
-    position_hint: str
-    page_text: str
-    repeat_count: int
-    is_decorative_repeat: bool
+def _native_markdown(page: LayoutPage) -> str:
+    """The page's text-layer Markdown with picture regions reduced to their native text."""
+    markdown = splice(page.markdown, [(region.span, _region_text(page, region)) for region in page.pictures])
+    return markdown.strip()
+
+
+def _needs_ocr(page: LayoutPage, digest_counts: Counter[str]) -> bool:
+    if page.native_text_chars < SCANNED_TEXT_THRESHOLD:
+        return True
+    digest = page.full_page_image_digest
+    if digest is not None and digest_counts[digest] == 1 and page.native_text_chars < SCANNED_IMAGE_TEXT_CEILING:
+        return True
+    return False
 
 
 class PdfExtractor(Extractor):
-    def extract(self, path: Path) -> ExtractionResult:
-        blocks: list[dict[str, Any]] = []
-        prompts: list[dict[str, Any]] = []
-        visual_trace: list[dict[str, Any]] = []
-
+    def extract(self, path: Path, assets: AssetCollector) -> ExtractionResult:
+        reader = PdfLayoutReader()
+        with _PYMUPDF_LOCK:
+            doc = fitz.open(path)
+            try:
+                pages = reader.read(doc)
+            except BaseException:
+                doc.close()
+                raise
         try:
-            import fitz  # type: ignore[import-untyped]  # PyMuPDF
-        except Exception as exc:
-            return ExtractionResult(
-                blocks=blocks,
-                prompts=[{"kind": "error", "message": f"PyMuPDF unavailable: {exc}"}],
-                visual_trace=visual_trace,
+            digest_counts: Counter[str] = Counter(
+                p.full_page_image_digest for p in pages if p.full_page_image_digest
+            )
+            text_pages = [p for p in pages if not _needs_ocr(p, digest_counts)]
+            ocr_pages = [p for p in pages if _needs_ocr(p, digest_counts)]
+            stats: dict[str, int] = {
+                "pages_total": len(pages), "pages_text": len(text_pages), "pages_ocr": len(ocr_pages),
+                "figure_candidates": 0, "figures_filtered": 0, "figures_described": 0,
+                "figures_decorative": 0, "figure_failures": 0, "ocr_failed_pages": 0,
+                "layout_fallback": int(reader.used_fallback),
+            }
+
+            repeated = repeated_signatures(text_pages, len(pages))
+            replacements: dict[int, list[Replacement]] = defaultdict(list)
+            figure_jobs: list[tuple[LayoutPage, PictureRegion, int]] = []
+            for page in text_pages:
+                kept = 0
+                for region in page.pictures:
+                    stats["figure_candidates"] += 1
+                    if region_signature(region, page) in repeated:  # logo/banner: drop it with its text
+                        stats["figures_filtered"] += 1
+                        replacements[page.page_number].append((region.span, ""))
+                        continue
+                    if is_too_small(region, page):  # no figure, but keep the text printed in it
+                        stats["figures_filtered"] += 1
+                        replacements[page.page_number].append((region.span, _region_text(page, region)))
+                        continue
+                    kept += 1
+                    figure_jobs.append((page, region, kept))
+            self._emitter.emit(
+                "layout_done", pages=len(pages), ocr_pages=len(ocr_pages), figures=len(figure_jobs),
+                layout_fallback=reader.used_fallback,
             )
 
-        enable_real_vision = self._config.enable_real_vision
-        inferred_type, _ = RouteDecider().classify_pdf_type(path)
-        max_workers = max(1, self._config.vision_max_workers)
+            with ThreadPoolExecutor(max_workers=max(1, self._config.max_concurrency)) as pool:
+                figure_futures = [
+                    (page, region, pool.submit(self._figure, doc, page, region, index, assets))
+                    for page, region, index in figure_jobs
+                ]
+                ocr_futures: dict[int, Future[tuple[PageSegment, bool]]] = {
+                    page.page_number: pool.submit(self._ocr_page, doc, page, assets) for page in ocr_pages
+                }
+                for page, region, future in figure_futures:
+                    block, desc = future.result()
+                    replacements[page.page_number].append((region.span, block))
+                    if desc.is_decorative:
+                        stats["figures_decorative"] += 1
+                    elif desc.failed or (self._config.enable_real_vision and not desc.description):
+                        stats["figure_failures"] += 1
+                    elif desc.description:
+                        stats["figures_described"] += 1
+                segments: list[PageSegment] = []
+                for page in pages:
+                    if page.page_number in ocr_futures:
+                        segment, failed = ocr_futures[page.page_number].result()
+                        stats["ocr_failed_pages"] += int(failed)
+                        segments.append(segment)
+                    else:
+                        segments.append(
+                            PageSegment(page.page_number, splice(page.markdown, replacements[page.page_number]))
+                        )
+        finally:
+            with _PYMUPDF_LOCK:
+                doc.close()
 
-        doc = fitz.open(path)
-        page_count = len(doc)
+        route = "ocr" if not text_pages else "text_layer" if not ocr_pages else "mixed"
+        return ExtractionResult(segments=segments, route=route, stats=stats)
 
-        if inferred_type in ("scanned_pdf", "slide_pdf"):
-            blocks, prompts = self._extract_rendered_pages(
-                doc, page_count, inferred_type, enable_real_vision, max_workers
+    def _figure(
+        self, doc: Any, page: LayoutPage, region: PictureRegion, index: int, assets: AssetCollector
+    ) -> tuple[str, FigureDescription]:
+        figure_text = _region_text(page, region)
+        try:
+            x0, y0, x1, y1 = region.bbox
+            with _PYMUPDF_LOCK:
+                pdf_page = doc[page.page_number - 1]
+                clip = fitz.Rect(x0 - CROP_MARGIN_PT, y0 - CROP_MARGIN_PT, x1 + CROP_MARGIN_PT, y1 + CROP_MARGIN_PT)
+                png = pdf_page.get_pixmap(
+                    matrix=fitz.Matrix(FIGURE_ZOOM, FIGURE_ZOOM), clip=clip & pdf_page.rect
+                ).tobytes("png")
+                del pdf_page
+            desc = self._describer.describe(png, figure_text=figure_text, page_text=page.markdown)
+            if desc.is_decorative:
+                return "", desc
+            ref = assets.add(f"p{page.page_number:03d}-f{index}.png", png, "image/png")
+            block = render_figure_block(
+                ref, desc, fallback_caption=f"Figure p{page.page_number}-{index}", fallback_text=figure_text
             )
-            doc.close()
-            return ExtractionResult(blocks=blocks, prompts=prompts, visual_trace=visual_trace)
+            return block, desc
+        except Exception:
+            logger.warning("figure extraction failed on page %s figure %s", page.page_number, index, exc_info=True)
+            return figure_text, FigureDescription("other", "", "", "", failed=True)
 
-        # Pre-pass: images repeating across many pages are almost certainly decorative
-        # (logos, banners, page borders). Hash-based detection avoids a VLM call entirely.
-        image_hash_pages: dict[str, set[int]] = {}
-        for page_index, page in enumerate(doc):
-            for img_info in page.get_images(full=True):
-                xref = img_info[0]
-                try:
-                    base = doc.extract_image(xref)
-                    h = hashlib.sha256(base["image"]).hexdigest()
-                    image_hash_pages.setdefault(h, set()).add(page_index)
-                except Exception:
-                    continue
-        repeat_threshold = max(2, int(page_count * 0.3)) if page_count else 2
-        decorative_repeat_hashes = {
-            h for h, pages in image_hash_pages.items() if len(pages) >= repeat_threshold
-        }
-
-        # Pass 1 (no network calls): extract text layer, enumerate embedded images.
-        page_text_by_idx: dict[int, str] = {}
-        image_blocks_by_page: dict[int, list[dict[str, Any]]] = {}
-        image_tasks: list[_ImageTask] = []
-
-        for page_index, page in enumerate(doc):
-            text = (page.get_text("text") or "").strip()
-            page_text_by_idx[page_index] = text
-            page_height = page.rect.height if page.rect else None
-
-            for image_idx, img_info in enumerate(page.get_images(full=True)):
-                xref = img_info[0]
-                if not enable_real_vision:
-                    prompts.append({
-                        "kind": "vision_prompt",
-                        "page": page_index + 1,
-                        "image_index": image_idx,
-                        "instruction": "Describe diagram/table/formula and convert to markdown text.",
-                    })
-                    image_blocks_by_page.setdefault(page_index, []).append({
-                        "kind": "vision_placeholder",
-                        "page": page_index + 1,
-                        "content": "[VISION_PLACEHOLDER] Describe visual element on this page.",
-                    })
-                    continue
-
-                base_image = doc.extract_image(xref)
-                image_bytes = base_image["image"]
-                image_hash = hashlib.sha256(image_bytes).hexdigest()
-                try:
-                    rects = page.get_image_rects(xref)
-                    rect = rects[0] if rects else None
-                except Exception:
-                    rect = None
-                position_hint = self._classifier.position_hint(
-                    rect.y0 if rect else None,
-                    rect.y1 if rect else None,
-                    page_height,
-                )
-
-                image_tasks.append(
-                    _ImageTask(
-                        page_index=page_index,
-                        image_index=image_idx,
-                        image_bytes=image_bytes,
-                        image_hash=image_hash,
-                        position_hint=position_hint,
-                        page_text=text,
-                        repeat_count=len(image_hash_pages.get(image_hash, set())),
-                        is_decorative_repeat=image_hash in decorative_repeat_hashes,
+    def _ocr_page(self, doc: Any, page: LayoutPage, assets: AssetCollector) -> tuple[PageSegment, bool]:
+        try:
+            with _PYMUPDF_LOCK:
+                png = doc[page.page_number - 1].get_pixmap(matrix=fitz.Matrix(OCR_ZOOM, OCR_ZOOM)).tobytes("png")
+            result = self._ocr.transcribe(png)
+            if result.failed:
+                return self._ocr_fallback(page, f"[OCR_FAILED page {page.page_number}]"), True
+            if result.markdown.startswith("[VISION_PLACEHOLDER]"):
+                return self._ocr_fallback(page, result.markdown), False
+            markdown = result.markdown
+            if result.has_figures:
+                with _PYMUPDF_LOCK:
+                    jpg = (
+                        doc[page.page_number - 1]
+                        .get_pixmap(matrix=fitz.Matrix(PAGE_ASSET_ZOOM, PAGE_ASSET_ZOOM))
+                        .tobytes("jpeg", jpg_quality=PAGE_ASSET_JPEG_QUALITY)
                     )
-                )
+                ref = assets.add(f"p{page.page_number:03d}-page.jpg", jpg, "image/jpeg")
+                markdown = insert_page_image(markdown, ref, page.page_number)
+            return PageSegment(page.page_number, markdown), False
+        except Exception:
+            logger.warning("OCR failed on page %s", page.page_number, exc_info=True)
+            return self._ocr_fallback(page, f"[OCR_FAILED page {page.page_number}]"), True
 
-        # Pass 2 (network calls, parallelized): classify + extract each embedded image.
-        def _run_task(task: _ImageTask) -> dict[str, Any]:
-            page_index = task.page_index
-            if task.is_decorative_repeat:
-                classification = self._classifier.make_classification(
-                    "decorative", "none", 1.0, "repeated_across_pages", task.position_hint
-                )
-            else:
-                classification = self._classifier.classify(
-                    task.image_bytes, surrounding_text=task.page_text, position_hint=task.position_hint
-                )
-
-            trace_entry: dict[str, Any] = {
-                "source": "page",
-                "page": page_index + 1,
-                "image_index": task.image_index,
-                "image_hash_prefix": task.image_hash[:16],
-                "repeat_count": task.repeat_count,
-                "position_hint": task.position_hint,
-                "classification": classification,
-                "action_taken": classification["action"],
-            }
-
-            if classification["action"] == "skip":
-                return {
-                    "trace_entry": trace_entry,
-                    "prompt": {
-                        "kind": "vision_skipped_decorative",
-                        "page": page_index + 1,
-                        "image_index": task.image_index,
-                        "position_hint": task.position_hint,
-                        "repeat_count": task.repeat_count,
-                        "reason": classification["reason"],
-                    },
-                    "block": None,
-                }
-
-            if classification["action"] == "minimal_tag":
-                return {
-                    "trace_entry": trace_entry,
-                    "prompt": {
-                        "kind": "vision_minimal_tag",
-                        "page": page_index + 1,
-                        "image_index": task.image_index,
-                        "position_hint": task.position_hint,
-                        "classification": classification,
-                    },
-                    "block": {
-                        "kind": "text",
-                        "page": page_index + 1,
-                        "image_index": task.image_index,
-                        "content": f"[Visual: decorative element, page {page_index + 1}]",
-                    },
-                }
-
-            # action == "extract"
-            prompt_text = VisualClassifier.specialized_prompt(classification["label"], context=task.page_text)
-            content = self._chain.vision(prompt_text, task.image_bytes)
-            return {
-                "trace_entry": trace_entry,
-                "prompt": {
-                    "kind": "vision_prompt",
-                    "page": page_index + 1,
-                    "image_index": task.image_index,
-                    "category": classification["label"],
-                    "position_hint": task.position_hint,
-                    "instruction": prompt_text,
-                },
-                "block": {
-                    "kind": "text",
-                    "page": page_index + 1,
-                    "image_index": task.image_index,
-                    "content": f"\n### Visual Element (Page {page_index + 1}, Image {task.image_index})\n{content}\n",
-                },
-            }
-
-        if image_tasks:
-            with ThreadPoolExecutor(max_workers=max_workers) as executor:
-                for task, result in zip(image_tasks, executor.map(_run_task, image_tasks), strict=True):
-                    visual_trace.append(result["trace_entry"])
-                    prompts.append(result["prompt"])
-                    if result["block"] is not None:
-                        image_blocks_by_page.setdefault(task.page_index, []).append(result["block"])
-
-        for page_index in range(page_count):
-            text = page_text_by_idx.get(page_index, "")
-            if text:
-                blocks.append({"kind": "text", "page": page_index + 1, "content": text})
-            blocks.extend(image_blocks_by_page.get(page_index, []))
-
-        doc.close()
-        return ExtractionResult(blocks=blocks, prompts=prompts, visual_trace=visual_trace)
-
-    def _extract_rendered_pages(
-        self,
-        doc: Any,
-        page_count: int,
-        inferred_type: str,
-        enable_real_vision: bool,
-        max_workers: int,
-    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-        """Scanned/slide PDFs: each page is rendered whole and OCR'd via one vision call.
-
-        Pages are fully independent, so rendering + vision calls are parallelized the
-        same way as embedded-image extraction.
-        """
-        import fitz  # type: ignore[import-untyped]
-
-        blocks: list[dict[str, Any]] = []
-        prompts: list[dict[str, Any]] = []
-
-        if not enable_real_vision:
-            for page_index in range(page_count):
-                blocks.append({
-                    "kind": "vision_placeholder",
-                    "page": page_index + 1,
-                    "content": "[VISION_PLACEHOLDER] OCR output pending for scanned page.",
-                })
-                prompts.append({
-                    "kind": "vision_prompt",
-                    "page": page_index + 1,
-                    "instruction": "Perform OCR on this scanned page.",
-                })
-            return blocks, prompts
-
-        if inferred_type == "slide_pdf":
-            prompt_text = (
-                "This is a lecture slide page. Extract its content as Markdown:\n"
-                "- The slide title (large text at top) → ## heading\n"
-                "- Bullet points → - list items\n"
-                "- Any table → Markdown table\n"
-                "- Any formula or equation → LaTeX inside $...$\n"
-                "- Any diagram/graph/memory layout/flowchart → draw/represent it visually using a Markdown table (e.g. for variables/states/transitions) or a text-based ASCII diagram (using boxes [+---+] and arrows [-->] inside a preformatted ``` block). Underneath this visual representation, add [Diagram: ...] explaining in 1-2 sentences the concept/process the diagram illustrates and why it matters — not a restatement of which boxes connect to which\n"  # noqa: E501
-                "Keep the original language of the slide; do not translate.\n"
-                "Output only the Markdown content, no commentary."
-            )
-        else:
-            prompt_text = (
-                "This is a scanned mixed-layout page. Extract ALL of its content as clean Markdown, "
-                "in approximate reading order:\n"
-                "- Body text → paragraphs\n"
-                "- Table-like regions → Markdown tables\n"
-                "- Graph/diagram regions → a text-based ASCII diagram (using boxes [+---+] and arrows [-->] inside a preformatted ``` block), with [Diagram: ...] underneath explaining in 1-2 sentences the concept/process it illustrates and why it matters — not a restatement of which boxes connect to which\n"  # noqa: E501
-                "- Handwritten annotations → blockquotes prefixed with [Handwritten]\n"
-                "Keep the original language of the document; do not translate.\n"
-                "Output only the Markdown content, no commentary."
-            )
-
-        page_tasks: list[_PageRenderTask] = []
-        for page_index, page in enumerate(doc):
-            pix = page.get_pixmap(matrix=fitz.Matrix(2, 2))
-            page_tasks.append(
-                _PageRenderTask(page_index=page_index, image_bytes=pix.tobytes("png"), prompt_text=prompt_text)
-            )
-
-        def _run_task(task: _PageRenderTask) -> dict[str, Any]:
-            content = self._chain.vision(task.prompt_text, task.image_bytes)
-            return {
-                "block": {
-                    "kind": "text",
-                    "page": task.page_index + 1,
-                    "content": content,
-                    "ocr_strategy": "region_based",
-                },
-                "prompt": {
-                    "kind": "vision_ocr",
-                    "page": task.page_index + 1,
-                    "instruction": task.prompt_text,
-                    "ocr_strategy": "region_based",
-                },
-            }
-
-        results_by_page: dict[int, dict[str, Any]] = {}
-        with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            for task, result in zip(page_tasks, executor.map(_run_task, page_tasks), strict=True):
-                results_by_page[task.page_index] = result
-
-        for page_index in range(page_count):
-            result = results_by_page[page_index]
-            blocks.append(result["block"])
-            prompts.append(result["prompt"])
-
-        return blocks, prompts
+    @staticmethod
+    def _ocr_fallback(page: LayoutPage, placeholder: str) -> PageSegment:
+        """Keep whatever native text the page has; the placeholder only when it has none."""
+        return PageSegment(page.page_number, _native_markdown(page) or placeholder)

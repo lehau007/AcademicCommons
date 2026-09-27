@@ -1,42 +1,27 @@
-"""Image extractor. Ports experiment ``extract_image_text`` (lines ~1278-1309)."""
+"""Standalone image upload: verbatim OCR; the image itself becomes the asset when it has figures."""
 
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
 
-from app.services.document_processing.classification import VisualClassifier
+from app.services.document_processing.assets import AssetCollector
 from app.services.document_processing.extractors.base import Extractor
-from app.services.document_processing.models import ExtractionResult
+from app.services.document_processing.models import ExtractionResult, PageSegment
+from app.services.document_processing.ocr import insert_page_image
 
 
 class ImageExtractor(Extractor):
-    def extract(self, path: Path) -> ExtractionResult:
-        visual_trace: list[dict[str, Any]] = []
-        enable_real_vision = self._config.enable_real_vision
-
-        blocks: list[dict[str, Any]]
-        prompts: list[dict[str, Any]]
-        if enable_real_vision:
-            with open(path, "rb") as f:
-                image_bytes = f.read()
-            classification = self._classifier.classify(image_bytes)
-            visual_trace.append({
-                "source": "image_file",
-                "file": path.name,
-                "classification": classification,
-                "action_taken": classification["action"],
-            })
-            prompt_text = (
-                VisualClassifier.specialized_prompt(classification["label"])
-                + " Also perform OCR on any text."
-            )
-            content = self._chain.vision(prompt_text, image_bytes)
-            blocks = [{"kind": "text", "content": content}]
-            prompts = [{"kind": "vision_ocr", "instruction": prompt_text, "image_path": path.name}]
+    def extract(self, path: Path, assets: AssetCollector) -> ExtractionResult:
+        data = path.read_bytes()
+        is_jpeg = path.suffix.lower() in (".jpg", ".jpeg")
+        result = self._ocr.transcribe(data)
+        stats = {"pages_total": 1, "pages_text": 0, "pages_ocr": 1, "ocr_failed_pages": int(result.failed)}
+        if result.failed:
+            markdown = "[OCR_FAILED page 1]"
+        elif result.has_figures:
+            name = "p001-page.jpg" if is_jpeg else "p001-page.png"
+            ref = assets.add(name, data, "image/jpeg" if is_jpeg else "image/png")
+            markdown = insert_page_image(result.markdown, ref, 1)
         else:
-            prompt_text = "Perform OCR and describe any table/formula/diagram in markdown format."
-            prompts = [{"kind": "vision_prompt", "instruction": prompt_text, "image_path": path.name}]
-            blocks = [{"kind": "vision_placeholder", "content": "[VISION_PLACEHOLDER] OCR output pending from vision model."}]  # noqa: E501
-
-        return ExtractionResult(blocks=blocks, prompts=prompts, visual_trace=visual_trace)
+            markdown = result.markdown
+        return ExtractionResult(segments=[PageSegment(None, markdown)], route="image", stats=stats)

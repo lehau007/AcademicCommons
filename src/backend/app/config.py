@@ -101,7 +101,13 @@ class Settings(BaseSettings):
 
     vertex_project_id: str | None = None
     vertex_location: str = "us-central1"
-    vertex_llm_model: str = "gemini-2.5-flash"
+    # Generative Gemini calls (chat router, OCR, figure viewer). The gemini-3.x models are
+    # only served from the "global" location; embeddings/rerank keep vertex_location.
+    vertex_genai_location: str = "global"
+    vertex_chat_model: str = "gemini-3.8-flash"
+    # gemini-3.8-flash rejects "minimal"; with default thinking a small output budget is
+    # consumed by thoughts and the visible text comes back empty.
+    vertex_chat_thinking_level: str = "low"
     vertex_embedding_model: str = "text-multilingual-embedding-002"
     vertex_rerank_model: str = "semantic-ranker-512@latest"
 
@@ -181,17 +187,17 @@ class Settings(BaseSettings):
 
     # Document processing (OCR/parsing) pipeline
     ocr_enable_real_vision: bool = False
-    # Concurrent VLM calls per document during extraction (classify + content calls for
-    # embedded images/pages). Vision calls are otherwise fully sequential, which dominates
-    # OCR runtime on image-heavy PPTX/scanned PDFs.
-    ocr_vision_max_workers: int = 6
+    # v4: VLM only for figures and scanned pages.
+    ocr_vision_model: str = "gemini-3.5-flash-lite"
+    ocr_vision_thinking_level: str = "minimal"
+    ocr_vision_fallback_model: str = "gemini-3.8-flash"
+    ocr_vision_fallback_thinking_level: str = "low"
+    # Per-document VLM fan-out, and the process-wide cap shared by concurrent OCR jobs.
+    document_processing_max_concurrency: int = 16
+    document_processing_global_concurrency: int = 32
+    document_processing_request_timeout_seconds: float = 60.0
     azure_openai_input_cost_per_1m: float = 0.15
     azure_openai_output_cost_per_1m: float = 0.60
-    document_processing_normalize_char_budget: int = 24000
-    # Concurrency for the per-batch normalization LLM calls. Kept below
-    # ocr_vision_max_workers: too many parallel calls throttle the primary
-    # provider (bedrock) and cascade batches onto slower fallbacks.
-    document_processing_normalize_max_workers: int = 4
 
     @field_validator(
         "azure_ai_api_key",

@@ -1,7 +1,0 @@
-{
-  "route_match": true,
-  "non_empty_output": true,
-  "warnings": [
-    "vision_output_placeholder_detected"
-  ]
-}

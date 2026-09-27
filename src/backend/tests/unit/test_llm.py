@@ -15,6 +15,7 @@ from app.llm import (
     OpenRouterProvider,
     ProviderResult,
 )
+from app.llm.providers import StreamChunk
 from app.llm.router import build_llm_router
 
 
@@ -136,6 +137,42 @@ class FakeProvider(LLMProvider):
         if self.result is None:
             raise RuntimeError(f"{self.provider_name} failed")
         return self.result
+
+
+class FakeStreamingProvider(LLMProvider):
+    def __init__(self, provider_name: str, result: ProviderResult) -> None:
+        self.provider_name = provider_name
+        self.model = "fake-model"
+        self.result = result
+        self.calls = 0
+
+    async def chat(self, messages, *, schema=None, max_tokens=None) -> ProviderResult:
+        raise AssertionError("stream test should not call chat")
+
+    async def stream(self, messages, *, schema=None, max_tokens=None):
+        self.calls += 1
+        yield StreamChunk(text="DO_NOT_LOG_THIS_STREAM")
+        yield StreamChunk(done=True, result=self.result)
+
+
+class FakeStreamingDoneWithoutResultProvider(LLMProvider):
+    def __init__(self, provider_name: str) -> None:
+        self.provider_name = provider_name
+        self.model = "fake-model"
+        self.calls = 0
+
+    async def chat(self, messages, *, schema=None, max_tokens=None) -> ProviderResult:
+        raise AssertionError("stream test should not call chat")
+
+    async def stream(self, messages, *, schema=None, max_tokens=None):
+        self.calls += 1
+        yield StreamChunk(text="safe partial")
+        yield StreamChunk(done=True)
+
+
+class RaisingLogger:
+    def log(self, level: int, message: str) -> None:
+        raise RuntimeError("logger backend exploded")
 
 
 class FakeOptimizerAdapter:
@@ -519,6 +556,134 @@ async def test_router_raises_when_all_providers_fail() -> None:
 
     with pytest.raises(LLMUnavailable):
         await router.chat([{"role": "user", "content": "hello"}])
+
+
+@pytest.mark.asyncio
+async def test_llm_router_logs_attempt_failure_fallback_and_success(caplog) -> None:
+    session_id = "session-privacy-safe-123"
+    failed = FakeProvider("vertex")
+    succeeded = FakeProvider(
+        "gemini",
+        ProviderResult(
+            content="safe result",
+            tokens_in=3,
+            tokens_out=4,
+            latency_ms=5,
+            cost_usd=0.0,
+            provider="gemini",
+            model="fake-model",
+        ),
+    )
+    router = LLMRouter([failed, succeeded])
+
+    with caplog.at_level("INFO", logger="app.llm.router"):
+        await router.chat(
+            [{"role": "user", "content": "DO_NOT_LOG_THIS_QUESTION"}],
+            flow="tutor",
+            session_id=session_id,
+        )
+
+    combined = "\n".join(caplog.messages)
+    assert "event=llm_call_start" in combined
+    assert "event=llm_call_error" in combined
+    assert "event=llm_fallback" in combined
+    assert "event=llm_call_success" in combined
+    assert "provider=vertex" in combined
+    assert "provider=gemini" in combined
+    assert "flow=tutor" in combined
+    assert all(
+        f"session_id={session_id}" in message
+        for message in caplog.messages
+        if message.startswith("event=llm_")
+    )
+    assert "DO_NOT_LOG_THIS_QUESTION" not in combined
+
+
+@pytest.mark.asyncio
+async def test_llm_router_logs_stream_once_without_delta_content(caplog) -> None:
+    session_id = "session-privacy-safe-456"
+    result = ProviderResult(
+        content="safe stream result",
+        tokens_in=2,
+        tokens_out=3,
+        latency_ms=7,
+        cost_usd=0.0,
+        provider="gemini",
+        model="fake-model",
+    )
+    provider = FakeStreamingProvider("gemini", result)
+    router = LLMRouter([provider])
+
+    chunks: list[StreamChunk] = []
+    with caplog.at_level("INFO", logger="app.llm.router"):
+        async for chunk in router.stream(
+            [{"role": "user", "content": "DO_NOT_LOG_THIS_PROMPT"}],
+            flow="tutor",
+            session_id=session_id,
+        ):
+            chunks.append(chunk)
+
+    assert [chunk.text for chunk in chunks if chunk.text] == ["DO_NOT_LOG_THIS_STREAM"]
+    assert chunks[-1].done is True
+    combined = "\n".join(caplog.messages)
+    assert combined.count("event=llm_call_start") == 1
+    assert combined.count("event=llm_call_success") == 1
+    assert "mode=stream" in combined
+    assert "flow=tutor" in combined
+    assert all(
+        f"session_id={session_id}" in message
+        for message in caplog.messages
+        if message.startswith("event=llm_")
+    )
+    assert "DO_NOT_LOG_THIS_STREAM" not in combined
+    assert "DO_NOT_LOG_THIS_PROMPT" not in combined
+
+
+@pytest.mark.asyncio
+async def test_llm_router_ignores_logging_failures(monkeypatch: pytest.MonkeyPatch) -> None:
+    import app.llm.router as router_module
+
+    result = ProviderResult(
+        content="safe result despite logging failure",
+        tokens_in=1,
+        tokens_out=1,
+        latency_ms=2,
+        cost_usd=0.0,
+        provider="gemini",
+        model="fake-model",
+    )
+    provider = FakeProvider("gemini", result=result)
+    router = LLMRouter([provider])
+
+    monkeypatch.setattr(router_module, "logger", RaisingLogger())
+
+    actual = await router.chat([{"role": "user", "content": "hello"}], flow="tutor")
+
+    assert actual is result
+    assert provider.calls == 1
+
+
+@pytest.mark.asyncio
+async def test_llm_router_logs_stream_success_when_done_chunk_has_no_result(caplog) -> None:
+    provider = FakeStreamingDoneWithoutResultProvider("gemini")
+    router = LLMRouter([provider])
+
+    chunks: list[StreamChunk] = []
+    with caplog.at_level("INFO", logger="app.llm.router"):
+        async for chunk in router.stream(
+            [{"role": "user", "content": "DO_NOT_LOG_THIS_PROMPT"}],
+            flow="tutor",
+        ):
+            chunks.append(chunk)
+
+    assert [chunk.text for chunk in chunks if chunk.text] == ["safe partial"]
+    assert chunks[-1].done is True
+    combined = "\n".join(caplog.messages)
+    assert combined.count("event=llm_call_success") == 1
+    assert "provider=gemini" in combined
+    assert "model=fake-model" in combined
+    assert "tokens_in=none" in combined
+    assert "tokens_out=none" in combined
 
 
 def test_deterministic_embedding_returns_1024_dimensional_vectors() -> None:
